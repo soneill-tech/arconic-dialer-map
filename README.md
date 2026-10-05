@@ -1,47 +1,42 @@
-# Arconic Dialer Map (Team Steve)
+# Team Steve — Closed Won Dialer Map
 
-Self-contained HTML map dashboard for **Arconic** Closed Won dialer contacts (Kahekili Barrozo).
+Self-contained HTML map dashboard for Team Steve Closed Won dialer contacts:
+
+| Company | AM | HubSpot | Contacts | w/ phone | Pins |
+|---|---|---|---|---|---|
+| Arconic | Kahekili Barrozo | `2359249037` | 419 | 168 | 6 |
+| Kaiser Aluminum | Simran Subramanian | `5360206404` | 50 | 26 | 9 |
+
+Live: https://soneill-tech.github.io/arconic-dialer-map/
 
 ## Open it
 
-**Option A — local file**
+Double-click `index.html` (data is bundled in `data.js`, so `file://` works), or:
 
 ```bash
-open /workspace/kili-simran-closed-won/map-dashboard/index.html
+python3 -m http.server 8765   # then open http://localhost:8765/
 ```
 
-Or double-click `index.html`. Contact data is bundled in `data.js` + `data.json` so `file://` works without a server.
+## What's included
 
-**Option B — simple static server (recommended)**
-
-```bash
-cd /workspace/kili-simran-closed-won/map-dashboard
-python3 -m http.server 8765
-```
-
-Then open http://localhost:8765/
-
-## What’s included
-
-- Leaflet + Carto dark basemap (OSM data; no API key)
-- **6 plant/city pins** (city-level Nominatim geocodes): Pittsburgh HQ, Davenport Works, Lafayette, Lancaster, Massena, Tennessee Ops (Alcoa)
-- Side location list + contact panel (name, role, phone, mobile, email, HubSpot link)
-- Contacts sorted: **Decision Maker → has phone → name**
-- AM filter (All / Kahekili / Simran) and search
-- Large clickable cards in the sidebar if the map is unused
+- Leaflet + Esri World_Street_Map tiles (no API key)
+- **Arconic pins (blue):** Pittsburgh HQ, Davenport Works, Lafayette, Lancaster, Massena, Tennessee Ops (Alcoa) + All Arconic + Unassigned
+- **Kaiser pins (orange):** Trentwood Works (Spokane Valley WA, 509), Warrick (Newburgh IN, 812), Knoxville TN (865),
+  Franklin TN HQ (615), Tucson AZ (520), Newark Works (Heath OH, 740), Jackson TN (731), Foothill Ranch CA (949),
+  Kalamazoo MI (269) + All Kaiser + Unassigned
+- Side list grouped by company/AM; AM filter (All / Kahekili / Simran) and search
+- Click a pin or card → that location's contacts, sorted **Decision Maker → has phone → name**
 
 ## Scope notes
 
-- **Arconic only** (HubSpot company `2359249037`)
-- 419 contacts from `Kahekili_Barrozo_dialer.csv`
-- Plant assignment is **best-effort from phone area code** (e.g. 563→Davenport, 717→Lancaster). Contacts without a mapped AC are under **Unassigned**
-- No HubSpot writes, no dialing from this page beyond `tel:` / `mailto:` links
+- Plant assignment is **best-effort from phone area code**, city-level Nominatim geocodes. Unmapped ACs, toll-free, invalid numbers and no-phone contacts go to **Unassigned**.
+- No HubSpot writes, no dialing beyond `tel:` / `mailto:` links.
 
 ## Files
 
 | File | Purpose |
 |------|---------|
 | `index.html` | Dashboard UI |
-| `data.json` | Bundled locations + contacts |
+| `data.json` / `data.js` | Bundled locations + contacts |
 | `geocodes.json` | City geocode cache |
-| `README.md` | This file |
+| `build_data.py` | Rebuild script (adds Kaiser to the v1 Arconic data) |

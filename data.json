@@ -1,22 +1,31 @@
 {
-  "title": "Team Steve \u2014 Arconic Dialer Map",
-  "scope": "Arconic only (HubSpot 2359249037)",
-  "am": "Kahekili Barrozo",
-  "company": {
-    "name": "Arconic",
-    "id": "2359249037",
-    "url": "https://app.hubspot.com/contacts/6029765/record/0-2/2359249037",
-    "industry": "Mining & Metals"
-  },
+  "version": 2,
+  "title": "Team Steve — Closed Won Dialer Map",
+  "scope": "Arconic (HubSpot 2359249037, Kahekili Barrozo) + Kaiser Aluminum (HubSpot 5360206404, Simran Subramanian)",
   "generated": "2026-10-05",
+  "companies": [
+    {
+      "name": "Arconic",
+      "id": "2359249037",
+      "am": "Kahekili Barrozo",
+      "url": "https://app.hubspot.com/contacts/6029765/record/0-2/2359249037",
+      "industry": "Mining & Metals"
+    },
+    {
+      "name": "Kaiser Aluminum",
+      "id": "5360206404",
+      "am": "Simran Subramanian",
+      "url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404"
+    }
+  ],
   "notes": [
-    "Plant pins are city-level (Nominatim). Contacts are assigned to plants only when phone area code matches a known plant region; otherwise Unassigned.",
+    "Plant pins are city-level (Nominatim). Contacts are assigned to a plant only when the phone area code matches a known site for that company; otherwise Unassigned.",
     "Sort order: Decision Maker first, then contacts with phone, then name.",
     "No HubSpot writes. Read-only dialer export."
   ],
   "locations": [
     {
-      "id": "all",
+      "id": "arc:all",
       "name": "All Arconic",
       "label": "All Arconic (full list)",
       "city": "Pittsburgh",
@@ -31,11 +40,11 @@
       "with_phone": 168,
       "dm_count": 2,
       "filter": "all",
-      "hint": "Full dialer list \u2014 not plant-filtered",
+      "hint": "Full dialer list — not plant-filtered",
       "pin": false
     },
     {
-      "id": "Arconic HQ / Pittsburgh",
+      "id": "arc:Arconic HQ / Pittsburgh",
       "name": "Arconic HQ / Pittsburgh",
       "label": "Pittsburgh (HQ)",
       "city": "Pittsburgh",
@@ -49,13 +58,13 @@
       "contact_count": 13,
       "with_phone": 13,
       "dm_count": 1,
-      "filter": "Arconic HQ / Pittsburgh",
-      "hint": "Corporate / W PA (412, 724) \u2014 inferred from phone area code",
+      "filter": "arc:Arconic HQ / Pittsburgh",
+      "hint": "Corporate / W PA (412, 724) — inferred from phone area code",
       "pin": true,
       "source": "nominatim"
     },
     {
-      "id": "Davenport Works",
+      "id": "arc:Davenport Works",
       "name": "Davenport Works",
       "label": "Davenport Works",
       "city": "Davenport",
@@ -69,13 +78,13 @@
       "contact_count": 49,
       "with_phone": 49,
       "dm_count": 0,
-      "filter": "Davenport Works",
-      "hint": "Davenport, IA (563) \u2014 inferred from phone area code",
+      "filter": "arc:Davenport Works",
+      "hint": "Davenport, IA (563) — inferred from phone area code",
       "pin": true,
       "source": "nominatim"
     },
     {
-      "id": "Lafayette",
+      "id": "arc:Lafayette",
       "name": "Lafayette",
       "label": "Lafayette",
       "city": "Lafayette",
@@ -89,13 +98,13 @@
       "contact_count": 12,
       "with_phone": 12,
       "dm_count": 0,
-      "filter": "Lafayette",
-      "hint": "Lafayette, IN (765) \u2014 inferred from phone area code",
+      "filter": "arc:Lafayette",
+      "hint": "Lafayette, IN (765) — inferred from phone area code",
       "pin": true,
       "source": "nominatim"
     },
     {
-      "id": "Lancaster",
+      "id": "arc:Lancaster",
       "name": "Lancaster",
       "label": "Lancaster",
       "city": "Lancaster",
@@ -109,13 +118,13 @@
       "contact_count": 27,
       "with_phone": 27,
       "dm_count": 0,
-      "filter": "Lancaster",
-      "hint": "Lancaster, PA (717) \u2014 inferred from phone area code",
+      "filter": "arc:Lancaster",
+      "hint": "Lancaster, PA (717) — inferred from phone area code",
       "pin": true,
       "source": "nominatim"
     },
     {
-      "id": "Massena",
+      "id": "arc:Massena",
       "name": "Massena",
       "label": "Massena",
       "city": "Massena",
@@ -129,13 +138,13 @@
       "contact_count": 1,
       "with_phone": 1,
       "dm_count": 0,
-      "filter": "Massena",
-      "hint": "Massena, NY (315) \u2014 inferred from phone area code",
+      "filter": "arc:Massena",
+      "hint": "Massena, NY (315) — inferred from phone area code",
       "pin": true,
       "source": "nominatim"
     },
     {
-      "id": "Tennessee Operations (Alcoa)",
+      "id": "arc:Tennessee Operations (Alcoa)",
       "name": "Tennessee Operations (Alcoa)",
       "label": "Tennessee Ops (Alcoa)",
       "city": "Alcoa",
@@ -149,15 +158,15 @@
       "contact_count": 35,
       "with_phone": 35,
       "dm_count": 0,
-      "filter": "Tennessee Operations (Alcoa)",
-      "hint": "Alcoa, TN (865) \u2014 inferred from phone area code",
+      "filter": "arc:Tennessee Operations (Alcoa)",
+      "hint": "Alcoa, TN (865) — inferred from phone area code",
       "pin": true,
       "source": "nominatim"
     },
     {
-      "id": "unassigned",
+      "id": "arc:unassigned",
       "name": "Unassigned / other",
-      "label": "Unassigned / other ACs",
+      "label": "Arconic · Unassigned / other ACs",
       "city": null,
       "region": null,
       "lat": null,
@@ -172,6 +181,224 @@
       "filter": "unassigned",
       "hint": "No phone or area code not mapped to a known plant",
       "pin": false
+    },
+    {
+      "id": "kai:all",
+      "name": "All Kaiser Aluminum",
+      "label": "All Kaiser Aluminum (full list)",
+      "city": "Franklin",
+      "region": "Franklin, Tennessee, USA",
+      "lat": null,
+      "lon": null,
+      "filter": "all",
+      "pin": false,
+      "hint": "Full dialer list — not plant-filtered",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 50,
+      "with_phone": 26,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:Trentwood Works",
+      "name": "Trentwood Works",
+      "label": "Trentwood Works (Spokane Valley, WA)",
+      "city": "Spokane Valley",
+      "region": "Spokane Valley, Washington, USA",
+      "lat": 47.6571104,
+      "lon": -117.2613936,
+      "filter": "kai:Trentwood Works",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Spokane, WA (509) — inferred from phone area code",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 2,
+      "with_phone": 2,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:Warrick",
+      "name": "Warrick",
+      "label": "Warrick (Newburgh / Evansville, IN)",
+      "city": "Newburgh",
+      "region": "Newburgh, Indiana, USA",
+      "lat": 37.9456824,
+      "lon": -87.4046571,
+      "filter": "kai:Warrick",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Evansville/Newburgh, IN (812) — inferred from phone area code",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 3,
+      "with_phone": 3,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:Knoxville",
+      "name": "Knoxville",
+      "label": "Knoxville, TN",
+      "city": "Knoxville",
+      "region": "Knoxville, Tennessee, USA",
+      "lat": 35.9603948,
+      "lon": -83.9210261,
+      "filter": "kai:Knoxville",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Knoxville, TN (865) — inferred from phone area code",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 4,
+      "with_phone": 4,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:Franklin HQ",
+      "name": "Franklin HQ",
+      "label": "Franklin, TN HQ (Nashville area)",
+      "city": "Franklin",
+      "region": "Franklin, Tennessee, USA",
+      "lat": 35.925206,
+      "lon": -86.8689419,
+      "filter": "kai:Franklin HQ",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Corporate HQ / Nashville area (615) — inferred from phone area code",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 2,
+      "with_phone": 2,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:Tucson",
+      "name": "Tucson",
+      "label": "Tucson, AZ",
+      "city": "Tucson",
+      "region": "Tucson, Arizona, USA",
+      "lat": 32.2228765,
+      "lon": -110.974847,
+      "filter": "kai:Tucson",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Southern AZ (520) — inferred from phone area code",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 1,
+      "with_phone": 1,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:Newark Works",
+      "name": "Newark Works",
+      "label": "Newark Works (Heath, OH)",
+      "city": "Heath",
+      "region": "Heath, Ohio, USA",
+      "lat": 40.0228421,
+      "lon": -82.4445991,
+      "filter": "kai:Newark Works",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Newark/Heath, OH (740) — inferred from phone area code",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 4,
+      "with_phone": 4,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:Jackson",
+      "name": "Jackson",
+      "label": "Jackson, TN",
+      "city": "Jackson",
+      "region": "Jackson, Tennessee, USA",
+      "lat": 35.6144446,
+      "lon": -88.8177418,
+      "filter": "kai:Jackson",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Jackson, TN (731) — inferred from phone area code",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 3,
+      "with_phone": 3,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:Foothill Ranch",
+      "name": "Foothill Ranch",
+      "label": "Foothill Ranch, CA (former HQ)",
+      "city": "Foothill Ranch",
+      "region": "Foothill Ranch, California, USA",
+      "lat": 33.6849918,
+      "lon": -117.6590428,
+      "filter": "kai:Foothill Ranch",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Orange County, CA (949) — inferred from phone area code",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 3,
+      "with_phone": 3,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:Kalamazoo",
+      "name": "Kalamazoo",
+      "label": "Kalamazoo, MI",
+      "city": "Kalamazoo",
+      "region": "Kalamazoo, Michigan, USA",
+      "lat": 42.291707,
+      "lon": -85.5872286,
+      "filter": "kai:Kalamazoo",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Kalamazoo, MI (269) — inferred from phone area code",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 1,
+      "with_phone": 1,
+      "dm_count": 0
+    },
+    {
+      "id": "kai:unassigned",
+      "name": "Unassigned",
+      "label": "Kaiser · Unassigned / other ACs",
+      "city": null,
+      "region": null,
+      "lat": null,
+      "lon": null,
+      "filter": "unassigned",
+      "pin": false,
+      "hint": "No phone, toll-free/invalid, or area code not mapped to a known Kaiser site",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "contact_count": 27,
+      "with_phone": 3,
+      "dm_count": 0
     }
   ],
   "contacts": [
@@ -191,7 +418,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "724",
       "has_phone": true,
-      "is_dm": true
+      "is_dm": true,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Paul Laslou",
@@ -209,7 +438,9 @@
       "plant": null,
       "area_code": "770",
       "has_phone": true,
-      "is_dm": true
+      "is_dm": true,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Adam M. Bjorkman",
@@ -227,7 +458,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Alisha Owens",
@@ -245,7 +478,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Alonso Ochoa",
@@ -263,7 +498,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Amber Atkins",
@@ -281,7 +518,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Amber Curwick",
@@ -299,7 +538,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Anastasia Stevens",
@@ -317,7 +558,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Andrew W Ditzler",
@@ -335,7 +578,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Andrew Weishaar",
@@ -353,7 +598,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Anita Gowda",
@@ -371,7 +618,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Annette Thiel",
@@ -389,7 +638,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Armando Rivera",
@@ -407,7 +658,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Ben Stanley",
@@ -425,7 +678,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Beth Ruehrdanz",
@@ -443,7 +698,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Blake Biermann",
@@ -461,7 +718,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Brenden Pawlak",
@@ -479,7 +738,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "412",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Brian Beil",
@@ -497,7 +758,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "724",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Brian Robey",
@@ -515,7 +778,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Brigitte Ingram",
@@ -533,7 +798,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Brycen Hamilton",
@@ -551,7 +818,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Candace Greene",
@@ -569,7 +838,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Candace Marple",
@@ -587,7 +858,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Caraline Coleman",
@@ -605,7 +878,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Catanna Dement",
@@ -623,7 +898,9 @@
       "plant": null,
       "area_code": "877",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Cecily Hill",
@@ -641,7 +918,9 @@
       "plant": null,
       "area_code": "479",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Chlesie Dusenberry",
@@ -659,7 +938,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Chris J. Lawrence",
@@ -677,7 +958,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Chris Messersmith",
@@ -695,7 +978,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Christina Murrell",
@@ -713,7 +998,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Christopher Stephenson",
@@ -731,7 +1018,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Ciara Davis",
@@ -749,7 +1038,9 @@
       "plant": null,
       "area_code": "540",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Cody Herring",
@@ -767,7 +1058,9 @@
       "plant": null,
       "area_code": "540",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Connie Keller",
@@ -785,7 +1078,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Corey Ortiz",
@@ -803,7 +1098,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Cory Yates",
@@ -821,7 +1118,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Craig Martin",
@@ -839,7 +1138,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Cynthia King",
@@ -857,7 +1158,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Damon Norton",
@@ -875,7 +1178,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Daniel Kurz",
@@ -893,7 +1198,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Daniel Tomlin",
@@ -911,7 +1218,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Daniel Torie",
@@ -929,7 +1238,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Danielle Ponta",
@@ -947,7 +1258,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Danny Markovitz",
@@ -965,7 +1278,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "412",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Dave Keens",
@@ -983,7 +1298,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Dave Matthews",
@@ -1001,7 +1318,9 @@
       "plant": null,
       "area_code": "909",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Dave Tomes",
@@ -1019,7 +1338,9 @@
       "plant": null,
       "area_code": "210",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "David Hebbel",
@@ -1037,7 +1358,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "David Paitsel",
@@ -1055,7 +1378,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "David Smith",
@@ -1073,7 +1398,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "724",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "David Yordy",
@@ -1091,7 +1418,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Diana Ilioasa",
@@ -1109,7 +1438,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Dionne Cearing",
@@ -1127,7 +1458,9 @@
       "plant": null,
       "area_code": "219",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Donna Brock",
@@ -1145,7 +1478,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Donna Shenk",
@@ -1163,7 +1498,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Dylan Kuhns",
@@ -1181,7 +1518,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "412",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Efriam Cruz",
@@ -1199,7 +1538,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Elizabeth Anderson",
@@ -1217,7 +1558,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Elizabeth Barnes",
@@ -1235,7 +1578,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Emily Cook",
@@ -1253,7 +1598,9 @@
       "plant": null,
       "area_code": "248",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Emily Schultz",
@@ -1271,7 +1618,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Eric Wettig",
@@ -1289,7 +1638,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Eric Yost",
@@ -1307,7 +1658,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Gary Broer",
@@ -1325,7 +1678,9 @@
       "plant": null,
       "area_code": "480",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Gregg Klinger",
@@ -1343,7 +1698,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Heather Taylor",
@@ -1361,7 +1718,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Henry Vega",
@@ -1379,7 +1738,9 @@
       "plant": null,
       "area_code": "562",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Iwoinakee Billups",
@@ -1397,7 +1758,9 @@
       "plant": null,
       "area_code": "770",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "James Belcher",
@@ -1415,7 +1778,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Janine Mcwilliams",
@@ -1433,7 +1798,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Jannell Clark",
@@ -1451,7 +1818,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Jared Higgins",
@@ -1469,7 +1838,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Jason Cottrell",
@@ -1487,7 +1858,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Jason King",
@@ -1505,7 +1878,9 @@
       "plant": null,
       "area_code": "877",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jason Orange",
@@ -1523,7 +1898,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Jason Williams",
@@ -1541,7 +1918,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Jeff Berryman",
@@ -1559,7 +1938,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Jennifer Dalton",
@@ -1577,7 +1958,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Jennifer Nelson",
@@ -1595,7 +1978,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Jennifer Solomon-Clark",
@@ -1613,7 +1998,9 @@
       "plant": null,
       "area_code": "410",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jennifer Woelke",
@@ -1631,7 +2018,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Jerry Bowen",
@@ -1649,7 +2038,9 @@
       "plant": null,
       "area_code": "479",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jill Everetts",
@@ -1667,7 +2058,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "John Parlon",
@@ -1685,7 +2078,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "John Pellegrino",
@@ -1703,7 +2098,9 @@
       "plant": null,
       "area_code": "770",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "JohnPaul Tebo",
@@ -1721,7 +2118,9 @@
       "plant": "Massena",
       "area_code": "315",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Massena"
     },
     {
       "name": "Jon Timko",
@@ -1739,7 +2138,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "412",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Joseph Woods",
@@ -1757,7 +2158,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Julie Myers",
@@ -1775,7 +2178,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Julieanna Long",
@@ -1793,7 +2198,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Justin Moore",
@@ -1811,7 +2218,9 @@
       "plant": null,
       "area_code": "518",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kali Beck",
@@ -1829,7 +2238,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Kalliene Niesen",
@@ -1847,7 +2258,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Karen Gordon",
@@ -1865,7 +2278,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Karen M. Jorfi",
@@ -1883,7 +2298,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Karen Paparo",
@@ -1901,7 +2318,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Karla Alejandre",
@@ -1919,7 +2338,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Kate Barrelle",
@@ -1937,7 +2358,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Katie Adkins",
@@ -1955,7 +2378,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Keith Beddick",
@@ -1973,7 +2398,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Keith Bookout",
@@ -1991,7 +2418,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Kelli Carver",
@@ -2009,7 +2438,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Kevin Thompson",
@@ -2027,7 +2458,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "724",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Kevin West",
@@ -2045,7 +2478,9 @@
       "plant": null,
       "area_code": "602",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kyle Amor",
@@ -2063,7 +2498,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Lance Amy",
@@ -2081,7 +2518,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "724",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Lance Duvernay",
@@ -2099,7 +2538,9 @@
       "plant": null,
       "area_code": "912",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Lance Karr",
@@ -2117,7 +2558,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Leshia Segal",
@@ -2135,7 +2578,9 @@
       "plant": null,
       "area_code": "317",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Liliana Serra",
@@ -2153,7 +2598,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Lindsey Ekis",
@@ -2171,7 +2618,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Lisa McClain",
@@ -2189,7 +2638,9 @@
       "plant": null,
       "area_code": "423",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Lora Hayes",
@@ -2207,7 +2658,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Loretta M Huston",
@@ -2225,7 +2678,9 @@
       "plant": null,
       "area_code": "217",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Margaret Burchell",
@@ -2243,7 +2698,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Maria Graves",
@@ -2261,7 +2718,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Marissa Ewing-Haberkorn",
@@ -2279,7 +2738,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Mark Winowich",
@@ -2297,7 +2758,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "412",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Matthew Ritchey",
@@ -2315,7 +2778,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Matthew Rivet",
@@ -2333,7 +2798,9 @@
       "plant": null,
       "area_code": "585",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Mercedee Covault",
@@ -2351,7 +2818,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Michael Dicocco",
@@ -2369,7 +2838,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "724",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Michael Karaffa",
@@ -2387,7 +2858,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "412",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Michelle Eshelman",
@@ -2405,7 +2878,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Nathan Moore",
@@ -2423,7 +2898,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Nathaniel Toepke",
@@ -2441,7 +2918,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Nicole Baldwin",
@@ -2459,7 +2938,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Orlando Canales",
@@ -2477,7 +2958,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Philip McGaw",
@@ -2495,7 +2978,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Pito Vera",
@@ -2513,7 +2998,9 @@
       "plant": null,
       "area_code": "480",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Rachael Deamer",
@@ -2531,7 +3018,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Rachael Speckman",
@@ -2549,7 +3038,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Rachel Beaird",
@@ -2567,7 +3058,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Raquel Bormann",
@@ -2585,7 +3078,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Rebecca N Scheaffer",
@@ -2603,7 +3098,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Richard Overmann",
@@ -2621,7 +3118,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Robert S Gilbert",
@@ -2639,7 +3138,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Robin Darter",
@@ -2657,7 +3158,9 @@
       "plant": null,
       "area_code": "940",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Rodney Murphy",
@@ -2675,7 +3178,9 @@
       "plant": null,
       "area_code": "770",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ronda Marks",
@@ -2693,7 +3198,9 @@
       "plant": null,
       "area_code": "479",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ryan Eshleman",
@@ -2711,7 +3218,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Sarah Schupp",
@@ -2729,7 +3238,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Scott Gorman",
@@ -2747,7 +3258,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Scott Mumey",
@@ -2765,7 +3278,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Sean Cunningham",
@@ -2783,7 +3298,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Sean Rizzo",
@@ -2801,7 +3318,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Shannon (Express) Hafeez",
@@ -2819,7 +3338,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Shannon Hafeez",
@@ -2837,7 +3358,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Shannon Nixon",
@@ -2855,7 +3378,9 @@
       "plant": null,
       "area_code": "479",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Shaun Denys",
@@ -2873,7 +3398,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Sheri Vanburen",
@@ -2891,7 +3418,9 @@
       "plant": null,
       "area_code": "620",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Sherry Nolen",
@@ -2909,7 +3438,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Stacey Anderson",
@@ -2927,7 +3458,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Steve Shamblin",
@@ -2945,7 +3478,9 @@
       "plant": null,
       "area_code": "216",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Tammy McCluskey",
@@ -2963,7 +3498,9 @@
       "plant": "Arconic HQ / Pittsburgh",
       "area_code": "724",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Arconic HQ / Pittsburgh"
     },
     {
       "name": "Taylor Meisel",
@@ -2981,7 +3518,9 @@
       "plant": "Lancaster",
       "area_code": "717",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lancaster"
     },
     {
       "name": "Tiffany Sievers",
@@ -2999,7 +3538,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Tony Chambers",
@@ -3017,7 +3558,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Tracey Downey",
@@ -3035,7 +3578,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Travis Tipton",
@@ -3053,7 +3598,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Trent Bell",
@@ -3071,7 +3618,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Troy Skeen",
@@ -3089,7 +3638,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Troy Tibbot",
@@ -3107,7 +3658,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Tyler Bean",
@@ -3125,7 +3678,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Tyler Trimble",
@@ -3143,7 +3698,9 @@
       "plant": "Davenport Works",
       "area_code": "563",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Davenport Works"
     },
     {
       "name": "Vicki Mayes",
@@ -3161,7 +3718,9 @@
       "plant": "Lafayette",
       "area_code": "765",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Lafayette"
     },
     {
       "name": "Vicky Diehl",
@@ -3179,7 +3738,9 @@
       "plant": null,
       "area_code": "620",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Zane Williams",
@@ -3197,7 +3758,9 @@
       "plant": "Tennessee Operations (Alcoa)",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": "arc:Tennessee Operations (Alcoa)"
     },
     {
       "name": "Aaron Russell",
@@ -3215,7 +3778,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Aaron Salem",
@@ -3233,7 +3798,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ada Santizo",
@@ -3251,7 +3818,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Alan Robertson",
@@ -3269,7 +3838,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Alexander Mallonee",
@@ -3287,7 +3858,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Allen Jacobs",
@@ -3305,7 +3878,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Amanda Jones",
@@ -3323,7 +3898,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Amanda Swain",
@@ -3341,7 +3918,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "amanda.powell@arconic.com",
@@ -3359,7 +3938,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Amelia Kjome",
@@ -3377,7 +3958,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Amy Thomas",
@@ -3395,7 +3978,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Andrea Schmidt",
@@ -3413,7 +3998,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Andrew Bailey",
@@ -3431,7 +4018,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Andrew Buchanan",
@@ -3449,7 +4038,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Andrew Duso",
@@ -3467,7 +4058,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Andrew Woods",
@@ -3485,7 +4078,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "andrew.blomberg@arconic.com",
@@ -3503,7 +4098,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "andrew.ickes@arconic.com",
@@ -3521,7 +4118,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Angalena Dunn",
@@ -3539,7 +4138,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Angie Maher",
@@ -3557,7 +4158,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Antonio Darden",
@@ -3575,7 +4178,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "April Taylor",
@@ -3593,7 +4198,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "arne.rossberg@arconic.com",
@@ -3611,7 +4218,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Aurelia Hoffman",
@@ -3629,7 +4238,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Austin Rutherford",
@@ -3647,7 +4258,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "austin.koepkey@arconic.com",
@@ -3665,7 +4278,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Autumn Schmuck",
@@ -3683,7 +4298,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Benjamin Bell",
@@ -3701,7 +4318,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Benjamin Stanley",
@@ -3719,7 +4338,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Billie Goheen",
@@ -3737,7 +4358,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "bishop.martin@arconic.com",
@@ -3755,7 +4378,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Blake Wexler",
@@ -3773,7 +4398,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Brendan Nenni",
@@ -3791,7 +4418,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Brian Cassidy",
@@ -3809,7 +4438,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Brian Martin",
@@ -3827,7 +4458,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "brian.halferty@arconic.com",
@@ -3845,7 +4478,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Brooklyn Harvey",
@@ -3863,7 +4498,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Bruce Tilling",
@@ -3881,7 +4518,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Cameron Hale",
@@ -3899,7 +4538,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Cameron Heilman",
@@ -3917,7 +4558,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Carla Walker",
@@ -3935,7 +4578,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Carlos Narvaez",
@@ -3953,7 +4598,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Carolyn Norwood",
@@ -3971,7 +4618,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Casey Powell",
@@ -3989,7 +4638,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "cayla.mack@arconic.com",
@@ -4007,7 +4658,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Chadwick Moros",
@@ -4025,7 +4678,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "charles.mclean@arconic.com",
@@ -4043,7 +4698,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Chris Bichler",
@@ -4061,7 +4718,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Chris Davis",
@@ -4079,7 +4738,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Christina Kistler",
@@ -4097,7 +4758,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Christine Fink",
@@ -4115,7 +4778,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Christopher Black",
@@ -4133,7 +4798,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Christopher Falen",
@@ -4151,7 +4818,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Christopher Ramey",
@@ -4169,7 +4838,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Claudia Andrade",
@@ -4187,7 +4858,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Corey Grady",
@@ -4205,7 +4878,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Corey Schultz",
@@ -4223,7 +4898,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Cory Molacek",
@@ -4241,7 +4918,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Dale Koziorowski",
@@ -4259,7 +4938,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Damion Billingsley",
@@ -4277,7 +4958,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Dan Gifford",
@@ -4295,7 +4978,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Dan Sievers",
@@ -4313,7 +4998,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Daniel J. Smink",
@@ -4331,7 +5018,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Daniel Sauza",
@@ -4349,7 +5038,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "daniel.warrensford@arconic.com",
@@ -4367,7 +5058,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "David Burton",
@@ -4385,7 +5078,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "David Starling",
@@ -4403,7 +5098,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Dean Petrella",
@@ -4421,7 +5118,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "deanna.ferguson@arconic.com",
@@ -4439,7 +5138,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Dennis A Lewis",
@@ -4457,7 +5158,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Derrick Porter",
@@ -4475,7 +5178,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Doug Macnair",
@@ -4493,7 +5198,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Duane Bushong",
@@ -4511,7 +5218,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Dylan Forrer",
@@ -4529,7 +5238,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "edward.sawyer@arconic.com",
@@ -4547,7 +5258,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Elsa Trejo",
@@ -4565,7 +5278,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Emily Iuzzolino",
@@ -4583,7 +5298,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Emma Fake",
@@ -4601,7 +5318,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Erica Martinez",
@@ -4619,7 +5338,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "erica.milne@arconic.com",
@@ -4637,7 +5358,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ernest Coulter",
@@ -4655,7 +5378,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Eve Smith",
@@ -4673,7 +5398,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "forest.kelly@arconic.com",
@@ -4691,7 +5418,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Gabbie Delgado",
@@ -4709,7 +5438,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "gary.campbell@arconic.com",
@@ -4727,7 +5458,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "George Kesheshian",
@@ -4745,7 +5478,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ghee Cindy",
@@ -4763,7 +5498,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ginger Duncan",
@@ -4781,7 +5518,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Hayden Jago",
@@ -4799,7 +5538,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Hayden Moore",
@@ -4817,7 +5558,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Heather Lamb",
@@ -4835,7 +5578,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "jacob.cvelbar@arconic.com",
@@ -4853,7 +5598,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "James Loft",
@@ -4871,7 +5618,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "James Stewart",
@@ -4889,7 +5638,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "James Wanger",
@@ -4907,7 +5658,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "James Williams",
@@ -4925,7 +5678,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "james.bingham@arconic.com",
@@ -4943,7 +5698,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jamone Watson",
@@ -4961,7 +5718,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Janet L. Richards",
@@ -4979,7 +5738,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "jayshree.bagad@arconic.com",
@@ -4997,7 +5758,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "jeff.crider@arconic.com",
@@ -5015,7 +5778,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jeffrey Kleps",
@@ -5033,7 +5798,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jennifer Brettin",
@@ -5051,7 +5818,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jerime Bolden",
@@ -5069,7 +5838,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jerry M. DeFrates",
@@ -5087,7 +5858,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jesus Alvarado",
@@ -5105,7 +5878,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jill Folkerts",
@@ -5123,7 +5898,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jill Stavarski",
@@ -5141,7 +5918,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jim M. Bushong",
@@ -5159,7 +5938,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jim Titus",
@@ -5177,7 +5958,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jodi Yim",
@@ -5195,7 +5978,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jody Koontz",
@@ -5213,7 +5998,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "John Bradley",
@@ -5231,7 +6018,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "John Fox",
@@ -5249,7 +6038,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Johnathan Dotson",
@@ -5267,7 +6058,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Johnny Brazell",
@@ -5285,7 +6078,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jose Ceballos",
@@ -5303,7 +6098,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Joshua Eller",
@@ -5321,7 +6118,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "josiah.petkus@arconic.com",
@@ -5339,7 +6138,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Jovica Blazevski",
@@ -5357,7 +6158,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "juanita.mckinney@arconic.com",
@@ -5375,7 +6178,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Judy Dickson",
@@ -5393,7 +6198,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "judy.jacobs@arconic.com",
@@ -5411,7 +6218,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Julie Wise",
@@ -5429,7 +6238,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Justin Vanier",
@@ -5447,7 +6258,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kamlesh (Headway) Brahmbhatt",
@@ -5465,7 +6278,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kara Warrensford",
@@ -5483,7 +6298,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "karen.lenninger@arconic.com",
@@ -5501,7 +6318,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kathy A. Hendryx",
@@ -5519,7 +6338,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "keith.louck@arconic.com",
@@ -5537,7 +6358,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kelley S. Brown",
@@ -5555,7 +6378,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kenneth B (U. S. Security Associates) Skortz",
@@ -5573,7 +6398,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "kevin.jones2@arconic.com",
@@ -5591,7 +6418,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kim Deardurff",
@@ -5609,7 +6438,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kimberly Maciejewski",
@@ -5627,7 +6458,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kris Robinson",
@@ -5645,7 +6478,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kurt Johnson",
@@ -5663,7 +6498,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Kyle Ext",
@@ -5681,7 +6518,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ladon German",
@@ -5699,7 +6538,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Laura Bartlett",
@@ -5717,7 +6558,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Laurel Black",
@@ -5735,7 +6578,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Lauren Soto",
@@ -5753,7 +6598,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Laurie A Maneti",
@@ -5771,7 +6618,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Lee Fowler",
@@ -5789,7 +6638,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Libby French",
@@ -5807,7 +6658,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Lisa Dietz",
@@ -5825,7 +6678,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Lisa Grube",
@@ -5843,7 +6698,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "logan.kappert@arconic.com",
@@ -5861,7 +6718,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Lovely Batterman",
@@ -5879,7 +6738,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Maggie Mangieri",
@@ -5897,7 +6758,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Manjula Nandasiri",
@@ -5915,7 +6778,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Manuel Lothschuetz",
@@ -5933,7 +6798,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Marcus R. (Express Personnel) Cardwell",
@@ -5951,7 +6818,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Mark F. Schulenberg",
@@ -5969,7 +6838,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Mark Haynes",
@@ -5987,7 +6858,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Martha Holan",
@@ -6005,7 +6878,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Mary Isaac",
@@ -6023,7 +6898,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "matt.damas@arconic.com",
@@ -6041,7 +6918,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "matthew.riddle@arconic.com",
@@ -6059,7 +6938,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "matthu.harmon@arconic.com",
@@ -6077,7 +6958,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Meagan Fredenberg",
@@ -6095,7 +6978,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Megan Heverley",
@@ -6113,7 +6998,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "megan.grosskopf@arconic.com",
@@ -6131,7 +7018,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Melissa Griffith",
@@ -6149,7 +7038,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Michael Ferguson",
@@ -6167,7 +7058,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Michael Mba",
@@ -6185,7 +7078,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Michael Schneider",
@@ -6203,7 +7098,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Michele Allen",
@@ -6221,7 +7118,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Michelle Morgan",
@@ -6239,7 +7138,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Mike Pritchett",
@@ -6257,7 +7158,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Mitch Hogan",
@@ -6275,7 +7178,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "mykel.shutts@arconic.com",
@@ -6293,7 +7198,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "natala.coyle@arconic.com",
@@ -6311,7 +7218,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Natalia Leymaster",
@@ -6329,7 +7238,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Nathan Sipple",
@@ -6347,7 +7258,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Nathan Wager",
@@ -6365,7 +7278,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Nereyda Sanchez",
@@ -6383,7 +7298,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Nicole Garman",
@@ -6401,7 +7318,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Patricia White",
@@ -6419,7 +7338,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Patrick Morin",
@@ -6437,7 +7358,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Phillip Curran",
@@ -6455,7 +7378,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "phyllis.parks@arconic.com",
@@ -6473,7 +7398,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Randy Brown",
@@ -6491,7 +7418,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Randy Fahrenbach",
@@ -6509,7 +7438,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Rebecca Gillis",
@@ -6527,7 +7458,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "renee.kahle@arconic.com",
@@ -6545,7 +7478,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Rhonda Rose",
@@ -6563,7 +7498,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Richard Dinh",
@@ -6581,7 +7518,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Richard G. Lyon",
@@ -6599,7 +7538,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "richard.mckinney@arconic.com",
@@ -6617,7 +7558,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Robert Cassatt",
@@ -6635,7 +7578,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Robert Gately",
@@ -6653,7 +7598,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Robert Huffman",
@@ -6671,7 +7618,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Robert Kirby",
@@ -6689,7 +7638,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Robert Morrill",
@@ -6707,7 +7658,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Robert Smith",
@@ -6725,7 +7678,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Robert Taylor",
@@ -6743,7 +7698,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Rodney Fink",
@@ -6761,7 +7718,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ronald James",
@@ -6779,7 +7738,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ronald Kennedy",
@@ -6797,7 +7758,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ruby Grant",
@@ -6815,7 +7778,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ryan D Womack",
@@ -6833,7 +7798,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Sally Nemcek",
@@ -6851,7 +7818,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "saman.horneij@arconic.com",
@@ -6869,7 +7838,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Sammy Grindstaff",
@@ -6887,7 +7858,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Sandi Holmes",
@@ -6905,7 +7878,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Sandi Shunkwiler",
@@ -6923,7 +7898,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Sandra Williams",
@@ -6941,7 +7918,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "sanford.gore@arconic.com",
@@ -6959,7 +7938,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Sarah Ells",
@@ -6977,7 +7958,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Sarah Kline",
@@ -6995,7 +7978,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "sarah.sollers@arconic.com",
@@ -7013,7 +7998,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Shaun Stewart",
@@ -7031,7 +8018,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "shaynetta.williams@arconic.com",
@@ -7049,7 +8038,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Shelley Kellar",
@@ -7067,7 +8058,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Shelly Sauls",
@@ -7085,7 +8078,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Sherry Long",
@@ -7103,7 +8098,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Simone Pacheco",
@@ -7121,7 +8118,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Stephen Burda",
@@ -7139,7 +8138,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Stephen Labarge",
@@ -7157,7 +8158,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Steven Willis",
@@ -7175,7 +8178,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Tami S Nedza",
@@ -7193,7 +8198,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Tara Baxter",
@@ -7211,7 +8218,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Terry Tibbits",
@@ -7229,7 +8238,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "thiago.gabriel@arconic.com",
@@ -7247,7 +8258,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Thomas Maddox",
@@ -7265,7 +8278,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Thomas Mataloni",
@@ -7283,7 +8298,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "timothy.hanson@arconic.com",
@@ -7301,7 +8318,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Todd Patterson",
@@ -7319,7 +8338,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Todd Voltz",
@@ -7337,7 +8358,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "todd.smalley@arconic.com",
@@ -7355,7 +8378,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Tony Allen",
@@ -7373,7 +8398,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "tracy.kunert@arconic.com",
@@ -7391,7 +8418,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Travis Hockenbury",
@@ -7409,7 +8438,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Travis Isenbarger",
@@ -7427,7 +8458,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Trisha K McFerrin",
@@ -7445,7 +8478,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Troy Streckeisen",
@@ -7463,7 +8498,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "tyler.hughes@arconic.com",
@@ -7481,7 +8518,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Veronica Webb",
@@ -7499,7 +8538,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Vicki Adkisson",
@@ -7517,7 +8558,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Vyshakh Abraham",
@@ -7535,7 +8578,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "walter.lovette@arconic.com",
@@ -7553,7 +8598,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Wei Wen",
@@ -7571,7 +8618,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Wesley Finai",
@@ -7589,7 +8638,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "william.potter2@arconic.com",
@@ -7607,7 +8658,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Willie L Johnson",
@@ -7625,7 +8678,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Yiming Lin",
@@ -7643,7 +8698,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Ylliana Arnsby",
@@ -7661,7 +8718,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Yolanda Crawford",
@@ -7679,7 +8738,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "zachary.kristophel@arconic.com",
@@ -7697,7 +8758,9 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
     },
     {
       "name": "Zoey Marquardt",
@@ -7715,14 +8778,1028 @@
       "plant": null,
       "area_code": null,
       "has_phone": false,
+      "is_dm": false,
+      "company_id": "2359249037",
+      "plant_id": null
+    },
+    {
+      "name": "Adrian Acosta",
+      "role": "Other",
+      "title": "",
+      "phone": "(520) 467-5836",
+      "mobile": "",
+      "email": "adrian.acosta@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/235210233607",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Sep 3, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Tucson",
+      "plant_id": "kai:Tucson",
+      "area_code": "520",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Ashley Watts",
+      "role": "Load Planner",
+      "title": "Supply Chain Coordinator",
+      "phone": "+1 (615) 762-5637",
+      "mobile": "",
+      "email": "ashley.watts@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/34516001",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "10/05/2026 12:44 PM",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Franklin HQ",
+      "plant_id": "kai:Franklin HQ",
+      "area_code": "615",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Blake Hines",
+      "role": "Other",
+      "title": "",
+      "phone": "866-525-3926",
+      "mobile": "",
+      "email": "blake.hines@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/166883",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": "866",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Christina Boggs",
+      "role": "Other",
+      "title": "",
+      "phone": "+1 (740) 522-0322",
+      "mobile": "",
+      "email": "christina.wandersleben@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/48230102",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Jul 24, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Newark Works",
+      "plant_id": "kai:Newark Works",
+      "area_code": "740",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Darrell Evans",
+      "role": "Other",
+      "title": "",
+      "phone": "731-423-2811 ext. 2205",
+      "mobile": "",
+      "email": "darrell.evans@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/25056823047",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Aug 12, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Jackson",
+      "plant_id": "kai:Jackson",
+      "area_code": "731",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Evan Quinley",
+      "role": "Other",
+      "title": "",
+      "phone": "+1 (949) 614-1740",
+      "mobile": "",
+      "email": "evan.quinley@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/29381251",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Foothill Ranch",
+      "plant_id": "kai:Foothill Ranch",
+      "area_code": "949",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Janna Dunnavent",
+      "role": "Other",
+      "title": "",
+      "phone": "+1 (731) 423-2811",
+      "mobile": "",
+      "email": "janna.dunnavent@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/46195191424",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "May 4, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Jackson",
+      "plant_id": "kai:Jackson",
+      "area_code": "731",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Jodi Beckstedt",
+      "role": "Other",
+      "title": "",
+      "phone": "+1 (740) 225-8553",
+      "mobile": "",
+      "email": "jodi.beckstedt@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/28795801",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Newark Works",
+      "plant_id": "kai:Newark Works",
+      "area_code": "740",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Joshua Hazelwood",
+      "role": "Other",
+      "title": "",
+      "phone": "+1 (865) 381-4157",
+      "mobile": "",
+      "email": "joshua.hazelwood@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/51563551",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Sep 28, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Knoxville",
+      "plant_id": "kai:Knoxville",
+      "area_code": "865",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Keith Bookout",
+      "role": "Other",
+      "title": "",
+      "phone": "865.381.4146",
+      "mobile": "",
+      "email": "keith.bookout@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/729651",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Oct 1, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Knoxville",
+      "plant_id": "kai:Knoxville",
+      "area_code": "865",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Kevin Matthews",
+      "role": "Other",
+      "title": "",
+      "phone": "731-423-2811 ext. 2510",
+      "mobile": "",
+      "email": "kevin.matthews@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/20260733003",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Aug 12, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Jackson",
+      "plant_id": "kai:Jackson",
+      "area_code": "731",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Laquita Thornton",
+      "role": "Other",
+      "title": "",
+      "phone": "+1 509-420-9541",
+      "mobile": "",
+      "email": "la'quita.thornton@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/250709154616",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Sep 25, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Trentwood Works",
+      "plant_id": "kai:Trentwood Works",
+      "area_code": "509",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Lindsay Cox",
+      "role": "Other",
+      "title": "",
+      "phone": "615-209-8898",
+      "mobile": "",
+      "email": "lindsay.cox@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/27069751",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Franklin HQ",
+      "plant_id": "kai:Franklin HQ",
+      "area_code": "615",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Lisa Mills",
+      "role": "Other",
+      "title": "",
+      "phone": "865-381-4142",
+      "mobile": "",
+      "email": "lisa.mills@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/25733301",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Knoxville",
+      "plant_id": "kai:Knoxville",
+      "area_code": "865",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Michael Coppotelli",
+      "role": "Other",
+      "title": "",
+      "phone": "812-965-4836",
+      "mobile": "",
+      "email": "michael.coppotelli@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/51701852",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Warrick",
+      "plant_id": "kai:Warrick",
+      "area_code": "812",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Michael Kirk",
+      "role": "Other",
+      "title": "",
+      "phone": "+1 (949) 614-1740",
+      "mobile": "",
+      "email": "michael.kirk@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/29380251",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Foothill Ranch",
+      "plant_id": "kai:Foothill Ranch",
+      "area_code": "949",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Michelle King",
+      "role": "Traffic",
+      "title": "Warrick Transportation Analyst",
+      "phone": "812.853.4474",
+      "mobile": "",
+      "email": "michelle.king@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/446701",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "10/05/2026 11:40 AM",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Warrick",
+      "plant_id": "kai:Warrick",
+      "area_code": "812",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Mike Ahern",
+      "role": "Other",
+      "title": "",
+      "phone": "269-250-8462",
+      "mobile": "",
+      "email": "mike.ahern@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/6825201",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Feb 17, 2025",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Kalamazoo",
+      "plant_id": "kai:Kalamazoo",
+      "area_code": "269",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Natalie Burt",
+      "role": "Other",
+      "title": "",
+      "phone": "(630) 326-5941",
+      "mobile": "",
+      "email": "natalie.burt@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/32751001",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": "630",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Nick Gorman",
+      "role": "Other",
+      "title": "",
+      "phone": "740-522-0379",
+      "mobile": "",
+      "email": "nick.gorman@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/29595201",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Jul 31, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Newark Works",
+      "plant_id": "kai:Newark Works",
+      "area_code": "740",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Pilar Alvarez",
+      "role": "Other",
+      "title": "",
+      "phone": "949-614-1740",
+      "mobile": "",
+      "email": "pilar.alvarez@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/6825251",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Sep 10, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Foothill Ranch",
+      "plant_id": "kai:Foothill Ranch",
+      "area_code": "949",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Rob Matuska",
+      "role": "Other",
+      "title": "",
+      "phone": "(740) 522-0416",
+      "mobile": "",
+      "email": "rob.matuska@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/28904301",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Newark Works",
+      "plant_id": "kai:Newark Works",
+      "area_code": "740",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Shannon Hafeez",
+      "role": "Traffic",
+      "title": "Logistics Analyst",
+      "phone": "865.381.4149",
+      "mobile": "",
+      "email": "shannon.hafeez@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/17921301",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Oct 2, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Knoxville",
+      "plant_id": "kai:Knoxville",
+      "area_code": "865",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Tamara Wagner-Marion",
+      "role": "Other",
+      "title": "",
+      "phone": "812-853-1038",
+      "mobile": "",
+      "email": "tamara.wagner-marion@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/22322951",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Warrick",
+      "plant_id": "kai:Warrick",
+      "area_code": "812",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Trent Roybal",
+      "role": "Load Planner",
+      "title": "Production Control",
+      "phone": "509-420-9623",
+      "mobile": "",
+      "email": "trent.roybal@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/203866478699",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Oct 2, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": "Trentwood Works",
+      "plant_id": "kai:Trentwood Works",
+      "area_code": "509",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "WAR Delivery",
+      "role": "Other",
+      "title": "",
+      "phone": "2002061235",
+      "mobile": "",
+      "email": "waringotdelivery@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/24437051",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Sep 21, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": "200",
+      "has_phone": true,
+      "is_dm": false
+    },
+    {
+      "name": "Aaron Suffridge",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "aaron.suffridge@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/10579951",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Charonda Westley",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "charonda.westley@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/53258052",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Jun 29, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Douglas Soule",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "douglas.soule@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/1279751",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Edward Frasier",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "edward.frasier@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/250709154617",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Sep 25, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Freddy Espinoza",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "freddy.espinoza@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/83465912494",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Dec 10, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "James Kelly",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "james.kelly@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/83465912495",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Jun 29, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Jesus Ybarra",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "jesus.ybarra@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/83342330880",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Jun 29, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Joel Metelko",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "joel.metelko@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/24826401",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Leland Finney",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "leland.finney@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/245592611969",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Aug 31, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Luis Myzel",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "luis.myzel@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/231460150092",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Jun 26, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Melody Sinclair",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "melody.sinclair@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/840662",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Mike Meza",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "mike.meza@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/235210233606",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Aug 31, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Nick Badgett",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "nick.badgett@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/28904251",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Oliver Nieto",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "oliver.nieto@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/53258053",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Renia Johnson",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "renia.johnson@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/114758119453",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Apr 17, 2025",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Robbie Cox",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "robbie.cox@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/31579651",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Aug 19, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Roberto Villagomez",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "roberto.villagomez@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/244774836387",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Aug 31, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Rueben Zamora",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "rueben.zamora@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/245592616964",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Sep 3, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Ryan Shoener",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "ryan.shoener@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/28734251",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Shawn Losey",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "shawn.losey@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/1889151",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Sherry Hall",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "sherry.hall@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/28795401",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Trae Witherspoon",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "trae.witherspoon@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/25056823046",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Aug 4, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "William Abarca",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "william.abarca@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/244774836386",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Aug 27, 2026",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
+      "is_dm": false
+    },
+    {
+      "name": "Ylliana Arnsby",
+      "role": "Other",
+      "title": "",
+      "phone": "",
+      "mobile": "",
+      "email": "ylliana.arnsby@kaiseraluminum.com",
+      "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/27799801",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "last_activity": "Nov 14, 2024",
+      "notes": "Title not scraped",
+      "am": "Simran Subramanian",
+      "company": "Kaiser Aluminum",
+      "company_id": "5360206404",
+      "plant": null,
+      "plant_id": null,
+      "area_code": null,
+      "has_phone": false,
       "is_dm": false
     }
   ],
   "stats": {
-    "contacts": 419,
-    "with_phone": 168,
+    "contacts": 469,
+    "with_phone": 194,
     "decision_makers": 2,
-    "plant_assigned": 137,
-    "pins": 6
+    "plant_assigned": 160,
+    "pins": 15,
+    "by_company": {
+      "Arconic": {
+        "contacts": 419,
+        "with_phone": 168,
+        "pins": 6
+      },
+      "Kaiser Aluminum": {
+        "contacts": 50,
+        "with_phone": 26,
+        "pins": 9
+      }
+    }
   }
 }

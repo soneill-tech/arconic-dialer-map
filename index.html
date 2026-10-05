@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Team Steve — Arconic Dialer Map</title>
+<title>Team Steve — Closed Won Dialer Map</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <style>
   :root {
@@ -119,6 +119,11 @@
     padding: 8px 12px; font-size: .72rem; color: var(--muted); max-width: 260px;
   }
   .map-wrap { position: relative; min-height: 0; }
+  .dot { display:inline-block; width:10px; height:10px; border-radius:50%; border:1px solid #fff; vertical-align:middle; }
+  .group-h { margin: 14px 14px 2px; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); display:flex; align-items:center; gap:6px; }
+  .loc-card.kai:hover, .loc-card.kai.active { border-color: #f97316; }
+  .loc-card.kai.active { box-shadow: 0 0 0 1px #f97316; }
+  .co-tag { font-size: .68rem; color: var(--muted); margin-top: 2px; }
   footer {
     padding: 8px 16px; font-size: .72rem; color: var(--muted);
     border-top: 1px solid var(--border); background: var(--panel);
@@ -128,8 +133,8 @@
 <body>
 <header>
   <div>
-    <h1>Arconic Dialer Map</h1>
-    <div class="sub">Team Steve · Kahekili Barrozo · Closed Won</div>
+    <h1>Team Steve — Closed Won Dialer Map</h1>
+    <div class="sub">Arconic (Kahekili Barrozo) · Kaiser Aluminum (Simran Subramanian)</div>
   </div>
   <span class="badge" id="statBadge">Loading…</span>
   <div class="controls">
@@ -138,7 +143,7 @@
       <button type="button" data-am="Kahekili Barrozo">Kahekili</button>
       <button type="button" data-am="Simran Subramanian">Simran</button>
     </div>
-    <input type="search" id="search" placeholder="Search name, email, phone, plant…" />
+    <input type="search" id="search" placeholder="Search name, email, phone, plant, company…" />
   </div>
 </header>
 
@@ -154,7 +159,8 @@
       <div class="fallback-grid" id="fallbackGrid"></div>
     </div>
     <div class="legend">
-      Plant pins = city-level HQ/works. Contacts assigned by phone area code when known; otherwise Unassigned.
+      <div><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran)</div>
+      <div style="margin-top:4px">Pins = city-level plants/HQ. Contacts assigned by phone area code when known; otherwise Unassigned.</div>
     </div>
   </div>
   <aside class="detail">
@@ -164,7 +170,8 @@
 </div>
 
 <footer>
-  Scope: Arconic only (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/2359249037" style="color:var(--accent)" target="_blank" rel="noopener">2359249037</a>).
+  Scope: Arconic (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/2359249037" style="color:var(--accent)" target="_blank" rel="noopener">2359249037</a>, Kahekili Barrozo) +
+  Kaiser Aluminum (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/5360206404" style="color:var(--accent)" target="_blank" rel="noopener">5360206404</a>, Simran Subramanian).
   Data bundled in <code>data.json</code>. Read-only · no HubSpot writes.
 </footer>
 
@@ -172,7 +179,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 (async function () {
-  let DATA = window.__ARCONIC_DATA__;
+  let DATA = window.__DIALER_DATA__;
   if (!DATA) {
     const res = await fetch("data.json");
     DATA = await res.json();
@@ -180,7 +187,7 @@
 
   let amFilter = "all";
   let searchQ = "";
-  let selectedLocId = "all";
+  let selectedLocId = "team:all";
   const markers = {};
 
   const el = (id) => document.getElementById(id);
@@ -190,8 +197,16 @@
     return c.am === amFilter;
   }
 
+  const COLORS = { "Arconic": "#3b82f6", "Kaiser Aluminum": "#f97316" };
+  const AM_SHORT = { "Kahekili Barrozo": "Kahekili", "Simran Subramanian": "Simran" };
+  // Virtual "everything" location across both companies
+  DATA.locations.unshift({ id: "team:all", name: "All Team Steve", label: "All companies (Arconic + Kaiser)",
+    filter: "all", company: null, am: null, pin: false, city: null,
+    hint: "Every contact across both Closed Won accounts",
+    contact_count: DATA.stats.contacts, with_phone: DATA.stats.with_phone, dm_count: DATA.stats.decision_makers });
+
   function locMatchesAM(loc) {
-    if (amFilter === "all") return true;
+    if (amFilter === "all" || !loc.am) return true;
     return loc.am === amFilter;
   }
 
@@ -199,12 +214,13 @@
     const q = searchQ.trim().toLowerCase();
     return DATA.contacts.filter((c) => {
       if (!contactMatchesAM(c)) return false;
+      if (loc.company && c.company !== loc.company) return false;
       if (loc.filter === "all") { /* keep */ }
       else if (loc.filter === "unassigned") {
         if (c.plant) return false;
-      } else if (c.plant !== loc.filter) return false;
+      } else if (c.plant_id !== loc.filter) return false;
       if (!q) return true;
-      const blob = [c.name, c.email, c.phone, c.mobile, c.title, c.role, c.plant || "unassigned", c.notes]
+      const blob = [c.name, c.email, c.phone, c.mobile, c.title, c.role, c.plant || "unassigned", c.notes, c.company, c.am]
         .join(" ").toLowerCase();
       return blob.includes(q);
     });
@@ -213,13 +229,24 @@
   function renderLocList() {
     const list = el("locList");
     list.innerHTML = "";
+    let lastGroup = undefined;
     DATA.locations.filter(locMatchesAM).forEach((loc) => {
+      const group = loc.company || "";
+      if (group !== lastGroup) {
+        lastGroup = group;
+        if (group) {
+          const h = document.createElement("div");
+          h.className = "group-h";
+          h.innerHTML = `<span class="dot" style="background:${COLORS[group] || "#888"}"></span>${esc(group)} · ${esc(AM_SHORT[loc.am] || loc.am || "")}`;
+          list.appendChild(h);
+        }
+      }
       const n = filteredContactsForLoc(loc).length;
       const card = document.createElement("div");
-      card.className = "loc-card" + (loc.id === selectedLocId ? " active" : "");
+      card.className = "loc-card" + (loc.company === "Kaiser Aluminum" ? " kai" : "") + (loc.id === selectedLocId ? " active" : "");
       card.innerHTML = `
         <div class="name">${esc(loc.label || loc.name)}</div>
-        <div class="meta">${esc(loc.city ? loc.city + (loc.region ? " · city-level" : "") : "No map pin")}
+        <div class="meta">${esc(loc.pin ? loc.city + " · city-level pin" : "No map pin")}
           ${loc.hint ? "<br/>" + esc(loc.hint) : ""}</div>
         <div class="stats">
           <span class="pill"><strong>${n}</strong> shown</span>
@@ -261,6 +288,7 @@
           <div>
             <div class="cname">${esc(c.name || "(no name)")}</div>
             ${c.title ? `<div class="title">${esc(c.title)}</div>` : `<div class="title" style="opacity:.5">Title not scraped</div>`}
+            <div class="co-tag"><span class="dot" style="background:${COLORS[c.company] || "#888"};width:8px;height:8px"></span> ${esc(c.company)} · ${esc(AM_SHORT[c.am] || c.am)}</div>
           </div>
           <span class="role-tag ${c.is_dm ? "dm" : ""}">${esc(c.role || "Other")}</span>
         </div>
@@ -270,8 +298,13 @@
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
           ${c.hubspot_url ? `<div><a href="${esc(c.hubspot_url)}" target="_blank" rel="noopener">Open in HubSpot →</a></div>` : ""}
         </div>
-        ${c.plant ? `<div class="plant-tag">Inferred plant: ${esc(c.plant)} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
+        ${c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
       </div>`).join("");
+  }
+
+  function plantLabel(c) {
+    const l = DATA.locations.find((x) => x.id === c.plant_id);
+    return l ? (l.label || l.name) : c.plant;
   }
 
   function esc(s) {
@@ -285,6 +318,10 @@
     renderLocList();
     renderDetail();
     const loc = DATA.locations.find((l) => l.id === id);
+    if (fly && loc && !loc.pin && map && Object.keys(markers).length) {
+      const pts = DATA.locations.filter((l) => l.pin && locMatchesAM(l) && (!loc.company || l.company === loc.company)).map((l) => [l.lat, l.lon]);
+      if (pts.length) map.flyToBounds(pts, { padding: [40, 40], duration: 0.6 });
+    }
     if (fly && loc && loc.pin && loc.lat != null && map) {
       map.flyTo([loc.lat, loc.lon], 8, { duration: 0.6 });
       const m = markers[id];
@@ -293,16 +330,22 @@
   }
 
   // Stats badge
-  const st = DATA.stats;
-  el("statBadge").innerHTML = `<strong>${st.contacts}</strong> contacts · <strong>${st.with_phone}</strong> phone · <strong>${st.pins}</strong> plant pins · <strong>${st.decision_makers}</strong> DM`;
+  function renderStats() {
+    const cs = DATA.contacts.filter(contactMatchesAM);
+    const pins = DATA.locations.filter((l) => l.pin && locMatchesAM(l)).length;
+    el("statBadge").innerHTML = `<strong>${cs.length}</strong> contacts · <strong>${cs.filter((c) => c.has_phone).length}</strong> phone · <strong>${pins}</strong> plant pins · <strong>${cs.filter((c) => c.is_dm).length}</strong> DM`;
+  }
+  renderStats();
 
-  // AM filter (Simran has no Arconic rows — empty is OK)
+  // AM filter: All / Kahekili (Arconic) / Simran (Kaiser)
   el("amFilter").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-am]");
     if (!btn) return;
     amFilter = btn.dataset.am;
     el("amFilter").querySelectorAll("button").forEach((b) => b.classList.toggle("active", b === btn));
-    // refresh marker visibility via rebuild list / detail
+    const cur = DATA.locations.find((l) => l.id === selectedLocId);
+    if (!cur || !locMatchesAM(cur)) selectedLocId = "team:all";
+    renderStats();
     renderLocList();
     renderDetail();
     updateMarkerVisibility();
@@ -332,13 +375,13 @@
     DATA.locations.filter((l) => l.pin && l.lat != null).forEach((loc) => {
       const icon = L.divIcon({
         className: "",
-        html: `<div style="background:#3b82f6;width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 3px rgba(59,130,246,.35)"></div>`,
+        html: `<div style="background:${COLORS[loc.company] || "#3b82f6"};width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 3px rgba(0,0,0,.25)"></div>`,
         iconSize: [14, 14],
         iconAnchor: [7, 7],
       });
       const m = L.marker([loc.lat, loc.lon], { icon })
         .addTo(map)
-        .bindPopup(`<strong>${esc(loc.label)}</strong><br/>${esc(loc.city || "")}<br/><span style="color:#8b9bb4">${loc.contact_count} contacts (AC-inferred)</span>`);
+        .bindPopup(`<strong>${esc(loc.label)}</strong><br/>${esc(loc.company)} · ${esc(AM_SHORT[loc.am] || loc.am)}<br/><span style="color:#8b9bb4">${loc.contact_count} contacts · ${loc.with_phone} w/ phone (AC-inferred)</span>`);
       m.on("click", () => selectLoc(loc.id, false));
       markers[loc.id] = m;
       bounds.push([loc.lat, loc.lon]);
@@ -367,10 +410,12 @@
         if (map.hasLayer(m)) map.removeLayer(m);
       }
     });
+    const pts = DATA.locations.filter((l) => l.pin && l.lat != null && locMatchesAM(l)).map((l) => [l.lat, l.lon]);
+    if (pts.length) map.flyToBounds(pts, { padding: [40, 40], duration: 0.6 });
   }
 
   renderLocList();
-  selectLoc("all", false);
+  selectLoc("team:all", false);
 })();
 </script>
 </body>

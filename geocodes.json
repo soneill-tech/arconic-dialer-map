@@ -40,5 +40,68 @@
     "lat": 35.7847143,
     "lon": -83.986599,
     "source": "nominatim"
+  },
+  "Kaiser · Trentwood Works": {
+    "city": "Spokane Valley",
+    "region": "Spokane Valley, Washington, USA",
+    "lat": 47.6571104,
+    "lon": -117.2613936,
+    "source": "nominatim"
+  },
+  "Kaiser · Warrick": {
+    "city": "Newburgh",
+    "region": "Newburgh, Indiana, USA",
+    "lat": 37.9456824,
+    "lon": -87.4046571,
+    "source": "nominatim"
+  },
+  "Kaiser · Knoxville": {
+    "city": "Knoxville",
+    "region": "Knoxville, Tennessee, USA",
+    "lat": 35.9603948,
+    "lon": -83.9210261,
+    "source": "nominatim"
+  },
+  "Kaiser · Franklin HQ": {
+    "city": "Franklin",
+    "region": "Franklin, Tennessee, USA",
+    "lat": 35.925206,
+    "lon": -86.8689419,
+    "source": "nominatim"
+  },
+  "Kaiser · Tucson": {
+    "city": "Tucson",
+    "region": "Tucson, Arizona, USA",
+    "lat": 32.2228765,
+    "lon": -110.974847,
+    "source": "nominatim"
+  },
+  "Kaiser · Newark Works": {
+    "city": "Heath",
+    "region": "Heath, Ohio, USA",
+    "lat": 40.0228421,
+    "lon": -82.4445991,
+    "source": "nominatim"
+  },
+  "Kaiser · Jackson": {
+    "city": "Jackson",
+    "region": "Jackson, Tennessee, USA",
+    "lat": 35.6144446,
+    "lon": -88.8177418,
+    "source": "nominatim"
+  },
+  "Kaiser · Foothill Ranch": {
+    "city": "Foothill Ranch",
+    "region": "Foothill Ranch, California, USA",
+    "lat": 33.6849918,
+    "lon": -117.6590428,
+    "source": "nominatim"
+  },
+  "Kaiser · Kalamazoo": {
+    "city": "Kalamazoo",
+    "region": "Kalamazoo, Michigan, USA",
+    "lat": 42.291707,
+    "lon": -85.5872286,
+    "source": "nominatim"
   }
 }
