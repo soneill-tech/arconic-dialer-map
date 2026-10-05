@@ -1,0 +1,44 @@
+{
+  "Arconic HQ / Pittsburgh": {
+    "city": "Pittsburgh",
+    "region": "Pittsburgh, Pennsylvania, USA",
+    "lat": 40.4406968,
+    "lon": -80.0025666,
+    "source": "nominatim"
+  },
+  "Davenport Works": {
+    "city": "Davenport",
+    "region": "Davenport, Iowa, USA",
+    "lat": 41.5224692,
+    "lon": -90.5756401,
+    "source": "nominatim"
+  },
+  "Lafayette": {
+    "city": "Lafayette",
+    "region": "Lafayette, Indiana, USA",
+    "lat": 40.4191229,
+    "lon": -86.8919011,
+    "source": "nominatim"
+  },
+  "Lancaster": {
+    "city": "Lancaster",
+    "region": "Lancaster, Pennsylvania, USA",
+    "lat": 40.0379958,
+    "lon": -76.3056707,
+    "source": "nominatim"
+  },
+  "Massena": {
+    "city": "Massena",
+    "region": "Massena, New York, USA",
+    "lat": 44.9300823,
+    "lon": -74.8922422,
+    "source": "nominatim"
+  },
+  "Tennessee Operations (Alcoa)": {
+    "city": "Alcoa",
+    "region": "Alcoa, Tennessee, USA",
+    "lat": 35.7847143,
+    "lon": -83.986599,
+    "source": "nominatim"
+  }
+}

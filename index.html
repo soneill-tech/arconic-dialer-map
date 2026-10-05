@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Team Steve — Arconic Dialer Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel: #1a2332;
+    --panel2: #243044;
+    --border: #2d3a4f;
+    --text: #e8eef7;
+    --muted: #8b9bb4;
+    --accent: #3b82f6;
+    --accent2: #22c55e;
+    --warn: #f59e0b;
+    --dm: #a78bfa;
+    --danger: #ef4444;
+    --card: #1e2a3d;
+    --shadow: 0 8px 32px rgba(0,0,0,.45);
+    --radius: 12px;
+    --font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; font-family: var(--font); background: var(--bg); color: var(--text); }
+  body { display: flex; flex-direction: column; }
+  header {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    padding: 12px 18px; background: var(--panel); border-bottom: 1px solid var(--border);
+    z-index: 1000;
+  }
+  header h1 { font-size: 1.05rem; margin: 0; font-weight: 650; letter-spacing: -.01em; }
+  header .sub { color: var(--muted); font-size: .8rem; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--panel2); border: 1px solid var(--border);
+    padding: 4px 10px; border-radius: 999px; font-size: .75rem; color: var(--muted);
+  }
+  .badge strong { color: var(--text); }
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; margin-left: auto; align-items: center; }
+  .controls input[type="search"] {
+    background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    padding: 8px 12px; border-radius: 8px; min-width: 200px; outline: none;
+  }
+  .controls input[type="search"]:focus { border-color: var(--accent); }
+  .seg {
+    display: inline-flex; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  }
+  .seg button {
+    background: transparent; border: 0; color: var(--muted); padding: 8px 12px; cursor: pointer; font-size: .8rem;
+  }
+  .seg button.active { background: var(--accent); color: #fff; }
+  .layout { flex: 1; display: grid; grid-template-columns: 320px 1fr 400px; min-height: 0; }
+  @media (max-width: 1100px) {
+    .layout { grid-template-columns: 1fr; grid-template-rows: 220px 40vh 1fr; }
+  }
+  .sidebar, .detail {
+    background: var(--panel); border-right: 1px solid var(--border); overflow: auto; min-height: 0;
+  }
+  .detail { border-right: 0; border-left: 1px solid var(--border); }
+  .sidebar h2, .detail h2 {
+    margin: 0; padding: 14px 16px 8px; font-size: .75rem; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--muted); position: sticky; top: 0; background: var(--panel); z-index: 2;
+  }
+  .loc-card {
+    margin: 8px 12px; padding: 12px 14px; background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); cursor: pointer; transition: border-color .15s, transform .15s;
+  }
+  .loc-card:hover, .loc-card.active { border-color: var(--accent); transform: translateY(-1px); }
+  .loc-card.active { box-shadow: 0 0 0 1px var(--accent); }
+  .loc-card .name { font-weight: 600; font-size: .95rem; }
+  .loc-card .meta { color: var(--muted); font-size: .78rem; margin-top: 4px; line-height: 1.4; }
+  .loc-card .stats { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .pill {
+    font-size: .7rem; padding: 2px 8px; border-radius: 999px; background: var(--panel2); color: var(--muted);
+  }
+  .pill.phone { color: var(--accent2); }
+  .pill.dm { color: var(--dm); }
+  #map { height: 100%; min-height: 280px; background: #0b1220; }
+  .map-fallback {
+    display: none; padding: 16px; height: 100%; overflow: auto; background: var(--bg);
+  }
+  .map-fallback.show { display: block; }
+  .fallback-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .fallback-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 16px; cursor: pointer; min-height: 110px;
+  }
+  .fallback-card:hover { border-color: var(--accent); }
+  .detail-empty {
+    padding: 40px 24px; color: var(--muted); text-align: center; font-size: .9rem;
+  }
+  .contact {
+    margin: 8px 12px; padding: 12px 14px; background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .contact .top { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+  .contact .cname { font-weight: 600; }
+  .contact .role-tag {
+    font-size: .65rem; text-transform: uppercase; letter-spacing: .04em;
+    padding: 2px 7px; border-radius: 6px; background: var(--panel2); color: var(--muted); white-space: nowrap;
+  }
+  .contact .role-tag.dm { background: rgba(167,139,250,.15); color: var(--dm); }
+  .contact .title { color: var(--muted); font-size: .8rem; margin-top: 2px; }
+  .contact .rows { margin-top: 8px; display: grid; gap: 4px; font-size: .82rem; }
+  .contact a { color: var(--accent); text-decoration: none; }
+  .contact a:hover { text-decoration: underline; }
+  .contact .plant-tag { font-size: .7rem; color: var(--warn); margin-top: 6px; }
+  .leaflet-container { background: #0b1220; font: 12px/1.4 var(--font); }
+  .pin-label {
+    background: var(--panel); color: var(--text); border: 1px solid var(--border);
+    padding: 2px 6px; border-radius: 4px; font-size: 11px; white-space: nowrap;
+  }
+  .legend {
+    position: absolute; bottom: 16px; left: 16px; z-index: 500;
+    background: rgba(26,35,50,.92); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 12px; font-size: .72rem; color: var(--muted); max-width: 260px;
+  }
+  .map-wrap { position: relative; min-height: 0; }
+  footer {
+    padding: 8px 16px; font-size: .72rem; color: var(--muted);
+    border-top: 1px solid var(--border); background: var(--panel);
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Arconic Dialer Map</h1>
+    <div class="sub">Team Steve · Kahekili Barrozo · Closed Won</div>
+  </div>
+  <span class="badge" id="statBadge">Loading…</span>
+  <div class="controls">
+    <div class="seg" id="amFilter" title="Account Manager">
+      <button type="button" data-am="all" class="active">All</button>
+      <button type="button" data-am="Kahekili Barrozo">Kahekili</button>
+      <button type="button" data-am="Simran Subramanian">Simran</button>
+    </div>
+    <input type="search" id="search" placeholder="Search name, email, phone, plant…" />
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h2>Locations</h2>
+    <div id="locList"></div>
+  </aside>
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div id="mapFallback" class="map-fallback">
+      <p style="color:var(--muted);margin:0 0 12px">Map tiles unavailable — use location cards:</p>
+      <div class="fallback-grid" id="fallbackGrid"></div>
+    </div>
+    <div class="legend">
+      Plant pins = city-level HQ/works. Contacts assigned by phone area code when known; otherwise Unassigned.
+    </div>
+  </div>
+  <aside class="detail">
+    <h2 id="detailTitle">Contacts</h2>
+    <div id="detailBody"><div class="detail-empty">Select a location pin or card to view contacts.<br/>Sorted: Decision Maker → phone → name.</div></div>
+  </aside>
+</div>
+
+<footer>
+  Scope: Arconic only (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/2359249037" style="color:var(--accent)" target="_blank" rel="noopener">2359249037</a>).
+  Data bundled in <code>data.json</code>. Read-only · no HubSpot writes.
+</footer>
+
+<script src="data.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+(async function () {
+  let DATA = window.__ARCONIC_DATA__;
+  if (!DATA) {
+    const res = await fetch("data.json");
+    DATA = await res.json();
+  }
+
+  let amFilter = "all";
+  let searchQ = "";
+  let selectedLocId = "all";
+  const markers = {};
+
+  const el = (id) => document.getElementById(id);
+
+  function contactMatchesAM(c) {
+    if (amFilter === "all") return true;
+    return c.am === amFilter;
+  }
+
+  function locMatchesAM(loc) {
+    if (amFilter === "all") return true;
+    return loc.am === amFilter;
+  }
+
+  function filteredContactsForLoc(loc) {
+    const q = searchQ.trim().toLowerCase();
+    return DATA.contacts.filter((c) => {
+      if (!contactMatchesAM(c)) return false;
+      if (loc.filter === "all") { /* keep */ }
+      else if (loc.filter === "unassigned") {
+        if (c.plant) return false;
+      } else if (c.plant !== loc.filter) return false;
+      if (!q) return true;
+      const blob = [c.name, c.email, c.phone, c.mobile, c.title, c.role, c.plant || "unassigned", c.notes]
+        .join(" ").toLowerCase();
+      return blob.includes(q);
+    });
+  }
+
+  function renderLocList() {
+    const list = el("locList");
+    list.innerHTML = "";
+    DATA.locations.filter(locMatchesAM).forEach((loc) => {
+      const n = filteredContactsForLoc(loc).length;
+      const card = document.createElement("div");
+      card.className = "loc-card" + (loc.id === selectedLocId ? " active" : "");
+      card.innerHTML = `
+        <div class="name">${esc(loc.label || loc.name)}</div>
+        <div class="meta">${esc(loc.city ? loc.city + (loc.region ? " · city-level" : "") : "No map pin")}
+          ${loc.hint ? "<br/>" + esc(loc.hint) : ""}</div>
+        <div class="stats">
+          <span class="pill"><strong>${n}</strong> shown</span>
+          <span class="pill phone">${loc.with_phone} w/ phone</span>
+          ${loc.dm_count ? `<span class="pill dm">${loc.dm_count} DM</span>` : ""}
+        </div>`;
+      card.onclick = () => selectLoc(loc.id, true);
+      list.appendChild(card);
+    });
+    renderFallback();
+  }
+
+  function renderFallback() {
+    const grid = el("fallbackGrid");
+    grid.innerHTML = "";
+    DATA.locations.filter((l) => l.pin && locMatchesAM(l)).forEach((loc) => {
+      const card = document.createElement("div");
+      card.className = "fallback-card";
+      card.innerHTML = `<div style="font-weight:600">${esc(loc.label)}</div>
+        <div style="color:var(--muted);font-size:.8rem;margin-top:6px">${esc(loc.city || "")}</div>
+        <div style="margin-top:10px" class="pill">${filteredContactsForLoc(loc).length} contacts</div>`;
+      card.onclick = () => selectLoc(loc.id, false);
+      grid.appendChild(card);
+    });
+  }
+
+  function renderDetail() {
+    const loc = DATA.locations.find((l) => l.id === selectedLocId) || DATA.locations[0];
+    const contacts = filteredContactsForLoc(loc);
+    el("detailTitle").textContent = `${loc.label || loc.name} · ${contacts.length} contacts`;
+    const body = el("detailBody");
+    if (!contacts.length) {
+      body.innerHTML = `<div class="detail-empty">No contacts match this filter/search.</div>`;
+      return;
+    }
+    body.innerHTML = contacts.map((c) => `
+      <div class="contact">
+        <div class="top">
+          <div>
+            <div class="cname">${esc(c.name || "(no name)")}</div>
+            ${c.title ? `<div class="title">${esc(c.title)}</div>` : `<div class="title" style="opacity:.5">Title not scraped</div>`}
+          </div>
+          <span class="role-tag ${c.is_dm ? "dm" : ""}">${esc(c.role || "Other")}</span>
+        </div>
+        <div class="rows">
+          ${c.phone ? `<div>📞 <a href="tel:${esc(c.phone)}">${esc(c.phone)}</a></div>` : `<div style="color:var(--muted)">📞 —</div>`}
+          ${c.mobile ? `<div>📱 <a href="tel:${esc(c.mobile)}">${esc(c.mobile)}</a></div>` : ""}
+          ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
+          ${c.hubspot_url ? `<div><a href="${esc(c.hubspot_url)}" target="_blank" rel="noopener">Open in HubSpot →</a></div>` : ""}
+        </div>
+        ${c.plant ? `<div class="plant-tag">Inferred plant: ${esc(c.plant)} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
+      </div>`).join("");
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function selectLoc(id, fly) {
+    selectedLocId = id;
+    renderLocList();
+    renderDetail();
+    const loc = DATA.locations.find((l) => l.id === id);
+    if (fly && loc && loc.pin && loc.lat != null && map) {
+      map.flyTo([loc.lat, loc.lon], 8, { duration: 0.6 });
+      const m = markers[id];
+      if (m) m.openPopup();
+    }
+  }
+
+  // Stats badge
+  const st = DATA.stats;
+  el("statBadge").innerHTML = `<strong>${st.contacts}</strong> contacts · <strong>${st.with_phone}</strong> phone · <strong>${st.pins}</strong> plant pins · <strong>${st.decision_makers}</strong> DM`;
+
+  // AM filter (Simran has no Arconic rows — empty is OK)
+  el("amFilter").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-am]");
+    if (!btn) return;
+    amFilter = btn.dataset.am;
+    el("amFilter").querySelectorAll("button").forEach((b) => b.classList.toggle("active", b === btn));
+    // refresh marker visibility via rebuild list / detail
+    renderLocList();
+    renderDetail();
+    updateMarkerVisibility();
+  });
+
+  el("search").addEventListener("input", (e) => {
+    searchQ = e.target.value;
+    renderLocList();
+    renderDetail();
+  });
+
+  // Map
+  let map = null;
+  try {
+    map = L.map("map", { zoomControl: true, attributionControl: true })
+      .setView([39.8, -89.5], 5);
+    const tiles = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+      attribution: "Tiles &copy; Esri",
+      maxZoom: 19,
+    });
+    tiles.on("tileerror", () => {
+      // soft fallback if many tile errors — show cards too
+    });
+    tiles.addTo(map);
+
+    const bounds = [];
+    DATA.locations.filter((l) => l.pin && l.lat != null).forEach((loc) => {
+      const icon = L.divIcon({
+        className: "",
+        html: `<div style="background:#3b82f6;width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 3px rgba(59,130,246,.35)"></div>`,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+      });
+      const m = L.marker([loc.lat, loc.lon], { icon })
+        .addTo(map)
+        .bindPopup(`<strong>${esc(loc.label)}</strong><br/>${esc(loc.city || "")}<br/><span style="color:#8b9bb4">${loc.contact_count} contacts (AC-inferred)</span>`);
+      m.on("click", () => selectLoc(loc.id, false));
+      markers[loc.id] = m;
+      bounds.push([loc.lat, loc.lon]);
+    });
+    if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
+
+    // If Leaflet fails to load tiles after a while, keep map but cards always available in sidebar
+    setTimeout(() => {
+      // ensure map size after layout
+      map.invalidateSize();
+    }, 200);
+  } catch (err) {
+    console.error(err);
+    el("map").style.display = "none";
+    el("mapFallback").classList.add("show");
+  }
+
+  function updateMarkerVisibility() {
+    Object.entries(markers).forEach(([id, m]) => {
+      const loc = DATA.locations.find((l) => l.id === id);
+      if (!loc) return;
+      const show = locMatchesAM(loc);
+      if (show) {
+        if (!map.hasLayer(m)) m.addTo(map);
+      } else {
+        if (map.hasLayer(m)) map.removeLayer(m);
+      }
+    });
+  }
+
+  renderLocList();
+  selectLoc("all", false);
+})();
+</script>
+</body>
+</html>
