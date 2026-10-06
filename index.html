@@ -138,6 +138,44 @@
   .loc-card.kai:hover, .loc-card.kai.active { border-color: #f97316; }
   .loc-card.kai.active { box-shadow: 0 0 0 1px #f97316; }
   .co-tag { font-size: .68rem; color: var(--muted); margin-top: 2px; }
+  /* ---- Call-status pulse ("not called today") ---- */
+  .pin-wrap { background: none; border: 0; }
+  .pin {
+    position: relative; width: 14px; height: 14px; border-radius: 50%;
+    background: var(--pin-color, #3b82f6); border: 2px solid #fff;
+    box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+  }
+  .pin.pulse::after {
+    content: ""; position: absolute; left: -2px; top: -2px; width: 14px; height: 14px;
+    border-radius: 50%; border: 2px solid var(--pin-color, #3b82f6);
+    pointer-events: none; will-change: transform, opacity;
+    animation: pinPulse 2s ease-out infinite;
+  }
+  @keyframes pinPulse {
+    0%   { transform: scale(1);   opacity: .9; }
+    80%  { transform: scale(2.6); opacity: 0; }
+    100% { transform: scale(2.6); opacity: 0; }
+  }
+  .pin.called { box-shadow: 0 0 0 3px rgba(34,197,94,.45); }
+  .pin.called::before {
+    content: "✓"; position: absolute; right: -9px; top: -9px; width: 13px; height: 13px;
+    border-radius: 50%; background: var(--accent2); color: #fff; border: 1px solid #fff;
+    font: 700 9px/12px system-ui, sans-serif; text-align: center;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pin.pulse::after { animation: none; transform: scale(1.8); opacity: .45; }
+  }
+  .legend .pin { display: inline-block; vertical-align: middle; width: 10px; height: 10px; border-width: 1px; box-shadow: none; margin: 0 4px 0 2px; }
+  .legend .pin.pulse::after { width: 10px; height: 10px; left: -1px; top: -1px; border-width: 1px; }
+  .sync-line { font-size: .74rem; color: var(--muted); margin-top: 2px; }
+  .sync-line strong { color: var(--text); font-weight: 600; }
+  .sync-line .stale { color: var(--warn); margin-left: 6px; }
+  .called-badge {
+    display: inline-block; margin-top: 4px; font-size: .7rem; font-weight: 600;
+    padding: 2px 8px; border-radius: 999px; background: rgba(34,197,94,.15); color: var(--accent2);
+  }
+  .contact.is-called { border-color: rgba(34,197,94,.45); }
+  .pill.called { color: var(--accent2); background: rgba(34,197,94,.12); }
   footer {
     padding: 8px 16px; font-size: .72rem; color: var(--muted);
     border-top: 1px solid var(--border); background: var(--panel);
@@ -149,6 +187,7 @@
   <div>
     <h1>Team Steve — Closed Won Dialer Map</h1>
     <div class="sub">Arconic (Kahekili Barrozo) · Kaiser Aluminum (Simran Subramanian)</div>
+    <div class="sync-line" id="syncLine">Last synced: <strong>checking…</strong></div>
   </div>
   <span class="badge" id="statBadge">Loading…</span>
   <div class="controls">
@@ -174,6 +213,7 @@
     </div>
     <div class="legend">
       <div><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran)</div>
+      <div style="margin-top:4px"><span class="pin pulse" style="--pin-color:#8b9bb4"></span>Pulsing = no call logged today &nbsp; <span style="color:var(--accent2);font-weight:700">✓</span> = called today</div>
       <div style="margin-top:4px">Pins = city-level plants/HQ. Contacts assigned by phone area code when known; otherwise Unassigned.</div>
     </div>
   </div>
@@ -208,6 +248,15 @@
   let selectedLocId = "team:all";
   const markers = {};
 
+  // ---- Call status ("not called today") — driven by called_today.json ----
+  const CT_TZ = "America/Chicago";
+  const CALLED_URL = "called_today.json";
+  const CALLED_REFRESH_MS = 5 * 60 * 1000;
+  let calledFile = null;          // last successfully fetched file
+  let calledFetchError = null;    // last fetch error (string) or null
+  let calledMap = new Map();      // contact_id -> latest call (or {}) — only when file is for today (CT)
+  const pinState = {};            // loc.id -> "pulse" | "called"
+
   const el = (id) => document.getElementById(id);
 
   function contactMatchesAM(c) {
@@ -222,6 +271,84 @@
     filter: "all", company: null, am: null, pin: false, city: null,
     hint: "Every contact across both Closed Won accounts",
     contact_count: DATA.stats.contacts, with_phone: DATA.stats.with_phone, dm_count: DATA.stats.decision_makers });
+
+  function todayCT() {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: CT_TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  }
+  function fmtCT(iso, withDate) {
+    const d = new Date(iso);
+    if (!iso || isNaN(d)) return null;
+    const opts = { timeZone: CT_TZ, hour: "numeric", minute: "2-digit" };
+    if (withDate) { opts.month = "short"; opts.day = "numeric"; }
+    return new Intl.DateTimeFormat("en-US", opts).format(d);
+  }
+  function fmtCallTime(t) {
+    if (!t) return "";
+    // Full timestamps (ISO / with date) → CT clock time; bare times like "9:14 AM" are shown as-is.
+    if (/\d{4}-\d{2}-\d{2}/.test(String(t))) return fmtCT(t, false) || String(t);
+    return String(t);
+  }
+  function contactId(c) {
+    return String(c.hubspot_contact_id || ((c.hubspot_url || "").match(/\/record\/0-1\/(\d+)/) || [])[1] || "");
+  }
+  function calledInfo(c) { const id = contactId(c); return id ? calledMap.get(id) : undefined; }
+  function contactsAtLoc(loc) {
+    return DATA.contacts.filter((c) => (!loc.company || c.company === loc.company) &&
+      (loc.filter === "all" ? true : loc.filter === "unassigned" ? !c.plant : c.plant_id === loc.filter));
+  }
+
+  function applyCalledFile(file) {
+    calledMap = new Map();
+    const fresh = !!file && file.date === todayCT();
+    if (fresh) {
+      (file.called_contact_ids || []).forEach((id) => calledMap.set(String(id), {}));
+      (file.calls || []).forEach((call) => {
+        const id = String(call.contact_id || "");
+        if (!id) return;
+        const prev = calledMap.get(id);
+        // keep the latest call per contact when times are comparable; else keep the last one listed
+        if (!prev || !prev.time || String(call.time || "") >= String(prev.time || "")) calledMap.set(id, call);
+      });
+    }
+    renderSyncLine(file, fresh);
+  }
+
+  function renderSyncLine(file, fresh) {
+    const line = el("syncLine");
+    if (!line) return;
+    if (!file) {
+      line.innerHTML = `Last synced: <strong>—</strong><span class="stale">Call status unavailable${calledFetchError ? " (" + esc(calledFetchError) + ")" : ""} · all pins pulse</span>`;
+      return;
+    }
+    const when = fmtCT(file.updated_at, !fresh) || esc(file.date || "?");
+    if (fresh) {
+      const n = calledMap.size;
+      line.innerHTML = `Last synced: <strong>${esc(when)} CT</strong> · <strong>${n}</strong> called today` +
+        (calledFetchError ? `<span class="stale">refresh failed — showing last good data</span>` : "");
+    } else {
+      line.innerHTML = `Last synced: <strong>${esc(when)} CT</strong><span class="stale">Call status last synced ${esc(when)} CT (not today) — all pins pulse</span>`;
+    }
+  }
+
+  async function loadCalledToday() {
+    try {
+      const res = await fetch(`${CALLED_URL}?ts=${Date.now()}`, { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      calledFile = await res.json();
+      calledFetchError = null;
+    } catch (err) {
+      calledFetchError = location.protocol === "file:" ? "open via http(s) to load" : String(err.message || err);
+      console.warn("called_today.json:", err);
+    }
+    applyCalledFile(calledFile);   // re-evaluates staleness even on failure (handles midnight rollover)
+    refreshCallStatusUI();
+  }
+
+  function refreshCallStatusUI() {
+    updatePinStates();
+    renderLocList();
+    renderDetail();
+  }
 
   function locMatchesAM(loc) {
     if (amFilter === "all" || !loc.am) return true;
@@ -270,6 +397,8 @@
           <span class="pill"><strong>${n}</strong> shown</span>
           <span class="pill phone">${loc.with_phone} w/ phone</span>
           ${loc.dm_count ? `<span class="pill dm">${loc.dm_count} DM</span>` : ""}
+          ${(() => { const k = calledMap.size ? contactsAtLoc(loc).filter((c) => contactMatchesAM(c) && calledInfo(c)).length : 0;
+                     return k ? `<span class="pill called">✓ ${k} called today</span>` : ""; })()}
         </div>`;
       card.onclick = () => selectLoc(loc.id, true);
       list.appendChild(card);
@@ -300,11 +429,12 @@
       body.innerHTML = `<div class="detail-empty">No contacts match this filter/search.</div>`;
       return;
     }
-    body.innerHTML = contacts.map((c) => `
-      <div class="contact">
+    body.innerHTML = contacts.map((c) => { const ci = calledInfo(c); return `
+      <div class="contact${ci ? " is-called" : ""}" data-contact-id="${esc(contactId(c))}">
         <div class="top">
           <div>
             <div class="cname">${esc(c.name || "(no name)")}</div>
+            ${ci ? `<div class="called-badge" title="${esc(ci.outcome ? "Outcome: " + ci.outcome : "Call logged in HubSpot today")}">✓ Called today${ci.time ? " " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
             ${c.title ? `<div class="title">${esc(c.title)}</div>` : `<div class="title" style="opacity:.5">Title not scraped</div>`}
             <div class="co-tag"><span class="dot" style="background:${COLORS[c.company] || "#888"};width:8px;height:8px"></span> ${esc(c.company)} · ${esc(AM_SHORT[c.am] || c.am)}</div>
           </div>
@@ -319,7 +449,7 @@
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
         </div>
         ${c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
-      </div>`).join("");
+      </div>`; }).join("");
   }
 
   const HS_PORTAL = "6029765";
@@ -406,13 +536,8 @@
 
     const bounds = [];
     DATA.locations.filter((l) => l.pin && l.lat != null).forEach((loc) => {
-      const icon = L.divIcon({
-        className: "",
-        html: `<div style="background:${COLORS[loc.company] || "#3b82f6"};width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 3px rgba(0,0,0,.25)"></div>`,
-        iconSize: [14, 14],
-        iconAnchor: [7, 7],
-      });
-      const m = L.marker([loc.lat, loc.lon], { icon })
+      pinState[loc.id] = "pulse";   // nothing known yet → not called
+      const m = L.marker([loc.lat, loc.lon], { icon: pinIcon(loc, "pulse") })
         .addTo(map)
         .bindPopup(`<strong>${esc(loc.label)}</strong><br/>${esc(loc.company)} · ${esc(AM_SHORT[loc.am] || loc.am)}<br/><span style="color:#8b9bb4">${loc.contact_count} contacts · ${loc.with_phone} w/ phone (AC-inferred)</span>`);
       m.on("click", () => selectLoc(loc.id, false));
@@ -432,6 +557,32 @@
     el("mapFallback").classList.add("show");
   }
 
+  // Pins are Leaflet divIcons; state lives in the icon's CSS class so it survives
+  // AM-filter remove/re-add (Leaflet rebuilds the element from options.icon).
+  function pinIcon(loc, state) {
+    const color = COLORS[loc.company] || "#3b82f6";
+    const title = state === "called" ? "Called today" : "No call logged today";
+    return L.divIcon({
+      className: "pin-wrap",
+      html: `<div class="pin ${state}" data-loc-id="${esc(loc.id)}" style="--pin-color:${color}" title="${esc(title)}"></div>`,
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+      popupAnchor: [0, -6],
+    });
+  }
+
+  function updatePinStates() {
+    Object.entries(markers).forEach(([id, m]) => {
+      const loc = DATA.locations.find((l) => l.id === id);
+      if (!loc) return;
+      const state = contactsAtLoc(loc).some((c) => calledInfo(c)) ? "called" : "pulse";
+      if (pinState[id] !== state) {
+        pinState[id] = state;
+        m.setIcon(pinIcon(loc, state));
+      }
+    });
+  }
+
   function updateMarkerVisibility() {
     Object.entries(markers).forEach(([id, m]) => {
       const loc = DATA.locations.find((l) => l.id === id);
@@ -449,6 +600,11 @@
 
   renderLocList();
   selectLoc("team:all", false);
+
+  loadCalledToday();
+  setInterval(loadCalledToday, CALLED_REFRESH_MS);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) loadCalledToday(); });
+  window.__callStatus = { reload: loadCalledToday, pinState, get calledIds() { return [...calledMap.keys()]; } };
 })();
 </script>
 </body>
