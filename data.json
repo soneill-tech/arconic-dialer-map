@@ -21,7 +21,8 @@
   "notes": [
     "Plant pins are city-level (Nominatim). Contacts are assigned to a plant only when the phone area code matches a known site for that company; otherwise Unassigned.",
     "Sort order: Decision Maker first, then contacts with phone, then name.",
-    "No HubSpot writes. Read-only dialer export."
+    "No HubSpot writes. Read-only dialer export.",
+    "Each contact has an 'Open in HubSpot' link (record/0-1/<contactId>). Call from HubSpot so the call is logged; tel: links dial from your phone and are NOT logged."
   ],
   "locations": [
     {
@@ -420,7 +421,9 @@
       "has_phone": true,
       "is_dm": true,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "1190201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Paul Laslou",
@@ -440,7 +443,9 @@
       "has_phone": true,
       "is_dm": true,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "21373851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Adam M. Bjorkman",
@@ -460,7 +465,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "462051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Alisha Owens",
@@ -480,7 +487,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "2072401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Alonso Ochoa",
@@ -500,7 +509,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "434957",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Amber Atkins",
@@ -520,7 +531,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "229709076866",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Amber Curwick",
@@ -540,7 +553,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "20276383576",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Anastasia Stevens",
@@ -560,7 +575,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "38188051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Andrew W Ditzler",
@@ -580,7 +597,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "3539001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Andrew Weishaar",
@@ -600,7 +619,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "2706451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Anita Gowda",
@@ -620,7 +641,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "5644701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Annette Thiel",
@@ -640,7 +663,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "34004401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Armando Rivera",
@@ -660,7 +685,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "236675835272",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ben Stanley",
@@ -680,7 +707,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "26177301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Beth Ruehrdanz",
@@ -700,7 +729,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "33156551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Blake Biermann",
@@ -720,7 +751,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "110683171176",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Brenden Pawlak",
@@ -740,7 +773,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "196902267946",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Brian Beil",
@@ -760,7 +795,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "9217851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Brian Robey",
@@ -780,7 +817,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "2072301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Brigitte Ingram",
@@ -800,7 +839,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "21812451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Brycen Hamilton",
@@ -820,7 +861,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "23219651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Candace Greene",
@@ -840,7 +883,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "39653301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Candace Marple",
@@ -860,7 +905,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "49256601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Caraline Coleman",
@@ -880,7 +927,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "34483001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Catanna Dement",
@@ -900,7 +949,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5158601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Cecily Hill",
@@ -920,7 +971,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "235446135904",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Chlesie Dusenberry",
@@ -940,7 +993,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "127678526086",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Chris J. Lawrence",
@@ -960,7 +1015,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "462551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Chris Messersmith",
@@ -980,7 +1037,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "28464401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Christina Murrell",
@@ -1000,7 +1059,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "23262601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Christopher Stephenson",
@@ -1020,7 +1081,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "8848951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ciara Davis",
@@ -1040,7 +1103,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "236698856227",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Cody Herring",
@@ -1060,7 +1125,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "9217901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Connie Keller",
@@ -1080,7 +1147,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "456351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Corey Ortiz",
@@ -1100,7 +1169,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "3205961",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Cory Yates",
@@ -1120,7 +1191,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "96451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Craig Martin",
@@ -1140,7 +1213,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "30294801",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Cynthia King",
@@ -1160,7 +1235,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "2303458",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Damon Norton",
@@ -1180,7 +1257,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "34993201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Daniel Kurz",
@@ -1200,7 +1279,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "38609851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Daniel Tomlin",
@@ -1220,7 +1301,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "37509101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Daniel Torie",
@@ -1240,7 +1323,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "10496775741",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Danielle Ponta",
@@ -1260,7 +1345,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "31378201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Danny Markovitz",
@@ -1280,7 +1367,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "104990773117",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dave Keens",
@@ -1300,7 +1389,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "9397801",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dave Matthews",
@@ -1320,7 +1411,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2946356",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dave Tomes",
@@ -1340,7 +1433,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "34847451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "David Hebbel",
@@ -1360,7 +1455,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "5209801",
+      "hubspot_link_type": "record"
     },
     {
       "name": "David Paitsel",
@@ -1380,7 +1477,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "29698401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "David Smith",
@@ -1400,7 +1499,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "61834404632",
+      "hubspot_link_type": "record"
     },
     {
       "name": "David Yordy",
@@ -1420,7 +1521,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "32552101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Diana Ilioasa",
@@ -1440,7 +1543,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "463901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dionne Cearing",
@@ -1460,7 +1565,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39910601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Donna Brock",
@@ -1480,7 +1587,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "33256451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Donna Shenk",
@@ -1500,7 +1609,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "33342151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dylan Kuhns",
@@ -1520,7 +1631,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "33860701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Efriam Cruz",
@@ -1540,7 +1653,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "5158651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Elizabeth Anderson",
@@ -1560,7 +1675,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "462001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Elizabeth Barnes",
@@ -1580,7 +1697,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "31705551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Emily Cook",
@@ -1600,7 +1719,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29981351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Emily Schultz",
@@ -1620,7 +1741,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "32795353921",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Eric Wettig",
@@ -1640,7 +1763,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "33281501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Eric Yost",
@@ -1660,7 +1785,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "39030451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Gary Broer",
@@ -1680,7 +1807,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "19945240135",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Gregg Klinger",
@@ -1700,7 +1829,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "30424751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Heather Taylor",
@@ -1720,7 +1851,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "21398601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Henry Vega",
@@ -1740,7 +1873,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "1272701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Iwoinakee Billups",
@@ -1760,7 +1895,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "221397944069",
+      "hubspot_link_type": "record"
     },
     {
       "name": "James Belcher",
@@ -1780,7 +1917,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "439801",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Janine Mcwilliams",
@@ -1800,7 +1939,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "517501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jannell Clark",
@@ -1820,7 +1961,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "18364951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jared Higgins",
@@ -1840,7 +1983,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "29863951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jason Cottrell",
@@ -1860,7 +2005,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "41154751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jason King",
@@ -1880,7 +2027,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "9240201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jason Orange",
@@ -1900,7 +2049,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "10612451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jason Williams",
@@ -1920,7 +2071,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "18901172827",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jeff Berryman",
@@ -1940,7 +2093,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "95101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jennifer Dalton",
@@ -1960,7 +2115,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "5336351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jennifer Nelson",
@@ -1980,7 +2137,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "20280678022",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jennifer Solomon-Clark",
@@ -2000,7 +2159,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3833959",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jennifer Woelke",
@@ -2020,7 +2181,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "86238944909",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jerry Bowen",
@@ -2040,7 +2203,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3650076",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jill Everetts",
@@ -2060,7 +2225,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "31849551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "John Parlon",
@@ -2080,7 +2247,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "94152",
+      "hubspot_link_type": "record"
     },
     {
       "name": "John Pellegrino",
@@ -2100,7 +2269,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10078151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "JohnPaul Tebo",
@@ -2120,7 +2291,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Massena"
+      "plant_id": "arc:Massena",
+      "hubspot_contact_id": "246277427881",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jon Timko",
@@ -2140,7 +2313,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "196896220314",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Joseph Woods",
@@ -2160,7 +2335,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "31294851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Julie Myers",
@@ -2180,7 +2357,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "7740151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Julieanna Long",
@@ -2200,7 +2379,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "30900501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Justin Moore",
@@ -2220,7 +2401,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "178912274775",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kali Beck",
@@ -2240,7 +2423,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "14794033591",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kalliene Niesen",
@@ -2260,7 +2445,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "29271501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Karen Gordon",
@@ -2280,7 +2467,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "38921451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Karen M. Jorfi",
@@ -2300,7 +2489,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "5151901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Karen Paparo",
@@ -2320,7 +2511,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "36168951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Karla Alejandre",
@@ -2340,7 +2533,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "10644151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kate Barrelle",
@@ -2360,7 +2555,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "236496719456",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Katie Adkins",
@@ -2380,7 +2577,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "30603551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Keith Beddick",
@@ -2400,7 +2599,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "2335060",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Keith Bookout",
@@ -2420,7 +2621,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "29568151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kelli Carver",
@@ -2440,7 +2643,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "196844762891",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kevin Thompson",
@@ -2460,7 +2665,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "7274501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kevin West",
@@ -2480,7 +2687,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "37695051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kyle Amor",
@@ -2500,7 +2709,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "6368851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lance Amy",
@@ -2520,7 +2731,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "7040701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lance Duvernay",
@@ -2540,7 +2753,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "1788951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lance Karr",
@@ -2560,7 +2775,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "42836451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Leshia Segal",
@@ -2580,7 +2797,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "21414951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Liliana Serra",
@@ -2600,7 +2819,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "4885351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lindsey Ekis",
@@ -2620,7 +2841,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "21397101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lisa McClain",
@@ -2640,7 +2863,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3950958",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lora Hayes",
@@ -2660,7 +2885,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "34889801",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Loretta M Huston",
@@ -2680,7 +2907,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5235901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Margaret Burchell",
@@ -2700,7 +2929,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "8673501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Maria Graves",
@@ -2720,7 +2951,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "5552701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Marissa Ewing-Haberkorn",
@@ -2740,7 +2973,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "33834151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Mark Winowich",
@@ -2760,7 +2995,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "49278352",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Matthew Ritchey",
@@ -2780,7 +3017,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "2706351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Matthew Rivet",
@@ -2800,7 +3039,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "938251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Mercedee Covault",
@@ -2820,7 +3061,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "18168493824",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michael Dicocco",
@@ -2840,7 +3083,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "7625351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michael Karaffa",
@@ -2860,7 +3105,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "207223351402",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michelle Eshelman",
@@ -2880,7 +3127,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "4352451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Nathan Moore",
@@ -2900,7 +3149,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "110654145664",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Nathaniel Toepke",
@@ -2920,7 +3171,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "239629915157",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Nicole Baldwin",
@@ -2940,7 +3193,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "28731851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Orlando Canales",
@@ -2960,7 +3215,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "207136109368",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Philip McGaw",
@@ -2980,7 +3237,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "28464351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Pito Vera",
@@ -3000,7 +3259,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3650077",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rachael Deamer",
@@ -3020,7 +3281,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "51715351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rachael Speckman",
@@ -3040,7 +3303,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "158986525006",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rachel Beaird",
@@ -3060,7 +3325,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "3554855",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Raquel Bormann",
@@ -3080,7 +3347,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "34482951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rebecca N Scheaffer",
@@ -3100,7 +3369,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "9383951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Richard Overmann",
@@ -3120,7 +3391,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "34889751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robert S Gilbert",
@@ -3140,7 +3413,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "460501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robin Darter",
@@ -3160,7 +3435,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3018151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rodney Murphy",
@@ -3180,7 +3457,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3036001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ronda Marks",
@@ -3200,7 +3479,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "908351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ryan Eshleman",
@@ -3220,7 +3501,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "31996151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sarah Schupp",
@@ -3240,7 +3523,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "20283614591",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Scott Gorman",
@@ -3260,7 +3545,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "31310201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Scott Mumey",
@@ -3280,7 +3567,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "4019451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sean Cunningham",
@@ -3300,7 +3589,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "31593051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sean Rizzo",
@@ -3320,7 +3611,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "22141101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Shannon (Express) Hafeez",
@@ -3340,7 +3633,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "437551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Shannon Hafeez",
@@ -3360,7 +3655,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "8788001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Shannon Nixon",
@@ -3380,7 +3677,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "236802819883",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Shaun Denys",
@@ -3400,7 +3699,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "21705251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sheri Vanburen",
@@ -3420,7 +3721,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "730851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sherry Nolen",
@@ -3440,7 +3743,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "33264851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Stacey Anderson",
@@ -3460,7 +3765,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "28781501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Steve Shamblin",
@@ -3480,7 +3787,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10122851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tammy McCluskey",
@@ -3500,7 +3809,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Arconic HQ / Pittsburgh"
+      "plant_id": "arc:Arconic HQ / Pittsburgh",
+      "hubspot_contact_id": "7274551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Taylor Meisel",
@@ -3520,7 +3831,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lancaster"
+      "plant_id": "arc:Lancaster",
+      "hubspot_contact_id": "10129701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tiffany Sievers",
@@ -3540,7 +3853,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "5823651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tony Chambers",
@@ -3560,7 +3875,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "7683001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tracey Downey",
@@ -3580,7 +3897,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "28731901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Travis Tipton",
@@ -3600,7 +3919,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "44658",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Trent Bell",
@@ -3620,7 +3941,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "13966405892",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Troy Skeen",
@@ -3640,7 +3963,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "10731101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Troy Tibbot",
@@ -3660,7 +3985,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "93901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tyler Bean",
@@ -3680,7 +4007,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "15129157719",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tyler Trimble",
@@ -3700,7 +4029,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Davenport Works"
+      "plant_id": "arc:Davenport Works",
+      "hubspot_contact_id": "34982451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Vicki Mayes",
@@ -3720,7 +4051,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Lafayette"
+      "plant_id": "arc:Lafayette",
+      "hubspot_contact_id": "10899401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Vicky Diehl",
@@ -3740,7 +4073,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "33414951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Zane Williams",
@@ -3760,7 +4095,9 @@
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": "arc:Tennessee Operations (Alcoa)"
+      "plant_id": "arc:Tennessee Operations (Alcoa)",
+      "hubspot_contact_id": "21454601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Aaron Russell",
@@ -3780,7 +4117,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "20276972823",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Aaron Salem",
@@ -3800,7 +4139,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "33324601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ada Santizo",
@@ -3820,7 +4161,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2531551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Alan Robertson",
@@ -3840,7 +4183,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "23567101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Alexander Mallonee",
@@ -3860,7 +4205,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "86238944913",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Allen Jacobs",
@@ -3880,7 +4227,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10125151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Amanda Jones",
@@ -3900,7 +4249,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "34187901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Amanda Swain",
@@ -3920,7 +4271,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39007701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "amanda.powell@arconic.com",
@@ -3940,7 +4293,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "251541721979",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Amelia Kjome",
@@ -3960,7 +4315,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "34889851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Amy Thomas",
@@ -3980,7 +4337,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39007651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Andrea Schmidt",
@@ -4000,7 +4359,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "33656601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Andrew Bailey",
@@ -4020,7 +4381,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "7099101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Andrew Buchanan",
@@ -4040,7 +4403,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "38292267156",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Andrew Duso",
@@ -4060,7 +4425,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "48701944735",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Andrew Woods",
@@ -4080,7 +4447,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "86238939426",
+      "hubspot_link_type": "record"
     },
     {
       "name": "andrew.blomberg@arconic.com",
@@ -4100,7 +4469,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "36504101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "andrew.ickes@arconic.com",
@@ -4120,7 +4491,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29271601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Angalena Dunn",
@@ -4140,7 +4513,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32070601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Angie Maher",
@@ -4160,7 +4535,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39155101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Antonio Darden",
@@ -4180,7 +4557,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "31849651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "April Taylor",
@@ -4200,7 +4579,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "47100291644",
+      "hubspot_link_type": "record"
     },
     {
       "name": "arne.rossberg@arconic.com",
@@ -4220,7 +4601,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "35390951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Aurelia Hoffman",
@@ -4240,7 +4623,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10730901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Austin Rutherford",
@@ -4260,7 +4645,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5453351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "austin.koepkey@arconic.com",
@@ -4280,7 +4667,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "22713701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Autumn Schmuck",
@@ -4300,7 +4689,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29293201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Benjamin Bell",
@@ -4320,7 +4711,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32552201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Benjamin Stanley",
@@ -4340,7 +4733,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29694451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Billie Goheen",
@@ -4360,7 +4755,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29618751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "bishop.martin@arconic.com",
@@ -4380,7 +4777,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "110654145667",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Blake Wexler",
@@ -4400,7 +4799,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "248845032775",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Brendan Nenni",
@@ -4420,7 +4821,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32949601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Brian Cassidy",
@@ -4440,7 +4843,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "47119952",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Brian Martin",
@@ -4460,7 +4865,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5840851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "brian.halferty@arconic.com",
@@ -4480,7 +4887,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "7785751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Brooklyn Harvey",
@@ -4500,7 +4909,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "25332203109",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Bruce Tilling",
@@ -4520,7 +4931,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "456213",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Cameron Hale",
@@ -4540,7 +4953,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32949701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Cameron Heilman",
@@ -4560,7 +4975,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "247450904982",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Carla Walker",
@@ -4580,7 +4997,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "33156501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Carlos Narvaez",
@@ -4600,7 +5019,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "35271751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Carolyn Norwood",
@@ -4620,7 +5041,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "17555409992",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Casey Powell",
@@ -4640,7 +5063,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10129751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "cayla.mack@arconic.com",
@@ -4660,7 +5085,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "38536974652",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Chadwick Moros",
@@ -4680,7 +5107,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10899351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "charles.mclean@arconic.com",
@@ -4700,7 +5129,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "19559205425",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Chris Bichler",
@@ -4720,7 +5151,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5823701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Chris Davis",
@@ -4740,7 +5173,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "13966405891",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Christina Kistler",
@@ -4760,7 +5195,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3833851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Christine Fink",
@@ -4780,7 +5217,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "235961375887",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Christopher Black",
@@ -4800,7 +5239,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32842851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Christopher Falen",
@@ -4820,7 +5261,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "7103351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Christopher Ramey",
@@ -4840,7 +5283,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "21468851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Claudia Andrade",
@@ -4860,7 +5305,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5235851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Corey Grady",
@@ -4880,7 +5327,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "31849601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Corey Schultz",
@@ -4900,7 +5349,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "8848901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Cory Molacek",
@@ -4920,7 +5371,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "31849751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dale Koziorowski",
@@ -4940,7 +5393,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "48730588739",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Damion Billingsley",
@@ -4960,7 +5415,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2227001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dan Gifford",
@@ -4980,7 +5437,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "7078251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dan Sievers",
@@ -5000,7 +5459,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "9240101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Daniel J. Smink",
@@ -5020,7 +5481,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2380551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Daniel Sauza",
@@ -5040,7 +5503,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "47121802",
+      "hubspot_link_type": "record"
     },
     {
       "name": "daniel.warrensford@arconic.com",
@@ -5060,7 +5525,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39155151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "David Burton",
@@ -5080,7 +5547,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "31188251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "David Starling",
@@ -5100,7 +5569,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "28800651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dean Petrella",
@@ -5120,7 +5591,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39387201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "deanna.ferguson@arconic.com",
@@ -5140,7 +5613,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "246057098633",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dennis A Lewis",
@@ -5160,7 +5635,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "94851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Derrick Porter",
@@ -5180,7 +5657,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "20276972822",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Doug Macnair",
@@ -5200,7 +5679,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "4027551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Duane Bushong",
@@ -5220,7 +5701,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3538951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Dylan Forrer",
@@ -5240,7 +5723,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "115785778866",
+      "hubspot_link_type": "record"
     },
     {
       "name": "edward.sawyer@arconic.com",
@@ -5260,7 +5745,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "247937593609",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Elsa Trejo",
@@ -5280,7 +5767,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "239629243416",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Emily Iuzzolino",
@@ -5300,7 +5789,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2364551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Emma Fake",
@@ -5320,7 +5811,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "152698982816",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Erica Martinez",
@@ -5340,7 +5833,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "33596401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "erica.milne@arconic.com",
@@ -5360,7 +5855,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "8849051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ernest Coulter",
@@ -5380,7 +5877,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39143851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Eve Smith",
@@ -5400,7 +5899,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "17279656226",
+      "hubspot_link_type": "record"
     },
     {
       "name": "forest.kelly@arconic.com",
@@ -5420,7 +5921,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "9240151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Gabbie Delgado",
@@ -5440,7 +5943,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "1596209",
+      "hubspot_link_type": "record"
     },
     {
       "name": "gary.campbell@arconic.com",
@@ -5460,7 +5965,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "15528732752",
+      "hubspot_link_type": "record"
     },
     {
       "name": "George Kesheshian",
@@ -5480,7 +5987,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "30978351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ghee Cindy",
@@ -5500,7 +6009,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "6075351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ginger Duncan",
@@ -5520,7 +6031,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "245892622477",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Hayden Jago",
@@ -5540,7 +6053,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "44420201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Hayden Moore",
@@ -5560,7 +6075,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "118321421948",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Heather Lamb",
@@ -5580,7 +6097,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "245892622478",
+      "hubspot_link_type": "record"
     },
     {
       "name": "jacob.cvelbar@arconic.com",
@@ -5600,7 +6119,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "234514937969",
+      "hubspot_link_type": "record"
     },
     {
       "name": "James Loft",
@@ -5620,7 +6141,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2381651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "James Stewart",
@@ -5640,7 +6163,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29864001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "James Wanger",
@@ -5660,7 +6185,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "37929851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "James Williams",
@@ -5680,7 +6207,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "12163401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "james.bingham@arconic.com",
@@ -5700,7 +6229,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "35391051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jamone Watson",
@@ -5720,7 +6251,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "40060701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Janet L. Richards",
@@ -5740,7 +6273,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "493001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "jayshree.bagad@arconic.com",
@@ -5760,7 +6295,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "234480138624",
+      "hubspot_link_type": "record"
     },
     {
       "name": "jeff.crider@arconic.com",
@@ -5780,7 +6317,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "7066051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jeffrey Kleps",
@@ -5800,7 +6339,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "943001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jennifer Brettin",
@@ -5820,7 +6361,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "905512",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jerime Bolden",
@@ -5840,7 +6383,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5073401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jerry M. DeFrates",
@@ -5860,7 +6405,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5209851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jesus Alvarado",
@@ -5880,7 +6427,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "8194451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jill Folkerts",
@@ -5900,7 +6449,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "21414901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jill Stavarski",
@@ -5920,7 +6471,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "28200301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jim M. Bushong",
@@ -5940,7 +6493,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3539051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jim Titus",
@@ -5960,7 +6515,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10730851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jodi Yim",
@@ -5980,7 +6537,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39665451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jody Koontz",
@@ -6000,7 +6559,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "38082001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "John Bradley",
@@ -6020,7 +6581,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "6119451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "John Fox",
@@ -6040,7 +6603,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "497851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Johnathan Dotson",
@@ -6060,7 +6625,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "38313125782",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Johnny Brazell",
@@ -6080,7 +6647,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "61826394474",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jose Ceballos",
@@ -6100,7 +6669,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "35267801",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Joshua Eller",
@@ -6120,7 +6691,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "4710701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "josiah.petkus@arconic.com",
@@ -6140,7 +6713,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "7078201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jovica Blazevski",
@@ -6160,7 +6735,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32478851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "juanita.mckinney@arconic.com",
@@ -6180,7 +6757,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "15190199584",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Judy Dickson",
@@ -6200,7 +6779,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "48701944736",
+      "hubspot_link_type": "record"
     },
     {
       "name": "judy.jacobs@arconic.com",
@@ -6220,7 +6801,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "219624928561",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Julie Wise",
@@ -6240,7 +6823,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "110654145668",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Justin Vanier",
@@ -6260,7 +6845,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "95901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kamlesh (Headway) Brahmbhatt",
@@ -6280,7 +6867,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "96201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kara Warrensford",
@@ -6300,7 +6889,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32949651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "karen.lenninger@arconic.com",
@@ -6320,7 +6911,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "86238939427",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kathy A. Hendryx",
@@ -6340,7 +6933,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "95251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "keith.louck@arconic.com",
@@ -6360,7 +6955,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "28781451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kelley S. Brown",
@@ -6380,7 +6977,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "1502951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kenneth B (U. S. Security Associates) Skortz",
@@ -6400,7 +6999,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2561251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "kevin.jones2@arconic.com",
@@ -6420,7 +7021,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29456501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kim Deardurff",
@@ -6440,7 +7043,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "34009501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kimberly Maciejewski",
@@ -6460,7 +7065,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "61800482316",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kris Robinson",
@@ -6480,7 +7087,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39531401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kurt Johnson",
@@ -6500,7 +7109,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "35309501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kyle Ext",
@@ -6520,7 +7131,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10125901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ladon German",
@@ -6540,7 +7153,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39531351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Laura Bartlett",
@@ -6560,7 +7175,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39387301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Laurel Black",
@@ -6580,7 +7197,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10730951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lauren Soto",
@@ -6600,7 +7219,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "8476301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Laurie A Maneti",
@@ -6620,7 +7241,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "941551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lee Fowler",
@@ -6640,7 +7263,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "48740875557",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Libby French",
@@ -6660,7 +7285,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5880701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lisa Dietz",
@@ -6680,7 +7307,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32552151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lisa Grube",
@@ -6700,7 +7329,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "219859969838",
+      "hubspot_link_type": "record"
     },
     {
       "name": "logan.kappert@arconic.com",
@@ -6720,7 +7351,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "61826394475",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lovely Batterman",
@@ -6740,7 +7373,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "235446135903",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Maggie Mangieri",
@@ -6760,7 +7395,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29281401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Manjula Nandasiri",
@@ -6780,7 +7417,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "237223783765",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Manuel Lothschuetz",
@@ -6800,7 +7439,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10899501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Marcus R. (Express Personnel) Cardwell",
@@ -6820,7 +7461,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "439851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Mark F. Schulenberg",
@@ -6840,7 +7483,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5235951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Mark Haynes",
@@ -6860,7 +7505,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "94151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Martha Holan",
@@ -6880,7 +7527,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "245892622476",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Mary Isaac",
@@ -6900,7 +7549,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10731001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "matt.damas@arconic.com",
@@ -6920,7 +7571,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "49278351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "matthew.riddle@arconic.com",
@@ -6940,7 +7593,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "7103301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "matthu.harmon@arconic.com",
@@ -6960,7 +7615,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "250599296408",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Meagan Fredenberg",
@@ -6980,7 +7637,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "28165901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Megan Heverley",
@@ -7000,7 +7659,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "34926101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "megan.grosskopf@arconic.com",
@@ -7020,7 +7681,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29297951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Melissa Griffith",
@@ -7040,7 +7703,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "13984560956",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michael Ferguson",
@@ -7060,7 +7725,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "13966405889",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michael Mba",
@@ -7080,7 +7747,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "28731801",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michael Schneider",
@@ -7100,7 +7769,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "120465816359",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michele Allen",
@@ -7120,7 +7791,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2381601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michelle Morgan",
@@ -7140,7 +7813,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "31180601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Mike Pritchett",
@@ -7160,7 +7835,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "31294801",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Mitch Hogan",
@@ -7180,7 +7857,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5430951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "mykel.shutts@arconic.com",
@@ -7200,7 +7879,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "127436447612",
+      "hubspot_link_type": "record"
     },
     {
       "name": "natala.coyle@arconic.com",
@@ -7220,7 +7901,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "9240051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Natalia Leymaster",
@@ -7240,7 +7923,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "28781401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Nathan Sipple",
@@ -7260,7 +7945,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2561301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Nathan Wager",
@@ -7280,7 +7967,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "28781651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Nereyda Sanchez",
@@ -7300,7 +7989,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "244761642080",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Nicole Garman",
@@ -7320,7 +8011,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29864051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Patricia White",
@@ -7340,7 +8033,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "24365351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Patrick Morin",
@@ -7360,7 +8055,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "110654145666",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Phillip Curran",
@@ -7380,7 +8077,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32552051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "phyllis.parks@arconic.com",
@@ -7400,7 +8099,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32304151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Randy Brown",
@@ -7420,7 +8121,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "11374001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Randy Fahrenbach",
@@ -7440,7 +8143,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3539101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rebecca Gillis",
@@ -7460,7 +8165,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39387401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "renee.kahle@arconic.com",
@@ -7480,7 +8187,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "38921501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rhonda Rose",
@@ -7500,7 +8209,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5546051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Richard Dinh",
@@ -7520,7 +8231,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "246057705288",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Richard G. Lyon",
@@ -7540,7 +8253,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "4019951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "richard.mckinney@arconic.com",
@@ -7560,7 +8275,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "31996201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robert Cassatt",
@@ -7580,7 +8297,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "38025201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robert Gately",
@@ -7600,7 +8319,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "4013051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robert Huffman",
@@ -7620,7 +8341,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "123706968360",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robert Kirby",
@@ -7640,7 +8363,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "249758462367",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robert Morrill",
@@ -7660,7 +8385,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10190301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robert Smith",
@@ -7680,7 +8407,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "249758462368",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robert Taylor",
@@ -7700,7 +8429,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "235446135905",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rodney Fink",
@@ -7720,7 +8451,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "27474228235",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ronald James",
@@ -7740,7 +8473,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "35390901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ronald Kennedy",
@@ -7760,7 +8495,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "251863659368",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ruby Grant",
@@ -7780,7 +8517,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5158551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ryan D Womack",
@@ -7800,7 +8539,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "904269",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sally Nemcek",
@@ -7820,7 +8561,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "1190351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "saman.horneij@arconic.com",
@@ -7840,7 +8583,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "207306067765",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sammy Grindstaff",
@@ -7860,7 +8605,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "14216851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sandi Holmes",
@@ -7880,7 +8627,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "239629243415",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sandi Shunkwiler",
@@ -7900,7 +8649,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "6119351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sandra Williams",
@@ -7920,7 +8671,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29756201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "sanford.gore@arconic.com",
@@ -7940,7 +8693,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "9393051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sarah Ells",
@@ -7960,7 +8715,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "34889701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sarah Kline",
@@ -7980,7 +8737,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29271651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "sarah.sollers@arconic.com",
@@ -8000,7 +8759,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "34073851",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Shaun Stewart",
@@ -8020,7 +8781,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "37903551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "shaynetta.williams@arconic.com",
@@ -8040,7 +8803,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "38879201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Shelley Kellar",
@@ -8060,7 +8825,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "31322701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Shelly Sauls",
@@ -8080,7 +8847,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2046351",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sherry Long",
@@ -8100,7 +8869,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "28800551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Simone Pacheco",
@@ -8120,7 +8891,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "196893745305",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Stephen Burda",
@@ -8140,7 +8913,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3490401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Stephen Labarge",
@@ -8160,7 +8935,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "21415901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Steven Willis",
@@ -8180,7 +8957,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32441301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tami S Nedza",
@@ -8200,7 +8979,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "484551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tara Baxter",
@@ -8220,7 +9001,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "935901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Terry Tibbits",
@@ -8240,7 +9023,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29298001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "thiago.gabriel@arconic.com",
@@ -8260,7 +9045,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "22713751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Thomas Maddox",
@@ -8280,7 +9067,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "10899451",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Thomas Mataloni",
@@ -8300,7 +9089,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "77833779597",
+      "hubspot_link_type": "record"
     },
     {
       "name": "timothy.hanson@arconic.com",
@@ -8320,7 +9111,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "44499701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Todd Patterson",
@@ -8340,7 +9133,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "6119601",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Todd Voltz",
@@ -8360,7 +9155,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "7625401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "todd.smalley@arconic.com",
@@ -8380,7 +9177,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "34987251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tony Allen",
@@ -8400,7 +9199,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "15190199583",
+      "hubspot_link_type": "record"
     },
     {
       "name": "tracy.kunert@arconic.com",
@@ -8420,7 +9221,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "86238944911",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Travis Hockenbury",
@@ -8440,7 +9243,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "94551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Travis Isenbarger",
@@ -8460,7 +9265,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "2381701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Trisha K McFerrin",
@@ -8480,7 +9287,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "1499151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Troy Streckeisen",
@@ -8500,7 +9309,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "3473220",
+      "hubspot_link_type": "record"
     },
     {
       "name": "tyler.hughes@arconic.com",
@@ -8520,7 +9331,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "110654145665",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Veronica Webb",
@@ -8540,7 +9353,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "29298101",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Vicki Adkisson",
@@ -8560,7 +9375,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "252414168165",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Vyshakh Abraham",
@@ -8580,7 +9397,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "32552251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "walter.lovette@arconic.com",
@@ -8600,7 +9419,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "40060751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Wei Wen",
@@ -8620,7 +9441,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "15190199585",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Wesley Finai",
@@ -8640,7 +9463,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "39130651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "william.potter2@arconic.com",
@@ -8660,7 +9485,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "110654145670",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Willie L Johnson",
@@ -8680,7 +9507,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "4019901",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Yiming Lin",
@@ -8700,7 +9529,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "47122401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ylliana Arnsby",
@@ -8720,7 +9551,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "208288581972",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Yolanda Crawford",
@@ -8740,7 +9573,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "5805501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "zachary.kristophel@arconic.com",
@@ -8760,7 +9595,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "9217951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Zoey Marquardt",
@@ -8780,7 +9617,9 @@
       "has_phone": false,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null
+      "plant_id": null,
+      "hubspot_contact_id": "479501",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Adrian Acosta",
@@ -8800,7 +9639,9 @@
       "plant_id": "kai:Tucson",
       "area_code": "520",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "235210233607",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ashley Watts",
@@ -8820,7 +9661,9 @@
       "plant_id": "kai:Franklin HQ",
       "area_code": "615",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "34516001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Blake Hines",
@@ -8840,7 +9683,9 @@
       "plant_id": null,
       "area_code": "866",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "166883",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Christina Boggs",
@@ -8860,7 +9705,9 @@
       "plant_id": "kai:Newark Works",
       "area_code": "740",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "48230102",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Darrell Evans",
@@ -8880,7 +9727,9 @@
       "plant_id": "kai:Jackson",
       "area_code": "731",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "25056823047",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Evan Quinley",
@@ -8900,7 +9749,9 @@
       "plant_id": "kai:Foothill Ranch",
       "area_code": "949",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "29381251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Janna Dunnavent",
@@ -8920,7 +9771,9 @@
       "plant_id": "kai:Jackson",
       "area_code": "731",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "46195191424",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jodi Beckstedt",
@@ -8940,7 +9793,9 @@
       "plant_id": "kai:Newark Works",
       "area_code": "740",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "28795801",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Joshua Hazelwood",
@@ -8960,7 +9815,9 @@
       "plant_id": "kai:Knoxville",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "51563551",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Keith Bookout",
@@ -8980,7 +9837,9 @@
       "plant_id": "kai:Knoxville",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "729651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Kevin Matthews",
@@ -9000,7 +9859,9 @@
       "plant_id": "kai:Jackson",
       "area_code": "731",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "20260733003",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Laquita Thornton",
@@ -9020,7 +9881,9 @@
       "plant_id": "kai:Trentwood Works",
       "area_code": "509",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "250709154616",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lindsay Cox",
@@ -9040,7 +9903,9 @@
       "plant_id": "kai:Franklin HQ",
       "area_code": "615",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "27069751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Lisa Mills",
@@ -9060,7 +9925,9 @@
       "plant_id": "kai:Knoxville",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "25733301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michael Coppotelli",
@@ -9080,7 +9947,9 @@
       "plant_id": "kai:Warrick",
       "area_code": "812",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "51701852",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michael Kirk",
@@ -9100,7 +9969,9 @@
       "plant_id": "kai:Foothill Ranch",
       "area_code": "949",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "29380251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Michelle King",
@@ -9120,7 +9991,9 @@
       "plant_id": "kai:Warrick",
       "area_code": "812",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "446701",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Mike Ahern",
@@ -9140,7 +10013,9 @@
       "plant_id": "kai:Kalamazoo",
       "area_code": "269",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "6825201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Natalie Burt",
@@ -9160,7 +10035,9 @@
       "plant_id": null,
       "area_code": "630",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "32751001",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Nick Gorman",
@@ -9180,7 +10057,9 @@
       "plant_id": "kai:Newark Works",
       "area_code": "740",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "29595201",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Pilar Alvarez",
@@ -9200,7 +10079,9 @@
       "plant_id": "kai:Foothill Ranch",
       "area_code": "949",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "6825251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rob Matuska",
@@ -9220,7 +10101,9 @@
       "plant_id": "kai:Newark Works",
       "area_code": "740",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "28904301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Shannon Hafeez",
@@ -9240,7 +10123,9 @@
       "plant_id": "kai:Knoxville",
       "area_code": "865",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "17921301",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Tamara Wagner-Marion",
@@ -9260,7 +10145,9 @@
       "plant_id": "kai:Warrick",
       "area_code": "812",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "22322951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Trent Roybal",
@@ -9280,7 +10167,9 @@
       "plant_id": "kai:Trentwood Works",
       "area_code": "509",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "203866478699",
+      "hubspot_link_type": "record"
     },
     {
       "name": "WAR Delivery",
@@ -9300,7 +10189,9 @@
       "plant_id": null,
       "area_code": "200",
       "has_phone": true,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "24437051",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Aaron Suffridge",
@@ -9320,7 +10211,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "10579951",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Charonda Westley",
@@ -9340,7 +10233,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "53258052",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Douglas Soule",
@@ -9360,7 +10255,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "1279751",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Edward Frasier",
@@ -9380,7 +10277,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "250709154617",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Freddy Espinoza",
@@ -9400,7 +10299,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "83465912494",
+      "hubspot_link_type": "record"
     },
     {
       "name": "James Kelly",
@@ -9420,7 +10321,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "83465912495",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Jesus Ybarra",
@@ -9440,7 +10343,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "83342330880",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Joel Metelko",
@@ -9460,7 +10365,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "24826401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Leland Finney",
@@ -9480,7 +10387,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "245592611969",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Luis Myzel",
@@ -9500,7 +10409,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "231460150092",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Melody Sinclair",
@@ -9520,7 +10431,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "840662",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Mike Meza",
@@ -9540,7 +10453,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "235210233606",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Nick Badgett",
@@ -9560,7 +10475,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "28904251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Oliver Nieto",
@@ -9580,7 +10497,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "53258053",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Renia Johnson",
@@ -9600,7 +10519,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "114758119453",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Robbie Cox",
@@ -9620,7 +10541,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "31579651",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Roberto Villagomez",
@@ -9640,7 +10563,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "244774836387",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Rueben Zamora",
@@ -9660,7 +10585,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "245592616964",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ryan Shoener",
@@ -9680,7 +10607,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "28734251",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Shawn Losey",
@@ -9700,7 +10629,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "1889151",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Sherry Hall",
@@ -9720,7 +10651,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "28795401",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Trae Witherspoon",
@@ -9740,7 +10673,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "25056823046",
+      "hubspot_link_type": "record"
     },
     {
       "name": "William Abarca",
@@ -9760,7 +10695,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "244774836386",
+      "hubspot_link_type": "record"
     },
     {
       "name": "Ylliana Arnsby",
@@ -9780,7 +10717,9 @@
       "plant_id": null,
       "area_code": null,
       "has_phone": false,
-      "is_dm": false
+      "is_dm": false,
+      "hubspot_contact_id": "27799801",
+      "hubspot_link_type": "record"
     }
   ],
   "stats": {
@@ -9800,6 +10739,11 @@
         "with_phone": 26,
         "pins": 9
       }
+    },
+    "hubspot_links": {
+      "record": 469,
+      "search": 0,
+      "none": 0
     }
   }
 }

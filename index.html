@@ -107,6 +107,20 @@
   .contact .rows { margin-top: 8px; display: grid; gap: 4px; font-size: .82rem; }
   .contact a { color: var(--accent); text-decoration: none; }
   .contact a:hover { text-decoration: underline; }
+  .contact .phone-line { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .contact .nolog { font-size: .66rem; color: var(--muted); margin-left: 4px; }
+  .contact a.hs-btn {
+    display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+    background: var(--accent); color: #fff; border: 1px solid var(--accent);
+    padding: 4px 10px; border-radius: 8px; font-size: .75rem; font-weight: 600; text-decoration: none;
+  }
+  .contact a.hs-btn:hover { background: #2563eb; border-color: #2563eb; text-decoration: none; }
+  .contact a.hs-btn.search { background: transparent; color: var(--accent); }
+  .contact a.hs-btn.search:hover { background: rgba(59,130,246,.12); }
+  .detail-head { position: sticky; top: 0; background: var(--panel); z-index: 2; border-bottom: 1px solid var(--border); }
+  .detail .detail-head h2 { position: static; }
+  .detail-hint { padding: 0 16px 10px; font-size: .76rem; color: var(--text); line-height: 1.4; }
+  .detail-hint .muted { color: var(--muted); }
   .contact .plant-tag { font-size: .7rem; color: var(--warn); margin-top: 6px; }
   .leaflet-container { background: #0b1220; font: 12px/1.4 var(--font); }
   .pin-label {
@@ -164,7 +178,11 @@
     </div>
   </div>
   <aside class="detail">
-    <h2 id="detailTitle">Contacts</h2>
+    <div class="detail-head">
+      <h2 id="detailTitle">Contacts</h2>
+      <div class="detail-hint"><strong>Open in HubSpot, then click Call so the call is logged.</strong>
+        <span class="muted">📞 phone-number links dial from your phone and are <em>not</em> logged.</span></div>
+    </div>
     <div id="detailBody"><div class="detail-empty">Select a location pin or card to view contacts.<br/>Sorted: Decision Maker → phone → name.</div></div>
   </aside>
 </div>
@@ -172,7 +190,7 @@
 <footer>
   Scope: Arconic (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/2359249037" style="color:var(--accent)" target="_blank" rel="noopener">2359249037</a>, Kahekili Barrozo) +
   Kaiser Aluminum (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/5360206404" style="color:var(--accent)" target="_blank" rel="noopener">5360206404</a>, Simran Subramanian).
-  Data bundled in <code>data.json</code>. Read-only · no HubSpot writes.
+  Data bundled in <code>data.json</code>. Read-only · no HubSpot writes. Use <strong>Open in HubSpot</strong> → Call so calls are logged; 📞 tel: links are not logged.
 </footer>
 
 <script src="data.js"></script>
@@ -293,13 +311,28 @@
           <span class="role-tag ${c.is_dm ? "dm" : ""}">${esc(c.role || "Other")}</span>
         </div>
         <div class="rows">
-          ${c.phone ? `<div>📞 <a href="tel:${esc(c.phone)}">${esc(c.phone)}</a></div>` : `<div style="color:var(--muted)">📞 —</div>`}
-          ${c.mobile ? `<div>📱 <a href="tel:${esc(c.mobile)}">${esc(c.mobile)}</a></div>` : ""}
+          <div class="phone-line">
+            <span>${c.phone ? `📞 <a href="tel:${esc(c.phone)}" title="Call from phone (not logged in HubSpot)">${esc(c.phone)}</a><span class="nolog">phone · not logged</span>` : `<span style="color:var(--muted)">📞 —</span>`}</span>
+            ${hsLink(c)}
+          </div>
+          ${c.mobile ? `<div>📱 <a href="tel:${esc(c.mobile)}" title="Call from phone (not logged in HubSpot)">${esc(c.mobile)}</a><span class="nolog">phone · not logged</span></div>` : ""}
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
-          ${c.hubspot_url ? `<div><a href="${esc(c.hubspot_url)}" target="_blank" rel="noopener">Open in HubSpot →</a></div>` : ""}
         </div>
         ${c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
       </div>`).join("");
+  }
+
+  const HS_PORTAL = "6029765";
+  function hsLink(c) {
+    const id = c.hubspot_contact_id || ((c.hubspot_url || "").match(/\/record\/0-1\/(\d+)/) || [])[1];
+    if (id) {
+      const url = `https://app.hubspot.com/contacts/${HS_PORTAL}/record/0-1/${id}`;
+      return `<a class="hs-btn" href="${esc(url)}" target="_blank" rel="noopener" title="Open this contact in HubSpot, then click Call so the call is logged">Open in HubSpot ↗</a>`;
+    }
+    const q = c.email || c.name;
+    if (!q) return "";
+    const url = `https://app.hubspot.com/contacts/${HS_PORTAL}/objects/0-1/views/all/list?query=${encodeURIComponent(q)}`;
+    return `<a class="hs-btn search" href="${esc(url)}" target="_blank" rel="noopener" title="No HubSpot ID on file — search HubSpot for this contact, then click Call so the call is logged">Open in HubSpot (search) ↗</a>`;
   }
 
   function plantLabel(c) {

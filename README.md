@@ -26,11 +26,12 @@ python3 -m http.server 8765   # then open http://localhost:8765/
   Kalamazoo MI (269) + All Kaiser + Unassigned
 - Side list grouped by company/AM; AM filter (All / Kahekili / Simran) and search
 - Click a pin or card → that location's contacts, sorted **Decision Maker → has phone → name**
+- Every contact has an **Open in HubSpot** button (`https://app.hubspot.com/contacts/6029765/record/0-1/<contactId>`, field `hubspot_contact_id`). Open it, then click **Call** in HubSpot so the call is logged. The 📞 `tel:` links dial from your phone and are **not logged**. If a contact ever lacks an ID, the UI falls back to a HubSpot search link.
 
 ## Scope notes
 
 - Plant assignment is **best-effort from phone area code**, city-level Nominatim geocodes. Unmapped ACs, toll-free, invalid numbers and no-phone contacts go to **Unassigned**.
-- No HubSpot writes, no dialing beyond `tel:` / `mailto:` links.
+- No HubSpot writes from this page; it only links to HubSpot records (plus `tel:` / `mailto:` links, which are not logged).
 
 ## Files
 
