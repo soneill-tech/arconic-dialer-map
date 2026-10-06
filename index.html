@@ -162,11 +162,24 @@
     border-radius: 50%; background: var(--accent2); color: #fff; border: 1px solid #fff;
     font: 700 9px/12px system-ui, sans-serif; text-align: center;
   }
+  /* Supplier (Arconic-managed, not an Arconic facility): rounded square + amber border */
+  .pin.supplier { border-radius: 3px; border-color: #fbbf24; box-shadow: 0 0 0 3px rgba(251,191,36,.28); }
+  .pin.supplier.pulse::after { border-radius: 3px; }
+  .pin.supplier.called { box-shadow: 0 0 0 3px rgba(34,197,94,.45), 0 0 0 5px rgba(251,191,36,.35); }
   @media (prefers-reduced-motion: reduce) {
     .pin.pulse::after { animation: none; transform: scale(1.8); opacity: .45; }
   }
   .legend .pin { display: inline-block; vertical-align: middle; width: 10px; height: 10px; border-width: 1px; box-shadow: none; margin: 0 4px 0 2px; }
   .legend .pin.pulse::after { width: 10px; height: 10px; left: -1px; top: -1px; border-width: 1px; }
+  .legend .pin.supplier { border-width: 2px; border-radius: 2px; }
+  .sup-tag {
+    display: inline-block; font-size: .64rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
+    padding: 1px 6px; border-radius: 5px; background: rgba(251,191,36,.14); color: #fbbf24; border: 1px solid rgba(251,191,36,.35);
+    vertical-align: middle; margin-left: 4px;
+  }
+  .loc-card.supplier { border-style: dashed; border-color: rgba(251,191,36,.45); }
+  .loc-card.supplier:hover, .loc-card.supplier.active { border-color: #fbbf24; }
+  .contact .also-tag { font-size: .7rem; color: #fbbf24; margin-top: 2px; }
   .sync-line { font-size: .74rem; color: var(--muted); margin-top: 2px; }
   .sync-line strong { color: var(--text); font-weight: 600; }
   .sync-line .stale { color: var(--warn); margin-left: 6px; }
@@ -227,6 +240,7 @@
     <div class="legend">
       <div><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran)</div>
       <div style="margin-top:4px"><span class="pin pulse" style="--pin-color:#8b9bb4"></span>Pulsing = no call logged today &nbsp; <span style="color:var(--accent2);font-weight:700">✓</span> = called today</div>
+      <div style="margin-top:4px"><span class="pin supplier" style="--pin-color:#3b82f6"></span>Supplier (Arconic-managed) — not an Arconic facility; shares contacts with Arconic plant pins</div>
       <div style="margin-top:4px">Pins = city-level plants/HQ. Contacts assigned by phone area code when known; otherwise Unassigned.</div>
     </div>
   </div>
@@ -293,6 +307,22 @@
     filter: "all", company: null, am: null, pin: false, city: null,
     hint: "Every contact across both Closed Won accounts",
     contact_count: DATA.stats.contacts, with_phone: DATA.stats.with_phone, dm_count: DATA.stats.decision_makers });
+  // Supplier pins (kind: "supplier") have no contacts of their own: they reference existing contacts by
+  // hubspot_contact_id (contact_ids). One contact can therefore sit at several pins; totals use DATA.contacts.
+  const isSupplier = (loc) => !!loc && loc.kind === "supplier";
+  const memberSets = {};
+  DATA.locations.forEach((l) => { if (Array.isArray(l.contact_ids)) memberSets[l.id] = new Set(l.contact_ids.map(String)); });
+  function inLoc(c, loc) {
+    if (loc.company && c.company !== loc.company) return false;
+    if (loc.filter === "all") return true;
+    if (loc.filter === "unassigned") return !c.plant;
+    const set = memberSets[loc.id];
+    return set ? set.has(contactId(c)) : c.plant_id === loc.filter;
+  }
+  function supplierLocsFor(c) {   // supplier pins that list this contact
+    const id = contactId(c);
+    return id ? DATA.locations.filter((l) => memberSets[l.id] && l.company === c.company && memberSets[l.id].has(id)) : [];
+  }
 
   function todayCT() {
     return new Intl.DateTimeFormat("en-CA", { timeZone: CT_TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
@@ -315,8 +345,7 @@
   }
   function calledInfo(c) { const id = contactId(c); return id ? calledMap.get(id) : undefined; }
   function contactsAtLoc(loc) {
-    return DATA.contacts.filter((c) => (!loc.company || c.company === loc.company) &&
-      (loc.filter === "all" ? true : loc.filter === "unassigned" ? !c.plant : c.plant_id === loc.filter));
+    return DATA.contacts.filter((c) => inLoc(c, loc));
   }
 
   function applyCalledFile(file) {
@@ -381,13 +410,10 @@
     const q = searchQ.trim().toLowerCase();
     return DATA.contacts.filter((c) => {
       if (!contactMatchesAM(c)) return false;
-      if (loc.company && c.company !== loc.company) return false;
-      if (loc.filter === "all") { /* keep */ }
-      else if (loc.filter === "unassigned") {
-        if (c.plant) return false;
-      } else if (c.plant_id !== loc.filter) return false;
+      if (!inLoc(c, loc)) return false;
       if (!q) return true;
-      const blob = [c.name, c.email, c.phone, c.mobile, c.title, c.role, c.plant || "unassigned", c.notes, c.company, c.am]
+      const blob = [c.name, c.email, c.phone, c.mobile, c.title, c.role, c.plant || "unassigned", c.notes, c.company, c.am,
+        ...supplierLocsFor(c).map((l) => l.name + " supplier")]
         .join(" ").toLowerCase();
       return blob.includes(q);
     });
@@ -410,10 +436,11 @@
       }
       const n = filteredContactsForLoc(loc).length;
       const card = document.createElement("div");
-      card.className = "loc-card" + (loc.company === "Kaiser Aluminum" ? " kai" : "") + (loc.id === selectedLocId ? " active" : "");
+      card.className = "loc-card" + (loc.company === "Kaiser Aluminum" ? " kai" : "") + (isSupplier(loc) ? " supplier" : "") + (loc.id === selectedLocId ? " active" : "");
       card.innerHTML = `
         <div class="name">${esc(loc.label || loc.name)}</div>
-        <div class="meta">${esc(loc.pin ? loc.city + " · city-level pin" : "No map pin")}
+        ${isSupplier(loc) ? `<div><span class="sup-tag" style="margin-left:0">${esc(loc.supplier_tag || "Supplier (Arconic-managed)")}</span></div>` : ""}
+        <div class="meta">${esc(loc.pin ? loc.city + (isSupplier(loc) ? " · supplier pin (not an Arconic facility)" : " · city-level pin") : "No map pin")}
           ${loc.hint ? "<br/>" + esc(loc.hint) : ""}</div>
         <div class="stats">
           <span class="pill"><strong>${n}</strong> shown</span>
@@ -435,7 +462,7 @@
       const card = document.createElement("div");
       card.className = "fallback-card";
       card.innerHTML = `<div style="font-weight:600">${esc(loc.label)}</div>
-        <div style="color:var(--muted);font-size:.8rem;margin-top:6px">${esc(loc.city || "")}</div>
+        <div style="color:var(--muted);font-size:.8rem;margin-top:6px">${esc(loc.city || "")}${isSupplier(loc) ? ` <span class="sup-tag">Supplier</span>` : ""}</div>
         <div style="margin-top:10px" class="pill">${filteredContactsForLoc(loc).length} contacts</div>`;
       card.onclick = () => selectLoc(loc.id, false);
       grid.appendChild(card);
@@ -506,6 +533,7 @@
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
         </div>
         ${c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
+        ${(() => { const sl = supplierLocsFor(c); return sl.length ? `<div class="also-tag">Also at supplier: ${sl.map((l) => esc(String(l.name || l.city).replace(/ \(supplier\)$/, ""))).join(" · ")}</div>` : ""; })()}
       </div>`; }).join("");
   }
 
@@ -552,8 +580,9 @@
   // Stats badge
   function renderStats() {
     const cs = DATA.contacts.filter(contactMatchesAM);
-    const pins = DATA.locations.filter((l) => l.pin && locMatchesAM(l)).length;
-    el("statBadge").innerHTML = `<strong>${cs.length}</strong> contacts · <strong>${cs.filter((c) => c.has_phone).length}</strong> phone · <strong>${pins}</strong> plant pins · <strong>${cs.filter((c) => c.is_dm).length}</strong> DM`;
+    const pinLocs = DATA.locations.filter((l) => l.pin && locMatchesAM(l));
+    const pins = pinLocs.length, sup = pinLocs.filter(isSupplier).length;
+    el("statBadge").innerHTML = `<strong>${cs.length}</strong> contacts · <strong>${cs.filter((c) => c.has_phone).length}</strong> phone · <strong>${pins}</strong> pins${sup ? ` (${pins - sup} plant + ${sup} supplier)` : ""} · <strong>${cs.filter((c) => c.is_dm).length}</strong> DM`;
   }
   renderStats();
 
@@ -608,7 +637,9 @@
       pinState[loc.id] = "pulse";   // nothing known yet → not called
       const m = L.marker([loc.lat, loc.lon], { icon: pinIcon(loc, "pulse") })
         .addTo(map)
-        .bindPopup(`<strong>${esc(loc.label)}</strong><br/>${esc(loc.company)} · ${esc(AM_SHORT[loc.am] || loc.am)}<br/><span style="color:#8b9bb4">${loc.contact_count} contacts · ${loc.with_phone} w/ phone (AC-inferred)</span>`);
+        .bindPopup(isSupplier(loc)
+          ? `<strong>${esc(loc.label)}</strong><br/><span style="color:#b45309;font-weight:600">${esc(loc.supplier_tag || "Supplier (Arconic-managed)")}</span> · not an Arconic facility<br/>${esc(AM_SHORT[loc.am] || loc.am)} · ${esc(loc.company)} account<br/><span style="color:#8b9bb4">${loc.contact_count} contacts · ${loc.with_phone} w/ phone (shared with ${esc((loc.contacts_from || []).map((id) => { const s = DATA.locations.find((x) => x.id === id); return s ? (s.label || s.name) : id; }).join(" + "))})</span>`
+          : `<strong>${esc(loc.label)}</strong><br/>${esc(loc.company)} · ${esc(AM_SHORT[loc.am] || loc.am)}<br/><span style="color:#8b9bb4">${loc.contact_count} contacts · ${loc.with_phone} w/ phone (AC-inferred)</span>`);
       m.on("click", () => selectLoc(loc.id, false));
       markers[loc.id] = m;
       bounds.push([loc.lat, loc.lon]);
@@ -630,10 +661,10 @@
   // AM-filter remove/re-add (Leaflet rebuilds the element from options.icon).
   function pinIcon(loc, state) {
     const color = COLORS[loc.company] || "#3b82f6";
-    const title = state === "called" ? "Called today" : "No call logged today";
+    const title = (isSupplier(loc) ? "Supplier (Arconic-managed) · " : "") + (state === "called" ? "Called today" : "No call logged today");
     return L.divIcon({
       className: "pin-wrap",
-      html: `<div class="pin ${state}" data-loc-id="${esc(loc.id)}" style="--pin-color:${color}" title="${esc(title)}"></div>`,
+      html: `<div class="pin ${state}${isSupplier(loc) ? " supplier" : ""}" data-loc-id="${esc(loc.id)}" data-kind="${esc(loc.kind || "plant")}" style="--pin-color:${color}" title="${esc(title)}"></div>`,
       iconSize: [14, 14],
       iconAnchor: [7, 7],
       popupAnchor: [0, -6],

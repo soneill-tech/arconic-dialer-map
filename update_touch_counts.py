@@ -255,6 +255,13 @@ def main():
         for c in unmatched:
             print(f"  unmatched: {c.get('hubspot_contact_id')} {c.get('name')} <{c.get('email')}>")
     print(f"touch_counts_updated = {meta['touch_counts_updated']}")
+    # Supplier pins reference contacts by ID (no copies), so their contacts pick up these counts automatically.
+    ids_on_map = {str(c.get("hubspot_contact_id") or "") for c in contacts}
+    for l in data.get("locations", []):
+        if isinstance(l.get("contact_ids"), list):
+            missing = [i for i in l["contact_ids"] if str(i) not in ids_on_map]
+            print(f"Supplier pin {l.get('label') or l['id']}: {len(l['contact_ids'])} referenced contacts"
+                  + (f" · ! {len(missing)} IDs not on the map (run sync_supplier_pins.py)" if missing else ""))
 
     if a.dry_run:
         print("Dry run: nothing written.")

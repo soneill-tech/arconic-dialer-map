@@ -4,7 +4,7 @@ Self-contained HTML map dashboard for Team Steve Closed Won dialer contacts:
 
 | Company | AM | HubSpot | Contacts | w/ phone | Pins |
 |---|---|---|---|---|---|
-| Arconic | Kahekili Barrozo | `2359249037` | 419 | 168 | 6 |
+| Arconic | Kahekili Barrozo | `2359249037` | 419 | 168 | 8 (6 plant + 2 supplier) |
 | Kaiser Aluminum | Simran Subramanian | `5360206404` | 50 | 26 | 9 |
 
 Live: https://soneill-tech.github.io/arconic-dialer-map/
@@ -20,7 +20,13 @@ python3 -m http.server 8765   # then open http://localhost:8765/
 ## What's included
 
 - Leaflet + Esri World_Street_Map tiles (no API key)
-- **Arconic pins (blue):** Pittsburgh HQ, Davenport Works, Lafayette, Lancaster, Massena, Tennessee Ops (Alcoa) + All Arconic + Unassigned
+- **Arconic pins (blue):** Pittsburgh HQ, Davenport Works (Bettendorf, IA), Lafayette, Lancaster (PA), Massena, Tennessee Ops (Alcoa) + All Arconic + Unassigned
+- **Arconic supplier pins (blue rounded square, amber border; dashed card + "Supplier (Arconic-managed)" tag):**
+  sites Arconic manages that are **not Arconic facilities**. They have no contacts of their own; they reference existing
+  Arconic contacts by `hubspot_contact_id`:
+  - **Middlebury, IN** (`arc:sup:Middlebury`): same contacts as Davenport Works / Bettendorf, IA (49)
+  - **Minster, OH** (`arc:sup:Minster`): Lancaster, PA (27) ∪ Davenport Works / Bettendorf, IA (49), de-duplicated by ID = 76
+    (overlap 0, since each contact has exactly one plant)
 - **Kaiser pins (orange):** Trentwood Works (Spokane Valley WA, 509), Warrick (Newburgh IN, 812), Knoxville TN (865),
   Franklin TN HQ (615), Tucson AZ (520), Newark Works (Heath OH, 740), Jackson TN (731), Foothill Ranch CA (949),
   Kalamazoo MI (269) + All Kaiser + Unassigned
@@ -35,7 +41,9 @@ python3 -m http.server 8765   # then open http://localhost:8765/
   pins with ≥1 contact called today stop pulsing and show a green ✓. Called contacts get a **✓ Called today <time>** badge,
   location cards show **✓ N called today**, and the header shows **Last synced: <time> CT**. If the file's `date` isn't
   today (America/Chicago) it's treated as stale → everything pulses + a "Call status last synced …" notice.
-  Only the 15 plant pins pulse; the 309 Unassigned contacts have no pin (their ✓ shows in the list/cards only).
+  All 17 pins pulse (15 plant + 2 supplier); the 309 Unassigned contacts have no pin (their ✓ shows in the list/cards only).
+  A contact can sit at several pins (its plant pin plus any supplier pins that list it), and a call to them marks
+  **every** one of those pins as called (e.g. a Davenport Works contact checks Davenport Works, Middlebury and Minster).
 - Every contact has an **Open in HubSpot** button (`https://app.hubspot.com/contacts/6029765/record/0-1/<contactId>`, field `hubspot_contact_id`). Open it, then click **Call** in HubSpot so the call is logged. The 📞 `tel:` links dial from your phone and are **not logged**. If a contact ever lacks an ID, the UI falls back to a HubSpot search link.
 
 ## Call status (`called_today.json`)
@@ -61,6 +69,25 @@ cat calls.json | python3 update_called_today.py - --publish --strict   # stdin; 
 refreshes are skipped; `--force` overrides), and refuses if local `master` has other unpushed commits.
 Note: the live "Last synced" time is therefore the last *published change*, not the last check.
 
+`update_called_today.py` also prints the pins each resolved contact lights up and a **Pins marked called** summary.
+
+## Supplier pins (`sync_supplier_pins.py`)
+
+Supplier locations in `data.json` have `kind: "supplier"`, `is_company_facility: false`, `supplier_tag`,
+`contacts_from` (source plant pin ids) and `contact_ids` (the referenced `hubspot_contact_id`s, de-duplicated).
+The page's membership check uses `contact_ids` for supplier pins and `plant_id` for plant pins. Contact records are
+**not** copied, so touch counts, Open in HubSpot, sorting and the called-today pulse stay consistent, and header /
+company / AM totals (counted from `contacts`) don't double count: Arconic stays 419 unique contacts, the team 469.
+Supplier pin card counts (49, 76) are those pins' own lists and overlap the plant pins on purpose.
+
+```bash
+python3 sync_supplier_pins.py --check   # verify supplier pins are current and data.js == data.json (exit 1 if not)
+python3 sync_supplier_pins.py           # (re)insert supplier pins, recompute contact_ids + stats, write both files
+```
+
+Supplier definitions (city, geocode, source pins) live at the top of the script. Rerun it after anything that changes
+plant assignments (e.g. a rebuild); touch-count and called-today refreshes don't need it.
+
 ## Touch counts (`update_touch_counts.py`)
 
 Contacts carry `times_contacted` (HubSpot "Number of times contacted"), `sales_activities` and `last_contacted`
@@ -77,11 +104,13 @@ python3 update_touch_counts.py new.csv --publish                       # + commi
 ```
 
 `--publish` refuses if local `master` has unpushed commits, pulls first, and commits only the two data files.
-If you ever rerun `build_data.py`, rerun `update_touch_counts.py` afterwards (the build doesn't carry the counts).
+If you ever rerun `build_data.py`, rerun `update_touch_counts.py` and `sync_supplier_pins.py` afterwards (the build
+carries neither the counts nor the supplier pins). Supplier pins pick up new counts automatically (same contact records).
 The CSV itself is not committed (it includes contacts that aren't on the map).
 
 ## Scope notes
 
+- Supplier pin contacts are assigned by request (Steve, 2026-10-06), not by area code.
 - Plant assignment is **best-effort from phone area code**, city-level Nominatim geocodes. Unmapped ACs, toll-free, invalid numbers and no-phone contacts go to **Unassigned**.
 - No HubSpot writes from this page; it only links to HubSpot records (plus `tel:` / `mailto:` links, which are not logged).
 
@@ -91,8 +120,9 @@ The CSV itself is not committed (it includes contacts that aren't on the map).
 |------|---------|
 | `index.html` | Dashboard UI |
 | `data.json` / `data.js` | Bundled locations + contacts (+ HubSpot touch counts) |
-| `geocodes.json` | City geocode cache |
+| `geocodes.json` | City geocode cache (incl. supplier cities) |
 | `build_data.py` | Rebuild script (adds Kaiser to the v1 Arconic data) |
+| `sync_supplier_pins.py` | Adds/refreshes the Arconic-managed supplier pins (Middlebury IN, Minster OH); `--check` verifies |
 | `called_today.json` | Today's called contact IDs (drives the pulse); refreshed by a scheduled job |
 | `update_called_today.py` | Resolves a calls CSV/JSON → `called_today.json`; `--publish` pushes it |
 | `update_touch_counts.py` | Applies a HubSpot touch-count CSV → `data.json` + `data.js`; `--publish` pushes them |

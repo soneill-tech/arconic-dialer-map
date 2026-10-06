@@ -103,5 +103,19 @@
     "lat": 42.291707,
     "lon": -85.5872286,
     "source": "nominatim"
+  },
+  "Supplier · Middlebury": {
+    "city": "Middlebury",
+    "region": "Middlebury, Elkhart County, Indiana, USA",
+    "lat": 41.6750714,
+    "lon": -85.7060263,
+    "source": "nominatim"
+  },
+  "Supplier · Minster": {
+    "city": "Minster",
+    "region": "Minster, Auglaize County, Ohio, USA",
+    "lat": 40.3931033,
+    "lon": -84.3760612,
+    "source": "nominatim"
   }
 }

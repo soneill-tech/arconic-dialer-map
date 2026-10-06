@@ -132,6 +132,23 @@ def build_index(data):
     return by_id, by_email, by_name
 
 
+def pins_by_contact(data):
+    """contact_id -> [pin labels] it lights up on the map: its plant pin plus every supplier pin
+    (kind == "supplier") whose contact_ids list it. Mirrors the page's inLoc() logic."""
+    out = {}
+    locs = {l["id"]: l for l in data.get("locations", [])}
+    for c in data["contacts"]:
+        cid = str(c.get("hubspot_contact_id") or "")
+        l = locs.get(c.get("plant_id"))
+        if cid and l and l.get("pin"):
+            out.setdefault(cid, []).append(l.get("label") or l.get("name"))
+    for l in data.get("locations", []):
+        if l.get("pin") and isinstance(l.get("contact_ids"), list):
+            for cid in l["contact_ids"]:
+                out.setdefault(str(cid), []).append(l.get("label") or l.get("name"))
+    return out
+
+
 def resolve(row, idx):
     by_id, by_email, by_name = idx
     cid_in, email, name = pick(row, "contact_id"), pick(row, "contact_email"), pick(row, "contact_name")
@@ -190,6 +207,7 @@ def main():
     with open(a.data, encoding="utf-8") as f:
         data = json.load(f)
     idx = build_index(data)
+    pin_map = pins_by_contact(data)
     rows = [] if a.empty else load_rows(a.input)
 
     calls, ids, unresolved = [], [], []
@@ -211,7 +229,9 @@ def main():
         })
         if cid not in ids:
             ids.append(cid)
-        print(f"  ✓ row {i}: {c.get('name')} ({short_am(c.get('am'))}) → {cid} [by {how}]")
+        pins = pin_map.get(cid, [])
+        print(f"  ✓ row {i}: {c.get('name')} ({short_am(c.get('am'))}) → {cid} [by {how}]"
+              f" · pins: {', '.join(pins) if pins else 'none (Unassigned)'}")
     for i, row, why in unresolved:
         print(f"  ✗ row {i} UNRESOLVED: {why} :: {json.dumps(row, ensure_ascii=False)}")
 
@@ -266,7 +286,9 @@ def main():
     with open(out_abs, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
         f.write("\n")
+    lit = sorted({p for cid in ids for p in pin_map.get(cid, [])})
     print(f"Wrote {out_abs}: date={today} called={len(ids)} calls={len(calls)} unresolved={len(unresolved)} · {reason}")
+    print(f"Pins marked called ({len(lit)}): {', '.join(lit) if lit else 'none'}")
 
     if a.publish:
         if not changed and not a.force:
