@@ -176,6 +176,19 @@
   }
   .contact.is-called { border-color: rgba(34,197,94,.45); }
   .pill.called { color: var(--accent2); background: rgba(34,197,94,.12); }
+  /* ---- HubSpot touch counts + sort ---- */
+  .sort-line {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+    padding: 0 16px 10px; font-size: .74rem; color: var(--muted);
+  }
+  .sort-line .seg button { padding: 4px 8px; font-size: .7rem; }
+  .touch-badge {
+    display: inline-block; margin-top: 4px; margin-right: 4px; font-size: .7rem; font-weight: 600;
+    padding: 2px 8px; border-radius: 999px; background: rgba(59,130,246,.14); color: #93c5fd; cursor: help;
+    font-variant-numeric: tabular-nums;
+  }
+  .touch-badge.zero { background: var(--panel2); color: var(--muted); font-weight: 500; }
+  .touch-asof { opacity: .85; }
   footer {
     padding: 8px 16px; font-size: .72rem; color: var(--muted);
     border-top: 1px solid var(--border); background: var(--panel);
@@ -222,8 +235,15 @@
       <h2 id="detailTitle">Contacts</h2>
       <div class="detail-hint"><strong>Open in HubSpot, then click Call so the call is logged.</strong>
         <span class="muted">📞 phone-number links dial from your phone and are <em>not</em> logged.</span></div>
+      <div class="sort-line">
+        <span id="sortNote">Sorted by most contacted in HubSpot</span>
+        <div class="seg" id="sortToggle" title="Sort contacts">
+          <button type="button" data-sort="touches" class="active">Most contacted</button>
+          <button type="button" data-sort="dm">Decision makers first</button>
+        </div>
+      </div>
     </div>
-    <div id="detailBody"><div class="detail-empty">Select a location pin or card to view contacts.<br/>Sorted: Decision Maker → phone → name.</div></div>
+    <div id="detailBody"><div class="detail-empty">Select a location pin or card to view contacts.<br/>Sorted by most contacted in HubSpot.</div></div>
   </aside>
 </div>
 
@@ -231,6 +251,7 @@
   Scope: Arconic (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/2359249037" style="color:var(--accent)" target="_blank" rel="noopener">2359249037</a>, Kahekili Barrozo) +
   Kaiser Aluminum (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/5360206404" style="color:var(--accent)" target="_blank" rel="noopener">5360206404</a>, Simran Subramanian).
   Data bundled in <code>data.json</code>. Read-only · no HubSpot writes. Use <strong>Open in HubSpot</strong> → Call so calls are logged; 📞 tel: links are not logged.
+  <span class="touch-asof" id="touchAsOf"></span>
 </footer>
 
 <script src="data.js"></script>
@@ -246,6 +267,7 @@
   let amFilter = "all";
   let searchQ = "";
   let selectedLocId = "team:all";
+  let sortMode = "touches";       // "touches" (default: HubSpot Number of times contacted) | "dm"
   const markers = {};
 
   // ---- Call status ("not called today") — driven by called_today.json ----
@@ -420,9 +442,43 @@
     });
   }
 
+  // ---- HubSpot touch counts (times_contacted = "Number of times contacted": calls, emails, meetings) ----
+  const TOUCH_TIP = "HubSpot Number of times contacted: all logged calls, emails and meetings";
+  const nameKey = (c) => String(c.name || "").toLowerCase();
+  const SORTS = {
+    touches: (a, b) => (b.times_contacted || 0) - (a.times_contacted || 0) ||
+      (b.sales_activities || 0) - (a.sales_activities || 0) ||
+      (b.is_dm ? 1 : 0) - (a.is_dm ? 1 : 0) || nameKey(a).localeCompare(nameKey(b)),
+    dm: (a, b) => (b.is_dm ? 1 : 0) - (a.is_dm ? 1 : 0) || (b.has_phone ? 1 : 0) - (a.has_phone ? 1 : 0) ||
+      nameKey(a).localeCompare(nameKey(b)),
+  };
+  const SORT_NOTES = { touches: "Sorted by most contacted in HubSpot", dm: "Sorted by decision makers first, then phone, then name" };
+  function sortContacts(list) { return list.slice().sort(SORTS[sortMode] || SORTS.touches); }
+  function fmtLastContacted(v) {
+    if (!v) return "";
+    const m = String(v).match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return String(v);
+    const md = `${+m[2]}/${+m[3]}`;
+    return m[1] === todayCT().slice(0, 4) ? md : `${md}/${m[1].slice(2)}`;
+  }
+  function touchBadge(c) {
+    const n = Number(c.times_contacted) || 0;
+    const last = fmtLastContacted(c.last_contacted);
+    const txt = `${n.toLocaleString("en-US")} ${n === 1 ? "touch" : "touches"}${last ? " · last " + last : ""}`;
+    return `<span class="touch-badge${n ? "" : " zero"}" title="${esc(TOUCH_TIP)}">${esc(txt)}</span>`;
+  }
+  function renderTouchAsOf() {
+    const t = DATA.touch_counts_updated;
+    const d = t ? new Date(t) : null;
+    const txt = d && !isNaN(d) ? new Intl.DateTimeFormat("en-US", { timeZone: CT_TZ, month: "short", day: "numeric",
+      year: "numeric", hour: "numeric", minute: "2-digit" }).format(d).replace(/, (\d{4}),/, ", $1") : null;
+    el("touchAsOf").textContent = txt ? ` Touch counts as of ${txt} CT.` : "";
+    el("touchAsOf").title = DATA.touch_counts_source || TOUCH_TIP;
+  }
+
   function renderDetail() {
     const loc = DATA.locations.find((l) => l.id === selectedLocId) || DATA.locations[0];
-    const contacts = filteredContactsForLoc(loc);
+    const contacts = sortContacts(filteredContactsForLoc(loc));
     el("detailTitle").textContent = `${loc.label || loc.name} · ${contacts.length} contacts`;
     const body = el("detailBody");
     if (!contacts.length) {
@@ -434,6 +490,7 @@
         <div class="top">
           <div>
             <div class="cname">${esc(c.name || "(no name)")}</div>
+            ${touchBadge(c)}
             ${ci ? `<div class="called-badge" title="${esc(ci.outcome ? "Outcome: " + ci.outcome : "Call logged in HubSpot today")}">✓ Called today${ci.time ? " " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
             ${c.title ? `<div class="title">${esc(c.title)}</div>` : `<div class="title" style="opacity:.5">Title not scraped</div>`}
             <div class="co-tag"><span class="dot" style="background:${COLORS[c.company] || "#888"};width:8px;height:8px"></span> ${esc(c.company)} · ${esc(AM_SHORT[c.am] || c.am)}</div>
@@ -513,6 +570,18 @@
     renderDetail();
     updateMarkerVisibility();
   });
+
+  // Sort toggle: Most contacted (default) / Decision makers first
+  el("sortToggle").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-sort]");
+    if (!btn || btn.dataset.sort === sortMode) return;
+    sortMode = btn.dataset.sort;
+    el("sortToggle").querySelectorAll("button").forEach((b) => b.classList.toggle("active", b === btn));
+    el("sortNote").textContent = SORT_NOTES[sortMode];
+    renderDetail();
+    el("detailBody").parentElement.scrollTop = 0;
+  });
+  renderTouchAsOf();
 
   el("search").addEventListener("input", (e) => {
     searchQ = e.target.value;

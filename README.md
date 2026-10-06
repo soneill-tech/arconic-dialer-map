@@ -25,7 +25,11 @@ python3 -m http.server 8765   # then open http://localhost:8765/
   Franklin TN HQ (615), Tucson AZ (520), Newark Works (Heath OH, 740), Jackson TN (731), Foothill Ranch CA (949),
   Kalamazoo MI (269) + All Kaiser + Unassigned
 - Side list grouped by company/AM; AM filter (All / Kahekili / Simran) and search
-- Click a pin or card → that location's contacts, sorted **Decision Maker → has phone → name**
+- Click a pin or card → that location's contacts, sorted **most contacted in HubSpot** first
+  (`times_contacted` desc → `sales_activities` desc → Decision Maker first → name). A toggle in the panel switches to
+  **Decision makers first** (DM → has phone → name). Each contact shows a badge like **2,494 touches · last 10/5**
+  (HubSpot *Number of times contacted* = all logged calls, emails and meetings, not calls only), and the footer shows
+  **Touch counts as of <date time> CT** (`touch_counts_updated` in the data).
 - **"Not called today" pulse:** on load and every 5 min the page fetches `called_today.json?ts=<now>` (no-cache).
   A pin **pulses** (ring in its own color) when none of its contacts' `hubspot_contact_id`s are in `called_contact_ids`;
   pins with ≥1 contact called today stop pulsing and show a green ✓. Called contacts get a **✓ Called today <time>** badge,
@@ -57,6 +61,25 @@ cat calls.json | python3 update_called_today.py - --publish --strict   # stdin; 
 refreshes are skipped; `--force` overrides), and refuses if local `master` has other unpushed commits.
 Note: the live "Last synced" time is therefore the last *published change*, not the last check.
 
+## Touch counts (`update_touch_counts.py`)
+
+Contacts carry `times_contacted` (HubSpot "Number of times contacted"), `sales_activities` and `last_contacted`
+(ISO date, CT). HubSpot has no call-only count per contact. Refresh from a new CSV with the same columns
+(`contact_id,name,email,times_contacted,sales_activities,last_contacted,company`); stdlib only, Python 3.9+.
+Join: `contact_id` = `hubspot_contact_id`, else email (case-insensitive). CSV rows not on the map are skipped
+(never added); map contacts with no row get 0 / 0 / null. `touch_counts_updated` defaults to the CSV's file mtime (CT).
+
+```bash
+python3 update_touch_counts.py contact_touch_counts.csv --dry-run      # report matches only
+python3 update_touch_counts.py contact_touch_counts.csv                # rewrite data.json + data.js (kept in sync)
+python3 update_touch_counts.py new.csv --as-of 2026-10-07T09:00 -v     # explicit as-of (CT); list skipped rows
+python3 update_touch_counts.py new.csv --publish                       # + commit/push ONLY data.json, data.js
+```
+
+`--publish` refuses if local `master` has unpushed commits, pulls first, and commits only the two data files.
+If you ever rerun `build_data.py`, rerun `update_touch_counts.py` afterwards (the build doesn't carry the counts).
+The CSV itself is not committed (it includes contacts that aren't on the map).
+
 ## Scope notes
 
 - Plant assignment is **best-effort from phone area code**, city-level Nominatim geocodes. Unmapped ACs, toll-free, invalid numbers and no-phone contacts go to **Unassigned**.
@@ -67,8 +90,9 @@ Note: the live "Last synced" time is therefore the last *published change*, not 
 | File | Purpose |
 |------|---------|
 | `index.html` | Dashboard UI |
-| `data.json` / `data.js` | Bundled locations + contacts |
+| `data.json` / `data.js` | Bundled locations + contacts (+ HubSpot touch counts) |
 | `geocodes.json` | City geocode cache |
 | `build_data.py` | Rebuild script (adds Kaiser to the v1 Arconic data) |
 | `called_today.json` | Today's called contact IDs (drives the pulse); refreshed by a scheduled job |
 | `update_called_today.py` | Resolves a calls CSV/JSON → `called_today.json`; `--publish` pushes it |
+| `update_touch_counts.py` | Applies a HubSpot touch-count CSV → `data.json` + `data.js`; `--publish` pushes them |

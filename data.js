@@ -3,6 +3,8 @@ window.__DIALER_DATA__ = {
   "title": "Team Steve — Closed Won Dialer Map",
   "scope": "Arconic (HubSpot 2359249037, Kahekili Barrozo) + Kaiser Aluminum (HubSpot 5360206404, Simran Subramanian)",
   "generated": "2026-10-05",
+  "touch_counts_updated": "2026-10-06T08:53:58-05:00",
+  "touch_counts_source": "HubSpot 'Number of times contacted' (all logged calls, emails, meetings) · contact_touch_counts.csv",
   "companies": [
     {
       "name": "Arconic",
@@ -20,7 +22,7 @@ window.__DIALER_DATA__ = {
   ],
   "notes": [
     "Plant pins are city-level (Nominatim). Contacts are assigned to a plant only when the phone area code matches a known site for that company; otherwise Unassigned.",
-    "Sort order: Decision Maker first, then contacts with phone, then name.",
+    "Sort order (UI default): HubSpot 'Number of times contacted' desc, then sales activities desc, then Decision Maker first, then name. Toggle 'Decision makers first' for DM → phone → name.",
     "No HubSpot writes. Read-only dialer export.",
     "Each contact has an 'Open in HubSpot' link (record/0-1/<contactId>). Call from HubSpot so the call is logged; tel: links dial from your phone and are NOT logged."
   ],
@@ -423,7 +425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "1190201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 78,
+      "sales_activities": 135,
+      "last_contacted": "2026-09-10"
     },
     {
       "name": "Paul Laslou",
@@ -445,7 +450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "21373851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1413,
+      "sales_activities": 2785,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Adam M. Bjorkman",
@@ -467,7 +475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "462051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 706,
+      "sales_activities": 1514,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Alisha Owens",
@@ -489,7 +500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "2072401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 12,
+      "sales_activities": 23,
+      "last_contacted": "2021-04-08"
     },
     {
       "name": "Alonso Ochoa",
@@ -511,7 +525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "434957",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 208,
+      "sales_activities": 417,
+      "last_contacted": "2024-03-04"
     },
     {
       "name": "Amber Atkins",
@@ -533,7 +550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "229709076866",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 98,
+      "sales_activities": 199,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Amber Curwick",
@@ -555,7 +575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "20276383576",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 3,
+      "last_contacted": "2024-05-10"
     },
     {
       "name": "Anastasia Stevens",
@@ -577,7 +600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "38188051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 132,
+      "sales_activities": 375,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Andrew W Ditzler",
@@ -599,7 +625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "3539001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 7,
+      "last_contacted": "2020-10-14"
     },
     {
       "name": "Andrew Weishaar",
@@ -621,7 +650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "2706451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 22,
+      "sales_activities": 47,
+      "last_contacted": "2023-03-10"
     },
     {
       "name": "Anita Gowda",
@@ -643,7 +675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "5644701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 33,
+      "sales_activities": 64,
+      "last_contacted": "2023-03-12"
     },
     {
       "name": "Annette Thiel",
@@ -665,7 +700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "34004401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 5,
+      "last_contacted": "2023-02-10"
     },
     {
       "name": "Armando Rivera",
@@ -687,7 +725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "236675835272",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 6,
+      "sales_activities": 15,
+      "last_contacted": "2026-07-24"
     },
     {
       "name": "Ben Stanley",
@@ -709,7 +750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "26177301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 79,
+      "sales_activities": 149,
+      "last_contacted": "2026-09-09"
     },
     {
       "name": "Beth Ruehrdanz",
@@ -731,7 +775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "33156551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 39,
+      "sales_activities": 106,
+      "last_contacted": "2026-09-11"
     },
     {
       "name": "Blake Biermann",
@@ -753,7 +800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "110683171176",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 13,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Brenden Pawlak",
@@ -775,7 +825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "196902267946",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 17,
+      "sales_activities": 24,
+      "last_contacted": "2025-03-20"
     },
     {
       "name": "Brian Beil",
@@ -797,7 +850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "9217851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 12,
+      "sales_activities": 38,
+      "last_contacted": "2026-07-31"
     },
     {
       "name": "Brian Robey",
@@ -819,7 +875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "2072301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 32,
+      "sales_activities": 67,
+      "last_contacted": "2026-06-09"
     },
     {
       "name": "Brigitte Ingram",
@@ -841,7 +900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "21812451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 119,
+      "sales_activities": 215,
+      "last_contacted": "2026-09-29"
     },
     {
       "name": "Brycen Hamilton",
@@ -863,7 +925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "23219651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 12,
+      "last_contacted": "2022-06-06"
     },
     {
       "name": "Candace Greene",
@@ -885,7 +950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "39653301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 14,
+      "last_contacted": "2023-03-01"
     },
     {
       "name": "Candace Marple",
@@ -907,7 +975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "49256601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 61,
+      "sales_activities": 122,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Caraline Coleman",
@@ -929,7 +1000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "34483001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 48,
+      "sales_activities": 89,
+      "last_contacted": "2024-05-20"
     },
     {
       "name": "Catanna Dement",
@@ -951,7 +1025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5158601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 52,
+      "sales_activities": 150,
+      "last_contacted": "2026-06-08"
     },
     {
       "name": "Cecily Hill",
@@ -973,7 +1050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "235446135904",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 168,
+      "sales_activities": 355,
+      "last_contacted": "2026-10-04"
     },
     {
       "name": "Chlesie Dusenberry",
@@ -995,7 +1075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "127678526086",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 52,
+      "sales_activities": 190,
+      "last_contacted": "2026-09-24"
     },
     {
       "name": "Chris J. Lawrence",
@@ -1017,7 +1100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "462551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 60,
+      "sales_activities": 107,
+      "last_contacted": "2021-03-22"
     },
     {
       "name": "Chris Messersmith",
@@ -1039,7 +1125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "28464401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 11,
+      "last_contacted": "2022-07-18"
     },
     {
       "name": "Christina Murrell",
@@ -1061,7 +1150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "23262601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 128,
+      "sales_activities": 236,
+      "last_contacted": "2023-02-24"
     },
     {
       "name": "Christopher Stephenson",
@@ -1083,7 +1175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "8848951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 22,
+      "last_contacted": "2022-11-21"
     },
     {
       "name": "Ciara Davis",
@@ -1105,7 +1200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "236698856227",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2026-07-21"
     },
     {
       "name": "Cody Herring",
@@ -1127,7 +1225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "9217901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 12,
+      "last_contacted": "2021-03-11"
     },
     {
       "name": "Connie Keller",
@@ -1149,7 +1250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "456351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 274,
+      "sales_activities": 520,
+      "last_contacted": "2026-09-02"
     },
     {
       "name": "Corey Ortiz",
@@ -1171,7 +1275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "3205961",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 20,
+      "sales_activities": 48,
+      "last_contacted": "2026-08-26"
     },
     {
       "name": "Cory Yates",
@@ -1193,7 +1300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "96451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 116,
+      "sales_activities": 202,
+      "last_contacted": "2023-03-15"
     },
     {
       "name": "Craig Martin",
@@ -1215,7 +1325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "30294801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 73,
+      "sales_activities": 115,
+      "last_contacted": "2024-08-23"
     },
     {
       "name": "Cynthia King",
@@ -1237,7 +1350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "2303458",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2494,
+      "sales_activities": 5666,
+      "last_contacted": "2026-10-06"
     },
     {
       "name": "Damon Norton",
@@ -1259,7 +1375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "34993201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 13,
+      "last_contacted": "2022-12-29"
     },
     {
       "name": "Daniel Kurz",
@@ -1281,7 +1400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "38609851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 46,
+      "sales_activities": 54,
+      "last_contacted": "2026-09-08"
     },
     {
       "name": "Daniel Tomlin",
@@ -1303,7 +1425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "37509101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 48,
+      "last_contacted": "2026-09-11"
     },
     {
       "name": "Daniel Torie",
@@ -1325,7 +1450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "10496775741",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 354,
+      "sales_activities": 822,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Danielle Ponta",
@@ -1347,7 +1475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "31378201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 181,
+      "sales_activities": 525,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Danny Markovitz",
@@ -1369,7 +1500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "104990773117",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 13,
+      "sales_activities": 22,
+      "last_contacted": "2026-04-13"
     },
     {
       "name": "Dave Keens",
@@ -1391,7 +1525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "9397801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 31,
+      "sales_activities": 34,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Dave Matthews",
@@ -1413,7 +1550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2946356",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 6,
+      "last_contacted": "2020-05-12"
     },
     {
       "name": "Dave Tomes",
@@ -1435,7 +1575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "34847451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 18,
+      "last_contacted": "2022-12-08"
     },
     {
       "name": "David Hebbel",
@@ -1457,7 +1600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "5209801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 29,
+      "last_contacted": "2022-12-29"
     },
     {
       "name": "David Paitsel",
@@ -1479,7 +1625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "29698401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 96,
+      "sales_activities": 226,
+      "last_contacted": "2024-05-17"
     },
     {
       "name": "David Smith",
@@ -1501,7 +1650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "61834404632",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 554,
+      "sales_activities": 1212,
+      "last_contacted": "2026-10-06"
     },
     {
       "name": "David Yordy",
@@ -1523,7 +1675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "32552101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 14,
+      "last_contacted": "2022-10-17"
     },
     {
       "name": "Diana Ilioasa",
@@ -1545,7 +1700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "463901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 204,
+      "sales_activities": 324,
+      "last_contacted": "2022-07-22"
     },
     {
       "name": "Dionne Cearing",
@@ -1567,7 +1725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39910601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2023-03-07"
     },
     {
       "name": "Donna Brock",
@@ -1589,7 +1750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "33256451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2026-03-19"
     },
     {
       "name": "Donna Shenk",
@@ -1611,7 +1775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "33342151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 37,
+      "sales_activities": 80,
+      "last_contacted": "2026-08-05"
     },
     {
       "name": "Dylan Kuhns",
@@ -1633,7 +1800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "33860701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 78,
+      "sales_activities": 128,
+      "last_contacted": "2026-07-28"
     },
     {
       "name": "Efriam Cruz",
@@ -1655,7 +1825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "5158651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 76,
+      "sales_activities": 169,
+      "last_contacted": "2026-08-18"
     },
     {
       "name": "Elizabeth Anderson",
@@ -1677,7 +1850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "462001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 448,
+      "sales_activities": 824,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Elizabeth Barnes",
@@ -1699,7 +1875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "31705551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 29,
+      "sales_activities": 83,
+      "last_contacted": "2025-11-18"
     },
     {
       "name": "Emily Cook",
@@ -1721,7 +1900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29981351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 14,
+      "sales_activities": 41,
+      "last_contacted": "2026-06-08"
     },
     {
       "name": "Emily Schultz",
@@ -1743,7 +1925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "32795353921",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 126,
+      "sales_activities": 308,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Eric Wettig",
@@ -1765,7 +1950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "33281501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2022-11-01"
     },
     {
       "name": "Eric Yost",
@@ -1787,7 +1975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "39030451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 6,
+      "last_contacted": "2023-02-15"
     },
     {
       "name": "Gary Broer",
@@ -1809,7 +2000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "19945240135",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 27,
+      "sales_activities": 53,
+      "last_contacted": "2026-09-11"
     },
     {
       "name": "Gregg Klinger",
@@ -1831,7 +2025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "30424751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 14,
+      "sales_activities": 22,
+      "last_contacted": "2026-02-20"
     },
     {
       "name": "Heather Taylor",
@@ -1853,7 +2050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "21398601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 539,
+      "sales_activities": 692,
+      "last_contacted": "2023-01-16"
     },
     {
       "name": "Henry Vega",
@@ -1875,7 +2075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "1272701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 32,
+      "sales_activities": 54,
+      "last_contacted": "2021-02-12"
     },
     {
       "name": "Iwoinakee Billups",
@@ -1897,7 +2100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "221397944069",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 13,
+      "last_contacted": "2026-05-14"
     },
     {
       "name": "James Belcher",
@@ -1919,7 +2125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "439801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 948,
+      "sales_activities": 1322,
+      "last_contacted": "2023-08-08"
     },
     {
       "name": "Janine Mcwilliams",
@@ -1941,7 +2150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "517501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 22,
+      "sales_activities": 38,
+      "last_contacted": "2023-01-12"
     },
     {
       "name": "Jannell Clark",
@@ -1963,7 +2175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "18364951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 155,
+      "sales_activities": 304,
+      "last_contacted": "2023-02-02"
     },
     {
       "name": "Jared Higgins",
@@ -1985,7 +2200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "29863951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 460,
+      "sales_activities": 1082,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Jason Cottrell",
@@ -2007,7 +2225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "41154751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 333,
+      "sales_activities": 709,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Jason King",
@@ -2029,7 +2250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "9240201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 27,
+      "last_contacted": "2023-02-17"
     },
     {
       "name": "Jason Orange",
@@ -2051,7 +2275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "10612451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 187,
+      "sales_activities": 318,
+      "last_contacted": "2026-08-11"
     },
     {
       "name": "Jason Williams",
@@ -2073,7 +2300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "18901172827",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 25,
+      "sales_activities": 67,
+      "last_contacted": "2026-09-14"
     },
     {
       "name": "Jeff Berryman",
@@ -2095,7 +2325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "95101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 113,
+      "sales_activities": 191,
+      "last_contacted": "2022-06-06"
     },
     {
       "name": "Jennifer Dalton",
@@ -2117,7 +2350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "5336351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 65,
+      "sales_activities": 124,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Jennifer Nelson",
@@ -2139,7 +2375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "20280678022",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 66,
+      "sales_activities": 197,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Jennifer Solomon-Clark",
@@ -2161,7 +2400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3833959",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 155,
+      "sales_activities": 262,
+      "last_contacted": "2026-08-07"
     },
     {
       "name": "Jennifer Woelke",
@@ -2183,7 +2425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "86238944909",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 10,
+      "sales_activities": 29,
+      "last_contacted": "2026-06-18"
     },
     {
       "name": "Jerry Bowen",
@@ -2205,7 +2450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3650076",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 33,
+      "sales_activities": 39,
+      "last_contacted": "2026-10-02"
     },
     {
       "name": "Jill Everetts",
@@ -2227,7 +2475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "31849551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 52,
+      "sales_activities": 111,
+      "last_contacted": "2023-05-25"
     },
     {
       "name": "John Parlon",
@@ -2249,7 +2500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "94152",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 162,
+      "sales_activities": 253,
+      "last_contacted": "2021-10-01"
     },
     {
       "name": "John Pellegrino",
@@ -2271,7 +2525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10078151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 33,
+      "sales_activities": 45,
+      "last_contacted": "2025-11-18"
     },
     {
       "name": "JohnPaul Tebo",
@@ -2293,7 +2550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Massena",
       "hubspot_contact_id": "246277427881",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 3,
+      "last_contacted": "2026-09-03"
     },
     {
       "name": "Jon Timko",
@@ -2315,7 +2575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "196896220314",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 174,
+      "sales_activities": 273,
+      "last_contacted": "2026-09-21"
     },
     {
       "name": "Joseph Woods",
@@ -2337,7 +2600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "31294851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 7,
+      "last_contacted": "2022-11-18"
     },
     {
       "name": "Julie Myers",
@@ -2359,7 +2625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "7740151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 7,
+      "last_contacted": "2021-03-10"
     },
     {
       "name": "Julieanna Long",
@@ -2381,7 +2650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "30900501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 36,
+      "sales_activities": 104,
+      "last_contacted": "2026-08-26"
     },
     {
       "name": "Justin Moore",
@@ -2403,7 +2675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "178912274775",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 126,
+      "sales_activities": 279,
+      "last_contacted": "2026-09-21"
     },
     {
       "name": "Kali Beck",
@@ -2425,7 +2700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "14794033591",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 66,
+      "sales_activities": 143,
+      "last_contacted": "2026-06-08"
     },
     {
       "name": "Kalliene Niesen",
@@ -2447,7 +2725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "29271501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 81,
+      "sales_activities": 193,
+      "last_contacted": "2026-09-24"
     },
     {
       "name": "Karen Gordon",
@@ -2469,7 +2750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "38921451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 83,
+      "sales_activities": 198,
+      "last_contacted": "2026-09-04"
     },
     {
       "name": "Karen M. Jorfi",
@@ -2491,7 +2775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "5151901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 143,
+      "sales_activities": 298,
+      "last_contacted": "2024-12-12"
     },
     {
       "name": "Karen Paparo",
@@ -2513,7 +2800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "36168951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 43,
+      "sales_activities": 89,
+      "last_contacted": "2026-08-11"
     },
     {
       "name": "Karla Alejandre",
@@ -2535,7 +2825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "10644151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 445,
+      "sales_activities": 740,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Kate Barrelle",
@@ -2557,7 +2850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "236496719456",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 9,
+      "last_contacted": "2026-09-16"
     },
     {
       "name": "Katie Adkins",
@@ -2579,7 +2875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "30603551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 46,
+      "sales_activities": 87,
+      "last_contacted": "2026-09-03"
     },
     {
       "name": "Keith Beddick",
@@ -2601,7 +2900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "2335060",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 125,
+      "sales_activities": 183,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Keith Bookout",
@@ -2623,7 +2925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "29568151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 135,
+      "sales_activities": 256,
+      "last_contacted": "2026-08-19"
     },
     {
       "name": "Kelli Carver",
@@ -2645,7 +2950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "196844762891",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 399,
+      "sales_activities": 589,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Kevin Thompson",
@@ -2667,7 +2975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "7274501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 9,
+      "sales_activities": 10,
+      "last_contacted": "2026-10-06"
     },
     {
       "name": "Kevin West",
@@ -2689,7 +3000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "37695051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 32,
+      "sales_activities": 65,
+      "last_contacted": "2026-09-11"
     },
     {
       "name": "Kyle Amor",
@@ -2711,7 +3025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "6368851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 11,
+      "last_contacted": "2020-11-14"
     },
     {
       "name": "Lance Amy",
@@ -2733,7 +3050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "7040701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 276,
+      "sales_activities": 557,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Lance Duvernay",
@@ -2755,7 +3075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "1788951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 300,
+      "sales_activities": 490,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Lance Karr",
@@ -2777,7 +3100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "42836451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 351,
+      "sales_activities": 943,
+      "last_contacted": "2026-09-25"
     },
     {
       "name": "Leshia Segal",
@@ -2799,7 +3125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "21414951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 211,
+      "sales_activities": 362,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Liliana Serra",
@@ -2821,7 +3150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "4885351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 88,
+      "sales_activities": 263,
+      "last_contacted": "2026-08-14"
     },
     {
       "name": "Lindsey Ekis",
@@ -2843,7 +3175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "21397101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1656,
+      "sales_activities": 3560,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Lisa McClain",
@@ -2865,7 +3200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3950958",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 4,
+      "last_contacted": "2020-06-09"
     },
     {
       "name": "Lora Hayes",
@@ -2887,7 +3225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "34889801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 9,
+      "last_contacted": "2022-12-20"
     },
     {
       "name": "Loretta M Huston",
@@ -2909,7 +3250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5235901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 28,
+      "sales_activities": 53,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Margaret Burchell",
@@ -2931,7 +3275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "8673501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 136,
+      "sales_activities": 214,
+      "last_contacted": "2021-11-17"
     },
     {
       "name": "Maria Graves",
@@ -2953,7 +3300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "5552701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 210,
+      "sales_activities": 399,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Marissa Ewing-Haberkorn",
@@ -2975,7 +3325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "33834151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 16,
+      "sales_activities": 43,
+      "last_contacted": "2023-05-25"
     },
     {
       "name": "Mark Winowich",
@@ -2997,7 +3350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "49278352",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 164,
+      "sales_activities": 326,
+      "last_contacted": "2026-09-28"
     },
     {
       "name": "Matthew Ritchey",
@@ -3019,7 +3375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "2706351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 101,
+      "sales_activities": 181,
+      "last_contacted": "2022-11-22"
     },
     {
       "name": "Matthew Rivet",
@@ -3041,7 +3400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "938251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 16,
+      "sales_activities": 22,
+      "last_contacted": "2020-06-09"
     },
     {
       "name": "Mercedee Covault",
@@ -3063,7 +3425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "18168493824",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 9,
+      "last_contacted": "2026-08-13"
     },
     {
       "name": "Michael Dicocco",
@@ -3085,7 +3450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "7625351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2021-01-15"
     },
     {
       "name": "Michael Karaffa",
@@ -3107,7 +3475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "207223351402",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 13,
+      "sales_activities": 31,
+      "last_contacted": "2025-03-20"
     },
     {
       "name": "Michelle Eshelman",
@@ -3129,7 +3500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "4352451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 16,
+      "sales_activities": 25,
+      "last_contacted": "2024-09-25"
     },
     {
       "name": "Nathan Moore",
@@ -3151,7 +3525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "110654145664",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 47,
+      "sales_activities": 104,
+      "last_contacted": "2026-09-10"
     },
     {
       "name": "Nathaniel Toepke",
@@ -3173,7 +3550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "239629915157",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 29,
+      "sales_activities": 103,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Nicole Baldwin",
@@ -3195,7 +3575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "28731851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 36,
+      "sales_activities": 96,
+      "last_contacted": "2026-08-26"
     },
     {
       "name": "Orlando Canales",
@@ -3217,7 +3600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "207136109368",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2026-03-05"
     },
     {
       "name": "Philip McGaw",
@@ -3239,7 +3625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "28464351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 11,
+      "last_contacted": "2022-07-18"
     },
     {
       "name": "Pito Vera",
@@ -3261,7 +3650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3650077",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 11,
+      "last_contacted": "2021-02-12"
     },
     {
       "name": "Rachael Deamer",
@@ -3283,7 +3675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "51715351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 6,
+      "sales_activities": 6,
+      "last_contacted": "2026-01-23"
     },
     {
       "name": "Rachael Speckman",
@@ -3305,7 +3700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "158986525006",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 18,
+      "sales_activities": 46,
+      "last_contacted": "2026-02-18"
     },
     {
       "name": "Rachel Beaird",
@@ -3327,7 +3725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "3554855",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 327,
+      "sales_activities": 1043,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Raquel Bormann",
@@ -3349,7 +3750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "34482951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 68,
+      "sales_activities": 272,
+      "last_contacted": "2026-08-25"
     },
     {
       "name": "Rebecca N Scheaffer",
@@ -3371,7 +3775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "9383951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 13,
+      "sales_activities": 21,
+      "last_contacted": "2026-09-22"
     },
     {
       "name": "Richard Overmann",
@@ -3393,7 +3800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "34889751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 16,
+      "sales_activities": 44,
+      "last_contacted": "2025-06-06"
     },
     {
       "name": "Robert S Gilbert",
@@ -3415,7 +3825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "460501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 510,
+      "sales_activities": 989,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Robin Darter",
@@ -3437,7 +3850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3018151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2020-04-15"
     },
     {
       "name": "Rodney Murphy",
@@ -3459,7 +3875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3036001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2020-06-08"
     },
     {
       "name": "Ronda Marks",
@@ -3481,7 +3900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "908351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 16,
+      "last_contacted": "2020-11-30"
     },
     {
       "name": "Ryan Eshleman",
@@ -3503,7 +3925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "31996151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 20,
+      "sales_activities": 31,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Sarah Schupp",
@@ -3525,7 +3950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "20283614591",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 191,
+      "sales_activities": 196,
+      "last_contacted": "2026-10-02"
     },
     {
       "name": "Scott Gorman",
@@ -3547,7 +3975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "31310201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 3,
+      "last_contacted": "2022-09-19"
     },
     {
       "name": "Scott Mumey",
@@ -3569,7 +4000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "4019451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 15,
+      "sales_activities": 39,
+      "last_contacted": "2026-09-02"
     },
     {
       "name": "Sean Cunningham",
@@ -3591,7 +4025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "31593051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 17,
+      "sales_activities": 37,
+      "last_contacted": "2022-12-14"
     },
     {
       "name": "Sean Rizzo",
@@ -3613,7 +4050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "22141101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 69,
+      "sales_activities": 130,
+      "last_contacted": "2026-07-20"
     },
     {
       "name": "Shannon (Express) Hafeez",
@@ -3635,7 +4075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "437551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 172,
+      "sales_activities": 257,
+      "last_contacted": "2021-09-01"
     },
     {
       "name": "Shannon Hafeez",
@@ -3657,7 +4100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "8788001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 113,
+      "sales_activities": 178,
+      "last_contacted": "2021-09-27"
     },
     {
       "name": "Shannon Nixon",
@@ -3679,7 +4125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "236802819883",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 35,
+      "sales_activities": 71,
+      "last_contacted": "2026-10-04"
     },
     {
       "name": "Shaun Denys",
@@ -3701,7 +4150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "21705251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 94,
+      "sales_activities": 137,
+      "last_contacted": "2023-05-18"
     },
     {
       "name": "Sheri Vanburen",
@@ -3723,7 +4175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "730851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 67,
+      "sales_activities": 124,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Sherry Nolen",
@@ -3745,7 +4200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "33264851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 5,
+      "last_contacted": "2022-11-03"
     },
     {
       "name": "Stacey Anderson",
@@ -3767,7 +4225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "28781501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2022-07-22"
     },
     {
       "name": "Steve Shamblin",
@@ -3789,7 +4250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10122851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 32,
+      "sales_activities": 78,
+      "last_contacted": "2026-10-04"
     },
     {
       "name": "Tammy McCluskey",
@@ -3811,7 +4275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Arconic HQ / Pittsburgh",
       "hubspot_contact_id": "7274551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 24,
+      "sales_activities": 51,
+      "last_contacted": "2023-05-15"
     },
     {
       "name": "Taylor Meisel",
@@ -3833,7 +4300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lancaster",
       "hubspot_contact_id": "10129701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 34,
+      "sales_activities": 63,
+      "last_contacted": "2026-02-10"
     },
     {
       "name": "Tiffany Sievers",
@@ -3855,7 +4325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "5823651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 23,
+      "sales_activities": 65,
+      "last_contacted": "2026-04-06"
     },
     {
       "name": "Tony Chambers",
@@ -3877,7 +4350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "7683001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 9,
+      "sales_activities": 16,
+      "last_contacted": "2021-01-19"
     },
     {
       "name": "Tracey Downey",
@@ -3899,7 +4375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "28731901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 17,
+      "sales_activities": 36,
+      "last_contacted": "2022-11-21"
     },
     {
       "name": "Travis Tipton",
@@ -3921,7 +4400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "44658",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 862,
+      "sales_activities": 1472,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Trent Bell",
@@ -3943,7 +4425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "13966405892",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 565,
+      "sales_activities": 952,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Troy Skeen",
@@ -3965,7 +4450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "10731101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 9,
+      "last_contacted": "2021-05-09"
     },
     {
       "name": "Troy Tibbot",
@@ -3987,7 +4475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "93901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 791,
+      "sales_activities": 1356,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Tyler Bean",
@@ -4009,7 +4500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "15129157719",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 134,
+      "sales_activities": 404,
+      "last_contacted": "2026-09-28"
     },
     {
       "name": "Tyler Trimble",
@@ -4031,7 +4525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Davenport Works",
       "hubspot_contact_id": "34982451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 12,
+      "sales_activities": 35,
+      "last_contacted": "2026-08-26"
     },
     {
       "name": "Vicki Mayes",
@@ -4053,7 +4550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Lafayette",
       "hubspot_contact_id": "10899401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 6,
+      "last_contacted": "2023-02-01"
     },
     {
       "name": "Vicky Diehl",
@@ -4075,7 +4575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "33414951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 23,
+      "last_contacted": "2026-09-25"
     },
     {
       "name": "Zane Williams",
@@ -4097,7 +4600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": "arc:Tennessee Operations (Alcoa)",
       "hubspot_contact_id": "21454601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 10,
+      "sales_activities": 11,
+      "last_contacted": "2026-09-25"
     },
     {
       "name": "Aaron Russell",
@@ -4119,7 +4625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "20276972823",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 62,
+      "sales_activities": 253,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Aaron Salem",
@@ -4141,7 +4650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "33324601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 213,
+      "sales_activities": 339,
+      "last_contacted": "2024-10-01"
     },
     {
       "name": "Ada Santizo",
@@ -4163,7 +4675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2531551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2020-03-16"
     },
     {
       "name": "Alan Robertson",
@@ -4185,7 +4700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "23567101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2022-03-22"
     },
     {
       "name": "Alexander Mallonee",
@@ -4207,7 +4725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "86238944913",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2024-12-19"
     },
     {
       "name": "Allen Jacobs",
@@ -4229,7 +4750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10125151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 4,
+      "last_contacted": "2021-04-16"
     },
     {
       "name": "Amanda Jones",
@@ -4251,7 +4775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "34187901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 33,
+      "sales_activities": 68,
+      "last_contacted": "2026-07-17"
     },
     {
       "name": "Amanda Swain",
@@ -4273,7 +4800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39007701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 26,
+      "last_contacted": "2024-07-16"
     },
     {
       "name": "amanda.powell@arconic.com",
@@ -4295,7 +4825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "251541721979",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2026-09-29"
     },
     {
       "name": "Amelia Kjome",
@@ -4317,7 +4850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "34889851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 12,
+      "last_contacted": "2023-02-01"
     },
     {
       "name": "Amy Thomas",
@@ -4339,7 +4875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39007651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 71,
+      "sales_activities": 271,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Andrea Schmidt",
@@ -4361,7 +4900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "33656601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 14,
+      "last_contacted": "2022-11-10"
     },
     {
       "name": "Andrew Bailey",
@@ -4383,7 +4925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "7099101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2020-12-20"
     },
     {
       "name": "Andrew Buchanan",
@@ -4405,7 +4950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "38292267156",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 36,
+      "sales_activities": 71,
+      "last_contacted": "2026-06-30"
     },
     {
       "name": "Andrew Duso",
@@ -4427,7 +4975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "48701944735",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2024-08-15"
     },
     {
       "name": "Andrew Woods",
@@ -4449,7 +5000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "86238939426",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2024-12-19"
     },
     {
       "name": "andrew.blomberg@arconic.com",
@@ -4471,7 +5025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "36504101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 5,
+      "last_contacted": "2023-02-21"
     },
     {
       "name": "andrew.ickes@arconic.com",
@@ -4493,7 +5050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29271601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 10,
+      "sales_activities": 22,
+      "last_contacted": "2022-11-10"
     },
     {
       "name": "Angalena Dunn",
@@ -4515,7 +5075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32070601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 13,
+      "sales_activities": 29,
+      "last_contacted": "2022-11-10"
     },
     {
       "name": "Angie Maher",
@@ -4537,7 +5100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39155101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 51,
+      "sales_activities": 168,
+      "last_contacted": "2026-09-11"
     },
     {
       "name": "Antonio Darden",
@@ -4559,7 +5125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "31849651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 0,
+      "sales_activities": 0,
+      "last_contacted": null
     },
     {
       "name": "April Taylor",
@@ -4581,7 +5150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "47100291644",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 6,
+      "sales_activities": 12,
+      "last_contacted": "2026-08-17"
     },
     {
       "name": "arne.rossberg@arconic.com",
@@ -4603,7 +5175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "35390951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 6,
+      "last_contacted": "2022-12-16"
     },
     {
       "name": "Aurelia Hoffman",
@@ -4625,7 +5200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10730901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 14,
+      "last_contacted": "2021-05-09"
     },
     {
       "name": "Austin Rutherford",
@@ -4647,7 +5225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5453351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2020-09-25"
     },
     {
       "name": "austin.koepkey@arconic.com",
@@ -4669,7 +5250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "22713701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 11,
+      "last_contacted": "2022-02-26"
     },
     {
       "name": "Autumn Schmuck",
@@ -4691,7 +5275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29293201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 14,
+      "last_contacted": "2026-03-10"
     },
     {
       "name": "Benjamin Bell",
@@ -4713,7 +5300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32552201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 14,
+      "last_contacted": "2022-10-17"
     },
     {
       "name": "Benjamin Stanley",
@@ -4735,7 +5325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29694451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 37,
+      "sales_activities": 78,
+      "last_contacted": "2026-09-16"
     },
     {
       "name": "Billie Goheen",
@@ -4757,7 +5350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29618751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 19,
+      "last_contacted": "2026-09-11"
     },
     {
       "name": "bishop.martin@arconic.com",
@@ -4779,7 +5375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "110654145667",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 20,
+      "sales_activities": 42,
+      "last_contacted": "2026-06-29"
     },
     {
       "name": "Blake Wexler",
@@ -4801,7 +5400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "248845032775",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2026-09-16"
     },
     {
       "name": "Brendan Nenni",
@@ -4823,7 +5425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32949601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 42,
+      "sales_activities": 76,
+      "last_contacted": "2026-08-04"
     },
     {
       "name": "Brian Cassidy",
@@ -4845,7 +5450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "47119952",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 13,
+      "sales_activities": 27,
+      "last_contacted": "2026-08-27"
     },
     {
       "name": "Brian Martin",
@@ -4867,7 +5475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5840851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 24,
+      "last_contacted": "2022-02-26"
     },
     {
       "name": "brian.halferty@arconic.com",
@@ -4889,7 +5500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "7785751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 13,
+      "sales_activities": 37,
+      "last_contacted": "2023-03-27"
     },
     {
       "name": "Brooklyn Harvey",
@@ -4911,7 +5525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "25332203109",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 6,
+      "last_contacted": "2025-05-01"
     },
     {
       "name": "Bruce Tilling",
@@ -4933,7 +5550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "456213",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 29,
+      "sales_activities": 66,
+      "last_contacted": "2020-03-27"
     },
     {
       "name": "Cameron Hale",
@@ -4955,7 +5575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32949701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 22,
+      "last_contacted": "2022-12-08"
     },
     {
       "name": "Cameron Heilman",
@@ -4977,7 +5600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "247450904982",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 10,
+      "last_contacted": "2026-09-16"
     },
     {
       "name": "Carla Walker",
@@ -4999,7 +5625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "33156501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 14,
+      "sales_activities": 33,
+      "last_contacted": "2023-05-25"
     },
     {
       "name": "Carlos Narvaez",
@@ -5021,7 +5650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "35271751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2022-12-14"
     },
     {
       "name": "Carolyn Norwood",
@@ -5043,7 +5675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "17555409992",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 14,
+      "sales_activities": 27,
+      "last_contacted": "2026-08-04"
     },
     {
       "name": "Casey Powell",
@@ -5065,7 +5700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10129751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 31,
+      "sales_activities": 68,
+      "last_contacted": "2026-09-14"
     },
     {
       "name": "cayla.mack@arconic.com",
@@ -5087,7 +5725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "38536974652",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 5,
+      "last_contacted": "2024-07-16"
     },
     {
       "name": "Chadwick Moros",
@@ -5109,7 +5750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10899351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2021-05-13"
     },
     {
       "name": "charles.mclean@arconic.com",
@@ -5131,7 +5775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "19559205425",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 6,
+      "sales_activities": 8,
+      "last_contacted": "2024-09-30"
     },
     {
       "name": "Chris Bichler",
@@ -5153,7 +5800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5823701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 13,
+      "last_contacted": "2021-02-19"
     },
     {
       "name": "Chris Davis",
@@ -5175,7 +5825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "13966405891",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 19,
+      "sales_activities": 28,
+      "last_contacted": "2024-08-23"
     },
     {
       "name": "Christina Kistler",
@@ -5197,7 +5850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3833851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 46,
+      "sales_activities": 83,
+      "last_contacted": "2022-12-20"
     },
     {
       "name": "Christine Fink",
@@ -5219,7 +5875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "235961375887",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 50,
+      "sales_activities": 177,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Christopher Black",
@@ -5241,7 +5900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32842851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 17,
+      "last_contacted": "2024-05-16"
     },
     {
       "name": "Christopher Falen",
@@ -5263,7 +5925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "7103351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2020-12-21"
     },
     {
       "name": "Christopher Ramey",
@@ -5285,7 +5950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "21468851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2022-01-24"
     },
     {
       "name": "Claudia Andrade",
@@ -5307,7 +5975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5235851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 10,
+      "last_contacted": "2022-09-19"
     },
     {
       "name": "Corey Grady",
@@ -5329,7 +6000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "31849601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 10,
+      "sales_activities": 18,
+      "last_contacted": "2026-07-17"
     },
     {
       "name": "Corey Schultz",
@@ -5351,7 +6025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "8848901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 10,
+      "last_contacted": "2021-03-04"
     },
     {
       "name": "Cory Molacek",
@@ -5373,7 +6050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "31849751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 0,
+      "sales_activities": 0,
+      "last_contacted": null
     },
     {
       "name": "Dale Koziorowski",
@@ -5395,7 +6075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "48730588739",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 6,
+      "sales_activities": 15,
+      "last_contacted": "2026-07-23"
     },
     {
       "name": "Damion Billingsley",
@@ -5417,7 +6100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2227001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 5,
+      "last_contacted": "2020-02-25"
     },
     {
       "name": "Dan Gifford",
@@ -5439,7 +6125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "7078251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 9,
+      "sales_activities": 15,
+      "last_contacted": "2024-09-25"
     },
     {
       "name": "Dan Sievers",
@@ -5461,7 +6150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "9240101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 26,
+      "last_contacted": "2022-11-21"
     },
     {
       "name": "Daniel J. Smink",
@@ -5483,7 +6175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2380551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2020-03-04"
     },
     {
       "name": "Daniel Sauza",
@@ -5505,7 +6200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "47121802",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 19,
+      "sales_activities": 31,
+      "last_contacted": "2026-07-13"
     },
     {
       "name": "daniel.warrensford@arconic.com",
@@ -5527,7 +6225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39155151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2023-02-17"
     },
     {
       "name": "David Burton",
@@ -5549,7 +6250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "31188251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 30,
+      "sales_activities": 49,
+      "last_contacted": "2026-03-25"
     },
     {
       "name": "David Starling",
@@ -5571,7 +6275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "28800651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 5,
+      "last_contacted": "2022-12-16"
     },
     {
       "name": "Dean Petrella",
@@ -5593,7 +6300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39387201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 9,
+      "sales_activities": 35,
+      "last_contacted": "2024-07-16"
     },
     {
       "name": "deanna.ferguson@arconic.com",
@@ -5615,7 +6325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "246057098633",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 14,
+      "sales_activities": 33,
+      "last_contacted": "2026-09-14"
     },
     {
       "name": "Dennis A Lewis",
@@ -5637,7 +6350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "94851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 51,
+      "sales_activities": 92,
+      "last_contacted": "2024-05-03"
     },
     {
       "name": "Derrick Porter",
@@ -5659,7 +6375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "20276972822",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 43,
+      "sales_activities": 166,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Doug Macnair",
@@ -5681,7 +6400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "4027551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 7,
+      "last_contacted": "2020-06-16"
     },
     {
       "name": "Duane Bushong",
@@ -5703,7 +6425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3538951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 7,
+      "last_contacted": "2020-10-14"
     },
     {
       "name": "Dylan Forrer",
@@ -5725,7 +6450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "115785778866",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 15,
+      "sales_activities": 43,
+      "last_contacted": "2026-09-02"
     },
     {
       "name": "edward.sawyer@arconic.com",
@@ -5747,7 +6475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "247937593609",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 7,
+      "last_contacted": "2026-09-11"
     },
     {
       "name": "Elsa Trejo",
@@ -5769,7 +6500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "239629243416",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 13,
+      "last_contacted": "2026-08-07"
     },
     {
       "name": "Emily Iuzzolino",
@@ -5791,7 +6525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2364551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 6,
+      "sales_activities": 8,
+      "last_contacted": "2021-01-11"
     },
     {
       "name": "Emma Fake",
@@ -5813,7 +6550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "152698982816",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 62,
+      "sales_activities": 178,
+      "last_contacted": "2026-09-17"
     },
     {
       "name": "Erica Martinez",
@@ -5835,7 +6575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "33596401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 16,
+      "sales_activities": 41,
+      "last_contacted": "2026-06-08"
     },
     {
       "name": "erica.milne@arconic.com",
@@ -5857,7 +6600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "8849051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 10,
+      "last_contacted": "2021-03-04"
     },
     {
       "name": "Ernest Coulter",
@@ -5879,7 +6625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39143851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2023-02-17"
     },
     {
       "name": "Eve Smith",
@@ -5901,7 +6650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "17279656226",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2024-04-30"
     },
     {
       "name": "forest.kelly@arconic.com",
@@ -5923,7 +6675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "9240151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 6,
+      "sales_activities": 20,
+      "last_contacted": "2021-03-11"
     },
     {
       "name": "Gabbie Delgado",
@@ -5945,7 +6700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "1596209",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2020-01-13"
     },
     {
       "name": "gary.campbell@arconic.com",
@@ -5967,7 +6725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "15528732752",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2024-04-24"
     },
     {
       "name": "George Kesheshian",
@@ -5989,7 +6750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "30978351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 60,
+      "sales_activities": 97,
+      "last_contacted": "2024-05-10"
     },
     {
       "name": "Ghee Cindy",
@@ -6011,7 +6775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "6075351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 24,
+      "sales_activities": 63,
+      "last_contacted": "2024-11-15"
     },
     {
       "name": "Ginger Duncan",
@@ -6033,7 +6800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "245892622477",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 19,
+      "last_contacted": "2026-09-29"
     },
     {
       "name": "Hayden Jago",
@@ -6055,7 +6825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "44420201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 101,
+      "sales_activities": 149,
+      "last_contacted": "2024-10-02"
     },
     {
       "name": "Hayden Moore",
@@ -6077,7 +6850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "118321421948",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 373,
+      "sales_activities": 968,
+      "last_contacted": "2026-10-06"
     },
     {
       "name": "Heather Lamb",
@@ -6099,7 +6875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "245892622478",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 19,
+      "last_contacted": "2026-09-29"
     },
     {
       "name": "jacob.cvelbar@arconic.com",
@@ -6121,7 +6900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "234514937969",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 45,
+      "last_contacted": "2026-09-29"
     },
     {
       "name": "James Loft",
@@ -6143,7 +6925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2381651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 20,
+      "last_contacted": "2021-05-13"
     },
     {
       "name": "James Stewart",
@@ -6165,7 +6950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29864001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 26,
+      "sales_activities": 49,
+      "last_contacted": "2026-02-19"
     },
     {
       "name": "James Wanger",
@@ -6187,7 +6975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "37929851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 6,
+      "last_contacted": "2023-01-31"
     },
     {
       "name": "James Williams",
@@ -6209,7 +7000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "12163401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 2,
+      "last_contacted": "2022-07-14"
     },
     {
       "name": "james.bingham@arconic.com",
@@ -6231,7 +7025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "35391051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 6,
+      "last_contacted": "2022-12-16"
     },
     {
       "name": "Jamone Watson",
@@ -6253,7 +7050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "40060701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 158,
+      "sales_activities": 385,
+      "last_contacted": "2026-10-06"
     },
     {
       "name": "Janet L. Richards",
@@ -6275,7 +7075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "493001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 34,
+      "sales_activities": 67,
+      "last_contacted": "2026-09-22"
     },
     {
       "name": "jayshree.bagad@arconic.com",
@@ -6297,7 +7100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "234480138624",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 15,
+      "sales_activities": 43,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "jeff.crider@arconic.com",
@@ -6319,7 +7125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "7066051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 13,
+      "last_contacted": "2020-12-18"
     },
     {
       "name": "Jeffrey Kleps",
@@ -6341,7 +7150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "943001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 15,
+      "last_contacted": "2020-02-20"
     },
     {
       "name": "Jennifer Brettin",
@@ -6363,7 +7175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "905512",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 21,
+      "sales_activities": 37,
+      "last_contacted": "2020-03-24"
     },
     {
       "name": "Jerime Bolden",
@@ -6385,7 +7200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5073401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 82,
+      "sales_activities": 141,
+      "last_contacted": "2023-05-15"
     },
     {
       "name": "Jerry M. DeFrates",
@@ -6407,7 +7225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5209851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 16,
+      "last_contacted": "2020-09-09"
     },
     {
       "name": "Jesus Alvarado",
@@ -6429,7 +7250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "8194451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 3,
+      "last_contacted": "2021-02-04"
     },
     {
       "name": "Jill Folkerts",
@@ -6451,7 +7275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "21414901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 95,
+      "sales_activities": 155,
+      "last_contacted": "2023-03-17"
     },
     {
       "name": "Jill Stavarski",
@@ -6473,7 +7300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "28200301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2022-07-11"
     },
     {
       "name": "Jim M. Bushong",
@@ -6495,7 +7325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3539051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2020-05-11"
     },
     {
       "name": "Jim Titus",
@@ -6517,7 +7350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10730851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 12,
+      "last_contacted": "2023-02-17"
     },
     {
       "name": "Jodi Yim",
@@ -6539,7 +7375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39665451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 5,
+      "last_contacted": "2023-03-01"
     },
     {
       "name": "Jody Koontz",
@@ -6561,7 +7400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "38082001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 4,
+      "last_contacted": "2023-02-01"
     },
     {
       "name": "John Bradley",
@@ -6583,7 +7425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "6119451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 7,
+      "last_contacted": "2020-11-02"
     },
     {
       "name": "John Fox",
@@ -6605,7 +7450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "497851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 15,
+      "last_contacted": "2020-04-14"
     },
     {
       "name": "Johnathan Dotson",
@@ -6627,7 +7475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "38313125782",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 15,
+      "sales_activities": 37,
+      "last_contacted": "2026-06-29"
     },
     {
       "name": "Johnny Brazell",
@@ -6649,7 +7500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "61826394474",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 485,
+      "sales_activities": 1133,
+      "last_contacted": "2026-10-06"
     },
     {
       "name": "Jose Ceballos",
@@ -6671,7 +7525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "35267801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 27,
+      "sales_activities": 58,
+      "last_contacted": "2026-07-28"
     },
     {
       "name": "Joshua Eller",
@@ -6693,7 +7550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "4710701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2020-08-05"
     },
     {
       "name": "josiah.petkus@arconic.com",
@@ -6715,7 +7575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "7078201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 10,
+      "last_contacted": "2020-12-21"
     },
     {
       "name": "Jovica Blazevski",
@@ -6737,7 +7600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32478851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2022-10-13"
     },
     {
       "name": "juanita.mckinney@arconic.com",
@@ -6759,7 +7625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "15190199584",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 21,
+      "sales_activities": 37,
+      "last_contacted": "2025-05-14"
     },
     {
       "name": "Judy Dickson",
@@ -6781,7 +7650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "48701944736",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2024-08-15"
     },
     {
       "name": "judy.jacobs@arconic.com",
@@ -6803,7 +7675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "219624928561",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 73,
+      "sales_activities": 185,
+      "last_contacted": "2026-10-06"
     },
     {
       "name": "Julie Wise",
@@ -6825,7 +7700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "110654145668",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 3,
+      "last_contacted": "2025-04-01"
     },
     {
       "name": "Justin Vanier",
@@ -6847,7 +7725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "95901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 12,
+      "sales_activities": 24,
+      "last_contacted": "2022-09-12"
     },
     {
       "name": "Kamlesh (Headway) Brahmbhatt",
@@ -6869,7 +7750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "96201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 46,
+      "sales_activities": 85,
+      "last_contacted": "2023-03-01"
     },
     {
       "name": "Kara Warrensford",
@@ -6891,7 +7775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32949651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 7,
+      "last_contacted": "2023-02-17"
     },
     {
       "name": "karen.lenninger@arconic.com",
@@ -6913,7 +7800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "86238939427",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2024-12-19"
     },
     {
       "name": "Kathy A. Hendryx",
@@ -6935,7 +7825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "95251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 188,
+      "sales_activities": 319,
+      "last_contacted": "2026-04-16"
     },
     {
       "name": "keith.louck@arconic.com",
@@ -6957,7 +7850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "28781451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2022-07-22"
     },
     {
       "name": "Kelley S. Brown",
@@ -6979,7 +7875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "1502951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2020-01-07"
     },
     {
       "name": "Kenneth B (U. S. Security Associates) Skortz",
@@ -7001,7 +7900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2561251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2020-03-18"
     },
     {
       "name": "kevin.jones2@arconic.com",
@@ -7023,7 +7925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29456501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 8,
+      "last_contacted": "2022-08-06"
     },
     {
       "name": "Kim Deardurff",
@@ -7045,7 +7950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "34009501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 27,
+      "sales_activities": 45,
+      "last_contacted": "2023-02-23"
     },
     {
       "name": "Kimberly Maciejewski",
@@ -7067,7 +7975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "61800482316",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 3,
+      "last_contacted": "2024-09-30"
     },
     {
       "name": "Kris Robinson",
@@ -7089,7 +8000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39531401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 7,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Kurt Johnson",
@@ -7111,7 +8025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "35309501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 12,
+      "last_contacted": "2022-12-15"
     },
     {
       "name": "Kyle Ext",
@@ -7133,7 +8050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10125901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 2,
+      "last_contacted": "2022-12-09"
     },
     {
       "name": "Ladon German",
@@ -7155,7 +8075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39531351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 19,
+      "last_contacted": "2026-07-17"
     },
     {
       "name": "Laura Bartlett",
@@ -7177,7 +8100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39387301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 19,
+      "last_contacted": "2023-02-24"
     },
     {
       "name": "Laurel Black",
@@ -7199,7 +8125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10730951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 9,
+      "last_contacted": "2021-05-09"
     },
     {
       "name": "Lauren Soto",
@@ -7221,7 +8150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "8476301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2021-02-12"
     },
     {
       "name": "Laurie A Maneti",
@@ -7243,7 +8175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "941551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 11,
+      "last_contacted": "2020-04-01"
     },
     {
       "name": "Lee Fowler",
@@ -7265,7 +8200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "48740875557",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 4,
+      "last_contacted": "2024-10-02"
     },
     {
       "name": "Libby French",
@@ -7287,7 +8225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5880701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 9,
+      "last_contacted": "2020-10-20"
     },
     {
       "name": "Lisa Dietz",
@@ -7309,7 +8250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32552151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 18,
+      "sales_activities": 50,
+      "last_contacted": "2023-03-10"
     },
     {
       "name": "Lisa Grube",
@@ -7331,7 +8275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "219859969838",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 15,
+      "sales_activities": 34,
+      "last_contacted": "2026-09-14"
     },
     {
       "name": "logan.kappert@arconic.com",
@@ -7353,7 +8300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "61826394475",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 5,
+      "last_contacted": "2024-09-25"
     },
     {
       "name": "Lovely Batterman",
@@ -7375,7 +8325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "235446135903",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 180,
+      "sales_activities": 379,
+      "last_contacted": "2026-10-04"
     },
     {
       "name": "Maggie Mangieri",
@@ -7397,7 +8350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29281401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 9,
+      "last_contacted": "2022-09-09"
     },
     {
       "name": "Manjula Nandasiri",
@@ -7419,7 +8375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "237223783765",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 4,
+      "last_contacted": "2026-07-23"
     },
     {
       "name": "Manuel Lothschuetz",
@@ -7441,7 +8400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10899501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2021-05-13"
     },
     {
       "name": "Marcus R. (Express Personnel) Cardwell",
@@ -7463,7 +8425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "439851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 46,
+      "sales_activities": 85,
+      "last_contacted": "2026-07-08"
     },
     {
       "name": "Mark F. Schulenberg",
@@ -7485,7 +8450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5235951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 9,
+      "sales_activities": 27,
+      "last_contacted": "2021-05-09"
     },
     {
       "name": "Mark Haynes",
@@ -7507,7 +8475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "94151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 12,
+      "sales_activities": 27,
+      "last_contacted": "2020-10-27"
     },
     {
       "name": "Martha Holan",
@@ -7529,7 +8500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "245892622476",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 19,
+      "last_contacted": "2026-09-29"
     },
     {
       "name": "Mary Isaac",
@@ -7551,7 +8525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10731001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 9,
+      "last_contacted": "2021-05-09"
     },
     {
       "name": "matt.damas@arconic.com",
@@ -7573,7 +8550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "49278351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2023-10-12"
     },
     {
       "name": "matthew.riddle@arconic.com",
@@ -7595,7 +8575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "7103301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2020-12-21"
     },
     {
       "name": "matthu.harmon@arconic.com",
@@ -7617,7 +8600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "250599296408",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 15,
+      "sales_activities": 26,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Meagan Fredenberg",
@@ -7639,7 +8625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "28165901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 4,
+      "last_contacted": "2022-07-22"
     },
     {
       "name": "Megan Heverley",
@@ -7661,7 +8650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "34926101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 6,
+      "last_contacted": "2022-12-08"
     },
     {
       "name": "megan.grosskopf@arconic.com",
@@ -7683,7 +8675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29297951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 21,
+      "last_contacted": "2023-02-27"
     },
     {
       "name": "Melissa Griffith",
@@ -7705,7 +8700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "13984560956",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 4,
+      "last_contacted": "2024-08-15"
     },
     {
       "name": "Michael Ferguson",
@@ -7727,7 +8725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "13966405889",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 18,
+      "sales_activities": 26,
+      "last_contacted": "2024-08-23"
     },
     {
       "name": "Michael Mba",
@@ -7749,7 +8750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "28731801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 18,
+      "sales_activities": 32,
+      "last_contacted": "2023-02-14"
     },
     {
       "name": "Michael Schneider",
@@ -7771,7 +8775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "120465816359",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 12,
+      "last_contacted": "2025-05-09"
     },
     {
       "name": "Michele Allen",
@@ -7793,7 +8800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2381601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 20,
+      "last_contacted": "2020-03-18"
     },
     {
       "name": "Michelle Morgan",
@@ -7815,7 +8825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "31180601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 11,
+      "last_contacted": "2022-09-19"
     },
     {
       "name": "Mike Pritchett",
@@ -7837,7 +8850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "31294801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 20,
+      "sales_activities": 37,
+      "last_contacted": "2024-07-12"
     },
     {
       "name": "Mitch Hogan",
@@ -7859,7 +8875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5430951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 7,
+      "last_contacted": "2020-09-24"
     },
     {
       "name": "mykel.shutts@arconic.com",
@@ -7881,7 +8900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "127436447612",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 7,
+      "last_contacted": "2025-06-06"
     },
     {
       "name": "natala.coyle@arconic.com",
@@ -7903,7 +8925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "9240051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 14,
+      "sales_activities": 36,
+      "last_contacted": "2026-06-24"
     },
     {
       "name": "Natalia Leymaster",
@@ -7925,7 +8950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "28781401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2022-07-22"
     },
     {
       "name": "Nathan Sipple",
@@ -7947,7 +8975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2561301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2020-03-18"
     },
     {
       "name": "Nathan Wager",
@@ -7969,7 +9000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "28781651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 2,
+      "last_contacted": "2022-07-22"
     },
     {
       "name": "Nereyda Sanchez",
@@ -7991,7 +9025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "244761642080",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 7,
+      "last_contacted": "2026-08-27"
     },
     {
       "name": "Nicole Garman",
@@ -8013,7 +9050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29864051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 20,
+      "sales_activities": 40,
+      "last_contacted": "2026-02-19"
     },
     {
       "name": "Patricia White",
@@ -8035,7 +9075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "24365351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 129,
+      "sales_activities": 207,
+      "last_contacted": "2024-08-23"
     },
     {
       "name": "Patrick Morin",
@@ -8057,7 +9100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "110654145666",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 10,
+      "sales_activities": 13,
+      "last_contacted": "2025-05-14"
     },
     {
       "name": "Phillip Curran",
@@ -8079,7 +9125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32552051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 14,
+      "last_contacted": "2022-10-17"
     },
     {
       "name": "phyllis.parks@arconic.com",
@@ -8101,7 +9150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32304151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 37,
+      "sales_activities": 59,
+      "last_contacted": "2024-05-03"
     },
     {
       "name": "Randy Brown",
@@ -8123,7 +9175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "11374001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 6,
+      "last_contacted": "2021-06-09"
     },
     {
       "name": "Randy Fahrenbach",
@@ -8145,7 +9200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3539101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2020-05-11"
     },
     {
       "name": "Rebecca Gillis",
@@ -8167,7 +9225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39387401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 19,
+      "sales_activities": 43,
+      "last_contacted": "2026-07-24"
     },
     {
       "name": "renee.kahle@arconic.com",
@@ -8189,7 +9250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "38921501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 2,
+      "last_contacted": "2023-02-14"
     },
     {
       "name": "Rhonda Rose",
@@ -8211,7 +9275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5546051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 22,
+      "sales_activities": 36,
+      "last_contacted": "2022-12-16"
     },
     {
       "name": "Richard Dinh",
@@ -8233,7 +9300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "246057705288",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 11,
+      "last_contacted": "2026-09-03"
     },
     {
       "name": "Richard G. Lyon",
@@ -8255,7 +9325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "4019951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 7,
+      "last_contacted": "2020-06-15"
     },
     {
       "name": "richard.mckinney@arconic.com",
@@ -8277,7 +9350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "31996201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 10,
+      "sales_activities": 19,
+      "last_contacted": "2026-08-21"
     },
     {
       "name": "Robert Cassatt",
@@ -8299,7 +9375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "38025201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 5,
+      "last_contacted": "2024-05-29"
     },
     {
       "name": "Robert Gately",
@@ -8321,7 +9400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "4013051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 30,
+      "last_contacted": "2020-06-15"
     },
     {
       "name": "Robert Huffman",
@@ -8343,7 +9425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "123706968360",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 4,
+      "last_contacted": "2025-05-22"
     },
     {
       "name": "Robert Kirby",
@@ -8365,7 +9450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "249758462367",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2026-09-21"
     },
     {
       "name": "Robert Morrill",
@@ -8387,7 +9475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10190301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 2,
+      "last_contacted": "2021-04-19"
     },
     {
       "name": "Robert Smith",
@@ -8409,7 +9500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "249758462368",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2026-09-21"
     },
     {
       "name": "Robert Taylor",
@@ -8431,7 +9525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "235446135905",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 104,
+      "sales_activities": 221,
+      "last_contacted": "2026-10-02"
     },
     {
       "name": "Rodney Fink",
@@ -8453,7 +9550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "27474228235",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 19,
+      "sales_activities": 45,
+      "last_contacted": "2026-08-05"
     },
     {
       "name": "Ronald James",
@@ -8475,7 +9575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "35390901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 6,
+      "last_contacted": "2022-12-16"
     },
     {
       "name": "Ronald Kennedy",
@@ -8497,7 +9600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "251863659368",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 15,
+      "sales_activities": 30,
+      "last_contacted": "2026-10-06"
     },
     {
       "name": "Ruby Grant",
@@ -8519,7 +9625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5158551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 8,
+      "last_contacted": "2020-12-01"
     },
     {
       "name": "Ryan D Womack",
@@ -8541,7 +9650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "904269",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 17,
+      "last_contacted": "2020-03-27"
     },
     {
       "name": "Sally Nemcek",
@@ -8563,7 +9675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "1190351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 15,
+      "last_contacted": "2019-12-13"
     },
     {
       "name": "saman.horneij@arconic.com",
@@ -8585,7 +9700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "207306067765",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 17,
+      "sales_activities": 34,
+      "last_contacted": "2026-07-13"
     },
     {
       "name": "Sammy Grindstaff",
@@ -8607,7 +9725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "14216851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 29,
+      "sales_activities": 48,
+      "last_contacted": "2024-07-12"
     },
     {
       "name": "Sandi Holmes",
@@ -8629,7 +9750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "239629243415",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 42,
+      "sales_activities": 85,
+      "last_contacted": "2026-08-27"
     },
     {
       "name": "Sandi Shunkwiler",
@@ -8651,7 +9775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "6119351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 7,
+      "last_contacted": "2020-11-02"
     },
     {
       "name": "Sandra Williams",
@@ -8673,7 +9800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29756201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 15,
+      "last_contacted": "2025-04-30"
     },
     {
       "name": "sanford.gore@arconic.com",
@@ -8695,7 +9825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "9393051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 3,
+      "last_contacted": "2021-03-18"
     },
     {
       "name": "Sarah Ells",
@@ -8717,7 +9850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "34889701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 11,
+      "sales_activities": 29,
+      "last_contacted": "2026-08-26"
     },
     {
       "name": "Sarah Kline",
@@ -8739,7 +9875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29271651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 8,
+      "last_contacted": "2022-08-02"
     },
     {
       "name": "sarah.sollers@arconic.com",
@@ -8761,7 +9900,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "34073851",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2022-11-18"
     },
     {
       "name": "Shaun Stewart",
@@ -8783,7 +9925,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "37903551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 2,
+      "last_contacted": "2023-01-30"
     },
     {
       "name": "shaynetta.williams@arconic.com",
@@ -8805,7 +9950,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "38879201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 12,
+      "sales_activities": 22,
+      "last_contacted": "2023-02-14"
     },
     {
       "name": "Shelley Kellar",
@@ -8827,7 +9975,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "31322701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 3,
+      "last_contacted": "2022-09-23"
     },
     {
       "name": "Shelly Sauls",
@@ -8849,7 +10000,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2046351",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 23,
+      "sales_activities": 41,
+      "last_contacted": "2021-01-19"
     },
     {
       "name": "Sherry Long",
@@ -8871,7 +10025,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "28800551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 4,
+      "last_contacted": "2022-12-05"
     },
     {
       "name": "Simone Pacheco",
@@ -8893,7 +10050,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "196893745305",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 16,
+      "sales_activities": 24,
+      "last_contacted": "2024-06-13"
     },
     {
       "name": "Stephen Burda",
@@ -8915,7 +10075,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3490401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 7,
+      "last_contacted": "2026-07-22"
     },
     {
       "name": "Stephen Labarge",
@@ -8937,7 +10100,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "21415901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 20,
+      "last_contacted": "2022-01-21"
     },
     {
       "name": "Steven Willis",
@@ -8959,7 +10125,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32441301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 20,
+      "sales_activities": 55,
+      "last_contacted": "2026-09-30"
     },
     {
       "name": "Tami S Nedza",
@@ -8981,7 +10150,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "484551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 26,
+      "sales_activities": 57,
+      "last_contacted": "2020-03-25"
     },
     {
       "name": "Tara Baxter",
@@ -9003,7 +10175,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "935901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 13,
+      "sales_activities": 26,
+      "last_contacted": "2020-02-20"
     },
     {
       "name": "Terry Tibbits",
@@ -9025,7 +10200,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29298001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 35,
+      "last_contacted": "2026-04-23"
     },
     {
       "name": "thiago.gabriel@arconic.com",
@@ -9047,7 +10225,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "22713751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 11,
+      "last_contacted": "2022-02-26"
     },
     {
       "name": "Thomas Maddox",
@@ -9069,7 +10250,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "10899451",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2021-05-13"
     },
     {
       "name": "Thomas Mataloni",
@@ -9091,7 +10275,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "77833779597",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 2,
+      "last_contacted": "2024-11-15"
     },
     {
       "name": "timothy.hanson@arconic.com",
@@ -9113,7 +10300,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "44499701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 9,
+      "sales_activities": 18,
+      "last_contacted": "2023-05-25"
     },
     {
       "name": "Todd Patterson",
@@ -9135,7 +10325,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "6119601",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 98,
+      "sales_activities": 212,
+      "last_contacted": "2026-10-02"
     },
     {
       "name": "Todd Voltz",
@@ -9157,7 +10350,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "7625401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2021-01-15"
     },
     {
       "name": "todd.smalley@arconic.com",
@@ -9179,7 +10375,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "34987251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 39,
+      "sales_activities": 61,
+      "last_contacted": "2024-08-23"
     },
     {
       "name": "Tony Allen",
@@ -9201,7 +10400,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "15190199583",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 13,
+      "sales_activities": 26,
+      "last_contacted": "2024-07-12"
     },
     {
       "name": "tracy.kunert@arconic.com",
@@ -9223,7 +10425,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "86238944911",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 9,
+      "sales_activities": 12,
+      "last_contacted": "2026-04-21"
     },
     {
       "name": "Travis Hockenbury",
@@ -9245,7 +10450,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "94551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 131,
+      "sales_activities": 214,
+      "last_contacted": "2024-08-23"
     },
     {
       "name": "Travis Isenbarger",
@@ -9267,7 +10475,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "2381701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 61,
+      "sales_activities": 117,
+      "last_contacted": "2023-03-01"
     },
     {
       "name": "Trisha K McFerrin",
@@ -9289,7 +10500,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "1499151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 4,
+      "last_contacted": "2020-01-07"
     },
     {
       "name": "Troy Streckeisen",
@@ -9311,7 +10525,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "3473220",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 6,
+      "last_contacted": "2021-01-15"
     },
     {
       "name": "tyler.hughes@arconic.com",
@@ -9333,7 +10550,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "110654145665",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 10,
+      "sales_activities": 23,
+      "last_contacted": "2026-09-02"
     },
     {
       "name": "Veronica Webb",
@@ -9355,7 +10575,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "29298101",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 33,
+      "last_contacted": "2026-06-19"
     },
     {
       "name": "Vicki Adkisson",
@@ -9377,7 +10600,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "252414168165",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Vyshakh Abraham",
@@ -9399,7 +10625,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "32552251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 14,
+      "last_contacted": "2022-10-17"
     },
     {
       "name": "walter.lovette@arconic.com",
@@ -9421,7 +10650,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "40060751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 8,
+      "last_contacted": "2023-03-10"
     },
     {
       "name": "Wei Wen",
@@ -9443,7 +10675,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "15190199585",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 19,
+      "sales_activities": 34,
+      "last_contacted": "2025-05-14"
     },
     {
       "name": "Wesley Finai",
@@ -9465,7 +10700,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "39130651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 2,
+      "last_contacted": "2023-02-17"
     },
     {
       "name": "william.potter2@arconic.com",
@@ -9487,7 +10725,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "110654145670",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 10,
+      "sales_activities": 13,
+      "last_contacted": "2025-05-14"
     },
     {
       "name": "Willie L Johnson",
@@ -9509,7 +10750,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "4019901",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 7,
+      "last_contacted": "2020-06-15"
     },
     {
       "name": "Yiming Lin",
@@ -9531,7 +10775,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "47122401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 3,
+      "last_contacted": "2023-08-08"
     },
     {
       "name": "Ylliana Arnsby",
@@ -9553,7 +10800,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "208288581972",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 26,
+      "sales_activities": 89,
+      "last_contacted": "2026-08-11"
     },
     {
       "name": "Yolanda Crawford",
@@ -9575,7 +10825,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "5805501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 5,
+      "last_contacted": "2020-10-15"
     },
     {
       "name": "zachary.kristophel@arconic.com",
@@ -9597,7 +10850,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "9217951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 12,
+      "last_contacted": "2021-03-11"
     },
     {
       "name": "Zoey Marquardt",
@@ -9619,7 +10875,10 @@ window.__DIALER_DATA__ = {
       "company_id": "2359249037",
       "plant_id": null,
       "hubspot_contact_id": "479501",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 29,
+      "sales_activities": 52,
+      "last_contacted": "2020-03-17"
     },
     {
       "name": "Adrian Acosta",
@@ -9641,7 +10900,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "235210233607",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 17,
+      "sales_activities": 30,
+      "last_contacted": "2026-09-03"
     },
     {
       "name": "Ashley Watts",
@@ -9663,7 +10925,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "34516001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 115,
+      "sales_activities": 172,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Blake Hines",
@@ -9685,7 +10950,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "166883",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 19,
+      "sales_activities": 42,
+      "last_contacted": "2023-11-22"
     },
     {
       "name": "Christina Boggs",
@@ -9707,7 +10975,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "48230102",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 113,
+      "sales_activities": 171,
+      "last_contacted": "2026-07-24"
     },
     {
       "name": "Darrell Evans",
@@ -9729,7 +11000,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "25056823047",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 37,
+      "sales_activities": 64,
+      "last_contacted": "2026-08-12"
     },
     {
       "name": "Evan Quinley",
@@ -9751,7 +11025,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "29381251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 4,
+      "last_contacted": "2022-08-04"
     },
     {
       "name": "Janna Dunnavent",
@@ -9773,7 +11050,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "46195191424",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 8,
+      "sales_activities": 9,
+      "last_contacted": "2026-05-04"
     },
     {
       "name": "Jodi Beckstedt",
@@ -9795,7 +11075,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "28795801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 4,
+      "last_contacted": "2022-07-22"
     },
     {
       "name": "Joshua Hazelwood",
@@ -9817,7 +11100,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "51563551",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 178,
+      "sales_activities": 257,
+      "last_contacted": "2026-09-28"
     },
     {
       "name": "Keith Bookout",
@@ -9839,7 +11125,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "729651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 457,
+      "sales_activities": 592,
+      "last_contacted": "2026-10-01"
     },
     {
       "name": "Kevin Matthews",
@@ -9861,7 +11150,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "20260733003",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 83,
+      "sales_activities": 141,
+      "last_contacted": "2026-08-12"
     },
     {
       "name": "Laquita Thornton",
@@ -9883,7 +11175,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "250709154616",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 12,
+      "sales_activities": 13,
+      "last_contacted": "2026-09-25"
     },
     {
       "name": "Lindsay Cox",
@@ -9905,7 +11200,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "27069751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 5,
+      "last_contacted": "2022-06-16"
     },
     {
       "name": "Lisa Mills",
@@ -9927,7 +11225,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "25733301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 25,
+      "sales_activities": 46,
+      "last_contacted": "2022-06-23"
     },
     {
       "name": "Michael Coppotelli",
@@ -9949,7 +11250,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "51701852",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 3,
+      "last_contacted": "2024-08-13"
     },
     {
       "name": "Michael Kirk",
@@ -9971,7 +11275,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "29380251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 5,
+      "last_contacted": "2022-08-04"
     },
     {
       "name": "Michelle King",
@@ -9993,7 +11300,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "446701",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 787,
+      "sales_activities": 1317,
+      "last_contacted": "2026-10-05"
     },
     {
       "name": "Mike Ahern",
@@ -10015,7 +11325,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "6825201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 5,
+      "last_contacted": "2025-02-17"
     },
     {
       "name": "Natalie Burt",
@@ -10037,7 +11350,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "32751001",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 8,
+      "last_contacted": "2024-05-01"
     },
     {
       "name": "Nick Gorman",
@@ -10059,7 +11375,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "29595201",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 6,
+      "last_contacted": "2022-08-10"
     },
     {
       "name": "Pilar Alvarez",
@@ -10081,7 +11400,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "6825251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 25,
+      "sales_activities": 51,
+      "last_contacted": "2026-09-10"
     },
     {
       "name": "Rob Matuska",
@@ -10103,7 +11425,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "28904301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 5,
+      "last_contacted": "2022-07-25"
     },
     {
       "name": "Shannon Hafeez",
@@ -10125,7 +11450,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "17921301",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 379,
+      "sales_activities": 560,
+      "last_contacted": "2026-10-02"
     },
     {
       "name": "Tamara Wagner-Marion",
@@ -10147,7 +11475,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "22322951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 237,
+      "sales_activities": 430,
+      "last_contacted": "2024-08-27"
     },
     {
       "name": "Trent Roybal",
@@ -10169,7 +11500,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "203866478699",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 133,
+      "sales_activities": 202,
+      "last_contacted": "2026-10-02"
     },
     {
       "name": "WAR Delivery",
@@ -10191,7 +11525,10 @@ window.__DIALER_DATA__ = {
       "has_phone": true,
       "is_dm": false,
       "hubspot_contact_id": "24437051",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 205,
+      "sales_activities": 355,
+      "last_contacted": "2026-09-21"
     },
     {
       "name": "Aaron Suffridge",
@@ -10213,7 +11550,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "10579951",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 189,
+      "sales_activities": 294,
+      "last_contacted": "2024-03-15"
     },
     {
       "name": "Charonda Westley",
@@ -10235,7 +11575,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "53258052",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 7,
+      "sales_activities": 15,
+      "last_contacted": "2026-06-29"
     },
     {
       "name": "Douglas Soule",
@@ -10257,7 +11600,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "1279751",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 10,
+      "last_contacted": "2020-02-10"
     },
     {
       "name": "Edward Frasier",
@@ -10279,7 +11625,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "250709154617",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 5,
+      "last_contacted": "2026-09-25"
     },
     {
       "name": "Freddy Espinoza",
@@ -10301,7 +11650,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "83465912494",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 8,
+      "last_contacted": "2024-12-10"
     },
     {
       "name": "James Kelly",
@@ -10323,7 +11675,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "83465912495",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 6,
+      "sales_activities": 12,
+      "last_contacted": "2026-06-29"
     },
     {
       "name": "Jesus Ybarra",
@@ -10345,7 +11700,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "83342330880",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 24,
+      "sales_activities": 51,
+      "last_contacted": "2026-06-29"
     },
     {
       "name": "Joel Metelko",
@@ -10367,7 +11725,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "24826401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 5,
+      "last_contacted": "2022-04-22"
     },
     {
       "name": "Leland Finney",
@@ -10389,7 +11750,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "245592611969",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 2,
+      "last_contacted": "2026-08-31"
     },
     {
       "name": "Luis Myzel",
@@ -10411,7 +11775,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "231460150092",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2026-06-26"
     },
     {
       "name": "Melody Sinclair",
@@ -10433,7 +11800,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "840662",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 3,
+      "sales_activities": 8,
+      "last_contacted": "2020-01-24"
     },
     {
       "name": "Mike Meza",
@@ -10455,7 +11825,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "235210233606",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 16,
+      "sales_activities": 30,
+      "last_contacted": "2026-08-31"
     },
     {
       "name": "Nick Badgett",
@@ -10477,7 +11850,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "28904251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 5,
+      "last_contacted": "2022-07-25"
     },
     {
       "name": "Oliver Nieto",
@@ -10499,7 +11875,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "53258053",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 3,
+      "last_contacted": "2024-02-20"
     },
     {
       "name": "Renia Johnson",
@@ -10521,7 +11900,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "114758119453",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2025-04-17"
     },
     {
       "name": "Robbie Cox",
@@ -10543,7 +11925,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "31579651",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 5,
+      "sales_activities": 16,
+      "last_contacted": "2026-08-19"
     },
     {
       "name": "Roberto Villagomez",
@@ -10565,7 +11950,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "244774836387",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 4,
+      "last_contacted": "2026-08-31"
     },
     {
       "name": "Rueben Zamora",
@@ -10587,7 +11975,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "245592616964",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 2,
+      "sales_activities": 2,
+      "last_contacted": "2026-09-03"
     },
     {
       "name": "Ryan Shoener",
@@ -10609,7 +12000,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "28734251",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 0,
+      "sales_activities": 3,
+      "last_contacted": null
     },
     {
       "name": "Shawn Losey",
@@ -10631,7 +12025,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "1889151",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 13,
+      "last_contacted": "2020-02-07"
     },
     {
       "name": "Sherry Hall",
@@ -10653,7 +12050,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "28795401",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 4,
+      "last_contacted": "2022-07-22"
     },
     {
       "name": "Trae Witherspoon",
@@ -10675,7 +12075,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "25056823046",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 18,
+      "sales_activities": 35,
+      "last_contacted": "2026-08-04"
     },
     {
       "name": "William Abarca",
@@ -10697,7 +12100,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "244774836386",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 1,
+      "sales_activities": 1,
+      "last_contacted": "2026-08-27"
     },
     {
       "name": "Ylliana Arnsby",
@@ -10719,7 +12125,10 @@ window.__DIALER_DATA__ = {
       "has_phone": false,
       "is_dm": false,
       "hubspot_contact_id": "27799801",
-      "hubspot_link_type": "record"
+      "hubspot_link_type": "record",
+      "times_contacted": 4,
+      "sales_activities": 11,
+      "last_contacted": "2022-07-01"
     }
   ],
   "stats": {
@@ -10744,6 +12153,14 @@ window.__DIALER_DATA__ = {
       "record": 469,
       "search": 0,
       "none": 0
+    },
+    "touch_counts": {
+      "matched": 469,
+      "matched_by_id": 469,
+      "matched_by_email": 0,
+      "unmatched": 0,
+      "csv_rows": 502,
+      "csv_rows_skipped": 33
     }
   }
 };
