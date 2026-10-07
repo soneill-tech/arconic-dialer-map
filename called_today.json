@@ -1,7 +1,17 @@
 {
   "date": "2026-10-07",
-  "updated_at": "2026-10-07T08:57:04-05:00",
+  "updated_at": "2026-10-07T12:02:06-05:00",
   "source": "HubSpot calls (browser sync)",
-  "called_contact_ids": [],
-  "calls": []
+  "called_contact_ids": [
+    "49278352"
+  ],
+  "calls": [
+    {
+      "contact_id": "49278352",
+      "contact_name": "Mark Winowich",
+      "am": "Kahekili",
+      "time": "2026-10-07T11:22:00-05:00",
+      "outcome": ""
+    }
+  ]
 }
