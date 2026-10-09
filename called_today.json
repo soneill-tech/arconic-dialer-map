@@ -1,11 +1,12 @@
 {
   "date": "2026-10-09",
-  "updated_at": "2026-10-09T16:02:24-05:00",
+  "updated_at": "2026-10-09T16:55:50-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "93901",
     "1788951",
     "10644151",
+    "17921301",
     "21397101",
     "48230102",
     "13966405892",
@@ -117,7 +118,14 @@
       "contact_name": "Trent Roybal",
       "am": "Simran",
       "time": "2026-10-09T15:43:00-05:00",
-      "outcome": ""
+      "outcome": "Connected"
+    },
+    {
+      "contact_id": "17921301",
+      "contact_name": "Shannon Hafeez",
+      "am": "Simran",
+      "time": "2026-10-09T16:09:00-05:00",
+      "outcome": "Connected"
     }
   ]
 }
