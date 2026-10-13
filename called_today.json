@@ -1,10 +1,11 @@
 {
   "date": "2026-10-13",
-  "updated_at": "2026-10-13T11:01:26-05:00",
+  "updated_at": "2026-10-13T14:03:34-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "17921301",
     "51563551",
+    "13966405892",
     "20260733003",
     "20283614591",
     "203866478699"
@@ -64,6 +65,13 @@
       "contact_name": "Sarah Schupp",
       "am": "Kahekili",
       "time": "2026-10-13T09:58:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "time": "2026-10-13T13:08:00-05:00",
       "outcome": ""
     }
   ]
