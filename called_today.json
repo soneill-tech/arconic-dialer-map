@@ -1,70 +1,62 @@
 {
-  "date": "2026-10-12",
-  "updated_at": "2026-10-12T15:59:18-05:00",
+  "date": "2026-10-13",
+  "updated_at": "2026-10-13T10:06:40-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "93901",
-    "1788951",
-    "13966405892",
-    "20283614591",
+    "17921301",
+    "51563551",
+    "20260733003",
     "203866478699"
   ],
   "calls": [
     {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "time": "2026-10-12 07:30 CDT",
+      "contact_id": "51563551",
+      "contact_name": "Joshua Hazelwood",
+      "am": "Simran",
+      "time": "2026-10-13T07:19:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "17921301",
+      "contact_name": "Shannon Hafeez",
+      "am": "Simran",
+      "time": "2026-10-13T07:20:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "17921301",
+      "contact_name": "Shannon Hafeez",
+      "am": "Simran",
+      "time": "2026-10-13T07:34:00-05:00",
       "outcome": "Connected"
+    },
+    {
+      "contact_id": "20260733003",
+      "contact_name": "Kevin Matthews",
+      "am": "Simran",
+      "time": "2026-10-13T07:40:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "20260733003",
+      "contact_name": "Kevin Matthews",
+      "am": "Simran",
+      "time": "2026-10-13T07:41:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "20260733003",
+      "contact_name": "Kevin Matthews",
+      "am": "Simran",
+      "time": "2026-10-13T07:45:00-05:00",
+      "outcome": "No answer"
     },
     {
       "contact_id": "203866478699",
       "contact_name": "Trent Roybal",
       "am": "Simran",
-      "time": "2026-10-12 09:04 CDT",
+      "time": "2026-10-13T08:13:00-05:00",
       "outcome": "Connected"
-    },
-    {
-      "contact_id": "203866478699",
-      "contact_name": "Trent Roybal",
-      "am": "Simran",
-      "time": "2026-10-12 10:53 CDT",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "203866478699",
-      "contact_name": "Trent Roybal",
-      "am": "Simran",
-      "time": "2026-10-12 11:24 CDT",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "13966405892",
-      "contact_name": "Trent Bell",
-      "am": "Kahekili",
-      "time": "2026-10-12 12:54 CDT",
-      "outcome": ""
-    },
-    {
-      "contact_id": "1788951",
-      "contact_name": "Lance Duvernay",
-      "am": "Kahekili",
-      "time": "2026-10-12 14:01 CDT",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "93901",
-      "contact_name": "Troy Tibbot",
-      "am": "Kahekili",
-      "time": "2026-10-12 15:57 CDT",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "93901",
-      "contact_name": "Troy Tibbot",
-      "am": "Kahekili",
-      "time": "2026-10-12 15:57 CDT",
-      "outcome": "No answer"
     }
   ]
 }
