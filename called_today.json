@@ -1,11 +1,12 @@
 {
   "date": "2026-10-13",
-  "updated_at": "2026-10-13T10:06:40-05:00",
+  "updated_at": "2026-10-13T11:01:26-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "17921301",
     "51563551",
     "20260733003",
+    "20283614591",
     "203866478699"
   ],
   "calls": [
@@ -57,6 +58,13 @@
       "am": "Simran",
       "time": "2026-10-13T08:13:00-05:00",
       "outcome": "Connected"
+    },
+    {
+      "contact_id": "20283614591",
+      "contact_name": "Sarah Schupp",
+      "am": "Kahekili",
+      "time": "2026-10-13T09:58:00-05:00",
+      "outcome": ""
     }
   ]
 }
