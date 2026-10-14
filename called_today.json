@@ -1,137 +1,32 @@
 {
-  "date": "2026-10-13",
-  "updated_at": "2026-10-13T17:52:41-05:00",
+  "date": "2026-10-14",
+  "updated_at": "2026-10-14T09:03:49-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "7274501",
-    "17921301",
     "21373851",
-    "29694451",
-    "51563551",
     "13966405892",
-    "20260733003",
-    "20283614591",
-    "61834404632",
-    "203866478699"
+    "20283614591"
   ],
   "calls": [
-    {
-      "contact_id": "51563551",
-      "contact_name": "Joshua Hazelwood",
-      "am": "Simran",
-      "time": "2026-10-13T07:19:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "17921301",
-      "contact_name": "Shannon Hafeez",
-      "am": "Simran",
-      "time": "2026-10-13T07:20:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "17921301",
-      "contact_name": "Shannon Hafeez",
-      "am": "Simran",
-      "time": "2026-10-13T07:34:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "20260733003",
-      "contact_name": "Kevin Matthews",
-      "am": "Simran",
-      "time": "2026-10-13T07:40:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "20260733003",
-      "contact_name": "Kevin Matthews",
-      "am": "Simran",
-      "time": "2026-10-13T07:41:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "20260733003",
-      "contact_name": "Kevin Matthews",
-      "am": "Simran",
-      "time": "2026-10-13T07:45:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "203866478699",
-      "contact_name": "Trent Roybal",
-      "am": "Simran",
-      "time": "2026-10-13T08:13:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "time": "2026-10-13T09:58:00-05:00",
-      "outcome": ""
-    },
     {
       "contact_id": "13966405892",
       "contact_name": "Trent Bell",
       "am": "Kahekili",
-      "time": "2026-10-13T13:08:00-05:00",
+      "time": "2026-10-14T08:07:00-05:00",
       "outcome": ""
-    },
-    {
-      "contact_id": "29694451",
-      "contact_name": "Benjamin Stanley",
-      "am": "Kahekili",
-      "time": "2026-10-13T14:28:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "61834404632",
-      "contact_name": "David Smith",
-      "am": "Kahekili",
-      "time": "2026-10-13T16:25:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "61834404632",
-      "contact_name": "David Smith",
-      "am": "Kahekili",
-      "time": "2026-10-13T16:26:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "61834404632",
-      "contact_name": "David Smith",
-      "am": "Kahekili",
-      "time": "2026-10-13T16:37:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "61834404632",
-      "contact_name": "David Smith",
-      "am": "Kahekili",
-      "time": "2026-10-13T16:43:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "7274501",
-      "contact_name": "Kevin Thompson",
-      "am": "Kahekili",
-      "time": "2026-10-13T16:45:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "time": "2026-10-13T16:58:00-05:00",
-      "outcome": "Connected"
     },
     {
       "contact_id": "21373851",
       "contact_name": "Paul Laslou",
       "am": "Kahekili",
-      "time": "2026-10-13T17:01:00-05:00",
+      "time": "2026-10-14T08:12:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "20283614591",
+      "contact_name": "Sarah Schupp",
+      "am": "Kahekili",
+      "time": "2026-10-14T08:45:00-05:00",
       "outcome": ""
     }
   ]
