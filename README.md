@@ -126,3 +126,7 @@ The CSV itself is not committed (it includes contacts that aren't on the map).
 | `called_today.json` | Today's called contact IDs (drives the pulse); refreshed by a scheduled job |
 | `update_called_today.py` | Resolves a calls CSV/JSON → `called_today.json`; `--publish` pushes it |
 | `update_touch_counts.py` | Applies a HubSpot touch-count CSV → `data.json` + `data.js`; `--publish` pushes them |
+
+
+## Log Call
+Green **Log Call** button per contact → shared call log (ntfy.sh queue → Google Sheet "AM Dialer Call Log"), with a localStorage fallback. See [LOGCALL.md](LOGCALL.md). `logcall_rows.py` prints new rows for the sheet.

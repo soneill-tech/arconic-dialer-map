@@ -207,6 +207,30 @@
     border-top: 1px solid var(--border); background: var(--panel);
   }
 </style>
+<style>/* ---- Log Call ---- */
+.contact .btns{display:flex;gap:6px;flex-wrap:wrap}
+.contact button.log-btn{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;background:rgba(34,197,94,.12);color:var(--accent2);border:1px solid rgba(34,197,94,.55);padding:4px 10px;border-radius:8px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:var(--font)}
+.contact button.log-btn:hover{background:rgba(34,197,94,.22)}
+.overlay{position:fixed;inset:0;background:rgba(5,8,12,.62);z-index:2000;display:none;align-items:center;justify-content:center}
+.overlay.show{display:flex}
+.modal{width:460px;background:var(--panel);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:18px 20px}
+.modal h3{margin:0;font-size:1rem}.modal .who{color:var(--muted);font-size:.8rem;margin:3px 0 12px}
+.modal label{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:10px 0 5px}
+.modal .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.modal input,.modal textarea,.modal select{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:7px 10px;border-radius:8px;font:13px var(--font);outline:none;color-scheme:dark}
+.modal textarea{height:66px;resize:none}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{background:var(--bg);border:1px solid var(--border);color:var(--muted);padding:6px 10px;border-radius:999px;font:12px var(--font);cursor:pointer}
+.chips button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.modal .seg button{padding:6px 12px}
+.modal .foot{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:10px}
+.modal .synchint{font-size:.72rem;color:var(--muted)}
+.btn{border-radius:8px;padding:7px 14px;font:600 13px var(--font);cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text)}
+.btn.save{background:var(--accent2);border-color:var(--accent2);color:#0b1a10}
+.modal .err{color:var(--warn);font-size:.72rem;margin-top:8px;min-height:1em}
+.btn.save[disabled]{opacity:.6;cursor:wait}
+@media (max-width:520px){.modal{width:94vw}}
+</style>
 </head>
 <body>
 <header>
@@ -247,8 +271,7 @@
   <aside class="detail">
     <div class="detail-head">
       <h2 id="detailTitle">Contacts</h2>
-      <div class="detail-hint"><strong>Open in HubSpot, then click Call so the call is logged.</strong>
-        <span class="muted">📞 phone-number links dial from your phone and are <em>not</em> logged.</span></div>
+      <div class="detail-hint"><strong>Open in HubSpot to call, or use Log Call to record a call made from your phone.</strong></div>
       <div class="sort-line">
         <span id="sortNote">Sorted by most contacted in HubSpot</span>
         <div class="seg" id="sortToggle" title="Sort contacts">
@@ -264,10 +287,23 @@
 <footer>
   Scope: Arconic (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/2359249037" style="color:var(--accent)" target="_blank" rel="noopener">2359249037</a>, Kahekili Barrozo) +
   Kaiser Aluminum (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/5360206404" style="color:var(--accent)" target="_blank" rel="noopener">5360206404</a>, Simran Subramanian).
-  Data bundled in <code>data.json</code>. Read-only · no HubSpot writes. Use <strong>Open in HubSpot</strong> → Call so calls are logged; 📞 tel: links are not logged.
+  Data bundled in <code>data.json</code>. Read-only · no HubSpot writes. Use <strong>Open in HubSpot</strong> → Call, or <strong>Log Call</strong> for calls made from your phone (logged calls sync to HubSpot on the next sync).
   <span class="touch-asof" id="touchAsOf"></span>
 </footer>
 
+
+<div class="overlay" id="lcOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="lcTitle">
+<h3 id="lcTitle">Log call</h3><div class="who" id="lcWho"></div>
+<div class="row"><div><label>Account manager</label><div class="seg" id="lcAm"><button type="button" data-v="Kili">Kili</button><button type="button" data-v="Simran">Simran</button></div></div>
+<div><label>Date / time</label><input type="datetime-local" id="lcDt"/></div></div>
+<label>Outcome</label><div class="chips" id="lcOutcome"><button type="button" class="on">Connected</button><button type="button">Left voicemail</button><button type="button">No answer</button><button type="button">Wrong number</button><button type="button">Busy</button></div>
+<div class="row"><div><label>Direction</label><div class="seg" id="lcDir"><button type="button" class="active">Outbound</button><button type="button">Inbound</button></div></div>
+<div><label>Duration (min)</label><input type="number" id="lcDur" min="0" step="1" placeholder="0"/></div></div>
+<label>Notes</label><textarea id="lcNotes"></textarea>
+<div class="err" id="lcErr"></div>
+<div class="foot"><span class="synchint">⟳ Saved to the shared call log; syncs to HubSpot on the next sync.</span>
+<div style="display:flex;gap:8px"><button type="button" class="btn" id="lcCancel">Cancel</button><button type="button" class="btn save" id="lcSave">Save</button></div></div>
+</div></div>
 <script src="data.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
@@ -361,6 +397,7 @@
         if (!prev || !prev.time || String(call.time || "") >= String(prev.time || "")) calledMap.set(id, call);
       });
     }
+    mergeLoggedCalls();
     renderSyncLine(file, fresh);
   }
 
@@ -382,6 +419,7 @@
   }
 
   async function loadCalledToday() {
+    await loadLoggedCalls();
     try {
       const res = await fetch(`${CALLED_URL}?ts=${Date.now()}`, { cache: "no-store" });
       if (!res.ok) throw new Error("HTTP " + res.status);
@@ -518,7 +556,7 @@
           <div>
             <div class="cname">${esc(c.name || "(no name)")}</div>
             ${touchBadge(c)}
-            ${ci ? `<div class="called-badge" title="${esc(ci.outcome ? "Outcome: " + ci.outcome : "Call logged in HubSpot today")}">✓ Called today${ci.time ? " " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
+            ${ci ? `<div class="called-badge" title="${esc((ci.outcome ? "Outcome: " + ci.outcome : "Call logged today") + (ci.src === "log" ? " · via Log Call" + (ci.pending ? " (saved on this device only, not yet shared)" : "") : " · HubSpot sync"))}">Called today ✓${ci.time ? " " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
             ${c.title ? `<div class="title">${esc(c.title)}</div>` : `<div class="title" style="opacity:.5">Title not scraped</div>`}
             <div class="co-tag"><span class="dot" style="background:${COLORS[c.company] || "#888"};width:8px;height:8px"></span> ${esc(c.company)} · ${esc(AM_SHORT[c.am] || c.am)}</div>
           </div>
@@ -526,10 +564,10 @@
         </div>
         <div class="rows">
           <div class="phone-line">
-            <span>${c.phone ? `📞 <a href="tel:${esc(c.phone)}" title="Call from phone (not logged in HubSpot)">${esc(c.phone)}</a><span class="nolog">phone · not logged</span>` : `<span style="color:var(--muted)">📞 —</span>`}</span>
-            ${hsLink(c)}
+            <span>${c.phone ? `📞 <a href="tel:${esc(c.phone)}" title="Call from phone, then use Log Call">${esc(c.phone)}</a><span class="nolog">use Log Call</span>` : `<span style="color:var(--muted)">📞 —</span>`}</span>
+            <span class="btns">${contactId(c) ? `<button type="button" class="log-btn" data-log="${esc(contactId(c))}">✎ Log Call</button>` : ""}${hsLink(c)}</span>
           </div>
-          ${c.mobile ? `<div>📱 <a href="tel:${esc(c.mobile)}" title="Call from phone (not logged in HubSpot)">${esc(c.mobile)}</a><span class="nolog">phone · not logged</span></div>` : ""}
+          ${c.mobile ? `<div>📱 <a href="tel:${esc(c.mobile)}" title="Call from phone, then use Log Call">${esc(c.mobile)}</a><span class="nolog">use Log Call</span></div>` : ""}
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
         </div>
         ${c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
@@ -698,13 +736,144 @@
     if (pts.length) map.flyToBounds(pts, { padding: [40, 40], duration: 0.6 });
   }
 
+  // ---- Log Call: shared call log (ntfy.sh topic, append-only, no secrets) + localStorage fallback ----
+  // Writes: POST JSON to the topic. Reads: poll the topic's cache (~12h on ntfy.sh) for today's calls (CT).
+  // The hourly sync copies new calls into the "AM Dialer Call Log" Google Sheet (durable log) — see LOGCALL.md.
+  const LOG_TOPIC_URL = "https://ntfy.sh/tsdm-calllog-ddbdae3e678c14eb";
+  const LS_CACHE = "dialerLogCache:v1";      // {date, calls:{call_id: call}} — everything seen/saved today
+  const LS_PENDING = "dialerLogPending:v1";  // [call] saved here but not yet accepted by the backend
+  const logged = new Map();                  // call_id -> call (today, CT)
+  const lsGet = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } };
+  const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+  const callDateCT = (iso) => new Intl.DateTimeFormat("en-CA", { timeZone: CT_TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(iso));
+  let logFetchError = null;
+
+  function saveCache() {
+    const calls = {};
+    logged.forEach((c, id) => { calls[id] = c; });
+    lsSet(LS_CACHE, { date: todayCT(), calls });
+  }
+  async function postCall(call) {
+    const res = await fetch(LOG_TOPIC_URL, { method: "POST", body: JSON.stringify(call),
+      headers: { "Title": `Call: ${call.contact_name} (${call.am})`, "Tags": "dialer-call" } });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    return res.json();
+  }
+  async function flushPending() {
+    const pend = lsGet(LS_PENDING, []);
+    if (!pend.length) return;
+    const left = [];
+    for (const call of pend) {
+      try { const r = await postCall(call); logged.set(call.call_id, { ...call, ntfy_id: r.id, pending: false }); }
+      catch (e) { left.push(call); }
+    }
+    lsSet(LS_PENDING, left);
+  }
+  async function loadLoggedCalls() {
+    const today = todayCT();
+    logged.clear();
+    const cache = lsGet(LS_CACHE, null);
+    if (cache && cache.date === today) Object.values(cache.calls || {}).forEach((c) => logged.set(c.call_id, c));
+    lsGet(LS_PENDING, []).forEach((c) => { if (callDateCT(c.timestamp) === today) logged.set(c.call_id, { ...c, pending: true }); });
+    await flushPending();
+    try {
+      const res = await fetch(`${LOG_TOPIC_URL}/json?poll=1&since=all`, { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const lines = (await res.text()).split("\n").filter(Boolean).map((l) => { try { return JSON.parse(l); } catch (e) { return null; } }).filter(Boolean);
+      const deleted = new Set(lines.filter((m) => m.event === "message_delete").map((m) => m.sequence_id));
+      for (const m of lines) {
+        if (m.event !== "message" || deleted.has(m.id)) continue;
+        let call; try { call = JSON.parse(m.message); } catch (e) { continue; }
+        if (!call || !call.call_id || !call.contact_id || !call.timestamp) continue;
+        if (callDateCT(call.timestamp) === today) logged.set(call.call_id, { ...call, ntfy_id: m.id, pending: false });
+      }
+      logged.forEach((c, id) => { if (c.ntfy_id && deleted.has(c.ntfy_id)) logged.delete(id); });
+      logFetchError = null;
+    } catch (err) {
+      logFetchError = String(err.message || err);
+      console.warn("call log:", err);
+    }
+    saveCache();
+  }
+  function mergeLoggedCalls() {
+    logged.forEach((call) => {
+      const id = String(call.contact_id);
+      const prev = calledMap.get(id);
+      const prevT = prev && /\d{4}-\d{2}-\d{2}/.test(String(prev.time || "")) ? new Date(prev.time) : null;
+      if (!prev || !prev.time || (prevT && new Date(call.timestamp) >= prevT) || prev.src === "log" && call.timestamp >= prev.time) {
+        calledMap.set(id, { contact_id: id, contact_name: call.contact_name, am: call.am, time: call.timestamp,
+          outcome: call.outcome, src: "log", pending: !!call.pending });
+      }
+    });
+  }
+
+  // ---- Log Call modal ----
+  let lcContact = null;
+  const pad2 = (n) => String(n).padStart(2, "0");
+  function segPick(id, val) { el(id).querySelectorAll("button").forEach((b) => b.classList.toggle(el(id).classList.contains("chips") ? "on" : "active", (b.dataset.v || b.textContent) === val)); }
+  function segVal(id) { const b = el(id).querySelector("button.active, button.on"); return b ? (b.dataset.v || b.textContent) : ""; }
+  document.querySelectorAll("#lcOverlay .chips, #lcOverlay .seg").forEach((g) => g.addEventListener("click", (e) => {
+    if (e.target.tagName !== "BUTTON") return;
+    const cls = g.classList.contains("chips") ? "on" : "active";
+    g.querySelectorAll("button").forEach((b) => b.classList.remove(cls));
+    e.target.classList.add(cls);
+  }));
+  function locLabelFor(c) {
+    const sl = supplierLocsFor(c).map((l) => String(l.name || l.city).replace(/ \(supplier\)$/, ""));
+    return [c.company, c.plant ? plantLabel(c) : "Unassigned", ...sl.map((x) => x + " (supplier)")].filter(Boolean).join(" · ");
+  }
+  function openLogCall(id) {
+    const c = DATA.contacts.find((x) => contactId(x) === id);
+    if (!c) return;
+    lcContact = c;
+    el("lcWho").textContent = [c.name, locLabelFor(c), c.phone || c.mobile].filter(Boolean).join(" · ");
+    segPick("lcAm", c.am === "Simran Subramanian" ? "Simran" : "Kili");
+    const d = new Date();
+    el("lcDt").value = `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}T${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+    segPick("lcOutcome", "Connected"); segPick("lcDir", "Outbound");
+    el("lcDur").value = ""; el("lcNotes").value = ""; el("lcErr").textContent = "";
+    el("lcSave").disabled = false;
+    el("lcOverlay").classList.add("show");
+  }
+  function closeLogCall() { el("lcOverlay").classList.remove("show"); lcContact = null; }
+  async function saveLogCall() {
+    const c = lcContact; if (!c) return;
+    const d = new Date(el("lcDt").value);
+    if (isNaN(d)) { el("lcErr").textContent = "Enter a valid date/time."; return; }
+    const rnd = (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2)).slice(0, 13);
+    const call = {
+      call_id: `lc-${Date.now().toString(36)}-${rnd}`, timestamp: d.toISOString(), am: segVal("lcAm"),
+      contact_id: contactId(c), contact_name: c.name || "", company_location: locLabelFor(c), phone: c.phone || c.mobile || "",
+      outcome: segVal("lcOutcome"), direction: segVal("lcDir"), duration_min: el("lcDur").value === "" ? "" : Number(el("lcDur").value),
+      notes: el("lcNotes").value.trim(), logged_at: new Date().toISOString(), source: "dialer-map",
+    };
+    el("lcSave").disabled = true;
+    try {
+      const r = await postCall(call);
+      logged.set(call.call_id, { ...call, ntfy_id: r.id, pending: false });
+    } catch (err) {
+      lsSet(LS_PENDING, [...lsGet(LS_PENDING, []), call]);
+      logged.set(call.call_id, { ...call, pending: true });
+      alert("Couldn't reach the shared call log — saved on this device and will retry automatically.");
+    }
+    saveCache();
+    closeLogCall();
+    applyCalledFile(calledFile);
+    refreshCallStatusUI();
+  }
+  el("lcCancel").onclick = closeLogCall;
+  el("lcSave").onclick = saveLogCall;
+  el("lcOverlay").addEventListener("click", (e) => { if (e.target.id === "lcOverlay") closeLogCall(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && el("lcOverlay").classList.contains("show")) closeLogCall(); });
+  el("detailBody").addEventListener("click", (e) => { const b = e.target.closest("button.log-btn"); if (b) openLogCall(b.dataset.log); });
+
   renderLocList();
   selectLoc("team:all", false);
 
   loadCalledToday();
   setInterval(loadCalledToday, CALLED_REFRESH_MS);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) loadCalledToday(); });
-  window.__callStatus = { reload: loadCalledToday, pinState, get calledIds() { return [...calledMap.keys()]; } };
+  window.__callStatus = { reload: loadCalledToday, pinState, get loggedCalls() { return [...logged.values()]; }, get calledIds() { return [...calledMap.keys()]; } };
 })();
 </script>
 </body>
