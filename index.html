@@ -832,7 +832,7 @@ body[data-am="simran"] header{background:linear-gradient(90deg,rgba(128,0,32,.35
     updateMarkerVisibility();
   });
 
-  const AM_ART = { "Kahekili Barrozo": ["kili", `<svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#041E42" stroke="#C0C7CC" stroke-width="2.5"/><path fill="#C0C7CC" d="M20 8.5l3.4 7.2 7.9 1-5.8 5.5 1.5 7.8L20 26l-7 4 1.5-7.8-5.8-5.5 7.9-1z"/></svg>`], "Simran Subramanian": ["simran", `<svg viewBox="0 0 40 40" width="28" height="30" aria-hidden="true"><path fill="#800020" d="M20 4c-6 0-9.5 4-9.5 8.2 0 4.600 3.200 8.200 7 12.500L9 36l5.500 1.500L20 29l5.500 8.500L31 36l-9.500-11.300c3.800-4.300 7-7.900 7-12.500C28.500 8 26 4 20 4zm0 5c2.800 0 4.300 1.600 4.300 3.400 0 2-1.700 4.300-4.300 7.400-2.600-3.100-4.300-5.400-4.300-7.400C15.700 10.600 17.200 9 20 9z"/></svg>`] };
+  const AM_ART = { "Kahekili Barrozo": ["kili", `<img src="assets/cowboys-star.png" alt="" height="30" style="height:30px;width:auto;display:block"/>`], "Simran Subramanian": ["simran", `<svg viewBox="0 0 40 40" width="28" height="30" aria-hidden="true"><path fill="#800020" d="M20 4c-6 0-9.5 4-9.5 8.2 0 4.600 3.200 8.200 7 12.500L9 36l5.500 1.500L20 29l5.500 8.500L31 36l-9.500-11.300c3.800-4.300 7-7.900 7-12.500C28.500 8 26 4 20 4zm0 5c2.800 0 4.300 1.600 4.300 3.400 0 2-1.700 4.300-4.300 7.400-2.600-3.100-4.300-5.400-4.300-7.400C15.700 10.600 17.200 9 20 9z"/></svg>`] };
   function setAmTheme() {
     const a = AM_ART[amFilter];
     if (a) document.body.dataset.am = a[0]; else delete document.body.dataset.am;
