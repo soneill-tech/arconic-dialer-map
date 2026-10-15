@@ -76,7 +76,8 @@ HOWMET_SITES = [  # key, label, city, region, lat, lon, area codes, hint
     ("Muskegon", "Muskegon, MI area (231)", "Muskegon", "Muskegon, Muskegon County, Michigan, USA", 43.2341813, -86.2483921, ["231"],
      "W Michigan (231) \u2014 inferred from phone area code, not a confirmed plant"),
 ]
-OVERRIDES = {"37695051": "arc:Chandler"}   # Kevin West (602 = Phoenix AC, assigned to Chandler by request)
+OVERRIDES = {"37695051": "arc:Chandler",
+             "6825251": "kai:Richmond"}   # Pilar Alvarez (Kaiser, 949 AC) belongs to Richmond (Bellwood), VA per Steve 2026-10-15   # Kevin West (602 = Phoenix AC, assigned to Chandler by request)
 JS = "window.__DIALER_DATA__ = "
 
 def apply_howmet(d):
@@ -168,7 +169,7 @@ def apply(d):
                 c["plant_id"] = pid; c["plant"] = pid.split(":", 1)[1]; c["plant_override"] = True
     sids = {s["id"] for s in SITES}
     for l in locs:
-        if l["id"] in sids or l["id"] in ("arc:unassigned", "kai:unassigned"):
+        if l["id"] in sids or l["id"] in ("arc:unassigned", "kai:unassigned") or (l.get("pin") and l.get("kind") != "supplier" and l.get("filter") == l["id"] and l["company"] in ("Arconic", "Kaiser Aluminum")):
             m = [c for c in cs if c["company"] == l["company"] and (c["plant_id"] == l["id"] if not l["id"].endswith(":unassigned") else not c["plant"])]
             l.update(contact_count=len(m), with_phone=sum(c["has_phone"] for c in m), dm_count=sum(c["is_dm"] for c in m))
     for l in locs:   # (again, after new pins were inserted) so a first run converges immediately

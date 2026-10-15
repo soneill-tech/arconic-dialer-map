@@ -752,8 +752,8 @@
       "company": "Kaiser Aluminum",
       "company_id": "5360206404",
       "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
-      "contact_count": 3,
-      "with_phone": 3,
+      "contact_count": 2,
+      "with_phone": 2,
       "dm_count": 0
     },
     {
@@ -792,8 +792,8 @@
       "filter": "kai:Richmond",
       "pin": true,
       "source": "nominatim",
-      "contact_count": 0,
-      "with_phone": 0,
+      "contact_count": 1,
+      "with_phone": 1,
       "dm_count": 0
     },
     {
@@ -11828,8 +11828,8 @@
       "am": "Simran Subramanian",
       "company": "Kaiser Aluminum",
       "company_id": "5360206404",
-      "plant": "Foothill Ranch",
-      "plant_id": "kai:Foothill Ranch",
+      "plant": "Richmond",
+      "plant_id": "kai:Richmond",
       "area_code": "949",
       "has_phone": true,
       "is_dm": false,
@@ -11837,7 +11837,8 @@
       "hubspot_link_type": "record",
       "times_contacted": 25,
       "sales_activities": 51,
-      "last_contacted": "2026-09-10"
+      "last_contacted": "2026-09-10",
+      "plant_override": true
     },
     {
       "name": "Rob Matuska",
