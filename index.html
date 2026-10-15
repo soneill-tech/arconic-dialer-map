@@ -352,6 +352,8 @@ body[data-am="kili"] #amAccent img{z-index:1}
       <div class="view-line"><span>Show</span><div class="seg" id="viewToggle">
         <button type="button" data-view="all" class="active">All</button>
         <button type="button" data-view="uncalled">Not called today</button>
+        <button type="button" data-view="uncalled_week">Not called this week</button>
+        <button type="button" data-view="uncalled_month">Not called this month</button>
         <button type="button" data-view="followups">Follow-ups due</button></div></div>
       <div class="sort-line">
         <span id="sortNote">Sorted by most contacted in HubSpot</span>
@@ -450,7 +452,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
   const COLORS = { "Arconic": "#3b82f6", "Kaiser Aluminum": "#f97316", "BRT Extrusions": "#14b8a6", "Howmet Aerospace": "#84cc16" };
   const AM_SHORT = { "Kahekili Barrozo": "Kahekili", "Simran Subramanian": "Simran" };
   // Virtual "everything" location across both companies
-  DATA.locations.unshift({ id: "team:all", name: "All Team Steve", label: "All companies (Arconic + Kaiser)",
+  DATA.locations.unshift({ id: "team:all", name: "All Team Steve", label: "All companies",
     filter: "all", company: null, am: null, pin: false, city: null,
     hint: "Every contact across both Closed Won accounts",
     contact_count: DATA.stats.contacts, with_phone: DATA.stats.with_phone, dm_count: DATA.stats.decision_makers });
@@ -565,6 +567,8 @@ body[data-am="kili"] #amAccent img{z-index:1}
       if (!contactMatchesAM(c)) return false;
       if (!inLoc(c, loc)) return false;
       if (view === "uncalled" && calledInfo(c)) return false;
+      if (view === "uncalled_week" && !notCalledSince(c, weekStartCT())) return false;
+      if (view === "uncalled_month" && !notCalledSince(c, monthStartCT())) return false;
       if (view === "followups" && !followupDue(c)) return false;
       if (!q) return true;
       const blob = [c.name, c.email, c.phone, c.mobile, c.title, c.role, c.plant || "unassigned", c.notes, c.company, c.am,
@@ -592,6 +596,20 @@ body[data-am="kili"] #amAccent img{z-index:1}
     const d = Math.round((Date.parse(todayCT()) - Date.parse(ctDay(time))) / 864e5);
     return d <= 0 ? "today" : d <= 6 ? "week" : "older";
   }
+  // "Last called" day (CT) = latest of: last_calls.json / called_today / Log Call queue (lastCallOf) and HubSpot last_contacted
+  // (which also counts emails/meetings). No data at all = never called, so it counts as not called.
+  function lastCalledDay(c) {
+    const lc = lastCallOf(c), days = [];
+    if (lc && lc.time && !isNaN(new Date(lc.time))) days.push(ctDay(lc.time));
+    const m = String(c.last_contacted || "").match(/^\d{4}-\d{2}-\d{2}/); if (m) days.push(m[0]);
+    return days.length ? days.sort().pop() : "";
+  }
+  function weekStartCT() {   // Monday of the current week, CT
+    const d = new Date(todayCT() + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7));
+    return d.toISOString().slice(0, 10);
+  }
+  function monthStartCT() { return todayCT().slice(0, 8) + "01"; }
+  function notCalledSince(c, startDay) { const d = lastCalledDay(c); return !d || d < startDay; }
   function followupFor(c) { const f = followups.get(contactId(c)); return f && f.due ? f : null; }
   function followupDue(c) { const f = followupFor(c); return !!f && f.due <= todayCT(); }
   function fmtDue(due) {
@@ -685,7 +703,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
   const SORT_NOTES = { touches: "Sorted by most contacted in HubSpot", dm: "Sorted by decision makers first, then phone, then name" };
   function sortContacts(list) {
     if (viewFilter === "followups") return list.slice().sort((a, b) => (followupFor(a).due < followupFor(b).due ? -1 : followupFor(a).due > followupFor(b).due ? 1 : 0) || SORTS.touches(a, b));
-    return list.slice().sort(viewFilter === "uncalled" ? SORTS.touches : (SORTS[sortMode] || SORTS.touches));
+    return list.slice().sort(viewFilter.startsWith("uncalled") ? SORTS.touches : (SORTS[sortMode] || SORTS.touches));
   }
   function renderScore() {
     const byId = new Map(); DATA.contacts.forEach((c) => byId.set(contactId(c), c));
@@ -757,17 +775,21 @@ body[data-am="kili"] #amAccent img{z-index:1}
     const loc = DATA.locations.find((l) => l.id === selectedLocId) || DATA.locations[0];
     const all = filteredContactsForLoc(loc, "all");
     const nUn = all.filter((c) => !calledInfo(c)).length, nFu = all.filter(followupDue).length;
+    const wk = weekStartCT(), mo = monthStartCT();
+    const nWk = all.filter((c) => notCalledSince(c, wk)).length, nMo = all.filter((c) => notCalledSince(c, mo)).length;
     el("viewToggle").querySelectorAll("button").forEach((b) => {
       const v = b.dataset.view;
       b.classList.toggle("active", v === viewFilter);
-      b.textContent = v === "all" ? "All" : v === "uncalled" ? `Not called today (${nUn})` : `Follow-ups due (${nFu})`;
+      b.textContent = v === "all" ? "All" : v === "uncalled" ? `Not called today (${nUn})` : v === "uncalled_week" ? `Not called this week (${nWk})`
+        : v === "uncalled_month" ? `Not called this month (${nMo})` : `Follow-ups due (${nFu})`;
+      b.title = v === "uncalled_week" ? `No call since Monday ${wk} (CT)` : v === "uncalled_month" ? `No call since ${mo} (CT)` : "";
     });
     const contacts = sortContacts(filteredContactsForLoc(loc));
     el("detailTitle").textContent = `${loc.label || loc.name} · ${contacts.length} contacts`;
-    el("sortNote").textContent = viewFilter === "uncalled" ? "Uncalled contacts, most touches first" : viewFilter === "followups" ? "Follow-ups due, oldest first" : SORT_NOTES[sortMode];
+    el("sortNote").textContent = viewFilter === "uncalled" ? "Uncalled contacts, most touches first" : viewFilter === "uncalled_week" ? "No call since Monday, most touches first" : viewFilter === "uncalled_month" ? "No call this month, most touches first" : viewFilter === "followups" ? "Follow-ups due, oldest first" : SORT_NOTES[sortMode];
     const body = el("detailBody");
     if (!contacts.length) {
-      body.innerHTML = `<div class="detail-empty">${viewFilter === "uncalled" ? "Everyone here has been called today 🎉" : viewFilter === "followups" ? "No follow-ups due." : "No contacts match this filter/search."}</div>`;
+      body.innerHTML = `<div class="detail-empty">${viewFilter.startsWith("uncalled") ? "Everyone here has been called in this window 🎉" : viewFilter === "followups" ? "No follow-ups due." : "No contacts match this filter/search."}</div>`;
     } else {
       body.innerHTML = (DATA.companies || [{ name: "Arconic" }, { name: "Kaiser Aluminum" }]).map((co) => {
         const cs = contacts.filter((c) => c.company === co.name);

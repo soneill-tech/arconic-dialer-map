@@ -138,7 +138,7 @@ Green **Log Call** button per contact → shared call log (ntfy.sh queue → Goo
 Reps can add a new location pin or a new contact from the map header (badge **Added manually**, **Not in HubSpot yet**). Same ntfy queue as Log Call, typed `add_location` / `add_contact`; `manual_add.py` drains it to `added_manual.json` + the sheet tabs *Added Locations* / *Added Contacts*. See [MANUAL_ADD.md](MANUAL_ADD.md).
 
 ## Dialer features (v3)
-- **Filters:** *Show: All / Not called today / Follow-ups due* above the contact list (works with the All/Kahekili/Simran tabs; uncalled sorts by most touches).
+- **Filters:** *Show: All / Not called today / Not called this week (since Monday, CT) / Not called this month (since the 1st, CT) / Follow-ups due* above the contact list (works with the All/Kahekili/Simran tabs; uncalled sorts by most touches).
 - **Tap-to-call:** phone/mobile are large `tel:` buttons; when you return to the page Log Call opens prefilled for that contact (duration estimated from time away).
 - **Last call + follow-ups:** each card shows *Last call: outcome · date* (from `last_calls.json`, today's calls, and the queue); Log Call has an optional **Follow up** date, shown as a badge, cleared with *done*.
 - **Titles:** "Title not scraped" contacts get an inline *Add title* (saved via the queue, labeled "added by", not written to HubSpot).
@@ -146,3 +146,5 @@ Reps can add a new location pin or a new contact from the map header (badge **Ad
 - **Pins:** smaller; fill = last-call recency (today / this week / older / never), ring = company, pulse = not called today. Legend is collapsible (collapsed on small screens).
 - **Layout:** Unassigned contacts are a collapsible group in the locations list; contact cards are grouped by company with sticky headers.
 - **Edit/delete** manual locations/contacts. Queue types and sync steps: [MANUAL_ADD.md](MANUAL_ADD.md).
+
+**Last-called day** (week/month filters) = latest of `last_calls.json` (history only as far back as seeded + hourly publishes), today's `called_today.json`, the Log Call queue, and HubSpot `last_contacted` (which also counts emails/meetings). No data = never called = included. Manual contacts count as never called until a call is logged.
