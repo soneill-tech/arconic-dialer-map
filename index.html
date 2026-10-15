@@ -231,6 +231,18 @@
 .btn.save[disabled]{opacity:.6;cursor:wait}
 @media (max-width:520px){.modal{width:94vw}}
 </style>
+<style>/* ---- Manual add (locations / contacts) ---- */
+.add-btns{display:inline-flex;gap:6px}
+.btn.add{border-color:var(--accent);color:var(--accent);padding:7px 11px;font-size:12px}
+.btn.add:hover{background:rgba(59,130,246,.12)}
+.manual-badge{display:inline-block;font-size:.66rem;font-weight:600;padding:1px 7px;border-radius:999px;background:rgba(167,139,250,.16);color:var(--dm);border:1px solid rgba(167,139,250,.4);vertical-align:middle;margin-left:4px}
+.contact .nohs{display:inline-flex;align-items:center;white-space:nowrap;color:var(--muted);border:1px dashed var(--border);padding:4px 10px;border-radius:8px;font-size:.75rem;font-weight:600}
+.modal .geo-line{font-size:.74rem;color:var(--muted);margin-top:6px;min-height:1.1em}
+.modal .geo-line.ok{color:var(--accent2)}
+.modal .inline{display:flex;gap:8px}
+.modal .inline .btn{white-space:nowrap}
+.pin.manual{border-style:dashed}
+</style>
 </head>
 <body>
 <header>
@@ -246,6 +258,7 @@
       <button type="button" data-am="Kahekili Barrozo">Kahekili</button>
       <button type="button" data-am="Simran Subramanian">Simran</button>
     </div>
+    <span class="add-btns"><button type="button" class="btn add" id="addLocBtn" title="Add a new location (city pin) to the map">＋ Location</button><button type="button" class="btn add" id="addConBtn" title="Add a new contact that isn't in HubSpot yet">＋ Contact</button></span>
     <input type="search" id="search" placeholder="Search name, email, phone, plant, company…" />
   </div>
 </header>
@@ -303,6 +316,28 @@
 <div class="err" id="lcErr"></div>
 <div class="foot"><span class="synchint">⟳ Saved to the shared call log; syncs to HubSpot on the next sync.</span>
 <div style="display:flex;gap:8px"><button type="button" class="btn" id="lcCancel">Cancel</button><button type="button" class="btn save" id="lcSave">Save</button></div></div>
+</div></div>
+<div class="overlay" id="alOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="alTitle">
+<h3 id="alTitle">Add new location</h3><div class="who">Adds a pin for everyone. Not written to HubSpot.</div>
+<div class="row"><div><label>Company</label><div class="seg" id="alCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button></div></div>
+<div><label>Added by</label><div class="seg" id="alBy"><button type="button" data-v="Kili">Kili</button><button type="button" data-v="Simran">Simran</button></div></div></div>
+<div class="row"><div><label>City</label><input id="alCity" placeholder="Chandler"/></div><div><label>State</label><input id="alState" maxlength="30" placeholder="AZ"/></div></div>
+<label>Address (optional)</label><input id="alAddr" placeholder="Street address"/>
+<div class="inline" style="margin-top:10px"><button type="button" class="btn" id="alFind">Find on map</button><button type="button" class="btn" id="alPick">Drop pin manually</button></div>
+<div class="geo-line" id="alGeo"></div>
+<div class="err" id="alErr"></div>
+<div class="foot"><span class="synchint">⟳ Shared with all reps within ~5 min.</span><div style="display:flex;gap:8px"><button type="button" class="btn" id="alCancel">Cancel</button><button type="button" class="btn save" id="alSave">Add location</button></div></div>
+</div></div>
+<div class="overlay" id="acOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="acTitle">
+<h3 id="acTitle">Add new contact</h3><div class="who">Not in HubSpot yet. Nothing is written to HubSpot.</div>
+<div class="row"><div><label>Company</label><div class="seg" id="acCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button></div></div>
+<div><label>Added by</label><div class="seg" id="acBy"><button type="button" data-v="Kili">Kili</button><button type="button" data-v="Simran">Simran</button></div></div></div>
+<div class="row"><div><label>Name *</label><input id="acName"/></div><div><label>Title</label><input id="acRole"/></div></div>
+<div class="row"><div><label>Phone</label><input id="acPhone" type="tel"/></div><div><label>Mobile</label><input id="acMobile" type="tel"/></div></div>
+<label>Email</label><input id="acEmail" type="email"/>
+<label>Location (optional)</label><select id="acLoc"></select>
+<div class="err" id="acErr"></div>
+<div class="foot"><span class="synchint">⟳ Shared with all reps within ~5 min.</span><div style="display:flex;gap:8px"><button type="button" class="btn" id="acCancel">Cancel</button><button type="button" class="btn save" id="acSave">Add contact</button></div></div>
 </div></div>
 <script src="data.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -377,7 +412,7 @@
     return String(t);
   }
   function contactId(c) {
-    return String(c.hubspot_contact_id || ((c.hubspot_url || "").match(/\/record\/0-1\/(\d+)/) || [])[1] || "");
+    return String(c.hubspot_contact_id || ((c.hubspot_url || "").match(/\/record\/0-1\/(\d+)/) || [])[1] || c.manual_id || "");
   }
   function calledInfo(c) { const id = contactId(c); return id ? calledMap.get(id) : undefined; }
   function contactsAtLoc(loc) {
@@ -419,6 +454,7 @@
   }
 
   async function loadCalledToday() {
+    await loadManualAdds();
     await loadLoggedCalls();
     try {
       const res = await fetch(`${CALLED_URL}?ts=${Date.now()}`, { cache: "no-store" });
@@ -476,9 +512,9 @@
       const card = document.createElement("div");
       card.className = "loc-card" + (loc.company === "Kaiser Aluminum" ? " kai" : "") + (isSupplier(loc) ? " supplier" : "") + (loc.id === selectedLocId ? " active" : "");
       card.innerHTML = `
-        <div class="name">${esc(loc.label || loc.name)}</div>
+        <div class="name">${esc(loc.label || loc.name)}${loc.manual ? ` <span class="manual-badge" title="Added manually${loc.added_by ? " by " + esc(loc.added_by) : ""}">Added manually</span>` : ""}</div>
         ${isSupplier(loc) ? `<div><span class="sup-tag" style="margin-left:0">${esc(loc.supplier_tag || "Supplier (Arconic-managed)")}</span></div>` : ""}
-        <div class="meta">${esc(loc.pin ? loc.city + (isSupplier(loc) ? " · supplier pin (not an Arconic facility)" : " · city-level pin") : "No map pin")}
+        <div class="meta">${esc(loc.pin ? loc.city + (loc.manual ? " · manual pin" : isSupplier(loc) ? " · supplier pin (not an Arconic facility)" : " · city-level pin") : "No map pin")}
           ${loc.hint ? "<br/>" + esc(loc.hint) : ""}</div>
         <div class="stats">
           <span class="pill"><strong>${n}</strong> shown</span>
@@ -554,10 +590,10 @@
       <div class="contact${ci ? " is-called" : ""}" data-contact-id="${esc(contactId(c))}">
         <div class="top">
           <div>
-            <div class="cname">${esc(c.name || "(no name)")}</div>
+            <div class="cname">${esc(c.name || "(no name)")}${c.manual ? ` <span class="manual-badge" title="Added manually${c.added_by ? " by " + esc(c.added_by) : ""}">Added manually</span>` : ""}</div>
             ${touchBadge(c)}
             ${ci ? `<div class="called-badge" title="${esc((ci.outcome ? "Outcome: " + ci.outcome : "Call logged today") + (ci.src === "log" ? " · via Log Call" + (ci.pending ? " (saved on this device only, not yet shared)" : "") : " · HubSpot sync"))}">Called today ✓${ci.time ? " " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
-            ${c.title ? `<div class="title">${esc(c.title)}</div>` : `<div class="title" style="opacity:.5">Title not scraped</div>`}
+            ${c.title ? `<div class="title">${esc(c.title)}</div>` : `<div class="title" style="opacity:.5">${c.manual ? "No title" : "Title not scraped"}</div>`}
             <div class="co-tag"><span class="dot" style="background:${COLORS[c.company] || "#888"};width:8px;height:8px"></span> ${esc(c.company)} · ${esc(AM_SHORT[c.am] || c.am)}</div>
           </div>
           <span class="role-tag ${c.is_dm ? "dm" : ""}">${esc(c.role || "Other")}</span>
@@ -570,13 +606,14 @@
           ${c.mobile ? `<div>📱 <a href="tel:${esc(c.mobile)}" title="Call from phone, then use Log Call">${esc(c.mobile)}</a><span class="nolog">use Log Call</span></div>` : ""}
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
         </div>
-        ${c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
+        ${c.manual ? `<div class="plant-tag" style="color:var(--muted)">Location: ${c.plant_id ? esc(plantLabel(c)) : "unassigned"} (set manually${c.added_by ? " by " + esc(c.added_by) : ""})</div>` : c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
         ${(() => { const sl = supplierLocsFor(c); return sl.length ? `<div class="also-tag">Also at supplier: ${sl.map((l) => esc(String(l.name || l.city).replace(/ \(supplier\)$/, ""))).join(" · ")}</div>` : ""; })()}
       </div>`; }).join("");
   }
 
   const HS_PORTAL = "6029765";
   function hsLink(c) {
+    if (c.manual) return `<span class="nohs" title="Added manually on the map; not a HubSpot record yet">Not in HubSpot yet</span>`;
     const id = c.hubspot_contact_id || ((c.hubspot_url || "").match(/\/record\/0-1\/(\d+)/) || [])[1];
     if (id) {
       const url = `https://app.hubspot.com/contacts/${HS_PORTAL}/record/0-1/${id}`;
@@ -784,7 +821,7 @@
       for (const m of lines) {
         if (m.event !== "message" || deleted.has(m.id)) continue;
         let call; try { call = JSON.parse(m.message); } catch (e) { continue; }
-        if (!call || !call.call_id || !call.contact_id || !call.timestamp) continue;
+        if (!call || call.type || !call.call_id || !call.contact_id || !call.timestamp) continue;
         if (callDateCT(call.timestamp) === today) logged.set(call.call_id, { ...call, ntfy_id: m.id, pending: false });
       }
       logged.forEach((c, id) => { if (c.ntfy_id && deleted.has(c.ntfy_id)) logged.delete(id); });
@@ -866,6 +903,228 @@
   el("lcOverlay").addEventListener("click", (e) => { if (e.target.id === "lcOverlay") closeLogCall(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && el("lcOverlay").classList.contains("show")) closeLogCall(); });
   el("detailBody").addEventListener("click", (e) => { const b = e.target.closest("button.log-btn"); if (b) openLogCall(b.dataset.log); });
+
+  // ---- Manual adds: new locations + new contacts (same ntfy.sh queue as Log Call, told apart by `type`) ----
+  // POST {type:"add_location"|"add_contact", id, ...} to the topic. Log Call readers require call_id and skip typed
+  // messages; this reader only takes typed messages. Sources merged by id: added_manual.json (published by the hourly
+  // sync, durable), the ntfy queue (~12h), and localStorage (this device). See MANUAL_ADD.md. Never touches HubSpot.
+  const ADDED_URL = "added_manual.json";
+  const LS_ADD_CACHE = "dialerAddCache:v1";      // {id: item}
+  const LS_ADD_PENDING = "dialerAddPending:v1";  // [item] not yet accepted by the queue
+  const BASE_LOCS = DATA.locations.slice();
+  const BASE_CONTACTS = DATA.contacts.slice();
+  const manualItems = new Map();                 // id -> item
+  const CO_META = {};
+  (DATA.companies || []).forEach((c) => { CO_META[c.name] = c; });
+  const CO_PREFIX = { "Arconic": "arc", "Kaiser Aluminum": "kai" };
+  const mkId = (p) => `${p}-${Date.now().toString(36)}-${(crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)).replace(/-/g, "").slice(0, 8)}`;
+  async function postItem(item) {
+    const res = await fetch(LOG_TOPIC_URL, { method: "POST", body: JSON.stringify(item),
+      headers: { "Title": `${item.type === "add_location" ? "New location" : "New contact"}: ${item.type === "add_location" ? item.city + ", " + item.state : item.name}`, "Tags": "dialer-add" } });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    return res.json();
+  }
+  async function loadManualAdds() {
+    const deleted = new Set();
+    manualItems.clear();
+    const put = (it) => { if (it && it.id && (it.type === "add_location" || it.type === "add_contact")) manualItems.set(it.id, it); };
+    Object.values(lsGet(LS_ADD_CACHE, {})).forEach(put);
+    try {
+      const res = await fetch(`${ADDED_URL}?ts=${Date.now()}`, { cache: "no-store" });
+      if (res.ok) ((await res.json()).items || []).forEach(put);
+    } catch (e) { console.warn("added_manual.json:", e); }
+    const pend = lsGet(LS_ADD_PENDING, []), left = [];
+    for (const it of pend) { try { await postItem(it); } catch (e) { left.push(it); } put(it); }
+    lsSet(LS_ADD_PENDING, left);
+    try {
+      const res = await fetch(`${LOG_TOPIC_URL}/json?poll=1&since=all`, { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const lines = (await res.text()).split("\n").filter(Boolean).map((l) => { try { return JSON.parse(l); } catch (e) { return null; } }).filter(Boolean);
+      lines.filter((m) => m.event === "message_delete").forEach((m) => deleted.add(m.sequence_id));
+      for (const m of lines) {
+        if (m.event !== "message" || deleted.has(m.id)) continue;
+        let it; try { it = JSON.parse(m.message); } catch (e) { continue; }
+        if (it && it.type && it.id) { it.ntfy_id = m.id; put(it); }
+      }
+      manualItems.forEach((it, id) => { if (it.ntfy_id && deleted.has(it.ntfy_id)) manualItems.delete(id); });
+    } catch (err) { console.warn("manual adds queue:", err); }
+    const cache = {}; manualItems.forEach((it, id) => { cache[id] = it; }); lsSet(LS_ADD_CACHE, cache);
+    applyManual();
+  }
+  function manualLocObj(it) {
+    const co = CO_META[it.company] || {};
+    return { id: it.id, name: `${it.city}, ${it.state}`, label: `${it.city}, ${it.state}`, city: it.city, region: [it.address, it.city, it.state].filter(Boolean).join(", "),
+      lat: it.lat, lon: it.lon, am: co.am, company: it.company, company_id: co.id, company_url: co.url, filter: it.id, pin: true,
+      source: it.geo_source || "manual", manual: true, added_by: it.added_by, address: it.address || "",
+      hint: `Added manually${it.added_by ? " by " + it.added_by : ""}${it.address ? " · " + it.address : ""}`,
+      contact_count: 0, with_phone: 0, dm_count: 0 };
+  }
+  function manualContactObj(it, locs) {
+    const co = CO_META[it.company] || {};
+    const lid = it.location_id && locs.some((l) => l.id === it.location_id) ? it.location_id : null;
+    const loc = lid ? locs.find((l) => l.id === lid) : null;
+    return { name: it.name, role: "Other", title: it.title || "", phone: it.phone || "", mobile: it.mobile || "", email: it.email || "",
+      hubspot_url: "", company_url: co.url, last_activity: "", notes: "Added manually", am: co.am, company: it.company, company_id: co.id,
+      plant: loc ? (loc.name || loc.label) : null, plant_id: lid, area_code: null, has_phone: !!(it.phone || it.mobile), is_dm: false,
+      hubspot_contact_id: "", manual: true, manual_id: it.id, added_by: it.added_by, times_contacted: 0, sales_activities: 0, last_contacted: null };
+  }
+  function applyManual() {
+    const items = [...manualItems.values()];
+    const mlocs = items.filter((i) => i.type === "add_location" && isFinite(i.lat) && isFinite(i.lon) && CO_META[i.company]).map(manualLocObj);
+    const locs = BASE_LOCS.slice();
+    mlocs.forEach((l) => {
+      let at = locs.findIndex((x) => x.id === (CO_PREFIX[l.company] || "") + ":unassigned");
+      if (at < 0) at = locs.length;
+      locs.splice(at, 0, l);
+    });
+    const mcs = items.filter((i) => i.type === "add_contact" && i.name && CO_META[i.company]).map((i) => manualContactObj(i, locs));
+    DATA.locations = locs;
+    DATA.contacts = BASE_CONTACTS.concat(mcs);
+    DATA.locations.forEach((l) => {
+      const cs = DATA.contacts.filter((c) => inLoc(c, l));
+      l.contact_count = cs.length; l.with_phone = cs.filter((c) => c.has_phone).length; l.dm_count = cs.filter((c) => c.is_dm).length;
+    });
+    if (!DATA.locations.some((l) => l.id === selectedLocId)) selectedLocId = "team:all";
+    ensureManualMarkers();
+    renderStats();
+  }
+  function ensureManualMarkers() {
+    if (!map) return;
+    Object.keys(markers).forEach((id) => {
+      if (!DATA.locations.some((l) => l.id === id)) { map.removeLayer(markers[id]); delete markers[id]; delete pinState[id]; }
+    });
+    DATA.locations.filter((l) => l.manual && !markers[l.id]).forEach((loc) => {
+      pinState[loc.id] = "pulse";
+      const m = L.marker([loc.lat, loc.lon], { icon: pinIcon(loc, "pulse") }).addTo(map)
+        .bindPopup(`<strong>${esc(loc.label)}</strong> <span style="color:#7c3aed;font-weight:600">Added manually</span><br/>${esc(loc.company)} · ${esc(AM_SHORT[loc.am] || loc.am)}${loc.address ? "<br/>" + esc(loc.address) : ""}`);
+      m.on("click", () => selectLoc(loc.id, false));
+      markers[loc.id] = m;
+    });
+    if (typeof updateMarkerVisibilityQuiet === "function") updateMarkerVisibilityQuiet();
+  }
+  function updateMarkerVisibilityQuiet() {
+    Object.entries(markers).forEach(([id, m]) => {
+      const loc = DATA.locations.find((l) => l.id === id);
+      if (loc && locMatchesAM(loc) !== map.hasLayer(m)) { if (locMatchesAM(loc)) m.addTo(map); else map.removeLayer(m); }
+    });
+  }
+  async function savedItem(item) {
+    try { const r = await postItem(item); item.ntfy_id = r.id; }
+    catch (e) { lsSet(LS_ADD_PENDING, [...lsGet(LS_ADD_PENDING, []), item]); alert("Couldn't reach the shared queue — saved on this device and will retry automatically."); }
+    manualItems.set(item.id, item);
+    const cache = lsGet(LS_ADD_CACHE, {}); cache[item.id] = item; lsSet(LS_ADD_CACHE, cache);
+    applyManual(); refreshCallStatusUI();
+  }
+  const segOn = (id, v) => el(id).querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.v === v));
+  const segGet = (id) => { const b = el(id).querySelector("button.active"); return b ? b.dataset.v : ""; };
+  ["alCo", "alBy", "acCo", "acBy"].forEach((id) => el(id).addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    segOn(id, b.dataset.v); if (id === "acCo") fillConLocs();
+  }));
+  const closeOv = (id) => el(id).classList.remove("show");
+  // -- Add location --
+  let alGeo = null, alPicking = false;
+  // (state is free text; Nominatim resolves abbreviations)
+  const _US_ST = "AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split(" ");
+  function setGeo(g, msg, ok) { alGeo = g; el("alGeo").textContent = msg || ""; el("alGeo").classList.toggle("ok", !!ok); }
+  function openAddLoc() {
+    segOn("alCo", "Arconic"); segOn("alBy", amFilter === "Simran Subramanian" ? "Simran" : "Kili");
+    ["alCity", "alState", "alAddr"].forEach((i) => { el(i).value = ""; });
+    el("alErr").textContent = ""; setGeo(null, ""); el("alSave").disabled = false;
+    el("alOverlay").classList.add("show"); el("alCity").focus();
+  }
+  async function geocodeCity(city, state, addr) {
+    const q = (p) => `https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&${p}`;
+    const tries = [];
+    if (addr) tries.push([q("q=" + encodeURIComponent(`${addr}, ${city}, ${state}`)), "address"]);
+    tries.push([q(`city=${encodeURIComponent(city)}&state=${encodeURIComponent(state)}`), "city"]);
+    tries.push([q("q=" + encodeURIComponent(`${city}, ${state}`)), "city"]);
+    for (const [url, prec] of tries) {
+      const res = await fetch(url, { headers: { "Accept": "application/json" } });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const r = (await res.json())[0];
+      if (r) return { lat: +(+r.lat).toFixed(6), lon: +(+r.lon).toFixed(6), src: "nominatim", precision: prec, name: r.display_name };
+    }
+    return null;
+  }
+  async function findOnMap() {
+    const city = el("alCity").value.trim(), state = el("alState").value.trim(), addr = el("alAddr").value.trim();
+    if (!city || !state) { el("alErr").textContent = "Enter a city and state first."; return null; }
+    el("alErr").textContent = ""; setGeo(null, "Looking up…");
+    try {
+      const g = await geocodeCity(city, state, addr);
+      if (!g) { setGeo(null, ""); el("alErr").textContent = "No match found. Check the spelling, or use “Drop pin manually”."; return null; }
+      setGeo(g, `✓ Found: ${g.name} (${g.precision}-level)`, true); return g;
+    } catch (e) { setGeo(null, ""); el("alErr").textContent = "Lookup failed (" + (e.message || e) + "). Use “Drop pin manually”."; return null; }
+  }
+  function pickPin() {
+    if (!map) { el("alErr").textContent = "Map unavailable on this device."; return; }
+    alPicking = true; el("alOverlay").classList.remove("show");
+    document.getElementById("map").style.cursor = "crosshair";
+    const banner = document.createElement("div");
+    banner.id = "pickBanner"; banner.style.cssText = "position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:2500;background:#1a2332;color:#e8eef7;border:1px solid #3b82f6;padding:8px 14px;border-radius:8px;font-size:13px";
+    banner.innerHTML = `Click the map to place the pin · <a href="#" id="pickCancel" style="color:#3b82f6">cancel</a>`;
+    document.body.appendChild(banner);
+    const done = (ll) => {
+      alPicking = false; map.off("click", onClick); banner.remove(); document.getElementById("map").style.cursor = "";
+      if (ll) setGeo({ lat: +ll.lat.toFixed(6), lon: +ll.lng.toFixed(6), src: "manual-pin" }, `✓ Pin placed at ${ll.lat.toFixed(4)}, ${ll.lng.toFixed(4)} (manual)`, true);
+      el("alOverlay").classList.add("show");
+    };
+    const onClick = (e) => done(e.latlng);
+    map.on("click", onClick);
+    banner.querySelector("#pickCancel").onclick = (e) => { e.preventDefault(); done(null); };
+  }
+  async function saveAddLoc() {
+    const city = el("alCity").value.trim(), state = el("alState").value.trim().toUpperCase(), addr = el("alAddr").value.trim();
+    if (!city || !state) { el("alErr").textContent = "City and state are required."; return; }
+    el("alSave").disabled = true;
+    let g = alGeo || await findOnMap();
+    if (!g) { el("alSave").disabled = false; return; }
+    const co = segGet("alCo");
+    const dupe = DATA.locations.some((l) => l.pin && l.company === co && !isSupplier(l) && Math.abs(l.lat - g.lat) < 0.1 && Math.abs(l.lon - g.lon) < 0.1);
+    if (dupe && !confirm(`${co} already has a pin near ${city}. Add another anyway?`)) { el("alSave").disabled = false; return; }
+    const item = { type: "add_location", id: mkId("ml"), company: co, city, state, address: addr, lat: g.lat, lon: g.lon,
+      geo_source: g.src, added_by: segGet("alBy"), added_at: new Date().toISOString(), source: "dialer-map" };
+    await savedItem(item);
+    closeOv("alOverlay");
+    selectLoc(item.id, true);
+  }
+  // -- Add contact --
+  function fillConLocs() {
+    const co = segGet("acCo"), sel = el("acLoc"), prev = sel.value;
+    sel.innerHTML = `<option value="">— None / unassigned —</option>` + DATA.locations.filter((l) => l.pin && l.company === co && !isSupplier(l))
+      .map((l) => `<option value="${esc(l.id)}">${esc(l.label)}${l.manual ? " (added manually)" : ""}</option>`).join("");
+    if ([...sel.options].some((o) => o.value === prev)) sel.value = prev;
+  }
+  function openAddCon() {
+    const loc = DATA.locations.find((l) => l.id === selectedLocId);
+    segOn("acCo", loc && loc.company ? loc.company : "Arconic"); segOn("acBy", amFilter === "Simran Subramanian" ? "Simran" : "Kili");
+    ["acName", "acRole", "acPhone", "acMobile", "acEmail"].forEach((i) => { el(i).value = ""; });
+    fillConLocs(); el("acLoc").value = loc && loc.pin && !isSupplier(loc) ? loc.id : "";
+    el("acErr").textContent = ""; el("acSave").disabled = false;
+    el("acOverlay").classList.add("show"); el("acName").focus();
+  }
+  async function saveAddCon() {
+    const name = el("acName").value.trim(), email = el("acEmail").value.trim();
+    if (!name) { el("acErr").textContent = "Name is required."; return; }
+    if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { el("acErr").textContent = "That email doesn't look right."; return; }
+    const lid = el("acLoc").value, loc = DATA.locations.find((l) => l.id === lid);
+    const item = { type: "add_contact", id: mkId("mc"), company: segGet("acCo"), name, title: el("acRole").value.trim(), phone: el("acPhone").value.trim(),
+      mobile: el("acMobile").value.trim(), email, location_id: lid, location_label: loc ? loc.label : "", added_by: segGet("acBy"),
+      added_at: new Date().toISOString(), source: "dialer-map" };
+    el("acSave").disabled = true;
+    await savedItem(item);
+    closeOv("acOverlay");
+    selectLoc(lid || (CO_PREFIX[item.company] + ":all"), false);
+  }
+  el("addLocBtn").onclick = openAddLoc; el("addConBtn").onclick = openAddCon;
+  el("alFind").onclick = findOnMap; el("alPick").onclick = pickPin; el("alSave").onclick = saveAddLoc;
+  el("acSave").onclick = saveAddCon;
+  el("alCancel").onclick = () => closeOv("alOverlay"); el("acCancel").onclick = () => closeOv("acOverlay");
+  ["alCity", "alState", "alAddr"].forEach((i) => el(i).addEventListener("input", () => { if (alGeo && alGeo.src === "nominatim") setGeo(null, ""); }));
+  ["alOverlay", "acOverlay"].forEach((id) => el(id).addEventListener("click", (e) => { if (e.target.id === id) closeOv(id); }));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { if (!alPicking) { closeOv("alOverlay"); closeOv("acOverlay"); } } });
+  window.__manual = { reload: loadManualAdds, get items() { return [...manualItems.values()]; } };
 
   renderLocList();
   selectLoc("team:all", false);

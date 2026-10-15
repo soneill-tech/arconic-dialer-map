@@ -27,7 +27,7 @@ def fetch_calls():
             c = json.loads(m["message"])
         except ValueError:
             continue
-        if isinstance(c, dict) and c.get("call_id") and c.get("contact_id"):
+        if isinstance(c, dict) and not c.get("type") and c.get("call_id") and c.get("contact_id"):
             c["ntfy_id"] = m["id"]
             calls[c["call_id"]] = c
     return sorted(calls.values(), key=lambda c: c.get("timestamp", ""))

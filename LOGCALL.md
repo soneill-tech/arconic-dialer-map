@@ -33,3 +33,6 @@ That's the same exposure as the contact data already in public `data.json`.
 4. Right after each successful log, write `hubspot_logged` = `<ISO time CT> by sync` (or `ERROR: …` and leave it for the next run) for that row only.
    Mark rows one at a time so a crash mid-run doesn't double-log.
 5. Feed the logged calls into `update_called_today.py` as usual. Map-logged calls already show on the map, so this is only for consistency.
+
+## Manual-add contacts
+Contacts added from the map have `contact_id` `mc-…` (no HubSpot record). Skip them in the HubSpot writeback (mark `hubspot_logged` = `n/a: not in HubSpot`). See MANUAL_ADD.md.

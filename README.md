@@ -126,8 +126,12 @@ The CSV itself is not committed (it includes contacts that aren't on the map).
 | `sync_supplier_pins.py` | Adds/refreshes the Arconic-managed supplier pins (Middlebury IN, Minster OH); `--check` verifies |
 | `called_today.json` | Today's called contact IDs (drives the pulse); refreshed by a scheduled job |
 | `update_called_today.py` | Resolves a calls CSV/JSON → `called_today.json`; `--publish` pushes it |
+| `manual_add.py` / `added_manual.json` | Drains manually-added locations/contacts from the queue; `added_manual.json` is merged into the map on load |
 | `update_touch_counts.py` | Applies a HubSpot touch-count CSV → `data.json` + `data.js`; `--publish` pushes them |
 
 
 ## Log Call
 Green **Log Call** button per contact → shared call log (ntfy.sh queue → Google Sheet "AM Dialer Call Log"), with a localStorage fallback. See [LOGCALL.md](LOGCALL.md). `logcall_rows.py` prints new rows for the sheet.
+
+## Manual add (＋ Location / ＋ Contact)
+Reps can add a new location pin or a new contact from the map header (badge **Added manually**, **Not in HubSpot yet**). Same ntfy queue as Log Call, typed `add_location` / `add_contact`; `manual_add.py` drains it to `added_manual.json` + the sheet tabs *Added Locations* / *Added Contacts*. See [MANUAL_ADD.md](MANUAL_ADD.md).
