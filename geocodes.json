@@ -117,5 +117,12 @@
     "lat": 40.3931033,
     "lon": -84.3760612,
     "source": "nominatim"
+  },
+  "Chandler": {
+    "city": "Chandler",
+    "region": "Chandler, Maricopa County, Arizona, USA",
+    "lat": 33.3062031,
+    "lon": -111.841185,
+    "source": "nominatim"
   }
 }

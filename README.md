@@ -4,7 +4,7 @@ Self-contained HTML map dashboard for Team Steve Closed Won dialer contacts:
 
 | Company | AM | HubSpot | Contacts | w/ phone | Pins |
 |---|---|---|---|---|---|
-| Arconic | Kahekili Barrozo | `2359249037` | 419 | 168 | 8 (6 plant + 2 supplier) |
+| Arconic | Kahekili Barrozo | `2359249037` | 419 | 168 | 9 (7 plant + 2 supplier) |
 | Kaiser Aluminum | Simran Subramanian | `5360206404` | 50 | 26 | 9 |
 
 Live: https://soneill-tech.github.io/arconic-dialer-map/
@@ -20,7 +20,7 @@ python3 -m http.server 8765   # then open http://localhost:8765/
 ## What's included
 
 - Leaflet + Esri World_Street_Map tiles (no API key)
-- **Arconic pins (blue):** Pittsburgh HQ, Davenport Works (Bettendorf, IA), Lafayette, Lancaster (PA), Massena, Tennessee Ops (Alcoa) + All Arconic + Unassigned
+- **Arconic pins (blue):** Chandler AZ (manual override: Kevin West), Pittsburgh HQ, Davenport Works (Bettendorf, IA), Lafayette, Lancaster (PA), Massena, Tennessee Ops (Alcoa) + All Arconic + Unassigned
 - **Arconic supplier pins (blue rounded square, amber border; dashed card + "Supplier (Arconic-managed)" tag):**
   sites Arconic manages that are **not Arconic facilities**. They have no contacts of their own; they reference existing
   Arconic contacts by `hubspot_contact_id`:
@@ -122,6 +122,7 @@ The CSV itself is not committed (it includes contacts that aren't on the map).
 | `data.json` / `data.js` | Bundled locations + contacts (+ HubSpot touch counts) |
 | `geocodes.json` | City geocode cache (incl. supplier cities) |
 | `build_data.py` | Rebuild script (adds Kaiser to the v1 Arconic data) |
+| `apply_site_overrides.py` | Adds manual Arconic plant pins + contact→plant overrides (Chandler, AZ ← Kevin West 37695051); idempotent |
 | `sync_supplier_pins.py` | Adds/refreshes the Arconic-managed supplier pins (Middlebury IN, Minster OH); `--check` verifies |
 | `called_today.json` | Today's called contact IDs (drives the pulse); refreshed by a scheduled job |
 | `update_called_today.py` | Resolves a calls CSV/JSON → `called_today.json`; `--publish` pushes it |

@@ -168,6 +168,26 @@ window.__DIALER_DATA__ = {
       "source": "nominatim"
     },
     {
+      "id": "arc:Chandler",
+      "name": "Chandler",
+      "label": "Chandler, AZ",
+      "city": "Chandler",
+      "region": "Chandler, Maricopa County, Arizona, USA",
+      "lat": 33.3062031,
+      "lon": -111.841185,
+      "hint": "Chandler, AZ — manual override (Steve, 2026-10-15), not inferred from area code",
+      "am": "Kahekili Barrozo",
+      "company": "Arconic",
+      "company_id": "2359249037",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/2359249037",
+      "filter": "arc:Chandler",
+      "pin": true,
+      "source": "nominatim",
+      "contact_count": 1,
+      "with_phone": 1,
+      "dm_count": 0
+    },
+    {
       "id": "arc:sup:Middlebury",
       "name": "Middlebury, IN (supplier)",
       "label": "Middlebury, IN · Supplier (Arconic-managed)",
@@ -363,8 +383,8 @@ window.__DIALER_DATA__ = {
       "company": "Arconic",
       "company_id": "2359249037",
       "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/2359249037",
-      "contact_count": 282,
-      "with_phone": 31,
+      "contact_count": 281,
+      "with_phone": 30,
       "dm_count": 1,
       "filter": "unassigned",
       "hint": "No phone or area code not mapped to a known plant",
@@ -3178,17 +3198,18 @@ window.__DIALER_DATA__ = {
       "notes": "Title not scraped",
       "am": "Kahekili Barrozo",
       "company": "Arconic",
-      "plant": null,
+      "plant": "Chandler",
       "area_code": "602",
       "has_phone": true,
       "is_dm": false,
       "company_id": "2359249037",
-      "plant_id": null,
+      "plant_id": "arc:Chandler",
       "hubspot_contact_id": "37695051",
       "hubspot_link_type": "record",
       "times_contacted": 32,
       "sales_activities": 65,
-      "last_contacted": "2026-09-11"
+      "last_contacted": "2026-09-11",
+      "plant_override": true
     },
     {
       "name": "Kyle Amor",
@@ -12320,13 +12341,13 @@ window.__DIALER_DATA__ = {
     "contacts": 469,
     "with_phone": 194,
     "decision_makers": 2,
-    "plant_assigned": 160,
-    "pins": 17,
+    "plant_assigned": 161,
+    "pins": 18,
     "by_company": {
       "Arconic": {
         "contacts": 419,
         "with_phone": 168,
-        "pins": 8,
+        "pins": 9,
         "supplier_pins": 2
       },
       "Kaiser Aluminum": {
