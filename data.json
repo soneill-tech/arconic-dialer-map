@@ -749,6 +749,26 @@
       "dm_count": 0
     },
     {
+      "id": "kai:Richmond",
+      "name": "Richmond (Bellwood)",
+      "label": "Richmond (Bellwood), VA",
+      "city": "Richmond",
+      "region": "Richmond, Virginia, USA",
+      "lat": 37.5385087,
+      "lon": -77.43428,
+      "company": "Kaiser Aluminum",
+      "hint": "Richmond (Bellwood), VA — added by request (Steve, 2026-10-15); contacts only by 804 area code",
+      "am": "Simran Subramanian",
+      "company_id": "5360206404",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
+      "filter": "kai:Richmond",
+      "pin": true,
+      "source": "nominatim",
+      "contact_count": 0,
+      "with_phone": 0,
+      "dm_count": 0
+    },
+    {
       "id": "kai:unassigned",
       "name": "Unassigned",
       "label": "Kaiser · Unassigned / other ACs",
@@ -19623,7 +19643,7 @@
     "with_phone": 307,
     "decision_makers": 3,
     "plant_assigned": 214,
-    "pins": 24,
+    "pins": 25,
     "by_company": {
       "Arconic": {
         "contacts": 419,
@@ -19634,7 +19654,7 @@
       "Kaiser Aluminum": {
         "contacts": 50,
         "with_phone": 26,
-        "pins": 9,
+        "pins": 10,
         "supplier_pins": 0
       },
       "BRT Extrusions": {

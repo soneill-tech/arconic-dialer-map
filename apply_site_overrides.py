@@ -32,6 +32,13 @@ BRT_CONTACTS = [
     ("Jesse Williams", "23553551", "", "(330) 544-0244", "j.williams@brtextrusions.com", ""),
     ("Jessie Hughes", "8013351", "", "(330) 544-0244", "j.hughes@brtextrusions.com", ""),
 ]
+# Kaiser Richmond (Bellwood), VA pin (Simran). Contacts are attached ONLY when their phone/mobile area code is 804 and they
+# have no plant yet; none exist today, so the pin starts empty. No contacts are invented.
+SITES.append(dict(id="kai:Richmond", name="Richmond (Bellwood)", label="Richmond (Bellwood), VA", city="Richmond",
+                  region="Richmond, Virginia, USA", lat=37.5385087, lon=-77.4342800, company="Kaiser Aluminum",
+                  hint="Richmond (Bellwood), VA \u2014 added by request (Steve, 2026-10-15); contacts only by 804 area code"))
+AC_OVERRIDES = {("Kaiser Aluminum", "804"): "kai:Richmond"}
+
 # ---- Howmet Aerospace (Kahekili). Contacts come from howmet_contacts.json (build_howmet_contacts.py); plants are ONLY
 # area codes that actually appear >= 6 times in that data (city-level pins for the area code, not confirmed facilities);
 # 412/724 -> Pittsburgh HQ pin; everything else stays Unassigned.
@@ -130,10 +137,19 @@ def apply(d):
         pid = OVERRIDES.get(str(c.get("hubspot_contact_id")))
         if pid:
             c["plant_id"] = pid; c["plant"] = pid.split(":", 1)[1]; c["plant_override"] = True
+    import re
+    def _ac(p):
+        x = re.sub(r"\D", "", re.split(r"(?i)ext|x", p or "")[0])
+        x = x[1:] if len(x) == 11 and x[0] == "1" else x
+        return x[:3] if len(x) == 10 else ""
+    for c in cs:
+        for (co, ac), pid in AC_OVERRIDES.items():
+            if c["company"] == co and not c.get("plant") and ac in (_ac(c.get("phone")), _ac(c.get("mobile"))):
+                c["plant_id"] = pid; c["plant"] = pid.split(":", 1)[1]; c["plant_override"] = True
     sids = {s["id"] for s in SITES}
     for l in locs:
-        if l["id"] in sids or l["id"] == "arc:unassigned":
-            m = [c for c in cs if c["company"] == l["company"] and (c["plant_id"] == l["id"] if l["id"] != "arc:unassigned" else not c["plant"])]
+        if l["id"] in sids or l["id"] in ("arc:unassigned", "kai:unassigned"):
+            m = [c for c in cs if c["company"] == l["company"] and (c["plant_id"] == l["id"] if not l["id"].endswith(":unassigned") else not c["plant"])]
             l.update(contact_count=len(m), with_phone=sum(c["has_phone"] for c in m), dm_count=sum(c["is_dm"] for c in m))
     apply_howmet(d)
     st = d["stats"]
