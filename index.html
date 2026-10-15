@@ -180,6 +180,9 @@
   .loc-card.supplier { border-style: dashed; border-color: rgba(251,191,36,.45); }
   .loc-card.supplier:hover, .loc-card.supplier.active { border-color: #fbbf24; }
   .contact .also-tag { font-size: .7rem; color: #fbbf24; margin-top: 2px; }
+  .poc-badge{display:inline-block;margin-top:4px;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(20,184,166,.16);color:#5eead4;border:1px solid rgba(20,184,166,.5)}
+  .poc-note{font-size:.72rem;color:#5eead4;margin-top:6px}
+  .co-link{color:var(--accent);font-size:.74rem}
   .sync-line { font-size: .74rem; color: var(--muted); margin-top: 2px; }
   .sync-line strong { color: var(--text); font-weight: 600; }
   .sync-line .stale { color: var(--warn); margin-left: 6px; }
@@ -616,7 +619,8 @@ body[data-am="kili"] #amAccent img{z-index:1}
         <div class="name">${esc(loc.label || loc.name)}${loc.manual ? ` <span class="manual-badge" title="Added manually${loc.added_by ? " by " + esc(loc.added_by) : ""}">Added manually</span>` : ""}</div>
         ${isSupplier(loc) ? `<div><span class="sup-tag" style="margin-left:0">${esc(loc.supplier_tag || "Supplier (Arconic-managed)")}</span></div>` : ""}
         <div class="meta">${esc(loc.pin ? loc.city + (loc.manual ? " · manual pin" : isSupplier(loc) ? " · supplier pin (not an Arconic facility)" : " · city-level pin") : "No map pin")}
-          ${loc.hint ? "<br/>" + esc(loc.hint) : ""}</div>
+          ${loc.hint ? "<br/>" + esc(loc.hint) : ""}
+          ${loc.show_company_link && loc.company_url ? `<br/><a href="${esc(loc.company_url)}" target="_blank" rel="noopener" class="co-link" onclick="event.stopPropagation()">HubSpot company ${esc(loc.company_id)} ↗</a>` : ""}</div>
         <div class="stats">
           <span class="pill"><strong>${n}</strong> shown</span>
           <span class="pill phone">${loc.with_phone} w/ phone</span>
@@ -670,11 +674,12 @@ body[data-am="kili"] #amAccent img{z-index:1}
   // ---- HubSpot touch counts (times_contacted = "Number of times contacted": calls, emails, meetings) ----
   const TOUCH_TIP = "HubSpot Number of times contacted: all logged calls, emails and meetings";
   const nameKey = (c) => String(c.name || "").toLowerCase();
+  const poc = (a, b) => (b.primary_poc ? 1 : 0) - (a.primary_poc ? 1 : 0);
   const SORTS = {
-    touches: (a, b) => (b.times_contacted || 0) - (a.times_contacted || 0) ||
+    touches: (a, b) => poc(a, b) || (b.times_contacted || 0) - (a.times_contacted || 0) ||
       (b.sales_activities || 0) - (a.sales_activities || 0) ||
       (b.is_dm ? 1 : 0) - (a.is_dm ? 1 : 0) || nameKey(a).localeCompare(nameKey(b)),
-    dm: (a, b) => (b.is_dm ? 1 : 0) - (a.is_dm ? 1 : 0) || (b.has_phone ? 1 : 0) - (a.has_phone ? 1 : 0) ||
+    dm: (a, b) => poc(a, b) || (b.is_dm ? 1 : 0) - (a.is_dm ? 1 : 0) || (b.has_phone ? 1 : 0) - (a.has_phone ? 1 : 0) ||
       nameKey(a).localeCompare(nameKey(b)),
   };
   const SORT_NOTES = { touches: "Sorted by most contacted in HubSpot", dm: "Sorted by decision makers first, then phone, then name" };
@@ -725,6 +730,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
         <div class="top">
           <div>
             <div class="cname">${esc(c.name || "(no name)")}${c.manual ? ` <span class="manual-badge" title="Added manually${c.added_by ? " by " + esc(c.added_by) : ""}">Added manually</span>` : ""}</div>
+            ${c.primary_poc ? `<div><span class="poc-badge" title="${esc(c.notes || "")}">★ Primary point of contact</span></div>` : ""}
             ${touchBadge(c)}
             <div class="lastcall">${lcTxt}</div>
             ${fu ? `<div><span class="fu-badge${fu.due <= todayCT() ? " due" : ""}" title="${esc(fu.note || "")}">↩ Follow up ${esc(fmtDue(fu.due))}${fu.due < todayCT() ? " (overdue)" : fu.due === todayCT() ? " (today)" : ""}${fu.note ? " · " + esc(fu.note.slice(0, 40)) : ""} <a data-fu-done="${esc(id)}">done</a></span></div>` : ""}
@@ -740,6 +746,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
           </div>
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
         </div>
+        ${!c.manual && c.notes && c.company === "BRT Extrusions" ? `<div class="poc-note">${esc(c.notes)}</div>` : ""}
         ${c.manual ? `<div class="plant-tag" style="color:var(--muted)">Location: ${c.plant_id ? esc(plantLabel(c)) : "unassigned"} (set manually${c.added_by ? " by " + esc(c.added_by) : ""})</div>
           <div class="mact"><a data-edit-con="${esc(c.manual_id)}">✎ Edit</a><a class="del" data-del-con="${esc(c.manual_id)}">🗑 Delete</a></div>`
           : c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}

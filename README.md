@@ -122,7 +122,7 @@ The CSV itself is not committed (it includes contacts that aren't on the map).
 | `data.json` / `data.js` | Bundled locations + contacts (+ HubSpot touch counts) |
 | `geocodes.json` | City geocode cache (incl. supplier cities) |
 | `build_data.py` | Rebuild script (adds Kaiser to the v1 Arconic data) |
-| `apply_site_overrides.py` | Adds manual plant pins + contact→plant overrides (Arconic Chandler, AZ ← Kevin West 37695051; **BRT Extrusions, Niles OH** pin under Simran, teal ring, no contacts yet: no HubSpot ids on file); idempotent |
+| `apply_site_overrides.py` | Adds manual plant pins + contact→plant overrides (Arconic Chandler, AZ ← Kevin West 37695051; **BRT Extrusions, Niles OH** pin under Simran (HubSpot company 3005488807, teal ring) with 9 contacts, Amanda Zepernick flagged primary POC); idempotent |
 | `sync_supplier_pins.py` | Adds/refreshes the Arconic-managed supplier pins (Middlebury IN, Minster OH); `--check` verifies |
 | `called_today.json` | Today's called contact IDs (drives the pulse); refreshed by a scheduled job |
 | `update_called_today.py` | Resolves a calls CSV/JSON → `called_today.json`; `--publish` pushes it |
