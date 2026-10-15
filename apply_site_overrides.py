@@ -39,6 +39,25 @@ SITES.append(dict(id="kai:Richmond", name="Richmond (Bellwood)", label="Richmond
                   hint="Richmond (Bellwood), VA \u2014 added by request (Steve, 2026-10-15); contacts only by 804 area code"))
 AC_OVERRIDES = {("Kaiser Aluminum", "804"): "kai:Richmond"}
 
+# ---- Reliable Silver (Kahekili): HubSpot company "Reliable" 7228584362 (domain reliablesilver.com, 203-574 = Naugatuck, CT).
+# Names derived from the email where the CSV name field was an email. Notes are kept as flags (shared mailbox / Circle internal).
+RELIABLE_ID = "7228584362"
+COMPANIES.append(dict(name="Reliable Silver", id=RELIABLE_ID, am="Kahekili Barrozo",
+                      url="https://app.hubspot.com/contacts/6029765/record/0-2/" + RELIABLE_ID, industry="Mining & Metals"))
+SITES.append(dict(id="rel:Naugatuck", name="Naugatuck", label="Naugatuck, CT (Reliable Silver)", city="Naugatuck",
+                  region="Naugatuck, New Haven County, Connecticut, USA", lat=41.4907561, lon=-73.0556562, company="Reliable Silver",
+                  hint="Reliable Silver, Naugatuck, CT (203) \u2014 added by request (Steve, 2026-10-15)"))
+ANCHOR = {"Reliable Silver": "how:unassigned"}   # place the new group after Howmet in the list
+RELIABLE_CONTACTS = [
+    ("Aidan Lewis", "162400325533", "", "203-574-7732 ext. 171", "aidan@reliablesilver.com", "Title not scraped"),
+    ("Leah Askue", "9449901", "", "203-574-7732 ext. 108", "leah@reliablesilver.com", "Title not scraped"),
+    ("Alex Oliveira", "8856951", "", "203-574-7732 ext. 113", "alex@reliablesilver.com", "Title not scraped"),
+    ("Arnold Seapan", "18690551", "", "", "arnold@reliablesilver.com", "Title not scraped"),
+    ("Sean Newcomb", "18690401", "", "", "sean@reliablesilver.com", "Title not scraped"),
+    ("Sales", "33324551", "", "", "sales@reliablesilver.com", "Shared/generic mailbox"),
+    ("Kathryn Raponi", "25869101", "", "260-264-6592", "kathryn.raponi@circledelivers.com", "Circle internal user - exclude from dialing"),
+]
+
 # ---- Howmet Aerospace (Kahekili). Contacts come from howmet_contacts.json (build_howmet_contacts.py); plants are ONLY
 # area codes that actually appear >= 6 times in that data (city-level pins for the area code, not confirmed facilities);
 # 412/724 -> Pittsburgh HQ pin; everything else stays Unassigned.
@@ -132,7 +151,8 @@ def apply(d):
         l = dict({k: v for k, v in s.items()}, am=m["am"], company=co, company_id=m["id"], company_url=m.get("url", ""),
                  filter=s["id"], pin=True, source="nominatim", contact_count=0, with_phone=0, dm_count=0)
         idx = [i for i, x in enumerate(locs) if x["company"] == co and x.get("pin") and x.get("kind") != "supplier"]
-        locs.insert(idx[-1] + 1 if idx else len(locs), l)
+        anchor = [i for i, x in enumerate(locs) if x["id"] == ANCHOR.get(co)]
+        locs.insert(idx[-1] + 1 if idx else (anchor[0] + 1 if anchor else len(locs)), l)
     for c in cs:
         pid = OVERRIDES.get(str(c.get("hubspot_contact_id")))
         if pid:
@@ -151,6 +171,24 @@ def apply(d):
         if l["id"] in sids or l["id"] in ("arc:unassigned", "kai:unassigned"):
             m = [c for c in cs if c["company"] == l["company"] and (c["plant_id"] == l["id"] if not l["id"].endswith(":unassigned") else not c["plant"])]
             l.update(contact_count=len(m), with_phone=sum(c["has_phone"] for c in m), dm_count=sum(c["is_dm"] for c in m))
+    for l in locs:   # (again, after new pins were inserted) so a first run converges immediately
+        if l["company"] in {c["name"] for c in COMPANIES}:
+            l.update(company_id=cmeta[l["company"]]["id"], company_url=cmeta[l["company"]]["url"], show_company_link=True)
+    rm = cmeta["Reliable Silver"]
+    for name, hid, title, phone, email, note in RELIABLE_CONTACTS:
+        if hid in have:
+            continue
+        cs.append({"name": name, "role": "Other", "title": title, "phone": phone, "mobile": "", "email": email,
+                   "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/" + hid, "company_url": rm["url"],
+                   "last_activity": "", "notes": note, "am": rm["am"], "company": "Reliable Silver", "plant": "Naugatuck",
+                   "area_code": ("".join(ch for ch in phone if ch.isdigit())[:3] or None), "has_phone": bool(phone), "is_dm": False,
+                   "company_id": rm["id"], "plant_id": "rel:Naugatuck", "hubspot_contact_id": hid, "hubspot_link_type": "record",
+                   "times_contacted": 0, "sales_activities": 0, "last_contacted": None})
+    sids2 = {"rel:Naugatuck"}
+    for l in locs:
+        if l["id"] in sids2:
+            m = [c for c in cs if c["plant_id"] == l["id"]]
+            l.update(contact_count=len(m), with_phone=sum(1 for c in m if c["has_phone"]), dm_count=0)
     apply_howmet(d)
     st = d["stats"]
     st["contacts"] = len(cs); st["with_phone"] = sum(1 for c in cs if c["has_phone"])
