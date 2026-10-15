@@ -1,33 +1,17 @@
 {
-  "date": "2026-10-14",
-  "updated_at": "2026-10-14T09:03:49-05:00",
+  "date": "2026-10-15",
+  "updated_at": "2026-10-15T08:56:16-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "21373851",
-    "13966405892",
-    "20283614591"
+    "2303458"
   ],
   "calls": [
     {
-      "contact_id": "13966405892",
-      "contact_name": "Trent Bell",
+      "contact_id": "2303458",
+      "contact_name": "Cynthia King",
       "am": "Kahekili",
-      "time": "2026-10-14T08:07:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "21373851",
-      "contact_name": "Paul Laslou",
-      "am": "Kahekili",
-      "time": "2026-10-14T08:12:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "time": "2026-10-14T08:45:00-05:00",
-      "outcome": ""
+      "time": "2026-10-15T08:45:00-05:00",
+      "outcome": "Connected"
     }
   ]
 }
