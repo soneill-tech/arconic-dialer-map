@@ -1,9 +1,10 @@
 {
   "date": "2026-10-15",
-  "updated_at": "2026-10-15T11:49:51-05:00",
+  "updated_at": "2026-10-15T13:56:34-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "2303458",
+    "13966405892",
     "203866478699"
   ],
   "calls": [
@@ -27,6 +28,20 @@
       "am": "Simran",
       "time": "2026-10-15T11:30:00-05:00",
       "outcome": "Connected"
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "time": "2026-10-15T12:53:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "time": "2026-10-15T12:54:00-05:00",
+      "outcome": ""
     }
   ]
 }
