@@ -307,7 +307,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
 <header>
   <div>
     <h1>Team Steve — Closed Won Dialer Map <span class="am-accent" id="amAccent" aria-hidden="true"></span></h1>
-    <div class="sub">Arconic (Kahekili Barrozo) · Kaiser Aluminum + BRT Extrusions (Simran Subramanian)</div>
+    <div class="sub">Arconic + Howmet Aerospace (Kahekili Barrozo) · Kaiser Aluminum + BRT Extrusions (Simran Subramanian)</div>
     <div class="sync-line" id="syncLine">Last synced: <strong>checking…</strong></div>
   </div>
   <span class="badge" id="statBadge">Loading…</span>
@@ -337,7 +337,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
     <div class="legend" id="legend">
       <button type="button" class="lg-toggle" id="lgToggle" aria-expanded="true">Legend <span id="lgCaret">▾</span></button>
       <div class="lg-body">
-      <div style="margin-top:4px"><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran) &nbsp; <span class="dot" style="background:#14b8a6"></span> BRT Extrusions (Simran) <span style="opacity:.8">· ring color</span></div>
+      <div style="margin-top:4px"><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran) &nbsp; <span class="dot" style="background:#14b8a6"></span> BRT Extrusions (Simran) &nbsp; <span class="dot" style="background:#84cc16"></span> Howmet Aerospace (Kahekili) <span style="opacity:.8">· ring color</span></div>
       <div style="margin-top:4px">Pin fill = last call: <span class="lg-sw" style="background:#22c55e"></span>today <span class="lg-sw" style="background:#facc15"></span>this week <span class="lg-sw" style="background:#fb7185"></span>older <span class="lg-sw" style="background:#6b7280"></span>never</div>
       <div style="margin-top:4px">Pulsing = no call logged today &nbsp; <span style="color:var(--accent2);font-weight:700">✓</span> = called today</div>
       <div style="margin-top:4px"><span class="pin supplier" style="--pin-color:#3b82f6"></span>Supplier (Arconic-managed) — not an Arconic facility; shares contacts with Arconic plant pins</div>
@@ -389,7 +389,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
 </div></div>
 <div class="overlay" id="alOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="alTitle">
 <h3 id="alTitle">Add new location</h3><div class="who">Adds a pin for everyone. Not written to HubSpot.</div>
-<div class="row"><div><label>Company</label><div class="seg" id="alCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button><button type="button" data-v="BRT Extrusions">BRT</button></div></div>
+<div class="row"><div><label>Company</label><div class="seg" id="alCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button><button type="button" data-v="BRT Extrusions">BRT</button><button type="button" data-v="Howmet Aerospace">Howmet</button></div></div>
 <div><label>Added by</label><div class="seg" id="alBy"><button type="button" data-v="Kili">Kili</button><button type="button" data-v="Simran">Simran</button></div></div></div>
 <div class="row"><div><label>City</label><input id="alCity" placeholder="Chandler"/></div><div><label>State</label><input id="alState" maxlength="30" placeholder="AZ"/></div></div>
 <label>Address (optional)</label><input id="alAddr" placeholder="Street address"/>
@@ -400,7 +400,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
 </div></div>
 <div class="overlay" id="acOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="acTitle">
 <h3 id="acTitle">Add new contact</h3><div class="who">Not in HubSpot yet. Nothing is written to HubSpot.</div>
-<div class="row"><div><label>Company</label><div class="seg" id="acCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button><button type="button" data-v="BRT Extrusions">BRT</button></div></div>
+<div class="row"><div><label>Company</label><div class="seg" id="acCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button><button type="button" data-v="BRT Extrusions">BRT</button><button type="button" data-v="Howmet Aerospace">Howmet</button></div></div>
 <div><label>Added by</label><div class="seg" id="acBy"><button type="button" data-v="Kili">Kili</button><button type="button" data-v="Simran">Simran</button></div></div></div>
 <div class="row"><div><label>Name *</label><input id="acName"/></div><div><label>Title</label><input id="acRole"/></div></div>
 <div class="row"><div><label>Phone</label><input id="acPhone" type="tel"/></div><div><label>Mobile</label><input id="acMobile" type="tel"/></div></div>
@@ -447,7 +447,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
     return c.am === amFilter;
   }
 
-  const COLORS = { "Arconic": "#3b82f6", "Kaiser Aluminum": "#f97316", "BRT Extrusions": "#14b8a6" };
+  const COLORS = { "Arconic": "#3b82f6", "Kaiser Aluminum": "#f97316", "BRT Extrusions": "#14b8a6", "Howmet Aerospace": "#84cc16" };
   const AM_SHORT = { "Kahekili Barrozo": "Kahekili", "Simran Subramanian": "Simran" };
   // Virtual "everything" location across both companies
   DATA.locations.unshift({ id: "team:all", name: "All Team Steve", label: "All companies (Arconic + Kaiser)",
@@ -1105,7 +1105,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
   const manualItems = new Map();                 // id -> item
   const CO_META = {};
   (DATA.companies || []).forEach((c) => { CO_META[c.name] = c; });
-  const CO_PREFIX = { "Arconic": "arc", "Kaiser Aluminum": "kai", "BRT Extrusions": "brt" };
+  const CO_PREFIX = { "Arconic": "arc", "Kaiser Aluminum": "kai", "BRT Extrusions": "brt", "Howmet Aerospace": "how" };
   const mkId = (p) => `${p}-${Date.now().toString(36)}-${(crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)).replace(/-/g, "").slice(0, 8)}`;
   const itemTitle = (it) => ({ add_location: () => "New location: " + it.city + ", " + it.state, add_contact: () => "New contact: " + it.name,
     edit_item: () => "Edit " + it.target_id, delete_item: () => "Delete " + it.target_id, set_title: () => "Title: " + (it.contact_name || it.contact_id),

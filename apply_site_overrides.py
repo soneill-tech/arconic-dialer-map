@@ -32,8 +32,66 @@ BRT_CONTACTS = [
     ("Jesse Williams", "23553551", "", "(330) 544-0244", "j.williams@brtextrusions.com", ""),
     ("Jessie Hughes", "8013351", "", "(330) 544-0244", "j.hughes@brtextrusions.com", ""),
 ]
+# ---- Howmet Aerospace (Kahekili). Contacts come from howmet_contacts.json (build_howmet_contacts.py); plants are ONLY
+# area codes that actually appear >= 6 times in that data (city-level pins for the area code, not confirmed facilities);
+# 412/724 -> Pittsburgh HQ pin; everything else stays Unassigned.
+HOWMET_ID = "32027566669"
+COMPANIES.append(dict(name="Howmet Aerospace", id=HOWMET_ID, am="Kahekili Barrozo",
+                      url="https://app.hubspot.com/contacts/6029765/record/0-2/" + HOWMET_ID, industry="Aerospace"))
+HOWMET_SITES = [  # key, label, city, region, lat, lon, area codes, hint
+    ("HQ Pittsburgh", "Pittsburgh (HQ)", "Pittsburgh", "Pittsburgh, Pennsylvania, USA", 40.4469, -80.0090, ["412", "724"],
+     "Corporate / W PA (412, 724) \u2014 inferred from phone area code"),
+    ("Cleveland", "Cleveland, OH area (216)", "Cleveland", "Cleveland, Ohio, USA", 41.4996574, -81.6936772, ["216"],
+     "Cleveland, OH area (216) \u2014 inferred from phone area code, not a confirmed plant"),
+    ("Hammond", "NW Indiana (219)", "Hammond", "Hammond, Lake County, Indiana, USA", 41.6173959, -87.5220108, ["219"],
+     "NW Indiana (219) \u2014 inferred from phone area code, not a confirmed plant"),
+    ("Rochester", "Rochester, NY area (585)", "Rochester", "Rochester, Monroe County, New York, USA", 43.1572850, -77.6152140, ["585"],
+     "Rochester, NY area (585) \u2014 inferred from phone area code, not a confirmed plant"),
+    ("Muskegon", "Muskegon, MI area (231)", "Muskegon", "Muskegon, Muskegon County, Michigan, USA", 43.2341813, -86.2483921, ["231"],
+     "W Michigan (231) \u2014 inferred from phone area code, not a confirmed plant"),
+]
 OVERRIDES = {"37695051": "arc:Chandler"}   # Kevin West (602 = Phoenix AC, assigned to Chandler by request)
 JS = "window.__DIALER_DATA__ = "
+
+def apply_howmet(d):
+    locs, cs = d["locations"], d["contacts"]
+    co = next(c for c in COMPANIES if c["name"] == "Howmet Aerospace")
+    base = dict(am=co["am"], company=co["name"], company_id=co["id"], company_url=co["url"], show_company_link=True)
+    try:
+        hm = json.load(open(os.path.join(HERE, "howmet_contacts.json")))
+    except OSError:
+        hm = []
+    ac2site = {ac: "how:" + k for k, _l, _c, _r, _a, _o, acs, _h in HOWMET_SITES for ac in acs}
+    have = {str(c.get("hubspot_contact_id")) for c in cs}
+    for h in hm:
+        if h["hubspot_contact_id"] in have:   # already on the map (e.g. under Arconic): never duplicate / move
+            continue
+        pid = ac2site.get(h.get("area_code") or "")
+        cs.append({"name": h["name"], "role": "Decision Maker" if h["is_dm"] else "Other", "title": h["title"], "phone": h["phone"],
+                   "mobile": h["mobile"], "email": h["email"], "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/" + h["hubspot_contact_id"],
+                   "company_url": co["url"], "last_activity": "", "notes": h["notes"], "am": co["am"], "company": co["name"],
+                   "plant": pid.split(":", 1)[1] if pid else None, "area_code": h.get("area_code"), "has_phone": bool(h["phone"] or h["mobile"]),
+                   "is_dm": h["is_dm"], "company_id": co["id"], "plant_id": pid, "hubspot_contact_id": h["hubspot_contact_id"],
+                   "hubspot_link_type": "record", "times_contacted": 0, "sales_activities": 0, "last_contacted": None})
+    want = [dict(id="how:all", name="All Howmet", label="All Howmet (full list)", city="Pittsburgh", region="Pittsburgh, Pennsylvania, USA",
+                 lat=None, lon=None, filter="all", pin=False, hint="Full dialer list \u2014 not plant-filtered", **base)]
+    for k, label, city, region, lat, lon, _acs, hint in HOWMET_SITES:
+        want.append(dict(id="how:" + k, name=k, label=label, city=city, region=region, lat=lat, lon=lon, filter="how:" + k, pin=True,
+                         source="nominatim", hint=hint, **base))
+    want.append(dict(id="how:unassigned", name="Unassigned / other", label="Howmet \u00b7 Unassigned / other ACs", city=None, region=None,
+                     lat=None, lon=None, filter="unassigned", pin=False, hint="No phone or area code not mapped to a pin", **base))
+    existing = {l["id"]: l for l in locs}
+    new = [w for w in want if w["id"] not in existing]
+    if new:
+        at = max(i for i, x in enumerate(locs) if x["id"] == "arc:unassigned") + 1
+        locs[at:at] = new
+    for l in locs:
+        if l["company"] != "Howmet Aerospace":
+            continue
+        m = [c for c in cs if c["company"] == l["company"] and (l["filter"] == "all" or (not c["plant"] if l["filter"] == "unassigned" else c["plant_id"] == l["id"]))]
+        l.update(contact_count=len(m), with_phone=sum(1 for c in m if c["has_phone"]), dm_count=sum(1 for c in m if c["is_dm"]), **{k: base[k] for k in ("company_id", "company_url", "show_company_link")})
+    d["stats"]["by_company"].setdefault(co["name"], {"contacts": 0, "with_phone": 0, "pins": 0, "supplier_pins": 0})
+
 
 def apply(d):
     locs, cs = d["locations"], d["contacts"]
@@ -77,6 +135,7 @@ def apply(d):
         if l["id"] in sids or l["id"] == "arc:unassigned":
             m = [c for c in cs if c["company"] == l["company"] and (c["plant_id"] == l["id"] if l["id"] != "arc:unassigned" else not c["plant"])]
             l.update(contact_count=len(m), with_phone=sum(c["has_phone"] for c in m), dm_count=sum(c["is_dm"] for c in m))
+    apply_howmet(d)
     st = d["stats"]
     st["contacts"] = len(cs); st["with_phone"] = sum(1 for c in cs if c["has_phone"])
     st["decision_makers"] = sum(1 for c in cs if c["is_dm"])
