@@ -1,9 +1,10 @@
 {
   "date": "2026-10-15",
-  "updated_at": "2026-10-15T08:56:16-05:00",
+  "updated_at": "2026-10-15T11:49:51-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "2303458"
+    "2303458",
+    "203866478699"
   ],
   "calls": [
     {
@@ -11,6 +12,20 @@
       "contact_name": "Cynthia King",
       "am": "Kahekili",
       "time": "2026-10-15T08:45:00-05:00",
+      "outcome": "Connected"
+    },
+    {
+      "contact_id": "203866478699",
+      "contact_name": "Trent Roybal",
+      "am": "Simran",
+      "time": "2026-10-15T11:12:00-05:00",
+      "outcome": "Connected"
+    },
+    {
+      "contact_id": "203866478699",
+      "contact_name": "Trent Roybal",
+      "am": "Simran",
+      "time": "2026-10-15T11:30:00-05:00",
       "outcome": "Connected"
     }
   ]
