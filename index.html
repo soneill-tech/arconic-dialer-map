@@ -285,12 +285,21 @@
 .modal .quick button{background:var(--bg);border:1px solid var(--border);color:var(--muted);padding:4px 9px;border-radius:999px;font:12px var(--font);cursor:pointer}
 .modal .quick button:hover{color:var(--text);border-color:var(--accent)}
 @media (max-width:700px){.contact a.tel-btn{min-height:42px;font-size:.95rem}.layout{grid-template-rows:200px 38vh 1fr}}
+<style>/* ---- AM tab accents (decorative, original artwork; shown only on that AM's tab) ---- */
+header{position:relative}
+.am-accent{display:none;vertical-align:middle;margin-left:8px;line-height:0}
+body[data-am="kili"] .am-accent,body[data-am="simran"] .am-accent{display:inline-block}
+header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;pointer-events:none;opacity:0}
+body[data-am="kili"] header::after{opacity:1;background:linear-gradient(90deg,#041E42 0%,#869397 50%,#041E42 100%)}
+body[data-am="simran"] header::after{opacity:1;background:linear-gradient(90deg,#800020,#a3162f 60%,#800020)}
+body[data-am="kili"] header{background:linear-gradient(90deg,rgba(4,30,66,.55),var(--panel) 45%)}
+body[data-am="simran"] header{background:linear-gradient(90deg,rgba(128,0,32,.35),var(--panel) 45%)}
 </style>
 </head>
 <body>
 <header>
   <div>
-    <h1>Team Steve — Closed Won Dialer Map</h1>
+    <h1>Team Steve — Closed Won Dialer Map <span class="am-accent" id="amAccent" aria-hidden="true"></span></h1>
     <div class="sub">Arconic (Kahekili Barrozo) · Kaiser Aluminum (Simran Subramanian)</div>
     <div class="sync-line" id="syncLine">Last synced: <strong>checking…</strong></div>
   </div>
@@ -813,6 +822,7 @@
     const btn = e.target.closest("button[data-am]");
     if (!btn) return;
     amFilter = btn.dataset.am;
+    setAmTheme();
     el("amFilter").querySelectorAll("button").forEach((b) => b.classList.toggle("active", b === btn));
     const cur = DATA.locations.find((l) => l.id === selectedLocId);
     if (!cur || !locMatchesAM(cur)) selectedLocId = "team:all";
@@ -822,6 +832,14 @@
     updateMarkerVisibility();
   });
 
+  const AM_ART = { "Kahekili Barrozo": ["kili", `<svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#041E42" stroke="#C0C7CC" stroke-width="2.5"/><path fill="#C0C7CC" d="M20 8.5l3.4 7.2 7.9 1-5.8 5.5 1.5 7.8L20 26l-7 4 1.5-7.8-5.8-5.5 7.9-1z"/></svg>`], "Simran Subramanian": ["simran", `<svg viewBox="0 0 40 40" width="28" height="30" aria-hidden="true"><path fill="#800020" d="M20 4c-6 0-9.5 4-9.5 8.2 0 4.600 3.200 8.200 7 12.500L9 36l5.500 1.500L20 29l5.500 8.500L31 36l-9.500-11.300c3.800-4.300 7-7.900 7-12.500C28.500 8 26 4 20 4zm0 5c2.800 0 4.300 1.600 4.300 3.400 0 2-1.700 4.300-4.300 7.400-2.600-3.100-4.300-5.400-4.300-7.400C15.700 10.600 17.200 9 20 9z"/></svg>`] };
+  function setAmTheme() {
+    const a = AM_ART[amFilter];
+    if (a) document.body.dataset.am = a[0]; else delete document.body.dataset.am;
+    el("amAccent").innerHTML = a ? a[1] : "";
+    el("amAccent").title = "";
+  }
+  setAmTheme();
   // Sort toggle: Most contacted (default) / Decision makers first
   el("sortToggle").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-sort]");
