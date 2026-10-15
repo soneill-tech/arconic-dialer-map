@@ -1,4 +1,4 @@
-# Manual add — new locations and contacts from the map
+# Map queue items — manual adds, edits/deletes, titles, follow-ups, last calls
 
 Reps (Kili, Simran) can add a **＋ Location** (company Arconic/Kaiser, city, state, optional address) or a **＋ Contact**
 (name, title, phone, mobile, email, optional location) from the map header. **Nothing is written to HubSpot.**
@@ -24,18 +24,36 @@ Item shapes
  "location_id":"arc:Lancaster | ml-… | ''","location_label":"","added_by":"Simran","added_at":"<ISO UTC>","source":"dialer-map"}
 ```
 
+## Edit / delete, titles, follow-ups (all typed queue messages)
+| `type` | Fields | Effect on the map |
+|---|---|---|
+| `edit_item` | `target_id` (an `ml-…`/`mc-…` id), `fields` (location: city, state, address, lat, lon, geo_source; contact: name, title, phone, mobile, email, location_id) | Applied in time order on top of the add. Only manual items can be edited. |
+| `delete_item` | `target_id` | Removes the manual location/contact (its contacts become unassigned). The tombstone stays in `added_manual.json` so it stays deleted. |
+| `set_title` | `contact_id` (HubSpot id or `mc-…`), `title` | Shows the title (labeled "added by …") for contacts with "Title not scraped". Latest wins; empty clears. **Not written to HubSpot.** |
+| `followup` | `contact_id`, `due` (YYYY-MM-DD, empty = cleared), `note` | "↩ Follow up Tue 10/20" badge; due/overdue ones appear under **Follow-ups due**. Set from Log Call; "done" clears. Latest wins. |
+
+All are merged by `manual_add.py publish` into `added_manual.json` (the map applies them in `added_at` order), so they outlive ntfy's ~12h cache.
+
+## Last-call history (`last_calls.json`)
+`publish` also keeps the **last call per contact** in `last_calls.json` (`{"calls": {contact_id: {time, outcome, am}}}`), merged from queue calls,
+`called_today.json`, and optionally `--calls-json rows.json` (rows with `contact_id`, `timestamp`/`time`, `outcome`, `am`, e.g. the sheet's `Calls` tab).
+The map shows "Last call: outcome · date" on each contact and colors pins by the most recent call among their contacts:
+green = today, yellow = within 6 days, pink = older, grey = never. If you want older history, export `Calls!A:N` to JSON and pass it once.
+
 ## Hourly routine (run after the Log Call drain)
 1. **Existing ids:** read `'Added Locations'!A2:A` and `'Added Contacts'!A2:A` from sheet
    `1DvmhdoaQMgoWAAbHpQG7gKtovL2fHOmH0Iq1J0FYg3c`; write them one per line to `/tmp/loc_ids.txt` and `/tmp/con_ids.txt`.
    (Tabs are created once with the header rows below; create them if missing.)
-2. **Publish for all reps:** `cd <repo> && python3 manual_add.py publish` (merges the queue into `added_manual.json`,
-   commits + pushes only that file; no-op if nothing new; `--dry-run` to preview).
-3. **Rows:** `python3 manual_add.py rows --existing-locations /tmp/loc_ids.txt --existing-contacts /tmp/con_ids.txt`
-   prints `{"locations":[[…]],"contacts":[[…]]}`. Append `locations` to `Added Locations` and `contacts` to `Added Contacts`
+2. **Publish for all reps:** `cd <repo> && python3 manual_add.py publish [--calls-json calls.json]` (merges the queue into `added_manual.json`
+   and `last_calls.json`, commits + pushes only those files; no-op if nothing new; `--dry-run` to preview).
+3. **Rows:** also read `'Manual Changes'!A2:A` into `/tmp/chg_ids.txt`, then
+   `python3 manual_add.py rows --existing-locations /tmp/loc_ids.txt --existing-contacts /tmp/con_ids.txt --existing-changes /tmp/chg_ids.txt`
+   prints `{"locations":[[…]],"contacts":[[…]],"changes":[[…]]}`. Append them to `Added Locations`, `Added Contacts` and `Manual Changes`
    with the Sheets connector (`append_rows`). Dedupe key = first column.
 
 Headers
 - **Added Locations:** `loc_id, created_at, company, city, state, address, lat, lon, geo_source, added_by, logged_at, source, hubspot_synced`
+- **Manual Changes:** `change_id, created_at, type, target_id, detail, added_by, logged_at, source, hubspot_synced` (edits, deletes, titles, follow-ups; `detail` is JSON)
 - **Added Contacts:** `contact_id, created_at, company, name, title, phone, mobile, email, location_id, location_label, added_by, logged_at, source, hubspot_synced`
 
 `hubspot_synced` stays blank: creating HubSpot companies/contacts is a separate, manual decision (not automated).
@@ -43,6 +61,6 @@ Headers
 ## Notes / limits
 - Call-log rows for manual contacts have `contact_id` = `mc-…` (no HubSpot record). The HubSpot call writeback in LOGCALL.md must
   **skip rows whose contact_id starts with `mc-`** (mark `hubspot_logged` = `n/a: not in HubSpot`). `update_called_today.py` won't resolve them either; the map still shows them called via the queue for that day.
-- No in-app edit/delete. To remove a bad entry: delete its message from ntfy (if still there) **and** remove its object from `added_manual.json`, then push.
+- Edit/delete exist in the app for manual locations/contacts (✎ / ✕ on the card). Edits/deletes of HubSpot contacts are not possible (titles only).
 - Same exposure as Log Call: anyone with the topic name can post or read. Manual adds are shown to all reps as-is.
 - Manual contacts are not assigned by area code; they sit at the chosen location (or Unassigned) and appear under All / the company list.

@@ -243,6 +243,49 @@
 .modal .inline .btn{white-space:nowrap}
 .pin.manual{border-style:dashed}
 </style>
+<style>/* ---- v3: filters, ribbon, pins, groups ---- */
+.score-badge strong{color:var(--accent2)}
+.view-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0 16px 10px;font-size:.74rem;color:var(--muted)}
+.view-line .seg button{padding:4px 9px;font-size:.72rem}
+.co-head{position:sticky;top:var(--dh,0px);z-index:1;margin:0;padding:7px 16px;background:var(--panel2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:flex;align-items:center;gap:6px}
+.co-head .n{margin-left:auto;color:var(--text)}
+.contact{position:relative;overflow:hidden}
+.called-ribbon{margin:-12px -14px 10px;padding:4px 14px;background:rgba(34,197,94,.92);color:#05200f;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.contact a.tel-btn{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:4px 12px;border-radius:8px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.5);color:#93c5fd;font-weight:600;font-size:.84rem;text-decoration:none;margin:2px 6px 2px 0}
+.contact a.tel-btn:hover{background:rgba(59,130,246,.25);text-decoration:none}
+.lastcall{font-size:.74rem;color:var(--muted);margin-top:4px}.lastcall b{color:var(--text);font-weight:600}
+.fu-badge{display:inline-flex;align-items:center;gap:6px;margin-top:4px;font-size:.7rem;font-weight:600;padding:2px 8px;border-radius:999px;background:rgba(245,158,11,.14);color:var(--warn);border:1px solid rgba(245,158,11,.4)}
+.fu-badge.due{background:rgba(239,68,68,.14);color:#fca5a5;border-color:rgba(239,68,68,.5)}
+.fu-badge a{color:inherit;text-decoration:underline;cursor:pointer;font-weight:500}
+.contact .title.missing{opacity:.75}
+.contact .title a{cursor:pointer}
+.title-form{display:flex;gap:6px;margin-top:4px}
+.title-form input{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:5px 8px;border-radius:6px;font:12px var(--font)}
+.title-form button{border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text);padding:4px 9px;font:600 11px var(--font);cursor:pointer}
+.title-form button.go{background:var(--accent);border-color:var(--accent);color:#fff}
+.title-by{font-size:.66rem;color:var(--dm);margin-left:4px}
+.mact{display:flex;gap:10px;margin-top:6px;font-size:.72rem}
+.mact a{color:var(--muted);cursor:pointer}.mact a:hover{color:var(--text)}.mact a.del:hover{color:var(--danger)}
+.loc-card .lact{float:right;font-size:.74rem;display:flex;gap:8px}
+.loc-card .lact a{color:var(--muted);cursor:pointer}.loc-card .lact a:hover{color:var(--text)}
+.group-h.collapsible{cursor:pointer;user-select:none}
+.group-h .n{margin-left:auto}
+/* pins: smaller, fill = recency of last call, border = company, pulse ring = company */
+.pin{width:12px;height:12px;background:var(--rec,#6b7280);border:2px solid var(--pin-color,#3b82f6);box-shadow:0 0 0 1.5px rgba(255,255,255,.9)}
+.pin.pulse::after{width:12px;height:12px}
+.pin.called{box-shadow:0 0 0 1.5px rgba(255,255,255,.9),0 0 0 4px rgba(34,197,94,.45)}
+.pin.called::before{right:-8px;top:-8px;width:11px;height:11px;font:700 8px/10px system-ui,sans-serif}
+.pin.rec-today{--rec:#22c55e}.pin.rec-week{--rec:#facc15}.pin.rec-older{--rec:#fb7185}.pin.rec-never{--rec:#6b7280}
+.pin.supplier{border-color:#fbbf24}
+.legend .pin{width:9px;height:9px;border-width:2px}.legend .pin.pulse::after{width:9px;height:9px}
+.lg-sw{display:inline-block;width:9px;height:9px;border-radius:50%;vertical-align:middle;margin:0 3px 0 6px;border:1px solid #fff}
+.legend .lg-toggle{background:none;border:0;color:var(--text);font:600 .72rem var(--font);cursor:pointer;padding:0;display:block;width:100%;text-align:left}
+.legend.collapsed .lg-body{display:none}
+.modal .quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.modal .quick button{background:var(--bg);border:1px solid var(--border);color:var(--muted);padding:4px 9px;border-radius:999px;font:12px var(--font);cursor:pointer}
+.modal .quick button:hover{color:var(--text);border-color:var(--accent)}
+@media (max-width:700px){.contact a.tel-btn{min-height:42px;font-size:.95rem}.layout{grid-template-rows:200px 38vh 1fr}}
+</style>
 </head>
 <body>
 <header>
@@ -252,6 +295,7 @@
     <div class="sync-line" id="syncLine">Last synced: <strong>checking…</strong></div>
   </div>
   <span class="badge" id="statBadge">Loading…</span>
+  <span class="badge score-badge" id="scoreBadge" title="Contacts called today per AM (called_today + Log Call queue)">📞 Called today: …</span>
   <div class="controls">
     <div class="seg" id="amFilter" title="Account Manager">
       <button type="button" data-am="all" class="active">All</button>
@@ -274,17 +318,25 @@
       <p style="color:var(--muted);margin:0 0 12px">Map tiles unavailable — use location cards:</p>
       <div class="fallback-grid" id="fallbackGrid"></div>
     </div>
-    <div class="legend">
-      <div><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran)</div>
-      <div style="margin-top:4px"><span class="pin pulse" style="--pin-color:#8b9bb4"></span>Pulsing = no call logged today &nbsp; <span style="color:var(--accent2);font-weight:700">✓</span> = called today</div>
+    <div class="legend" id="legend">
+      <button type="button" class="lg-toggle" id="lgToggle" aria-expanded="true">Legend <span id="lgCaret">▾</span></button>
+      <div class="lg-body">
+      <div style="margin-top:4px"><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran) <span style="opacity:.8">· ring color</span></div>
+      <div style="margin-top:4px">Pin fill = last call: <span class="lg-sw" style="background:#22c55e"></span>today <span class="lg-sw" style="background:#facc15"></span>this week <span class="lg-sw" style="background:#fb7185"></span>older <span class="lg-sw" style="background:#6b7280"></span>never</div>
+      <div style="margin-top:4px">Pulsing = no call logged today &nbsp; <span style="color:var(--accent2);font-weight:700">✓</span> = called today</div>
       <div style="margin-top:4px"><span class="pin supplier" style="--pin-color:#3b82f6"></span>Supplier (Arconic-managed) — not an Arconic facility; shares contacts with Arconic plant pins</div>
       <div style="margin-top:4px">Pins = city-level plants/HQ. Contacts assigned by phone area code when known; otherwise Unassigned.</div>
+      </div>
     </div>
   </div>
   <aside class="detail">
     <div class="detail-head">
       <h2 id="detailTitle">Contacts</h2>
       <div class="detail-hint"><strong>Open in HubSpot to call, or use Log Call to record a call made from your phone.</strong></div>
+      <div class="view-line"><span>Show</span><div class="seg" id="viewToggle">
+        <button type="button" data-view="all" class="active">All</button>
+        <button type="button" data-view="uncalled">Not called today</button>
+        <button type="button" data-view="followups">Follow-ups due</button></div></div>
       <div class="sort-line">
         <span id="sortNote">Sorted by most contacted in HubSpot</span>
         <div class="seg" id="sortToggle" title="Sort contacts">
@@ -313,6 +365,8 @@
 <div class="row"><div><label>Direction</label><div class="seg" id="lcDir"><button type="button" class="active">Outbound</button><button type="button">Inbound</button></div></div>
 <div><label>Duration (min)</label><input type="number" id="lcDur" min="0" step="1" placeholder="0"/></div></div>
 <label>Notes</label><textarea id="lcNotes"></textarea>
+<label>Follow up (optional)</label><input type="date" id="lcFu"/>
+<div class="quick" id="lcFuQuick"><button type="button" data-d="1">Tomorrow</button><button type="button" data-d="3">In 3 days</button><button type="button" data-d="mon">Next Mon</button><button type="button" data-d="tue">Next Tue</button><button type="button" data-d="clear">Clear</button></div>
 <div class="err" id="lcErr"></div>
 <div class="foot"><span class="synchint">⟳ Saved to the shared call log; syncs to HubSpot on the next sync.</span>
 <div style="display:flex;gap:8px"><button type="button" class="btn" id="lcCancel">Cancel</button><button type="button" class="btn save" id="lcSave">Save</button></div></div>
@@ -354,6 +408,12 @@
   let selectedLocId = "team:all";
   let sortMode = "touches";       // "touches" (default: HubSpot Number of times contacted) | "dm"
   const markers = {};
+  let viewFilter = "all";         // all | uncalled | followups
+  let unassignedOpen = false;
+  let lastCalls = {};             // contact_id -> {time, outcome, am} from last_calls.json (published by manual_add.py)
+  const followups = new Map();    // contact_id -> {due, note, by}
+  const pinRec = {};
+  const REC_LABEL = { today: "last call today", week: "last call this week", older: "last call over a week ago", never: "never called" };
 
   // ---- Call status ("not called today") — driven by called_today.json ----
   const CT_TZ = "America/Chicago";
@@ -455,6 +515,7 @@
 
   async function loadCalledToday() {
     await loadManualAdds();
+    try { const r = await fetch(`last_calls.json?ts=${Date.now()}`, { cache: "no-store" }); if (r.ok) lastCalls = (await r.json()).calls || {}; } catch (e) { /* optional file */ }
     await loadLoggedCalls();
     try {
       const res = await fetch(`${CALLED_URL}?ts=${Date.now()}`, { cache: "no-store" });
@@ -471,6 +532,7 @@
 
   function refreshCallStatusUI() {
     updatePinStates();
+    renderScore();
     renderLocList();
     renderDetail();
   }
@@ -480,11 +542,14 @@
     return loc.am === amFilter;
   }
 
-  function filteredContactsForLoc(loc) {
+  function filteredContactsForLoc(loc, view) {
+    view = view || viewFilter;
     const q = searchQ.trim().toLowerCase();
     return DATA.contacts.filter((c) => {
       if (!contactMatchesAM(c)) return false;
       if (!inLoc(c, loc)) return false;
+      if (view === "uncalled" && calledInfo(c)) return false;
+      if (view === "followups" && !followupDue(c)) return false;
       if (!q) return true;
       const blob = [c.name, c.email, c.phone, c.mobile, c.title, c.role, c.plant || "unassigned", c.notes, c.company, c.am,
         ...supplierLocsFor(c).map((l) => l.name + " supplier")]
@@ -493,25 +558,48 @@
     });
   }
 
+  // ---- last call / follow-ups / recency helpers ----
+  function lastCallOf(c) {
+    const id = contactId(c); if (!id) return null;
+    let best = lastCalls[id] || null;
+    const t = calledMap.get(id);
+    if (t) {
+      const iso = /\d{4}-\d{2}-\d{2}/.test(String(t.time || "")) ? t.time : null;
+      const cand = { time: iso || new Date().toISOString(), outcome: t.outcome || "", am: t.am || "" };
+      if (!best || new Date(cand.time) >= new Date(best.time)) best = cand;
+    }
+    return best;
+  }
+  function ctDay(iso) { return new Intl.DateTimeFormat("en-CA", { timeZone: CT_TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(iso)); }
+  function recencyOf(time) {
+    if (!time || isNaN(new Date(time))) return "never";
+    const d = Math.round((Date.parse(todayCT()) - Date.parse(ctDay(time))) / 864e5);
+    return d <= 0 ? "today" : d <= 6 ? "week" : "older";
+  }
+  function followupFor(c) { const f = followups.get(contactId(c)); return f && f.due ? f : null; }
+  function followupDue(c) { const f = followupFor(c); return !!f && f.due <= todayCT(); }
+  function fmtDue(due) {
+    const d = new Date(due + "T12:00:00");
+    return isNaN(d) ? due : new Intl.DateTimeFormat("en-US", { weekday: "short", month: "numeric", day: "numeric" }).format(d);
+  }
+  function telHref(p) {
+    const m = String(p || "").split(/ext\.?|x/i); const d = m[0].replace(/\D/g, ""); const ext = (m[1] || "").replace(/\D/g, "");
+    const n = d.length === 10 ? "+1" + d : d.length === 11 && d[0] === "1" ? "+" + d : d;
+    return "tel:" + n + (ext ? ",," + ext : "");
+  }
+
   function renderLocList() {
     const list = el("locList");
     list.innerHTML = "";
     let lastGroup = undefined;
-    DATA.locations.filter(locMatchesAM).forEach((loc) => {
-      const group = loc.company || "";
-      if (group !== lastGroup) {
-        lastGroup = group;
-        if (group) {
-          const h = document.createElement("div");
-          h.className = "group-h";
-          h.innerHTML = `<span class="dot" style="background:${COLORS[group] || "#888"}"></span>${esc(group)} · ${esc(AM_SHORT[loc.am] || loc.am || "")}`;
-          list.appendChild(h);
-        }
-      }
+    const locs = DATA.locations.filter(locMatchesAM);
+    const mainLocs = locs.filter((l) => l.filter !== "unassigned"), unLocs = locs.filter((l) => l.filter === "unassigned");
+    const addCard = (loc) => {
       const n = filteredContactsForLoc(loc).length;
       const card = document.createElement("div");
       card.className = "loc-card" + (loc.company === "Kaiser Aluminum" ? " kai" : "") + (isSupplier(loc) ? " supplier" : "") + (loc.id === selectedLocId ? " active" : "");
       card.innerHTML = `
+        ${loc.manual ? `<span class="lact"><a data-edit-loc="${esc(loc.id)}" title="Edit this location">✎</a><a data-del-loc="${esc(loc.id)}" title="Delete this location">✕</a></span>` : ""}
         <div class="name">${esc(loc.label || loc.name)}${loc.manual ? ` <span class="manual-badge" title="Added manually${loc.added_by ? " by " + esc(loc.added_by) : ""}">Added manually</span>` : ""}</div>
         ${isSupplier(loc) ? `<div><span class="sup-tag" style="margin-left:0">${esc(loc.supplier_tag || "Supplier (Arconic-managed)")}</span></div>` : ""}
         <div class="meta">${esc(loc.pin ? loc.city + (loc.manual ? " · manual pin" : isSupplier(loc) ? " · supplier pin (not an Arconic facility)" : " · city-level pin") : "No map pin")}
@@ -525,7 +613,30 @@
         </div>`;
       card.onclick = () => selectLoc(loc.id, true);
       list.appendChild(card);
+    };
+    mainLocs.forEach((loc) => {
+      const group = loc.company || "";
+      if (group !== lastGroup) {
+        lastGroup = group;
+        if (group) {
+          const h = document.createElement("div");
+          h.className = "group-h";
+          h.innerHTML = `<span class="dot" style="background:${COLORS[group] || "#888"}"></span>${esc(group)} · ${esc(AM_SHORT[loc.am] || loc.am || "")}`;
+          list.appendChild(h);
+        }
+      }
+      addCard(loc);
     });
+    if (unLocs.length) {
+      const open = unassignedOpen || unLocs.some((l) => l.id === selectedLocId);
+      const total = unLocs.reduce((a, l) => a + filteredContactsForLoc(l).length, 0);
+      const h = document.createElement("div");
+      h.className = "group-h collapsible"; h.id = "unGroup";
+      h.innerHTML = `<span>${open ? "▾" : "▸"}</span>Unassigned contacts<span class="n pill">${total}</span>`;
+      h.onclick = () => { unassignedOpen = !open; renderLocList(); };
+      list.appendChild(h);
+      if (open) unLocs.forEach(addCard);
+    }
     renderFallback();
   }
 
@@ -554,7 +665,19 @@
       nameKey(a).localeCompare(nameKey(b)),
   };
   const SORT_NOTES = { touches: "Sorted by most contacted in HubSpot", dm: "Sorted by decision makers first, then phone, then name" };
-  function sortContacts(list) { return list.slice().sort(SORTS[sortMode] || SORTS.touches); }
+  function sortContacts(list) {
+    if (viewFilter === "followups") return list.slice().sort((a, b) => (followupFor(a).due < followupFor(b).due ? -1 : followupFor(a).due > followupFor(b).due ? 1 : 0) || SORTS.touches(a, b));
+    return list.slice().sort(viewFilter === "uncalled" ? SORTS.touches : (SORTS[sortMode] || SORTS.touches));
+  }
+  function renderScore() {
+    const byId = new Map(); DATA.contacts.forEach((c) => byId.set(contactId(c), c));
+    const n = { Kili: 0, Simran: 0 };
+    calledMap.forEach((v, id) => {
+      const a = String((v && v.am) || (byId.get(id) || {}).am || "").toLowerCase();
+      if (a.includes("kili") || a.includes("kahekili")) n.Kili++; else if (a.includes("simran")) n.Simran++;
+    });
+    el("scoreBadge").innerHTML = `📞 Called today: Kili <strong>${n.Kili}</strong> · Simran <strong>${n.Simran}</strong>`;
+  }
   function fmtLastContacted(v) {
     if (!v) return "";
     const m = String(v).match(/^(\d{4})-(\d{2})-(\d{2})/);
@@ -577,38 +700,62 @@
     el("touchAsOf").title = DATA.touch_counts_source || TOUCH_TIP;
   }
 
-  function renderDetail() {
-    const loc = DATA.locations.find((l) => l.id === selectedLocId) || DATA.locations[0];
-    const contacts = sortContacts(filteredContactsForLoc(loc));
-    el("detailTitle").textContent = `${loc.label || loc.name} · ${contacts.length} contacts`;
-    const body = el("detailBody");
-    if (!contacts.length) {
-      body.innerHTML = `<div class="detail-empty">No contacts match this filter/search.</div>`;
-      return;
-    }
-    body.innerHTML = contacts.map((c) => { const ci = calledInfo(c); return `
-      <div class="contact${ci ? " is-called" : ""}" data-contact-id="${esc(contactId(c))}">
+  function contactCard(c) {
+    const ci = calledInfo(c), id = contactId(c), lc = lastCallOf(c), fu = followupFor(c);
+    const lcTxt = lc ? `Last call: ${lc.outcome ? `<b>${esc(lc.outcome)}</b> · ` : ""}${esc(fmtCT(lc.time, true) || "")}${lc.am ? " · " + esc(lc.am) : ""}` : "No calls logged yet";
+    const titleHtml = c.title
+      ? `<div class="title">${esc(c.title)}${c.title_by ? `<span class="title-by" title="Added from the map; not in HubSpot">added by ${esc(c.title_by)}</span>` : ""}</div>`
+      : `<div class="title missing" data-title-box="${esc(id)}">${c.manual ? "No title yet" : "Title not scraped"} · <a data-add-title="${esc(id)}">Add title</a></div>`;
+    return `
+      <div class="contact${ci ? " is-called" : ""}" data-contact-id="${esc(id)}">
+        ${ci ? `<div class="called-ribbon" title="${esc((ci.outcome ? "Outcome: " + ci.outcome : "Call logged today") + (ci.src === "log" ? " · via Log Call" + (ci.pending ? " (saved on this device only, not yet shared)" : "") : " · HubSpot sync"))}">✓ Called today${ci.time ? " · " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
         <div class="top">
           <div>
             <div class="cname">${esc(c.name || "(no name)")}${c.manual ? ` <span class="manual-badge" title="Added manually${c.added_by ? " by " + esc(c.added_by) : ""}">Added manually</span>` : ""}</div>
             ${touchBadge(c)}
-            ${ci ? `<div class="called-badge" title="${esc((ci.outcome ? "Outcome: " + ci.outcome : "Call logged today") + (ci.src === "log" ? " · via Log Call" + (ci.pending ? " (saved on this device only, not yet shared)" : "") : " · HubSpot sync"))}">Called today ✓${ci.time ? " " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
-            ${c.title ? `<div class="title">${esc(c.title)}</div>` : `<div class="title" style="opacity:.5">${c.manual ? "No title" : "Title not scraped"}</div>`}
+            <div class="lastcall">${lcTxt}</div>
+            ${fu ? `<div><span class="fu-badge${fu.due <= todayCT() ? " due" : ""}" title="${esc(fu.note || "")}">↩ Follow up ${esc(fmtDue(fu.due))}${fu.due < todayCT() ? " (overdue)" : fu.due === todayCT() ? " (today)" : ""}${fu.note ? " · " + esc(fu.note.slice(0, 40)) : ""} <a data-fu-done="${esc(id)}">done</a></span></div>` : ""}
+            ${titleHtml}
             <div class="co-tag"><span class="dot" style="background:${COLORS[c.company] || "#888"};width:8px;height:8px"></span> ${esc(c.company)} · ${esc(AM_SHORT[c.am] || c.am)}</div>
           </div>
           <span class="role-tag ${c.is_dm ? "dm" : ""}">${esc(c.role || "Other")}</span>
         </div>
         <div class="rows">
           <div class="phone-line">
-            <span>${c.phone ? `📞 <a href="tel:${esc(c.phone)}" title="Call from phone, then use Log Call">${esc(c.phone)}</a><span class="nolog">use Log Call</span>` : `<span style="color:var(--muted)">📞 —</span>`}</span>
-            <span class="btns">${contactId(c) ? `<button type="button" class="log-btn" data-log="${esc(contactId(c))}">✎ Log Call</button>` : ""}${hsLink(c)}</span>
+            <span>${c.phone ? `<a class="tel-btn" data-tel="${esc(id)}" href="${esc(telHref(c.phone))}" title="Tap to call, then Log Call opens when you come back">📞 ${esc(c.phone)}</a>` : `<span style="color:var(--muted)">📞 —</span>`}${c.mobile ? `<a class="tel-btn" data-tel="${esc(id)}" href="${esc(telHref(c.mobile))}" title="Tap to call mobile, then Log Call opens when you come back">📱 ${esc(c.mobile)}</a>` : ""}</span>
+            <span class="btns">${id ? `<button type="button" class="log-btn" data-log="${esc(id)}">✎ Log Call</button>` : ""}${hsLink(c)}</span>
           </div>
-          ${c.mobile ? `<div>📱 <a href="tel:${esc(c.mobile)}" title="Call from phone, then use Log Call">${esc(c.mobile)}</a><span class="nolog">use Log Call</span></div>` : ""}
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
         </div>
-        ${c.manual ? `<div class="plant-tag" style="color:var(--muted)">Location: ${c.plant_id ? esc(plantLabel(c)) : "unassigned"} (set manually${c.added_by ? " by " + esc(c.added_by) : ""})</div>` : c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
+        ${c.manual ? `<div class="plant-tag" style="color:var(--muted)">Location: ${c.plant_id ? esc(plantLabel(c)) : "unassigned"} (set manually${c.added_by ? " by " + esc(c.added_by) : ""})</div>
+          <div class="mact"><a data-edit-con="${esc(c.manual_id)}">✎ Edit</a><a class="del" data-del-con="${esc(c.manual_id)}">🗑 Delete</a></div>`
+          : c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
         ${(() => { const sl = supplierLocsFor(c); return sl.length ? `<div class="also-tag">Also at supplier: ${sl.map((l) => esc(String(l.name || l.city).replace(/ \(supplier\)$/, ""))).join(" · ")}</div>` : ""; })()}
-      </div>`; }).join("");
+      </div>`;
+  }
+  function renderDetail() {
+    const loc = DATA.locations.find((l) => l.id === selectedLocId) || DATA.locations[0];
+    const all = filteredContactsForLoc(loc, "all");
+    const nUn = all.filter((c) => !calledInfo(c)).length, nFu = all.filter(followupDue).length;
+    el("viewToggle").querySelectorAll("button").forEach((b) => {
+      const v = b.dataset.view;
+      b.classList.toggle("active", v === viewFilter);
+      b.textContent = v === "all" ? "All" : v === "uncalled" ? `Not called today (${nUn})` : `Follow-ups due (${nFu})`;
+    });
+    const contacts = sortContacts(filteredContactsForLoc(loc));
+    el("detailTitle").textContent = `${loc.label || loc.name} · ${contacts.length} contacts`;
+    el("sortNote").textContent = viewFilter === "uncalled" ? "Uncalled contacts, most touches first" : viewFilter === "followups" ? "Follow-ups due, oldest first" : SORT_NOTES[sortMode];
+    const body = el("detailBody");
+    if (!contacts.length) {
+      body.innerHTML = `<div class="detail-empty">${viewFilter === "uncalled" ? "Everyone here has been called today 🎉" : viewFilter === "followups" ? "No follow-ups due." : "No contacts match this filter/search."}</div>`;
+    } else {
+      body.innerHTML = (DATA.companies || [{ name: "Arconic" }, { name: "Kaiser Aluminum" }]).map((co) => {
+        const cs = contacts.filter((c) => c.company === co.name);
+        if (!cs.length) return "";
+        return `<div class="co-head"><span class="dot" style="background:${COLORS[co.name] || "#888"}"></span>${esc(co.name)} · ${esc(AM_SHORT[co.am] || co.am || "")}<span class="n">${cs.length}</span></div>` + cs.map(contactCard).join("");
+      }).join("");
+    }
+    const dh = document.querySelector(".detail-head"); if (dh) document.querySelector(".detail").style.setProperty("--dh", dh.offsetHeight + "px");
   }
 
   const HS_PORTAL = "6029765";
@@ -734,14 +881,15 @@
 
   // Pins are Leaflet divIcons; state lives in the icon's CSS class so it survives
   // AM-filter remove/re-add (Leaflet rebuilds the element from options.icon).
-  function pinIcon(loc, state) {
+  function pinIcon(loc, state, rec) {
+    rec = rec || "never";
     const color = COLORS[loc.company] || "#3b82f6";
-    const title = (isSupplier(loc) ? "Supplier (Arconic-managed) · " : "") + (state === "called" ? "Called today" : "No call logged today");
+    const title = (isSupplier(loc) ? "Supplier (Arconic-managed) · " : "") + (state === "called" ? "Called today" : "No call logged today") + " · " + REC_LABEL[rec];
     return L.divIcon({
       className: "pin-wrap",
-      html: `<div class="pin ${state}${isSupplier(loc) ? " supplier" : ""}" data-loc-id="${esc(loc.id)}" data-kind="${esc(loc.kind || "plant")}" style="--pin-color:${color}" title="${esc(title)}"></div>`,
-      iconSize: [14, 14],
-      iconAnchor: [7, 7],
+      html: `<div class="pin ${state} rec-${rec}${isSupplier(loc) ? " supplier" : ""}" data-loc-id="${esc(loc.id)}" data-kind="${esc(loc.kind || "plant")}" style="--pin-color:${color}" title="${esc(title)}"></div>`,
+      iconSize: [12, 12],
+      iconAnchor: [6, 6],
       popupAnchor: [0, -6],
     });
   }
@@ -750,10 +898,14 @@
     Object.entries(markers).forEach(([id, m]) => {
       const loc = DATA.locations.find((l) => l.id === id);
       if (!loc) return;
-      const state = contactsAtLoc(loc).some((c) => calledInfo(c)) ? "called" : "pulse";
-      if (pinState[id] !== state) {
-        pinState[id] = state;
-        m.setIcon(pinIcon(loc, state));
+      const cs = contactsAtLoc(loc);
+      const state = cs.some((c) => calledInfo(c)) ? "called" : "pulse";
+      let best = null;
+      cs.forEach((c) => { const lc = lastCallOf(c); if (lc && (!best || new Date(lc.time) > new Date(best))) best = lc.time; });
+      const rec = recencyOf(best);
+      if (pinState[id] !== state || pinRec[id] !== rec) {
+        pinState[id] = state; pinRec[id] = rec;
+        m.setIcon(pinIcon(loc, state, rec));
       }
     });
   }
@@ -859,7 +1011,7 @@
     const sl = supplierLocsFor(c).map((l) => String(l.name || l.city).replace(/ \(supplier\)$/, ""));
     return [c.company, c.plant ? plantLabel(c) : "Unassigned", ...sl.map((x) => x + " (supplier)")].filter(Boolean).join(" · ");
   }
-  function openLogCall(id) {
+  function openLogCall(id, opts) {
     const c = DATA.contacts.find((x) => contactId(x) === id);
     if (!c) return;
     lcContact = c;
@@ -868,7 +1020,9 @@
     const d = new Date();
     el("lcDt").value = `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}T${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
     segPick("lcOutcome", "Connected"); segPick("lcDir", "Outbound");
-    el("lcDur").value = ""; el("lcNotes").value = ""; el("lcErr").textContent = "";
+    el("lcDur").value = opts && opts.tel ? Math.min(Math.max(1, opts.mins), 120) : ""; el("lcNotes").value = ""; el("lcErr").textContent = "";
+    const ex = followupFor(c); el("lcFu").value = ex ? ex.due : "";
+    if (opts && opts.tel) el("lcWho").textContent += " · back from tap-to-call (~" + Math.max(1, opts.mins) + " min)";
     el("lcSave").disabled = false;
     el("lcOverlay").classList.add("show");
   }
@@ -894,6 +1048,7 @@
       alert("Couldn't reach the shared call log — saved on this device and will retry automatically.");
     }
     saveCache();
+    try { await postFollowupForCall(c, call); } catch (e) { console.warn("follow-up:", e); }
     closeLogCall();
     applyCalledFile(calledFile);
     refreshCallStatusUI();
@@ -904,30 +1059,38 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && el("lcOverlay").classList.contains("show")) closeLogCall(); });
   el("detailBody").addEventListener("click", (e) => { const b = e.target.closest("button.log-btn"); if (b) openLogCall(b.dataset.log); });
 
-  // ---- Manual adds: new locations + new contacts (same ntfy.sh queue as Log Call, told apart by `type`) ----
-  // POST {type:"add_location"|"add_contact", id, ...} to the topic. Log Call readers require call_id and skip typed
-  // messages; this reader only takes typed messages. Sources merged by id: added_manual.json (published by the hourly
-  // sync, durable), the ntfy queue (~12h), and localStorage (this device). See MANUAL_ADD.md. Never touches HubSpot.
+  // ---- Queue items: manual adds + edits/deletes + titles + follow-ups (same ntfy.sh queue as Log Call, told apart by `type`) ----
+  // POST {type, id, ...} to the topic. Log Call readers require call_id and skip typed messages; this reader only takes typed ones.
+  // Types: add_location, add_contact, edit_item{target_id,fields}, delete_item{target_id}, set_title{contact_id,title}, followup{contact_id,due,note}.
+  // Sources merged by id: added_manual.json (published by the hourly sync, durable), the ntfy queue (~12h), localStorage.
+  // See MANUAL_ADD.md. Never touches HubSpot.
   const ADDED_URL = "added_manual.json";
   const LS_ADD_CACHE = "dialerAddCache:v1";      // {id: item}
   const LS_ADD_PENDING = "dialerAddPending:v1";  // [item] not yet accepted by the queue
+  const QTYPES = ["add_location", "add_contact", "edit_item", "delete_item", "set_title", "followup"];
+  const LOC_EDIT = ["city", "state", "address", "lat", "lon", "geo_source"];
+  const CON_EDIT = ["name", "title", "phone", "mobile", "email", "location_id"];
   const BASE_LOCS = DATA.locations.slice();
   const BASE_CONTACTS = DATA.contacts.slice();
+  BASE_CONTACTS.forEach((c) => { c._t0 = c.title || ""; });
   const manualItems = new Map();                 // id -> item
   const CO_META = {};
   (DATA.companies || []).forEach((c) => { CO_META[c.name] = c; });
   const CO_PREFIX = { "Arconic": "arc", "Kaiser Aluminum": "kai" };
   const mkId = (p) => `${p}-${Date.now().toString(36)}-${(crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)).replace(/-/g, "").slice(0, 8)}`;
+  const itemTitle = (it) => ({ add_location: () => "New location: " + it.city + ", " + it.state, add_contact: () => "New contact: " + it.name,
+    edit_item: () => "Edit " + it.target_id, delete_item: () => "Delete " + it.target_id, set_title: () => "Title: " + (it.contact_name || it.contact_id),
+    followup: () => "Follow-up: " + (it.contact_name || it.contact_id) })[it.type]();
   async function postItem(item) {
     const res = await fetch(LOG_TOPIC_URL, { method: "POST", body: JSON.stringify(item),
-      headers: { "Title": `${item.type === "add_location" ? "New location" : "New contact"}: ${item.type === "add_location" ? item.city + ", " + item.state : item.name}`, "Tags": "dialer-add" } });
+      headers: { "Title": itemTitle(item), "Tags": "dialer-add" } });
     if (!res.ok) throw new Error("HTTP " + res.status);
     return res.json();
   }
   async function loadManualAdds() {
     const deleted = new Set();
     manualItems.clear();
-    const put = (it) => { if (it && it.id && (it.type === "add_location" || it.type === "add_contact")) manualItems.set(it.id, it); };
+    const put = (it) => { if (it && it.id && QTYPES.includes(it.type)) manualItems.set(it.id, it); };
     Object.values(lsGet(LS_ADD_CACHE, {})).forEach(put);
     try {
       const res = await fetch(`${ADDED_URL}?ts=${Date.now()}`, { cache: "no-store" });
@@ -963,23 +1126,38 @@
     const co = CO_META[it.company] || {};
     const lid = it.location_id && locs.some((l) => l.id === it.location_id) ? it.location_id : null;
     const loc = lid ? locs.find((l) => l.id === lid) : null;
-    return { name: it.name, role: "Other", title: it.title || "", phone: it.phone || "", mobile: it.mobile || "", email: it.email || "",
+    return { name: it.name, role: "Other", title: it.title || "", _t0: it.title || "", phone: it.phone || "", mobile: it.mobile || "", email: it.email || "",
       hubspot_url: "", company_url: co.url, last_activity: "", notes: "Added manually", am: co.am, company: it.company, company_id: co.id,
       plant: loc ? (loc.name || loc.label) : null, plant_id: lid, area_code: null, has_phone: !!(it.phone || it.mobile), is_dm: false,
       hubspot_contact_id: "", manual: true, manual_id: it.id, added_by: it.added_by, times_contacted: 0, sales_activities: 0, last_contacted: null };
   }
   function applyManual() {
-    const items = [...manualItems.values()];
-    const mlocs = items.filter((i) => i.type === "add_location" && isFinite(i.lat) && isFinite(i.lon) && CO_META[i.company]).map(manualLocObj);
+    const all = [...manualItems.values()].sort((a, b) => String(a.added_at || "").localeCompare(String(b.added_at || "")) || String(a.id).localeCompare(String(b.id)));
+    const adds = new Map(), titles = new Map();
+    followups.clear();
+    all.forEach((it) => {
+      if (it.type === "add_location" || it.type === "add_contact") adds.set(it.id, { ...it });
+      else if (it.type === "edit_item") {
+        const t = adds.get(it.target_id); if (!t) return;
+        (t.type === "add_location" ? LOC_EDIT : CON_EDIT).forEach((k) => { if (it.fields && k in it.fields) t[k] = it.fields[k]; });
+      } else if (it.type === "delete_item") adds.delete(it.target_id);
+      else if (it.type === "set_title" && it.contact_id) titles.set(String(it.contact_id), it);
+      else if (it.type === "followup" && it.contact_id) followups.set(String(it.contact_id), { due: it.due || "", note: it.note || "", by: it.added_by || "" });
+    });
+    const mlocs = [...adds.values()].filter((i) => i.type === "add_location" && isFinite(i.lat) && isFinite(i.lon) && CO_META[i.company]).map(manualLocObj);
     const locs = BASE_LOCS.slice();
     mlocs.forEach((l) => {
       let at = locs.findIndex((x) => x.id === (CO_PREFIX[l.company] || "") + ":unassigned");
       if (at < 0) at = locs.length;
       locs.splice(at, 0, l);
     });
-    const mcs = items.filter((i) => i.type === "add_contact" && i.name && CO_META[i.company]).map((i) => manualContactObj(i, locs));
+    const mcs = [...adds.values()].filter((i) => i.type === "add_contact" && i.name && CO_META[i.company]).map((i) => manualContactObj(i, locs));
     DATA.locations = locs;
     DATA.contacts = BASE_CONTACTS.concat(mcs);
+    DATA.contacts.forEach((c) => {   // title overrides: typed in from the map, never written to HubSpot
+      const t = titles.get(contactId(c));
+      c.title = t && t.title ? t.title : (c._t0 || ""); c.title_by = t && t.title ? (t.added_by || "team") : "";
+    });
     DATA.locations.forEach((l) => {
       const cs = DATA.contacts.filter((c) => inLoc(c, l));
       l.contact_count = cs.length; l.with_phone = cs.filter((c) => c.has_phone).length; l.dm_count = cs.filter((c) => c.is_dm).length;
@@ -991,18 +1169,19 @@
   function ensureManualMarkers() {
     if (!map) return;
     Object.keys(markers).forEach((id) => {
-      if (!DATA.locations.some((l) => l.id === id)) { map.removeLayer(markers[id]); delete markers[id]; delete pinState[id]; }
+      const loc = DATA.locations.find((l) => l.id === id);
+      if (!loc || (loc.manual && markers[id].__sig !== loc.lat + "," + loc.lon + "|" + loc.label + "|" + loc.address)) {
+        map.removeLayer(markers[id]); delete markers[id]; delete pinState[id]; delete pinRec[id];
+      }
     });
     DATA.locations.filter((l) => l.manual && !markers[l.id]).forEach((loc) => {
       pinState[loc.id] = "pulse";
-      const m = L.marker([loc.lat, loc.lon], { icon: pinIcon(loc, "pulse") }).addTo(map)
+      const m = L.marker([loc.lat, loc.lon], { icon: pinIcon(loc, "pulse", "never") }).addTo(map)
         .bindPopup(`<strong>${esc(loc.label)}</strong> <span style="color:#7c3aed;font-weight:600">Added manually</span><br/>${esc(loc.company)} · ${esc(AM_SHORT[loc.am] || loc.am)}${loc.address ? "<br/>" + esc(loc.address) : ""}`);
       m.on("click", () => selectLoc(loc.id, false));
+      m.__sig = loc.lat + "," + loc.lon + "|" + loc.label + "|" + loc.address;
       markers[loc.id] = m;
     });
-    if (typeof updateMarkerVisibilityQuiet === "function") updateMarkerVisibilityQuiet();
-  }
-  function updateMarkerVisibilityQuiet() {
     Object.entries(markers).forEach(([id, m]) => {
       const loc = DATA.locations.find((l) => l.id === id);
       if (loc && locMatchesAM(loc) !== map.hasLayer(m)) { if (locMatchesAM(loc)) m.addTo(map); else map.removeLayer(m); }
@@ -1015,22 +1194,29 @@
     const cache = lsGet(LS_ADD_CACHE, {}); cache[item.id] = item; lsSet(LS_ADD_CACHE, cache);
     applyManual(); refreshCallStatusUI();
   }
+  const amOf = (c) => (c && c.am === "Simran Subramanian") ? "Simran" : "Kili";
   const segOn = (id, v) => el(id).querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.v === v));
   const segGet = (id) => { const b = el(id).querySelector("button.active"); return b ? b.dataset.v : ""; };
   ["alCo", "alBy", "acCo", "acBy"].forEach((id) => el(id).addEventListener("click", (e) => {
-    const b = e.target.closest("button"); if (!b) return;
+    const b = e.target.closest("button"); if (!b || el(id).dataset.locked) return;
     segOn(id, b.dataset.v); if (id === "acCo") fillConLocs();
   }));
   const closeOv = (id) => el(id).classList.remove("show");
-  // -- Add location --
-  let alGeo = null, alPicking = false;
-  // (state is free text; Nominatim resolves abbreviations)
-  const _US_ST = "AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split(" ");
+  const lock = (id, on) => { el(id).dataset.locked = on ? "1" : ""; el(id).style.opacity = on ? ".55" : ""; };
+
+  // -- Add / edit location --
+  let alGeo = null, alPicking = false, alEdit = null;
   function setGeo(g, msg, ok) { alGeo = g; el("alGeo").textContent = msg || ""; el("alGeo").classList.toggle("ok", !!ok); }
-  function openAddLoc() {
-    segOn("alCo", "Arconic"); segOn("alBy", amFilter === "Simran Subramanian" ? "Simran" : "Kili");
-    ["alCity", "alState", "alAddr"].forEach((i) => { el(i).value = ""; });
-    el("alErr").textContent = ""; setGeo(null, ""); el("alSave").disabled = false;
+  function openAddLoc(edit) {
+    alEdit = edit || null;
+    el("alTitle").textContent = alEdit ? "Edit location" : "Add new location";
+    el("alSave").textContent = alEdit ? "Save changes" : "Add location";
+    segOn("alCo", alEdit ? alEdit.company : "Arconic"); lock("alCo", !!alEdit);
+    segOn("alBy", alEdit ? (alEdit.added_by || "Kili") : (amFilter === "Simran Subramanian" ? "Simran" : "Kili"));
+    el("alCity").value = alEdit ? alEdit.city : ""; el("alState").value = alEdit ? alEdit.state : ""; el("alAddr").value = alEdit ? (alEdit.address || "") : "";
+    el("alErr").textContent = ""; el("alSave").disabled = false;
+    if (alEdit) setGeo({ lat: alEdit.lat, lon: alEdit.lon, src: alEdit.geo_source || "manual-pin" }, `Current pin kept (${(+alEdit.lat).toFixed(4)}, ${(+alEdit.lon).toFixed(4)}). Change the city/state, or use Find on map / Drop pin, to move it.`, true);
+    else setGeo(null, "");
     el("alOverlay").classList.add("show"); el("alCity").focus();
   }
   async function geocodeCity(city, state, addr) {
@@ -1081,26 +1267,39 @@
     let g = alGeo || await findOnMap();
     if (!g) { el("alSave").disabled = false; return; }
     const co = segGet("alCo");
-    const dupe = DATA.locations.some((l) => l.pin && l.company === co && !isSupplier(l) && Math.abs(l.lat - g.lat) < 0.1 && Math.abs(l.lon - g.lon) < 0.1);
-    if (dupe && !confirm(`${co} already has a pin near ${city}. Add another anyway?`)) { el("alSave").disabled = false; return; }
-    const item = { type: "add_location", id: mkId("ml"), company: co, city, state, address: addr, lat: g.lat, lon: g.lon,
-      geo_source: g.src, added_by: segGet("alBy"), added_at: new Date().toISOString(), source: "dialer-map" };
+    if (!alEdit) {
+      const dupe = DATA.locations.some((l) => l.pin && l.company === co && !isSupplier(l) && Math.abs(l.lat - g.lat) < 0.1 && Math.abs(l.lon - g.lon) < 0.1);
+      if (dupe && !confirm(`${co} already has a pin near ${city}. Add another anyway?`)) { el("alSave").disabled = false; return; }
+    }
+    const item = alEdit
+      ? { type: "edit_item", id: mkId("ed"), target_id: alEdit.id, fields: { city, state, address: addr, lat: g.lat, lon: g.lon, geo_source: g.src },
+          added_by: segGet("alBy"), added_at: new Date().toISOString(), source: "dialer-map" }
+      : { type: "add_location", id: mkId("ml"), company: co, city, state, address: addr, lat: g.lat, lon: g.lon,
+          geo_source: g.src, added_by: segGet("alBy"), added_at: new Date().toISOString(), source: "dialer-map" };
     await savedItem(item);
     closeOv("alOverlay");
-    selectLoc(item.id, true);
+    const sel = alEdit ? alEdit.id : item.id; alEdit = null;
+    selectLoc(sel, true);
   }
-  // -- Add contact --
+  // -- Add / edit contact --
+  let acEdit = null;
   function fillConLocs() {
     const co = segGet("acCo"), sel = el("acLoc"), prev = sel.value;
     sel.innerHTML = `<option value="">— None / unassigned —</option>` + DATA.locations.filter((l) => l.pin && l.company === co && !isSupplier(l))
       .map((l) => `<option value="${esc(l.id)}">${esc(l.label)}${l.manual ? " (added manually)" : ""}</option>`).join("");
     if ([...sel.options].some((o) => o.value === prev)) sel.value = prev;
   }
-  function openAddCon() {
+  function openAddCon(edit) {
+    acEdit = edit || null;
     const loc = DATA.locations.find((l) => l.id === selectedLocId);
-    segOn("acCo", loc && loc.company ? loc.company : "Arconic"); segOn("acBy", amFilter === "Simran Subramanian" ? "Simran" : "Kili");
-    ["acName", "acRole", "acPhone", "acMobile", "acEmail"].forEach((i) => { el(i).value = ""; });
-    fillConLocs(); el("acLoc").value = loc && loc.pin && !isSupplier(loc) ? loc.id : "";
+    el("acTitle").textContent = acEdit ? "Edit contact" : "Add new contact";
+    el("acSave").textContent = acEdit ? "Save changes" : "Add contact";
+    segOn("acCo", acEdit ? acEdit.company : (loc && loc.company ? loc.company : "Arconic")); lock("acCo", !!acEdit);
+    segOn("acBy", acEdit ? (acEdit.added_by || "Kili") : (amFilter === "Simran Subramanian" ? "Simran" : "Kili"));
+    el("acName").value = acEdit ? acEdit.name : ""; el("acRole").value = acEdit ? (acEdit.title || "") : ""; el("acPhone").value = acEdit ? (acEdit.phone || "") : "";
+    el("acMobile").value = acEdit ? (acEdit.mobile || "") : ""; el("acEmail").value = acEdit ? (acEdit.email || "") : "";
+    fillConLocs();
+    el("acLoc").value = acEdit ? (acEdit.location_id || "") : (loc && loc.pin && !isSupplier(loc) ? loc.id : "");
     el("acErr").textContent = ""; el("acSave").disabled = false;
     el("acOverlay").classList.add("show"); el("acName").focus();
   }
@@ -1109,21 +1308,109 @@
     if (!name) { el("acErr").textContent = "Name is required."; return; }
     if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { el("acErr").textContent = "That email doesn't look right."; return; }
     const lid = el("acLoc").value, loc = DATA.locations.find((l) => l.id === lid);
-    const item = { type: "add_contact", id: mkId("mc"), company: segGet("acCo"), name, title: el("acRole").value.trim(), phone: el("acPhone").value.trim(),
-      mobile: el("acMobile").value.trim(), email, location_id: lid, location_label: loc ? loc.label : "", added_by: segGet("acBy"),
-      added_at: new Date().toISOString(), source: "dialer-map" };
+    const f = { name, title: el("acRole").value.trim(), phone: el("acPhone").value.trim(), mobile: el("acMobile").value.trim(), email, location_id: lid };
+    const now = new Date().toISOString();
+    const item = acEdit
+      ? { type: "edit_item", id: mkId("ed"), target_id: acEdit.id, fields: f, added_by: segGet("acBy"), added_at: now, source: "dialer-map" }
+      : { type: "add_contact", id: mkId("mc"), company: segGet("acCo"), ...f, location_label: loc ? loc.label : "", added_by: segGet("acBy"), added_at: now, source: "dialer-map" };
     el("acSave").disabled = true;
+    const co = acEdit ? acEdit.company : item.company;
     await savedItem(item);
-    closeOv("acOverlay");
-    selectLoc(lid || (CO_PREFIX[item.company] + ":all"), false);
+    closeOv("acOverlay"); acEdit = null;
+    selectLoc(lid || (CO_PREFIX[co] + ":all"), false);
   }
-  el("addLocBtn").onclick = openAddLoc; el("addConBtn").onclick = openAddCon;
+  // current (merged) state of a manual item, for pre-filling edits
+  function manualState(id) {
+    const l = DATA.locations.find((x) => x.manual && x.id === id);
+    if (l) { const it = manualItems.get(id) || {}; return { id, company: l.company, city: l.city, state: (it.state || "") , address: l.address, lat: l.lat, lon: l.lon, geo_source: l.source, added_by: l.added_by, _loc: true }; }
+    const c = DATA.contacts.find((x) => x.manual_id === id);
+    return c ? { id, company: c.company, name: c.name, title: c.title, phone: c.phone, mobile: c.mobile, email: c.email, location_id: c.plant_id || "", added_by: c.added_by } : null;
+  }
+  function currentLocState(id) {   // merge edits to recover state (not stored on the loc object)
+    let st = null;
+    [...manualItems.values()].sort((a, b) => String(a.added_at || "").localeCompare(String(b.added_at || ""))).forEach((it) => {
+      if (it.type === "add_location" && it.id === id) st = { ...it };
+      else if (it.type === "edit_item" && it.target_id === id && st) LOC_EDIT.forEach((k) => { if (it.fields && k in it.fields) st[k] = it.fields[k]; });
+    });
+    return st;
+  }
+  async function deleteManual(id, kind) {
+    const label = kind === "loc" ? (DATA.locations.find((l) => l.id === id) || {}).label : (DATA.contacts.find((c) => c.manual_id === id) || {}).name;
+    const n = kind === "loc" ? DATA.contacts.filter((c) => c.plant_id === id).length : 0;
+    if (!confirm(`Delete ${kind === "loc" ? "location" : "contact"} “${label}”?${n ? `\n${n} contact(s) here will become unassigned.` : ""}\nThis removes it for all reps.`)) return;
+    await savedItem({ type: "delete_item", id: mkId("dl"), target_id: id, added_by: amFilter === "Simran Subramanian" ? "Simran" : "Kili", added_at: new Date().toISOString(), source: "dialer-map" });
+  }
+  el("addLocBtn").onclick = () => openAddLoc(); el("addConBtn").onclick = () => openAddCon();
   el("alFind").onclick = findOnMap; el("alPick").onclick = pickPin; el("alSave").onclick = saveAddLoc;
   el("acSave").onclick = saveAddCon;
   el("alCancel").onclick = () => closeOv("alOverlay"); el("acCancel").onclick = () => closeOv("acOverlay");
-  ["alCity", "alState", "alAddr"].forEach((i) => el(i).addEventListener("input", () => { if (alGeo && alGeo.src === "nominatim") setGeo(null, ""); }));
+  ["alCity", "alState"].forEach((i) => el(i).addEventListener("input", () => { if (alGeo && (alEdit || alGeo.src === "nominatim")) setGeo(null, alEdit ? "Pin will be looked up again on save." : ""); }));
+  el("alAddr").addEventListener("input", () => { if (alGeo && alGeo.src === "nominatim" && !alEdit) setGeo(null, ""); });
   ["alOverlay", "acOverlay"].forEach((id) => el(id).addEventListener("click", (e) => { if (e.target.id === id) closeOv(id); }));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { if (!alPicking) { closeOv("alOverlay"); closeOv("acOverlay"); } } });
+  el("locList").addEventListener("click", (e) => {
+    const ed = e.target.closest("[data-edit-loc]"), dl = e.target.closest("[data-del-loc]");
+    if (ed) { e.stopPropagation(); const st = currentLocState(ed.dataset.editLoc); if (st) openAddLoc(st); }
+    else if (dl) { e.stopPropagation(); deleteManual(dl.dataset.delLoc, "loc"); }
+  }, true);
+  // -- detail panel actions: edit/delete manual contacts, add title, clear follow-up, tap-to-call --
+  el("detailBody").addEventListener("click", (e) => {
+    const t = e.target.closest("[data-edit-con],[data-del-con],[data-add-title],[data-fu-done],a.tel-btn");
+    if (!t) return;
+    if (t.dataset.editCon) { const st = manualState(t.dataset.editCon); if (st) openAddCon(st); }
+    else if (t.dataset.delCon) deleteManual(t.dataset.delCon, "con");
+    else if (t.dataset.fuDone) {
+      const c = DATA.contacts.find((x) => contactId(x) === t.dataset.fuDone);
+      savedItem({ type: "followup", id: mkId("fu"), contact_id: t.dataset.fuDone, contact_name: c ? c.name : "", due: "", note: "", added_by: amOf(c), added_at: new Date().toISOString(), source: "dialer-map" });
+    } else if (t.dataset.addTitle) {
+      const id = t.dataset.addTitle, box = t.closest("[data-title-box]");
+      box.innerHTML = `<form class="title-form"><input maxlength="80" placeholder="Job title (saved to the map only, not HubSpot)" aria-label="Job title"/><button class="go" type="submit">Save</button><button type="button" data-cancel-title>Cancel</button></form>`;
+      const form = box.querySelector("form"); form.querySelector("input").focus();
+      form.addEventListener("submit", (ev) => {
+        ev.preventDefault(); const v = form.querySelector("input").value.trim(); if (!v) return;
+        const c = DATA.contacts.find((x) => contactId(x) === id);
+        savedItem({ type: "set_title", id: mkId("ti"), contact_id: id, contact_name: c ? c.name : "", title: v, added_by: amOf(c), added_at: new Date().toISOString(), source: "dialer-map" });
+      });
+      form.querySelector("[data-cancel-title]").onclick = () => renderDetail();
+    } else if (t.matches("a.tel-btn")) lsSet(LS_TEL, { id: t.dataset.tel, at: Date.now() });
+  });
+  // -- tap-to-call: remember the contact, open Log Call prefilled when the rep returns to the page --
+  const LS_TEL = "dialerTelPending:v1";
+  function checkTelReturn() {
+    const p = lsGet(LS_TEL, null); if (!p) return;
+    const age = Date.now() - p.at;
+    if (age < 4000) return;
+    if (age > 2 * 3600e3) { lsSet(LS_TEL, null); return; }
+    if (el("lcOverlay").classList.contains("show")) return;
+    lsSet(LS_TEL, null);
+    if (DATA.contacts.some((c) => contactId(c) === p.id)) openLogCall(p.id, { tel: true, mins: Math.round(age / 60000) });
+  }
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) checkTelReturn(); });
+  window.addEventListener("focus", checkTelReturn); window.addEventListener("pageshow", checkTelReturn);
+  setTimeout(checkTelReturn, 800);
+  // -- follow-up from Log Call --
+  async function postFollowupForCall(c, call) {
+    const due = el("lcFu").value, ex = followupFor(c);
+    const base = { type: "followup", contact_id: contactId(c), contact_name: c.name || "", added_by: call.am, added_at: new Date().toISOString(), source: "dialer-map" };
+    if (due && (!ex || ex.due !== due)) await savedItem({ ...base, id: mkId("fu"), due, note: (call.notes || "").slice(0, 100) });
+    else if (!due && ex) await savedItem({ ...base, id: mkId("fu"), due: "", note: "" });
+  }
+  el("lcFuQuick").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    const d = new Date(); const v = b.dataset.d;
+    if (v === "clear") { el("lcFu").value = ""; return; }
+    if (v === "mon" || v === "tue") { const want = v === "mon" ? 1 : 2; do { d.setDate(d.getDate() + 1); } while (d.getDay() !== want); }
+    else d.setDate(d.getDate() + Number(v));
+    el("lcFu").value = `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+  });
+  // -- view filter, legend --
+  el("viewToggle").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-view]"); if (!b) return;
+    viewFilter = b.dataset.view; renderLocList(); renderDetail(); el("detailBody").parentElement.scrollTop = 0;
+  });
+  function setLegend(collapsed) { el("legend").classList.toggle("collapsed", collapsed); el("lgCaret").textContent = collapsed ? "▸" : "▾"; el("lgToggle").setAttribute("aria-expanded", String(!collapsed)); }
+  el("lgToggle").onclick = () => setLegend(!el("legend").classList.contains("collapsed"));
+  setLegend(window.matchMedia("(max-width: 900px)").matches);
   window.__manual = { reload: loadManualAdds, get items() { return [...manualItems.values()]; } };
 
   renderLocList();

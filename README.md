@@ -126,7 +126,7 @@ The CSV itself is not committed (it includes contacts that aren't on the map).
 | `sync_supplier_pins.py` | Adds/refreshes the Arconic-managed supplier pins (Middlebury IN, Minster OH); `--check` verifies |
 | `called_today.json` | Today's called contact IDs (drives the pulse); refreshed by a scheduled job |
 | `update_called_today.py` | Resolves a calls CSV/JSON → `called_today.json`; `--publish` pushes it |
-| `manual_add.py` / `added_manual.json` | Drains manually-added locations/contacts from the queue; `added_manual.json` is merged into the map on load |
+| `manual_add.py` / `added_manual.json` / `last_calls.json` | Drains queue items (adds/edits/deletes/titles/follow-ups) and last-call history; both files are merged into the map on load |
 | `update_touch_counts.py` | Applies a HubSpot touch-count CSV → `data.json` + `data.js`; `--publish` pushes them |
 
 
@@ -135,3 +135,13 @@ Green **Log Call** button per contact → shared call log (ntfy.sh queue → Goo
 
 ## Manual add (＋ Location / ＋ Contact)
 Reps can add a new location pin or a new contact from the map header (badge **Added manually**, **Not in HubSpot yet**). Same ntfy queue as Log Call, typed `add_location` / `add_contact`; `manual_add.py` drains it to `added_manual.json` + the sheet tabs *Added Locations* / *Added Contacts*. See [MANUAL_ADD.md](MANUAL_ADD.md).
+
+## Dialer features (v3)
+- **Filters:** *Show: All / Not called today / Follow-ups due* above the contact list (works with the All/Kahekili/Simran tabs; uncalled sorts by most touches).
+- **Tap-to-call:** phone/mobile are large `tel:` buttons; when you return to the page Log Call opens prefilled for that contact (duration estimated from time away).
+- **Last call + follow-ups:** each card shows *Last call: outcome · date* (from `last_calls.json`, today's calls, and the queue); Log Call has an optional **Follow up** date, shown as a badge, cleared with *done*.
+- **Titles:** "Title not scraped" contacts get an inline *Add title* (saved via the queue, labeled "added by", not written to HubSpot).
+- **Scoreboard** in the header: contacts called today per AM. **Called today** green ribbon on cards.
+- **Pins:** smaller; fill = last-call recency (today / this week / older / never), ring = company, pulse = not called today. Legend is collapsible (collapsed on small screens).
+- **Layout:** Unassigned contacts are a collapsible group in the locations list; contact cards are grouped by company with sticky headers.
+- **Edit/delete** manual locations/contacts. Queue types and sync steps: [MANUAL_ADD.md](MANUAL_ADD.md).
