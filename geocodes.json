@@ -124,5 +124,12 @@
     "lat": 33.3062031,
     "lon": -111.841185,
     "source": "nominatim"
+  },
+  "BRT Extrusions · Niles": {
+    "city": "Niles",
+    "region": "Niles, Trumbull County, Ohio, USA",
+    "lat": 41.1808345,
+    "lon": -80.7653797,
+    "source": "nominatim"
   }
 }

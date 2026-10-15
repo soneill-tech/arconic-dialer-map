@@ -18,6 +18,13 @@ window.__DIALER_DATA__ = {
       "id": "5360206404",
       "am": "Simran Subramanian",
       "url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404"
+    },
+    {
+      "name": "BRT Extrusions",
+      "id": "",
+      "am": "Simran Subramanian",
+      "url": "",
+      "industry": "Aluminum extrusion (Niles, OH)"
     }
   ],
   "notes": [
@@ -606,6 +613,26 @@ window.__DIALER_DATA__ = {
       "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/5360206404",
       "contact_count": 27,
       "with_phone": 3,
+      "dm_count": 0
+    },
+    {
+      "id": "brt:Niles",
+      "name": "Niles",
+      "label": "Niles, OH (BRT Extrusions)",
+      "city": "Niles",
+      "region": "Niles, Trumbull County, Ohio, USA",
+      "lat": 41.1808345,
+      "lon": -80.7653797,
+      "company": "BRT Extrusions",
+      "hint": "BRT Extrusions, 1818 N. Main St., Niles, OH — added by request (Steve, 2026-10-15)",
+      "am": "Simran Subramanian",
+      "company_id": "",
+      "company_url": "",
+      "filter": "brt:Niles",
+      "pin": true,
+      "source": "nominatim",
+      "contact_count": 0,
+      "with_phone": 0,
       "dm_count": 0
     }
   ],
@@ -12342,7 +12369,7 @@ window.__DIALER_DATA__ = {
     "with_phone": 194,
     "decision_makers": 2,
     "plant_assigned": 161,
-    "pins": 18,
+    "pins": 19,
     "by_company": {
       "Arconic": {
         "contacts": 419,
@@ -12354,6 +12381,12 @@ window.__DIALER_DATA__ = {
         "contacts": 50,
         "with_phone": 26,
         "pins": 9,
+        "supplier_pins": 0
+      },
+      "BRT Extrusions": {
+        "contacts": 0,
+        "with_phone": 0,
+        "pins": 1,
         "supplier_pins": 0
       }
     },
