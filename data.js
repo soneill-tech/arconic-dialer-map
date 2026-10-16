@@ -68,9 +68,9 @@ window.__DIALER_DATA__ = {
       "company": "Arconic",
       "company_id": "2359249037",
       "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/2359249037",
-      "contact_count": 419,
-      "with_phone": 168,
-      "dm_count": 2,
+      "contact_count": 418,
+      "with_phone": 167,
+      "dm_count": 1,
       "filter": "all",
       "hint": "Full dialer list — not plant-filtered",
       "pin": false
@@ -411,9 +411,9 @@ window.__DIALER_DATA__ = {
       "company": "Arconic",
       "company_id": "2359249037",
       "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/2359249037",
-      "contact_count": 281,
-      "with_phone": 30,
-      "dm_count": 1,
+      "contact_count": 280,
+      "with_phone": 29,
+      "dm_count": 0,
       "filter": "unassigned",
       "hint": "No phone or area code not mapped to a known plant",
       "pin": false
@@ -939,9 +939,9 @@ window.__DIALER_DATA__ = {
       "company_id": "8178764938",
       "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/8178764938",
       "show_company_link": true,
-      "contact_count": 21,
-      "with_phone": 21,
-      "dm_count": 5
+      "contact_count": 22,
+      "with_phone": 22,
+      "dm_count": 6
     },
     {
       "id": "kaw:Norcross",
@@ -975,12 +975,7 @@ window.__DIALER_DATA__ = {
       "filter": "kaw:Newnan",
       "pin": true,
       "source": "nominatim",
-      "kind": "office",
-      "cross_company": true,
-      "contact_ids": [
-        "21373851"
-      ],
-      "hint": "Kawneer corporate office, Newnan, GA — added by request; shows Paul Laslou (Arconic DM) by cross-reference",
+      "hint": "Kawneer corporate office, Newnan, GA — added by request",
       "am": "Simran Subramanian",
       "company": "Kawneer",
       "company_id": "8178764938",
@@ -1040,27 +1035,29 @@ window.__DIALER_DATA__ = {
     {
       "name": "Paul Laslou",
       "role": "Decision Maker",
-      "title": "",
+      "title": "Logistics / Supply Chain Analyst",
       "phone": "770-734-1574",
       "mobile": "734-604-0262",
       "email": "paul.laslou@arconic.com",
       "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/21373851",
-      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/2359249037",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/8178764938",
       "last_activity": "",
       "notes": "On company Decision Maker List",
-      "am": "Kahekili Barrozo",
-      "company": "Arconic",
-      "plant": null,
+      "am": "Simran Subramanian",
+      "company": "Kawneer",
+      "plant": "Newnan",
       "area_code": "770",
       "has_phone": true,
       "is_dm": true,
-      "company_id": "2359249037",
-      "plant_id": null,
+      "company_id": "8178764938",
+      "plant_id": "kaw:Newnan",
       "hubspot_contact_id": "21373851",
       "hubspot_link_type": "record",
       "times_contacted": 1413,
       "sales_activities": 2785,
-      "last_contacted": "2026-10-05"
+      "last_contacted": "2026-10-05",
+      "title_source": "from email signature",
+      "plant_override": true
     },
     {
       "name": "Adam M. Bjorkman",
@@ -20547,12 +20544,12 @@ window.__DIALER_DATA__ = {
     "contacts": 781,
     "with_phone": 332,
     "decision_makers": 8,
-    "plant_assigned": 234,
+    "plant_assigned": 235,
     "pins": 31,
     "by_company": {
       "Arconic": {
-        "contacts": 419,
-        "with_phone": 168,
+        "contacts": 418,
+        "with_phone": 167,
         "pins": 9,
         "supplier_pins": 2
       },
@@ -20581,8 +20578,8 @@ window.__DIALER_DATA__ = {
         "supplier_pins": 0
       },
       "Kawneer": {
-        "contacts": 21,
-        "with_phone": 21,
+        "contacts": 22,
+        "with_phone": 22,
         "pins": 2,
         "supplier_pins": 0
       }

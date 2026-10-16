@@ -959,7 +959,7 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   function contactCard(c) {
     const ci = calledInfo(c), id = contactId(c), lc = lastCallOf(c), fu = followupFor(c), col = COLORS[c.company] || "#888";
     const titleHtml = c.title
-      ? `<div class="title">${esc(c.title)}${c.title_by ? `<span class="title-by" title="Added from the map; not in HubSpot">added by ${esc(c.title_by)}</span>` : ""}</div>`
+      ? `<div class="title">${esc(c.title)}${c.title_by ? `<span class="title-by" title="Added from the map; not in HubSpot">added by ${esc(c.title_by)}</span>` : c.title_source ? `<span class="title-by" title="Title taken from the contact's email signature; not in HubSpot">${esc(c.title_source)}</span>` : ""}</div>`
       : `<div class="title missing" data-title-box="${esc(id)}">${c.manual ? "No title yet" : "Title not scraped"} · <a data-add-title="${esc(id)}">Add title</a></div>`;
     const tel = (p, ico) => `<a class="tel-btn big" data-tel="${esc(id)}" href="${esc(telHref(p))}" title="Tap to call, then Log Call opens when you come back">${ico} ${esc(p)}</a>`;
     const badges = [

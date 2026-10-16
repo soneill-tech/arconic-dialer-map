@@ -124,11 +124,14 @@ def apply_kawneer(d):
     # cross-references him by HubSpot id (contact_ids + cross_company), like supplier pins do, so he shows at Newnan and stays in Arconic.
     want.append(dict(id="kaw:Newnan", name="Newnan", label="Kawneer corporate office", city="Newnan",
                      region="Newnan, Coweta County, Georgia, United States", lat=33.3806716, lon=-84.7996573, filter="kaw:Newnan", pin=True,
-                     source="nominatim", kind="office", cross_company=True, contact_ids=["21373851"],
-                     hint="Kawneer corporate office, Newnan, GA \u2014 added by request; shows Paul Laslou (Arconic DM) by cross-reference", **base))
+                     source="nominatim",
+                     hint="Kawneer corporate office, Newnan, GA \u2014 added by request", **base))
     want.append(dict(id="kaw:unassigned", name="Unassigned / other", label="Kawneer \u00b7 Unassigned / other ACs", city=None, region=None,
                      lat=None, lon=None, filter="unassigned", pin=False, hint="No phone or area code not mapped to a pin", **base))
     existing = {l["id"]: l for l in locs}
+    for w in want:   # Newnan was first a cross-reference pin; now a normal pin (replace in place)
+        if w["id"] == "kaw:Newnan" and w["id"] in existing:
+            locs[locs.index(existing[w["id"]])] = w; existing[w["id"]] = w
     new = [w for w in want if w["id"] not in existing]
     if new:
         un = next((i for i, x in enumerate(locs) if x["id"] == "kaw:unassigned"), None)
@@ -228,8 +231,23 @@ def apply_howmet_suppliers(d):
             locs.insert(at, loc)
 
 
+def move_paul(d):
+    """Paul Laslou (21373851): FULL move Arconic/Kili -> Kawneer/Simran at the Newnan corporate-office pin (Steve, 2026-10-15), title from his
+    email signature. Signature address 555 Guthridge Ct, Norcross GA matches the Norcross pin: to use it instead set PAUL_PIN = "kaw:Norcross".
+    HubSpot link and decision-maker flag are kept. Runs first so Arconic counts are recomputed below."""
+    co = next(c for c in COMPANIES if c["name"] == "Kawneer")
+    for c in d["contacts"]:
+        if str(c.get("hubspot_contact_id")) == "21373851":
+            c.update(company=co["name"], am=co["am"], company_id=co["id"], company_url=co["url"], plant=PAUL_PIN.split(":", 1)[1], plant_id=PAUL_PIN,
+                     title="Logistics / Supply Chain Analyst", title_source="from email signature", plant_override=True)
+
+
+PAUL_PIN = "kaw:Newnan"
+
+
 def apply(d):
     locs, cs = d["locations"], d["contacts"]
+    move_paul(d)
     arc = next(l for l in locs if l["id"] == "arc:all")
     for co in COMPANIES:
         if not any(c["name"] == co["name"] for c in d["companies"]):
@@ -313,6 +331,10 @@ def apply(d):
     for name, v in st["by_company"].items():
         v["pins"] = sum(1 for l in locs if l.get("pin") and l["company"] == name)
         v["supplier_pins"] = sum(1 for l in locs if l.get("kind") == "supplier" and l.get("company") == name)
+    for l in locs:   # "All <company>" entries follow the (possibly moved) contacts
+        if l.get("filter") == "all" and l.get("company"):
+            m = [c for c in cs if c["company"] == l["company"]]
+            l.update(contact_count=len(m), with_phone=sum(1 for c in m if c["has_phone"]), dm_count=sum(1 for c in m if c["is_dm"]))
     return d
 
 if __name__ == "__main__":
