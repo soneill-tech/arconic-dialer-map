@@ -75,8 +75,13 @@ HOWMET_SITES = [  # key, label, city, region, lat, lon, area codes, hint
      "Rochester, NY area (585) \u2014 inferred from phone area code, not a confirmed plant"),
     ("Muskegon", "Muskegon, MI area (231)", "Muskegon", "Muskegon, Muskegon County, Michigan, USA", 43.2341813, -86.2483921, ["231"],
      "W Michigan (231) \u2014 inferred from phone area code, not a confirmed plant"),
+    # Tucson: added by request (Steve 2026-10-15); no area-code rule (acs empty), contacts attached only via OVERRIDES below.
+    ("Tucson", "Tucson, AZ", "Tucson", "Tucson, Pima County, Arizona, United States", 32.2228765, -110.9748470, [],
+     "Tucson, AZ \u2014 plant added by request; contacts assigned explicitly"),
 ]
 OVERRIDES = {"37695051": "arc:Chandler",
+             "3192251": "how:Tucson",   # John Fox (Howmet, 520)
+             "4526951": "how:Tucson",   # Miguel Angulo (Howmet, no phone AC)
              "6825251": "kai:Richmond"}   # Pilar Alvarez (Kaiser, 949 AC) belongs to Richmond (Bellwood), VA per Steve 2026-10-15   # Kevin West (602 = Phoenix AC, assigned to Chandler by request)
 JS = "window.__DIALER_DATA__ = "
 
@@ -111,6 +116,10 @@ def apply_howmet(d):
     new = [w for w in want if w["id"] not in existing]
     if new:
         at = max(i for i, x in enumerate(locs) if x["id"] == "arc:unassigned") + 1
+        un = next((i for i, x in enumerate(locs) if x["id"] == "how:unassigned"), None)
+        pins_new = [w for w in new if w.get("pin")] if un is not None else []
+        if pins_new:
+            locs[un:un] = pins_new; new = [w for w in new if w not in pins_new]
         locs[at:at] = new
     for l in locs:
         if l["company"] != "Howmet Aerospace":

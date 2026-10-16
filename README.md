@@ -168,3 +168,5 @@ Top-right **Radar** toggle + opacity slider (off by default; choice remembered p
 - **Header**: one filter bar, `＋ Add` menu (new location / new contact), scoreboard visible. On the All tab a navy-to-burgundy strip ties the Cowboys star and burgundy ribbon together.
 - **Mobile (<=900px)**: map on top, bottom sheet with Locations / Contacts tabs (peek / half / full), 40px+ touch targets.
 - **Howmet supplier pins**: `how:sup:Mogadore` (contacts with area code 330/234: 4) and `how:sup:Laredo` (956: none yet) are supplier squares defined in `apply_site_overrides.py` (`HOWMET_SUPPLIERS`); they reference existing contacts only.
+- **Basemap toggle**: Light (Esri World Street, default) / Dark (Esri Dark Gray + labels) segmented control in the Radar box; choice saved per device in localStorage (`dialerBasemap:v1`). Layer order: base < radar < labels < pins.
+- **Howmet Tucson, AZ** plant pin (`how:Tucson`): contacts John Fox (3192251) and Miguel Angulo (4526951) assigned by explicit `OVERRIDES` in `apply_site_overrides.py`.

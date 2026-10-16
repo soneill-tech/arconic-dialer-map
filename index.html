@@ -306,6 +306,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
 </style>
 <style>.radar-ctl{background:rgba(26,35,50,.94);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:.74rem;min-width:130px}
 .radar-ctl .rc-row{display:flex;align-items:center;gap:6px;margin:2px 0;cursor:pointer}.radar-ctl input[type=range]{width:100%;accent-color:var(--accent)}
+.radar-ctl .base-seg{display:flex;margin-bottom:4px}.radar-ctl .base-seg button{flex:1;padding:4px 8px;font-size:.74rem}
 .radar-ctl .rc-status{color:var(--muted);font-size:.68rem;min-height:1em}
 </style>
 <style>/* ---- v4: dark basemap, clusters, cards, header, mobile sheet ---- */
@@ -995,15 +996,25 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   try {
     map = L.map("map", { zoomControl: true, attributionControl: true })
       .setView([39.8, -89.5], 5);
-    // Dark/muted basemap: Esri Dark Gray Canvas (free, no key) + a labels layer above the radar pane (CARTO's dark tiles now require an API key).
-    const tiles = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
-      attribution: "Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors",
-      maxNativeZoom: 16,
-      maxZoom: 19,
-    });
+    // Basemaps: Light (Esri World Street) or Dark (Esri Dark Gray + labels). Order: base (tilePane 200) < radar (250) < labels (260) < pins.
     map.createPane("labelsPane"); map.getPane("labelsPane").style.zIndex = 260; map.getPane("labelsPane").style.pointerEvents = "none";
-    L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", { pane: "labelsPane", maxNativeZoom: 16, maxZoom: 19 }).addTo(map);
-    tiles.addTo(map);
+    const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/";
+    const BASES = {
+      light: [L.tileLayer(ESRI + "World_Street_Map/MapServer/tile/{z}/{y}/{x}", { attribution: "Tiles &copy; Esri &mdash; Esri, HERE, Garmin, USGS, &copy; OpenStreetMap contributors", maxZoom: 19 })],
+      dark: [L.tileLayer(ESRI + "Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", { attribution: "Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors", maxNativeZoom: 16, maxZoom: 19 }),
+             L.tileLayer(ESRI + "Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", { pane: "labelsPane", maxNativeZoom: 16, maxZoom: 19 })],
+    };
+    let baseMode = null;
+    window.__setBase = function (mode) {
+      if (!BASES[mode]) mode = "light";
+      if (baseMode) BASES[baseMode].forEach((l) => map.removeLayer(l));
+      baseMode = mode; BASES[mode].forEach((l) => l.addTo(map));
+      document.body.dataset.base = mode;
+      try { localStorage.setItem("dialerBasemap:v1", mode); } catch (e) {}
+      const t = document.getElementById("baseSeg"); if (t) t.querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.base === mode));
+    };
+    let savedBase = "light"; try { savedBase = localStorage.getItem("dialerBasemap:v1") || "light"; } catch (e) {}
+    window.__setBase(savedBase);
     // Nearby pins collapse into numbered bubbles that expand on zoom (falls back to plain markers if the plugin fails to load).
     pinLayer = L.markerClusterGroup ? L.markerClusterGroup({
       maxClusterRadius: 38, showCoverageOnHover: false, spiderfyOnMaxZoom: true, disableClusteringAtZoom: 10,
@@ -1618,13 +1629,16 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
       map.createPane("radarPane"); map.getPane("radarPane").style.zIndex = 250; map.getPane("radarPane").style.pointerEvents = "none";  // above tiles, below pins/popups
       const Ctl = L.Control.extend({ options: { position: "topright" }, onAdd() {
         const d = L.DomUtil.create("div", "radar-ctl leaflet-bar");
-        d.innerHTML = `<label class="rc-row"><input type="checkbox" id="radarOn"/> <strong>Radar</strong></label>
+        d.innerHTML = `<div class="seg base-seg" id="baseSeg" title="Basemap"><button type="button" data-base="light">Light</button><button type="button" data-base="dark">Dark</button></div>
+          <label class="rc-row"><input type="checkbox" id="radarOn"/> <strong>Radar</strong></label>
           <div class="rc-row"><input type="range" id="radarOp" min="0.2" max="1" step="0.05" aria-label="Radar opacity" title="Opacity"/></div>
           <div class="rc-status" id="radarStatus"></div>`;
         L.DomEvent.disableClickPropagation(d); L.DomEvent.disableScrollPropagation(d);
         return d;
       } });
       map.addControl(new Ctl());
+      el("baseSeg").addEventListener("click", (e) => { const b = e.target.closest("button[data-base]"); if (b) window.__setBase(b.dataset.base); });
+      window.__setBase(document.body.dataset.base);
       el("radarOn").checked = radarPref.on; el("radarOp").value = radarPref.opacity;
       el("radarOn").addEventListener("change", (e) => setRadar(e.target.checked));
       el("radarOp").addEventListener("input", (e) => { radarPref.opacity = Number(e.target.value); lsSet(LS_RADAR, radarPref); if (radarLayer) radarLayer.setOpacity(radarPref.opacity); });

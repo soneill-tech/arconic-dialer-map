@@ -596,6 +596,27 @@ window.__DIALER_DATA__ = {
       "contact_ids": []
     },
     {
+      "id": "how:Tucson",
+      "name": "Tucson",
+      "label": "Tucson, AZ",
+      "city": "Tucson",
+      "region": "Tucson, Pima County, Arizona, United States",
+      "lat": 32.2228765,
+      "lon": -110.974847,
+      "filter": "how:Tucson",
+      "pin": true,
+      "source": "nominatim",
+      "hint": "Tucson, AZ — plant added by request; contacts assigned explicitly",
+      "am": "Kahekili Barrozo",
+      "company": "Howmet Aerospace",
+      "company_id": "32027566669",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/32027566669",
+      "show_company_link": true,
+      "contact_count": 2,
+      "with_phone": 1,
+      "dm_count": 0
+    },
+    {
       "id": "how:unassigned",
       "name": "Unassigned / other",
       "label": "Howmet · Unassigned / other ACs",
@@ -611,8 +632,8 @@ window.__DIALER_DATA__ = {
       "company_id": "32027566669",
       "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/32027566669",
       "show_company_link": true,
-      "contact_count": 231,
-      "with_phone": 60,
+      "contact_count": 229,
+      "with_phone": 59,
       "dm_count": 1
     },
     {
@@ -14113,17 +14134,18 @@ window.__DIALER_DATA__ = {
       "notes": "Title not scraped",
       "am": "Kahekili Barrozo",
       "company": "Howmet Aerospace",
-      "plant": null,
+      "plant": "Tucson",
       "area_code": "520",
       "has_phone": true,
       "is_dm": false,
       "company_id": "32027566669",
-      "plant_id": null,
+      "plant_id": "how:Tucson",
       "hubspot_contact_id": "3192251",
       "hubspot_link_type": "record",
       "times_contacted": 0,
       "sales_activities": 0,
-      "last_contacted": null
+      "last_contacted": null,
+      "plant_override": true
     },
     {
       "name": "Jonathan Villegas",
@@ -18438,17 +18460,18 @@ window.__DIALER_DATA__ = {
       "notes": "Title not scraped",
       "am": "Kahekili Barrozo",
       "company": "Howmet Aerospace",
-      "plant": null,
+      "plant": "Tucson",
       "area_code": null,
       "has_phone": false,
       "is_dm": false,
       "company_id": "32027566669",
-      "plant_id": null,
+      "plant_id": "how:Tucson",
       "hubspot_contact_id": "4526951",
       "hubspot_link_type": "record",
       "times_contacted": 0,
       "sales_activities": 0,
-      "last_contacted": null
+      "last_contacted": null,
+      "plant_override": true
     },
     {
       "name": "Miguel Blanco",
@@ -19905,8 +19928,8 @@ window.__DIALER_DATA__ = {
     "contacts": 760,
     "with_phone": 311,
     "decision_makers": 3,
-    "plant_assigned": 221,
-    "pins": 28,
+    "plant_assigned": 223,
+    "pins": 29,
     "by_company": {
       "Arconic": {
         "contacts": 419,
@@ -19929,7 +19952,7 @@ window.__DIALER_DATA__ = {
       "Howmet Aerospace": {
         "contacts": 275,
         "with_phone": 104,
-        "pins": 7,
+        "pins": 8,
         "supplier_pins": 2
       },
       "Reliable Silver": {
