@@ -71,5 +71,8 @@ Reps can **Delete (hide)** or **Relocate** any contact card, including HubSpot-s
 Latest message per contact wins (time order). `manual_add.py publish` stores them in `added_manual.json` with the other items and `manual_add.py rows`
 lists them in the **Manual Changes** tab (type, target_id = contact id, detail JSON), so the hourly routine needs no new steps: just keep running
 `manual_add.py publish` (and `rows` for the sheet). Hidden contacts drop out of counts, filters, pins/pulses and the scoreboard; the **Show → Hidden** view
-lists them with **Restore to map**. Delete asks for confirmation. Relocate only moves within the contact's company (non-supplier pins or Unassigned).
+lists them with **Restore to map**. Delete asks for confirmation. Relocate can move a contact to ANY customer (`company_to` on `move_contact`: Arconic, Kaiser, Howmet, Kawneer, BRT, Reliable, or any added company) and then to
+any non-supplier pin or Unassigned of that company. A cross-company move is display-only: the card's company, ring color/stripe, AM owner display (the company's AM),
+grouping and counts follow, the HubSpot link stays, nothing is written to HubSpot. `reset_move {contact_id}` ("Reset location" on the card) undoes a move;
+latest of move_contact/reset_move per contact wins. `manual_add.py publish` stores these like every other typed item (no extra sync steps).
 **Nothing is ever written to HubSpot** (hide/move are map-only overlays; the HubSpot record is untouched).

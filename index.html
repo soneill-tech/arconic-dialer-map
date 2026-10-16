@@ -406,6 +406,37 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
 }
 @media (min-width:901px) and (max-width:1250px){.sb-strip{display:none}}
 </style>
+<style>/* ---- flat location list ---- */
+.sidebar h2{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.sidebar h2 .seg button{padding:3px 10px;font-size:.72rem;text-transform:none;letter-spacing:0}
+#listCtl{padding:8px 10px;display:grid;gap:7px;border-bottom:1px solid var(--border);background:var(--panel)}
+#listCtl[hidden]{display:none}
+#listCtl .seg{display:flex}#listCtl .seg button{flex:1;padding:5px 8px;font-size:.78rem}
+#lcSearch{width:100%;padding:7px 10px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font:13px var(--font)}
+.lc-chips{display:flex;flex-wrap:wrap;gap:5px}
+.lc-chips button{background:var(--bg);border:1px solid var(--border);color:var(--muted);border-radius:999px;padding:3px 10px;font:600 .72rem var(--font);cursor:pointer}
+.lc-chips button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.lc-chips button .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}
+#locList.flat{padding:4px 0}
+.loc-row{display:grid;grid-template-columns:1fr auto;gap:1px 8px;align-items:center;padding:7px 12px 7px 10px;border-left:4px solid var(--co,var(--border));border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer;min-height:44px}
+.loc-row:hover{background:var(--panel2)}.loc-row.active{background:rgba(59,130,246,.16);box-shadow:inset 0 0 0 1px var(--accent)}
+.loc-row .nm{font-weight:600;font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.loc-row .sub{grid-column:1;font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.loc-row .rt{grid-column:2;grid-row:1 / span 2;display:flex;align-items:center;gap:5px}
+.loc-row .cnt{font-weight:700;font-size:.85rem;min-width:2ch;text-align:right}
+.loc-row .ct{font-size:.66rem;font-weight:700;color:#86efac;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.4);border-radius:999px;padding:1px 6px}
+.loc-row .ty{font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:4px;padding:1px 5px;background:var(--panel2);color:var(--muted);border:1px solid var(--border)}
+.loc-row .ty.hq{color:#fde68a;border-color:#a16207}.loc-row .ty.sup{color:#fbbf24;border-color:#92400e}.loc-row .ty.plant{color:#93c5fd;border-color:#1d4ed8}
+.lc-empty{padding:16px;color:var(--muted);font-size:.85rem}
+</style>
+<style>/* ---- scorebug v2 (bigger) + fireworks ---- */
+.sb-row{height:58px}.sb-team{gap:10px;padding:0 20px}.sb-team .nm{font-size:1.5rem}.sb-team .sc{font-size:2.7rem}
+.sb-kili{padding-right:34px;clip-path:polygon(0 0,100% 0,calc(100% - 18px) 100%,0 100%)}.sb-sim{padding-left:34px;clip-path:polygon(18px 0,100% 0,100% 100%,0 100%)}
+.sb-team svg{width:19px;height:19px}.sb-mid{font-size:.8rem;padding:0 13px}
+.sb-strip{font-size:.86rem;padding:3px 16px}
+#fxCanvas{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:6000}
+@media (max-width:900px){.sb-row{height:46px}.sb-team{padding:0 14px;gap:7px}.sb-team .nm{font-size:1.25rem}.sb-team .sc{font-size:1.95rem}.sb-mid{font-size:.68rem;padding:0 8px}.sb-team svg{width:15px;height:15px}}
+</style>
 </head>
 <body>
 <header>
@@ -440,7 +471,12 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
 
 <div class="layout">
   <aside class="sidebar">
-    <h2>Locations</h2>
+    <h2><span>Locations</span><span class="seg" id="viewMode" title="Locations layout"><button type="button" data-mode="cards">Cards</button><button type="button" data-mode="list">List</button></span></h2>
+    <div id="listCtl" hidden>
+      <div class="lc-row"><span class="seg" id="lcRep" title="Rep (same as the top tabs)"><button type="button" data-am="all">All</button><button type="button" data-am="Kahekili Barrozo">Kahekili</button><button type="button" data-am="Simran Subramanian">Simran</button></span></div>
+      <input type="search" id="lcSearch" placeholder="Search locations…" aria-label="Search location names" />
+      <div class="lc-chips" id="lcAcct" aria-label="Account"></div>
+    </div>
     <div id="locList"></div>
   </aside>
   <div class="map-wrap">
@@ -519,8 +555,9 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
 <div class="foot"><span class="synchint">⟳ Shared with all reps within ~5 min.</span><div style="display:flex;gap:8px"><button type="button" class="btn" id="alCancel">Cancel</button><button type="button" class="btn save" id="alSave">Add location</button></div></div>
 </div></div>
 <div class="overlay" id="mvOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="mvTitle">
-<h3 id="mvTitle">Relocate contact</h3><div class="who" id="mvWho">Moves the contact to another location on the map. Nothing is written to HubSpot.</div>
-<label>Move to</label><select id="mvLoc"></select>
+<h3 id="mvTitle">Relocate contact</h3><div class="who" id="mvWho">Moves the contact on this map only (to another location or customer). The HubSpot record, link and ownership are not changed; nothing is written to HubSpot.</div>
+<label>Customer</label><select id="mvCo"></select>
+<label>Location</label><select id="mvLoc"></select>
 <div class="foot"><span class="synchint">⟳ Shared with all reps within ~5 min.</span><div style="display:flex;gap:8px"><button type="button" class="btn" id="mvCancel">Cancel</button><button type="button" class="btn primary" id="mvSave">Move</button></div></div>
 </div></div>
 <div class="overlay" id="acOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="acTitle">
@@ -749,7 +786,49 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     return "tel:" + n + (ext ? ",," + ext : "");
   }
 
+  // ---- Cards | List toggle: flat, scannable location list with Rep / Account filters + name search (same selectLoc as cards) ----
+  const LS_LOCVIEW = "dialerLocView:v1";
+  const lvGet = () => { try { return JSON.parse(localStorage.getItem(LS_LOCVIEW)) || {}; } catch (e) { return {}; } };
+  let locViewMode = lvGet().mode === "list" ? "list" : "cards";
+  let acctFilter = lvGet().acct || "all", locSearchQ = "";
+  const shortCo = (n) => String(n).replace(/ (Aluminum|Aerospace)$/, "");
+  const stateOf = (l) => { const p = String(l.region || "").split(",").map((x) => x.trim()).filter(Boolean); if (!p.length) return ""; const last = p[p.length - 1]; return /^(USA|United States)$/i.test(last) ? (p[p.length - 2] || "") : last; };
+  const pinType = (l) => !l.pin ? (l.filter === "unassigned" ? "Unassigned" : "All") : isSupplier(l) ? "Supplier" : /\bHQ\b|corporate/i.test((l.label || "") + " " + (l.name || "")) ? "HQ" : "Plant";
+  function saveLocView() { try { localStorage.setItem(LS_LOCVIEW, JSON.stringify({ mode: locViewMode, acct: acctFilter })); } catch (e) {} }
+  function renderLocFlat() {
+    const list = el("locList"); list.innerHTML = ""; list.classList.add("flat");
+    el("lcRep").querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.am === amFilter));
+    const cos = (DATA.companies || []).filter((c) => amFilter === "all" || c.am === amFilter);
+    if (acctFilter !== "all" && !cos.some((c) => c.name === acctFilter)) acctFilter = "all";
+    el("lcAcct").innerHTML = [`<button type="button" data-co="all" class="${acctFilter === "all" ? "active" : ""}">All</button>`].concat(cos.map((c) =>
+      `<button type="button" data-co="${esc(c.name)}" class="${acctFilter === c.name ? "active" : ""}"><span class="dot" style="background:${COLORS[c.name] || "#888"}"></span>${esc(shortCo(c.name))}</button>`)).join("");
+    const q = locSearchQ.trim().toLowerCase();
+    const rows = DATA.locations.filter(locMatchesAM).filter((l) => acctFilter === "all" || l.company === acctFilter || (!l.company && false))
+      .filter((l) => !q || [l.label, l.name, l.city, l.region, l.company].join(" ").toLowerCase().includes(q));
+    if (!rows.length) list.innerHTML = `<div class="lc-empty">No locations match.</div>`;
+    rows.forEach((loc) => {
+      const n = filteredContactsForLoc(loc).length, k = calledMap.size ? contactsAtLoc(loc).filter((c) => contactMatchesAM(c) && calledInfo(c)).length : 0;
+      const ty = pinType(loc), cls = ty === "HQ" ? "hq" : ty === "Supplier" ? "sup" : ty === "Plant" ? "plant" : "";
+      const sub = loc.pin ? [loc.city, stateOf(loc)].filter(Boolean).join(", ") + (loc.company ? " · " + shortCo(loc.company) : "") : (loc.company ? shortCo(loc.company) + " · " : "") + (loc.filter === "unassigned" ? "no plant assigned" : "full list");
+      const row = document.createElement("div");
+      row.className = "loc-row" + (loc.id === selectedLocId ? " active" : ""); row.dataset.loc = loc.id;
+      if (loc.company) row.style.setProperty("--co", COLORS[loc.company] || "#888");
+      row.innerHTML = `<div class="nm">${esc(loc.label || loc.name)}</div><div class="sub">${esc(sub)}</div>
+        <div class="rt">${k ? `<span class="ct" title="${k} called today">✓ ${k}</span>` : ""}<span class="ty ${cls}">${ty}</span><span class="cnt" title="contacts shown">${n}</span></div>`;
+      row.onclick = () => selectLoc(loc.id, true);
+      list.appendChild(row);
+    });
+    renderFallback();
+  }
+  function setLocView(mode) {
+    locViewMode = mode; saveLocView();
+    el("viewMode").querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.mode === mode));
+    el("listCtl").hidden = mode !== "list";
+    if (mode !== "list") el("locList").classList.remove("flat");
+    renderLocList();
+  }
   function renderLocList() {
+    if (locViewMode === "list") return renderLocFlat();
     const list = el("locList");
     list.innerHTML = "";
     let lastGroup = undefined;
@@ -910,9 +989,9 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
         </div>
         ${c.manual ? `<div class="plant-tag" style="color:var(--muted)">Location: ${c.plant_id ? esc(plantLabel(c)) : "unassigned"} (set manually${c.added_by ? " by " + esc(c.added_by) : ""})</div>
           <div class="mact"><a data-edit-con="${esc(c.manual_id)}">✎ Edit</a><a class="del" data-del-con="${esc(c.manual_id)}">🗑 Delete</a></div>`
-          : c.moved_by ? `<div class="plant-tag">Moved to: ${c.plant_id ? esc(plantLabel(c)) : "Unassigned"} (by ${esc(c.moved_by)}; map only)</div>`
+          : c.moved_by ? `<div class="plant-tag">Moved to: ${c.plant_id ? esc(plantLabel(c)) : "Unassigned"} (${c.moved_co ? esc(c.company) + " · " : ""}by ${esc(c.moved_by)}; map only)</div>`
           : c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
-        <div class="mact2">${c.hidden ? `<a class="restore" data-restore="${esc(id)}">↩ Restore to map</a>` : `<a data-move="${esc(id)}">⇄ Relocate</a>${c.manual ? "" : `<a class="del" data-hide="${esc(id)}">🚫 Delete (hide)</a>`}`}</div>
+        <div class="mact2">${c.hidden ? `<a class="restore" data-restore="${esc(id)}">↩ Restore to map</a>` : `<a data-move="${esc(id)}">⇄ Relocate</a>${c.moved_by ? `<a data-reset-move="${esc(id)}">↺ Reset location</a>` : ""}${c.manual ? "" : `<a class="del" data-hide="${esc(id)}">🚫 Delete (hide)</a>`}`}</div>
         ${(() => { const sl = supplierLocsFor(c); return sl.length ? `<div class="also-tag">Also at: ${sl.map((l) => esc(String(l.name || l.city).replace(/ \(supplier\)$/, ""))).join(" · ")}</div>` : ""; })()}
       </div>`;
   }
@@ -999,6 +1078,11 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   }
   renderStats();
 
+  el("viewMode").addEventListener("click", (e) => { const b = e.target.closest("button[data-mode]"); if (b) setLocView(b.dataset.mode); });
+  el("lcRep").addEventListener("click", (e) => { const b = e.target.closest("button[data-am]"); if (b) el("amFilter").querySelector(`button[data-am="${b.dataset.am}"]`).click(); });   // one source of truth: the top tabs
+  el("lcSearch").addEventListener("input", (e) => { locSearchQ = e.target.value; renderLocList(); });
+  el("lcAcct").addEventListener("click", (e) => { const b = e.target.closest("button[data-co]"); if (b) { acctFilter = b.dataset.co; saveLocView(); renderLocList(); } });
+  setLocView(locViewMode);
   // AM filter: All / Kahekili (Arconic) / Simran (Kaiser)
   el("amFilter").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-am]");
@@ -1287,7 +1371,40 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     closeLogCall();
     applyCalledFile(calledFile);
     refreshCallStatusUI();
+    if (!logged.get(call.call_id).pending && !isTestCall(c, call)) fireworks(call.am === "Simran" ? "Simran" : "Kili");   // only on a successful save by this rep
   }
+  const isTestCall = (c, call) => /\btest\b/i.test((c.name || "") + " " + (call.notes || "")) || /[?&]test\b/.test(location.search);
+  // Fireworks over the AM's score number (canvas, pointer-events none, ~1.8s). Skipped under prefers-reduced-motion (the score still pops).
+  function fireworks(am) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const target = el(am === "Simran" ? "sbSim" : "sbKili"); if (!target || !target.offsetParent) return;
+    const r = target.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    const pal = am === "Simran" ? ["#c0304f", "#e11d48", "#f5c542", "#ffd966", "#fff4d6"] : ["#3b6fd1", "#60a5fa", "#cbd5e1", "#e2e8f0", "#ffffff"];
+    document.querySelectorAll("#fxCanvas").forEach((n) => n.remove());
+    const cv = document.createElement("canvas"); cv.id = "fxCanvas"; const dpr = window.devicePixelRatio || 1;
+    cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; document.body.appendChild(cv);
+    const g = cv.getContext("2d"); g.scale(dpr, dpr);
+    const parts = [];
+    [[0, 0, 46], [-26, 12, 30], [28, 8, 30]].forEach(([dx, dy, n], bi) => {
+      for (let i = 0; i < n; i++) {
+        const a = Math.random() * Math.PI * 2, sp = 1.5 + Math.random() * (bi ? 3 : 4.5);
+        parts.push({ x: cx + dx, y: cy + dy, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 0, max: 70 + Math.random() * 40, delay: bi * 10, c: pal[(Math.random() * pal.length) | 0], s: 1.5 + Math.random() * 2 });
+      }
+    });
+    let f = 0;
+    (function tick() {
+      f++; g.clearRect(0, 0, innerWidth, innerHeight);
+      g.globalCompositeOperation = "lighter";
+      parts.forEach((p) => {
+        if (f < p.delay) return;
+        p.life++; p.vx *= 0.97; p.vy = p.vy * 0.97 + 0.05; p.x += p.vx; p.y += p.vy;
+        const k = 1 - p.life / p.max; if (k <= 0) return;
+        g.globalAlpha = Math.max(0, k); g.fillStyle = p.c; g.beginPath(); g.arc(p.x, p.y, p.s * (0.6 + k * 0.6), 0, 6.283); g.fill();
+      });
+      if (f < 120) requestAnimationFrame(tick); else cv.remove();
+    })();
+  }
+  window.__fireworks = fireworks;
   el("lcCancel").onclick = closeLogCall;
   el("lcSave").onclick = saveLogCall;
   el("lcOverlay").addEventListener("click", (e) => { if (e.target.id === "lcOverlay") closeLogCall(); });
@@ -1302,12 +1419,12 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   const ADDED_URL = "added_manual.json";
   const LS_ADD_CACHE = "dialerAddCache:v1";      // {id: item}
   const LS_ADD_PENDING = "dialerAddPending:v1";  // [item] not yet accepted by the queue
-  const QTYPES = ["add_location", "add_contact", "edit_item", "delete_item", "set_title", "followup", "hide_contact", "restore_contact", "move_contact"];
+  const QTYPES = ["add_location", "add_contact", "edit_item", "delete_item", "set_title", "followup", "hide_contact", "restore_contact", "move_contact", "reset_move"];
   const LOC_EDIT = ["city", "state", "address", "lat", "lon", "geo_source"];
   const CON_EDIT = ["name", "title", "phone", "mobile", "email", "location_id"];
   const BASE_LOCS = DATA.locations.slice();
   const BASE_CONTACTS = DATA.contacts.slice();
-  BASE_CONTACTS.forEach((c) => { c._t0 = c.title || ""; c._p0 = { plant: c.plant, plant_id: c.plant_id }; });
+  BASE_CONTACTS.forEach((c) => { c._t0 = c.title || ""; c._p0 = { plant: c.plant, plant_id: c.plant_id, company: c.company, am: c.am, company_id: c.company_id, company_url: c.company_url }; });
   let HIDDEN = [];
   const manualItems = new Map();                 // id -> item
   const CO_META = {};
@@ -1317,7 +1434,7 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   const itemTitle = (it) => ({ add_location: () => "New location: " + it.city + ", " + it.state, add_contact: () => "New contact: " + it.name,
     edit_item: () => "Edit " + it.target_id, delete_item: () => "Delete " + it.target_id, set_title: () => "Title: " + (it.contact_name || it.contact_id),
     followup: () => "Follow-up: " + (it.contact_name || it.contact_id), hide_contact: () => "Hide: " + (it.contact_name || it.contact_id),
-    restore_contact: () => "Restore: " + (it.contact_name || it.contact_id), move_contact: () => "Move: " + (it.contact_name || it.contact_id) })[it.type]();
+    restore_contact: () => "Restore: " + (it.contact_name || it.contact_id), move_contact: () => "Move: " + (it.contact_name || it.contact_id), reset_move: () => "Reset location: " + (it.contact_name || it.contact_id) })[it.type]();
   async function postItem(item) {
     const res = await fetch(LOG_TOPIC_URL, { method: "POST", body: JSON.stringify(item),
       headers: { "Title": itemTitle(item), "Tags": "dialer-add" } });
@@ -1380,7 +1497,8 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
       } else if (it.type === "delete_item") adds.delete(it.target_id);
       else if (it.type === "hide_contact" && it.contact_id) hides.set(String(it.contact_id), { by: it.added_by || "team" });
       else if (it.type === "restore_contact" && it.contact_id) hides.delete(String(it.contact_id));
-      else if (it.type === "move_contact" && it.contact_id) moves.set(String(it.contact_id), { loc: it.location_id || "", by: it.added_by || "team" });
+      else if (it.type === "move_contact" && it.contact_id) moves.set(String(it.contact_id), { loc: it.location_id || "", co: it.company_to || it.target_company || "", by: it.added_by || "team" });
+      else if (it.type === "reset_move" && it.contact_id) moves.delete(String(it.contact_id));
       else if (it.type === "set_title" && it.contact_id) titles.set(String(it.contact_id), it);
       else if (it.type === "followup" && it.contact_id) followups.set(String(it.contact_id), { due: it.due || "", note: it.note || "", by: it.added_by || "" });
     });
@@ -1395,13 +1513,16 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     DATA.locations = locs;
     const everyone = BASE_CONTACTS.concat(mcs);
     everyone.forEach((c) => {   // moves (relocate) and hides (delete from map): map-only overlays, never written to HubSpot
-      if (c._p0) { c.plant = c._p0.plant; c.plant_id = c._p0.plant_id; }
+      if (c._p0) { c.plant = c._p0.plant; c.plant_id = c._p0.plant_id; c.company = c._p0.company; c.am = c._p0.am; c.company_id = c._p0.company_id; c.company_url = c._p0.company_url; }
       c.moved_by = ""; c.hidden = false; c.hidden_by = "";
       const id = contactId(c), mv = moves.get(id);
       if (mv) {
+        const m = mv.co && CO_META[mv.co] ? CO_META[mv.co] : null;   // display-only move to another customer: company, AM owner, color, grouping follow
+        if (m && mv.co !== c.company) { c.company = m.name; c.am = m.am; c.company_id = m.id; c.company_url = m.url; c.plant = null; c.plant_id = null; c.moved_by = mv.by; c.moved_co = true; }
+        else c.moved_co = false;
         if (!mv.loc) { c.plant = null; c.plant_id = null; c.moved_by = mv.by; }
         else { const tl = locs.find((l) => l.id === mv.loc && l.company === c.company && l.pin && !isSupplier(l)); if (tl) { c.plant = tl.name || tl.label; c.plant_id = tl.id; c.moved_by = mv.by; } }
-      }
+      } else c.moved_co = false;
       const hd = id ? hides.get(id) : null;
       if (hd) { c.hidden = true; c.hidden_by = hd.by; }
     });
@@ -1606,22 +1727,29 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     } else if (t.dataset.restore) {
       const c = anyContact(t.dataset.restore); if (!c) return;
       savedItem({ type: "restore_contact", id: mkId("rc"), contact_id: t.dataset.restore, contact_name: c.name, company: c.company, added_by: by, added_at: new Date().toISOString(), source: "dialer-map" });
+    } else if (t.dataset.resetMove) {
+      const c = anyContact(t.dataset.resetMove); if (!c) return;
+      savedItem({ type: "reset_move", id: mkId("rm"), contact_id: t.dataset.resetMove, contact_name: c.name, added_by: by, added_at: new Date().toISOString(), source: "dialer-map" });
     } else {
       const c = anyContact(t.dataset.move); if (!c) return;
       mvFor = c;
       el("mvTitle").textContent = `Relocate ${c.name}`;
-      const opts = DATA.locations.filter((l) => l.company === c.company && l.pin && !isSupplier(l)).map((l) => `<option value="${esc(l.id)}">${esc(l.label || l.name)}</option>`);
-      el("mvLoc").innerHTML = `<option value="">Unassigned / other</option>` + opts.join("");
-      el("mvLoc").value = c.plant_id || "";
+      el("mvCo").innerHTML = (DATA.companies || []).map((co) => `<option value="${esc(co.name)}">${esc(co.name)} · ${esc(AM_SHORT[co.am] || co.am || "")}</option>`).join("");
+      el("mvCo").value = c.company; fillMvLoc(c.company, c.plant_id || "");
       el("mvOverlay").classList.add("show");
     }
   }
+  function fillMvLoc(co, sel) {
+    const opts = DATA.locations.filter((l) => l.company === co && l.pin && !isSupplier(l)).map((l) => `<option value="${esc(l.id)}">${esc(l.label || l.name)}</option>`);
+    el("mvLoc").innerHTML = `<option value="">Unassigned / other</option>` + opts.join(""); el("mvLoc").value = sel || "";
+  }
+  el("mvCo").addEventListener("change", () => fillMvLoc(el("mvCo").value, ""));
   el("mvCancel").onclick = () => closeOv("mvOverlay");
   el("mvOverlay").addEventListener("click", (e) => { if (e.target.id === "mvOverlay") closeOv("mvOverlay"); });
   el("mvSave").onclick = async () => {
     const c = mvFor; if (!c) return; closeOv("mvOverlay");
     const lid = el("mvLoc").value, lab = lid ? (DATA.locations.find((l) => l.id === lid) || {}).label : "Unassigned";
-    await savedItem({ type: "move_contact", id: mkId("mc"), contact_id: contactId(c), contact_name: c.name, company: c.company, location_id: lid, location_label: lab,
+    await savedItem({ type: "move_contact", id: mkId("mc"), contact_id: contactId(c), contact_name: c.name, company: c.company, location_id: lid, location_label: lab, company_to: el("mvCo").value,
       added_by: amFilter === "Simran Subramanian" ? "Simran" : "Kili", added_at: new Date().toISOString(), source: "dialer-map" });
     mvFor = null;
   };
@@ -1640,9 +1768,9 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   }, true);
   // -- detail panel actions: edit/delete manual contacts, add title, clear follow-up, tap-to-call --
   el("detailBody").addEventListener("click", (e) => {
-    const t = e.target.closest("[data-edit-con],[data-del-con],[data-add-title],[data-fu-done],[data-hide],[data-restore],[data-move],a.tel-btn");
+    const t = e.target.closest("[data-edit-con],[data-del-con],[data-add-title],[data-fu-done],[data-hide],[data-restore],[data-move],[data-reset-move],a.tel-btn");
     if (!t) return;
-    if (t.dataset.hide || t.dataset.restore || t.dataset.move) return contactAction(t);
+    if (t.dataset.hide || t.dataset.restore || t.dataset.move || t.dataset.resetMove) return contactAction(t);
     if (t.dataset.editCon) { const st = manualState(t.dataset.editCon); if (st) openAddCon(st); }
     else if (t.dataset.delCon) deleteManual(t.dataset.delCon, "con");
     else if (t.dataset.fuDone) {

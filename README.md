@@ -176,3 +176,8 @@ Top-right **Radar** toggle + opacity slider (off by default; choice remembered p
 - **Hide / Restore / Relocate** any contact (queue types `hide_contact`, `restore_contact`, `move_contact`, see MANUAL_ADD.md). Map-only; nothing is written to HubSpot.
 - **Scorebug** header scoreboard (KILI navy / SIMRAN burgundy, pop animation on change, CT clock + last sync strip; compact single bar under 900px).
 - **Dark mode borders**: `assets/borders.json` (US states + country lines, Natural-Earth-style simplified) in a pane above radar/labels and below pins; hidden in Light mode.
+
+## v6
+- **Cards | List** toggle at the top of the left panel (remembered per device, `dialerLocView:v1`): flat compact location rows (company stripe, name, city/state, pin type Plant/Supplier/HQ, called-today badge, contact count), Rep seg (synced with the top tabs), Account chips built from `DATA.companies` (filtered to the selected rep), and name search. Clicking a row = `selectLoc` like cards. Works in the mobile bottom sheet.
+- **Scorebug** is ~30% larger; saving a Log Call (successful POST, non-test) fires a canvas fireworks burst over that AM's score (Kili navy/silver/white, Simran burgundy/gold; pointer-events none; skipped for prefers-reduced-motion, page load, other reps' synced calls, test rows).
+- **Relocate** can now move a contact to any customer + location (`move_contact.company_to`), display-only; **Reset location** (`reset_move`) undoes it. See MANUAL_ADD.md.
