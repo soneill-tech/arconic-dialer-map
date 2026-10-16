@@ -203,6 +203,7 @@
     padding: 2px 8px; border-radius: 999px; background: rgba(59,130,246,.14); color: #93c5fd; cursor: help;
     font-variant-numeric: tabular-nums;
   }
+  .touch-badge.ytd { background: rgba(250,204,21,.14); color: #fde68a; }
   .touch-badge.zero { background: var(--panel2); color: var(--muted); font-weight: 500; }
   .touch-asof { opacity: .85; }
   footer {
@@ -359,6 +360,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
         <span id="sortNote">Sorted by most contacted in HubSpot</span>
         <div class="seg" id="sortToggle" title="Sort contacts">
           <button type="button" data-sort="touches" class="active">Most contacted</button>
+          <button type="button" data-sort="ytd" title="Touches since Jan 1, 2026 (needs the HubSpot 2026 activity export)">Most touches this year</button>
           <button type="button" data-sort="dm">Decision makers first</button>
         </div>
       </div>
@@ -697,13 +699,16 @@ body[data-am="kili"] #amAccent img{z-index:1}
     touches: (a, b) => poc(a, b) || (b.times_contacted || 0) - (a.times_contacted || 0) ||
       (b.sales_activities || 0) - (a.sales_activities || 0) ||
       (b.is_dm ? 1 : 0) - (a.is_dm ? 1 : 0) || nameKey(a).localeCompare(nameKey(b)),
+    ytd: (a, b) => poc(a, b) || ((b.touches_ytd == null ? -1 : b.touches_ytd) - (a.touches_ytd == null ? -1 : a.touches_ytd)) ||
+      (b.times_contacted || 0) - (a.times_contacted || 0) || (b.sales_activities || 0) - (a.sales_activities || 0) || nameKey(a).localeCompare(nameKey(b)),
     dm: (a, b) => poc(a, b) || (b.is_dm ? 1 : 0) - (a.is_dm ? 1 : 0) || (b.has_phone ? 1 : 0) - (a.has_phone ? 1 : 0) ||
       nameKey(a).localeCompare(nameKey(b)),
   };
-  const SORT_NOTES = { touches: "Sorted by most contacted in HubSpot", dm: "Sorted by decision makers first, then phone, then name" };
+  const SORT_NOTES = { touches: "Sorted by most contacted in HubSpot", ytd: "Sorted by most touches since Jan 1, 2026", dm: "Sorted by decision makers first, then phone, then name" };
+  const hasYtd = () => DATA.contacts.some((c) => c.touches_ytd != null);
   function sortContacts(list) {
     if (viewFilter === "followups") return list.slice().sort((a, b) => (followupFor(a).due < followupFor(b).due ? -1 : followupFor(a).due > followupFor(b).due ? 1 : 0) || SORTS.touches(a, b));
-    return list.slice().sort(viewFilter.startsWith("uncalled") ? SORTS.touches : (SORTS[sortMode] || SORTS.touches));
+    return list.slice().sort(viewFilter.startsWith("uncalled") ? (sortMode === "ytd" ? SORTS.ytd : SORTS.touches) : (SORTS[sortMode] || SORTS.touches));
   }
   function renderScore() {
     const byId = new Map(); DATA.contacts.forEach((c) => byId.set(contactId(c), c));
@@ -725,7 +730,10 @@ body[data-am="kili"] #amAccent img{z-index:1}
     const n = Number(c.times_contacted) || 0;
     const last = fmtLastContacted(c.last_contacted);
     const txt = `${n.toLocaleString("en-US")} ${n === 1 ? "touch" : "touches"}${last ? " · last " + last : ""}`;
-    return `<span class="touch-badge${n ? "" : " zero"}" title="${esc(TOUCH_TIP)}">${esc(txt)}</span>`;
+    const y = c.touches_ytd;
+    const ytd = y != null ? `<span class="touch-badge ytd" title="Touches since Jan 1, 2026 (${esc(DATA.touches_ytd_source || "HubSpot activities")}${DATA.touches_ytd_updated ? ", as of " + esc(DATA.touches_ytd_updated) : ""})">${Number(y).toLocaleString("en-US")} this year</span>`
+      : sortMode === "ytd" ? `<span class="touch-badge zero" title="Needs the HubSpot 2026 activity export (apply_touches_ytd.py)">this year: not loaded</span>` : "";
+    return `<span class="touch-badge${n ? "" : " zero"}" title="${esc(TOUCH_TIP)}">${esc(txt)}</span>${ytd}`;
   }
   function renderTouchAsOf() {
     const t = DATA.touch_counts_updated;
@@ -786,7 +794,10 @@ body[data-am="kili"] #amAccent img{z-index:1}
     });
     const contacts = sortContacts(filteredContactsForLoc(loc));
     el("detailTitle").textContent = `${loc.label || loc.name} · ${contacts.length} contacts`;
-    el("sortNote").textContent = viewFilter === "uncalled" ? "Uncalled contacts, most touches first" : viewFilter === "uncalled_week" ? "No call since Monday, most touches first" : viewFilter === "uncalled_month" ? "No call this month, most touches first" : viewFilter === "followups" ? "Follow-ups due, oldest first" : SORT_NOTES[sortMode];
+    const winNote = { uncalled: "Not called today", uncalled_week: "No call since Monday", uncalled_month: "No call this month" }[viewFilter];
+    const byWhat = sortMode === "ytd" ? "most touches this year" : "most touches";
+    el("sortNote").textContent = winNote ? `${winNote}, ${byWhat} first` : viewFilter === "followups" ? "Follow-ups due, oldest first" : SORT_NOTES[sortMode];
+    if (sortMode === "ytd" && !hasYtd()) el("sortNote").textContent += " · this-year counts not loaded yet, using all-time touches";
     const body = el("detailBody");
     if (!contacts.length) {
       body.innerHTML = `<div class="detail-empty">${viewFilter.startsWith("uncalled") ? "Everyone here has been called in this window 🎉" : viewFilter === "followups" ? "No follow-ups due." : "No contacts match this filter/search."}</div>`;

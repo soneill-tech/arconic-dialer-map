@@ -128,6 +128,7 @@ The CSV itself is not committed (it includes contacts that aren't on the map).
 | `called_today.json` | Today's called contact IDs (drives the pulse); refreshed by a scheduled job |
 | `update_called_today.py` | Resolves a calls CSV/JSON → `called_today.json`; `--publish` pushes it |
 | `manual_add.py` / `added_manual.json` / `last_calls.json` | Drains queue items (adds/edits/deletes/titles/follow-ups) and last-call history; both files are merged into the map on load |
+| `apply_touches_ytd.py` | Applies a `contact_id,touches_ytd` CSV (2026 activity counts) to `data.json` + `data.js` |
 | `update_touch_counts.py` | Applies a HubSpot touch-count CSV → `data.json` + `data.js`; `--publish` pushes them |
 
 
@@ -148,3 +149,11 @@ Reps can add a new location pin or a new contact from the map header (badge **Ad
 - **Edit/delete** manual locations/contacts. Queue types and sync steps: [MANUAL_ADD.md](MANUAL_ADD.md).
 
 **Last-called day** (week/month filters) = latest of `last_calls.json` (history only as far back as seeded + hourly publishes), today's `called_today.json`, the Log Call queue, and HubSpot `last_contacted` (which also counts emails/meetings). No data = never called = included. Manual contacts count as never called until a call is logged.
+
+## Touches this year (sort + card badge)
+Sort **Most touches this year** (alongside *Most contacted*) works with the Not called today/week/month filters and shows a yellow
+"N this year" badge per card from the `touches_ytd` field. **Data status: not loaded.** `times_contacted` / `sales_activities` are
+all-time counts with no per-activity dates, so a since-Jan-1-2026 count can't be derived from `contact_touch_counts.csv`, `called_today.json`
+or `last_calls.json`. Until it's loaded the sort falls back to all-time touches and cards show "this year: not loaded".
+**Needed:** a HubSpot activity export for 2026 (calls + emails + meetings, 2026-01-01 → today, counted per contact) as CSV `contact_id,touches_ytd`, then:
+`python3 apply_touches_ytd.py ytd.csv --as-of <ISO> --source "<how pulled>"` (updates `data.json` + `data.js`; commit/push them). Re-run it periodically; the sync scripts leave `touches_ytd` alone.
