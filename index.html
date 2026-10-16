@@ -437,6 +437,28 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
 #fxCanvas{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:6000}
 @media (max-width:900px){.sb-row{height:46px}.sb-team{padding:0 14px;gap:7px}.sb-team .nm{font-size:1.25rem}.sb-team .sc{font-size:1.95rem}.sb-mid{font-size:.68rem;padding:0 8px}.sb-team svg{width:15px;height:15px}}
 </style>
+<style>/* ---- header sizing: header is part of the flex column, panels fill the rest and scroll internally ---- */
+html,body{height:100%;height:100dvh;overflow-x:hidden}
+.h-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:0 0 auto}
+.h-right .h-mid{justify-content:flex-end}
+@media (min-width:901px){
+  body{overflow:hidden}
+  header{flex-wrap:nowrap;padding:6px 14px;gap:14px;flex:0 0 auto}
+  .h-left{flex:1 1 0;min-width:0}
+  header .sub,header .sync-line{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  header h1{font-size:.98rem}
+  .layout{grid-template-columns:minmax(230px,300px) minmax(0,1fr) minmax(300px,390px) !important;grid-template-rows:minmax(0,1fr) !important}
+  .controls input[type=search]{width:170px;min-width:120px}
+  footer{flex:0 0 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:6px 14px}
+}
+@media (min-width:901px) and (max-width:1250px){.h-left .sub{display:none}.sb-team .nm{font-size:1.25rem}.sb-team .sc{font-size:2.2rem}.sb-row{height:50px}}
+@media (min-width:901px) and (max-height:760px){
+  .sb-row{height:44px}.sb-team .nm{font-size:1.15rem}.sb-team .sc{font-size:1.9rem}.sb-strip{display:none}.h-left .sub{display:none}
+  header{padding:4px 12px}
+}
+@media (max-width:900px){.h-right{display:contents}}
+@media (max-width:900px){#addMenuBtn{white-space:nowrap;padding:6px 10px}.sb-row{height:40px}.sb-team .sc{font-size:1.7rem}header{gap:4px 8px}header .sync-line{font-size:.68rem}.h-mid .badge{padding:2px 8px}.controls{gap:6px}}
+</style>
 </head>
 <body>
 <header>
@@ -453,6 +475,7 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     </div>
     <div class="sb-strip"><span id="sbTime">--:-- CT</span><i></i><span id="sbSync">synced …</span></div>
   </div>
+  <div class="h-right">
   <div class="h-mid">
     <span class="badge" id="statBadge">Loading…</span>
     <span class="badge score-badge" id="scoreBadge" title="Contacts called today per AM (called_today + Log Call queue)">📞 Called today: …</span>
@@ -467,7 +490,8 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     <div class="addmenu"><button type="button" class="btn add" id="addMenuBtn" aria-haspopup="true" aria-expanded="false">＋ Add ▾</button>
       <div class="menu" id="addMenu" role="menu"><button type="button" id="addLocBtn" role="menuitem">📍 New location</button><button type="button" id="addConBtn" role="menuitem">👤 New contact</button></div></div>
   </div>
-</header></header>
+  </div>
+</header>
 
 <div class="layout">
   <aside class="sidebar">
@@ -576,6 +600,8 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
 <script>
 (async function () {
+  try { history.scrollRestoration = "manual"; } catch (e) {}
+  window.scrollTo(0, 0);
   let DATA = window.__DIALER_DATA__;
   if (!DATA) {
     const res = await fetch("data.json");
