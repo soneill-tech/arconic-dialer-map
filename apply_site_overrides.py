@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Add real Arconic plant pins that area-code inference can't find, plus explicit contact->plant overrides.
 
-    python3 apply_site_overrides.py [--check]
+    python3 apply_site_overrides.py [--check] [--no-geocode] [--retry-misses]   # REP_DATA_DIR=/workspace by default (rep_loader.py)
 
 Idempotent; edits data.json + data.js in place (build_data.py can't be rerun once data is v2, so site additions
 live here). Re-run after anything that regenerates plant assignments. Stdlib only. Never touches HubSpot.
@@ -319,6 +319,8 @@ def apply(d):
     apply_howmet(d)
     apply_howmet_suppliers(d)
     apply_kawneer(d)
+    import rep_loader   # Nick / Mia / Addie Closed Won accounts (CSV-driven, idempotent, geocode-cached)
+    rep_loader.apply_reps(d, geocode="--no-geocode" not in sys.argv, retry="--retry-misses" in sys.argv)
     st = d["stats"]
     st["contacts"] = len(cs); st["with_phone"] = sum(1 for c in cs if c["has_phone"])
     st["decision_makers"] = sum(1 for c in cs if c["is_dm"])

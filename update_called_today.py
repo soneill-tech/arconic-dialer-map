@@ -3,7 +3,7 @@
 
 Input: CSV or JSON of today's calls. Per row, at least one of
     contact_id | contact_email | contact_name
-plus optional: am (Kahekili|Simran, full names ok), time, outcome.
+plus optional: am (Kahekili|Simran|Nick|Mia|Addie, full names ok), time, outcome.
 (Aliases accepted: hubspot_contact_id/id, email, name, call_time/timestamp, disposition.)
 JSON may be a list of row objects or {"calls": [...]}.
 
@@ -43,7 +43,11 @@ AM_ALIASES = {
     "arconic": "Kahekili Barrozo",
     "simran": "Simran Subramanian", "simran subramanian": "Simran Subramanian",
     "kaiser": "Simran Subramanian", "kaiser aluminum": "Simran Subramanian",
+    "nick": "Nicholas McNamara", "nicholas": "Nicholas McNamara", "nicholas mcnamara": "Nicholas McNamara",
+    "mia": "Mia Medjedovic", "mia medjedovic": "Mia Medjedovic",
+    "addie": "Addison Parker", "addison": "Addison Parker", "addison parker": "Addison Parker",
 }
+SHORT = {"Nicholas McNamara": "Nick", "Addison Parker": "Addie"}   # call-log / UI short names (others: first name)
 FIELD_ALIASES = {
     "contact_id": ["contact_id", "hubspot_contact_id", "id", "contactid"],
     "contact_email": ["contact_email", "email", "contact email"],
@@ -65,7 +69,7 @@ def norm_am(s):
 
 
 def short_am(full):
-    return (full or "").split(" ")[0] or ""
+    return SHORT.get(full) or (full or "").split(" ")[0] or ""
 
 
 def pick(row, field):

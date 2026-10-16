@@ -188,3 +188,22 @@ Header is part of the flex column (no fixed/sticky): ~75-95px on desktop (was ~1
 - **Account scopes the map (v6.3)**: picking an account chip (List view) or an "All <company>" entry (Cards or List) shows only that company's pins (supplier pins carry their own company) and fits the map to them; "All"/"All companies"/the map pill's "Show all" restores everything. Combines with the Rep tabs (a company outside the selected rep clears the scope), radar/borders overlays, clusters and recency colors. Active chip is marked with a check + ring, and a pill on the map says "Map: <company> only".
 - **Champagne Metals (Glenpool, OK)** is an Arconic-managed supplier pin (`arc:sup:Glenpool`, defined in `sync_supplier_pins.py`, run by `apply_site_overrides.py`) referencing the same 49 contacts as Middlebury, IN (Davenport Works / Bettendorf). References only, no duplicate contacts; map only. Arconic now has 10 pins (7 plant + 3 supplier).
 - **Champagne Metals** has two Arconic suppliers, **Middlebury, IN** and **Glenpool, OK** (labels "Champagne Metals (Middlebury, IN)" / "Champagne Metals (Glenpool, OK)"), both tagged "Arconic supplier, managed by the Davenport/Bettendorf team" (`supplier_tag`, shown on cards and in popups) and both referencing the 49 Davenport Works/Bettendorf contacts. Minster, OH is unchanged.
+
+## Nick / Mia / Addie (HubSpot Closed Won accounts)
+
+Tabs for Nick (Nicholas McNamara), Mia (Mia Medjedovic) and Addie (Addison Parker) show **only** their HubSpot Closed Won companies,
+contacts and locations (map-only; nothing is ever written to HubSpot). They are built by `rep_loader.py` (called from
+`apply_site_overrides.py`) from `/workspace/{nick,mia,addie}-closed-won/{companies,contacts}.csv`:
+
+```bash
+python3 apply_site_overrides.py              # re-runnable / idempotent: rebuilds the three reps' records from the CSVs; Kili/Simran data untouched
+python3 apply_site_overrides.py --no-geocode # use only cached geocodes (rep_geocodes.json)
+REP_DATA_DIR=/path python3 apply_site_overrides.py
+```
+
+- One pin per company address (Nominatim, 1 req/s, cached in `rep_geocodes.json`; street -> city/state fallback). Companies with no address go to
+  that company's **Unassigned** entry. Companies with contacts in >= 3 cities (plus Boart Longyear, 3M, True Manufacturing, Novelis, Engie) get one pin per
+  distinct contact city; contacts with no city sit at the company-address pin. 3M has two DeKalb IL DC pins (DKC 1250 Macom Dr, DK6 1650 Macom Dr).
+- Bad HubSpot addresses are corrected in the `MANUAL` table of `rep_loader.py`; each correction is shown as a flag on the pin and listed in `rep_load_report.json`
+  (with skipped contacts, companies without contacts, geocode failures).
+- The Kili vs Simran scorebug is unchanged; Nick/Mia/Addie call counts are appended to the "Called today" badge once they have calls. `update_called_today.py` accepts Nick/Mia/Addie as `am`.

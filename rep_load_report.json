@@ -1,0 +1,203 @@
+{
+ "generated_from": "/workspace",
+ "reps": {
+  "Nick": {
+   "companies": 22,
+   "contacts_csv_rows": 0,
+   "contacts_loaded": 0,
+   "pins": 24,
+   "contacts_file": false,
+   "contacts_unassigned": 0,
+   "companies_without_contacts": [
+    "3M Company",
+    "ARMI",
+    "Boart Longyear",
+    "Bobcat Plus",
+    "DSB Technologies",
+    "Engie",
+    "Florim USA",
+    "Flow Pro Products",
+    "Hickory Harvest Foods",
+    "Indevco (Group and Plastics)",
+    "Indevco North America",
+    "L.F. GEORGE",
+    "Leaf Home",
+    "Lee Storage Company",
+    "M.J Kellner Co. Inc",
+    "MSC Industrial Direct Co., Inc",
+    "New Flyer",
+    "Novelis",
+    "Times Publishing Company dba Tampa Bay Times",
+    "True Manufacturing",
+    "Verista",
+    "Wholesale Home/DJ Direct Warehousing"
+   ],
+   "unassigned_companies": []
+  },
+  "Mia": {
+   "companies": 31,
+   "contacts_csv_rows": 410,
+   "contacts_loaded": 409,
+   "pins": 113,
+   "contacts_file": true,
+   "contacts_unassigned": 5,
+   "companies_without_contacts": [
+    "RAINBOW FERTILIZER LLC"
+   ],
+   "unassigned_companies": [
+    "C2 Commodities",
+    "Custom Door Parts",
+    "RAINBOW FERTILIZER LLC"
+   ]
+  },
+  "Addie": {
+   "companies": 4,
+   "contacts_csv_rows": 34,
+   "contacts_loaded": 33,
+   "pins": 9,
+   "contacts_file": true,
+   "contacts_unassigned": 0,
+   "companies_without_contacts": [],
+   "unassigned_companies": []
+  }
+ },
+ "flags": [
+  {
+   "rep": "Nick",
+   "company": "3M Company",
+   "record_id": "57247716184",
+   "flag": "Contacts whose city is DeKalb IL appear at both DC pins (HubSpot does not say which DC)."
+  },
+  {
+   "rep": "Nick",
+   "company": "Engie",
+   "record_id": "17749711743",
+   "flag": "HubSpot address is Engie France HQ (Courbevoie). Pinned at Engie North America HQ, Houston TX; US contact cities get their own pins. Verify."
+  },
+  {
+   "rep": "Nick",
+   "company": "Leaf Home",
+   "record_id": "39256431450",
+   "flag": "HubSpot address (60 Gray Rd, Falmouth AL) looks wrong; pinned at Leaf Home HQ, Hudson OH. Verify."
+  },
+  {
+   "rep": "Nick",
+   "company": "MSC Industrial Direct Co., Inc",
+   "record_id": "44533717843",
+   "flag": "HubSpot state was North Carolina (postal 28036); corrected to Melville, NY (HQ)."
+  },
+  {
+   "rep": "Nick",
+   "company": "New Flyer",
+   "record_id": "2359561232",
+   "flag": "Canadian site (Winnipeg MB) pinned as given; HubSpot phone has a US 256 area code."
+  },
+  {
+   "rep": "Nick",
+   "company": "Novelis",
+   "record_id": "3407485758",
+   "flag": "HubSpot address is wrong (Kingston GA PO Box 2000, postal 600101, +91 phone). Pinned at Novelis North America HQ, Atlanta GA; contacts' own cities get separate pins."
+  },
+  {
+   "rep": "Mia",
+   "company": "C2 Commodities",
+   "record_id": "49566176839",
+   "flag": "No address in HubSpot. Unassigned."
+  },
+  {
+   "rep": "Mia",
+   "company": "Custom Door Parts",
+   "record_id": "57067499058",
+   "flag": "No address in HubSpot. Unassigned."
+  },
+  {
+   "rep": "Mia",
+   "company": "Frulact",
+   "record_id": "18818235549",
+   "flag": "International: pinned as given (Gemunde, Maia, Porto district, Portugal)."
+  },
+  {
+   "rep": "Mia",
+   "company": "JD.com",
+   "record_id": "6791313242",
+   "flag": "International: pinned as given (Beijing, China)."
+  },
+  {
+   "rep": "Mia",
+   "company": "RAINBOW FERTILIZER LLC",
+   "record_id": "48493073158",
+   "flag": "No address in HubSpot (country says France; phone is US). Unassigned."
+  },
+  {
+   "rep": "Mia",
+   "company": "SBFI",
+   "record_id": "18902511411",
+   "flag": "International: pinned as given (London, UK)."
+  },
+  {
+   "rep": "Mia",
+   "company": "Spectrum Food Group",
+   "record_id": "4457033063",
+   "flag": "HubSpot country says Canada; Hyattsville MD (20785) is in the US. Pinned in MD. Verify."
+  },
+  {
+   "rep": "Mia",
+   "company": "Tidal Grow Agriscience",
+   "record_id": "30684276327",
+   "flag": "HubSpot postal 98226 is Bellingham; pinned by street + city (Raymond, WA)."
+  },
+  {
+   "rep": "Mia",
+   "company": "TIMAC AGRO USA",
+   "record_id": "4503790566",
+   "flag": "HubSpot address is inconsistent (city Jihlava CZ, region Brittany, postal 35400 = Saint-Malo, FR). Pinned at Saint-Malo, France."
+  },
+  {
+   "rep": "Addie",
+   "company": "AD Process Equipment",
+   "record_id": "9427889728",
+   "flag": "HubSpot state was Kentucky (postal 40507 = Lexington KY); corrected to Naperville, IL."
+  },
+  {
+   "rep": "Addie",
+   "company": "Republic Bag Inc",
+   "record_id": "8975038579",
+   "flag": "HubSpot state was Texas (postal 92879 = Corona CA); corrected to Corona, CA."
+  }
+ ],
+ "contacts_skipped": [
+  {
+   "rep": "Addie",
+   "record_id": "253263091272",
+   "email": "info@andersondahlen.com",
+   "why": "associated with 2 companies; Addie company unresolved"
+  }
+ ],
+ "geocode_failures": [],
+ "totals": {
+  "Nick": {
+   "companies": 22,
+   "contacts_csv_rows": 0,
+   "contacts_loaded": 0,
+   "pins": 24,
+   "contacts_file": false,
+   "locations": 24
+  },
+  "Mia": {
+   "companies": 31,
+   "contacts_csv_rows": 410,
+   "contacts_loaded": 409,
+   "pins": 113,
+   "contacts_file": true,
+   "locations": 113
+  },
+  "Addie": {
+   "companies": 4,
+   "contacts_csv_rows": 34,
+   "contacts_loaded": 33,
+   "pins": 9,
+   "contacts_file": true,
+   "locations": 9
+  }
+ }
+}

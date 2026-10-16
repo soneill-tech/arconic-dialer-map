@@ -1,0 +1,863 @@
+{
+ "100 Washington Street, Reno, Nevada, United States": {
+  "display": "100, Washington Street, Powning Addition, Reno, Washoe County, Nevada, 89503, United States",
+  "lat": 39.524203,
+  "lon": -119.8217386,
+  "source": "nominatim"
+ },
+ "1005 Patriot Parkway, Reading, Pennsylvania, United States": {
+  "display": "Caldera Manufacturing Group, 1005, Patriot Parkway, Muhlenberg Park, Reading, Berks County, Pennsylvania, 19605, United States",
+  "lat": 40.3739307,
+  "lon": -75.9433541,
+  "source": "nominatim"
+ },
+ "10351 Verdon Road, Doswell, Virginia, United States": {
+  "display": "10351, Verdon Road, Doswell, Hanover County, Virginia, 23047, United States",
+  "lat": 37.8647793,
+  "lon": -77.4589018,
+  "source": "nominatim"
+ },
+ "1155 Central Florida Parkway, Orlando, Florida, United States": {
+  "display": "Simulation & Training Technology Center, 12423, Research Parkway, Central Florida Research Park, Orlando, Orange County, Florida, 32826, United States",
+  "lat": 28.5884065,
+  "lon": -81.197024,
+  "source": "nominatim"
+ },
+ "12411 Silver Spring Drive, Butler, Wisconsin, United States": {
+  "display": "Silver Spring Drive, Butler, Waukesha County, Wisconsin, 53007, United States",
+  "lat": 43.1186305,
+  "lon": -88.0769829,
+  "source": "nominatim"
+ },
+ "1250 Macom Dr, DeKalb, IL 60115": {
+  "display": "3M Distribution Center, 1250, Macom Drive, DeKalb, DeKalb Township, DeKalb County, Illinois, 60115, United States",
+  "lat": 41.9105416,
+  "lon": -88.7353972,
+  "source": "nominatim"
+ },
+ "1335 Hayne Street, Spartanburg, South Carolina, United States": {
+  "display": "Atkins Machinery, 1335, Hayne Street, Hayne Station, Saxon, Spartanburg County, South Carolina, 29301, United States",
+  "lat": 34.9610773,
+  "lon": -81.9758914,
+  "source": "nominatim"
+ },
+ "1360 Post Oak Blvd, Houston, Texas, United States": {
+  "display": "BHP Billiton Tower, 1360, Post Oak Boulevard, Uptown, Houston, Harris County, Texas, 77056, United States",
+  "lat": 29.7530969,
+  "lon": -95.4621116,
+  "source": "nominatim"
+ },
+ "1500 Spring Garden Street, Philadelphia, Pennsylvania, United States": {
+  "display": "1500, Spring Garden Street, Spring Garden, North Philadelphia, Philadelphia, Philadelphia County, Pennsylvania, 19103, United States",
+  "lat": 39.9621861,
+  "lon": -75.1640096,
+  "source": "nominatim"
+ },
+ "1516 Middlebury Street, Elkhart, Indiana, United States": {
+  "display": "1516, Middlebury Street, Elkhart, Elkhart County, Indiana, 46516, United States",
+  "lat": 41.681319,
+  "lon": -85.941321,
+  "source": "nominatim"
+ },
+ "153 Washington Avenue, North Haven, Connecticut, United States": {
+  "display": "153, Washington Avenue, North Haven, South Central Connecticut Planning Region, Connecticut, 06473, United States",
+  "lat": 41.3977499,
+  "lon": -72.8556143,
+  "source": "nominatim"
+ },
+ "1595 Georgetown Road, Hudson, Ohio, United States": {
+  "display": "Leaf Home, 1595, Georgetown Road, Hudson South Commercial Park, Hudson, Summit County, Ohio, 44236, United States",
+  "lat": 41.2088941,
+  "lon": -81.4352255,
+  "source": "nominatim"
+ },
+ "1650 Macom Dr, DeKalb, IL 60115": {
+  "display": "3M Distribution Center, 1650, Macom Drive, DeKalb, DeKalb Township, DeKalb County, Illinois, 60115, United States",
+  "lat": 41.9098707,
+  "lon": -88.7310026,
+  "source": "nominatim"
+ },
+ "1725 Ocean Ave, Raymond, Washington, United States": {
+  "display": "1725, Ocean Avenue, Raymond, Pacific County, Washington, 98577, United States",
+  "lat": 46.6834855,
+  "lon": -123.7526696,
+  "source": "nominatim"
+ },
+ "1800 Greenbriar Dr, Stoughton, Wisconsin, United States": {
+  "display": "Greenbriar Drive, Stoughton, Dane County, Wisconsin, 53589, United States",
+  "lat": 42.9332963,
+  "lon": -89.2464974,
+  "source": "nominatim"
+ },
+ "2 Bloor Street East, Toronto, Ontario, M4W 1A8, Canada": {
+  "display": "Bloor-Yonge, 2, Bloor Street East, Rosedale-Moore Park, Downtown, Toronto, Ontario, M4W 1A8, Canada",
+  "lat": 43.6707855,
+  "lon": -79.3856867,
+  "source": "nominatim"
+ },
+ "2001 E Terra Ln, O Fallon, Missouri, United States": {
+  "display": "True Manufacturing, 2001, East Terra Lane, O’Fallon, Saint Charles County, Missouri, 63366, United States",
+  "lat": 38.8050599,
+  "lon": -90.6658608,
+  "source": "nominatim"
+ },
+ "2455 S 3600 W, Salt Lake City, Utah, United States": {
+  "display": "2455 South, West Valley City, Salt Lake County, Utah, 84128, United States",
+  "lat": 40.716994,
+  "lon": -112.0221957,
+  "source": "nominatim"
+ },
+ "24949 PLYMOUTH RD, REDFORD, Michigan, United States": {
+  "display": "24949, Plymouth Road, Beech, Redford Township, Wayne County, Michigan, 48239, United States",
+  "lat": 42.3709296,
+  "lon": -83.2848385,
+  "source": "nominatim"
+ },
+ "2521 TORQUAY AVE, Royal Oak, Michigan, United States": {
+  "display": "2521, Torquay Avenue, Royal Oak, Oakland County, Michigan, 48073, United States",
+  "lat": 42.5375138,
+  "lon": -83.1763705,
+  "source": "nominatim"
+ },
+ "2575 South Armstrong Avenue, Fayetteville, Arkansas, United States": {
+  "display": "2575, South Armstrong Avenue, Fayetteville, Washington County, Arkansas, 72701, United States",
+  "lat": 36.0350355,
+  "lon": -94.1378942,
+  "source": "nominatim"
+ },
+ "2801 Ripley 21s15, Doniphan, Missouri, United States": {
+  "miss": true
+ },
+ "300 International Boulevard, Clarksville, Tennessee, United States": {
+  "display": "International Boulevard, Rossview, Clarksville, Montgomery County, Middle Tennessee, Tennessee, 37043, United States",
+  "lat": 36.5559996,
+  "lon": -87.2405102,
+  "source": "nominatim"
+ },
+ "3100 North Summit Street, Toledo, Ohio, United States": {
+  "display": "Lee Storage Company, 3100, North Summit Street, Boulevard, Toledo, Lucas County, Ohio, 43611, United States",
+  "lat": 41.6806335,
+  "lon": -83.4934599,
+  "source": "nominatim"
+ },
+ "31800 West 8 Mile Road, Farmington Hills, Michigan, United States": {
+  "display": "31800, West 8 Mile Road, Farmington Hills, Oakland County, Michigan, 48336, United States",
+  "lat": 42.441011,
+  "lon": -83.362061,
+  "source": "nominatim"
+ },
+ "320 S Military Ave, Green Bay, Wisconsin, United States": {
+  "display": "320, South Military Avenue, Green Bay, Brown County, Wisconsin, 54303, United States",
+  "lat": 44.5270937,
+  "lon": -88.0618356,
+  "source": "nominatim"
+ },
+ "3250 Dix Highway, Lincoln Park, Michigan, United States": {
+  "display": "3250, Dix Highway, Lincoln Park, Wayne County, Michigan, 48146, United States",
+  "lat": 42.238011,
+  "lon": -83.194984,
+  "source": "nominatim"
+ },
+ "3330 Palmer Drive, Janesville, Wisconsin, United States": {
+  "display": "3330, Palmer Drive, Janesville, Rock County, Wisconsin, 53546, United States",
+  "lat": 42.6783093,
+  "lon": -88.978415,
+  "source": "nominatim"
+ },
+ "3388 Pennsy Drive, Hyattsville, Maryland, United States": {
+  "display": "3388, Pennsy Drive, Ardwick Park, Hyattsville, Prince George's County, Maryland, 20785, United States",
+  "lat": 38.9370887,
+  "lon": -76.880231,
+  "source": "nominatim"
+ },
+ "3560 Lenox Rd NE, Atlanta, Georgia, United States": {
+  "display": "Two Alliance Center, 3560, Lenox Road Northeast, Buckhead, Atlanta, Fulton County, Georgia, 30326, United States",
+  "lat": 33.8511282,
+  "lon": -84.3666045,
+  "source": "nominatim"
+ },
+ "357 Fontana Rd, Monroe, Louisiana, United States": {
+  "display": "357, Fontana Road, Magenta, Monroe, Ouachita Parish, Louisiana, 71203, United States",
+  "lat": 32.4963936,
+  "lon": -92.0458025,
+  "source": "nominatim"
+ },
+ "3710 IRON GATE RD, BELLINGHAM, Washington, United States": {
+  "display": "3710, Iron Gate Road, Irongate, Bellingham, Whatcom County, Washington, 98226, United States",
+  "lat": 48.7825209,
+  "lon": -122.4532773,
+  "source": "nominatim"
+ },
+ "39500 Orchard Hill Place, Novi, Michigan, United States": {
+  "display": "39500, Orchard Hill Place, Crystal Glen Office Center, Novi, Oakland County, Michigan, 48375, United States",
+  "lat": 42.444821,
+  "lon": -83.434152,
+  "source": "nominatim"
+ },
+ "3M Center, Saint Paul, Minnesota, United States": {
+  "display": "Midway Business Center, Hamline - Midway, Saint Paul, Ramsey County, Minnesota, United States",
+  "lat": 44.9599412,
+  "lon": -93.1862147,
+  "source": "nominatim"
+ },
+ "402 W 100 N, Reynolds, Indiana, United States": {
+  "miss": true
+ },
+ "4705 S 129th East Ave, Tulsa, Oklahoma, United States": {
+  "display": "South Olive Avenue West, Tulsa, Oklahoma, 74043, United States",
+  "lat": 35.9525079,
+  "lon": -95.8328031,
+  "source": "nominatim"
+ },
+ "490 1st Avenue South, Saint Petersburg, Florida, United States": {
+  "display": "490, 1st Avenue South, Downtown, Saint Petersburg, Pinellas County, Florida, 33701, United States",
+  "lat": 27.7702288,
+  "lon": -82.6399213,
+  "source": "nominatim"
+ },
+ "515 Broadhollow Road, Melville, New York, United States": {
+  "display": "515, Broadhollow Road, Lower Melville, Melville, Town of Huntington, Suffolk County, New York, 11747, United States",
+  "lat": 40.7706817,
+  "lon": -73.421583,
+  "source": "nominatim"
+ },
+ "540 Frontenac Ct, Naperville, Illinois, United States": {
+  "display": "Frontenac Court, Diamond Bay, Aurora, Naperville Township, DuPage County, Illinois, 60504, United States",
+  "lat": 41.7514416,
+  "lon": -88.2295764,
+  "source": "nominatim"
+ },
+ "5610 W Maryland Ave, Glendale, Arizona, United States": {
+  "display": "5610, West Maryland Avenue, Glendale, Maricopa County, Arizona, 85301, United States",
+  "lat": 33.532351,
+  "lon": -112.1798496,
+  "source": "nominatim"
+ },
+ "5700 International Parkway, Springfield, Illinois, United States": {
+  "display": "5700, International Parkway, Springfield, Sangamon County, Illinois, 62711, United States",
+  "lat": 39.749551,
+  "lon": -89.7590095,
+  "source": "nominatim"
+ },
+ "580 East Harrison Street, Corona, California, United States": {
+  "display": "580, East Harrison Street, Corona, Riverside County, California, 92879, United States",
+  "lat": 33.8829659,
+  "lon": -117.5590258,
+  "source": "nominatim"
+ },
+ "600 River Avenue, Pittsburgh, Pennsylvania, United States": {
+  "display": "600, River Avenue, North Shore, Pittsburgh, Allegheny County, Pennsylvania, 15212, United States",
+  "lat": 40.449112,
+  "lon": -79.997684,
+  "source": "nominatim"
+ },
+ "618 Anderson Dr, Romeoville, Illinois, United States": {
+  "display": "618, Anderson Drive, Romeoville, Will County, Illinois, 60446, United States",
+  "lat": 41.6488979,
+  "lon": -88.0781173,
+  "source": "nominatim"
+ },
+ "69 Leadenhall Street, London, EC3A 2DB, United Kingdom": {
+  "display": "Landmark House, 69, Leadenhall Street, Leadenhall Market, Aldgate, City of London, Greater London, England, EC3A 2BG, United Kingdom",
+  "lat": 51.5130535,
+  "lon": -0.0782581,
+  "source": "nominatim"
+ },
+ "711 Kernaghan Ave, Winnipeg, Manitoba, R2C 3T4, Canada": {
+  "display": "New Flyer Industries, 711, Kernaghan Avenue, Transcona Yards, Winnipeg, Manitoba, R2C 5G5, Canada",
+  "lat": 49.8927946,
+  "lon": -97.0210266,
+  "source": "nominatim"
+ },
+ "77 Linnet Street, Bayonne, New Jersey, United States": {
+  "display": "77, Linnet Street, Port Johnson, Bayonne, Hudson County, New Jersey, 07002, United States",
+  "lat": 40.653154,
+  "lon": -74.122421,
+  "source": "nominatim"
+ },
+ "7833 State Hwy 35 N, Bay City, Texas, United States": {
+  "miss": true
+ },
+ "90 Logan Parkway, Akron, Ohio, United States": {
+  "display": "Hickory Harvest, 90, Logan Parkway, North Turkeyfoot Industrial Park, Akron, Coventry Township, Summit County, Ohio, 44319, United States",
+  "lat": 41.0160444,
+  "lon": -81.5268848,
+  "source": "nominatim"
+ },
+ "9100 Fall View Drive, Fishers, Indiana, United States": {
+  "display": "Verista, 9100, Fall View Drive, IKEA Fishers, Fishers, Hamilton County, Indiana, 46037, United States",
+  "lat": 39.9550898,
+  "lon": -86.0055417,
+  "source": "nominatim"
+ },
+ "Alsip, Illinois, United States": {
+  "display": "Alsip, Worth Township, Cook County, Illinois, United States",
+  "lat": 41.6689336,
+  "lon": -87.7387003,
+  "source": "nominatim"
+ },
+ "Asheville, North Carolina, United States": {
+  "display": "Asheville, Buncombe County, North Carolina, United States",
+  "lat": 35.595363,
+  "lon": -82.5508407,
+  "source": "nominatim"
+ },
+ "Atlanta, Georgia, United States": {
+  "display": "Atlanta, Fulton County, Georgia, United States",
+  "lat": 33.7544657,
+  "lon": -84.3898151,
+  "source": "nominatim"
+ },
+ "Austin, Texas, United States": {
+  "display": "Austin, Travis County, Texas, United States",
+  "lat": 30.2649261,
+  "lon": -97.7474086,
+  "source": "nominatim"
+ },
+ "Bay City, Texas, United States": {
+  "display": "Bay City, Matagorda County, Texas, United States",
+  "lat": 28.9827565,
+  "lon": -95.969402,
+  "source": "nominatim"
+ },
+ "Beijing, Beijing Shi": {
+  "display": "北京, 崇文门东大街, 东花市北里西区社区, 东花市街道, 首都功能核心区, 东城区, 北京市, 100010, 中国",
+  "lat": 39.9011168,
+  "lon": 116.4210134,
+  "source": "nominatim"
+ },
+ "Beijing, China": {
+  "display": "北京市, 中国",
+  "lat": 39.9057136,
+  "lon": 116.3912972,
+  "source": "nominatim"
+ },
+ "Bellevue, Washington, United States": {
+  "display": "Bellevue, King County, Washington, United States",
+  "lat": 47.6144219,
+  "lon": -122.192337,
+  "source": "nominatim"
+ },
+ "Bellingham, Washington, United States": {
+  "display": "Bellingham, Whatcom County, Washington, United States",
+  "lat": 48.7544012,
+  "lon": -122.478836,
+  "source": "nominatim"
+ },
+ "Belton, Missouri, United States": {
+  "display": "Belton, Cass County, Missouri, 64012, United States",
+  "lat": 38.8108097,
+  "lon": -94.5313502,
+  "source": "nominatim"
+ },
+ "Bensenville, Illinois, United States": {
+  "display": "Bensenville, Addison Township, DuPage County, Illinois, 60106, United States",
+  "lat": 41.9538384,
+  "lon": -87.9431781,
+  "source": "nominatim"
+ },
+ "Black Mountain, North Carolina, United States": {
+  "display": "Black Mountain, Buncombe County, North Carolina, 28711, United States",
+  "lat": 35.6176544,
+  "lon": -82.3205791,
+  "source": "nominatim"
+ },
+ "Broken Arrow, Oklahoma, United States": {
+  "display": "Broken Arrow, Tulsa, Oklahoma, United States",
+  "lat": 36.0525993,
+  "lon": -95.7908195,
+  "source": "nominatim"
+ },
+ "Burlington, Illinois, United States": {
+  "display": "Burlington, Burlington Township, Kane County, Illinois, 60109, United States",
+  "lat": 42.0528038,
+  "lon": -88.5481412,
+  "source": "nominatim"
+ },
+ "Calhoun, Georgia, United States": {
+  "display": "Calhoun County, Georgia, United States",
+  "lat": 31.5311784,
+  "lon": -84.614328,
+  "source": "nominatim"
+ },
+ "Camak, Georgia, United States": {
+  "display": "Camak, Warren County, Georgia, 30807, United States",
+  "lat": 33.4534709,
+  "lon": -82.6459668,
+  "source": "nominatim"
+ },
+ "Canoga Park, California, United States": {
+  "display": "Canoga Park Neighborhood Council District, Los Angeles, Los Angeles County, California, 91303, United States",
+  "lat": 34.2011078,
+  "lon": -118.5978087,
+  "source": "nominatim"
+ },
+ "Chapel Hill, North Carolina, United States": {
+  "display": "Chapel Hill, Orange County, North Carolina, United States",
+  "lat": 35.9131542,
+  "lon": -79.05578,
+  "source": "nominatim"
+ },
+ "Charlestown, Indiana, United States": {
+  "display": "Charlestown, Clark County, Indiana, 47111, United States",
+  "lat": 38.442857,
+  "lon": -85.6620314,
+  "source": "nominatim"
+ },
+ "Charlotte, North Carolina, United States": {
+  "display": "Charlotte, Mecklenburg County, North Carolina, United States",
+  "lat": 35.2272086,
+  "lon": -80.8430827,
+  "source": "nominatim"
+ },
+ "Chicago, Illinois, United States": {
+  "display": "Chicago, South Chicago Township, Cook County, Illinois, United States",
+  "lat": 41.8755616,
+  "lon": -87.6244212,
+  "source": "nominatim"
+ },
+ "Colchester, Vermont, United States": {
+  "display": "Colchester, Chittenden County, Vermont, United States",
+  "lat": 44.534084,
+  "lon": -73.1846098,
+  "source": "nominatim"
+ },
+ "Collegeville, Pennsylvania, United States": {
+  "display": "Collegeville, Montgomery County, Pennsylvania, 19426, United States",
+  "lat": 40.1854712,
+  "lon": -75.4512163,
+  "source": "nominatim"
+ },
+ "Concord, North Carolina, United States": {
+  "display": "Concord, Cabarrus County, North Carolina, United States",
+  "lat": 35.4094178,
+  "lon": -80.5800049,
+  "source": "nominatim"
+ },
+ "Coraopolis, Pennsylvania, United States": {
+  "display": "Coraopolis, Allegheny County, Pennsylvania, 15108, United States",
+  "lat": 40.5175351,
+  "lon": -80.1643232,
+  "source": "nominatim"
+ },
+ "County Highway F, Waukesha, Wisconsin, United States": {
+  "display": "West Main Street, Lannon, Waukesha County, Wisconsin, 53046, United States",
+  "lat": 43.1641505,
+  "lon": -88.1470867,
+  "source": "nominatim"
+ },
+ "Detroit, Michigan, United States": {
+  "display": "Detroit, Wayne County, Michigan, United States",
+  "lat": 42.3315509,
+  "lon": -83.0466403,
+  "source": "nominatim"
+ },
+ "Doniphan, Missouri, United States": {
+  "display": "Doniphan, Ripley County, Missouri, 63935, United States",
+  "lat": 36.6208917,
+  "lon": -90.8234551,
+  "source": "nominatim"
+ },
+ "Edmonton, Alberta": {
+  "display": "Edmonton, Alberta, Canada",
+  "lat": 53.5462055,
+  "lon": -113.491241,
+  "source": "nominatim"
+ },
+ "Famalicao, Braga": {
+  "display": "Vila Nova de Famalicão, Braga, Portugal",
+  "lat": 41.4087313,
+  "lon": -8.4927761,
+  "source": "nominatim"
+ },
+ "Fontana, California, United States": {
+  "display": "Fontana, San Bernardino County, California, United States",
+  "lat": 34.0922947,
+  "lon": -117.43433,
+  "source": "nominatim"
+ },
+ "Fort Worth, Texas, United States": {
+  "display": "Fort Worth, Tarrant County, Texas, United States",
+  "lat": 32.753177,
+  "lon": -97.3327459,
+  "source": "nominatim"
+ },
+ "Franklin, Tennessee, United States": {
+  "display": "Franklin, Williamson County, Middle Tennessee, Tennessee, United States",
+  "lat": 35.925206,
+  "lon": -86.8689419,
+  "source": "nominatim"
+ },
+ "Fresno, California, United States": {
+  "display": "Fresno, Fresno County, California, United States",
+  "lat": 36.7394421,
+  "lon": -119.78483,
+  "source": "nominatim"
+ },
+ "GARDNER, Kansas, United States": {
+  "display": "Gardner, Johnson County, Kansas, United States",
+  "lat": 38.8109254,
+  "lon": -94.9272958,
+  "source": "nominatim"
+ },
+ "Gallatin, Tennessee, United States": {
+  "display": "Gallatin, Sumner County, Middle Tennessee, Tennessee, 37066, United States",
+  "lat": 36.3883031,
+  "lon": -86.4475898,
+  "source": "nominatim"
+ },
+ "Gemunde - Maia, Maia": {
+  "display": "Castêlo da Maia, Rua da Vitória, Bairro, Avioso (Santa Maria), Ferreiró, Castêlo da Maia, Maia, Porto, 4475-687, Portugal",
+  "lat": 41.2627387,
+  "lon": -8.6169735,
+  "source": "nominatim"
+ },
+ "Gemunde, Maia, Portugal": {
+  "display": "Gemunde, Castêlo da Maia, Maia, Porto, 4475-131, Portugal",
+  "lat": 41.2671358,
+  "lon": -8.6389909,
+  "source": "nominatim"
+ },
+ "Goodyear, Arizona, United States": {
+  "display": "Goodyear, Maricopa County, Arizona, United States",
+  "lat": 33.4672279,
+  "lon": -112.3853489,
+  "source": "nominatim"
+ },
+ "Goshen, Indiana, United States": {
+  "display": "Goshen, Elkhart County, Indiana, United States",
+  "lat": 41.5850394,
+  "lon": -85.8344491,
+  "source": "nominatim"
+ },
+ "Granger, Indiana, United States": {
+  "display": "Granger, Saint Joseph County, Indiana, 46530, United States",
+  "lat": 41.735251,
+  "lon": -86.1062763,
+  "source": "nominatim"
+ },
+ "Greensboro, Georgia, United States": {
+  "display": "Greensboro, Greene County, Georgia, United States",
+  "lat": 33.5756831,
+  "lon": -83.1823789,
+  "source": "nominatim"
+ },
+ "Greenville, South Carolina, United States": {
+  "display": "Greenville, Greenville County, South Carolina, United States",
+  "lat": 34.851354,
+  "lon": -82.3984882,
+  "source": "nominatim"
+ },
+ "Hamilton, Ontario": {
+  "display": "Hamilton, Ontario, Canada",
+  "lat": 43.2560802,
+  "lon": -79.8728583,
+  "source": "nominatim"
+ },
+ "Hendersonville, North Carolina, United States": {
+  "display": "Hendersonville, Henderson County, North Carolina, 28738, United States",
+  "lat": 35.3187279,
+  "lon": -82.4609528,
+  "source": "nominatim"
+ },
+ "Hong Kong, Central and Western": {
+  "display": "香港 Hong Kong, 砵典乍街 Pottinger Street, 蘇豪 SoHo, 中環 Central, 中西區 Central and Western District, 香港島 Hong Kong Island, 香港 Hong Kong, 中国",
+  "lat": 22.2847214,
+  "lon": 114.1579857,
+  "source": "nominatim"
+ },
+ "Indianapolis, Indiana, United States": {
+  "display": "Indianapolis, Center Township, Marion County, Indiana, United States",
+  "lat": 39.7683331,
+  "lon": -86.1583502,
+  "source": "nominatim"
+ },
+ "Inman, South Carolina, United States": {
+  "display": "Inman, Spartanburg County, South Carolina, United States",
+  "lat": 35.047841,
+  "lon": -82.0906082,
+  "source": "nominatim"
+ },
+ "Jackson, Mississippi, United States": {
+  "display": "Jackson, Hinds County, Mississippi, United States",
+  "lat": 32.2998686,
+  "lon": -90.1830408,
+  "source": "nominatim"
+ },
+ "Janesville, Wisconsin, United States": {
+  "display": "Janesville, Rock County, Wisconsin, United States",
+  "lat": 42.6829765,
+  "lon": -89.0226793,
+  "source": "nominatim"
+ },
+ "Jensen Beach, Florida, United States": {
+  "display": "Jensen Beach, Martin County, Florida, 34957, United States",
+  "lat": 27.2379528,
+  "lon": -80.2389899,
+  "source": "nominatim"
+ },
+ "Kansas City, Missouri, United States": {
+  "display": "Kansas City, Jackson County, Missouri, United States",
+  "lat": 39.100105,
+  "lon": -94.5781416,
+  "source": "nominatim"
+ },
+ "Kingston, Ontario": {
+  "display": "Kingston, Eastern Ontario, Ontario, Canada",
+  "lat": 44.3054151,
+  "lon": -76.4283781,
+  "source": "nominatim"
+ },
+ "Kissimmee, Florida, United States": {
+  "display": "Kissimmee, Osceola County, Florida, United States",
+  "lat": 28.2918995,
+  "lon": -81.4075838,
+  "source": "nominatim"
+ },
+ "Knoxville, Tennessee, United States": {
+  "display": "Knoxville, Knox County, East Tennessee, Tennessee, United States",
+  "lat": 35.9603948,
+  "lon": -83.9210261,
+  "source": "nominatim"
+ },
+ "Lancaster, Pennsylvania, United States": {
+  "display": "Lancaster, Lancaster County, Pennsylvania, 17575, United States",
+  "lat": 40.0379958,
+  "lon": -76.3056707,
+  "source": "nominatim"
+ },
+ "Landover, Maryland, United States": {
+  "display": "Landover, Prince George's County, Maryland, 20785, United States",
+  "lat": 38.925313,
+  "lon": -76.8815433,
+  "source": "nominatim"
+ },
+ "Legal, AB": {
+  "display": "Legal, Alberta, T0G 1L0, Canada",
+  "lat": 53.9487406,
+  "lon": -113.5954265,
+  "source": "nominatim"
+ },
+ "Lexington, Kentucky, United States": {
+  "display": "Lexington, Fayette County, Kentucky, United States",
+  "lat": 38.0464066,
+  "lon": -84.4970393,
+  "source": "nominatim"
+ },
+ "Logan, Utah, United States": {
+  "display": "Logan, Cache County, Utah, United States",
+  "lat": 41.7313063,
+  "lon": -111.834914,
+  "source": "nominatim"
+ },
+ "Los Angeles, California, United States": {
+  "display": "Los Angeles, Los Angeles County, California, United States",
+  "lat": 34.0536923,
+  "lon": -118.2427676,
+  "source": "nominatim"
+ },
+ "Madison, Wisconsin, United States": {
+  "display": "Madison, Dane County, Wisconsin, United States",
+  "lat": 43.07469,
+  "lon": -89.3841663,
+  "source": "nominatim"
+ },
+ "Markham, Ontario": {
+  "display": "Markham, York Region, Ontario, Canada",
+  "lat": 43.8563707,
+  "lon": -79.3376825,
+  "source": "nominatim"
+ },
+ "McAllen, Texas, United States": {
+  "display": "McAllen, Hidalgo County, Texas, United States",
+  "lat": 26.204114,
+  "lon": -98.2300605,
+  "source": "nominatim"
+ },
+ "Middletown, Iowa, United States": {
+  "display": "Middletown, Des Moines County, Iowa, United States",
+  "lat": 40.8283739,
+  "lon": -91.2590387,
+  "source": "nominatim"
+ },
+ "Mountain View, California, United States": {
+  "display": "Mountain View, Santa Clara County, California, United States",
+  "lat": 37.3893889,
+  "lon": -122.0832101,
+  "source": "nominatim"
+ },
+ "N Star Century Center, Chaoyang District, Beijing, 101111, China": {
+  "miss": true
+ },
+ "N Star Century Center, Chaoyang District, Beijing, China": {
+  "miss": true
+ },
+ "Nacogdoches, Texas, United States": {
+  "display": "Nacogdoches County, Texas, United States",
+  "lat": 31.5970503,
+  "lon": -94.5927451,
+  "source": "nominatim"
+ },
+ "Nampa, Idaho, United States": {
+  "display": "Nampa, Canyon County, Idaho, United States",
+  "lat": 43.5780381,
+  "lon": -116.5616885,
+  "source": "nominatim"
+ },
+ "New York, New York, United States": {
+  "display": "New York, United States",
+  "lat": 40.7127281,
+  "lon": -74.0060152,
+  "source": "nominatim"
+ },
+ "Novi, United States": {
+  "display": "Novi, Oakland County, Michigan, United States",
+  "lat": 42.48059,
+  "lon": -83.4754913,
+  "source": "nominatim"
+ },
+ "Oshkosh, Wisconsin, United States": {
+  "display": "Oshkosh, Winnebago County, Wisconsin, United States",
+  "lat": 44.0206919,
+  "lon": -88.5408574,
+  "source": "nominatim"
+ },
+ "Owasso, Oklahoma, United States": {
+  "display": "Owasso, Tulsa, Oklahoma, 74055, United States",
+  "lat": 36.2659698,
+  "lon": -95.8548557,
+  "source": "nominatim"
+ },
+ "Pendergrass, Georgia, United States": {
+  "display": "Pendergrass, Jackson County, Georgia, 30567, United States",
+  "lat": 34.1623292,
+  "lon": -83.6779474,
+  "source": "nominatim"
+ },
+ "Perth Amboy, New Jersey, United States": {
+  "display": "Perth Amboy, Middlesex County, New Jersey, 08861, United States",
+  "lat": 40.5133218,
+  "lon": -74.2724241,
+  "source": "nominatim"
+ },
+ "Port Saint Lucie, Florida, United States": {
+  "display": "Port Saint Lucie, Saint Lucie County, Florida, United States",
+  "lat": 27.2939333,
+  "lon": -80.3503283,
+  "source": "nominatim"
+ },
+ "Princeton, Indiana, United States": {
+  "display": "Princeton, Gibson County, Indiana, 47670, United States",
+  "lat": 38.355439,
+  "lon": -87.5678034,
+  "source": "nominatim"
+ },
+ "Reynolds, Indiana, United States": {
+  "display": "Reynolds, White County, Indiana, United States",
+  "lat": 40.7494835,
+  "lon": -86.8716807,
+  "source": "nominatim"
+ },
+ "Saint-Malo, Brittany, France": {
+  "display": "Saint-Malo, Ille-et-Vilaine, Bretagne, France métropolitaine, 35400, France",
+  "lat": 48.649518,
+  "lon": -2.0260409,
+  "source": "nominatim"
+ },
+ "Salt Lake City, Utah, United States": {
+  "display": "Salt Lake City, Salt Lake County, Utah, United States",
+  "lat": 40.7596198,
+  "lon": -111.886797,
+  "source": "nominatim"
+ },
+ "San Bernardino, California, United States": {
+  "display": "San Bernardino County, California, United States",
+  "lat": 34.8253019,
+  "lon": -116.0833144,
+  "source": "nominatim"
+ },
+ "Scarborough, ON": {
+  "display": "Scarborough, Toronto, Ontario, Canada",
+  "lat": 43.7729744,
+  "lon": -79.2576479,
+  "source": "nominatim"
+ },
+ "Scarborough, Ontario": {
+  "display": "Scarborough, Toronto, Ontario, Canada",
+  "lat": 43.7729744,
+  "lon": -79.2576479,
+  "source": "nominatim"
+ },
+ "Seymour, Tennessee, United States": {
+  "display": "Seymour, Sevier County, East Tennessee, Tennessee, 37865, United States",
+  "lat": 35.8704536,
+  "lon": -83.7571149,
+  "source": "nominatim"
+ },
+ "Sturgis, Michigan, United States": {
+  "display": "Sturgis, Saint Joseph County, Michigan, 49091, United States",
+  "lat": 41.799217,
+  "lon": -85.4191482,
+  "source": "nominatim"
+ },
+ "Texarkana, Texas, United States": {
+  "display": "Texarkana, Bowie County, Texas, United States",
+  "lat": 33.4466208,
+  "lon": -94.0765653,
+  "source": "nominatim"
+ },
+ "Upland, California, United States": {
+  "display": "Upland, San Bernardino County, California, United States",
+  "lat": 34.09751,
+  "lon": -117.6483876,
+  "source": "nominatim"
+ },
+ "Wallingford, Connecticut, United States": {
+  "display": "Wallingford, South Central Connecticut Planning Region, Connecticut, 06492, United States",
+  "lat": 41.4564233,
+  "lon": -72.8239356,
+  "source": "nominatim"
+ },
+ "Waltham, Massachusetts, United States": {
+  "display": "Waltham, Middlesex County, Massachusetts, United States",
+  "lat": 42.3762385,
+  "lon": -71.2355644,
+  "source": "nominatim"
+ },
+ "Washington, District of Columbia, United States": {
+  "display": "Washington, District of Columbia, United States",
+  "lat": 38.8950982,
+  "lon": -77.0363849,
+  "source": "nominatim"
+ },
+ "Westminster, South Carolina, United States": {
+  "display": "Westminster, Oconee County, South Carolina, United States",
+  "lat": 34.6648197,
+  "lon": -83.0965425,
+  "source": "nominatim"
+ },
+ "Wichita, Kansas, United States": {
+  "display": "Wichita, Sedgwick County, Kansas, United States",
+  "lat": 37.6922361,
+  "lon": -97.3375448,
+  "source": "nominatim"
+ },
+ "Windsor, Ontario": {
+  "display": "Windsor, Southwestern Ontario, Ontario, Canada",
+  "lat": 42.2858536,
+  "lon": -82.9780695,
+  "source": "nominatim"
+ },
+ "Wixom, Michigan, United States": {
+  "display": "Wixom, Oakland County, Michigan, United States",
+  "lat": 42.5246873,
+  "lon": -83.5363637,
+  "source": "nominatim"
+ },
+ "Worcester, Massachusetts, United States": {
+  "display": "Worcester, Worcester County, Massachusetts, United States",
+  "lat": 42.2625621,
+  "lon": -71.8018877,
+  "source": "nominatim"
+ }
+}
