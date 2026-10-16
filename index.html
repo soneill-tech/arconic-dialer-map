@@ -1473,7 +1473,7 @@ body{position:fixed;inset:0;width:100%;height:auto;max-height:none}
     })();
   }
   window.__fireworks = fireworks;
-  window.__DATA = DATA; window.__markerShown = (id) => !!(markers[id] && pinLayer.hasLayer(markers[id]));
+  window.__markers = markers; window.__DATA = DATA; window.__markerShown = (id) => !!(markers[id] && pinLayer.hasLayer(markers[id]));
   el("lcCancel").onclick = closeLogCall;
   el("lcSave").onclick = saveLogCall;
   el("lcOverlay").addEventListener("click", (e) => { if (e.target.id === "lcOverlay") closeLogCall(); });
