@@ -85,6 +85,73 @@ OVERRIDES = {"37695051": "arc:Chandler",
              "6825251": "kai:Richmond"}   # Pilar Alvarez (Kaiser, 949 AC) belongs to Richmond (Bellwood), VA per Steve 2026-10-15   # Kevin West (602 = Phoenix AC, assigned to Chandler by request)
 JS = "window.__DIALER_DATA__ = "
 
+# ---- Kawneer (Simran): HubSpot company 8178764938, 21 contacts from kili_contacts.csv (kawneer_contacts.json via build_howmet_contacts.py <csv> kawneer).
+# Pins only where justified: area code 770 appears on 11 of 21 contacts (770-449-5555, Kawneer's Norcross, GA HQ main line).
+# Everything else (other ACs, <=3 contacts each) stays Unassigned. Notes (e.g. Circle internal users) are kept as-is.
+KAWNEER_ID = "8178764938"
+COMPANIES.append(dict(name="Kawneer", id=KAWNEER_ID, am="Simran Subramanian",
+                      url="https://app.hubspot.com/contacts/6029765/record/0-2/" + KAWNEER_ID, industry="Building Products"))
+KAWNEER_SITES = [("Norcross", "Norcross, GA (HQ area, 770)", "Norcross", "Norcross, Gwinnett County, Georgia, United States", 33.9412127, -84.2135309,
+                  ["770"], "Norcross, GA (770-449-5555 main line) \u2014 inferred from phone area code")]
+
+
+def apply_kawneer(d):
+    locs, cs = d["locations"], d["contacts"]
+    co = next(c for c in COMPANIES if c["name"] == "Kawneer")
+    base = dict(am=co["am"], company=co["name"], company_id=co["id"], company_url=co["url"], show_company_link=True)
+    try:
+        kc = json.load(open(os.path.join(HERE, "kawneer_contacts.json")))
+    except OSError:
+        kc = []
+    ac2 = {ac: "kaw:" + k for k, _l, _c, _r, _a, _o, acs, _h in KAWNEER_SITES for ac in acs}
+    have = {str(c.get("hubspot_contact_id")) for c in cs}
+    for h in kc:
+        if h["hubspot_contact_id"] in have:
+            continue
+        pid = ac2.get(h.get("area_code") or "")
+        cs.append({"name": h["name"], "role": "Decision Maker" if h["is_dm"] else "Other", "title": h["title"], "phone": h["phone"],
+                   "mobile": h["mobile"], "email": h["email"], "hubspot_url": "https://app.hubspot.com/contacts/6029765/record/0-1/" + h["hubspot_contact_id"],
+                   "company_url": co["url"], "last_activity": "", "notes": h["notes"], "am": co["am"], "company": co["name"],
+                   "plant": pid.split(":", 1)[1] if pid else None, "area_code": h.get("area_code"), "has_phone": bool(h["phone"] or h["mobile"]),
+                   "is_dm": h["is_dm"], "company_id": co["id"], "plant_id": pid, "hubspot_contact_id": h["hubspot_contact_id"],
+                   "hubspot_link_type": "record", "times_contacted": 0, "sales_activities": 0, "last_contacted": None})
+    want = [dict(id="kaw:all", name="All Kawneer", label="All Kawneer (full list)", city=None, region=None, lat=None, lon=None, filter="all", pin=False,
+                 hint="Full dialer list \u2014 not plant-filtered", **base)]
+    for k, label, city, region, lat, lon, _acs, hint in KAWNEER_SITES:
+        want.append(dict(id="kaw:" + k, name=k, label=label, city=city, region=region, lat=lat, lon=lon, filter="kaw:" + k, pin=True,
+                         source="nominatim", hint=hint, **base))
+    # Kawneer corporate office, Newnan GA (added by request). Paul Laslou is an ARCONIC decision maker (Kili): he is NOT moved; the pin
+    # cross-references him by HubSpot id (contact_ids + cross_company), like supplier pins do, so he shows at Newnan and stays in Arconic.
+    want.append(dict(id="kaw:Newnan", name="Newnan", label="Kawneer corporate office", city="Newnan",
+                     region="Newnan, Coweta County, Georgia, United States", lat=33.3806716, lon=-84.7996573, filter="kaw:Newnan", pin=True,
+                     source="nominatim", kind="office", cross_company=True, contact_ids=["21373851"],
+                     hint="Kawneer corporate office, Newnan, GA \u2014 added by request; shows Paul Laslou (Arconic DM) by cross-reference", **base))
+    want.append(dict(id="kaw:unassigned", name="Unassigned / other", label="Kawneer \u00b7 Unassigned / other ACs", city=None, region=None,
+                     lat=None, lon=None, filter="unassigned", pin=False, hint="No phone or area code not mapped to a pin", **base))
+    existing = {l["id"]: l for l in locs}
+    new = [w for w in want if w["id"] not in existing]
+    if new:
+        un = next((i for i, x in enumerate(locs) if x["id"] == "kaw:unassigned"), None)
+        if un is not None:
+            pins_new = [w for w in new if w.get("pin")]
+            locs[un:un] = pins_new; new = [w for w in new if w not in pins_new]
+        at = max(i for i, x in enumerate(locs) if x["id"].startswith("brt:")) + 1
+        locs[at:at] = new
+    for l in locs:
+        if l["company"] == "Kawneer" and l.get("cross_company"):
+            m = [c for c in cs if str(c["hubspot_contact_id"]) in l["contact_ids"]]
+            l.update(company_id=co["id"], company_url=co["url"], show_company_link=True,
+                     contact_count=len(m), with_phone=sum(1 for c in m if c["has_phone"]), dm_count=sum(1 for c in m if c["is_dm"]))
+        elif l["company"] == "Kawneer":
+            m = [c for c in cs if c["company"] == "Kawneer" and (True if l["id"] == "kaw:all" else (not c["plant"]) if l["id"].endswith(":unassigned") else c["plant_id"] == l["id"])]
+            l.update(company_id=co["id"], company_url=co["url"], show_company_link=True,
+                     contact_count=len(m), with_phone=sum(1 for c in m if c["has_phone"]), dm_count=sum(1 for c in m if c["is_dm"]))
+    cmeta = next((c for c in d["companies"] if c["name"] == "Kawneer"), None)
+    if cmeta is None:
+        d["companies"].append(dict(co))
+    d["stats"]["by_company"].setdefault("Kawneer", {"contacts": 0, "with_phone": 0, "pins": 0, "supplier_pins": 0})
+
+
 def apply_howmet(d):
     locs, cs = d["locations"], d["contacts"]
     co = next(c for c in COMPANIES if c["name"] == "Howmet Aerospace")
@@ -233,6 +300,7 @@ def apply(d):
             l.update(contact_count=len(m), with_phone=sum(1 for c in m if c["has_phone"]), dm_count=0)
     apply_howmet(d)
     apply_howmet_suppliers(d)
+    apply_kawneer(d)
     st = d["stats"]
     st["contacts"] = len(cs); st["with_phone"] = sum(1 for c in cs if c["has_phone"])
     st["decision_makers"] = sum(1 for c in cs if c["is_dm"])

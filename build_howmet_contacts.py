@@ -41,7 +41,10 @@ def area_code(p):
 
 
 def main():
-    rows = [r for r in csv.DictReader(open(sys.argv[1])) if "howmet" in r["Company"].lower()]
+    global KEY
+    KEY = (sys.argv[2] if len(sys.argv) > 2 else "howmet").lower()
+    OUTF = "howmet_contacts.json" if KEY == "howmet" else KEY + "_contacts.json"
+    rows = [r for r in csv.DictReader(open(sys.argv[1])) if KEY in r["Company"].lower()]
     out, seen = [], set()
     for r in rows:
         cid = r["HubSpot Contact URL"].rstrip("/").split("/")[-1]
@@ -53,7 +56,7 @@ def main():
                     "phone": phone, "mobile": mobile, "email": r["Email"].strip(), "is_dm": r["Role"].strip().lower() == "decision maker",
                     "notes": r["Notes"].strip(), "area_code": area_code(phone) or area_code(mobile) or None})
     out.sort(key=lambda c: (not c["is_dm"], not (c["phone"] or c["mobile"]), c["name"].lower()))
-    json.dump(out, open(os.path.join(HERE, "howmet_contacts.json"), "w"), indent=1, ensure_ascii=False)
+    json.dump(out, open(os.path.join(HERE, OUTF), "w"), indent=1, ensure_ascii=False)
     print(len(out), "contacts;", sum(1 for c in out if c["phone"] or c["mobile"]), "with phone")
 
 

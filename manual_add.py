@@ -20,7 +20,7 @@ TOPIC_URL = "https://ntfy.sh/tsdm-calllog-ddbdae3e678c14eb"
 FILE = os.path.join(HERE, "added_manual.json")
 CALLS_FILE = os.path.join(HERE, "last_calls.json")
 ADD_TYPES = ("add_location", "add_contact")
-TYPES = ADD_TYPES + ("edit_item", "delete_item", "set_title", "followup")
+TYPES = ADD_TYPES + ("edit_item", "delete_item", "set_title", "followup", "hide_contact", "restore_contact", "move_contact")
 LOC_COLS = ["loc_id", "created_at", "company", "city", "state", "address", "lat", "lon", "geo_source", "added_by",
             "logged_at", "source", "hubspot_synced"]
 CON_COLS = ["contact_id", "created_at", "company", "name", "title", "phone", "mobile", "email", "location_id",

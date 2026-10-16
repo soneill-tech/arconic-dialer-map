@@ -170,3 +170,9 @@ Top-right **Radar** toggle + opacity slider (off by default; choice remembered p
 - **Howmet supplier pins**: `how:sup:Mogadore` (contacts with area code 330/234: 4) and `how:sup:Laredo` (956: none yet) are supplier squares defined in `apply_site_overrides.py` (`HOWMET_SUPPLIERS`); they reference existing contacts only.
 - **Basemap toggle**: Light (Esri World Street, default) / Dark (Esri Dark Gray + labels) segmented control in the Radar box; choice saved per device in localStorage (`dialerBasemap:v1`). Layer order: base < radar < labels < pins.
 - **Howmet Tucson, AZ** plant pin (`how:Tucson`): contacts John Fox (3192251) and Miguel Angulo (4526951) assigned by explicit `OVERRIDES` in `apply_site_overrides.py`.
+
+## v5
+- **Kawneer** (Simran, HubSpot 8178764938): 21 contacts from `kili_contacts.csv` (`build_howmet_contacts.py <csv> kawneer` -> `kawneer_contacts.json`), `All Kawneer`, `Norcross, GA` pin (area code 770 on 11 contacts), `Kawneer corporate office` pin in Newnan, GA that cross-references Paul Laslou (an Arconic DM, not moved; `cross_company` + `contact_ids`). Notes kept. Not shown on the Kahekili tab.
+- **Hide / Restore / Relocate** any contact (queue types `hide_contact`, `restore_contact`, `move_contact`, see MANUAL_ADD.md). Map-only; nothing is written to HubSpot.
+- **Scorebug** header scoreboard (KILI navy / SIMRAN burgundy, pop animation on change, CT clock + last sync strip; compact single bar under 900px).
+- **Dark mode borders**: `assets/borders.json` (US states + country lines, Natural-Earth-style simplified) in a pane above radar/labels and below pins; hidden in Light mode.

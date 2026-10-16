@@ -64,3 +64,12 @@ Headers
 - Edit/delete exist in the app for manual locations/contacts (✎ / ✕ on the card). Edits/deletes of HubSpot contacts are not possible (titles only).
 - Same exposure as Log Call: anyone with the topic name can post or read. Manual adds are shown to all reps as-is.
 - Manual contacts are not assigned by area code; they sit at the chosen location (or Unassigned) and appear under All / the company list.
+
+## Hide / restore / relocate any contact (v5)
+Reps can **Delete (hide)** or **Relocate** any contact card, including HubSpot-sourced ones. Typed queue messages (same ntfy topic):
+`hide_contact {contact_id, contact_name, company}`, `restore_contact {contact_id}`, `move_contact {contact_id, location_id ("" = Unassigned), location_label}`.
+Latest message per contact wins (time order). `manual_add.py publish` stores them in `added_manual.json` with the other items and `manual_add.py rows`
+lists them in the **Manual Changes** tab (type, target_id = contact id, detail JSON), so the hourly routine needs no new steps: just keep running
+`manual_add.py publish` (and `rows` for the sheet). Hidden contacts drop out of counts, filters, pins/pulses and the scoreboard; the **Show → Hidden** view
+lists them with **Restore to map**. Delete asks for confirmation. Relocate only moves within the contact's company (non-supplier pins or Unassigned).
+**Nothing is ever written to HubSpot** (hide/move are map-only overlays; the HubSpot record is untouched).

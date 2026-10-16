@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Team Steve — Closed Won Dialer Map</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="" />
 <style>
   :root {
@@ -269,6 +270,10 @@
 .title-form button{border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text);padding:4px 9px;font:600 11px var(--font);cursor:pointer}
 .title-form button.go{background:var(--accent);border-color:var(--accent);color:#fff}
 .title-by{font-size:.66rem;color:var(--dm);margin-left:4px}
+.hide-ribbon{background:#475569;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;margin:-10px -12px 8px;border-radius:8px 8px 0 0}
+.contact.is-hidden{opacity:.8;border-style:dashed}
+.mact2{display:flex;gap:12px;margin-top:8px;font-size:.74rem;flex-wrap:wrap}.mact2 a{color:var(--muted);cursor:pointer;padding:4px 0}.mact2 a:hover{color:var(--text)}.mact2 a.del:hover{color:var(--danger)}
+.mact2 a.restore{color:#86efac;font-weight:600;font-size:.85rem}
 .mact{display:flex;gap:10px;margin-top:6px;font-size:.72rem}
 .mact a{color:var(--muted);cursor:pointer}.mact a:hover{color:var(--text)}.mact a.del:hover{color:var(--danger)}
 .loc-card .lact{float:right;font-size:.74rem;display:flex;gap:8px}
@@ -380,13 +385,42 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   .sidebar h2{top:0}
 }
 </style>
+<style>/* ---- scorebug ---- */
+.score-badge{display:none !important}
+.scorebug{display:flex;flex-direction:column;align-items:stretch;margin:0 auto;font-family:"Barlow Condensed","Oswald","Roboto Condensed","Arial Narrow",Impact,sans-serif;filter:drop-shadow(0 3px 8px rgba(0,0,0,.55));user-select:none}
+.sb-row{display:flex;align-items:stretch;height:44px;background:linear-gradient(180deg,#1b2433,#0b111b);border:1px solid #2b3648;border-radius:4px;overflow:hidden}
+.sb-team{display:flex;align-items:center;gap:8px;padding:0 16px;color:#fff;font-weight:800;letter-spacing:.06em}
+.sb-team .nm{font-size:1.15rem}
+.sb-team .sc{font-size:2rem;line-height:1;font-weight:800;min-width:1.1ch;text-align:center;font-variant-numeric:tabular-nums;text-shadow:0 1px 0 rgba(0,0,0,.5)}
+.sb-kili{background:linear-gradient(100deg,#041E42 0%,#0b3166 70%,#16407a 100%);padding-right:26px;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%);border-bottom:3px solid #869397}
+.sb-sim{background:linear-gradient(260deg,#5a0016 0%,#800020 70%,#99193a 100%);padding-left:26px;clip-path:polygon(14px 0,100% 0,100% 100%,0 100%);border-bottom:3px solid #d58aa0}
+.sb-mid{display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;margin:0 -6px;font-size:.62rem;line-height:1.05;font-weight:700;letter-spacing:.16em;color:#9fb0c6;background:#0b111b;white-space:nowrap}
+.sb-strip{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 18px;padding:2px 12px;background:#05080e;border:1px solid #2b3648;border-top:0;border-radius:0 0 6px 6px;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#8da0b8;text-transform:uppercase}
+.sb-strip i{width:3px;height:3px;border-radius:50%;background:#8da0b8;display:inline-block}
+.sc.pop{animation:sbPop .7s cubic-bezier(.2,1.6,.4,1)}
+@keyframes sbPop{0%{transform:scale(1);color:#fff}35%{transform:scale(1.6);color:#fde68a;text-shadow:0 0 12px rgba(253,230,138,.9)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.sc.pop{animation:none}}
+@media (max-width:900px){
+  .scorebug{order:3;width:100%;margin:0}.sb-row{height:36px;width:100%}.sb-team{flex:1;padding:0 12px;gap:6px}.sb-team .nm{font-size:1rem}.sb-team .sc{font-size:1.5rem}
+  .sb-kili{justify-content:flex-start}.sb-sim{justify-content:flex-end}.sb-strip{display:none}.sb-mid{font-size:.55rem;padding:0 6px}
+}
+@media (min-width:901px) and (max-width:1250px){.sb-strip{display:none}}
+</style>
 </head>
 <body>
 <header>
   <div class="h-left">
     <h1>Team Steve — Closed Won Dialer Map <span class="am-accent" id="amAccent" aria-hidden="true"></span></h1>
-    <div class="sub">Arconic + Howmet + Reliable Silver (Kahekili Barrozo) · Kaiser Aluminum + BRT Extrusions (Simran Subramanian)</div>
+    <div class="sub">Arconic + Howmet + Reliable Silver (Kahekili Barrozo) · Kaiser Aluminum + BRT Extrusions + Kawneer (Simran Subramanian)</div>
     <div class="sync-line" id="syncLine">Last synced: <strong>checking…</strong></div>
+  </div>
+  <div class="scorebug" id="scorebug" role="group" aria-label="Contacts called today per account manager">
+    <div class="sb-row">
+      <div class="sb-team sb-kili"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#cbd5e1" d="M12 2l2.9 6.6 7.100.6-5.400 4.700 1.600 7-6.200-3.700-6.200 3.700 1.600-7L2 9.200l7.100-.6z"/></svg><span class="nm">KILI</span><b class="sc" id="sbKili">0</b></div>
+      <div class="sb-mid">CALLS<br/>TODAY</div>
+      <div class="sb-team sb-sim"><b class="sc" id="sbSim">0</b><span class="nm">SIMRAN</span><svg viewBox="0 0 24 24" width="12" height="14" aria-hidden="true"><path fill="#f0a6b8" d="M12 2c-3.500 0-5.500 2.300-5.500 4.800 0 2.700 1.900 4.800 4 7.300L5.500 21l3.200.9L12 17l3.300 4.900 3.200-.9-5-6.900c2.100-2.500 4-4.600 4-7.300C17.500 4.300 15.500 2 12 2z"/></svg></div>
+    </div>
+    <div class="sb-strip"><span id="sbTime">--:-- CT</span><i></i><span id="sbSync">synced …</span></div>
   </div>
   <div class="h-mid">
     <span class="badge" id="statBadge">Loading…</span>
@@ -418,7 +452,7 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     <div class="legend" id="legend">
       <button type="button" class="lg-toggle" id="lgToggle" aria-expanded="true">Legend <span id="lgCaret">▾</span></button>
       <div class="lg-body">
-      <div style="margin-top:4px"><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran) &nbsp; <span class="dot" style="background:#14b8a6"></span> BRT Extrusions (Simran) &nbsp; <span class="dot" style="background:#84cc16"></span> Howmet Aerospace (Kahekili) &nbsp; <span class="dot" style="background:#d946ef"></span> Reliable Silver (Kahekili) <span style="opacity:.8">· ring color</span></div>
+      <div style="margin-top:4px"><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran) &nbsp; <span class="dot" style="background:#14b8a6"></span> BRT Extrusions (Simran) &nbsp; <span class="dot" style="background:#84cc16"></span> Howmet Aerospace (Kahekili) &nbsp; <span class="dot" style="background:#d946ef"></span> Reliable Silver (Kahekili) &nbsp; <span class="dot" style="background:#ef4444"></span> Kawneer (Simran) <span style="opacity:.8">· ring color</span></div>
       <div style="margin-top:4px">Pin fill = last call: <span class="lg-sw" style="background:#22c55e"></span>today <span class="lg-sw" style="background:#facc15"></span>this week <span class="lg-sw" style="background:#fb7185"></span>older <span class="lg-sw" style="background:#6b7280"></span>never</div>
       <div style="margin-top:4px">Pulsing = no call logged today &nbsp; <span style="color:var(--accent2);font-weight:700">✓</span> = called today</div>
       <div style="margin-top:4px"><span class="pin supplier" style="--pin-color:#3b82f6"></span>Supplier square (Arconic/Howmet-managed) — not a company facility; references existing contacts<br/>Numbered bubbles = nearby pins grouped (zoom to expand); pulsing bubble = some pin inside not called today</div>
@@ -435,7 +469,8 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
         <button type="button" data-view="uncalled">Not called today</button>
         <button type="button" data-view="uncalled_week">Not called this week</button>
         <button type="button" data-view="uncalled_month">Not called this month</button>
-        <button type="button" data-view="followups">Follow-ups due</button></div></div>
+        <button type="button" data-view="followups">Follow-ups due</button>
+        <button type="button" data-view="hidden">Hidden</button></div></div>
       <div class="sort-line">
         <span id="sortNote">Sorted by most contacted in HubSpot</span>
         <div class="seg" id="sortToggle" title="Sort contacts">
@@ -474,7 +509,7 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
 </div></div>
 <div class="overlay" id="alOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="alTitle">
 <h3 id="alTitle">Add new location</h3><div class="who">Adds a pin for everyone. Not written to HubSpot.</div>
-<div class="row"><div><label>Company</label><div class="seg" id="alCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button><button type="button" data-v="BRT Extrusions">BRT</button><button type="button" data-v="Howmet Aerospace">Howmet</button><button type="button" data-v="Reliable Silver">Reliable</button></div></div>
+<div class="row"><div><label>Company</label><div class="seg" id="alCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button><button type="button" data-v="BRT Extrusions">BRT</button><button type="button" data-v="Howmet Aerospace">Howmet</button><button type="button" data-v="Reliable Silver">Reliable</button><button type="button" data-v="Kawneer">Kawneer</button></div></div>
 <div><label>Added by</label><div class="seg" id="alBy"><button type="button" data-v="Kili">Kili</button><button type="button" data-v="Simran">Simran</button></div></div></div>
 <div class="row"><div><label>City</label><input id="alCity" placeholder="Chandler"/></div><div><label>State</label><input id="alState" maxlength="30" placeholder="AZ"/></div></div>
 <label>Address (optional)</label><input id="alAddr" placeholder="Street address"/>
@@ -483,9 +518,14 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
 <div class="err" id="alErr"></div>
 <div class="foot"><span class="synchint">⟳ Shared with all reps within ~5 min.</span><div style="display:flex;gap:8px"><button type="button" class="btn" id="alCancel">Cancel</button><button type="button" class="btn save" id="alSave">Add location</button></div></div>
 </div></div>
+<div class="overlay" id="mvOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="mvTitle">
+<h3 id="mvTitle">Relocate contact</h3><div class="who" id="mvWho">Moves the contact to another location on the map. Nothing is written to HubSpot.</div>
+<label>Move to</label><select id="mvLoc"></select>
+<div class="foot"><span class="synchint">⟳ Shared with all reps within ~5 min.</span><div style="display:flex;gap:8px"><button type="button" class="btn" id="mvCancel">Cancel</button><button type="button" class="btn primary" id="mvSave">Move</button></div></div>
+</div></div>
 <div class="overlay" id="acOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="acTitle">
 <h3 id="acTitle">Add new contact</h3><div class="who">Not in HubSpot yet. Nothing is written to HubSpot.</div>
-<div class="row"><div><label>Company</label><div class="seg" id="acCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button><button type="button" data-v="BRT Extrusions">BRT</button><button type="button" data-v="Howmet Aerospace">Howmet</button><button type="button" data-v="Reliable Silver">Reliable</button></div></div>
+<div class="row"><div><label>Company</label><div class="seg" id="acCo"><button type="button" data-v="Arconic" class="active">Arconic</button><button type="button" data-v="Kaiser Aluminum">Kaiser</button><button type="button" data-v="BRT Extrusions">BRT</button><button type="button" data-v="Howmet Aerospace">Howmet</button><button type="button" data-v="Reliable Silver">Reliable</button><button type="button" data-v="Kawneer">Kawneer</button></div></div>
 <div><label>Added by</label><div class="seg" id="acBy"><button type="button" data-v="Kili">Kili</button><button type="button" data-v="Simran">Simran</button></div></div></div>
 <div class="row"><div><label>Name *</label><input id="acName"/></div><div><label>Title</label><input id="acRole"/></div></div>
 <div class="row"><div><label>Phone</label><input id="acPhone" type="tel"/></div><div><label>Mobile</label><input id="acMobile" type="tel"/></div></div>
@@ -536,7 +576,7 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     return c.am === amFilter;
   }
 
-  const COLORS = { "Arconic": "#3b82f6", "Kaiser Aluminum": "#f97316", "BRT Extrusions": "#14b8a6", "Howmet Aerospace": "#84cc16", "Reliable Silver": "#d946ef" };
+  const COLORS = { "Arconic": "#3b82f6", "Kaiser Aluminum": "#f97316", "BRT Extrusions": "#14b8a6", "Howmet Aerospace": "#84cc16", "Reliable Silver": "#d946ef", "Kawneer": "#ef4444" };
   const AM_SHORT = { "Kahekili Barrozo": "Kahekili", "Simran Subramanian": "Simran" };
   // Virtual "everything" location across both companies
   DATA.locations.unshift({ id: "team:all", name: "All Team Steve", label: "All companies",
@@ -549,7 +589,7 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   const memberSets = {};
   DATA.locations.forEach((l) => { if (Array.isArray(l.contact_ids)) memberSets[l.id] = new Set(l.contact_ids.map(String)); });
   function inLoc(c, loc) {
-    if (loc.company && c.company !== loc.company) return false;
+    if (loc.company && c.company !== loc.company && !(loc.cross_company && memberSets[loc.id] && memberSets[loc.id].has(contactId(c)))) return false;
     if (loc.filter === "all") return true;
     if (loc.filter === "unassigned") return !c.plant;
     const set = memberSets[loc.id];
@@ -557,7 +597,7 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   }
   function supplierLocsFor(c) {   // supplier pins that list this contact
     const id = contactId(c);
-    return id ? DATA.locations.filter((l) => memberSets[l.id] && l.company === c.company && memberSets[l.id].has(id)) : [];
+    return id ? DATA.locations.filter((l) => memberSets[l.id] && (l.company === c.company || l.cross_company) && memberSets[l.id].has(id)) : [];
   }
 
   function todayCT() {
@@ -650,8 +690,8 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   function filteredContactsForLoc(loc, view) {
     view = view || viewFilter;
     const q = searchQ.trim().toLowerCase();
-    return DATA.contacts.filter((c) => {
-      if (!contactMatchesAM(c)) return false;
+    return (view === "hidden" ? HIDDEN : DATA.contacts).filter((c) => {
+      if (!contactMatchesAM(c) && !(loc.cross_company && memberSets[loc.id] && memberSets[loc.id].has(contactId(c)))) return false;
       if (!inLoc(c, loc)) return false;
       if (view === "uncalled" && calledInfo(c)) return false;
       if (view === "uncalled_week" && !notCalledSince(c, weekStartCT())) return false;
@@ -796,6 +836,11 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     if (viewFilter === "followups") return list.slice().sort((a, b) => (followupFor(a).due < followupFor(b).due ? -1 : followupFor(a).due > followupFor(b).due ? 1 : 0) || SORTS.touches(a, b));
     return list.slice().sort(viewFilter.startsWith("uncalled") ? (sortMode === "ytd" ? SORTS.ytd : SORTS.touches) : (SORTS[sortMode] || SORTS.touches));
   }
+  function sbClock() {
+    el("sbTime").textContent = new Intl.DateTimeFormat("en-US", { timeZone: CT_TZ, hour: "numeric", minute: "2-digit", weekday: "short" }).format(new Date()) + " CT";
+    const sy = document.querySelector("#syncLine strong"); el("sbSync").textContent = "synced " + ((sy && sy.textContent) || "…").replace(/ CT$/, "");
+  }
+  setInterval(() => { try { sbClock(); } catch (e) {} }, 20000);
   function renderScore() {
     const byId = new Map(); DATA.contacts.forEach((c) => byId.set(contactId(c), c));
     const n = { Kili: 0, Simran: 0 };
@@ -804,6 +849,8 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
       if (a.includes("kili") || a.includes("kahekili")) n.Kili++; else if (a.includes("simran")) n.Simran++;
     });
     el("scoreBadge").innerHTML = `📞 Called today: Kili <strong>${n.Kili}</strong> · Simran <strong>${n.Simran}</strong>`;
+    [["sbKili", n.Kili], ["sbSim", n.Simran]].forEach(([id, v]) => { const e = el(id); if (e.textContent !== String(v)) { const first = e.dataset.init; e.textContent = v; e.dataset.init = "1"; if (first) { e.classList.remove("pop"); void e.offsetWidth; e.classList.add("pop"); } } });
+    sbClock();
   }
   function fmtLastContacted(v) {
     if (!v) return "";
@@ -844,8 +891,9 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
       fu ? `<span class="fu-badge${fu.due <= todayCT() ? " due" : ""}" title="${esc(fu.note || "")}">↩ ${esc(fmtDue(fu.due))}${fu.due < todayCT() ? " overdue" : fu.due === todayCT() ? " today" : ""}${fu.note ? " · " + esc(fu.note.slice(0, 32)) : ""} <a data-fu-done="${esc(id)}">done</a></span>` : "",
     ].join("");
     return `
-      <div class="contact${ci ? " is-called" : ""}" data-contact-id="${esc(id)}" style="--co:${col}">
-        ${ci ? `<div class="called-ribbon" title="${esc((ci.outcome ? "Outcome: " + ci.outcome : "Call logged today") + (ci.src === "log" ? " · via Log Call" + (ci.pending ? " (saved on this device only, not yet shared)" : "") : " · HubSpot sync"))}">✓ Called today${ci.time ? " · " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
+      <div class="contact${ci ? " is-called" : ""}${c.hidden ? " is-hidden" : ""}" data-contact-id="${esc(id)}" style="--co:${col}">
+        ${c.hidden ? `<div class="hide-ribbon">Hidden from map${c.hidden_by ? " · by " + esc(c.hidden_by) : ""}</div>` : ""}
+        ${ci && !c.hidden ? `<div class="called-ribbon" title="${esc((ci.outcome ? "Outcome: " + ci.outcome : "Call logged today") + (ci.src === "log" ? " · via Log Call" + (ci.pending ? " (saved on this device only, not yet shared)" : "") : " · HubSpot sync"))}">✓ Called today${ci.time ? " · " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
         <div class="top">
           <div class="who">
             <div class="cname">${esc(c.name || "(no name)")}</div>
@@ -858,32 +906,34 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
         <div class="btns2">${id ? `<button type="button" class="log-btn" data-log="${esc(id)}">✎ Log Call</button>` : ""}${hsLink(c)}</div>
         <div class="meta-rows">
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
-          ${!c.manual && c.notes && c.notes !== "Title not scraped" && (c.company === "BRT Extrusions" || c.company === "Reliable Silver") ? `<div class="poc-note" style="margin:0">${esc(c.notes)}</div>` : ""}
+          ${!c.manual && c.notes && c.notes !== "Title not scraped" && (c.company === "BRT Extrusions" || c.company === "Reliable Silver" || c.company === "Kawneer") ? `<div class="poc-note" style="margin:0">${esc(c.notes)}</div>` : ""}
         </div>
         ${c.manual ? `<div class="plant-tag" style="color:var(--muted)">Location: ${c.plant_id ? esc(plantLabel(c)) : "unassigned"} (set manually${c.added_by ? " by " + esc(c.added_by) : ""})</div>
           <div class="mact"><a data-edit-con="${esc(c.manual_id)}">✎ Edit</a><a class="del" data-del-con="${esc(c.manual_id)}">🗑 Delete</a></div>`
+          : c.moved_by ? `<div class="plant-tag">Moved to: ${c.plant_id ? esc(plantLabel(c)) : "Unassigned"} (by ${esc(c.moved_by)}; map only)</div>`
           : c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
-        ${(() => { const sl = supplierLocsFor(c); return sl.length ? `<div class="also-tag">Also at supplier: ${sl.map((l) => esc(String(l.name || l.city).replace(/ \(supplier\)$/, ""))).join(" · ")}</div>` : ""; })()}
+        <div class="mact2">${c.hidden ? `<a class="restore" data-restore="${esc(id)}">↩ Restore to map</a>` : `<a data-move="${esc(id)}">⇄ Relocate</a>${c.manual ? "" : `<a class="del" data-hide="${esc(id)}">🚫 Delete (hide)</a>`}`}</div>
+        ${(() => { const sl = supplierLocsFor(c); return sl.length ? `<div class="also-tag">Also at: ${sl.map((l) => esc(String(l.name || l.city).replace(/ \(supplier\)$/, ""))).join(" · ")}</div>` : ""; })()}
       </div>`;
   }
   function renderDetail() {
     const loc = DATA.locations.find((l) => l.id === selectedLocId) || DATA.locations[0];
     const all = filteredContactsForLoc(loc, "all");
     const nUn = all.filter((c) => !calledInfo(c)).length, nFu = all.filter(followupDue).length;
-    const wk = weekStartCT(), mo = monthStartCT();
+    const wk = weekStartCT(), mo = monthStartCT(), nHid = filteredContactsForLoc(loc, "hidden").length;
     const nWk = all.filter((c) => notCalledSince(c, wk)).length, nMo = all.filter((c) => notCalledSince(c, mo)).length;
     el("viewToggle").querySelectorAll("button").forEach((b) => {
       const v = b.dataset.view;
       b.classList.toggle("active", v === viewFilter);
       b.textContent = v === "all" ? "All" : v === "uncalled" ? `Not called today (${nUn})` : v === "uncalled_week" ? `Not called this week (${nWk})`
-        : v === "uncalled_month" ? `Not called this month (${nMo})` : `Follow-ups due (${nFu})`;
+        : v === "uncalled_month" ? `Not called this month (${nMo})` : v === "hidden" ? `Hidden (${nHid})` : `Follow-ups due (${nFu})`;
       b.title = v === "uncalled_week" ? `No call since Monday ${wk} (CT)` : v === "uncalled_month" ? `No call since ${mo} (CT)` : "";
     });
     const contacts = sortContacts(filteredContactsForLoc(loc));
     el("detailTitle").textContent = `${loc.label || loc.name} · ${contacts.length} contacts`;
     const winNote = { uncalled: "Not called today", uncalled_week: "No call since Monday", uncalled_month: "No call this month" }[viewFilter];
     const byWhat = sortMode === "ytd" ? "most touches this year" : "most touches";
-    el("sortNote").textContent = winNote ? `${winNote}, ${byWhat} first` : viewFilter === "followups" ? "Follow-ups due, oldest first" : SORT_NOTES[sortMode];
+    el("sortNote").textContent = viewFilter === "hidden" ? "Hidden contacts: not counted anywhere. Restore to bring them back." : winNote ? `${winNote}, ${byWhat} first` : viewFilter === "followups" ? "Follow-ups due, oldest first" : SORT_NOTES[sortMode];
     if (sortMode === "ytd" && !hasYtd()) el("sortNote").textContent += " · this-year counts not loaded yet, using all-time touches";
     const body = el("detailBody");
     if (!contacts.length) {
@@ -1004,6 +1054,14 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
       dark: [L.tileLayer(ESRI + "Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", { attribution: "Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors", maxNativeZoom: 16, maxZoom: 19 }),
              L.tileLayer(ESRI + "Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", { pane: "labelsPane", maxNativeZoom: 16, maxZoom: 19 })],
     };
+    // Dark mode only: US state + country boundary lines (assets/borders.json), own pane above radar and labels, below pins. Fails soft.
+    map.createPane("bordersPane"); map.getPane("bordersPane").style.zIndex = 270; map.getPane("bordersPane").style.pointerEvents = "none";
+    const borderGroup = L.layerGroup();
+    BASES.dark.push(borderGroup);
+    fetch("assets/borders.json").then((r) => r.json()).then((b) => {
+      L.geoJSON(b.states, { pane: "bordersPane", interactive: false, style: { color: "#cbd5e1", weight: 1, opacity: 0.6, fill: false } }).addTo(borderGroup);
+      L.geoJSON(b.countries, { pane: "bordersPane", interactive: false, style: { color: "#f1f5f9", weight: 1.6, opacity: 0.8, fill: false } }).addTo(borderGroup);
+    }).catch((e) => console.warn("borders overlay unavailable:", e));
     let baseMode = null;
     window.__setBase = function (mode) {
       if (!BASES[mode]) mode = "light";
@@ -1244,20 +1302,22 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   const ADDED_URL = "added_manual.json";
   const LS_ADD_CACHE = "dialerAddCache:v1";      // {id: item}
   const LS_ADD_PENDING = "dialerAddPending:v1";  // [item] not yet accepted by the queue
-  const QTYPES = ["add_location", "add_contact", "edit_item", "delete_item", "set_title", "followup"];
+  const QTYPES = ["add_location", "add_contact", "edit_item", "delete_item", "set_title", "followup", "hide_contact", "restore_contact", "move_contact"];
   const LOC_EDIT = ["city", "state", "address", "lat", "lon", "geo_source"];
   const CON_EDIT = ["name", "title", "phone", "mobile", "email", "location_id"];
   const BASE_LOCS = DATA.locations.slice();
   const BASE_CONTACTS = DATA.contacts.slice();
-  BASE_CONTACTS.forEach((c) => { c._t0 = c.title || ""; });
+  BASE_CONTACTS.forEach((c) => { c._t0 = c.title || ""; c._p0 = { plant: c.plant, plant_id: c.plant_id }; });
+  let HIDDEN = [];
   const manualItems = new Map();                 // id -> item
   const CO_META = {};
   (DATA.companies || []).forEach((c) => { CO_META[c.name] = c; });
-  const CO_PREFIX = { "Arconic": "arc", "Kaiser Aluminum": "kai", "BRT Extrusions": "brt", "Howmet Aerospace": "how", "Reliable Silver": "rel" };
+  const CO_PREFIX = { "Arconic": "arc", "Kaiser Aluminum": "kai", "BRT Extrusions": "brt", "Howmet Aerospace": "how", "Reliable Silver": "rel", "Kawneer": "kaw" };
   const mkId = (p) => `${p}-${Date.now().toString(36)}-${(crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)).replace(/-/g, "").slice(0, 8)}`;
   const itemTitle = (it) => ({ add_location: () => "New location: " + it.city + ", " + it.state, add_contact: () => "New contact: " + it.name,
     edit_item: () => "Edit " + it.target_id, delete_item: () => "Delete " + it.target_id, set_title: () => "Title: " + (it.contact_name || it.contact_id),
-    followup: () => "Follow-up: " + (it.contact_name || it.contact_id) })[it.type]();
+    followup: () => "Follow-up: " + (it.contact_name || it.contact_id), hide_contact: () => "Hide: " + (it.contact_name || it.contact_id),
+    restore_contact: () => "Restore: " + (it.contact_name || it.contact_id), move_contact: () => "Move: " + (it.contact_name || it.contact_id) })[it.type]();
   async function postItem(item) {
     const res = await fetch(LOG_TOPIC_URL, { method: "POST", body: JSON.stringify(item),
       headers: { "Title": itemTitle(item), "Tags": "dialer-add" } });
@@ -1310,7 +1370,7 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   }
   function applyManual() {
     const all = [...manualItems.values()].sort((a, b) => String(a.added_at || "").localeCompare(String(b.added_at || "")) || String(a.id).localeCompare(String(b.id)));
-    const adds = new Map(), titles = new Map();
+    const adds = new Map(), titles = new Map(), hides = new Map(), moves = new Map();
     followups.clear();
     all.forEach((it) => {
       if (it.type === "add_location" || it.type === "add_contact") adds.set(it.id, { ...it });
@@ -1318,6 +1378,9 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
         const t = adds.get(it.target_id); if (!t) return;
         (t.type === "add_location" ? LOC_EDIT : CON_EDIT).forEach((k) => { if (it.fields && k in it.fields) t[k] = it.fields[k]; });
       } else if (it.type === "delete_item") adds.delete(it.target_id);
+      else if (it.type === "hide_contact" && it.contact_id) hides.set(String(it.contact_id), { by: it.added_by || "team" });
+      else if (it.type === "restore_contact" && it.contact_id) hides.delete(String(it.contact_id));
+      else if (it.type === "move_contact" && it.contact_id) moves.set(String(it.contact_id), { loc: it.location_id || "", by: it.added_by || "team" });
       else if (it.type === "set_title" && it.contact_id) titles.set(String(it.contact_id), it);
       else if (it.type === "followup" && it.contact_id) followups.set(String(it.contact_id), { due: it.due || "", note: it.note || "", by: it.added_by || "" });
     });
@@ -1330,7 +1393,20 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     });
     const mcs = [...adds.values()].filter((i) => i.type === "add_contact" && i.name && CO_META[i.company]).map((i) => manualContactObj(i, locs));
     DATA.locations = locs;
-    DATA.contacts = BASE_CONTACTS.concat(mcs);
+    const everyone = BASE_CONTACTS.concat(mcs);
+    everyone.forEach((c) => {   // moves (relocate) and hides (delete from map): map-only overlays, never written to HubSpot
+      if (c._p0) { c.plant = c._p0.plant; c.plant_id = c._p0.plant_id; }
+      c.moved_by = ""; c.hidden = false; c.hidden_by = "";
+      const id = contactId(c), mv = moves.get(id);
+      if (mv) {
+        if (!mv.loc) { c.plant = null; c.plant_id = null; c.moved_by = mv.by; }
+        else { const tl = locs.find((l) => l.id === mv.loc && l.company === c.company && l.pin && !isSupplier(l)); if (tl) { c.plant = tl.name || tl.label; c.plant_id = tl.id; c.moved_by = mv.by; } }
+      }
+      const hd = id ? hides.get(id) : null;
+      if (hd) { c.hidden = true; c.hidden_by = hd.by; }
+    });
+    HIDDEN = everyone.filter((c) => c.hidden);
+    DATA.contacts = everyone.filter((c) => !c.hidden);   // hidden contacts drop out of counts, filters, pulses and the scoreboard
     DATA.contacts.forEach((c) => {   // title overrides: typed in from the map, never written to HubSpot
       const t = titles.get(contactId(c));
       c.title = t && t.title ? t.title : (c._t0 || ""); c.title_by = t && t.title ? (t.added_by || "team") : "";
@@ -1518,6 +1594,37 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
     if (!confirm(`Delete ${kind === "loc" ? "location" : "contact"} “${label}”?${n ? `\n${n} contact(s) here will become unassigned.` : ""}\nThis removes it for all reps.`)) return;
     await savedItem({ type: "delete_item", id: mkId("dl"), target_id: id, added_by: amFilter === "Simran Subramanian" ? "Simran" : "Kili", added_at: new Date().toISOString(), source: "dialer-map" });
   }
+  // ---- hide (delete from map) / restore / relocate ANY contact, incl. HubSpot-sourced ones. Queue messages only; HubSpot is never written. ----
+  let mvFor = null;
+  const anyContact = (id) => DATA.contacts.concat(HIDDEN).find((x) => contactId(x) === id);
+  function contactAction(t) {
+    const by = amFilter === "Simran Subramanian" ? "Simran" : "Kili";
+    if (t.dataset.hide) {
+      const c = anyContact(t.dataset.hide); if (!c) return;
+      if (!confirm(`Delete “${c.name}” from the map?\n\nThis hides the contact for all reps and removes it from counts, filters and pins.\nNothing is changed in HubSpot. You can restore it any time from Show → Hidden.`)) return;
+      savedItem({ type: "hide_contact", id: mkId("hc"), contact_id: t.dataset.hide, contact_name: c.name, company: c.company, added_by: by, added_at: new Date().toISOString(), source: "dialer-map" });
+    } else if (t.dataset.restore) {
+      const c = anyContact(t.dataset.restore); if (!c) return;
+      savedItem({ type: "restore_contact", id: mkId("rc"), contact_id: t.dataset.restore, contact_name: c.name, company: c.company, added_by: by, added_at: new Date().toISOString(), source: "dialer-map" });
+    } else {
+      const c = anyContact(t.dataset.move); if (!c) return;
+      mvFor = c;
+      el("mvTitle").textContent = `Relocate ${c.name}`;
+      const opts = DATA.locations.filter((l) => l.company === c.company && l.pin && !isSupplier(l)).map((l) => `<option value="${esc(l.id)}">${esc(l.label || l.name)}</option>`);
+      el("mvLoc").innerHTML = `<option value="">Unassigned / other</option>` + opts.join("");
+      el("mvLoc").value = c.plant_id || "";
+      el("mvOverlay").classList.add("show");
+    }
+  }
+  el("mvCancel").onclick = () => closeOv("mvOverlay");
+  el("mvOverlay").addEventListener("click", (e) => { if (e.target.id === "mvOverlay") closeOv("mvOverlay"); });
+  el("mvSave").onclick = async () => {
+    const c = mvFor; if (!c) return; closeOv("mvOverlay");
+    const lid = el("mvLoc").value, lab = lid ? (DATA.locations.find((l) => l.id === lid) || {}).label : "Unassigned";
+    await savedItem({ type: "move_contact", id: mkId("mc"), contact_id: contactId(c), contact_name: c.name, company: c.company, location_id: lid, location_label: lab,
+      added_by: amFilter === "Simran Subramanian" ? "Simran" : "Kili", added_at: new Date().toISOString(), source: "dialer-map" });
+    mvFor = null;
+  };
   el("addLocBtn").onclick = () => openAddLoc(); el("addConBtn").onclick = () => openAddCon();
   el("alFind").onclick = findOnMap; el("alPick").onclick = pickPin; el("alSave").onclick = saveAddLoc;
   el("acSave").onclick = saveAddCon;
@@ -1533,8 +1640,9 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
   }, true);
   // -- detail panel actions: edit/delete manual contacts, add title, clear follow-up, tap-to-call --
   el("detailBody").addEventListener("click", (e) => {
-    const t = e.target.closest("[data-edit-con],[data-del-con],[data-add-title],[data-fu-done],a.tel-btn");
+    const t = e.target.closest("[data-edit-con],[data-del-con],[data-add-title],[data-fu-done],[data-hide],[data-restore],[data-move],a.tel-btn");
     if (!t) return;
+    if (t.dataset.hide || t.dataset.restore || t.dataset.move) return contactAction(t);
     if (t.dataset.editCon) { const st = manualState(t.dataset.editCon); if (st) openAddCon(st); }
     else if (t.dataset.delCon) deleteManual(t.dataset.delCon, "con");
     else if (t.dataset.fuDone) {
