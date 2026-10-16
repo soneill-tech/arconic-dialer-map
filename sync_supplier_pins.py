@@ -34,6 +34,11 @@ SUPPLIERS = [
          city="Minster", region="Minster, Auglaize County, Ohio, USA", lat=40.3931033, lon=-84.3760612,
          contacts_from=[LANCASTER, BETTENDORF],
          hint="Supplier (Arconic-managed), not an Arconic facility · contacts of Lancaster, PA + Davenport Works (Bettendorf, IA)"),
+    # Champagne Metals, Glenpool OK (Steve, 2026-10-15): same contacts as Middlebury (Bettendorf/Davenport Works); references only, no duplicates
+    dict(id="arc:sup:Glenpool", name="Champagne Metals (Glenpool, OK)", label="Champagne Metals (Glenpool, OK)",
+         city="Glenpool", region="Glenpool, Tulsa County, Oklahoma, United States", lat=35.9553523, lon=-96.0087780,
+         contacts_from=[BETTENDORF],
+         hint="Champagne Metals \u00b7 Supplier (Arconic-managed), not an Arconic facility \u00b7 same contacts as Middlebury, IN (Davenport Works, Bettendorf, IA)"),
 ]
 
 

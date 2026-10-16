@@ -335,6 +335,8 @@ def apply(d):
         if l.get("filter") == "all" and l.get("company"):
             m = [c for c in cs if c["company"] == l["company"]]
             l.update(contact_count=len(m), with_phone=sum(1 for c in m if c["has_phone"]), dm_count=sum(1 for c in m if c["is_dm"]))
+    import sync_supplier_pins   # Arconic supplier pins (Middlebury, Minster, Glenpool/Champagne Metals) are defined there; idempotent
+    d, _ = sync_supplier_pins.build(d)
     return d
 
 if __name__ == "__main__":
