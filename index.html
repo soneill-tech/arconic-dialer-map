@@ -427,6 +427,13 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
 .loc-row .ct{font-size:.66rem;font-weight:700;color:#86efac;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.4);border-radius:999px;padding:1px 6px}
 .loc-row .ty{font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:4px;padding:1px 5px;background:var(--panel2);color:var(--muted);border:1px solid var(--border)}
 .loc-row .ty.hq{color:#fde68a;border-color:#a16207}.loc-row .ty.sup{color:#fbbf24;border-color:#92400e}.loc-row .ty.plant{color:#93c5fd;border-color:#1d4ed8}
+.acct-pill{position:absolute;top:10px;left:50%;transform:translateX(-50%);z-index:900;display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--co,var(--border));box-shadow:0 0 0 2px color-mix(in srgb,var(--co,#888) 35%,transparent),var(--shadow);border-radius:999px;padding:5px 6px 5px 12px;font-size:.78rem;font-weight:600;color:var(--text);white-space:nowrap}
+.acct-pill[hidden]{display:none}
+.acct-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--co,#888)}
+.acct-pill button{background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:3px 10px;font:600 .72rem var(--font);cursor:pointer}
+.lc-chips button.active{box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 45%,transparent);font-weight:800}
+.lc-chips button.active::before{content:"✓ "}
+@media (max-width:900px){.acct-pill{position:fixed;top:auto;bottom:calc(var(--sheet-h,0px) + 62px);left:10px;transform:none;max-width:calc(100vw - 20px)}}
 .lc-empty{padding:16px;color:var(--muted);font-size:.85rem}
 </style>
 <style>/* ---- scorebug v2 (bigger) + fireworks ---- */
@@ -506,6 +513,7 @@ body{position:fixed;inset:0;width:100%;height:auto;max-height:none}
   </aside>
   <div class="map-wrap">
     <div id="map"></div>
+    <div class="acct-pill" id="acctPill" hidden><span class="dot"></span><span id="acctPillTxt"></span><button type="button" id="acctPillX" aria-label="Show all accounts">✕ Show all</button></div>
     <div id="mapFallback" class="map-fallback">
       <p style="color:var(--muted);margin:0 0 12px">Map tiles unavailable — use location cards:</p>
       <div class="fallback-grid" id="fallbackGrid"></div>
@@ -1085,13 +1093,14 @@ body{position:fixed;inset:0;width:100%;height:auto;max-height:none}
 
   function selectLoc(id, fly) {
     selectedLocId = id;
+    const loc = DATA.locations.find((l) => l.id === id);
+    // Account scope for the map: an "All <company>" entry scopes to that company, "All companies" clears it; picking a pin of another company clears it.
+    if (loc && !loc.pin && loc.filter === "all") acctFilter = loc.company || "all";
+    else if (loc && loc.pin && acctFilter !== "all" && loc.company !== acctFilter) acctFilter = "all";
+    if (acctFilter !== mapAcctApplied) { saveLocView(); if (map) updateMarkerVisibility(true); }
     renderLocList();
     renderDetail();
-    const loc = DATA.locations.find((l) => l.id === id);
-    if (fly && loc && !loc.pin && map && Object.keys(markers).length) {
-      const pts = DATA.locations.filter((l) => l.pin && locMatchesAM(l) && (!loc.company || l.company === loc.company)).map((l) => [l.lat, l.lon]);
-      if (pts.length) map.flyToBounds(pts, { padding: [40, 40], duration: 0.6 });
-    }
+    if (fly && loc && !loc.pin && map && Object.keys(markers).length) fitPins();
     if (fly && loc && loc.pin && loc.lat != null && map) {
       const m = markers[id];
       if (m && pinLayer && pinLayer.zoomToShowLayer && pinLayer.hasLayer(m)) pinLayer.zoomToShowLayer(m, () => m.openPopup());
@@ -1111,8 +1120,14 @@ body{position:fixed;inset:0;width:100%;height:auto;max-height:none}
 
   el("viewMode").addEventListener("click", (e) => { const b = e.target.closest("button[data-mode]"); if (b) setLocView(b.dataset.mode); });
   el("lcRep").addEventListener("click", (e) => { const b = e.target.closest("button[data-am]"); if (b) el("amFilter").querySelector(`button[data-am="${b.dataset.am}"]`).click(); });   // one source of truth: the top tabs
+  el("acctPillX").addEventListener("click", () => selectLoc("team:all", true));
   el("lcSearch").addEventListener("input", (e) => { locSearchQ = e.target.value; renderLocList(); });
-  el("lcAcct").addEventListener("click", (e) => { const b = e.target.closest("button[data-co]"); if (b) { acctFilter = b.dataset.co; saveLocView(); renderLocList(); } });
+  el("lcAcct").addEventListener("click", (e) => { const b = e.target.closest("button[data-co]"); if (b) {
+    const co = b.dataset.co; if (co === "all") return selectLoc("team:all", true);
+    const d = DATA.locations.find((l) => l.id === (CO_PREFIX[co] || "") + ":all") || DATA.locations.find((l) => l.company === co && l.pin) || DATA.locations.find((l) => l.company === co);
+    acctFilter = co; selectLoc(d ? d.id : "team:all", true);
+    if (d && d.pin) fitPins();   // companies without an "All" entry: fit to all of the account's pins
+  } });
   setLocView(locViewMode);
   // AM filter: All / Kahekili (Arconic) / Simran (Kaiser)
   el("amFilter").addEventListener("click", (e) => {
@@ -1123,6 +1138,7 @@ body{position:fixed;inset:0;width:100%;height:auto;max-height:none}
     el("amFilter").querySelectorAll("button").forEach((b) => b.classList.toggle("active", b === btn));
     const cur = DATA.locations.find((l) => l.id === selectedLocId);
     if (!cur || !locMatchesAM(cur)) selectedLocId = "team:all";
+    if (acctFilter !== "all") { const co = (DATA.companies || []).find((c) => c.name === acctFilter); if (!co || (amFilter !== "all" && co.am !== amFilter)) { acctFilter = "all"; saveLocView(); } }
     renderStats();
     renderLocList();
     renderDetail();
@@ -1260,19 +1276,33 @@ body{position:fixed;inset:0;width:100%;height:auto;max-height:none}
     if (pinLayer && pinLayer.refreshClusters) pinLayer.refreshClusters();
   }
 
-  function updateMarkerVisibility() {
+  const acctOk = (loc) => acctFilter === "all" || loc.company === acctFilter;   // account filter (chip / "All <company>" entry) also scopes the map
+  const locOnMap = (loc) => locMatchesAM(loc) && acctOk(loc);
+  let mapAcctApplied = "all";
+  function updateMarkerVisibility(noFit) {
+    mapAcctApplied = acctFilter;
     Object.entries(markers).forEach(([id, m]) => {
       const loc = DATA.locations.find((l) => l.id === id);
       if (!loc) return;
-      const show = locMatchesAM(loc);
+      const show = locOnMap(loc);
       if (show) {
         if (!pinLayer.hasLayer(m)) pinLayer.addLayer(m);
       } else {
         if (pinLayer.hasLayer(m)) pinLayer.removeLayer(m);
       }
     });
-    const pts = DATA.locations.filter((l) => l.pin && l.lat != null && locMatchesAM(l)).map((l) => [l.lat, l.lon]);
-    if (pts.length) map.flyToBounds(pts, { padding: [40, 40], duration: 0.6 });
+    renderAcctPill();
+    if (noFit) return;
+    fitPins();
+  }
+  function fitPins() {
+    const pts = DATA.locations.filter((l) => l.pin && l.lat != null && locOnMap(l)).map((l) => [l.lat, l.lon]);
+    if (pts.length && map) map.flyToBounds(pts, { padding: [40, 40], paddingBottomRight: [40, (isMobile() && document.body.dataset.sheet !== "peek") ? Math.round(innerHeight * (document.body.dataset.sheet === "full" ? 0.8 : 0.46)) : 40], duration: 0.6, maxZoom: 9 });
+  }
+  function renderAcctPill() {
+    const pill = el("acctPill"); if (!pill) return;
+    pill.hidden = acctFilter === "all";
+    if (acctFilter !== "all") { pill.style.setProperty("--co", COLORS[acctFilter] || "#888"); el("acctPillTxt").textContent = `Map: ${acctFilter} only`; }
   }
 
   // ---- Log Call: shared call log (ntfy.sh topic, append-only, no secrets) + localStorage fallback ----
@@ -1436,6 +1466,7 @@ body{position:fixed;inset:0;width:100%;height:auto;max-height:none}
     })();
   }
   window.__fireworks = fireworks;
+  window.__DATA = DATA; window.__markerShown = (id) => !!(markers[id] && pinLayer.hasLayer(markers[id]));
   el("lcCancel").onclick = closeLogCall;
   el("lcSave").onclick = saveLogCall;
   el("lcOverlay").addEventListener("click", (e) => { if (e.target.id === "lcOverlay") closeLogCall(); });
@@ -1589,7 +1620,7 @@ body{position:fixed;inset:0;width:100%;height:auto;max-height:none}
     });
     Object.entries(markers).forEach(([id, m]) => {
       const loc = DATA.locations.find((l) => l.id === id);
-      if (loc && locMatchesAM(loc) !== pinLayer.hasLayer(m)) { if (locMatchesAM(loc)) pinLayer.addLayer(m); else pinLayer.removeLayer(m); }
+      if (loc && locOnMap(loc) !== pinLayer.hasLayer(m)) { if (locOnMap(loc)) pinLayer.addLayer(m); else pinLayer.removeLayer(m); }
     });
   }
   async function savedItem(item) {
