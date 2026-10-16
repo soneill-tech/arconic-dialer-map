@@ -97,7 +97,7 @@ kai_locs.append(dict(id="kai:unassigned", name="Unassigned", label="Kaiser · Un
 contacts = arc_contacts + kai_contacts
 data = {
     "version": 2,
-    "title": "Team Steve — Closed Won Dialer Map",
+    "title": "Team Steve — AM Dialer Map",
     "scope": "Arconic (HubSpot 2359249037, Kahekili Barrozo) + Kaiser Aluminum (HubSpot 5360206404, Simran Subramanian)",
     "generated": "2026-10-05",
     "companies": [dict(ARC, industry="Mining & Metals"), KAI],

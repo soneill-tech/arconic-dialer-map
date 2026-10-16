@@ -1,6 +1,6 @@
 window.__DIALER_DATA__ = {
   "version": 2,
-  "title": "Team Steve — Closed Won Dialer Map",
+  "title": "Team Steve — AM Dialer Map",
   "scope": "Arconic (HubSpot 2359249037, Kahekili Barrozo) + Kaiser Aluminum (HubSpot 5360206404, Simran Subramanian)",
   "generated": "2026-10-05",
   "touch_counts_updated": "2026-10-06T08:53:58-05:00",
