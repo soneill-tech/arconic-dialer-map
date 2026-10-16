@@ -3,42 +3,21 @@
  "reps": {
   "Nick": {
    "companies": 22,
-   "contacts_csv_rows": 0,
-   "contacts_loaded": 0,
-   "pins": 24,
-   "contacts_file": false,
+   "contacts_csv_rows": 1105,
+   "contacts_loaded": 1105,
+   "pins": 258,
+   "contacts_file": true,
    "contacts_unassigned": 0,
    "companies_without_contacts": [
-    "3M Company",
-    "ARMI",
-    "Boart Longyear",
-    "Bobcat Plus",
-    "DSB Technologies",
-    "Engie",
-    "Florim USA",
-    "Flow Pro Products",
-    "Hickory Harvest Foods",
-    "Indevco (Group and Plastics)",
-    "Indevco North America",
-    "L.F. GEORGE",
-    "Leaf Home",
-    "Lee Storage Company",
-    "M.J Kellner Co. Inc",
-    "MSC Industrial Direct Co., Inc",
-    "New Flyer",
-    "Novelis",
-    "Times Publishing Company dba Tampa Bay Times",
-    "True Manufacturing",
-    "Verista",
-    "Wholesale Home/DJ Direct Warehousing"
+    "Bobcat Plus"
    ],
    "unassigned_companies": []
   },
   "Mia": {
    "companies": 31,
    "contacts_csv_rows": 410,
-   "contacts_loaded": 409,
-   "pins": 113,
+   "contacts_loaded": 410,
+   "pins": 115,
    "contacts_file": true,
    "contacts_unassigned": 5,
    "companies_without_contacts": [
@@ -173,23 +152,39 @@
    "why": "associated with 2 companies; Addie company unresolved"
   }
  ],
- "geocode_failures": [],
+ "geocode_failures": [
+  {
+   "company": "Boart Longyear",
+   "contact_city": "Chorrillos",
+   "state": "Lima region"
+  },
+  {
+   "company": "Indevco (Group and Plastics)",
+   "contact_city": "Aajaltoun",
+   "state": "Mohafazat Mont-Liban"
+  },
+  {
+   "company": "True Manufacturing",
+   "contact_city": "O Fallon",
+   "state": "Santa Fe Province"
+  }
+ ],
  "totals": {
   "Nick": {
    "companies": 22,
-   "contacts_csv_rows": 0,
-   "contacts_loaded": 0,
-   "pins": 24,
-   "contacts_file": false,
-   "locations": 24
+   "contacts_csv_rows": 1105,
+   "contacts_loaded": 1105,
+   "pins": 258,
+   "contacts_file": true,
+   "locations": 258
   },
   "Mia": {
    "companies": 31,
    "contacts_csv_rows": 410,
-   "contacts_loaded": 409,
-   "pins": 113,
+   "contacts_loaded": 410,
+   "pins": 115,
    "contacts_file": true,
-   "locations": 113
+   "locations": 115
   },
   "Addie": {
    "companies": 4,

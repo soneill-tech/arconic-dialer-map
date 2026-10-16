@@ -290,10 +290,73 @@
   "lon": -86.0055417,
   "source": "nominatim"
  },
+ "Aajaltoun, Mohafazat Mont-Liban": {
+  "miss": true
+ },
+ "Adelaide Airport, South Australia": {
+  "display": "Adelaide Airport, Adelaide, South Australia, 5950, Australia",
+  "lat": -34.946159,
+  "lon": 138.5307956,
+  "source": "nominatim"
+ },
+ "Adelaide, South Australia": {
+  "display": "Adelaide, South Australia, Australia",
+  "lat": -34.9281805,
+  "lon": 138.5999312,
+  "source": "nominatim"
+ },
+ "Ahmedabad, State of Gujarat": {
+  "display": "State Bank Of India, Gujarat University, Gujarat University Internal Road, Panjrapole, Vejalpur Taluka, Ahmedabad, Gujarat, 380009, India",
+  "lat": 23.0353395,
+  "lon": 72.5429261,
+  "source": "nominatim"
+ },
  "Alsip, Illinois, United States": {
   "display": "Alsip, Worth Township, Cook County, Illinois, United States",
   "lat": 41.6689336,
   "lon": -87.7387003,
+  "source": "nominatim"
+ },
+ "Alviso, California, United States": {
+  "display": "Alviso, San Jose, Santa Clara County, California, 95002, United States",
+  "lat": 37.426051,
+  "lon": -121.9752373,
+  "source": "nominatim"
+ },
+ "Ames, Iowa, United States": {
+  "display": "Ames, Story County, Iowa, United States",
+  "lat": 42.0267567,
+  "lon": -93.6170448,
+  "source": "nominatim"
+ },
+ "Andover, Massachusetts, United States": {
+  "display": "Andover, Essex County, Massachusetts, United States",
+  "lat": 42.65717,
+  "lon": -71.1408776,
+  "source": "nominatim"
+ },
+ "Anniston, Alabama, United States": {
+  "display": "Anniston, Calhoun County, Alabama, United States",
+  "lat": 33.6624824,
+  "lon": -85.8283224,
+  "source": "nominatim"
+ },
+ "Apex, North Carolina, United States": {
+  "display": "Apex, Wake County, North Carolina, 27502, United States",
+  "lat": 35.7325352,
+  "lon": -78.8505516,
+  "source": "nominatim"
+ },
+ "Apodaca, Nuevo Leon": {
+  "display": "Apodaca, Nuevo León, México",
+  "lat": 25.7871006,
+  "lon": -100.1850769,
+  "source": "nominatim"
+ },
+ "Arnold, Missouri, United States": {
+  "display": "Arnold, Arnold Township, Jefferson County, Missouri, 63010, United States",
+  "lat": 38.4226711,
+  "lon": -90.3758287,
   "source": "nominatim"
  },
  "Asheville, North Carolina, United States": {
@@ -302,10 +365,22 @@
   "lon": -82.5508407,
   "source": "nominatim"
  },
+ "Ashville, Ohio, United States": {
+  "display": "Ashville, Harrison Township, Pickaway County, Ohio, United States",
+  "lat": 39.7156186,
+  "lon": -82.9529584,
+  "source": "nominatim"
+ },
  "Atlanta, Georgia, United States": {
   "display": "Atlanta, Fulton County, Georgia, United States",
   "lat": 33.7544657,
   "lon": -84.3898151,
+  "source": "nominatim"
+ },
+ "Aurora, Colorado, United States": {
+  "display": "Aurora, Adams County, Colorado, United States",
+  "lat": 39.7401441,
+  "lon": -104.8733376,
   "source": "nominatim"
  },
  "Austin, Texas, United States": {
@@ -314,10 +389,46 @@
   "lon": -97.7474086,
   "source": "nominatim"
  },
+ "Avon, Ohio, United States": {
+  "display": "Avon, Lorain County, Ohio, 44011, United States",
+  "lat": 41.4516512,
+  "lon": -82.0350598,
+  "source": "nominatim"
+ },
+ "Bamako, Bamako": {
+  "display": "Bamako, Cercle de Kati, Koulikoro, Mali",
+  "lat": 12.6132656,
+  "lon": -7.9850046,
+  "source": "nominatim"
+ },
+ "Bangkok, Bangkok": {
+  "display": "กรุงเทพ, 1, ถนนรองเมือง, หัวลำโพง, แขวงรองเมือง, เขตปทุมวัน, กรุงเทพมหานคร, 10330, ประเทศไทย",
+  "lat": 13.7393113,
+  "lon": 100.5166499,
+  "source": "nominatim"
+ },
  "Bay City, Texas, United States": {
   "display": "Bay City, Matagorda County, Texas, United States",
   "lat": 28.9827565,
   "lon": -95.969402,
+  "source": "nominatim"
+ },
+ "Bay Minette, Alabama, United States": {
+  "display": "Bay Minette, Baldwin County, Alabama, 36507, United States",
+  "lat": 30.8829628,
+  "lon": -87.7730474,
+  "source": "nominatim"
+ },
+ "Beachwood, Ohio, United States": {
+  "display": "Beachwood, Cuyahoga County, Ohio, 44122, United States",
+  "lat": 41.464498,
+  "lon": -81.508732,
+  "source": "nominatim"
+ },
+ "Beamsville, ONT": {
+  "display": "Beamsville, Lincoln, Niagara Region, Ontario, L0R 1B0, Canada",
+  "lat": 43.1654577,
+  "lon": -79.4751839,
   "source": "nominatim"
  },
  "Beijing, Beijing Shi": {
@@ -330,6 +441,12 @@
   "display": "北京市, 中国",
   "lat": 39.9057136,
   "lon": 116.3912972,
+  "source": "nominatim"
+ },
+ "Bellaire, Texas, United States": {
+  "display": "Bellaire, Harris County, Texas, United States",
+  "lat": 29.7057858,
+  "lon": -95.4588299,
   "source": "nominatim"
  },
  "Bellevue, Washington, United States": {
@@ -356,10 +473,52 @@
   "lon": -87.9431781,
   "source": "nominatim"
  },
+ "Berkley, Michigan, United States": {
+  "display": "Berkley, Oakland County, Michigan, 48072, United States",
+  "lat": 42.5030909,
+  "lon": -83.1835389,
+  "source": "nominatim"
+ },
+ "Berryville, Arkansas, United States": {
+  "display": "Berryville, Carroll County, Arkansas, 72616, United States",
+  "lat": 36.3646251,
+  "lon": -93.5673187,
+  "source": "nominatim"
+ },
+ "Bethesda, Maryland, United States": {
+  "display": "Bethesda, Montgomery County, Maryland, United States",
+  "lat": 38.9812726,
+  "lon": -77.1233587,
+  "source": "nominatim"
+ },
  "Black Mountain, North Carolina, United States": {
   "display": "Black Mountain, Buncombe County, North Carolina, 28711, United States",
   "lat": 35.6176544,
   "lon": -82.3205791,
+  "source": "nominatim"
+ },
+ "Bowling Green, Missouri, United States": {
+  "display": "Bowling Green, Pike County, Missouri, United States",
+  "lat": 39.3419891,
+  "lon": -91.1951437,
+  "source": "nominatim"
+ },
+ "Bridgewater, New Jersey, United States": {
+  "display": "Bridgewater, Main Street, Bridgewater Township, Somerset County, New Jersey, 08805, United States",
+  "lat": 40.5598127,
+  "lon": -74.5517146,
+  "source": "nominatim"
+ },
+ "Broadview Heights, Ohio, United States": {
+  "display": "Broadview Heights, Cuyahoga County, Ohio, 44147, United States",
+  "lat": 41.3139426,
+  "lon": -81.6851271,
+  "source": "nominatim"
+ },
+ "Brockville, ON": {
+  "display": "Brockville, Eastern Ontario, Ontario, Canada",
+  "lat": 44.6039207,
+  "lon": -75.7016829,
   "source": "nominatim"
  },
  "Broken Arrow, Oklahoma, United States": {
@@ -368,10 +527,40 @@
   "lon": -95.7908195,
   "source": "nominatim"
  },
+ "Brownwood, Texas, United States": {
+  "display": "Brownwood, Brown County, Texas, 76801, United States",
+  "lat": 31.7208509,
+  "lon": -98.9818701,
+  "source": "nominatim"
+ },
+ "Bryson City, North Carolina, United States": {
+  "display": "Bryson City, Swain County, North Carolina, United States",
+  "lat": 35.4309291,
+  "lon": -83.447381,
+  "source": "nominatim"
+ },
+ "Buckhannon, West Virginia, United States": {
+  "display": "Buckhannon, Upshur County, West Virginia, 26201, United States",
+  "lat": 38.9939426,
+  "lon": -80.2322698,
+  "source": "nominatim"
+ },
+ "Buffalo, New York, United States": {
+  "display": "Buffalo, Erie County, New York, 14202, United States",
+  "lat": 42.8864163,
+  "lon": -78.8781493,
+  "source": "nominatim"
+ },
  "Burlington, Illinois, United States": {
   "display": "Burlington, Burlington Township, Kane County, Illinois, 60109, United States",
   "lat": 42.0528038,
   "lon": -88.5481412,
+  "source": "nominatim"
+ },
+ "Burlington, Ontario": {
+  "display": "Burlington, Halton Region, Ontario, Canada",
+  "lat": 43.3248924,
+  "lon": -79.7966835,
   "source": "nominatim"
  },
  "Calhoun, Georgia, United States": {
@@ -416,6 +605,51 @@
   "lon": -87.6244212,
   "source": "nominatim"
  },
+ "Chicopee, Massachusetts, United States": {
+  "display": "Chicopee, Hampden County, Massachusetts, United States",
+  "lat": 42.1487691,
+  "lon": -72.6071119,
+  "source": "nominatim"
+ },
+ "Chorrillos, Lima region": {
+  "miss": true
+ },
+ "Clarksville, New York, United States": {
+  "display": "Town of Clarksville, Allegany County, New York, 14786, United States",
+  "lat": 42.1282899,
+  "lon": -78.2387493,
+  "source": "nominatim"
+ },
+ "Clayton, New Jersey, United States": {
+  "display": "Clayton, Gloucester County, New Jersey, United States",
+  "lat": 39.6601726,
+  "lon": -75.0924713,
+  "source": "nominatim"
+ },
+ "Cleveland, Ohio, United States": {
+  "display": "Cleveland, Cuyahoga County, Ohio, United States",
+  "lat": 41.4996574,
+  "lon": -81.6936772,
+  "source": "nominatim"
+ },
+ "Clinton, New York, United States": {
+  "display": "Clinton County, New York, United States",
+  "lat": 44.7278943,
+  "lon": -73.6686982,
+  "source": "nominatim"
+ },
+ "Clinton, Tennessee, United States": {
+  "display": "Clinton, Anderson County, East Tennessee, Tennessee, 37716, United States",
+  "lat": 36.1034126,
+  "lon": -84.1318632,
+  "source": "nominatim"
+ },
+ "Clymer, New York, United States": {
+  "display": "Town of Clymer, Chautauqua County, New York, United States",
+  "lat": 42.020888,
+  "lon": -79.63005,
+  "source": "nominatim"
+ },
  "Colchester, Vermont, United States": {
   "display": "Colchester, Chittenden County, Vermont, United States",
   "lat": 44.534084,
@@ -426,6 +660,18 @@
   "display": "Collegeville, Montgomery County, Pennsylvania, 19426, United States",
   "lat": 40.1854712,
   "lon": -75.4512163,
+  "source": "nominatim"
+ },
+ "Colorado Springs, Colorado, United States": {
+  "display": "Colorado Springs, El Paso County, Colorado, United States",
+  "lat": 38.8339578,
+  "lon": -104.825348,
+  "source": "nominatim"
+ },
+ "Columbus, Ohio, United States": {
+  "display": "Columbus, Franklin County, Ohio, United States",
+  "lat": 39.9622601,
+  "lon": -83.0007065,
   "source": "nominatim"
  },
  "Concord, North Carolina, United States": {
@@ -440,10 +686,88 @@
   "lon": -80.1643232,
   "source": "nominatim"
  },
+ "Cordova, Illinois, United States": {
+  "display": "Cordova, Rock Island County, Illinois, United States",
+  "lat": 41.6803099,
+  "lon": -90.319018,
+  "source": "nominatim"
+ },
+ "Cottage Grove, Minnesota, United States": {
+  "display": "Cottage Grove, Washington County, Minnesota, 55016, United States",
+  "lat": 44.8277446,
+  "lon": -92.9438218,
+  "source": "nominatim"
+ },
  "County Highway F, Waukesha, Wisconsin, United States": {
   "display": "West Main Street, Lannon, Waukesha County, Wisconsin, 53046, United States",
   "lat": 43.1641505,
   "lon": -88.1470867,
+  "source": "nominatim"
+ },
+ "Cranberry Township, Pennsylvania, United States": {
+  "display": "Cranberry Township, Butler County, Pennsylvania, 16066, United States",
+  "lat": 40.7099343,
+  "lon": -80.1060506,
+  "source": "nominatim"
+ },
+ "Crookston, Minnesota, United States": {
+  "display": "Crookston, Polk County, Minnesota, 56716, United States",
+  "lat": 47.7739988,
+  "lon": -96.6081167,
+  "source": "nominatim"
+ },
+ "Curtice, Ohio, United States": {
+  "display": "Curtice, Allen Township, Ottawa County, Ohio, 43468, United States",
+  "lat": 41.618382,
+  "lon": -83.3677069,
+  "source": "nominatim"
+ },
+ "Cynthiana, Kentucky, United States": {
+  "display": "Cynthiana, Harrison County, Kentucky, 41031, United States",
+  "lat": 38.3903526,
+  "lon": -84.2941013,
+  "source": "nominatim"
+ },
+ "Dallas, Texas, United States": {
+  "display": "Dallas, Dallas County, Texas, United States",
+  "lat": 32.7762719,
+  "lon": -96.7968559,
+  "source": "nominatim"
+ },
+ "Davenport, Iowa, United States": {
+  "display": "Davenport, Scott County, Iowa, United States",
+  "lat": 41.5224692,
+  "lon": -90.5756401,
+  "source": "nominatim"
+ },
+ "Davidson, North Carolina, United States": {
+  "display": "Davidson County, North Carolina, United States",
+  "lat": 35.7902384,
+  "lon": -80.2115053,
+  "source": "nominatim"
+ },
+ "Decatur, Georgia, United States": {
+  "display": "Decatur County, Georgia, United States",
+  "lat": 30.8736613,
+  "lon": -84.5740953,
+  "source": "nominatim"
+ },
+ "Deming, New Mexico, United States": {
+  "display": "Deming, Luna County, New Mexico, 88030, United States",
+  "lat": 32.2627416,
+  "lon": -107.7581979,
+  "source": "nominatim"
+ },
+ "Denver, Colorado, United States": {
+  "display": "Denver, Colorado, United States",
+  "lat": 39.7392364,
+  "lon": -104.984862,
+  "source": "nominatim"
+ },
+ "Des Moines, Iowa, United States": {
+  "display": "Des Moines, Polk County, Iowa, United States",
+  "lat": 41.5868654,
+  "lon": -93.6249494,
   "source": "nominatim"
  },
  "Detroit, Michigan, United States": {
@@ -458,10 +782,64 @@
   "lon": -90.8234551,
   "source": "nominatim"
  },
+ "Eau Claire, Wisconsin, United States": {
+  "display": "Eau Claire, Eau Claire County, Wisconsin, United States",
+  "lat": 44.811349,
+  "lon": -91.4984941,
+  "source": "nominatim"
+ },
  "Edmonton, Alberta": {
   "display": "Edmonton, Alberta, Canada",
   "lat": 53.5462055,
   "lon": -113.491241,
+  "source": "nominatim"
+ },
+ "Eldersburg, Maryland, United States": {
+  "display": "Eldersburg, Carroll County, Maryland, United States",
+  "lat": 39.4137459,
+  "lon": -76.9474188,
+  "source": "nominatim"
+ },
+ "Elkhart, Indiana, United States": {
+  "display": "Elkhart County, Indiana, United States",
+  "lat": 41.6012796,
+  "lon": -85.8590603,
+  "source": "nominatim"
+ },
+ "Elko, Nevada, United States": {
+  "display": "Elko County, Nevada, United States",
+  "lat": 41.1958128,
+  "lon": -115.3272864,
+  "source": "nominatim"
+ },
+ "Elyria, Ohio, United States": {
+  "display": "Elyria, Lorain County, Ohio, 44035, United States",
+  "lat": 41.3673191,
+  "lon": -82.1073583,
+  "source": "nominatim"
+ },
+ "Englewood, Colorado, United States": {
+  "display": "Englewood, Arapahoe County, Colorado, 80110, United States",
+  "lat": 39.6482059,
+  "lon": -104.9879641,
+  "source": "nominatim"
+ },
+ "Euclid, Ohio, United States": {
+  "display": "Euclid, Cuyahoga County, Ohio, United States",
+  "lat": 41.5931049,
+  "lon": -81.5267873,
+  "source": "nominatim"
+ },
+ "Eugene, Oregon, United States": {
+  "display": "Eugene, Lane County, Oregon, United States",
+  "lat": 44.0505054,
+  "lon": -123.0950506,
+  "source": "nominatim"
+ },
+ "Fairmont, West Virginia, United States": {
+  "display": "Fairmont, Marion County, West Virginia, 26554, United States",
+  "lat": 39.484898,
+  "lon": -80.1426539,
   "source": "nominatim"
  },
  "Famalicao, Braga": {
@@ -470,10 +848,34 @@
   "lon": -8.4927761,
   "source": "nominatim"
  },
+ "Fayetteville, Arkansas, United States": {
+  "display": "Fayetteville, Washington County, Arkansas, United States",
+  "lat": 36.0625843,
+  "lon": -94.1574328,
+  "source": "nominatim"
+ },
+ "Fayetteville, North Carolina, United States": {
+  "display": "Fayetteville, Cumberland County, North Carolina, United States",
+  "lat": 35.0525759,
+  "lon": -78.878292,
+  "source": "nominatim"
+ },
+ "Fernley, Nevada, United States": {
+  "display": "Fernley, Lyon County, Nevada, United States",
+  "lat": 39.6078829,
+  "lon": -119.2506489,
+  "source": "nominatim"
+ },
  "Fontana, California, United States": {
   "display": "Fontana, San Bernardino County, California, United States",
   "lat": 34.0922947,
   "lon": -117.43433,
+  "source": "nominatim"
+ },
+ "Forrestfield, Western Australia": {
+  "display": "High Wycombe, Dundas Road, High Wycombe, Perth, Western Australia, 6057, Australia",
+  "lat": -31.954628,
+  "lon": 115.9921995,
   "source": "nominatim"
  },
  "Fort Worth, Texas, United States": {
@@ -486,6 +888,12 @@
   "display": "Franklin, Williamson County, Middle Tennessee, Tennessee, United States",
   "lat": 35.925206,
   "lon": -86.8689419,
+  "source": "nominatim"
+ },
+ "Frenchs Forest, New South Wales": {
+  "display": "Frenchs Forest, Northern Beaches, Sydney, New South Wales, 2086, Australia",
+  "lat": -33.7479954,
+  "lon": 151.2292718,
   "source": "nominatim"
  },
  "Fresno, California, United States": {
@@ -518,6 +926,48 @@
   "lon": -8.6389909,
   "source": "nominatim"
  },
+ "Georgetown, Kentucky, United States": {
+  "display": "Georgetown, Scott County, Kentucky, 40324, United States",
+  "lat": 38.2099837,
+  "lon": -84.5597128,
+  "source": "nominatim"
+ },
+ "Gerald, Missouri, United States": {
+  "display": "Gerald, Franklin County, Missouri, 66037, United States",
+  "lat": 38.3997711,
+  "lon": -91.3307094,
+  "source": "nominatim"
+ },
+ "Germantown, Maryland, United States": {
+  "display": "Germantown, Montgomery County, Maryland, United States",
+  "lat": 39.1712341,
+  "lon": -77.2655648,
+  "source": "nominatim"
+ },
+ "Ghaziabad, Uttar Pradesh": {
+  "display": "Ghaziabad, Uttar Pradesh, India",
+  "lat": 28.7749966,
+  "lon": 77.4586967,
+  "source": "nominatim"
+ },
+ "Gibsonia, Pennsylvania, United States": {
+  "display": "Gibsonia, Richland Township, Allegheny County, Pennsylvania, 15044, United States",
+  "lat": 40.6300671,
+  "lon": -79.9695004,
+  "source": "nominatim"
+ },
+ "Gilbert, Arizona, United States": {
+  "display": "Gilbert, Maricopa County, Arizona, United States",
+  "lat": 33.3527632,
+  "lon": -111.789037,
+  "source": "nominatim"
+ },
+ "Glendale, Arizona, United States": {
+  "display": "Glendale, Maricopa County, Arizona, United States",
+  "lat": 33.5386858,
+  "lon": -112.185994,
+  "source": "nominatim"
+ },
  "Goodyear, Arizona, United States": {
   "display": "Goodyear, Maricopa County, Arizona, United States",
   "lat": 33.4672279,
@@ -548,10 +998,52 @@
   "lon": -82.3984882,
   "source": "nominatim"
  },
+ "Guthrie, Kentucky, United States": {
+  "display": "Guthrie, Todd County, Kentucky, United States",
+  "lat": 36.6485623,
+  "lon": -87.1661261,
+  "source": "nominatim"
+ },
+ "Hacienda Peru, Arequipa": {
+  "display": "Hacienda Perú, Aplao, Castilla, Arequipa, Perú",
+  "lat": -15.8992013,
+  "lon": -72.4699456,
+  "source": "nominatim"
+ },
+ "Haileybury, ON": {
+  "display": "Haileybury, Temiskaming Shores, Timiskaming District, Northeastern Ontario, Ontario, P0J 1K0, Canada",
+  "lat": 47.4441901,
+  "lon": -79.6360804,
+  "source": "nominatim"
+ },
  "Hamilton, Ontario": {
   "display": "Hamilton, Ontario, Canada",
   "lat": 43.2560802,
   "lon": -79.8728583,
+  "source": "nominatim"
+ },
+ "Hanover Park, Illinois, United States": {
+  "display": "Hanover Park, Hanover Township, Cook County, Illinois, 60133, United States",
+  "lat": 41.9994722,
+  "lon": -88.1450735,
+  "source": "nominatim"
+ },
+ "Hastings, Minnesota, United States": {
+  "display": "Hastings, Dakota County, Minnesota, 55033, United States",
+  "lat": 44.7426933,
+  "lon": -92.8518697,
+  "source": "nominatim"
+ },
+ "Hawk Point, Missouri, United States": {
+  "display": "Hawk Point, Lincoln County, Missouri, United States",
+  "lat": 38.9708784,
+  "lon": -91.1312584,
+  "source": "nominatim"
+ },
+ "Hebron, Kentucky, United States": {
+  "display": "Hebron, Boone County, Kentucky, 41048, United States",
+  "lat": 39.065813,
+  "lon": -84.7027575,
   "source": "nominatim"
  },
  "Hendersonville, North Carolina, United States": {
@@ -560,10 +1052,28 @@
   "lon": -82.4609528,
   "source": "nominatim"
  },
+ "Henley Beach, South Australia": {
+  "display": "Henley Beach, Adelaide, South Australia, Australia",
+  "lat": -34.9158802,
+  "lon": 138.4986953,
+  "source": "nominatim"
+ },
  "Hong Kong, Central and Western": {
   "display": "香港 Hong Kong, 砵典乍街 Pottinger Street, 蘇豪 SoHo, 中環 Central, 中西區 Central and Western District, 香港島 Hong Kong Island, 香港 Hong Kong, 中国",
   "lat": 22.2847214,
   "lon": 114.1579857,
+  "source": "nominatim"
+ },
+ "Imperial, Missouri, United States": {
+  "display": "Imperial, Windsor Township, Jefferson County, Missouri, United States",
+  "lat": 38.3652768,
+  "lon": -90.3770869,
+  "source": "nominatim"
+ },
+ "Independence, Ohio, United States": {
+  "display": "Independence, Cuyahoga County, Ohio, United States",
+  "lat": 41.3816571,
+  "lon": -81.6406872,
   "source": "nominatim"
  },
  "Indianapolis, Indiana, United States": {
@@ -578,10 +1088,28 @@
   "lon": -82.0906082,
   "source": "nominatim"
  },
+ "Irvine, California, United States": {
+  "display": "Irvine, Orange County, California, United States",
+  "lat": 33.6856969,
+  "lon": -117.825981,
+  "source": "nominatim"
+ },
+ "Itasca, Illinois, United States": {
+  "display": "Itasca, Addison Township, DuPage County, Illinois, 60143, United States",
+  "lat": 41.9712977,
+  "lon": -88.0129164,
+  "source": "nominatim"
+ },
  "Jackson, Mississippi, United States": {
   "display": "Jackson, Hinds County, Mississippi, United States",
   "lat": 32.2998686,
   "lon": -90.1830408,
+  "source": "nominatim"
+ },
+ "Jamestown, New York, United States": {
+  "display": "Jamestown, Chautauqua County, New York, United States",
+  "lat": 42.0965167,
+  "lon": -79.2380322,
   "source": "nominatim"
  },
  "Janesville, Wisconsin, United States": {
@@ -596,10 +1124,40 @@
   "lon": -80.2389899,
   "source": "nominatim"
  },
+ "Jerseyville, Illinois, United States": {
+  "display": "Jerseyville, Jersey County, Illinois, 62052, United States",
+  "lat": 39.1200471,
+  "lon": -90.3284479,
+  "source": "nominatim"
+ },
+ "Johannesburg, Gauteng": {
+  "display": "Johannesburg, City of Johannesburg Metropolitan Municipality, Gauteng, 2001, South Africa",
+  "lat": -26.205,
+  "lon": 28.049722,
+  "source": "nominatim"
+ },
+ "Johannesburg, United States": {
+  "display": "Johannesburg, Kern County, California, United States",
+  "lat": 35.3717305,
+  "lon": -117.6425014,
+  "source": "nominatim"
+ },
+ "Jonestown, Pennsylvania, United States": {
+  "display": "Jonestown, Fishing Creek Township, Columbia County, Pennsylvania, United States",
+  "lat": 41.1264315,
+  "lon": -76.3070273,
+  "source": "nominatim"
+ },
  "Kansas City, Missouri, United States": {
   "display": "Kansas City, Jackson County, Missouri, United States",
   "lat": 39.100105,
   "lon": -94.5781416,
+  "source": "nominatim"
+ },
+ "Kennesaw, Georgia, United States": {
+  "display": "Kennesaw, Cobb County, Georgia, United States",
+  "lat": 34.0234337,
+  "lon": -84.6154897,
   "source": "nominatim"
  },
  "Kingston, Ontario": {
@@ -632,10 +1190,40 @@
   "lon": -76.8815433,
   "source": "nominatim"
  },
+ "Langnau, Bern": {
+  "display": "Langnau im Emmental, Verwaltungskreis Emmental, Verwaltungsregion Emmental-Oberaargau, Bern/Berne, Schweiz/Suisse/Svizzera/Svizra",
+  "lat": 46.9392339,
+  "lon": 7.7882673,
+  "source": "nominatim"
+ },
+ "Lee's Summit, Missouri, United States": {
+  "display": "Lee's Summit, Jackson County, Missouri, United States",
+  "lat": 38.9107156,
+  "lon": -94.3821295,
+  "source": "nominatim"
+ },
  "Legal, AB": {
   "display": "Legal, Alberta, T0G 1L0, Canada",
   "lat": 53.9487406,
   "lon": -113.5954265,
+  "source": "nominatim"
+ },
+ "Lehi, Utah, United States": {
+  "display": "Lehi, Utah County, Utah, United States",
+  "lat": 40.3881114,
+  "lon": -111.8486019,
+  "source": "nominatim"
+ },
+ "Lenexa Lenexa, Kansas, United States": {
+  "display": "VFW Post, 9550, Pflumm Road, Lenexa, Johnson County, Kansas, 66215, United States",
+  "lat": 38.9548415,
+  "lon": -94.7432036,
+  "source": "nominatim"
+ },
+ "Lewisport, Kentucky, United States": {
+  "display": "Lewisport, Hancock County, Kentucky, United States",
+  "lat": 37.9369974,
+  "lon": -86.9022146,
   "source": "nominatim"
  },
  "Lexington, Kentucky, United States": {
@@ -644,10 +1232,52 @@
   "lon": -84.4970393,
   "source": "nominatim"
  },
+ "Lincoln, Ontario": {
+  "display": "Lincoln, Niagara Region, Ontario, Canada",
+  "lat": 43.1735498,
+  "lon": -79.4159805,
+  "source": "nominatim"
+ },
+ "Lincolnshire, Illinois, United States": {
+  "display": "Lincolnshire, Lake County, Illinois, 60069, United States",
+  "lat": 42.1900249,
+  "lon": -87.9084039,
+  "source": "nominatim"
+ },
+ "Lindsay, Ontario": {
+  "display": "Lindsay, Kawartha Lakes, Central Ontario, Ontario, K9V 2Y5, Canada",
+  "lat": 44.3551266,
+  "lon": -78.7369939,
+  "source": "nominatim"
+ },
+ "Little Falls, Minnesota, United States": {
+  "display": "Little Falls, Morrison County, Minnesota, 56345, United States",
+  "lat": 45.9763545,
+  "lon": -94.3625024,
+  "source": "nominatim"
+ },
+ "Little Rock, Arkansas, United States": {
+  "display": "Little Rock, Big Rock Township, Pulaski County, Arkansas, United States",
+  "lat": 34.7465071,
+  "lon": -92.2896267,
+  "source": "nominatim"
+ },
+ "Livonia, Michigan, United States": {
+  "display": "Livonia, Wayne County, Michigan, United States",
+  "lat": 42.36837,
+  "lon": -83.3527097,
+  "source": "nominatim"
+ },
  "Logan, Utah, United States": {
   "display": "Logan, Cache County, Utah, United States",
   "lat": 41.7313063,
   "lon": -111.834914,
+  "source": "nominatim"
+ },
+ "Longview, Texas, United States": {
+  "display": "Longview, Gregg County, Texas, United States",
+  "lat": 32.5007031,
+  "lon": -94.74049,
   "source": "nominatim"
  },
  "Los Angeles, California, United States": {
@@ -656,10 +1286,34 @@
   "lon": -118.2427676,
   "source": "nominatim"
  },
+ "Louisville, Kentucky, United States": {
+  "display": "Louisville, Jefferson County, Kentucky, United States",
+  "lat": 38.2542376,
+  "lon": -85.759407,
+  "source": "nominatim"
+ },
+ "Mableton, Georgia, United States": {
+  "display": "Mableton, Cobb County, Georgia, United States",
+  "lat": 33.8188333,
+  "lon": -84.5822632,
+  "source": "nominatim"
+ },
+ "Machesney Park, Illinois, United States": {
+  "display": "Machesney Park, Harlem Township, Winnebago County, Illinois, 61115, United States",
+  "lat": 42.3472406,
+  "lon": -89.0389956,
+  "source": "nominatim"
+ },
  "Madison, Wisconsin, United States": {
   "display": "Madison, Dane County, Wisconsin, United States",
   "lat": 43.07469,
   "lon": -89.3841663,
+  "source": "nominatim"
+ },
+ "Marietta, Georgia, United States": {
+  "display": "Marietta, Cobb County, Georgia, United States",
+  "lat": 33.952845,
+  "lon": -84.5496054,
   "source": "nominatim"
  },
  "Markham, Ontario": {
@@ -674,10 +1328,100 @@
   "lon": -98.2300605,
   "source": "nominatim"
  },
+ "Meerut, Uttar Pradesh": {
+  "display": "Meerut, Uttar Pradesh, India",
+  "lat": 29.0018557,
+  "lon": 77.7679671,
+  "source": "nominatim"
+ },
+ "Melbourne, Florida, United States": {
+  "display": "Melbourne, Brevard County, Florida, United States",
+  "lat": 28.0785034,
+  "lon": -80.6077908,
+  "source": "nominatim"
+ },
+ "Menomonee Falls, Wisconsin, United States": {
+  "display": "Menomonee Falls, Waukesha County, Wisconsin, United States",
+  "lat": 43.1790768,
+  "lon": -88.1170784,
+  "source": "nominatim"
+ },
+ "Menomonie, Wisconsin, United States": {
+  "display": "Menomonie, Dunn County, Wisconsin, 54751, United States",
+  "lat": 44.8765289,
+  "lon": -91.9278716,
+  "source": "nominatim"
+ },
+ "Merrillville, Indiana, United States": {
+  "display": "Merrillville, Ross Township, Lake County, Indiana, 46410, United States",
+  "lat": 41.4828144,
+  "lon": -87.3328139,
+  "source": "nominatim"
+ },
+ "Mesa, Arizona, United States": {
+  "display": "Mesa, Maricopa County, Arizona, United States",
+  "lat": 33.4151005,
+  "lon": -111.831455,
+  "source": "nominatim"
+ },
+ "Methuen, Massachusetts, United States": {
+  "display": "Methuen, Essex County, Massachusetts, 01844, United States",
+  "lat": 42.7262016,
+  "lon": -71.1908924,
+  "source": "nominatim"
+ },
+ "Mexico, New York, United States": {
+  "display": "Village of Mexico, Town of Mexico, Oswego County, New York, 13114, United States",
+  "lat": 43.459514,
+  "lon": -76.228818,
+  "source": "nominatim"
+ },
+ "Miami, Florida, United States": {
+  "display": "Miami, Miami-Dade County, Florida, United States",
+  "lat": 25.7741566,
+  "lon": -80.1935973,
+  "source": "nominatim"
+ },
+ "Miamisburg, Ohio, United States": {
+  "display": "Miamisburg, Miami Township, Montgomery County, Ohio, 45342, United States",
+  "lat": 39.6428362,
+  "lon": -84.2866083,
+  "source": "nominatim"
+ },
  "Middletown, Iowa, United States": {
   "display": "Middletown, Des Moines County, Iowa, United States",
   "lat": 40.8283739,
   "lon": -91.2590387,
+  "source": "nominatim"
+ },
+ "Milan, Illinois, United States": {
+  "display": "Milan, Rock Island County, Illinois, 61624, United States",
+  "lat": 41.453089,
+  "lon": -90.5720803,
+  "source": "nominatim"
+ },
+ "Miller Place, New York, United States": {
+  "display": "Miller Place, Suffolk County, New York, United States",
+  "lat": 40.9598212,
+  "lon": -72.9962148,
+  "source": "nominatim"
+ },
+ "Minneapolis, Minnesota, United States": {
+  "display": "Minneapolis, Hennepin County, Minnesota, United States",
+  "lat": 44.9772995,
+  "lon": -93.2654692,
+  "source": "nominatim"
+ },
+ "Mississauga, Ontario": {
+  "display": "Mississauga, Peel Region, Ontario, Canada",
+  "lat": 43.5884727,
+  "lon": -79.643658,
+  "source": "nominatim"
+ },
+ "Moline, Illinois, United States": {
+  "display": "Moline, Rock Island County, Illinois, 61265, United States",
+  "lat": 41.5066112,
+  "lon": -90.5149988,
   "source": "nominatim"
  },
  "Mountain View, California, United States": {
@@ -704,10 +1448,82 @@
   "lon": -116.5616885,
   "source": "nominatim"
  },
+ "Nashville, Tennessee, United States": {
+  "display": "Nashville, Davidson County, Middle Tennessee, Tennessee, United States",
+  "lat": 36.1622767,
+  "lon": -86.7742984,
+  "source": "nominatim"
+ },
+ "Nevada, Missouri, United States": {
+  "display": "Nevada, Vernon County, Missouri, 64772, United States",
+  "lat": 37.8381108,
+  "lon": -94.3596185,
+  "source": "nominatim"
+ },
+ "New Castle, United States": {
+  "display": "New Castle, Lawrence County, Pennsylvania, United States",
+  "lat": 40.9999202,
+  "lon": -80.3471856,
+  "source": "nominatim"
+ },
+ "New Liskeard, Ontario": {
+  "display": "New Liskeard, Temiskaming Shores, Timiskaming District, Northeastern Ontario, Ontario, P0J 1P0, Canada",
+  "lat": 47.508731,
+  "lon": -79.6789029,
+  "source": "nominatim"
+ },
+ "New Philadelphia, Ohio, United States": {
+  "display": "New Philadelphia, Tuscarawas County, Ohio, 44663, United States",
+  "lat": 40.4897871,
+  "lon": -81.4456706,
+  "source": "nominatim"
+ },
  "New York, New York, United States": {
   "display": "New York, United States",
   "lat": 40.7127281,
   "lon": -74.0060152,
+  "source": "nominatim"
+ },
+ "Norman, Oklahoma, United States": {
+  "display": "Norman, Cleveland County, Oklahoma, United States",
+  "lat": 35.2225717,
+  "lon": -97.4394816,
+  "source": "nominatim"
+ },
+ "North Bay, ON": {
+  "display": "North Bay, Nipissing District, Northeastern Ontario, Ontario, Canada",
+  "lat": 46.3092115,
+  "lon": -79.4607617,
+  "source": "nominatim"
+ },
+ "North Bay, Ontario": {
+  "display": "North Bay, Nipissing District, Northeastern Ontario, Ontario, Canada",
+  "lat": 46.3092115,
+  "lon": -79.4607617,
+  "source": "nominatim"
+ },
+ "North Eastham, Massachusetts, United States": {
+  "display": "North Eastham, Eastham, Barnstable County, Massachusetts, 02651, United States",
+  "lat": 41.8651071,
+  "lon": -69.9911305,
+  "source": "nominatim"
+ },
+ "North Ryde, New South Wales": {
+  "display": "North Ryde, Sydney, New South Wales, Australia",
+  "lat": -33.7975472,
+  "lon": 151.127306,
+  "source": "nominatim"
+ },
+ "Northridge, California, United States": {
+  "display": "Northridge, Northridge South Neighborhood Council District, Los Angeles, Los Angeles County, California, 91330, United States",
+  "lat": 34.2345615,
+  "lon": -118.5369316,
+  "source": "nominatim"
+ },
+ "Novi, Michigan, United States": {
+  "display": "Novi, Oakland County, Michigan, United States",
+  "lat": 42.48059,
+  "lon": -83.4754913,
   "source": "nominatim"
  },
  "Novi, United States": {
@@ -716,10 +1532,49 @@
   "lon": -83.4754913,
   "source": "nominatim"
  },
+ "O Fallon, Santa Fe Province": {
+  "miss": true
+ },
+ "O'Fallon, Missouri, United States": {
+  "display": "O’Fallon, Saint Charles County, Missouri, United States",
+  "lat": 38.7902503,
+  "lon": -90.7033292,
+  "source": "nominatim"
+ },
+ "Ogden, Utah, United States": {
+  "display": "Ogden, Weber County, Utah, United States",
+  "lat": 41.2230048,
+  "lon": -111.9738429,
+  "source": "nominatim"
+ },
+ "Olean, New York, United States": {
+  "display": "City of Olean, Cattaraugus County, New York, 14760, United States",
+  "lat": 42.0775022,
+  "lon": -78.4298248,
+  "source": "nominatim"
+ },
+ "Ontario, California, United States": {
+  "display": "Ontario, San Bernardino County, California, United States",
+  "lat": 34.065846,
+  "lon": -117.64843,
+  "source": "nominatim"
+ },
+ "Orangeburg, South Carolina, United States": {
+  "display": "Orangeburg, Orangeburg County, South Carolina, 29115, United States",
+  "lat": 33.4918203,
+  "lon": -80.8556476,
+  "source": "nominatim"
+ },
  "Oshkosh, Wisconsin, United States": {
   "display": "Oshkosh, Winnebago County, Wisconsin, United States",
   "lat": 44.0206919,
   "lon": -88.5408574,
+  "source": "nominatim"
+ },
+ "Oswego, New York, United States": {
+  "display": "Oswego County, New York, United States",
+  "lat": 43.4112973,
+  "lon": -76.1279841,
   "source": "nominatim"
  },
  "Owasso, Oklahoma, United States": {
@@ -728,10 +1583,34 @@
   "lon": -95.8548557,
   "source": "nominatim"
  },
+ "Owensboro, Kentucky, United States": {
+  "display": "Owensboro, Daviess County, Kentucky, United States",
+  "lat": 37.7742152,
+  "lon": -87.1133304,
+  "source": "nominatim"
+ },
+ "Oxford, Alabama, United States": {
+  "display": "Oxford, Calhoun County, Alabama, United States",
+  "lat": 33.6149211,
+  "lon": -85.8339391,
+  "source": "nominatim"
+ },
+ "Paul, Minnesota, United States": {
+  "display": "United States Post Office, 2309, Como Avenue, North Saint Anthony Park, Saint Anthony Park, Saint Paul, Ramsey County, Minnesota, 55108, United States",
+  "lat": 44.9825218,
+  "lon": -93.1957188,
+  "source": "nominatim"
+ },
  "Pendergrass, Georgia, United States": {
   "display": "Pendergrass, Jackson County, Georgia, 30567, United States",
   "lat": 34.1623292,
   "lon": -83.6779474,
+  "source": "nominatim"
+ },
+ "Perrysburg, Ohio, United States": {
+  "display": "Perrysburg, Wood County, Ohio, 43551, United States",
+  "lat": 41.5571178,
+  "lon": -83.6279321,
   "source": "nominatim"
  },
  "Perth Amboy, New Jersey, United States": {
@@ -740,10 +1619,40 @@
   "lon": -74.2724241,
   "source": "nominatim"
  },
+ "Perth, Ontario": {
+  "display": "Perth County, Southwestern Ontario, Ontario, Canada",
+  "lat": 43.4935991,
+  "lon": -81.0164111,
+  "source": "nominatim"
+ },
+ "Perth, Western Australia": {
+  "display": "Perth, Western Australia, 6000, Australia",
+  "lat": -31.9558967,
+  "lon": 115.8605784,
+  "source": "nominatim"
+ },
+ "Plano, Texas, United States": {
+  "display": "Plano, Collin County, Texas, United States",
+  "lat": 33.0136764,
+  "lon": -96.6925096,
+  "source": "nominatim"
+ },
+ "Ponca City, Oklahoma, United States": {
+  "display": "Ponca City, Kay County, Oklahoma, United States",
+  "lat": 36.703647,
+  "lon": -97.081898,
+  "source": "nominatim"
+ },
  "Port Saint Lucie, Florida, United States": {
   "display": "Port Saint Lucie, Saint Lucie County, Florida, United States",
   "lat": 27.2939333,
   "lon": -80.3503283,
+  "source": "nominatim"
+ },
+ "Prairie du Chien, Wisconsin, United States": {
+  "display": "Prairie du Chien, Crawford County, Wisconsin, 53821, United States",
+  "lat": 43.05194,
+  "lon": -91.1409933,
   "source": "nominatim"
  },
  "Princeton, Indiana, United States": {
@@ -752,10 +1661,88 @@
   "lon": -87.5678034,
   "source": "nominatim"
  },
+ "Quincy, Illinois, United States": {
+  "display": "Quincy, Adams County, Illinois, United States",
+  "lat": 39.9356016,
+  "lon": -91.4098727,
+  "source": "nominatim"
+ },
+ "Red Wing, Minnesota, United States": {
+  "display": "Red Wing, Goodhue County, Minnesota, 55066, United States",
+  "lat": 44.5624676,
+  "lon": -92.5338013,
+  "source": "nominatim"
+ },
  "Reynolds, Indiana, United States": {
   "display": "Reynolds, White County, Indiana, United States",
   "lat": 40.7494835,
   "lon": -86.8716807,
+  "source": "nominatim"
+ },
+ "Richmond, Virginia, United States": {
+  "display": "Richmond, Virginia, United States",
+  "lat": 37.5385087,
+  "lon": -77.43428,
+  "source": "nominatim"
+ },
+ "Riyadh, Ar Riyad": {
+  "display": "الرياض, محافظة الرياض, منطقة الرياض, 12643, السعودية",
+  "lat": 24.638916,
+  "lon": 46.7160104,
+  "source": "nominatim"
+ },
+ "Rochester, New York, United States": {
+  "display": "City of Rochester, Monroe County, New York, United States",
+  "lat": 43.157285,
+  "lon": -77.615214,
+  "source": "nominatim"
+ },
+ "Rosemount, Minnesota, United States": {
+  "display": "Rosemount, Dakota County, Minnesota, 55068, United States",
+  "lat": 44.7391873,
+  "lon": -93.12611,
+  "source": "nominatim"
+ },
+ "Roseville, Michigan, United States": {
+  "display": "Roseville, Macomb County, Michigan, 48066, United States",
+  "lat": 42.4972583,
+  "lon": -82.9371409,
+  "source": "nominatim"
+ },
+ "Saguenay, Québec": {
+  "display": "Saguenay, Saguenay–Lac-Saint-Jean, Québec, Canada",
+  "lat": 48.405959,
+  "lon": -71.069183,
+  "source": "nominatim"
+ },
+ "Saint Charles, Missouri, United States": {
+  "display": "Saint Charles, Saint Charles County, Missouri, United States",
+  "lat": 38.783855,
+  "lon": -90.481677,
+  "source": "nominatim"
+ },
+ "Saint Cloud, Minnesota, United States": {
+  "display": "Saint Cloud, Stearns County, Minnesota, United States",
+  "lat": 45.5616075,
+  "lon": -94.1642004,
+  "source": "nominatim"
+ },
+ "Saint Paul, Massachusetts, United States": {
+  "display": "Saint Paul Street, Coolidge Corner, North Brookline, Brookline, Norfolk County, Massachusetts, 02446, United States",
+  "lat": 42.3432148,
+  "lon": -71.1172153,
+  "source": "nominatim"
+ },
+ "Saint Paul, United States": {
+  "display": "Saint Paul, Ramsey County, Minnesota, United States",
+  "lat": 44.9497487,
+  "lon": -93.0931028,
+  "source": "nominatim"
+ },
+ "Saint Peters, Missouri, United States": {
+  "display": "Saint Peters, Saint Charles County, Missouri, 63376, United States",
+  "lat": 38.791612,
+  "lon": -90.5958468,
   "source": "nominatim"
  },
  "Saint-Malo, Brittany, France": {
@@ -776,6 +1763,42 @@
   "lon": -116.0833144,
   "source": "nominatim"
  },
+ "San Diego, California, United States": {
+  "display": "San Diego, San Diego County, California, United States",
+  "lat": 32.7157062,
+  "lon": -117.1638284,
+  "source": "nominatim"
+ },
+ "San Francisco, California, United States": {
+  "display": "San Francisco, California, United States",
+  "lat": 37.7879363,
+  "lon": -122.4075201,
+  "source": "nominatim"
+ },
+ "Santiago, Santiago Metropolitan": {
+  "display": "Santiago, Provincia de Santiago, Región Metropolitana de Santiago, 8320000, Chile",
+  "lat": -33.4377752,
+  "lon": -70.6505796,
+  "source": "nominatim"
+ },
+ "Sao Paulo, Sao Paulo": {
+  "display": "São Paulo, Região Sudeste, Brasil",
+  "lat": -23.5506507,
+  "lon": -46.6333824,
+  "source": "nominatim"
+ },
+ "Saskatoon, Saskatchewan": {
+  "display": "Saskatoon, Saskatchewan, Canada",
+  "lat": 52.131802,
+  "lon": -106.660767,
+  "source": "nominatim"
+ },
+ "Savage, Minnesota, United States": {
+  "display": "Savage, Scott County, Minnesota, 55378, United States",
+  "lat": 44.7779041,
+  "lon": -93.3356204,
+  "source": "nominatim"
+ },
  "Scarborough, ON": {
   "display": "Scarborough, Toronto, Ontario, Canada",
   "lat": 43.7729744,
@@ -788,10 +1811,112 @@
   "lon": -79.2576479,
   "source": "nominatim"
  },
+ "Seoul, Seoul": {
+  "display": "서울역, 지하2, 세종대로, 봉래동2가, 회현동, 중구, 서울특별시, 04527, 대한민국",
+  "lat": 37.5560719,
+  "lon": 126.9723599,
+  "source": "nominatim"
+ },
  "Seymour, Tennessee, United States": {
   "display": "Seymour, Sevier County, East Tennessee, Tennessee, 37865, United States",
   "lat": 35.8704536,
   "lon": -83.7571149,
+  "source": "nominatim"
+ },
+ "Shelbyville, Kentucky, United States": {
+  "display": "Shelbyville, Shelby County, Kentucky, 40065, United States",
+  "lat": 38.2110702,
+  "lon": -85.217294,
+  "source": "nominatim"
+ },
+ "Shenzhen, Guangdong": {
+  "display": "深圳市, 广东省, 中国",
+  "lat": 22.5445741,
+  "lon": 114.0545429,
+  "source": "nominatim"
+ },
+ "Singapore, Central Singapore": {
+  "display": "National University of Singapore, one-north, Queenstown, Central Region, Singapore",
+  "lat": 1.2959845,
+  "lon": 103.7766186,
+  "source": "nominatim"
+ },
+ "Somerset, Pennsylvania, United States": {
+  "display": "Somerset County, Pennsylvania, United States",
+  "lat": 39.9980022,
+  "lon": -79.0415528,
+  "source": "nominatim"
+ },
+ "South Africa, Western Cape": {
+  "display": "Western Cape, South Africa",
+  "lat": -33.546977,
+  "lon": 20.72753,
+  "source": "nominatim"
+ },
+ "South Jordan, Utah, United States": {
+  "display": "South Jordan, Salt Lake County, Utah, United States",
+  "lat": 40.5584882,
+  "lon": -111.9367107,
+  "source": "nominatim"
+ },
+ "Southfield, Michigan, United States": {
+  "display": "Southfield, Oakland County, Michigan, United States",
+  "lat": 42.4733689,
+  "lon": -83.2218731,
+  "source": "nominatim"
+ },
+ "Spring Creek, Nevada, United States": {
+  "display": "Spring Creek, Elko County, Nevada, 89815, United States",
+  "lat": 40.74672,
+  "lon": -115.5799669,
+  "source": "nominatim"
+ },
+ "Springdale, Arkansas, United States": {
+  "display": "Springdale, Washington County, Arkansas, United States",
+  "lat": 36.1867442,
+  "lon": -94.1288142,
+  "source": "nominatim"
+ },
+ "Springfield, Missouri, United States": {
+  "display": "Springfield, Greene County, Missouri, United States",
+  "lat": 37.2081729,
+  "lon": -93.2922715,
+  "source": "nominatim"
+ },
+ "Springfield, Springfield": {
+  "display": "Springfield, Hampden County, Massachusetts, United States",
+  "lat": 42.1018764,
+  "lon": -72.5886727,
+  "source": "nominatim"
+ },
+ "St. Louis, Missouri, United States": {
+  "display": "Saint Louis, Missouri, United States",
+  "lat": 38.6254063,
+  "lon": -90.190009,
+  "source": "nominatim"
+ },
+ "Stockbridge, Georgia, United States": {
+  "display": "Stockbridge, Henry County, Georgia, United States",
+  "lat": 33.5442781,
+  "lon": -84.2338093,
+  "source": "nominatim"
+ },
+ "Stoughton, Wisconsin, United States": {
+  "display": "Stoughton, Dane County, Wisconsin, 53589, United States",
+  "lat": 42.9167389,
+  "lon": -89.2178997,
+  "source": "nominatim"
+ },
+ "Stow, Ohio, United States": {
+  "display": "Stow, Summit County, Ohio, United States",
+  "lat": 41.1596261,
+  "lon": -81.4406258,
+  "source": "nominatim"
+ },
+ "Streetsboro, Ohio, United States": {
+  "display": "Streetsboro, Portage County, Ohio, 44241, United States",
+  "lat": 41.239223,
+  "lon": -81.345941,
   "source": "nominatim"
  },
  "Sturgis, Michigan, United States": {
@@ -800,16 +1925,100 @@
   "lon": -85.4191482,
   "source": "nominatim"
  },
+ "Suzhou, Jiangsu": {
+  "display": "苏州市, 江苏省, 中国",
+  "lat": 31.311123,
+  "lon": 120.6212881,
+  "source": "nominatim"
+ },
+ "Tell City, Indiana, United States": {
+  "display": "Tell City, Perry County, Indiana, United States",
+  "lat": 37.9508475,
+  "lon": -86.7697009,
+  "source": "nominatim"
+ },
+ "Terre Haute, Indiana, United States": {
+  "display": "Terre Haute, Vigo County, Indiana, United States",
+  "lat": 39.4667025,
+  "lon": -87.4139119,
+  "source": "nominatim"
+ },
  "Texarkana, Texas, United States": {
   "display": "Texarkana, Bowie County, Texas, United States",
   "lat": 33.4466208,
   "lon": -94.0765653,
   "source": "nominatim"
  },
+ "Toledo, Ohio, United States": {
+  "display": "Toledo, Lucas County, Ohio, United States",
+  "lat": 41.6529143,
+  "lon": -83.5378173,
+  "source": "nominatim"
+ },
+ "Tonawanda, New York, United States": {
+  "display": "City of Tonawanda, Erie County, New York, United States",
+  "lat": 43.020679,
+  "lon": -78.878383,
+  "source": "nominatim"
+ },
+ "Toronto, Ontario": {
+  "display": "Toronto, Ontario, Canada",
+  "lat": 43.6534817,
+  "lon": -79.3839347,
+  "source": "nominatim"
+ },
+ "Troy, Missouri, United States": {
+  "display": "Troy, Lincoln County, Missouri, 63379, United States",
+  "lat": 38.9794923,
+  "lon": -90.9806954,
+  "source": "nominatim"
+ },
+ "Tucson, Arizona, United States": {
+  "display": "Tucson, Pima County, Arizona, United States",
+  "lat": 32.2228765,
+  "lon": -110.974847,
+  "source": "nominatim"
+ },
+ "Uhrichsville, Ohio, United States": {
+  "display": "Uhrichsville, Mill Township, Tuscarawas County, Ohio, United States",
+  "lat": 40.390819,
+  "lon": -81.3451733,
+  "source": "nominatim"
+ },
+ "Ulysses, Kansas, United States": {
+  "display": "Ulysses, Lincoln Township, Grant County, Kansas, United States",
+  "lat": 37.5814095,
+  "lon": -101.355169,
+  "source": "nominatim"
+ },
  "Upland, California, United States": {
   "display": "Upland, San Bernardino County, California, United States",
   "lat": 34.09751,
   "lon": -117.6483876,
+  "source": "nominatim"
+ },
+ "Vancouver, British Columbia": {
+  "display": "Vancouver, Metro Vancouver Regional District, British Columbia, Canada",
+  "lat": 49.2608724,
+  "lon": -123.113952,
+  "source": "nominatim"
+ },
+ "Ventura, California, United States": {
+  "display": "Ventura County, California, United States",
+  "lat": 34.4458248,
+  "lon": -119.0779359,
+  "source": "nominatim"
+ },
+ "Vine Grove, Kentucky, United States": {
+  "display": "Vine Grove, Hardin County, Kentucky, United States",
+  "lat": 37.8100674,
+  "lon": -85.9813524,
+  "source": "nominatim"
+ },
+ "Wabash, Indiana, United States": {
+  "display": "Wabash County, Indiana, United States",
+  "lat": 40.8065352,
+  "lon": -85.7833563,
   "source": "nominatim"
  },
  "Wallingford, Connecticut, United States": {
@@ -824,10 +2033,40 @@
   "lon": -71.2355644,
   "source": "nominatim"
  },
+ "Warren, Ohio, United States": {
+  "display": "Warren County, Ohio, United States",
+  "lat": 39.4203978,
+  "lon": -84.180897,
+  "source": "nominatim"
+ },
+ "Warrenton, Missouri, United States": {
+  "display": "Warrenton, Warren County, Missouri, 63383, United States",
+  "lat": 38.810751,
+  "lon": -91.150268,
+  "source": "nominatim"
+ },
  "Washington, District of Columbia, United States": {
   "display": "Washington, District of Columbia, United States",
   "lat": 38.8950982,
   "lon": -77.0363849,
+  "source": "nominatim"
+ },
+ "Weatherford, Texas, United States": {
+  "display": "Weatherford, Parker County, Texas, United States",
+  "lat": 32.7589648,
+  "lon": -97.7970748,
+  "source": "nominatim"
+ },
+ "West Jordan, Utah, United States": {
+  "display": "West Jordan, Salt Lake County, Utah, United States",
+  "lat": 40.6061337,
+  "lon": -111.9395211,
+  "source": "nominatim"
+ },
+ "West Valley City, Utah, United States": {
+  "display": "West Valley City, Salt Lake County, Utah, United States",
+  "lat": 40.6967891,
+  "lon": -111.9866954,
   "source": "nominatim"
  },
  "Westminster, South Carolina, United States": {
@@ -842,10 +2081,22 @@
   "lon": -97.3375448,
   "source": "nominatim"
  },
+ "Wilder, Kentucky, United States": {
+  "display": "Wilder, Campbell County, Kentucky, United States",
+  "lat": 39.0564732,
+  "lon": -84.4867731,
+  "source": "nominatim"
+ },
  "Windsor, Ontario": {
   "display": "Windsor, Southwestern Ontario, Ontario, Canada",
   "lat": 42.2858536,
   "lon": -82.9780695,
+  "source": "nominatim"
+ },
+ "Winston, Florida, United States": {
+  "display": "Winston, Polk County, Florida, 33815, United States",
+  "lat": 28.0316879,
+  "lon": -82.0148055,
   "source": "nominatim"
  },
  "Wixom, Michigan, United States": {
@@ -858,6 +2109,24 @@
   "display": "Worcester, Worcester County, Massachusetts, United States",
   "lat": 42.2625621,
   "lon": -71.8018877,
+  "source": "nominatim"
+ },
+ "Wroclaw, Lower Silesian Voivodeship": {
+  "display": "Wrocław, województwo dolnośląskie, Polska",
+  "lat": 51.1089776,
+  "lon": 17.0326689,
+  "source": "nominatim"
+ },
+ "Wytheville, Virginia, United States": {
+  "display": "Wytheville, Wythe County, Virginia, 24382, United States",
+  "lat": 36.9479966,
+  "lon": -81.0869747,
+  "source": "nominatim"
+ },
+ "Zionsville, Indiana, United States": {
+  "display": "Zionsville, Boone County, Indiana, 46077, United States",
+  "lat": 39.950724,
+  "lon": -86.2616968,
   "source": "nominatim"
  }
 }

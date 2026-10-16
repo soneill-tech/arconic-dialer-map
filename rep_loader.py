@@ -222,9 +222,9 @@ def load(data_dir, geo):
             if not rid or not cid:
                 report["contacts_skipped"].append({"rep": rep["short"], "record_id": rid, "email": r.get("email", ""), "why": r.get("note") or "company not resolved"})
                 continue
-            if rid in seen_c:
+            if (cid, rid) in seen_c:   # same contact under two companies of the same rep -> one record per company
                 continue
-            seen_c.add(rid)
+            seen_c.add((cid, rid))
             per_co.setdefault(cid, []).append(r)
         n_loc = 0
         for rid, r in sorted(by_id.items(), key=lambda kv: kv[1]["name"].lower()):
@@ -348,12 +348,15 @@ def load(data_dir, geo):
                 ph = c.get("phone", ""); mb = c.get("mobile", "")
                 digs = re.sub(r"\D", "", re.split(r"(?i)ext|x", ph or mb or "")[0])
                 digs = digs[1:] if len(digs) == 11 and digs[0] == "1" else digs
+                dnc = bool(re.search(r"(?i)do\s*not\s*call|\bDNC\b", " ".join([c.get("first_name", ""), c.get("last_name", ""), c.get("job_title", ""), c.get("note", "")])))
+                if dnc:
+                    note = (note + " · " if note else "") + "DO NOT CALL (per HubSpot name/title/note)"
                 contacts.append({"name": nm, "role": "Other", "title": c.get("job_title", ""), "phone": ph, "mobile": mb, "email": c.get("email", ""),
                                  "hubspot_url": HS + "0-1/" + c["record_id"], "company_url": url, "last_activity": "", "notes": note,
                                  "am": rep["am"], "company": name, "plant": (loc_["name"] if loc_ else None), "area_code": digs[:3] if len(digs) == 10 else None,
                                  "has_phone": bool(ph or mb), "is_dm": False, "company_id": rid, "plant_id": (loc_["id"] if loc_ else None),
                                  "hubspot_contact_id": c["record_id"], "hubspot_link_type": "record", "times_contacted": 0, "sales_activities": 0,
-                                 "last_contacted": None, "loc_src": "hubspot", "rep": rep["short"]})
+                                 "last_contacted": None, "loc_src": "hubspot", "rep": rep["short"], **({"do_not_call": True} if dnc else {})})
                 if len(keys) > 1:   # contact shared by several pins (e.g. 3M's two DeKalb DCs)
                     for kx in keys[1:]:
                         keyed[kx].setdefault("contact_ids", []).append(c["record_id"])

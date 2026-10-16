@@ -1045,6 +1045,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     const tel = (p, ico) => `<a class="tel-btn big" data-tel="${esc(id)}" href="${esc(telHref(p))}" title="Tap to call, then Log Call opens when you come back">${ico} ${esc(p)}</a>`;
     const badges = [
       c.manual ? `<span class="manual-badge" style="margin:0" title="Added manually${c.added_by ? " by " + esc(c.added_by) : ""}">Added manually</span>` : "",
+      c.do_not_call ? `<span class="poc-badge" style="background:#dc2626;color:#fff" title="${esc(c.notes || "")}">⛔ DO NOT CALL</span>` : "",
       c.primary_poc ? `<span class="poc-badge" title="${esc(c.notes || "")}">★ Primary POC</span>` : "",
       touchBadge(c),
       lc ? `<span class="badge-s" title="Last call logged">Last: ${lc.outcome ? `<b>${esc(lc.outcome)}</b> · ` : ""}${esc(fmtCT(lc.time, true) || "")}${lc.am ? " · " + esc(lc.am) : ""}</span>` : `<span class="badge-s">No calls yet</span>`,
@@ -1066,7 +1067,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
         <div class="btns2">${id ? `<button type="button" class="log-btn" data-log="${esc(id)}">✎ Log Call</button>` : ""}${hsLink(c)}</div>
         <div class="meta-rows">
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
-          ${!c.manual && c.notes && c.notes !== "Title not scraped" && (c.company === "BRT Extrusions" || c.company === "Reliable Silver" || c.company === "Kawneer") ? `<div class="poc-note" style="margin:0">${esc(c.notes)}</div>` : ""}
+          ${!c.manual && c.notes && c.notes !== "Title not scraped" && (c.rep || c.company === "BRT Extrusions" || c.company === "Reliable Silver" || c.company === "Kawneer") ? `<div class="poc-note" style="margin:0">${esc(c.notes)}</div>` : ""}
         </div>
         ${c.manual ? `<div class="plant-tag" style="color:var(--muted)">Location: ${c.plant_id ? esc(plantLabel(c)) : "unassigned"} (set manually${c.added_by ? " by " + esc(c.added_by) : ""})</div>
           <div class="mact"><a data-edit-con="${esc(c.manual_id)}">✎ Edit</a><a class="del" data-del-con="${esc(c.manual_id)}">🗑 Delete</a></div>`

@@ -55,7 +55,8 @@ def build(data):
     arc = next(l for l in locs if l["id"] == "arc:all")
     base = {k: arc[k] for k in ("am", "company", "company_id", "company_url")}
     # supplier membership must reference real, unique contact IDs
-    ids = [cid_of(c) for c in contacts]
+    contacts = list(contacts)
+    ids = [cid_of(c) for c in contacts if not c.get("rep")]   # rep (Nick/Mia/Addie) contacts may repeat across reps/companies; supplier pins never reference them
     if any(not i for i in ids):
         raise SystemExit("some contacts lack hubspot_contact_id; supplier pins reference contacts by ID")
     if len(set(ids)) != len(ids):
