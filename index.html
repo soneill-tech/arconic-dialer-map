@@ -438,7 +438,8 @@ body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var
 @media (max-width:900px){.sb-row{height:46px}.sb-team{padding:0 14px;gap:7px}.sb-team .nm{font-size:1.25rem}.sb-team .sc{font-size:1.95rem}.sb-mid{font-size:.68rem;padding:0 8px}.sb-team svg{width:15px;height:15px}}
 </style>
 <style>/* ---- header sizing: header is part of the flex column, panels fill the rest and scroll internally ---- */
-html,body{height:100%;height:100dvh;overflow-x:hidden}
+html,body{height:100%;height:100dvh;overflow:hidden;overscroll-behavior:none}
+body{position:fixed;inset:0;width:100%;height:auto;max-height:none}
 .h-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:0 0 auto}
 .h-right .h-mid{justify-content:flex-end}
 @media (min-width:901px){
@@ -602,6 +603,10 @@ html,body{height:100%;height:100dvh;overflow-x:hidden}
 (async function () {
   try { history.scrollRestoration = "manual"; } catch (e) {}
   window.scrollTo(0, 0);
+  // Safeguard: the document itself must never scroll (header + scorebug stay in view); only panels/lists scroll internally.
+  const resetScroll = () => { if (window.scrollY || window.scrollX || document.documentElement.scrollTop || document.body.scrollTop) { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; } };
+  window.addEventListener("scroll", resetScroll, { passive: true }); document.addEventListener("scroll", resetScroll, { passive: true });
+  window.addEventListener("load", resetScroll); window.addEventListener("resize", resetScroll); window.addEventListener("focusin", () => setTimeout(resetScroll, 0));
   let DATA = window.__DIALER_DATA__;
   if (!DATA) {
     const res = await fetch("data.json");
@@ -1617,7 +1622,7 @@ html,body{height:100%;height:100dvh;overflow-x:hidden}
     el("alErr").textContent = ""; el("alSave").disabled = false;
     if (alEdit) setGeo({ lat: alEdit.lat, lon: alEdit.lon, src: alEdit.geo_source || "manual-pin" }, `Current pin kept (${(+alEdit.lat).toFixed(4)}, ${(+alEdit.lon).toFixed(4)}). Change the city/state, or use Find on map / Drop pin, to move it.`, true);
     else setGeo(null, "");
-    el("alOverlay").classList.add("show"); el("alCity").focus();
+    el("alOverlay").classList.add("show"); el("alCity").focus({ preventScroll: true });
   }
   async function geocodeCity(city, state, addr) {
     const q = (p) => `https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&${p}`;
@@ -1701,7 +1706,7 @@ html,body{height:100%;height:100dvh;overflow-x:hidden}
     fillConLocs();
     el("acLoc").value = acEdit ? (acEdit.location_id || "") : (loc && loc.pin && !isSupplier(loc) ? loc.id : "");
     el("acErr").textContent = ""; el("acSave").disabled = false;
-    el("acOverlay").classList.add("show"); el("acName").focus();
+    el("acOverlay").classList.add("show"); el("acName").focus({ preventScroll: true });
   }
   async function saveAddCon() {
     const name = el("acName").value.trim(), email = el("acEmail").value.trim();
@@ -1805,7 +1810,7 @@ html,body{height:100%;height:100dvh;overflow-x:hidden}
     } else if (t.dataset.addTitle) {
       const id = t.dataset.addTitle, box = t.closest("[data-title-box]");
       box.innerHTML = `<form class="title-form"><input maxlength="80" placeholder="Job title (saved to the map only, not HubSpot)" aria-label="Job title"/><button class="go" type="submit">Save</button><button type="button" data-cancel-title>Cancel</button></form>`;
-      const form = box.querySelector("form"); form.querySelector("input").focus();
+      const form = box.querySelector("form"); form.querySelector("input").focus({ preventScroll: true });
       form.addEventListener("submit", (ev) => {
         ev.preventDefault(); const v = form.querySelector("input").value.trim(); if (!v) return;
         const c = DATA.contacts.find((x) => contactId(x) === id);

@@ -184,3 +184,4 @@ Top-right **Radar** toggle + opacity slider (off by default; choice remembered p
 
 ## Header sizing (v6.1)
 Header is part of the flex column (no fixed/sticky): ~75-95px on desktop (was ~142-179px), single row with title | scorebug | stats + filters; map and side panels fill the rest and scroll internally; layout stays 3-column down to 901px; below 900px the mobile bottom-sheet layout applies. Short viewports (<=760px high) shrink the scorebug and drop the strip/sub-title. The page scrolls to top on load (scroll restoration off).
+- **No document scroll (v6.2)**: `html`/`body` are `100dvh`, `overflow:hidden`, body is `position:fixed; inset:0` (flex column: header, layout, footer); only the panels/lists scroll internally. All `focus()` calls use `preventScroll`, and a scroll listener resets any stray document scroll to (0,0) (`documentElement.scrollHeight == clientHeight`).
