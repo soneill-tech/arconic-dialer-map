@@ -303,6 +303,10 @@ body[data-am="simran"] header{background:linear-gradient(90deg,rgba(128,0,32,.35
 body[data-am="kili"] #amAccent::before{content:"";position:absolute;left:50%;top:50%;width:54px;height:54px;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(226,232,240,.38) 0%,rgba(192,199,204,.18) 45%,rgba(192,199,204,0) 72%)}
 body[data-am="kili"] #amAccent img{z-index:1}
 </style>
+<style>.radar-ctl{background:rgba(26,35,50,.94);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:.74rem;min-width:130px}
+.radar-ctl .rc-row{display:flex;align-items:center;gap:6px;margin:2px 0;cursor:pointer}.radar-ctl input[type=range]{width:100%;accent-color:var(--accent)}
+.radar-ctl .rc-status{color:var(--muted);font-size:.68rem;min-height:1em}
+</style>
 </head>
 <body>
 <header>
@@ -1474,6 +1478,59 @@ body[data-am="kili"] #amAccent img{z-index:1}
   function setLegend(collapsed) { el("legend").classList.toggle("collapsed", collapsed); el("lgCaret").textContent = collapsed ? "▸" : "▾"; el("lgToggle").setAttribute("aria-expanded", String(!collapsed)); }
   el("lgToggle").onclick = () => setLegend(!el("legend").classList.contains("collapsed"));
   setLegend(window.matchMedia("(max-width: 900px)").matches);
+  // ---- Weather radar overlay (RainViewer public API; free, no key). Off by default; failures are non-fatal. ----
+  const RADAR_API = "https://api.rainviewer.com/public/weather-maps.json";
+  const LS_RADAR = "dialerRadar:v1";           // {on, opacity}
+  let radarLayer = null, radarTimer = null, radarTime = null;
+  const radarPref = { on: false, opacity: 0.6, ...lsGet(LS_RADAR, {}) };
+  function radarStatus(msg, bad) { const e = document.getElementById("radarStatus"); if (e) { e.textContent = msg || ""; e.style.color = bad ? "#f59e0b" : ""; } }
+  async function refreshRadar() {
+    if (!map || !radarPref.on) return;
+    try {
+      const res = await fetch(RADAR_API, { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const j = await res.json(), frames = (j.radar && j.radar.past) || [];
+      const f = frames[frames.length - 1];
+      if (!f) throw new Error("no radar frames");
+      if (radarLayer) { map.removeLayer(radarLayer); radarLayer = null; }
+      radarLayer = L.tileLayer(`${j.host}${f.path}/256/{z}/{x}/{y}/2/1_1.png`, {
+        pane: "radarPane", opacity: radarPref.opacity, maxNativeZoom: 7, maxZoom: 19, className: "radar-tiles",
+        attribution: 'Radar &copy; <a href="https://www.rainviewer.com/" target="_blank" rel="noopener">RainViewer</a>',
+      });
+      radarLayer.on("tileerror", () => radarStatus("Some radar tiles failed to load", true));
+      radarLayer.addTo(map);
+      radarTime = new Date(f.time * 1000);
+      radarStatus("As of " + (fmtCT(radarTime.toISOString(), false) || "") + " CT");
+    } catch (err) {
+      console.warn("radar:", err);
+      radarStatus("Radar unavailable right now", true);
+      if (radarLayer) { map.removeLayer(radarLayer); radarLayer = null; }
+    }
+  }
+  function setRadar(on) {
+    radarPref.on = on; lsSet(LS_RADAR, radarPref);
+    clearInterval(radarTimer); radarTimer = null;
+    if (on) { radarStatus("Loading…"); refreshRadar(); radarTimer = setInterval(refreshRadar, 10 * 60 * 1000); }
+    else { if (radarLayer && map) map.removeLayer(radarLayer); radarLayer = null; radarStatus(""); }
+  }
+  if (map) {
+    try {
+      map.createPane("radarPane"); map.getPane("radarPane").style.zIndex = 250; map.getPane("radarPane").style.pointerEvents = "none";  // above tiles, below pins/popups
+      const Ctl = L.Control.extend({ options: { position: "topright" }, onAdd() {
+        const d = L.DomUtil.create("div", "radar-ctl leaflet-bar");
+        d.innerHTML = `<label class="rc-row"><input type="checkbox" id="radarOn"/> <strong>Radar</strong></label>
+          <div class="rc-row"><input type="range" id="radarOp" min="0.2" max="1" step="0.05" aria-label="Radar opacity" title="Opacity"/></div>
+          <div class="rc-status" id="radarStatus"></div>`;
+        L.DomEvent.disableClickPropagation(d); L.DomEvent.disableScrollPropagation(d);
+        return d;
+      } });
+      map.addControl(new Ctl());
+      el("radarOn").checked = radarPref.on; el("radarOp").value = radarPref.opacity;
+      el("radarOn").addEventListener("change", (e) => setRadar(e.target.checked));
+      el("radarOp").addEventListener("input", (e) => { radarPref.opacity = Number(e.target.value); lsSet(LS_RADAR, radarPref); if (radarLayer) radarLayer.setOpacity(radarPref.opacity); });
+      if (radarPref.on) setRadar(true);
+    } catch (e) { console.warn("radar control:", e); }
+  }
   window.__manual = { reload: loadManualAdds, get items() { return [...manualItems.values()]; } };
 
   renderLocList();

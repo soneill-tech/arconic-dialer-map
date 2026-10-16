@@ -157,3 +157,6 @@ all-time counts with no per-activity dates, so a since-Jan-1-2026 count can't be
 or `last_calls.json`. Until it's loaded the sort falls back to all-time touches and cards show "this year: not loaded".
 **Needed:** a HubSpot activity export for 2026 (calls + emails + meetings, 2026-01-01 → today, counted per contact) as CSV `contact_id,touches_ytd`, then:
 `python3 apply_touches_ytd.py ytd.csv --as-of <ISO> --source "<how pulled>"` (updates `data.json` + `data.js`; commit/push them). Re-run it periodically; the sync scripts leave `touches_ytd` alone.
+
+## Weather radar overlay
+Top-right **Radar** toggle + opacity slider (off by default; choice remembered per device). Uses RainViewer's free public API (`api.rainviewer.com/public/weather-maps.json`, latest radar frame, auto-refresh every 10 min, attribution "Radar © RainViewer"). Drawn in its own pane above the basemap and below pins/popups, so it works with the AM filter and pins. If the API or tiles fail it shows "Radar unavailable right now" and the map is unaffected. Radar tiles are native to zoom 7 and upscale beyond that.
