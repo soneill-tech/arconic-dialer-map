@@ -24,7 +24,7 @@ python3 -m http.server 8765   # then open http://localhost:8765/
 - **Arconic supplier pins (blue rounded square, amber border; dashed card + "Supplier (Arconic-managed)" tag):**
   sites Arconic manages that are **not Arconic facilities**. They have no contacts of their own; they reference existing
   Arconic contacts by `hubspot_contact_id`:
-  - **Middlebury, IN** (`arc:sup:Middlebury`): same contacts as Davenport Works / Bettendorf, IA (49)
+  - **Champagne Metals (Middlebury, IN)** (`arc:sup:Middlebury`): Arconic supplier, managed by the Davenport/Bettendorf team; same contacts as Davenport Works / Bettendorf, IA (49)
   - **Minster, OH** (`arc:sup:Minster`): Lancaster, PA (27) ∪ Davenport Works / Bettendorf, IA (49), de-duplicated by ID = 76
     (overlap 0, since each contact has exactly one plant)
 - **Kaiser pins (orange):** Trentwood Works (Spokane Valley WA, 509), Warrick (Newburgh IN, 812), Knoxville TN (865),
@@ -124,7 +124,7 @@ The CSV itself is not committed (it includes contacts that aren't on the map).
 | `build_data.py` | Rebuild script (adds Kaiser to the v1 Arconic data) |
 | `apply_site_overrides.py` | Adds manual plant pins + contact→plant overrides (Arconic Chandler, AZ ← Kevin West 37695051; **Reliable Silver** (Kahekili, HubSpot company 7228584362): Naugatuck, CT pin + 7 contacts; Kaiser Richmond (Bellwood), VA pin, contacts only by 804 area code (none today); **BRT Extrusions, Niles OH** pin under Simran (HubSpot company 3005488807, teal ring) with 9 contacts, Amanda Zepernick flagged primary POC); idempotent; also adds **Howmet Aerospace** (Kahekili, HubSpot company 32027566669): All Howmet + Pittsburgh HQ pin + area-code pins 216/219/585/231 (only codes with ≥6 contacts) + Unassigned, from `howmet_contacts.json` |
 | `build_howmet_contacts.py` | CSV → `howmet_contacts.json` (display names from emails, normalized phones) |
-| `sync_supplier_pins.py` | Adds/refreshes the Arconic-managed supplier pins (Middlebury IN, Minster OH); `--check` verifies |
+| `sync_supplier_pins.py` | Adds/refreshes the Arconic-managed supplier pins (Champagne Metals Middlebury IN + Glenpool OK, Minster OH); `--check` verifies |
 | `called_today.json` | Today's called contact IDs (drives the pulse); refreshed by a scheduled job |
 | `update_called_today.py` | Resolves a calls CSV/JSON → `called_today.json`; `--publish` pushes it |
 | `manual_add.py` / `added_manual.json` / `last_calls.json` | Drains queue items (adds/edits/deletes/titles/follow-ups) and last-call history; both files are merged into the map on load |
@@ -187,3 +187,4 @@ Header is part of the flex column (no fixed/sticky): ~75-95px on desktop (was ~1
 - **No document scroll (v6.2)**: `html`/`body` are `100dvh`, `overflow:hidden`, body is `position:fixed; inset:0` (flex column: header, layout, footer); only the panels/lists scroll internally. All `focus()` calls use `preventScroll`, and a scroll listener resets any stray document scroll to (0,0) (`documentElement.scrollHeight == clientHeight`).
 - **Account scopes the map (v6.3)**: picking an account chip (List view) or an "All <company>" entry (Cards or List) shows only that company's pins (supplier pins carry their own company) and fits the map to them; "All"/"All companies"/the map pill's "Show all" restores everything. Combines with the Rep tabs (a company outside the selected rep clears the scope), radar/borders overlays, clusters and recency colors. Active chip is marked with a check + ring, and a pill on the map says "Map: <company> only".
 - **Champagne Metals (Glenpool, OK)** is an Arconic-managed supplier pin (`arc:sup:Glenpool`, defined in `sync_supplier_pins.py`, run by `apply_site_overrides.py`) referencing the same 49 contacts as Middlebury, IN (Davenport Works / Bettendorf). References only, no duplicate contacts; map only. Arconic now has 10 pins (7 plant + 3 supplier).
+- **Champagne Metals** has two Arconic suppliers, **Middlebury, IN** and **Glenpool, OK** (labels "Champagne Metals (Middlebury, IN)" / "Champagne Metals (Glenpool, OK)"), both tagged "Arconic supplier, managed by the Davenport/Bettendorf team" (`supplier_tag`, shown on cards and in popups) and both referencing the 49 Davenport Works/Bettendorf contacts. Minster, OH is unchanged.

@@ -21,24 +21,25 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 JS_PREFIX = "window.__DIALER_DATA__ = "
 SUPPLIER_TAG = "Supplier (Arconic-managed)"
+CHAMPAGNE_TAG = "Arconic supplier, managed by the Davenport/Bettendorf team"   # Champagne Metals, Middlebury IN + Glenpool OK (Steve, 2026-10-15)
 BETTENDORF = "arc:Davenport Works"   # Davenport Works = 4879 State St, Bettendorf (Riverdale), IA 52722
 LANCASTER = "arc:Lancaster"          # Lancaster Operations, Lancaster, PA (717)
 
 # Nominatim city-level geocodes (fetched 2026-10-06)
 SUPPLIERS = [
-    dict(id="arc:sup:Middlebury", name="Middlebury, IN (supplier)", label="Middlebury, IN · Supplier (Arconic-managed)",
+    dict(id="arc:sup:Middlebury", name="Champagne Metals (Middlebury, IN)", label="Champagne Metals (Middlebury, IN)", tag=CHAMPAGNE_TAG,
          city="Middlebury", region="Middlebury, Elkhart County, Indiana, USA", lat=41.6750714, lon=-85.7060263,
          contacts_from=[BETTENDORF],
-         hint="Supplier (Arconic-managed), not an Arconic facility · same contacts as Davenport Works (Bettendorf, IA)"),
+         hint="Champagne Metals \u00b7 Arconic supplier, managed by the Davenport/Bettendorf team \u00b7 not an Arconic facility \u00b7 same contacts as Davenport Works (Bettendorf, IA)"),
     dict(id="arc:sup:Minster", name="Minster, OH (supplier)", label="Minster, OH · Supplier (Arconic-managed)",
          city="Minster", region="Minster, Auglaize County, Ohio, USA", lat=40.3931033, lon=-84.3760612,
          contacts_from=[LANCASTER, BETTENDORF],
          hint="Supplier (Arconic-managed), not an Arconic facility · contacts of Lancaster, PA + Davenport Works (Bettendorf, IA)"),
     # Champagne Metals, Glenpool OK (Steve, 2026-10-15): same contacts as Middlebury (Bettendorf/Davenport Works); references only, no duplicates
-    dict(id="arc:sup:Glenpool", name="Champagne Metals (Glenpool, OK)", label="Champagne Metals (Glenpool, OK)",
+    dict(id="arc:sup:Glenpool", name="Champagne Metals (Glenpool, OK)", label="Champagne Metals (Glenpool, OK)", tag=CHAMPAGNE_TAG,
          city="Glenpool", region="Glenpool, Tulsa County, Oklahoma, United States", lat=35.9553523, lon=-96.0087780,
          contacts_from=[BETTENDORF],
-         hint="Champagne Metals \u00b7 Supplier (Arconic-managed), not an Arconic facility \u00b7 same contacts as Middlebury, IN (Davenport Works, Bettendorf, IA)"),
+         hint="Champagne Metals \u00b7 Arconic supplier, managed by the Davenport/Bettendorf team \u00b7 not an Arconic facility \u00b7 same contacts as Champagne Metals (Middlebury, IN)"),
 ]
 
 
@@ -79,7 +80,7 @@ def build(data):
                    contact_count=len(cs), with_phone=sum(bool(c.get("has_phone")) for c in cs),
                    dm_count=sum(bool(c.get("is_dm")) for c in cs),
                    filter=s["id"], hint=s["hint"], pin=True, source="nominatim",
-                   kind="supplier", supplier_tag=SUPPLIER_TAG, managed_by="Arconic", is_company_facility=False,
+                   kind="supplier", supplier_tag=s.get("tag", SUPPLIER_TAG), managed_by="Arconic", is_company_facility=False,
                    contacts_from=s["contacts_from"], contact_ids=member)
         if s["id"] in by_loc:
             locs[locs.index(by_loc[s["id"]])] = loc
