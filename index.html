@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Team Steve — Closed Won Dialer Map</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="" />
 <style>
   :root {
     --bg: #0f1419;
@@ -307,26 +308,100 @@ body[data-am="kili"] #amAccent img{z-index:1}
 .radar-ctl .rc-row{display:flex;align-items:center;gap:6px;margin:2px 0;cursor:pointer}.radar-ctl input[type=range]{width:100%;accent-color:var(--accent)}
 .radar-ctl .rc-status{color:var(--muted);font-size:.68rem;min-height:1em}
 </style>
+<style>/* ---- v4: dark basemap, clusters, cards, header, mobile sheet ---- */
+header{gap:10px 14px;padding:8px 16px}
+.h-left{min-width:0}.h-mid{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+header h1{font-size:1rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.controls{gap:8px;flex-wrap:nowrap}.controls input[type="search"]{min-width:150px;width:200px;padding:7px 10px}
+.am-accent{display:inline-flex;align-items:center;gap:5px;line-height:0}
+body:not([data-am]) .am-accent{opacity:.85}
+body:not([data-am]) header::after{opacity:1;background:linear-gradient(90deg,#041E42 0%,#869397 40%,#800020 100%)}
+body:not([data-am]) header{background:linear-gradient(90deg,rgba(4,30,66,.5),var(--panel) 38%,var(--panel) 62%,rgba(128,0,32,.3))}
+.addmenu{position:relative}.addmenu .menu{display:none;position:absolute;right:0;top:calc(100% + 6px);z-index:3000;background:var(--panel);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow);min-width:170px;overflow:hidden}
+.addmenu.open .menu{display:block}
+.addmenu .menu button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--text);padding:10px 14px;font:13px var(--font);cursor:pointer}
+.addmenu .menu button:hover{background:var(--panel2)}
+/* contact cards */
+.contact{border-left:4px solid var(--co,var(--border))}
+.loc-card{border-left:4px solid var(--co,var(--border))}
+.contact .who .title{margin-top:2px}
+.callrow{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 2px}
+.contact a.tel-btn.big{flex:1 1 140px;justify-content:center;min-height:44px;font-size:1rem;margin:0;border-radius:10px;background:rgba(34,197,94,.16);border-color:rgba(34,197,94,.65);color:#86efac}
+.contact a.tel-btn.big:hover{background:rgba(34,197,94,.28)}
+.callrow .nophone{color:var(--muted);font-size:.8rem;padding:10px 2px}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;align-items:center}
+.badges > *{margin:0 !important}
+.badge-s{display:inline-block;font-size:.68rem;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--panel2);color:var(--muted);border:1px solid var(--border)}
+.badge-s b{color:var(--text);font-weight:600}
+.btns2{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.contact .meta-rows{margin-top:8px;display:grid;gap:3px;font-size:.8rem}
+/* dark basemap + popups + clusters */
+.leaflet-container{background:#0b1220}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--panel);color:var(--text);border:1px solid var(--border)}
+.leaflet-popup-content a{color:var(--accent)}
+.leaflet-container a.leaflet-popup-close-button{color:var(--muted)}
+.leaflet-control-attribution{background:rgba(15,20,25,.75) !important;color:var(--muted) !important}.leaflet-control-attribution a{color:#93c5fd !important}
+.leaflet-bar a{background:var(--panel);color:var(--text);border-bottom-color:var(--border)}.leaflet-bar a:hover{background:var(--panel2)}
+.radar-tiles{filter:saturate(1.25) brightness(1.15) contrast(1.05)}
+.cl-wrap{background:none;border:0}
+.cl{position:relative;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font:700 13px var(--font);
+  border:3px solid transparent;background:linear-gradient(#0f1b2e,#0f1b2e) padding-box,conic-gradient(var(--ring,#3b82f6)) border-box;box-shadow:0 0 0 2px rgba(255,255,255,.55),0 2px 8px rgba(0,0,0,.5)}
+.cl.pulse::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:2px solid #93c5fd;pointer-events:none;animation:pinPulse 2s ease-out infinite}
+@media (prefers-reduced-motion:reduce){.cl.pulse::after{animation:none;transform:scale(1.3);opacity:.5}}
+.sheet-bar{display:none}
+@media (pointer:coarse),(max-width:900px){
+  .btn,.seg button,.contact button.log-btn,.contact a.hs-btn,.chips button,.modal .quick button{min-height:40px}
+  .modal input,.modal textarea,.modal select,.controls input[type=search],.title-form input{font-size:16px}
+  .contact .nohs{min-height:40px}
+}
+@media (max-width:900px){
+  body{--sheet-h:0px}
+  body[data-sheet=half]{--sheet-h:46dvh}body[data-sheet=full]{--sheet-h:80dvh}
+  header{padding:6px 10px;gap:6px}
+  header .sub{display:none}header h1{font-size:.92rem}
+  .h-mid{width:100%;gap:6px}.h-mid .badge{font-size:.68rem;padding:3px 8px}
+  .controls{width:100%;margin-left:0;overflow-x:auto;padding-bottom:2px}
+  .controls input[type=search]{flex:1 1 120px;min-width:100px;width:auto}
+  .layout{display:block !important;flex:1;position:relative;min-height:0}
+  .map-wrap{position:absolute;inset:0;z-index:0;isolation:isolate}
+  .map-wrap .leaflet-bottom{bottom:56px}
+  .legend{bottom:auto;top:8px;left:52px;max-width:230px}
+  .sidebar,.detail{position:fixed;left:0;right:0;bottom:0;height:var(--sheet-h);z-index:900;border:0;border-top:1px solid var(--border);display:none;-webkit-overflow-scrolling:touch}
+  body[data-sheet=half][data-tab=loc] .sidebar,body[data-sheet=full][data-tab=loc] .sidebar,
+  body[data-sheet=half][data-tab=con] .detail,body[data-sheet=full][data-tab=con] .detail{display:block}
+  .sheet-bar{display:flex;position:fixed;left:0;right:0;bottom:var(--sheet-h);height:52px;z-index:901;align-items:center;justify-content:space-between;gap:8px;padding:6px 10px;
+    background:var(--panel);border-top:1px solid var(--border);border-radius:16px 16px 0 0;box-shadow:0 -6px 20px rgba(0,0,0,.4)}
+  .sheet-bar::before{content:"";position:absolute;top:5px;left:50%;width:38px;height:4px;margin-left:-19px;border-radius:2px;background:var(--border)}
+  .sheet-bar .seg{margin-top:8px}.sheet-size{margin-top:8px;background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:8px;min-width:44px;min-height:40px;font-size:1rem}
+  footer{display:none}
+  .modal{max-height:92dvh;overflow:auto}
+  .detail-head{position:sticky}
+  .sidebar h2{top:0}
+}
+</style>
 </head>
 <body>
 <header>
-  <div>
+  <div class="h-left">
     <h1>Team Steve — Closed Won Dialer Map <span class="am-accent" id="amAccent" aria-hidden="true"></span></h1>
     <div class="sub">Arconic + Howmet + Reliable Silver (Kahekili Barrozo) · Kaiser Aluminum + BRT Extrusions (Simran Subramanian)</div>
     <div class="sync-line" id="syncLine">Last synced: <strong>checking…</strong></div>
   </div>
-  <span class="badge" id="statBadge">Loading…</span>
-  <span class="badge score-badge" id="scoreBadge" title="Contacts called today per AM (called_today + Log Call queue)">📞 Called today: …</span>
+  <div class="h-mid">
+    <span class="badge" id="statBadge">Loading…</span>
+    <span class="badge score-badge" id="scoreBadge" title="Contacts called today per AM (called_today + Log Call queue)">📞 Called today: …</span>
+  </div>
   <div class="controls">
     <div class="seg" id="amFilter" title="Account Manager">
       <button type="button" data-am="all" class="active">All</button>
       <button type="button" data-am="Kahekili Barrozo">Kahekili</button>
       <button type="button" data-am="Simran Subramanian">Simran</button>
     </div>
-    <span class="add-btns"><button type="button" class="btn add" id="addLocBtn" title="Add a new location (city pin) to the map">＋ Location</button><button type="button" class="btn add" id="addConBtn" title="Add a new contact that isn't in HubSpot yet">＋ Contact</button></span>
     <input type="search" id="search" placeholder="Search name, email, phone, plant, company…" />
+    <div class="addmenu"><button type="button" class="btn add" id="addMenuBtn" aria-haspopup="true" aria-expanded="false">＋ Add ▾</button>
+      <div class="menu" id="addMenu" role="menu"><button type="button" id="addLocBtn" role="menuitem">📍 New location</button><button type="button" id="addConBtn" role="menuitem">👤 New contact</button></div></div>
   </div>
-</header>
+</header></header>
 
 <div class="layout">
   <aside class="sidebar">
@@ -345,7 +420,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
       <div style="margin-top:4px"><span class="dot" style="background:#3b82f6"></span> Arconic (Kahekili) &nbsp; <span class="dot" style="background:#f97316"></span> Kaiser Aluminum (Simran) &nbsp; <span class="dot" style="background:#14b8a6"></span> BRT Extrusions (Simran) &nbsp; <span class="dot" style="background:#84cc16"></span> Howmet Aerospace (Kahekili) &nbsp; <span class="dot" style="background:#d946ef"></span> Reliable Silver (Kahekili) <span style="opacity:.8">· ring color</span></div>
       <div style="margin-top:4px">Pin fill = last call: <span class="lg-sw" style="background:#22c55e"></span>today <span class="lg-sw" style="background:#facc15"></span>this week <span class="lg-sw" style="background:#fb7185"></span>older <span class="lg-sw" style="background:#6b7280"></span>never</div>
       <div style="margin-top:4px">Pulsing = no call logged today &nbsp; <span style="color:var(--accent2);font-weight:700">✓</span> = called today</div>
-      <div style="margin-top:4px"><span class="pin supplier" style="--pin-color:#3b82f6"></span>Supplier (Arconic-managed) — not an Arconic facility; shares contacts with Arconic plant pins</div>
+      <div style="margin-top:4px"><span class="pin supplier" style="--pin-color:#3b82f6"></span>Supplier square (Arconic/Howmet-managed) — not a company facility; references existing contacts<br/>Numbered bubbles = nearby pins grouped (zoom to expand); pulsing bubble = some pin inside not called today</div>
       <div style="margin-top:4px">Pins = city-level plants/HQ. Contacts assigned by phone area code when known; otherwise Unassigned.</div>
       </div>
     </div>
@@ -373,6 +448,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
   </aside>
 </div>
 
+<div class="sheet-bar" id="sheetBar"><div class="seg" id="sheetTabs"><button type="button" data-tab="loc">Locations</button><button type="button" data-tab="con">Contacts</button></div><button type="button" class="sheet-size" id="sheetSize" aria-label="Expand or collapse panel">▲</button></div>
 <footer>
   Scope: Arconic (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/2359249037" style="color:var(--accent)" target="_blank" rel="noopener">2359249037</a>, Kahekili Barrozo) +
   Kaiser Aluminum (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/5360206404" style="color:var(--accent)" target="_blank" rel="noopener">5360206404</a>, Simran Subramanian).
@@ -419,6 +495,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
 </div></div>
 <script src="data.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
 <script>
 (async function () {
   let DATA = window.__DIALER_DATA__;
@@ -432,6 +509,9 @@ body[data-am="kili"] #amAccent img{z-index:1}
   let selectedLocId = "team:all";
   let sortMode = "touches";       // "touches" (default: HubSpot Number of times contacted) | "dm"
   const markers = {};
+  let sheetReady = false;
+  const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
+  function setSheetStub() {}
   let viewFilter = "all";         // all | uncalled | followups
   let unassignedOpen = false;
   let lastCalls = {};             // contact_id -> {time, outcome, am} from last_calls.json (published by manual_add.py)
@@ -637,12 +717,13 @@ body[data-am="kili"] #amAccent img{z-index:1}
     const addCard = (loc) => {
       const n = filteredContactsForLoc(loc).length;
       const card = document.createElement("div");
+      if (loc.company) card.style.setProperty("--co", COLORS[loc.company] || "#888");
       card.className = "loc-card" + (loc.company === "Kaiser Aluminum" ? " kai" : "") + (isSupplier(loc) ? " supplier" : "") + (loc.id === selectedLocId ? " active" : "");
       card.innerHTML = `
         ${loc.manual ? `<span class="lact"><a data-edit-loc="${esc(loc.id)}" title="Edit this location">✎</a><a data-del-loc="${esc(loc.id)}" title="Delete this location">✕</a></span>` : ""}
         <div class="name">${esc(loc.label || loc.name)}${loc.manual ? ` <span class="manual-badge" title="Added manually${loc.added_by ? " by " + esc(loc.added_by) : ""}">Added manually</span>` : ""}</div>
         ${isSupplier(loc) ? `<div><span class="sup-tag" style="margin-left:0">${esc(loc.supplier_tag || "Supplier (Arconic-managed)")}</span></div>` : ""}
-        <div class="meta">${esc(loc.pin ? loc.city + (loc.manual ? " · manual pin" : isSupplier(loc) ? " · supplier pin (not an Arconic facility)" : " · city-level pin") : "No map pin")}
+        <div class="meta">${esc(loc.pin ? loc.city + (loc.manual ? " · manual pin" : isSupplier(loc) ? " · supplier pin (not a " + (loc.managed_by || "Arconic") + " facility)" : " · city-level pin") : "No map pin")}
           ${loc.hint ? "<br/>" + esc(loc.hint) : ""}
           ${loc.show_company_link && loc.company_url ? `<br/><a href="${esc(loc.company_url)}" target="_blank" rel="noopener" class="co-link" onclick="event.stopPropagation()">HubSpot company ${esc(loc.company_id)} ↗</a>` : ""}</div>
         <div class="stats">
@@ -749,34 +830,35 @@ body[data-am="kili"] #amAccent img{z-index:1}
   }
 
   function contactCard(c) {
-    const ci = calledInfo(c), id = contactId(c), lc = lastCallOf(c), fu = followupFor(c);
-    const lcTxt = lc ? `Last call: ${lc.outcome ? `<b>${esc(lc.outcome)}</b> · ` : ""}${esc(fmtCT(lc.time, true) || "")}${lc.am ? " · " + esc(lc.am) : ""}` : "No calls logged yet";
+    const ci = calledInfo(c), id = contactId(c), lc = lastCallOf(c), fu = followupFor(c), col = COLORS[c.company] || "#888";
     const titleHtml = c.title
       ? `<div class="title">${esc(c.title)}${c.title_by ? `<span class="title-by" title="Added from the map; not in HubSpot">added by ${esc(c.title_by)}</span>` : ""}</div>`
       : `<div class="title missing" data-title-box="${esc(id)}">${c.manual ? "No title yet" : "Title not scraped"} · <a data-add-title="${esc(id)}">Add title</a></div>`;
+    const tel = (p, ico) => `<a class="tel-btn big" data-tel="${esc(id)}" href="${esc(telHref(p))}" title="Tap to call, then Log Call opens when you come back">${ico} ${esc(p)}</a>`;
+    const badges = [
+      c.manual ? `<span class="manual-badge" style="margin:0" title="Added manually${c.added_by ? " by " + esc(c.added_by) : ""}">Added manually</span>` : "",
+      c.primary_poc ? `<span class="poc-badge" title="${esc(c.notes || "")}">★ Primary POC</span>` : "",
+      touchBadge(c),
+      lc ? `<span class="badge-s" title="Last call logged">Last: ${lc.outcome ? `<b>${esc(lc.outcome)}</b> · ` : ""}${esc(fmtCT(lc.time, true) || "")}${lc.am ? " · " + esc(lc.am) : ""}</span>` : `<span class="badge-s">No calls yet</span>`,
+      fu ? `<span class="fu-badge${fu.due <= todayCT() ? " due" : ""}" title="${esc(fu.note || "")}">↩ ${esc(fmtDue(fu.due))}${fu.due < todayCT() ? " overdue" : fu.due === todayCT() ? " today" : ""}${fu.note ? " · " + esc(fu.note.slice(0, 32)) : ""} <a data-fu-done="${esc(id)}">done</a></span>` : "",
+    ].join("");
     return `
-      <div class="contact${ci ? " is-called" : ""}" data-contact-id="${esc(id)}">
+      <div class="contact${ci ? " is-called" : ""}" data-contact-id="${esc(id)}" style="--co:${col}">
         ${ci ? `<div class="called-ribbon" title="${esc((ci.outcome ? "Outcome: " + ci.outcome : "Call logged today") + (ci.src === "log" ? " · via Log Call" + (ci.pending ? " (saved on this device only, not yet shared)" : "") : " · HubSpot sync"))}">✓ Called today${ci.time ? " · " + esc(fmtCallTime(ci.time)) : ""}${ci.outcome ? " · " + esc(ci.outcome) : ""}</div>` : ""}
         <div class="top">
-          <div>
-            <div class="cname">${esc(c.name || "(no name)")}${c.manual ? ` <span class="manual-badge" title="Added manually${c.added_by ? " by " + esc(c.added_by) : ""}">Added manually</span>` : ""}</div>
-            ${c.primary_poc ? `<div><span class="poc-badge" title="${esc(c.notes || "")}">★ Primary point of contact</span></div>` : ""}
-            ${touchBadge(c)}
-            <div class="lastcall">${lcTxt}</div>
-            ${fu ? `<div><span class="fu-badge${fu.due <= todayCT() ? " due" : ""}" title="${esc(fu.note || "")}">↩ Follow up ${esc(fmtDue(fu.due))}${fu.due < todayCT() ? " (overdue)" : fu.due === todayCT() ? " (today)" : ""}${fu.note ? " · " + esc(fu.note.slice(0, 40)) : ""} <a data-fu-done="${esc(id)}">done</a></span></div>` : ""}
+          <div class="who">
+            <div class="cname">${esc(c.name || "(no name)")}</div>
             ${titleHtml}
-            <div class="co-tag"><span class="dot" style="background:${COLORS[c.company] || "#888"};width:8px;height:8px"></span> ${esc(c.company)} · ${esc(AM_SHORT[c.am] || c.am)}</div>
           </div>
           <span class="role-tag ${c.is_dm ? "dm" : ""}">${esc(c.role || "Other")}</span>
         </div>
-        <div class="rows">
-          <div class="phone-line">
-            <span>${c.phone ? `<a class="tel-btn" data-tel="${esc(id)}" href="${esc(telHref(c.phone))}" title="Tap to call, then Log Call opens when you come back">📞 ${esc(c.phone)}</a>` : `<span style="color:var(--muted)">📞 —</span>`}${c.mobile ? `<a class="tel-btn" data-tel="${esc(id)}" href="${esc(telHref(c.mobile))}" title="Tap to call mobile, then Log Call opens when you come back">📱 ${esc(c.mobile)}</a>` : ""}</span>
-            <span class="btns">${id ? `<button type="button" class="log-btn" data-log="${esc(id)}">✎ Log Call</button>` : ""}${hsLink(c)}</span>
-          </div>
+        <div class="callrow">${c.phone ? tel(c.phone, "📞") : ""}${c.mobile ? tel(c.mobile, "📱") : ""}${!c.phone && !c.mobile ? `<span class="nophone">No phone on file</span>` : ""}</div>
+        <div class="badges">${badges}</div>
+        <div class="btns2">${id ? `<button type="button" class="log-btn" data-log="${esc(id)}">✎ Log Call</button>` : ""}${hsLink(c)}</div>
+        <div class="meta-rows">
           ${c.email ? `<div>✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>` : ""}
+          ${!c.manual && c.notes && c.notes !== "Title not scraped" && (c.company === "BRT Extrusions" || c.company === "Reliable Silver") ? `<div class="poc-note" style="margin:0">${esc(c.notes)}</div>` : ""}
         </div>
-        ${!c.manual && c.notes && c.notes !== "Title not scraped" && (c.company === "BRT Extrusions" || c.company === "Reliable Silver") ? `<div class="poc-note">${esc(c.notes)}</div>` : ""}
         ${c.manual ? `<div class="plant-tag" style="color:var(--muted)">Location: ${c.plant_id ? esc(plantLabel(c)) : "unassigned"} (set manually${c.added_by ? " by " + esc(c.added_by) : ""})</div>
           <div class="mact"><a data-edit-con="${esc(c.manual_id)}">✎ Edit</a><a class="del" data-del-con="${esc(c.manual_id)}">🗑 Delete</a></div>`
           : c.plant ? `<div class="plant-tag">Inferred plant: ${esc(plantLabel(c))} (AC ${esc(c.area_code || "?")})</div>` : `<div class="plant-tag" style="color:var(--muted)">Plant: unassigned</div>`}
@@ -850,10 +932,11 @@ body[data-am="kili"] #amAccent img{z-index:1}
       if (pts.length) map.flyToBounds(pts, { padding: [40, 40], duration: 0.6 });
     }
     if (fly && loc && loc.pin && loc.lat != null && map) {
-      map.flyTo([loc.lat, loc.lon], 8, { duration: 0.6 });
       const m = markers[id];
-      if (m) m.openPopup();
+      if (m && pinLayer && pinLayer.zoomToShowLayer && pinLayer.hasLayer(m)) pinLayer.zoomToShowLayer(m, () => m.openPopup());
+      else { map.flyTo([loc.lat, loc.lon], 8, { duration: 0.6 }); if (m) m.openPopup(); }
     }
+    if (sheetReady && isMobile()) setSheet("con", "half");
   }
 
   // Stats badge
@@ -880,11 +963,12 @@ body[data-am="kili"] #amAccent img{z-index:1}
     updateMarkerVisibility();
   });
 
+  const ALL_RIBBON = `<svg viewBox="0 0 40 40" width="16" height="18" aria-hidden="true"><path fill="#800020" d="M20 4c-6 0-9.5 4-9.5 8.2 0 4.600 3.200 8.200 7 12.500L9 36l5.500 1.500L20 29l5.500 8.500L31 36l-9.500-11.300c3.800-4.300 7-7.900 7-12.500C28.500 8 26 4 20 4zm0 5c2.800 0 4.300 1.600 4.300 3.400 0 2-1.700 4.300-4.300 7.400-2.600-3.100-4.300-5.400-4.300-7.400C15.700 10.600 17.200 9 20 9z"/></svg>`;
   const AM_ART = { "Kahekili Barrozo": ["kili", `<img src="assets/cowboys-star.png" alt="" height="30" style="height:30px;width:auto;display:block;position:relative;filter:drop-shadow(0 0 5px rgba(226,232,240,.75)) drop-shadow(0 0 14px rgba(192,199,204,.45))"/>`], "Simran Subramanian": ["simran", `<svg viewBox="0 0 40 40" width="28" height="30" aria-hidden="true"><path fill="#800020" d="M20 4c-6 0-9.5 4-9.5 8.2 0 4.600 3.200 8.200 7 12.500L9 36l5.500 1.500L20 29l5.500 8.500L31 36l-9.500-11.300c3.800-4.300 7-7.900 7-12.500C28.500 8 26 4 20 4zm0 5c2.800 0 4.300 1.600 4.300 3.400 0 2-1.700 4.300-4.300 7.400-2.600-3.100-4.300-5.400-4.300-7.400C15.700 10.600 17.200 9 20 9z"/></svg>`] };
   function setAmTheme() {
     const a = AM_ART[amFilter];
     if (a) document.body.dataset.am = a[0]; else delete document.body.dataset.am;
-    el("amAccent").innerHTML = a ? a[1] : "";
+    el("amAccent").innerHTML = a ? a[1] : `<img src="assets/cowboys-star.png" alt="" height="18" style="height:18px;width:auto"/>` + ALL_RIBBON;
     el("amAccent").title = "";
   }
   setAmTheme();
@@ -907,28 +991,43 @@ body[data-am="kili"] #amAccent img{z-index:1}
   });
 
   // Map
-  let map = null;
+  let map = null, pinLayer = null;
   try {
     map = L.map("map", { zoomControl: true, attributionControl: true })
       .setView([39.8, -89.5], 5);
-    const tiles = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
-      attribution: "Tiles &copy; Esri",
+    // Dark/muted basemap: Esri Dark Gray Canvas (free, no key) + a labels layer above the radar pane (CARTO's dark tiles now require an API key).
+    const tiles = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+      attribution: "Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors",
+      maxNativeZoom: 16,
       maxZoom: 19,
     });
-    tiles.on("tileerror", () => {
-      // soft fallback if many tile errors — show cards too
-    });
+    map.createPane("labelsPane"); map.getPane("labelsPane").style.zIndex = 260; map.getPane("labelsPane").style.pointerEvents = "none";
+    L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", { pane: "labelsPane", maxNativeZoom: 16, maxZoom: 19 }).addTo(map);
     tiles.addTo(map);
+    // Nearby pins collapse into numbered bubbles that expand on zoom (falls back to plain markers if the plugin fails to load).
+    pinLayer = L.markerClusterGroup ? L.markerClusterGroup({
+      maxClusterRadius: 38, showCoverageOnHover: false, spiderfyOnMaxZoom: true, disableClusteringAtZoom: 10,
+      iconCreateFunction: (cl) => {
+        const kids = cl.getAllChildMarkers(), n = kids.length;
+        const pulsing = kids.filter((m) => m.__state !== "called").length;
+        const cos = [...new Set(kids.map((m) => COLORS[m.__co] || "#3b82f6"))];
+        const ring = cos.length === 1 ? `${cos[0]} 0 100%` : cos.map((c, i) => `${c} ${Math.round(i * 100 / cos.length)}% ${Math.round((i + 1) * 100 / cos.length)}%`).join(", ");
+        return L.divIcon({ className: "cl-wrap", iconSize: [36, 36], iconAnchor: [18, 18],
+          html: `<div class="cl${pulsing ? " pulse" : ""}" style="--ring:${ring}" title="${n} pins · ${pulsing} not called today"><span>${n}</span></div>` });
+      },
+    }) : L.layerGroup();
+    pinLayer.addTo(map);
 
     const bounds = [];
     DATA.locations.filter((l) => l.pin && l.lat != null).forEach((loc) => {
       pinState[loc.id] = "pulse";   // nothing known yet → not called
       const m = L.marker([loc.lat, loc.lon], { icon: pinIcon(loc, "pulse") })
-        .addTo(map)
+        .addTo(pinLayer)
         .bindPopup(isSupplier(loc)
-          ? `<strong>${esc(loc.label)}</strong><br/><span style="color:#b45309;font-weight:600">${esc(loc.supplier_tag || "Supplier (Arconic-managed)")}</span> · not an Arconic facility<br/>${esc(AM_SHORT[loc.am] || loc.am)} · ${esc(loc.company)} account<br/><span style="color:#8b9bb4">${loc.contact_count} contacts · ${loc.with_phone} w/ phone (shared with ${esc((loc.contacts_from || []).map((id) => { const s = DATA.locations.find((x) => x.id === id); return s ? (s.label || s.name) : id; }).join(" + "))})</span>`
+          ? `<strong>${esc(loc.label)}</strong><br/><span style="color:#fbbf24;font-weight:600">${esc(loc.supplier_tag || "Supplier (Arconic-managed)")}</span> · not ${esc(loc.managed_by === "Howmet" ? "a Howmet" : "an Arconic")} facility<br/>${esc(AM_SHORT[loc.am] || loc.am)} · ${esc(loc.company)} account<br/><span style="color:#8b9bb4">${loc.contact_count} contacts · ${loc.with_phone} w/ phone ${(loc.contacts_from || []).length ? `(shared with ${esc((loc.contacts_from || []).map((id) => { const s = DATA.locations.find((x) => x.id === id); return s ? (s.label || s.name) : id; }).join(" + "))})` : "(by area code)"}</span>`
           : `<strong>${esc(loc.label)}</strong><br/>${esc(loc.company)} · ${esc(AM_SHORT[loc.am] || loc.am)}<br/><span style="color:#8b9bb4">${loc.contact_count} contacts · ${loc.with_phone} w/ phone (AC-inferred)</span>`);
       m.on("click", () => selectLoc(loc.id, false));
+      m.__state = "pulse"; m.__co = loc.company;
       markers[loc.id] = m;
       bounds.push([loc.lat, loc.lon]);
     });
@@ -970,10 +1069,11 @@ body[data-am="kili"] #amAccent img{z-index:1}
       cs.forEach((c) => { const lc = lastCallOf(c); if (lc && (!best || new Date(lc.time) > new Date(best))) best = lc.time; });
       const rec = recencyOf(best);
       if (pinState[id] !== state || pinRec[id] !== rec) {
-        pinState[id] = state; pinRec[id] = rec;
+        pinState[id] = state; pinRec[id] = rec; m.__state = state;
         m.setIcon(pinIcon(loc, state, rec));
       }
     });
+    if (pinLayer && pinLayer.refreshClusters) pinLayer.refreshClusters();
   }
 
   function updateMarkerVisibility() {
@@ -982,9 +1082,9 @@ body[data-am="kili"] #amAccent img{z-index:1}
       if (!loc) return;
       const show = locMatchesAM(loc);
       if (show) {
-        if (!map.hasLayer(m)) m.addTo(map);
+        if (!pinLayer.hasLayer(m)) pinLayer.addLayer(m);
       } else {
-        if (map.hasLayer(m)) map.removeLayer(m);
+        if (pinLayer.hasLayer(m)) pinLayer.removeLayer(m);
       }
     });
     const pts = DATA.locations.filter((l) => l.pin && l.lat != null && locMatchesAM(l)).map((l) => [l.lat, l.lon]);
@@ -1237,20 +1337,20 @@ body[data-am="kili"] #amAccent img{z-index:1}
     Object.keys(markers).forEach((id) => {
       const loc = DATA.locations.find((l) => l.id === id);
       if (!loc || (loc.manual && markers[id].__sig !== loc.lat + "," + loc.lon + "|" + loc.label + "|" + loc.address)) {
-        map.removeLayer(markers[id]); delete markers[id]; delete pinState[id]; delete pinRec[id];
+        pinLayer.removeLayer(markers[id]); delete markers[id]; delete pinState[id]; delete pinRec[id];
       }
     });
     DATA.locations.filter((l) => l.manual && !markers[l.id]).forEach((loc) => {
       pinState[loc.id] = "pulse";
-      const m = L.marker([loc.lat, loc.lon], { icon: pinIcon(loc, "pulse", "never") }).addTo(map)
+      const m = L.marker([loc.lat, loc.lon], { icon: pinIcon(loc, "pulse", "never") }).addTo(pinLayer)
         .bindPopup(`<strong>${esc(loc.label)}</strong> <span style="color:#7c3aed;font-weight:600">Added manually</span><br/>${esc(loc.company)} · ${esc(AM_SHORT[loc.am] || loc.am)}${loc.address ? "<br/>" + esc(loc.address) : ""}`);
       m.on("click", () => selectLoc(loc.id, false));
-      m.__sig = loc.lat + "," + loc.lon + "|" + loc.label + "|" + loc.address;
+      m.__sig = loc.lat + "," + loc.lon + "|" + loc.label + "|" + loc.address; m.__state = "pulse"; m.__co = loc.company;
       markers[loc.id] = m;
     });
     Object.entries(markers).forEach(([id, m]) => {
       const loc = DATA.locations.find((l) => l.id === id);
-      if (loc && locMatchesAM(loc) !== map.hasLayer(m)) { if (locMatchesAM(loc)) m.addTo(map); else map.removeLayer(m); }
+      if (loc && locMatchesAM(loc) !== pinLayer.hasLayer(m)) { if (locMatchesAM(loc)) pinLayer.addLayer(m); else pinLayer.removeLayer(m); }
     });
   }
   async function savedItem(item) {
@@ -1482,7 +1582,7 @@ body[data-am="kili"] #amAccent img{z-index:1}
   const RADAR_API = "https://api.rainviewer.com/public/weather-maps.json";
   const LS_RADAR = "dialerRadar:v1";           // {on, opacity}
   let radarLayer = null, radarTimer = null, radarTime = null;
-  const radarPref = { on: false, opacity: 0.6, ...lsGet(LS_RADAR, {}) };
+  const radarPref = { on: false, opacity: 0.7, ...lsGet(LS_RADAR, {}) };
   function radarStatus(msg, bad) { const e = document.getElementById("radarStatus"); if (e) { e.textContent = msg || ""; e.style.color = bad ? "#f59e0b" : ""; } }
   async function refreshRadar() {
     if (!map || !radarPref.on) return;
@@ -1531,6 +1631,26 @@ body[data-am="kili"] #amAccent img{z-index:1}
       if (radarPref.on) setRadar(true);
     } catch (e) { console.warn("radar control:", e); }
   }
+  // ---- header "＋ Add" menu ----
+  const addMenu = document.querySelector(".addmenu");
+  el("addMenuBtn").addEventListener("click", (e) => { e.stopPropagation(); const o = addMenu.classList.toggle("open"); el("addMenuBtn").setAttribute("aria-expanded", String(o)); });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".addmenu")) { addMenu.classList.remove("open"); el("addMenuBtn").setAttribute("aria-expanded", "false"); } });
+  addMenu.querySelectorAll(".menu button").forEach((b) => b.addEventListener("click", () => addMenu.classList.remove("open")));
+  // ---- mobile bottom sheet (locations / contacts over a full-height map) ----
+  function setSheet(tab, size) {
+    if (tab) document.body.dataset.tab = tab;
+    document.body.dataset.sheet = size;
+    el("sheetSize").textContent = size === "full" ? "▼" : size === "half" ? "▲" : "▲";
+    el("sheetTabs").querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.tab === document.body.dataset.tab));
+  }
+  el("sheetTabs").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-tab]"); if (!b) return;
+    const same = document.body.dataset.tab === b.dataset.tab && document.body.dataset.sheet !== "peek";
+    setSheet(b.dataset.tab, same ? "peek" : (document.body.dataset.sheet === "full" ? "full" : "half"));
+  });
+  el("sheetSize").addEventListener("click", () => setSheet(null, { peek: "half", half: "full", full: "peek" }[document.body.dataset.sheet]));
+  setSheet("loc", "peek"); sheetReady = true;
+  window.addEventListener("resize", () => { if (map) map.invalidateSize(); });
   window.__manual = { reload: loadManualAdds, get items() { return [...manualItems.values()]; } };
 
   renderLocList();

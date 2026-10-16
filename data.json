@@ -537,6 +537,65 @@
       "dm_count": 0
     },
     {
+      "id": "how:sup:Mogadore",
+      "name": "Mogadore, OH (supplier)",
+      "label": "Mogadore, OH · Supplier (Howmet-managed)",
+      "city": "Mogadore",
+      "region": "Mogadore, Summit County, Ohio, USA",
+      "lat": 41.050775,
+      "lon": -81.393946,
+      "am": "Kahekili Barrozo",
+      "company": "Howmet Aerospace",
+      "company_id": "32027566669",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/32027566669",
+      "show_company_link": true,
+      "contact_count": 4,
+      "with_phone": 4,
+      "dm_count": 0,
+      "filter": "how:sup:Mogadore",
+      "hint": "Supplier (Howmet-managed), not a Howmet facility · contacts with 330/234 phone area codes",
+      "pin": true,
+      "source": "nominatim",
+      "kind": "supplier",
+      "supplier_tag": "Supplier (Howmet-managed)",
+      "managed_by": "Howmet",
+      "is_company_facility": false,
+      "contacts_from": [],
+      "contact_ids": [
+        "199512884279",
+        "20599501",
+        "239629466681",
+        "199768842509"
+      ]
+    },
+    {
+      "id": "how:sup:Laredo",
+      "name": "Laredo, TX (supplier)",
+      "label": "Laredo, TX · Supplier (Howmet-managed)",
+      "city": "Laredo",
+      "region": "Laredo, Webb County, Texas, United States",
+      "lat": 27.5079211,
+      "lon": -99.5069834,
+      "am": "Kahekili Barrozo",
+      "company": "Howmet Aerospace",
+      "company_id": "32027566669",
+      "company_url": "https://app.hubspot.com/contacts/6029765/record/0-2/32027566669",
+      "show_company_link": true,
+      "contact_count": 0,
+      "with_phone": 0,
+      "dm_count": 0,
+      "filter": "how:sup:Laredo",
+      "hint": "Supplier (Howmet-managed), not a Howmet facility · contacts with 956 phone area codes (none yet)",
+      "pin": true,
+      "source": "nominatim",
+      "kind": "supplier",
+      "supplier_tag": "Supplier (Howmet-managed)",
+      "managed_by": "Howmet",
+      "is_company_facility": false,
+      "contacts_from": [],
+      "contact_ids": []
+    },
+    {
       "id": "how:unassigned",
       "name": "Unassigned / other",
       "label": "Howmet · Unassigned / other ACs",
@@ -19847,7 +19906,7 @@
     "with_phone": 311,
     "decision_makers": 3,
     "plant_assigned": 221,
-    "pins": 26,
+    "pins": 28,
     "by_company": {
       "Arconic": {
         "contacts": 419,
@@ -19870,8 +19929,8 @@
       "Howmet Aerospace": {
         "contacts": 275,
         "with_phone": 104,
-        "pins": 5,
-        "supplier_pins": 0
+        "pins": 7,
+        "supplier_pins": 2
       },
       "Reliable Silver": {
         "contacts": 7,
@@ -19893,6 +19952,6 @@
       "csv_rows": 502,
       "csv_rows_skipped": 33
     },
-    "supplier_pins": 2
+    "supplier_pins": 4
   }
 }

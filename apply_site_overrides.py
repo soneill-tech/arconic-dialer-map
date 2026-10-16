@@ -120,6 +120,38 @@ def apply_howmet(d):
     d["stats"]["by_company"].setdefault(co["name"], {"contacts": 0, "with_phone": 0, "pins": 0, "supplier_pins": 0})
 
 
+# Howmet SUPPLIER-style pins (square marker, like the Arconic supplier pins). Not Howmet facilities. They hold NO contacts of
+# their own: contact_ids reference existing Howmet contacts whose phone area code is in `acs` (explicit rule, Steve 2026-10-15).
+# Laredo (956) has no matching contacts today, so it stays empty. Nothing is invented.
+HOWMET_SUPPLIERS = [
+    dict(id="how:sup:Mogadore", name="Mogadore, OH (supplier)", label="Mogadore, OH \u00b7 Supplier (Howmet-managed)", city="Mogadore",
+         region="Mogadore, Summit County, Ohio, USA", lat=41.0507750, lon=-81.3939460, acs=["330", "234"],
+         hint="Supplier (Howmet-managed), not a Howmet facility \u00b7 contacts with 330/234 phone area codes"),
+    dict(id="how:sup:Laredo", name="Laredo, TX (supplier)", label="Laredo, TX \u00b7 Supplier (Howmet-managed)", city="Laredo",
+         region="Laredo, Webb County, Texas, United States", lat=27.5079211, lon=-99.5069834, acs=["956"],
+         hint="Supplier (Howmet-managed), not a Howmet facility \u00b7 contacts with 956 phone area codes (none yet)"),
+]
+
+
+def apply_howmet_suppliers(d):
+    locs, cs = d["locations"], d["contacts"]
+    how = next(l for l in locs if l["id"] == "how:all")
+    base = {k: how[k] for k in ("am", "company", "company_id", "company_url", "show_company_link")}
+    for sp in HOWMET_SUPPLIERS:
+        ids = [str(c["hubspot_contact_id"]) for c in cs if c["company"] == base["company"] and c.get("area_code") in sp["acs"]]
+        m = [c for c in cs if str(c["hubspot_contact_id"]) in ids]
+        loc = dict(id=sp["id"], name=sp["name"], label=sp["label"], city=sp["city"], region=sp["region"], lat=sp["lat"], lon=sp["lon"], **base,
+                   contact_count=len(m), with_phone=sum(1 for c in m if c["has_phone"]), dm_count=sum(1 for c in m if c["is_dm"]),
+                   filter=sp["id"], hint=sp["hint"], pin=True, source="nominatim", kind="supplier", supplier_tag="Supplier (Howmet-managed)",
+                   managed_by="Howmet", is_company_facility=False, contacts_from=[], contact_ids=ids)
+        cur = next((i for i, l in enumerate(locs) if l["id"] == sp["id"]), None)
+        if cur is not None:
+            locs[cur] = loc
+        else:
+            at = next(i for i, l in enumerate(locs) if l["id"] == "how:unassigned")
+            locs.insert(at, loc)
+
+
 def apply(d):
     locs, cs = d["locations"], d["contacts"]
     arc = next(l for l in locs if l["id"] == "arc:all")
@@ -191,6 +223,7 @@ def apply(d):
             m = [c for c in cs if c["plant_id"] == l["id"]]
             l.update(contact_count=len(m), with_phone=sum(1 for c in m if c["has_phone"]), dm_count=0)
     apply_howmet(d)
+    apply_howmet_suppliers(d)
     st = d["stats"]
     st["contacts"] = len(cs); st["with_phone"] = sum(1 for c in cs if c["has_phone"])
     st["decision_makers"] = sum(1 for c in cs if c["is_dm"])
@@ -199,8 +232,10 @@ def apply(d):
         m = [c for c in cs if c["company"] == name]; v["contacts"] = len(m); v["with_phone"] = sum(1 for c in m if c["has_phone"])
     st["plant_assigned"] = sum(1 for c in cs if c["plant"])
     st["pins"] = sum(1 for l in locs if l.get("pin"))
+    st["supplier_pins"] = sum(1 for l in locs if l.get("kind") == "supplier")
     for name, v in st["by_company"].items():
         v["pins"] = sum(1 for l in locs if l.get("pin") and l["company"] == name)
+        v["supplier_pins"] = sum(1 for l in locs if l.get("kind") == "supplier" and l.get("company") == name)
     return d
 
 if __name__ == "__main__":

@@ -160,3 +160,11 @@ or `last_calls.json`. Until it's loaded the sort falls back to all-time touches 
 
 ## Weather radar overlay
 Top-right **Radar** toggle + opacity slider (off by default; choice remembered per device). Uses RainViewer's free public API (`api.rainviewer.com/public/weather-maps.json`, latest radar frame, auto-refresh every 10 min, attribution "Radar © RainViewer"). Drawn in its own pane above the basemap and below pins/popups, so it works with the AM filter and pins. If the API or tiles fail it shows "Radar unavailable right now" and the map is unaffected. Radar tiles are native to zoom 7 and upscale beyond that.
+
+## Look & layout (v4)
+- **Basemap**: dark Esri Dark Gray Canvas + labels layer (CARTO dark tiles now require an API key, so not used). Radar (RainViewer) sits between base and labels.
+- **Clusters**: Leaflet.markercluster numbered bubbles (ring color = company, pulse if any child pin was not called today); pins stay individual from zoom 10.
+- **Cards**: name, title, big tap-to-call button first, then one wrapping badge row (manual, POC, touches, this year, last call, follow-up). Company ring color = thin left stripe on contact cards and location entries.
+- **Header**: one filter bar, `＋ Add` menu (new location / new contact), scoreboard visible. On the All tab a navy-to-burgundy strip ties the Cowboys star and burgundy ribbon together.
+- **Mobile (<=900px)**: map on top, bottom sheet with Locations / Contacts tabs (peek / half / full), 40px+ touch targets.
+- **Howmet supplier pins**: `how:sup:Mogadore` (contacts with area code 330/234: 4) and `how:sup:Laredo` (956: none yet) are supplier squares defined in `apply_site_overrides.py` (`HOWMET_SUPPLIERS`); they reference existing contacts only.
