@@ -220,21 +220,21 @@ REP_DATA_DIR=/path python3 apply_site_overrides.py
 - **Total Gross Profit (MTD)** reads `gp_mtd.json` (`{month, as_of, source, reps:[{rep, gp, gp_unverified, ...}]}`) and shows "GP data pending" if it is absent or for another month. `gen_gp_mtd.py` builds it from the TPRO Bill To export x the TPRO-vs-HubSpot ownership sheet (Yes = verified, "Possible match - verify" counted but starred as unverified, everything else "Unassigned"). Rerun with a fresh export and publish `gp_mtd.json` (as of 2026-10-17: $238,119.74 / 740 loads).
 - **North America focus.** Default view = US, Canada, Mexico (lat 14.3..84, lon -170..-52). Pins, location cards/list, contacts at those pins and counts outside it are hidden; the left-panel "Include international" toggle (saved per device, `dialerIntl:v1`) shows them and shows how many are hidden.
 
-## October MTD backfill from HubSpot calls CSV (`backfill_mtd_csv.py`, 2026-10-18)
-`python3 backfill_mtd_csv.py hs_calls_oct_2026.csv` unions the export (1,431 calls, Oct 1–16 2026, last call 9:28 PM CT 10/16; ~5 calls known missing; 26 exact duplicate rows) into `called_mtd.json` for all five reps. Nothing is removed or invented; rerunning is a no-op. The CSV itself is not committed.
-- **Scoring rule (matches the live leaderboard):** one point per distinct (rep, day, **contact that resolves to a pin contact in `data.json`**), exactly like `called_today.json`, which only counts map contacts (inbound / no-answer 8x8 calls included, as before). Contact names are matched within the call owner's own book (AM = owner); duplicate names inside a book are disambiguated by company, else counted once.
-- **Not scored (reported only):** placeholder contacts (`--`, `N records`, `unknown contact`), bare HubSpot record IDs (none of the 61 are on the map), people not on the map, and calls by one rep to another rep's contacts (24 rows).
-- Three numbers per rep are stored in `called_mtd.json` → `backfill.per_rep`: raw calls, distinct named contact-days, map-matched contact-days (the score).
+## October MTD backfill from HubSpot calls CSV (`backfill_mtd_csv.py`, rule changed 2026-10-18)
+`python3 backfill_mtd_csv.py hs_calls_oct_2026.csv` unions the export (1,431 calls, Oct 1-16 2026, last call 9:28 PM CT 10/16; ~5 calls known missing; 26 exact duplicate rows) into `called_mtd.json` for all five reps. Rerunning is a no-op; the CSV is not committed.
+- **Scoring rule (Steve's choice): distinct named contact-days** = one point per distinct (rep, day, named contact). Inbound / no-answer calls count. Not scored: placeholder contacts (`--`, `N records`, `unknown contact`) and bare HubSpot record IDs (nothing is invented).
+- **Keys / dedupe:** a contact that resolves to a map contact in the owner's own book is stored by HubSpot id (so live `called_today.json` / Log Call entries for the same person on the same day dedupe against it); every other named contact is stored as `n:<normalized name>`. The page counts distinct rep|day|key, and today's live entries are added under the same dedupe, so nothing double counts. Live `called_today.json` still only lists map contacts (rep = contact's AM), so non-map contacts called *today* only enter via a future CSV backfill.
+- Existing entries from earlier syncs are kept (never removed). `called_mtd.json` -> `backfill.per_rep` stores raw calls, distinct contact-days and map-matched contact-days per rep.
 
-| Rep | Raw calls | Distinct named contact-days | **Map-matched (score)** |
-|---|---|---|---|
-| Addie | 619 | 398 | **13** |
-| Mia | 399 | 301 | **24** |
-| Simran | 158 | 82 | **21** (12 already + 9) |
-| Kahekili | 147 | 38 | **37** (28 already + 9) |
-| Nick | 108 | 56 | **34** |
+| Rep | Raw calls | CSV distinct named contact-days | Map-matched only | **Published score** |
+|---|---|---|---|---|
+| Addie | 619 | 398 | 13 | **398** |
+| Mia | 399 | 301 | 24 | **301** |
+| Nick | 108 | 56 | 34 | **56** |
+| Simran | 158 | 82 | 19 | **84** (+2 map contacts from earlier syncs whose CSV row is a bare ID) |
+| Kahekili | 147 | 38 | 28 | **47** (+9, same reason) |
 
-Caveats: the page's score is therefore far below raw dialing volume for reps whose calls go mostly to contacts not loaded on the map (Addie has only 33 map contacts). The hourly sync previously covered only Kahekili and Simran; from Monday 10/19 it covers all five reps, and `update_called_today.py` keeps adding to MTD (it only grows).
+Caveats: 5 calls missing; nothing after 10/16 9:28 PM CT; calls to non-map contacts are counted now, so scores reflect dialing activity, not map coverage; sync covers all five reps from Monday 10/19.
 
 ## GP leaderboard = % to quota (2026-10-18)
 The GROSS PROFIT board now ranks reps by **% to quota** (progress bar + percent; no dollar amounts on the board). Percent = rep GP in `gp_mtd.json` ÷ `gp_quota` in **`quotas.json`** (`{quotas:[{rep, gp_quota}], team_total}`; edit that file to change quotas). Quotas (monthly GP): Kahekili $300,000, Nicholas $80,000, Mia $30,000, Simran $15,000, Addison $5,000, Nathan Beaver $5,000; team total $435,000. Nathan Beaver has no GP matches (0.0%). Team row = sum of the reps' GP ÷ `team_total`. **Unassigned GP is excluded** from rep and team percentages (footnote, no $). `*` = includes unverified "possible match" customers. `gp_mtd.json` keeps dollars (`gen_gp_mtd.py` unchanged). The calls board is unchanged.

@@ -1055,7 +1055,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     list.querySelectorAll(".lb-sc").forEach((e) => { const o = old[e.dataset.rep]; if (o !== undefined && o !== e.textContent) e.classList.add("pop"); });
   }
   // ---- Month-to-date calls: called_mtd.json ({month, entries:{Rep:{"YYYY-MM-DD":[contact ids]}}}) + today's live calledMap (called_today + Log Call queue).
-  // Score = contact-days called since the 1st (a contact called on two different days counts twice; same contact twice in a day counts once). No data -> 0.
+  // Score = distinct named contact-days since the 1st (entries are map contact ids or "n:<name>" keys; a contact called on two days counts twice, twice in one day once). Today's called_today/Log Call ids are added with the same rep|day|key dedupe. No data -> 0.
   let mtdFile = null, gpFile = null, quotaFile = null;
   async function loadMtd() {
     try { const r = await fetch(`called_mtd.json?ts=${Date.now()}`, { cache: "no-store" }); mtdFile = r.ok ? await r.json() : null; } catch (e) { mtdFile = null; }

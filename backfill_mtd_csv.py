@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Backfill called_mtd.json from a HubSpot calls export (columns date,owner,contact,company[,call_id]).
 
-Scoring rule (same as the live leaderboard / called_today.json): one point per distinct (rep, day, map contact).
-A CSV row counts only if its contact name resolves to a pin contact in data.json within the call owner's own book
-(AM == owner; duplicate names within a book are disambiguated by company, else counted once under the lowest id).
-Inbound / no-answer calls count (called_today.json already counted inbound 8x8 calls). Rows whose contact is a
-placeholder ('--', 'N records', 'unknown contact', blank) or a bare record ID, or a person not on the map, are NOT scored
-(never invented) but are reported. Existing entries are unioned, never removed. Idempotent.
+Scoring rule (Steve, 2026-10-18): one point per distinct (rep, day, NAMED contact). Contacts that resolve to a pin contact
+in data.json within the call owner's own book are stored by HubSpot id (so live called_today/Log Call entries for the same
+person dedupe); every other named contact is stored as "n:<normalized name>". Inbound / no-answer calls count. Rows whose
+contact is a placeholder ('--', 'N records', 'unknown contact', blank) or a bare record ID are NOT scored (never invented).
+Existing entries are unioned, never removed. Idempotent.
     python3 backfill_mtd_csv.py hs_calls_oct_2026.csv [--dry-run]
 """
 import csv, json, os, re, sys, collections
@@ -42,8 +41,9 @@ def main():
             own = co or own
         if own:
             mm[rep].add((day, min(h[0] for h in own)))
-        elif hits: st[rep]["other_rep_book_rows"] += 1
-        else: st[rep]["not_on_map_rows"] += 1
+        else:
+            st[rep]["other_rep_book_rows" if hits else "not_on_map_rows"] += 1
+            mm[rep].add((day, "n:" + u.norm_name(k)))   # named contact not in the owner's map book: keyed by name
     month = "2026-10"
     now = datetime.now(ZoneInfo("America/Chicago"))
     mtd = u.load_mtd(os.path.join(HERE, "called_mtd.json"), month)
@@ -57,7 +57,7 @@ def main():
     print("rows", len(rows), "exact duplicate rows", dupes)
     if dry: return
     mtd["backfill"] = {"file": os.path.basename(path), "rows": len(rows), "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
-        "rule": "distinct (rep, day, map contact); owner's own book; no placeholders/bare IDs/off-map names", "at": now.isoformat(timespec="seconds"),
+        "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs", "at": now.isoformat(timespec="seconds"),
         "per_rep": {r: {"raw_calls": st[r]["raw"], "distinct_contact_days": len(cd[r]), "map_matched_contact_days": len(mm[r])} for r in st}}
     u.mtd_write(os.path.join(HERE, "called_mtd.json"), mtd, now)
     mtd["source"] = "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue"
