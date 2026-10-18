@@ -219,3 +219,19 @@ REP_DATA_DIR=/path python3 apply_site_overrides.py
 - **`update_called_today.py`** now also folds today's called contacts into `called_mtd.json` on every run (rep = the contact's AM), `--empty` never erases it, `--publish` commits/pushes both files, and `--backfill-git` rebuilt October from the git history of `called_today.json` (done once on 2026-10-18: Kahekili 28, Simran 12). **Hourly sync must:** keep calling `update_called_today.py <calls> --publish` with ALL of today's calls (the file replaces today's list; MTD only grows), include Nick/Mia/Addie rows if the HubSpot scrape is extended to them, and feed Log Call rows (`logcall_rows.py`) in the same call list. A run that publishes an incomplete day can't lower MTD but can miss calls; ntfy keeps only ~12h of Log Calls.
 - **Total Gross Profit (MTD)** reads `gp_mtd.json` (`{month, as_of, source, reps:[{rep, gp, gp_unverified, ...}]}`) and shows "GP data pending" if it is absent or for another month. `gen_gp_mtd.py` builds it from the TPRO Bill To export x the TPRO-vs-HubSpot ownership sheet (Yes = verified, "Possible match - verify" counted but starred as unverified, everything else "Unassigned"). Rerun with a fresh export and publish `gp_mtd.json` (as of 2026-10-17: $238,119.74 / 740 loads).
 - **North America focus.** Default view = US, Canada, Mexico (lat 14.3..84, lon -170..-52). Pins, location cards/list, contacts at those pins and counts outside it are hidden; the left-panel "Include international" toggle (saved per device, `dialerIntl:v1`) shows them and shows how many are hidden.
+
+## October MTD backfill from HubSpot calls CSV (`backfill_mtd_csv.py`, 2026-10-18)
+`python3 backfill_mtd_csv.py hs_calls_oct_2026.csv` unions the export (1,431 calls, Oct 1–16 2026, last call 9:28 PM CT 10/16; ~5 calls known missing; 26 exact duplicate rows) into `called_mtd.json` for all five reps. Nothing is removed or invented; rerunning is a no-op. The CSV itself is not committed.
+- **Scoring rule (matches the live leaderboard):** one point per distinct (rep, day, **contact that resolves to a pin contact in `data.json`**), exactly like `called_today.json`, which only counts map contacts (inbound / no-answer 8x8 calls included, as before). Contact names are matched within the call owner's own book (AM = owner); duplicate names inside a book are disambiguated by company, else counted once.
+- **Not scored (reported only):** placeholder contacts (`--`, `N records`, `unknown contact`), bare HubSpot record IDs (none of the 61 are on the map), people not on the map, and calls by one rep to another rep's contacts (24 rows).
+- Three numbers per rep are stored in `called_mtd.json` → `backfill.per_rep`: raw calls, distinct named contact-days, map-matched contact-days (the score).
+
+| Rep | Raw calls | Distinct named contact-days | **Map-matched (score)** |
+|---|---|---|---|
+| Addie | 619 | 398 | **13** |
+| Mia | 399 | 301 | **24** |
+| Simran | 158 | 82 | **21** (12 already + 9) |
+| Kahekili | 147 | 38 | **37** (28 already + 9) |
+| Nick | 108 | 56 | **34** |
+
+Caveats: the page's score is therefore far below raw dialing volume for reps whose calls go mostly to contacts not loaded on the map (Addie has only 33 map contacts). The hourly sync previously covered only Kahekili and Simran; from Monday 10/19 it covers all five reps, and `update_called_today.py` keeps adding to MTD (it only grows).
