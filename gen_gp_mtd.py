@@ -10,7 +10,7 @@ Join = exact TPRO customer name. GP goes to the HubSpot owner when that owner is
 'Yes'; 'Possible match - verify' rows are counted for that owner but flagged unverified (reported separately as gp_unverified);
 everything else (no match, owner not a rep e.g. Steve, customer missing from sheet) is 'Unassigned'. Nothing is estimated.
 """
-import argparse, csv, json, re
+import argparse, csv, json, os, re
 from datetime import datetime
 from zoneinfo import ZoneInfo
 REP = {"Kahekili Barrozo": "Kili", "Simran Subramanian": "Simran", "Nicholas McNamara": "Nick", "Mia Medjedovic": "Mia", "Addison Parker": "Addie"}
@@ -38,6 +38,10 @@ def main():
            "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
            "generated_at": datetime.now(ZoneInfo("America/Chicago")).isoformat(timespec="seconds"), "reps": reps}
     json.dump(out, open(a.out, "w"), indent=1, ensure_ascii=False); open(a.out, "a").write("\n")
+    try:
+        import rank_history; rank_history.update(os.path.dirname(os.path.abspath(a.out)))
+    except Exception as e:
+        print("rank_history skipped:", e)
     print(f"{a.out}: total ${total:,.2f}, {loads} loads"); [print(f"  {r['rep']:11s} ${r['gp']:>12,.2f}  (unverified ${r['gp_unverified']:,.2f})") for r in reps]
 if __name__ == "__main__":
     main()

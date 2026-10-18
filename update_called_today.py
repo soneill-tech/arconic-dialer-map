@@ -312,6 +312,7 @@ def main():
     out = {
         "date": today,
         "updated_at": now.isoformat(timespec="seconds"),
+        "synced_at": now.isoformat(timespec="seconds"),   # time of THIS sync run (the page's "synced Xh ago" stamp)
         "source": a.source,
         "called_contact_ids": sorted(ids, key=lambda s: (len(s), s)),
         "calls": calls,
@@ -365,6 +366,11 @@ def main():
     mtd_changed = json.dumps(mtd["entries"], sort_keys=True) != before or not os.path.exists(a.mtd_out)
     if mtd_changed:
         mtd_write(a.mtd_out, mtd, now)
+    try:
+        import rank_history
+        rank_history.update(HERE, today=today)   # daily rank snapshot -> rank_history.json (rank-change arrows)
+    except Exception as e:   # never block a sync on the cosmetic snapshot
+        print(f"  ! rank_history skipped: {e}", file=sys.stderr)
     print(f"MTD {today[:7]}: {mtd.get('counts') or {r: sum(len(v) for v in d.values()) for r, d in mtd['entries'].items()} or 'no data'} ({'updated' if mtd_changed else 'unchanged'})")
     lit = sorted({p for cid in ids for p in pin_map.get(cid, [])})
     print(f"Wrote {out_abs}: date={today} called={len(ids)} calls={len(calls)} unresolved={len(unresolved)} · {reason}")
@@ -378,12 +384,14 @@ def main():
         else:
             git(repo, "pull", "-q", "--rebase", "--autostash", "origin", a.branch)
             mrel = os.path.relpath(os.path.abspath(a.mtd_out), repo)
-            git(repo, "add", "--", rel, mrel)
-            if git(repo, "diff", "--cached", "--quiet", "--", rel, mrel, check=False).returncode == 0:
+            rrel = os.path.relpath(os.path.join(HERE, "rank_history.json"), repo)
+            files = [rel, mrel] + ([rrel] if os.path.exists(os.path.join(HERE, "rank_history.json")) else [])
+            git(repo, "add", "--", *files)
+            if git(repo, "diff", "--cached", "--quiet", "--", *files, check=False).returncode == 0:
                 print("Publish skipped (file identical to HEAD).")
             else:
                 msg = f"called_today: {today} · {len(ids)} called ({now.strftime('%-I:%M %p')} CT)"
-                git(repo, "commit", "-q", "-m", msg, "--", rel, mrel)
+                git(repo, "commit", "-q", "-m", msg, "--", *files)
                 git(repo, "push", "-q", "origin", f"HEAD:{a.branch}")
                 sha = git(repo, "rev-parse", "--short", "HEAD").stdout.strip()
                 print(f"Published {rel} → origin/{a.branch} @ {sha}")
