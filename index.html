@@ -505,6 +505,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
 @media (prefers-reduced-motion:reduce){.lb-sc.pop{animation:none}}
 @media (max-width:900px){.lb{margin:0 0 8px}.lb-row{height:38px}.lb-nm{font-size:1.15rem}.lb-sc{font-size:1.75rem}}
 .lb-gp{margin-top:-2px}.lb-gp .lb-sc{font-size:1.5rem}.lb-gp .lb-row.nogp .lb-sc{color:#6b7c93}
+.lb-gp .lb-row{height:auto;min-height:46px;padding:5px 12px}.lb-gp .lb-mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}.lb-gp .lb-nm{flex:none;font-size:1.1rem}.lb-bar{height:7px;border-radius:4px;background:#1f2a3b;overflow:hidden}.lb-bar>i{display:block;height:100%;background:var(--rc,#869397);border-radius:4px}.lb-row.lead .lb-bar{background:rgba(0,0,0,.35)}.lb-row.lead .lb-bar>i{background:#fde68a}.lb-row.team{border-top:2px solid #2b3648}.lb-gp .lb-sc{min-width:5ch}
 .lb-pending{padding:14px 12px;text-align:center;background:#0b111b;color:#9fb0c6;font-size:1.05rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 @media (max-width:900px){.lb-gp .lb-sc{font-size:1.3rem}}
 .intl-tog{display:flex;align-items:center;gap:8px;margin:0 0 10px;padding:8px 10px;border:1px solid #2b3648;border-radius:6px;background:#0b111b;color:#e5edf7;font-size:.85rem;cursor:pointer}
@@ -545,7 +546,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
       <div class="lb-strip"><span id="sbTime">--:-- CT</span><i></i><span id="sbSync">synced …</span></div>
     </section>
     <section class="lb lb-gp" id="gpBoard" role="group" aria-label="Total gross profit month to date per rep">
-      <div class="lb-head"><span class="lb-title">TOTAL GROSS PROFIT</span><span class="lb-sub">MTD</span></div>
+      <div class="lb-head"><span class="lb-title">GROSS PROFIT</span><span class="lb-sub">% TO QUOTA · MTD</span></div>
       <ol class="lb-list" id="gpList"><li class="lb-pending">GP data pending</li></ol>
       <div class="lb-strip"><span id="gpAsOf">awaiting gp_mtd.json</span></div>
     </section>
@@ -1055,10 +1056,11 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   }
   // ---- Month-to-date calls: called_mtd.json ({month, entries:{Rep:{"YYYY-MM-DD":[contact ids]}}}) + today's live calledMap (called_today + Log Call queue).
   // Score = contact-days called since the 1st (a contact called on two different days counts twice; same contact twice in a day counts once). No data -> 0.
-  let mtdFile = null, gpFile = null;
+  let mtdFile = null, gpFile = null, quotaFile = null;
   async function loadMtd() {
     try { const r = await fetch(`called_mtd.json?ts=${Date.now()}`, { cache: "no-store" }); mtdFile = r.ok ? await r.json() : null; } catch (e) { mtdFile = null; }
     try { const r = await fetch(`gp_mtd.json?ts=${Date.now()}`, { cache: "no-store" }); gpFile = r.ok ? await r.json() : null; } catch (e) { gpFile = null; }
+    try { const r = await fetch(`quotas.json?ts=${Date.now()}`, { cache: "no-store" }); quotaFile = r.ok ? await r.json() : null; } catch (e) { quotaFile = null; }
     try { renderScore(); renderGP(); } catch (e) { console.warn("mtd:", e); }
   }
   function renderScore() {
@@ -1084,11 +1086,22 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
       asof.textContent = rows && rows.length && asOf ? "gp_mtd.json is for " + String(asOf).slice(0, 7) + " — waiting for " + month : "awaiting gp_mtd.json";
       return;
     }
-    const gp = {}, unv = {}; let unas = null; rows.forEach((x) => { if (/^unassigned$/i.test(String(x.rep))) { const u = Number(x.gp); if (isFinite(u)) unas = u; return; } const r = repOfText(x.rep); const v = Number(x.gp); if (r && Number(x.gp_unverified)) unv[r.key] = Number(x.gp_unverified); if (r && x.gp !== null && x.gp !== "" && isFinite(v)) gp[r.key] = v; });
-    const ranked = REPS.map((r, i) => ({ r, i, v: gp[r.key] })).sort((a, b) => (b.v === undefined ? -Infinity : b.v) - (a.v === undefined ? -Infinity : a.v) || a.i - b.i);
-    const top = ranked[0].v; let rank = 0, prev;
-    ranked.forEach((x, idx) => { if (x.v !== prev) { rank = idx + 1; prev = x.v; } x.rank = rank; });
-    list.innerHTML = ranked.map((x) => `<li class="lb-row${x.v !== undefined && top > 0 && x.v === top ? " lead" : ""}${x.v === undefined ? " nogp" : ""}" style="--rc:${x.r.color}"><span class="lb-rk">${x.v === undefined ? "–" : x.rank}</span><span class="lb-nm">${esc(x.r.key)}</span><b class="lb-sc" id="gpSc-${x.r.key}">${x.v === undefined ? "—" : fmtMoney(x.v)}${unv[x.r.key] ? `<sup title="Includes ${fmtMoney(unv[x.r.key])} from 'possible match' customers (ownership unverified)" style="font-size:.5em;color:#fbbf24"> *</sup>` : ""}</b></li>`).join("") + (unas !== null ? `<li class="lb-row nogp" style="--rc:#475569" title="GP from customers with no/unclear HubSpot owner among these reps"><span class="lb-rk">–</span><span class="lb-nm" style="font-size:1rem;color:#9fb0c6">Unassigned</span><b class="lb-sc">${fmtMoney(unas)}</b></li>` : "");
+    // % to quota: rep GP (gp_mtd.json) / gp_quota (quotas.json). Unassigned GP is excluded; no dollar amounts are shown.
+    const qs = (quotaFile && quotaFile.quotas) || [];
+    if (!qs.length) { list.innerHTML = '<li class="lb-pending">Quota data pending</li>'; asof.textContent = "awaiting quotas.json"; return; }
+    const keyOf = (name) => { const r = repOfText(name); return r ? r.key : /nathan|beaver/i.test(String(name)) ? "Nathan" : String(name); };
+    const gp = {}, unv = {}; rows.forEach((x) => { if (/^unassigned$/i.test(String(x.rep))) return; const k = keyOf(x.rep); const v = Number(x.gp); if (Number(x.gp_unverified)) unv[k] = true; if (x.gp !== null && x.gp !== "" && isFinite(v)) gp[k] = v; });
+    const meta = (k) => { const r = REPS.find((q) => q.key === k); return r ? { color: r.color, i: REPS.indexOf(r) } : { color: "#94a3b8", i: 99 }; };
+    const ent = qs.map((q) => { const k = keyOf(q.rep), m = meta(k), quota = Number(q.gp_quota); const g = gp[k] || 0; return { k, m, quota, pct: quota > 0 ? g / quota * 100 : 0, g }; });
+    ent.sort((a, b) => b.pct - a.pct || a.m.i - b.m.i);
+    const top = ent[0].pct; let rank = 0, prev;
+    ent.forEach((x, idx) => { if (x.pct !== prev) { rank = idx + 1; prev = x.pct; } x.rank = rank; });
+    const fp = (p) => (Math.round(p * 10) / 10).toFixed(1) + "%";
+    const row = (x) => `<li class="lb-row${top > 0 && x.pct === top ? " lead" : ""}${x.pct ? "" : " zero"}" style="--rc:${x.m.color}"><span class="lb-rk">${x.rank}</span><span class="lb-mid"><span class="lb-nm">${esc(x.k)}</span><span class="lb-bar"><i style="width:${Math.max(0, Math.min(100, x.pct))}%"></i></span></span><b class="lb-sc" id="gpSc-${x.k}">${fp(x.pct)}${unv[x.k] ? `<sup title="Includes GP from 'possible match' customers (ownership unverified)" style="font-size:.5em;color:#fbbf24"> *</sup>` : ""}</b></li>`;
+    const qsum = ent.reduce((t, x) => t + x.quota, 0), gsum = ent.reduce((t, x) => t + x.g, 0);
+    const tq = Number(quotaFile.team_total) || qsum, tp = tq > 0 ? gsum / tq * 100 : 0;
+    const teamRow = `<li class="lb-row team${tp ? "" : " zero"}" style="--rc:#e5edf7"><span class="lb-rk">Σ</span><span class="lb-mid"><span class="lb-nm">Team total</span><span class="lb-bar"><i style="width:${Math.max(0, Math.min(100, tp))}%"></i></span></span><b class="lb-sc" id="gpSc-team">${fp(tp)}</b></li>`;
+    list.innerHTML = ent.map(row).join("") + teamRow + '<li class="lb-pending" style="font-size:.7rem;padding:6px 10px;letter-spacing:.04em;text-transform:none;font-weight:600">Unassigned GP (no HubSpot owner) is excluded from rep and team percentages. * includes unverified ownership matches.</li>';
     const d = String(asOf).match(/^(\d{4})-(\d{2})-(\d{2})/);
     asof.textContent = d ? `as of ${+d[2]}/${+d[3]}/${d[1]}` : "as of date not given";
   }

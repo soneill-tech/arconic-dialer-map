@@ -1,0 +1,12 @@
+{
+ "month_note": "Monthly gross-profit quotas (Steve's Sales Quotas screen, set 2026-10-18). Edit gp_quota to change; the GP leaderboard shows % to quota = rep GP in gp_mtd.json / gp_quota.",
+ "quotas": [
+  {"rep": "Kahekili Barrozo", "gp_quota": 300000},
+  {"rep": "Nicholas McNamara", "gp_quota": 80000},
+  {"rep": "Mia Medjedovic", "gp_quota": 30000},
+  {"rep": "Simran Subramanian", "gp_quota": 15000},
+  {"rep": "Addison Parker", "gp_quota": 5000},
+  {"rep": "Nathan Beaver", "gp_quota": 5000}
+ ],
+ "team_total": 435000
+}

@@ -235,3 +235,6 @@ REP_DATA_DIR=/path python3 apply_site_overrides.py
 | Nick | 108 | 56 | **34** |
 
 Caveats: the page's score is therefore far below raw dialing volume for reps whose calls go mostly to contacts not loaded on the map (Addie has only 33 map contacts). The hourly sync previously covered only Kahekili and Simran; from Monday 10/19 it covers all five reps, and `update_called_today.py` keeps adding to MTD (it only grows).
+
+## GP leaderboard = % to quota (2026-10-18)
+The GROSS PROFIT board now ranks reps by **% to quota** (progress bar + percent; no dollar amounts on the board). Percent = rep GP in `gp_mtd.json` ÷ `gp_quota` in **`quotas.json`** (`{quotas:[{rep, gp_quota}], team_total}`; edit that file to change quotas). Quotas (monthly GP): Kahekili $300,000, Nicholas $80,000, Mia $30,000, Simran $15,000, Addison $5,000, Nathan Beaver $5,000; team total $435,000. Nathan Beaver has no GP matches (0.0%). Team row = sum of the reps' GP ÷ `team_total`. **Unassigned GP is excluded** from rep and team percentages (footnote, no $). `*` = includes unverified "possible match" customers. `gp_mtd.json` keeps dollars (`gen_gp_mtd.py` unchanged). The calls board is unchanged.
