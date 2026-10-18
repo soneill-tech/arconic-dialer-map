@@ -761,6 +761,9 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     { full: "Nicholas McNamara", short: "Nick", key: "Nick", theme: "nick", re: /nick|nicholas/, color: "#22d3ee" },
     { full: "Mia Medjedovic", short: "Mia", key: "Mia", theme: "mia", re: /\bmia\b/, color: "#f472b6" },
     { full: "Addison Parker", short: "Addie", key: "Addie", theme: "addie", re: /addie|addison/, color: "#a78bfa" } ];
+  // Leaderboard-only list: REPS + Nathan Beaver (not a map tab / dialog rep)
+  const LBREPS = REPS.concat([{ full: "Nathan Beaver", short: "Nathan", key: "Nathan", theme: "nathan", re: /nathan|beaver/, color: "#c08457" }]);
+  const lbRepOf = (t) => { const x = String(t || "").toLowerCase(); return LBREPS.find((r) => r.re.test(x)); };
   const AM_SHORT = Object.fromEntries(REPS.map((r) => [r.full, r.short]));
   const repOfFull = (full) => REPS.find((r) => r.full === full);
   const repOfText = (t) => { const x = String(t || "").toLowerCase(); return REPS.find((r) => r.re.test(x)); };
@@ -1100,11 +1103,11 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   // Ranked by score desc (ties share a rank, keep REPS order); leader(s) highlighted once someone has a call. Reps without calls show 0.
   // Rep photos are static files in avatars/ (Slack profile photos, 96px). Reps without a file (or if it fails to load) get initials.
   const AV_FILE = { Kili: "kili", Simran: "simran", Nick: "nick", Mia: "mia", Addie: "addie" };
-  const AV_INIT = { Kili: "KB", Simran: "SS", Nick: "NM", Mia: "MM", Addie: "AP", Nathan: "NB" };
+  const AV_INIT = { Kili: "KB", Simran: "SS", Nick: "NM", Mia: "MM", Addie: "AP", Nathan: "🦫" };
   function avatarHtml(key, color, pct, pace) {
     const img = AV_FILE[key] ? `<img src="avatars/${AV_FILE[key]}.jpg" alt="" loading="lazy" onerror="this.remove()">` : "";
     const ring = pct == null ? "" : ` ring" style="--rc:${color};--p:${Math.max(0, Math.min(100, pct))};--pc:${pace || color}`;
-    return `<span class="av${ring}"><span class="av-in" style="--rc:${color}">${esc(AV_INIT[key] || key.slice(0, 2).toUpperCase())}${img}</span></span>`;
+    return `<span class="av${ring}"><span class="av-in" style="--rc:${color}">${key === "Nathan" ? `<span style="font-size:${pct == null ? 17 : 21}px;line-height:1">🦫</span>` : esc(AV_INIT[key] || key.slice(0, 2).toUpperCase())}${img}</span></span>`;
   }
   let lbMode = "mtd", lbWeighted = false, rankHist = null;
   // previous snapshot = latest rank_history.json day before today (CT); arrows only for reps present in it and only when the rank differs
@@ -1133,7 +1136,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   }
   function renderLeaderboard(n, streaks) {
     const list = el("lbList"); if (!list) return;
-    const rows = REPS.map((r, i) => ({ r, i, v: n[r.key] || 0 })).sort((a, b) => b.v - a.v || a.i - b.i);
+    const rows = LBREPS.map((r, i) => ({ r, i, v: n[r.key] || 0 })).sort((a, b) => b.v - a.v || a.i - b.i);
     const top = rows[0] ? rows[0].v : 0;
     let rank = 0, prev = null;
     rows.forEach((x, idx) => { if (x.v !== prev) { rank = idx + 1; prev = x.v; } x.rank = rank; });
@@ -1160,7 +1163,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   function renderScore() {
     const byId = new Map(); DATA.contacts.forEach((c) => byId.set(contactId(c), c));
     const today = todayCT(), month = today.slice(0, 7), seen = new Set(), wOn = lbWeighted && outcomesOk();
-    const n = Object.fromEntries(REPS.map((r) => [r.key, 0])), days = Object.fromEntries(REPS.map((r) => [r.key, new Set()])), todayHas = {};
+    const n = Object.fromEntries(LBREPS.map((r) => [r.key, 0])), days = Object.fromEntries(LBREPS.map((r) => [r.key, new Set()])), todayHas = {};
     const add = (key, day, id) => {
       if (n[key] === undefined || String(day).slice(0, 7) !== month) return;
       const k = key + "|" + day + "|" + id; if (seen.has(k)) return; seen.add(k);
@@ -1170,10 +1173,10 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
       n[key] += wOn ? (OUTCOME_W[o] || 1) : 1;
     };
     if (mtdFile && mtdFile.month === month) Object.entries(mtdFile.entries || {}).forEach(([rep, ds]) => {
-      const r = repOfText(rep); if (r) Object.entries(ds || {}).forEach(([day, ids]) => (ids || []).forEach((id) => add(r.key, day, String(id))));
+      const r = lbRepOf(rep); if (r) Object.entries(ds || {}).forEach(([day, ids]) => (ids || []).forEach((id) => add(r.key, day, String(id))));
     });
-    calledMap.forEach((v, id) => { const r = repOfText((v && v.am) || (byId.get(id) || {}).am || ""); if (r) add(r.key, today, id); });
-    const streaks = {}; REPS.forEach((r) => { streaks[r.key] = streakOf(r.key, days[r.key], !!todayHas[r.key]); });
+    calledMap.forEach((v, id) => { const r = lbRepOf((v && v.am) || (byId.get(id) || {}).am || ""); if (r) add(r.key, today, id); });
+    const streaks = {}; LBREPS.forEach((r) => { streaks[r.key] = streakOf(r.key, days[r.key], !!todayHas[r.key]); });
     el("lbSub").textContent = (lbMode === "today" ? "CALLS · TODAY" : "CALLS · MTD") + (wOn ? " · WEIGHTED" : "");
     const w = el("lbW"); if (w) { w.disabled = !outcomesOk(); w.classList.toggle("on", wOn); }
     el("lbTog").querySelectorAll("button[data-m]").forEach((b) => b.classList.toggle("on", b.dataset.m === lbMode));
@@ -1227,7 +1230,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     if (!qs.length) { list.innerHTML = '<li class="lb-pending">Quota data pending</li>'; asof.textContent = "awaiting quotas.json"; return; }
     const keyOf = (name) => { const r = repOfText(name); return r ? r.key : /nathan|beaver/i.test(String(name)) ? "Nathan" : String(name); };
     const gp = {}, unv = {}; rows.forEach((x) => { if (/^unassigned$/i.test(String(x.rep))) return; const k = keyOf(x.rep); const v = Number(x.gp); if (Number(x.gp_unverified)) unv[k] = true; if (x.gp !== null && x.gp !== "" && isFinite(v)) gp[k] = v; });
-    const meta = (k) => { const r = REPS.find((q) => q.key === k); return r ? { color: r.color, i: REPS.indexOf(r) } : { color: "#94a3b8", i: 99 }; };
+    const meta = (k) => { const r = LBREPS.find((q) => q.key === k); return r ? { color: r.color, i: LBREPS.indexOf(r) } : { color: "#94a3b8", i: 99 }; };
     const ent = qs.map((q) => { const k = keyOf(q.rep), m = meta(k), quota = Number(q.gp_quota); const g = gp[k] || 0; return { k, m, quota, pct: quota > 0 ? g / quota * 100 : 0, g }; });
     ent.sort((a, b) => b.pct - a.pct || a.m.i - b.m.i);
     const top = ent[0].pct; let rank = 0, prev;
