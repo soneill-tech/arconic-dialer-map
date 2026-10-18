@@ -1,6 +1,6 @@
 window.__DIALER_DATA__ = {
   "version": 2,
-  "title": "Team Steve — AM Dialer Map",
+  "title": "Team Steve dialer map",
   "scope": "Arconic (HubSpot 2359249037, Kahekili Barrozo) + Kaiser Aluminum (HubSpot 5360206404, Simran Subramanian) + Closed Won accounts for Nick (Nicholas McNamara), Mia (Mia Medjedovic), Addie (Addison Parker)",
   "generated": "2026-10-05",
   "touch_counts_updated": "2026-10-06T08:53:58-05:00",

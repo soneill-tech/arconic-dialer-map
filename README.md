@@ -1,4 +1,4 @@
-# Team Steve — AM Dialer Map
+# Team Steve dialer map
 
 Self-contained HTML map dashboard for Team Steve Closed Won dialer contacts:
 
