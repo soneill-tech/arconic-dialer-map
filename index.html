@@ -511,6 +511,42 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
 .intl-tog{display:flex;align-items:center;gap:8px;margin:0 0 10px;padding:8px 10px;border:1px solid #2b3648;border-radius:6px;background:#0b111b;color:#e5edf7;font-size:.85rem;cursor:pointer}
 .intl-tog input{width:18px;height:18px;accent-color:#3b82f6;flex:0 0 auto}.intl-tog em{margin-left:auto;font-style:normal;color:#9fb0c6;font-size:.75rem;text-align:right}
 </style>
+<style>/* ---- leaderboards v3 ---- */
+.av{position:relative;flex:none;width:32px;height:32px;border-radius:50%;padding:2px;box-sizing:border-box;background:var(--rc,#869397);display:inline-block}
+.av.ring{width:38px;height:38px;padding:3px;background:conic-gradient(var(--pc,#869397) calc(var(--p,0)*1%),#1f2a3b 0)}
+.av .av-in{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--rc,#334155);color:#0b111b;font:800 .72rem/1 "Barlow Condensed",Arial,sans-serif;letter-spacing:.02em}
+.av .av-in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lb-bd{display:inline-flex;align-items:center;gap:5px;flex:none}
+.lb-ar{font-size:.72rem;font-weight:800;letter-spacing:.02em}.lb-ar.up{color:#4ade80}.lb-ar.dn{color:#f87171}
+.lb-st{font-size:.68rem;font-weight:800;color:#fdba74;background:rgba(249,115,22,.14);border:1px solid rgba(249,115,22,.45);border-radius:999px;padding:0 6px;white-space:nowrap}
+.lb-tog{display:flex;gap:0;background:#05080e;border:1px solid #2b3648;border-top:0}
+.lb-tog button{flex:1;background:transparent;border:0;border-right:1px solid #1b2433;color:#8da0b8;font:700 .72rem "Barlow Condensed",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:5px 4px;cursor:pointer;min-height:30px}
+.lb-tog button:last-child{border-right:0}.lb-tog button.on{background:#1b2433;color:#fff}.lb-tog button:disabled{opacity:.45;cursor:not-allowed}
+.lb-strip .stale{color:#fbbf24;font-weight:800}
+.lb-gp .lb-bar{position:relative;overflow:visible}.lb-gp .lb-bar>i{background:var(--pc,#869397) !important}
+.lb-bar u{position:absolute;top:-3px;bottom:-3px;width:2px;margin-left:-1px;background:#e5edf7;opacity:.9;border-radius:1px;text-decoration:none}
+.lb-gp .lb-row.lead{background:linear-gradient(100deg,#3b2f0d,#5a4510 60%,#6b5214)}
+.lb-key{padding:5px 10px;background:#0b111b;border:1px solid #2b3648;border-top:0;font-size:.66rem;font-weight:600;color:#9fb0c6;letter-spacing:.03em;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.lb-key b{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;vertical-align:baseline}
+.cn-row{display:flex;align-items:center;gap:9px;padding:7px 10px;cursor:pointer;background:linear-gradient(100deg,#111a29,#0b111b);border-top:1px solid #1b2433;color:#e5edf7;min-height:44px}
+.cn-row:hover{background:#18253a}.cn-row:first-child{border-top:0}
+.cn-n{width:1.4em;text-align:center;font-weight:800;color:#8da0b8;font-size:1.05rem}
+.cn-m{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.cn-nm{font-size:1.02rem;font-weight:800;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cn-sub{font-size:.7rem;font-weight:600;color:#9fb0c6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.02em}
+.cn-t{flex:none;font-size:.68rem;font-weight:800;color:#93c5fd;background:rgba(59,130,246,.14);border:1px solid rgba(59,130,246,.4);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.cn-go{flex:none;color:#8da0b8;font-size:1rem}
+.contact.flash{animation:cflash 1.8s ease-out}@keyframes cflash{0%,40%{box-shadow:0 0 0 3px #fde68a}100%{box-shadow:0 0 0 0 transparent}}
+.lb-next .lb-pending{font-size:.8rem;padding:10px;text-transform:none;letter-spacing:.02em}
+@media (max-width:900px){
+  body[data-sheet=half][data-tab=board] .sidebar,body[data-sheet=full][data-tab=board] .sidebar{display:block}
+  body[data-tab=loc] .sidebar .boards-only{display:none}
+  body[data-tab=board] .sidebar>*:not(.boards-only){display:none !important}
+  .sidebar{padding-top:2px}
+  #sheetTabs button{padding:6px 9px}
+  .sheet-bar{touch-action:none}
+}
+</style>
 </head>
 <body>
 <header>
@@ -540,15 +576,21 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
 <div class="layout">
   <aside class="sidebar">
     <h2><span>Locations</span><span class="seg" id="viewMode" title="Locations layout"><button type="button" data-mode="cards">Cards</button><button type="button" data-mode="list">List</button></span></h2>
-    <section class="lb" id="leaderboard" role="group" aria-label="Leaderboard: contacts called today per rep">
+    <section class="lb boards-only" id="leaderboard" role="group" aria-label="Leaderboard: contacts called today per rep">
       <div class="lb-head"><span class="lb-title">LEADERBOARD</span><span class="lb-sub" id="lbSub">CALLS · MTD</span></div>
+      <div class="lb-tog" id="lbTog"><button type="button" data-m="mtd" class="on" title="Month to date">MTD</button><button type="button" data-m="today" title="Called today: called_today.json + Log Call queue">Today</button><button type="button" data-w="1" id="lbW" disabled title="Weighted score (connected calls count more than no-answer) needs a call outcome for every call. The data only has direction/outcome for a few recent calls, so this stays off.">Weighted</button></div>
       <ol class="lb-list" id="lbList"></ol>
       <div class="lb-strip"><span id="sbTime">--:-- CT</span><i></i><span id="sbSync">synced …</span></div>
     </section>
-    <section class="lb lb-gp" id="gpBoard" role="group" aria-label="Total gross profit month to date per rep">
+    <section class="lb lb-gp boards-only" id="gpBoard" role="group" aria-label="Total gross profit month to date per rep">
       <div class="lb-head"><span class="lb-title">GROSS PROFIT</span><span class="lb-sub">% TO QUOTA · MTD</span></div>
       <ol class="lb-list" id="gpList"><li class="lb-pending">GP data pending</li></ol>
       <div class="lb-strip"><span id="gpAsOf">awaiting gp_mtd.json</span></div>
+    </section>
+    <section class="lb lb-next boards-only" id="callNext" role="group" aria-label="Call next shortlist">
+      <div class="lb-head"><span class="lb-title">CALL NEXT</span><span class="lb-sub" id="cnSub">TOP 10</span></div>
+      <ol class="lb-list" id="cnList"><li class="lb-pending">Loading…</li></ol>
+      <div class="lb-strip"><span id="cnNote">not called this month · most touches</span></div>
     </section>
     <label class="intl-tog" id="intlTog" title="Default view is US, Canada and Mexico. Turn on to show locations and contacts in all other countries."><input type="checkbox" id="intlChk"/> <span>Include international</span> <em id="intlCount"></em></label>
     <div id="listCtl" hidden>
@@ -601,7 +643,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   </aside>
 </div>
 
-<div class="sheet-bar" id="sheetBar"><div class="seg" id="sheetTabs"><button type="button" data-tab="loc">Locations</button><button type="button" data-tab="con">Contacts</button></div><button type="button" class="sheet-size" id="sheetSize" aria-label="Expand or collapse panel">▲</button></div>
+<div class="sheet-bar" id="sheetBar"><div class="seg" id="sheetTabs"><button type="button" data-tab="loc">Locations</button><button type="button" data-tab="board">🏆 Boards</button><button type="button" data-tab="con">Contacts</button></div><button type="button" class="sheet-size" id="sheetSize" aria-label="Expand or collapse panel">▲</button></div>
 <footer>
   Scope: Arconic (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/2359249037" style="color:var(--accent)" target="_blank" rel="noopener">2359249037</a>, Kahekili Barrozo) +
   Kaiser Aluminum (HubSpot <a href="https://app.hubspot.com/contacts/6029765/record/0-2/5360206404" style="color:var(--accent)" target="_blank" rel="noopener">5360206404</a>, Simran Subramanian) + the HubSpot Closed Won companies of Nick (Nicholas McNamara), Mia (Mia Medjedovic) and Addie (Addison Parker).
@@ -1036,45 +1078,139 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     if (viewFilter === "followups") return list.slice().sort((a, b) => (followupFor(a).due < followupFor(b).due ? -1 : followupFor(a).due > followupFor(b).due ? 1 : 0) || SORTS.touches(a, b));
     return list.slice().sort(viewFilter.startsWith("uncalled") ? (sortMode === "ytd" ? SORTS.ytd : SORTS.touches) : (SORTS[sortMode] || SORTS.touches));
   }
+  const ctParts = () => Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: CT_TZ, weekday: "short" }).formatToParts(new Date()).map((p) => [p.type, p.value]));
+  const isWeekdayCT = () => !/^(Sat|Sun)$/.test(ctParts().weekday);
+  function relAgo(ms) {
+    const m = Math.floor(ms / 60000);
+    return m < 1 ? "just now" : m < 60 ? m + "m ago" : m < 48 * 60 ? Math.floor(m / 60) + "h ago" : Math.floor(m / 1440) + "d ago";
+  }
+  // "synced Xh ago" comes from called_today.json (synced_at = time of the sync run; falls back to updated_at). Amber when older than 2h on a CT weekday.
   function sbClock() {
     if (!el("sbTime")) return;
     el("sbTime").textContent = new Intl.DateTimeFormat("en-US", { timeZone: CT_TZ, hour: "numeric", minute: "2-digit", weekday: "short" }).format(new Date()) + " CT";
-    const sy = document.querySelector("#syncLine strong"); el("sbSync").textContent = "synced " + ((sy && sy.textContent) || "…").replace(/ CT$/, "");
+    const sy = el("sbSync"), t = calledFile && (calledFile.synced_at || calledFile.updated_at), d = t ? new Date(t) : null;
+    if (!d || isNaN(d)) { sy.textContent = "synced —"; sy.classList.remove("stale"); sy.title = ""; return; }
+    const age = Date.now() - d.getTime();
+    sy.textContent = "synced " + relAgo(age);
+    sy.classList.toggle("stale", isWeekdayCT() && age > 2 * 3600e3);
+    sy.title = "Last sync " + fmtCT(t, true) + " CT" + (sy.classList.contains("stale") ? " — older than 2h on a weekday" : "");
   }
   setInterval(() => { try { sbClock(); } catch (e) {} }, 20000);
   // Leaderboard: score = contacts called today per rep (calledMap = called_today.json + Log Call queue), same as the old scorebug.
   // Ranked by score desc (ties share a rank, keep REPS order); leader(s) highlighted once someone has a call. Reps without calls show 0.
-  function renderLeaderboard(n) {
+  // Rep photos are static files in avatars/ (Slack profile photos, 96px). Reps without a file (or if it fails to load) get initials.
+  const AV_FILE = { Kili: "kili", Simran: "simran", Nick: "nick", Mia: "mia", Addie: "addie" };
+  const AV_INIT = { Kili: "KB", Simran: "SS", Nick: "NM", Mia: "MM", Addie: "AP", Nathan: "NB" };
+  function avatarHtml(key, color, pct, pace) {
+    const img = AV_FILE[key] ? `<img src="avatars/${AV_FILE[key]}.jpg" alt="" loading="lazy" onerror="this.remove()">` : "";
+    const ring = pct == null ? "" : ` ring" style="--rc:${color};--p:${Math.max(0, Math.min(100, pct))};--pc:${pace || color}`;
+    return `<span class="av${ring}"><span class="av-in" style="--rc:${color}">${esc(AV_INIT[key] || key.slice(0, 2).toUpperCase())}${img}</span></span>`;
+  }
+  let lbMode = "mtd", lbWeighted = false, rankHist = null;
+  // previous snapshot = latest rank_history.json day before today (CT); arrows only for reps present in it and only when the rank differs
+  function prevRanks(board) {
+    const snaps = (rankHist && rankHist.snapshots) || {}, today = todayCT();
+    const days = Object.keys(snaps).filter((d) => d < today && snaps[d][board]).sort();
+    return days.length ? snaps[days.pop()][board] : null;
+  }
+  function arrowHtml(prev, key, rank) {
+    const p = prev && prev[key]; if (!p || p.rank === rank) return "";
+    const d = p.rank - rank;
+    return `<span class="lb-ar ${d > 0 ? "up" : "dn"}" title="Was #${p.rank} in the previous daily snapshot">${d > 0 ? "▲" : "▼"}${Math.abs(d)}</span>`;
+  }
+  function streakOf(key, days, todayHas) {
+    // consecutive weekdays (this month's data) with >= 1 call, counting back from today; weekends are skipped; today without a call yet doesn't break it
+    const today = todayCT(); let n = 0;
+    for (let k = 0; k < 40; k++) {
+      const d = new Date(today + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() - k);
+      const iso = d.toISOString().slice(0, 10), wd = d.getUTCDay();
+      if (wd === 0 || wd === 6) continue;
+      if (iso.slice(0, 7) !== today.slice(0, 7)) break;
+      const has = iso === today ? todayHas : days.has(iso);
+      if (has) n++; else if (iso !== today) break;
+    }
+    return n;
+  }
+  function renderLeaderboard(n, streaks) {
     const list = el("lbList"); if (!list) return;
     const rows = REPS.map((r, i) => ({ r, i, v: n[r.key] || 0 })).sort((a, b) => b.v - a.v || a.i - b.i);
     const top = rows[0] ? rows[0].v : 0;
     let rank = 0, prev = null;
     rows.forEach((x, idx) => { if (x.v !== prev) { rank = idx + 1; prev = x.v; } x.rank = rank; });
+    const ph = lbMode === "mtd" && !lbWeighted ? prevRanks("calls") : null;
     const old = {}; list.querySelectorAll(".lb-sc").forEach((e) => { old[e.dataset.rep] = e.textContent; });
-    list.innerHTML = rows.map((x) => `<li class="lb-row${top > 0 && x.v === top ? " lead" : ""}${x.v ? "" : " zero"}" style="--rc:${x.r.color}" data-rep="${x.r.key}"><span class="lb-rk">${x.rank}</span><span class="lb-nm">${esc(x.r.key)}</span><b class="lb-sc" id="lbSc-${x.r.key}" data-rep="${x.r.key}">${x.v}</b></li>`).join("");
+    list.innerHTML = rows.map((x) => { const st = (streaks || {})[x.r.key] || 0;
+      return `<li class="lb-row${top > 0 && x.v === top ? " lead" : ""}${x.v ? "" : " zero"}" style="--rc:${x.r.color}" data-rep="${x.r.key}"><span class="lb-rk">${x.rank}</span>${avatarHtml(x.r.key, x.r.color)}<span class="lb-nm">${esc(x.r.key)}</span><span class="lb-bd">${arrowHtml(ph, x.r.key, x.rank)}${st >= 2 ? `<span class="lb-st" title="${st} weekdays in a row with at least one call (this month)">🔥 ${st}</span>` : ""}</span><b class="lb-sc" id="lbSc-${x.r.key}" data-rep="${x.r.key}">${x.v}</b></li>`; }).join("");
     list.querySelectorAll(".lb-sc").forEach((e) => { const o = old[e.dataset.rep]; if (o !== undefined && o !== e.textContent) e.classList.add("pop"); });
   }
   // ---- Month-to-date calls: called_mtd.json ({month, entries:{Rep:{"YYYY-MM-DD":[contact ids]}}}) + today's live calledMap (called_today + Log Call queue).
   // Score = distinct named contact-days since the 1st (entries are map contact ids or "n:<name>" keys; a contact called on two days counts twice, twice in one day once). Today's called_today/Log Call ids are added with the same rep|day|key dedupe. No data -> 0.
   let mtdFile = null, gpFile = null, quotaFile = null;
+  // Weighted score hook: needs a call outcome for EVERY call. Enabled only when called_mtd.json carries outcomes_complete:true and
+  // outcomes:{Rep:{"YYYY-MM-DD":{<contact key>:"connected"|"no_answer"|...}}}. Weights below. Today the data has no per-call outcome, so it stays disabled.
+  const OUTCOME_W = { connected: 3, voicemail: 1, no_answer: 1 };
+  const outcomesOk = () => !!(mtdFile && mtdFile.outcomes_complete === true && mtdFile.outcomes);
   async function loadMtd() {
     try { const r = await fetch(`called_mtd.json?ts=${Date.now()}`, { cache: "no-store" }); mtdFile = r.ok ? await r.json() : null; } catch (e) { mtdFile = null; }
     try { const r = await fetch(`gp_mtd.json?ts=${Date.now()}`, { cache: "no-store" }); gpFile = r.ok ? await r.json() : null; } catch (e) { gpFile = null; }
+    try { const r = await fetch(`rank_history.json?ts=${Date.now()}`, { cache: "no-store" }); rankHist = r.ok ? await r.json() : null; } catch (e) { rankHist = null; }
     try { const r = await fetch(`quotas.json?ts=${Date.now()}`, { cache: "no-store" }); quotaFile = r.ok ? await r.json() : null; } catch (e) { quotaFile = null; }
     try { renderScore(); renderGP(); } catch (e) { console.warn("mtd:", e); }
   }
   function renderScore() {
     const byId = new Map(); DATA.contacts.forEach((c) => byId.set(contactId(c), c));
-    const today = todayCT(), month = today.slice(0, 7), seen = new Set();
-    const n = Object.fromEntries(REPS.map((r) => [r.key, 0]));
-    const add = (key, day, id) => { const k = key + "|" + day + "|" + id; if (!seen.has(k) && n[key] !== undefined && String(day).slice(0, 7) === month) { seen.add(k); n[key]++; } };
-    if (mtdFile && mtdFile.month === month) Object.entries(mtdFile.entries || {}).forEach(([rep, days]) => {
-      const r = repOfText(rep); if (r) Object.entries(days || {}).forEach(([day, ids]) => (ids || []).forEach((id) => add(r.key, day, String(id))));
+    const today = todayCT(), month = today.slice(0, 7), seen = new Set(), wOn = lbWeighted && outcomesOk();
+    const n = Object.fromEntries(REPS.map((r) => [r.key, 0])), days = Object.fromEntries(REPS.map((r) => [r.key, new Set()])), todayHas = {};
+    const add = (key, day, id) => {
+      if (n[key] === undefined || String(day).slice(0, 7) !== month) return;
+      const k = key + "|" + day + "|" + id; if (seen.has(k)) return; seen.add(k);
+      days[key].add(String(day).slice(0, 10)); if (day === today) todayHas[key] = true;
+      if (lbMode === "today" && day !== today) return;
+      const o = wOn && mtdFile.outcomes && mtdFile.outcomes[key] && mtdFile.outcomes[key][day] && mtdFile.outcomes[key][day][id];
+      n[key] += wOn ? (OUTCOME_W[o] || 1) : 1;
+    };
+    if (mtdFile && mtdFile.month === month) Object.entries(mtdFile.entries || {}).forEach(([rep, ds]) => {
+      const r = repOfText(rep); if (r) Object.entries(ds || {}).forEach(([day, ids]) => (ids || []).forEach((id) => add(r.key, day, String(id))));
     });
     calledMap.forEach((v, id) => { const r = repOfText((v && v.am) || (byId.get(id) || {}).am || ""); if (r) add(r.key, today, id); });
-    renderLeaderboard(n);
+    const streaks = {}; REPS.forEach((r) => { streaks[r.key] = streakOf(r.key, days[r.key], !!todayHas[r.key]); });
+    el("lbSub").textContent = (lbMode === "today" ? "CALLS · TODAY" : "CALLS · MTD") + (wOn ? " · WEIGHTED" : "");
+    const w = el("lbW"); if (w) { w.disabled = !outcomesOk(); w.classList.toggle("on", wOn); }
+    el("lbTog").querySelectorAll("button[data-m]").forEach((b) => b.classList.toggle("on", b.dataset.m === lbMode));
+    renderLeaderboard(n, streaks);
     sbClock();
+    try { renderCallNext(); } catch (e) { console.warn("callNext:", e); }
   }
+  el("lbTog").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b || b.disabled) return;
+    if (b.dataset.m) lbMode = b.dataset.m; else if (b.dataset.w) lbWeighted = !lbWeighted;
+    renderScore();
+  });
+  // ---- Call next: top 10 contacts for the selected rep tab (All = every rep's own contacts) that have a phone and no call this month
+  // (same test as the "Not called this month" filter), most touches first. Touches = touches_ytd (since Jan 1) when loaded, else HubSpot lifetime times_contacted.
+  // No account-health field exists in the data, so it is not used.
+  function renderCallNext() {
+    const list = el("cnList"); if (!list) return;
+    const ytd = hasYtd(), month = monthStartCT();
+    const t = (c) => (ytd ? (c.touches_ytd == null ? -1 : c.touches_ytd) : (c.times_contacted || 0));
+    const cands = DATA.contacts.filter((c) => contactMatchesAM(c) && !c.hidden && c.has_phone && contactId(c) && notCalledSince(c, month))
+      .sort((a, b) => t(b) - t(a) || (b.sales_activities || 0) - (a.sales_activities || 0) || nameKey(a).localeCompare(nameKey(b)));
+    const r = repOfFull(amFilter);
+    el("cnSub").textContent = (r ? r.short.toUpperCase() : "ALL REPS") + " · TOP 10";
+    el("cnNote").textContent = `${cands.length} not called this month · ${ytd ? "most touches since Jan 1" : "most HubSpot touches (all-time)"}`;
+    list.innerHTML = cands.length ? cands.slice(0, 10).map((c, i) => `<li class="cn-row" data-cid="${esc(contactId(c))}" title="Show on map"><span class="cn-n">${i + 1}</span><span class="cn-m"><span class="cn-nm">${esc(c.name)}</span><span class="cn-sub">${esc([c.title, c.plant || c.company].filter(Boolean).join(" · "))}${!r && c.am ? " · " + esc(AM_SHORT[c.am] || c.am) : ""}</span></span><span class="cn-t">${Number(t(c)).toLocaleString("en-US")}</span><span class="cn-go">📍</span></li>`).join("")
+      : '<li class="lb-pending">Everyone with a phone has been called this month 🎉</li>';
+  }
+  el("cnList").addEventListener("click", (e) => {
+    const li = e.target.closest(".cn-row"); if (!li) return;
+    const id = li.dataset.cid, c = DATA.contacts.find((x) => contactId(x) === id); if (!c) return;
+    const loc = DATA.locations.find((l) => l.pin && !isSupplier(l) && inLoc(c, l)) || DATA.locations.find((l) => l.pin && inLoc(c, l)) || DATA.locations.find((l) => inLoc(c, l) && l.company === c.company);
+    if (!loc) return;
+    viewFilter = "all"; document.querySelectorAll("[data-view]").forEach((b) => b.classList.toggle("active", b.dataset.view === "all"));
+    searchQ = ""; if (el("search")) el("search").value = "";
+    selectLoc(loc.id, true);
+    setTimeout(() => { const card = document.querySelector(`.contact[data-contact-id="${CSS.escape(id)}"]`); if (card) { card.scrollIntoView({ block: "center" }); card.classList.add("flash"); setTimeout(() => card.classList.remove("flash"), 2000); } }, 350);
+  });
   const fmtMoney = (v) => (v < 0 ? "-$" : "$") + Math.abs(Math.round(v)).toLocaleString("en-US");
   function renderGP() {
     const list = el("gpList"), asof = el("gpAsOf"); if (!list) return;
@@ -1097,13 +1233,18 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     const top = ent[0].pct; let rank = 0, prev;
     ent.forEach((x, idx) => { if (x.pct !== prev) { rank = idx + 1; prev = x.pct; } x.rank = rank; });
     const fp = (p) => (Math.round(p * 10) / 10).toFixed(1) + "%";
-    const row = (x) => `<li class="lb-row${top > 0 && x.pct === top ? " lead" : ""}${x.pct ? "" : " zero"}" style="--rc:${x.m.color}"><span class="lb-rk">${x.rank}</span><span class="lb-mid"><span class="lb-nm">${esc(x.k)}</span><span class="lb-bar"><i style="width:${Math.max(0, Math.min(100, x.pct))}%"></i></span></span><b class="lb-sc" id="gpSc-${x.k}">${fp(x.pct)}${unv[x.k] ? `<sup title="Includes GP from 'possible match' customers (ownership unverified)" style="font-size:.5em;color:#fbbf24"> *</sup>` : ""}</b></li>`;
+    // pace = % to quota vs where a linear month would be on the as-of date (day of month / days in month): red < 70% of pace, amber 70-100%, green >= 100%
+    const dm = String(asOf).match(/^(\d{4})-(\d{2})-(\d{2})/), dim = dm ? new Date(+dm[1], +dm[2], 0).getDate() : 0, exp = dm && dim ? +dm[3] / dim * 100 : 0;
+    const paceCol = (p) => !exp ? "#94a3b8" : p / exp >= 1 ? "#22c55e" : p / exp >= 0.7 ? "#f59e0b" : "#ef4444";
+    const ph = prevRanks("gp");
+    const bar = (p) => `<span class="lb-bar" title="${fp(p)} of quota; expected pace ${fp(exp)} by ${+dm[2]}/${+dm[3]}"><i style="width:${Math.max(0, Math.min(100, p))}%;--pc:${paceCol(p)}"></i>${exp ? `<u style="left:${Math.min(100, exp)}%"></u>` : ""}</span>`;
+    const row = (x) => `<li class="lb-row${top > 0 && x.pct === top ? " lead" : ""}${x.pct ? "" : " zero"}" style="--rc:${x.m.color}"><span class="lb-rk">${x.rank}</span>${avatarHtml(x.k, x.m.color, x.pct, paceCol(x.pct))}<span class="lb-mid"><span class="lb-nm">${esc(x.k)}${arrowHtml(ph, x.k, x.rank) ? " " + arrowHtml(ph, x.k, x.rank) : ""}</span>${bar(x.pct)}</span><b class="lb-sc" id="gpSc-${x.k}">${fp(x.pct)}${unv[x.k] ? `<sup title="Includes GP from 'possible match' customers (ownership unverified)" style="font-size:.5em;color:#fbbf24"> *</sup>` : ""}</b></li>`;
     const qsum = ent.reduce((t, x) => t + x.quota, 0), gsum = ent.reduce((t, x) => t + x.g, 0);
     const tq = Number(quotaFile.team_total) || qsum, tp = tq > 0 ? gsum / tq * 100 : 0;
-    const teamRow = `<li class="lb-row team${tp ? "" : " zero"}" style="--rc:#e5edf7"><span class="lb-rk">Σ</span><span class="lb-mid"><span class="lb-nm">Team total</span><span class="lb-bar"><i style="width:${Math.max(0, Math.min(100, tp))}%"></i></span></span><b class="lb-sc" id="gpSc-team">${fp(tp)}</b></li>`;
-    list.innerHTML = ent.map(row).join("") + teamRow + '<li class="lb-pending" style="font-size:.7rem;padding:6px 10px;letter-spacing:.04em;text-transform:none;font-weight:600">Unassigned GP (no HubSpot owner) is excluded from rep and team percentages. * includes unverified ownership matches.</li>';
+    const teamRow = `<li class="lb-row team${tp ? "" : " zero"}" style="--rc:#e5edf7"><span class="lb-rk">Σ</span><span class="lb-mid"><span class="lb-nm">Team total</span>${bar(tp)}</span><b class="lb-sc" id="gpSc-team">${fp(tp)}</b></li>`;
+    list.innerHTML = ent.map(row).join("") + teamRow + '<li class="lb-key"><span><b style="background:#ef4444"></b>&lt;70% of pace</span><span><b style="background:#f59e0b"></b>70–100%</span><span><b style="background:#22c55e"></b>on/above pace</span><span>| = expected pace</span></li><li class="lb-pending" style="font-size:.7rem;padding:6px 10px;letter-spacing:.04em;text-transform:none;font-weight:600">Unassigned GP (no HubSpot owner) is excluded from rep and team percentages. * includes unverified ownership matches.</li>';
     const d = String(asOf).match(/^(\d{4})-(\d{2})-(\d{2})/);
-    asof.textContent = d ? `as of ${+d[2]}/${+d[3]}/${d[1]}` : "as of date not given";
+    asof.textContent = d ? "GP as of " + new Date(+d[1], +d[2] - 1, +d[3]).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "GP as-of date not given";
   }
   function fmtLastContacted(v) {
     if (!v) return "";
@@ -1253,6 +1394,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     el("statBadge").innerHTML = `<strong>${cs.length}</strong> contacts · <strong>${cs.filter((c) => c.has_phone).length}</strong> phone · <strong>${pins}</strong> pins${sup ? ` (${pins - sup} plant + ${sup} supplier)` : ""} · <strong>${cs.filter((c) => c.is_dm).length}</strong> DM`;
   }
   renderStats();
+  const _rs = renderStats; renderStats = function () { _rs(); try { renderCallNext(); } catch (e) {} };
 
   el("viewMode").addEventListener("click", (e) => { const b = e.target.closest("button[data-mode]"); if (b) setLocView(b.dataset.mode); });
   el("lcRep").addEventListener("click", (e) => { const b = e.target.closest("button[data-am]"); if (b) el("amFilter").querySelector(`button[data-am="${b.dataset.am}"]`).click(); });   // one source of truth: the top tabs
@@ -2125,6 +2267,11 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     setSheet(b.dataset.tab, same ? "peek" : (document.body.dataset.sheet === "full" ? "full" : "half"));
   });
   el("sheetSize").addEventListener("click", () => setSheet(null, { peek: "half", half: "full", full: "peek" }[document.body.dataset.sheet]));
+  // swipe the sheet handle: up = taller, down = shorter (peek -> half -> full)
+  (() => { let y0 = null; const bar = el("sheetBar"), order = ["peek", "half", "full"];
+    bar.addEventListener("touchstart", (e) => { y0 = e.touches[0].clientY; }, { passive: true });
+    bar.addEventListener("touchend", (e) => { if (y0 == null) return; const dy = e.changedTouches[0].clientY - y0; y0 = null;
+      if (Math.abs(dy) < 30) return; const i = order.indexOf(document.body.dataset.sheet); setSheet(null, order[Math.max(0, Math.min(2, i + (dy < 0 ? 1 : -1)))]); e.preventDefault(); }, { passive: false }); })();
   setSheet("loc", "peek"); sheetReady = true;
   window.addEventListener("resize", () => { if (map) map.invalidateSize(); });
   window.__manual = { reload: loadManualAdds, get items() { return [...manualItems.values()]; } };
