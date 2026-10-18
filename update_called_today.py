@@ -3,7 +3,7 @@
 
 Input: CSV or JSON of today's calls. Per row, at least one of
     contact_id | contact_email | contact_name
-plus optional: am (Kahekili|Simran|Nick|Mia|Addie, full names ok), time, outcome.
+plus optional: am (Kahekili|Simran|Nick|Mia|Addie|Nathan, full names ok), time, outcome.
 (Aliases accepted: hubspot_contact_id/id, email, name, call_time/timestamp, disposition.)
 JSON may be a list of row objects or {"calls": [...]}.
 
@@ -53,6 +53,7 @@ AM_ALIASES = {
     "nick": "Nicholas McNamara", "nicholas": "Nicholas McNamara", "nicholas mcnamara": "Nicholas McNamara",
     "mia": "Mia Medjedovic", "mia medjedovic": "Mia Medjedovic",
     "addie": "Addison Parker", "addison": "Addison Parker", "addison parker": "Addison Parker",
+    "nathan": "Nathan Beaver", "nathan beaver": "Nathan Beaver", "nbeaver": "Nathan Beaver", "beaver": "Nathan Beaver",
 }
 SHORT = {"Nicholas McNamara": "Nick", "Addison Parker": "Addie"}   # call-log / UI short names (others: first name)
 FIELD_ALIASES = {

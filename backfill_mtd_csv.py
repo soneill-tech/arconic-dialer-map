@@ -51,7 +51,7 @@ def main():
     for rep, s in mm.items():
         for day, cid in s: u.mtd_add(mtd, rep, day, [cid])
     print(f"{'rep':8} {'raw':>5} {'placeholder':>11} {'bareID':>6} {'distinct':>8} {'map':>4} {'before':>6} {'after':>5}")
-    for rep in ["Addie", "Mia", "Simran", "Kahekili", "Nick"]:
+    for rep in ["Addie", "Mia", "Simran", "Kahekili", "Nick", "Nathan"]:
         after = sum(len(v) for v in mtd["entries"].get(rep, {}).values())
         print(f"{rep:8} {st[rep]['raw']:>5} {st[rep]['placeholder_rows']:>11} {st[rep]['bare_id_rows']:>6} {len(cd[rep]):>8} {len(mm[rep]):>4} {before.get(rep,0):>6} {after:>5}  other_book={st[rep]['other_rep_book_rows']} not_on_map={st[rep]['not_on_map_rows']}")
     print("rows", len(rows), "exact duplicate rows", dupes)
