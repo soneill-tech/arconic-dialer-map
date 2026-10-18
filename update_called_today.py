@@ -20,7 +20,13 @@ The output always replaces the file with *today's* list (America/Chicago date).
     python3 update_called_today.py calls.json --publish      # + commit/push called_today.json to master
     python3 update_called_today.py --empty [--publish]       # reset to today's empty state
 
---publish commits/pushes ONLY called_today.json, and only when the called contact set changed
+Month-to-date: every run also folds today's called contacts into called_mtd.json
+({"month": "YYYY-MM", "entries": {"Kili": {"YYYY-MM-DD": [contact ids]}}}), deduped per rep/day/contact; the file resets
+only when the month rolls over, and --empty never removes anything from it. Score on the page = number of rep/day/contact
+entries this month (+ today's live Log Call queue). Rep = the contact's AM. Nothing is estimated.
+    python3 update_called_today.py --backfill-git     # one-off: rebuild this month's entries from called_today.json history in git
+
+--publish commits/pushes ONLY called_today.json and called_mtd.json, and only when the called contact set changed
 or the date rolled over versus what is on origin/master (timestamp-only changes are skipped
 unless --force). Exit codes: 0 ok, 1 error, 2 ok-but-unresolved rows with --strict.
 """
@@ -37,6 +43,7 @@ from zoneinfo import ZoneInfo
 CT = ZoneInfo("America/Chicago")
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_NAME = "called_today.json"
+MTD_NAME = "called_mtd.json"
 DEFAULT_SOURCE = "HubSpot calls (browser sync)"
 AM_ALIASES = {
     "kahekili": "Kahekili Barrozo", "kahekili barrozo": "Kahekili Barrozo", "kili": "Kahekili Barrozo",
@@ -184,6 +191,49 @@ def resolve(row, idx):
     return None, None, "; ".join(tried)
 
 
+def load_mtd(path, month):
+    try:
+        with open(path, encoding="utf-8") as f:
+            d = json.load(f)
+        if d.get("month") == month and isinstance(d.get("entries"), dict):
+            return d
+    except (OSError, ValueError):
+        pass
+    return {"month": month, "entries": {}}
+
+
+def mtd_add(mtd, rep_short, day, ids):
+    """Union ids into entries[rep][day]; returns number newly added."""
+    if not rep_short or not day.startswith(mtd["month"]):
+        return 0
+    cur = mtd["entries"].setdefault(rep_short, {}).setdefault(day, [])
+    new = [i for i in map(str, ids) if i not in cur]
+    cur.extend(new)
+    cur.sort(key=lambda s: (len(s), s))
+    return len(new)
+
+
+def mtd_from_called(called, idx, mtd):
+    """Fold a called_today-style dict into mtd (rep = contact's AM from data.json, else the call's own am)."""
+    day = called.get("date") or ""
+    added = 0
+    call_am = {str(c.get("contact_id")): c.get("am") for c in called.get("calls", [])}
+    for cid in called.get("called_contact_ids", []):
+        c = idx[0].get(str(cid))
+        rep = short_am(c.get("am")) if c else short_am(norm_am(call_am.get(str(cid))) or "")
+        added += mtd_add(mtd, rep, day, [cid])
+    return added
+
+
+def mtd_write(path, mtd, now):
+    mtd["updated_at"] = now.isoformat(timespec="seconds")
+    mtd["source"] = "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)"
+    mtd["counts"] = {r: sum(len(v) for v in d.values()) for r, d in sorted(mtd["entries"].items())}
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(mtd, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+
+
 def git(repo, *args, check=True):
     r = subprocess.run(["git", "-C", repo, *args], capture_output=True, text=True)
     if check and r.returncode != 0:
@@ -201,9 +251,11 @@ def main():
     ap.add_argument("--publish", action="store_true", help="git commit + push called_today.json to master if it meaningfully changed")
     ap.add_argument("--force", action="store_true", help="with --publish: push even if only the timestamp changed")
     ap.add_argument("--branch", default="master")
+    ap.add_argument("--backfill-git", action="store_true", help="rebuild this month's called_mtd.json entries from the git history of called_today.json, then exit")
+    ap.add_argument("--mtd-out", default=os.path.join(HERE, MTD_NAME))
     ap.add_argument("--strict", action="store_true", help="exit 2 if any row is unresolved")
     a = ap.parse_args()
-    if not a.input and not a.empty:
+    if not a.input and not a.empty and not a.backfill_git:
         ap.error("give an input file (or '-') or --empty")
 
     now = datetime.now(CT)
@@ -211,6 +263,23 @@ def main():
     with open(a.data, encoding="utf-8") as f:
         data = json.load(f)
     idx = build_index(data)
+    if a.backfill_git:
+        month = today[:7]
+        mtd = load_mtd(a.mtd_out, month)
+        rel0 = os.path.relpath(os.path.abspath(a.out), HERE)
+        revs = git(HERE, "log", "--format=%H", "--", rel0).stdout.split()
+        for rev in revs:
+            r = git(HERE, "show", f"{rev}:{rel0}", check=False)
+            try:
+                snap = json.loads(r.stdout)
+            except ValueError:
+                continue
+            n = mtd_from_called(snap, idx, mtd)
+            if n:
+                print(f"  {rev[:7]} {snap.get('date')}: +{n}")
+        mtd_write(a.mtd_out, mtd, now)
+        print(f"Wrote {a.mtd_out}: {mtd['counts']}")
+        return
     pin_map = pins_by_contact(data)
     rows = [] if a.empty else load_rows(a.input)
 
@@ -290,21 +359,31 @@ def main():
     with open(out_abs, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
         f.write("\n")
+    mtd = load_mtd(a.mtd_out, today[:7])
+    before = json.dumps(mtd["entries"], sort_keys=True)
+    mtd_from_called(out, idx, mtd)
+    mtd_changed = json.dumps(mtd["entries"], sort_keys=True) != before or not os.path.exists(a.mtd_out)
+    if mtd_changed:
+        mtd_write(a.mtd_out, mtd, now)
+    print(f"MTD {today[:7]}: {mtd.get('counts') or {r: sum(len(v) for v in d.values()) for r, d in mtd['entries'].items()} or 'no data'} ({'updated' if mtd_changed else 'unchanged'})")
     lit = sorted({p for cid in ids for p in pin_map.get(cid, [])})
     print(f"Wrote {out_abs}: date={today} called={len(ids)} calls={len(calls)} unresolved={len(unresolved)} · {reason}")
     print(f"Pins marked called ({len(lit)}): {', '.join(lit) if lit else 'none'}")
 
     if a.publish:
+        if mtd_changed:
+            changed = True
         if not changed and not a.force:
             print("Publish skipped (nothing meaningful changed vs origin). Use --force to push anyway.")
         else:
             git(repo, "pull", "-q", "--rebase", "--autostash", "origin", a.branch)
-            git(repo, "add", "--", rel)
-            if git(repo, "diff", "--cached", "--quiet", "--", rel, check=False).returncode == 0:
+            mrel = os.path.relpath(os.path.abspath(a.mtd_out), repo)
+            git(repo, "add", "--", rel, mrel)
+            if git(repo, "diff", "--cached", "--quiet", "--", rel, mrel, check=False).returncode == 0:
                 print("Publish skipped (file identical to HEAD).")
             else:
                 msg = f"called_today: {today} · {len(ids)} called ({now.strftime('%-I:%M %p')} CT)"
-                git(repo, "commit", "-q", "-m", msg, "--", rel)
+                git(repo, "commit", "-q", "-m", msg, "--", rel, mrel)
                 git(repo, "push", "-q", "origin", f"HEAD:{a.branch}")
                 sha = git(repo, "rev-parse", "--short", "HEAD").stdout.strip()
                 print(f"Published {rel} → origin/{a.branch} @ {sha}")

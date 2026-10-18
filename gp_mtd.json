@@ -1,0 +1,193 @@
+{
+ "month": "2026-10",
+ "as_of": "2026-10-17",
+ "source": "TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet",
+ "loads": 740,
+ "total_gp": 238119.74,
+ "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
+ "generated_at": "2026-10-18T00:25:57-05:00",
+ "reps": [
+  {
+   "rep": "Kili",
+   "gp": 162772.1,
+   "gp_verified": 162772.1,
+   "gp_unverified": 0.0,
+   "customers": [
+    {
+     "customer": "Arconic US, LLC c/o BLUJAY",
+     "gp": 122754.5,
+     "match": "verified"
+    },
+    {
+     "customer": "Arconic US, LLC c/o CT Logistics Team 8",
+     "gp": 7968.42,
+     "match": "verified"
+    },
+    {
+     "customer": "Howmet Aerospace c/o CT Logistics Team 3",
+     "gp": 32049.18,
+     "match": "verified"
+    }
+   ]
+  },
+  {
+   "rep": "Simran",
+   "gp": 3881.43,
+   "gp_verified": 4136.43,
+   "gp_unverified": -255.0,
+   "customers": [
+    {
+     "customer": "BRT Extrustions, Inc.",
+     "gp": -255.0,
+     "match": "possible match - unverified"
+    },
+    {
+     "customer": "Kaiser Aluminum c/o US Bank",
+     "gp": 4136.43,
+     "match": "verified"
+    }
+   ]
+  },
+  {
+   "rep": "Nick",
+   "gp": 18687.24,
+   "gp_verified": 17997.76,
+   "gp_unverified": 689.48,
+   "customers": [
+    {
+     "customer": "3M c/o Data2Logistics - 3MCP01 - CHI",
+     "gp": 63.96,
+     "match": "verified"
+    },
+    {
+     "customer": "Boart Longyear c/o Software Solution",
+     "gp": 4788.0,
+     "match": "verified"
+    },
+    {
+     "customer": "DJ Direct Inc",
+     "gp": 945.0,
+     "match": "possible match - unverified"
+    },
+    {
+     "customer": "DSB Technologies",
+     "gp": 275.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Leaf Home c/o Uber Freight",
+     "gp": -100.0,
+     "match": "verified"
+    },
+    {
+     "customer": "MJ Kellner",
+     "gp": -255.52,
+     "match": "possible match - unverified"
+    },
+    {
+     "customer": "Novelis Corporation",
+     "gp": 12625.8,
+     "match": "verified"
+    },
+    {
+     "customer": "Verista",
+     "gp": 345.0,
+     "match": "verified"
+    }
+   ]
+  },
+  {
+   "rep": "Mia",
+   "gp": 6980.91,
+   "gp_verified": 2598.52,
+   "gp_unverified": 4382.39,
+   "customers": [
+    {
+     "customer": "Atkins Machinery, LLC",
+     "gp": 325.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Dix Block and Supply Company Inc",
+     "gp": 0.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Frulact USA LLC",
+     "gp": 750.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Nibco c/o US Bank",
+     "gp": 1123.52,
+     "match": "verified"
+    },
+    {
+     "customer": "Spectrum Foods, Inc.",
+     "gp": 4179.39,
+     "match": "possible match - unverified"
+    },
+    {
+     "customer": "TIMAC AGRO USA Inc",
+     "gp": 400.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Universal White Cement",
+     "gp": 203.0,
+     "match": "possible match - unverified"
+    }
+   ]
+  },
+  {
+   "rep": "Addie",
+   "gp": 0.0,
+   "gp_verified": 0.0,
+   "gp_unverified": 0.0,
+   "customers": []
+  },
+  {
+   "rep": "Unassigned",
+   "gp": 45798.06,
+   "gp_verified": 45798.06,
+   "gp_unverified": 0.0,
+   "customers": [
+    {
+     "customer": "Aleris International",
+     "gp": 11924.0,
+     "match": "unmatched"
+    },
+    {
+     "customer": "Cass Information Systems, Inc.",
+     "gp": 1819.91,
+     "match": "unmatched"
+    },
+    {
+     "customer": "MSC",
+     "gp": 28265.84,
+     "match": "unmatched"
+    },
+    {
+     "customer": "Reliable Silver Corporation",
+     "gp": 450.0,
+     "match": "unmatched"
+    },
+    {
+     "customer": "Sigma Commercial Bag dba Republic Manufacturing Group Inc",
+     "gp": -200.0,
+     "match": "unmatched"
+    },
+    {
+     "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
+     "gp": 1988.31,
+     "match": "unmatched"
+    },
+    {
+     "customer": "Ulbrich Shaped Wire",
+     "gp": 1550.0,
+     "match": "unmatched"
+    }
+   ]
+  }
+ ]
+}

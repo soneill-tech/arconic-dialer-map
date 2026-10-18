@@ -504,6 +504,11 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
 .lb-sc.pop{animation:sbPop .7s cubic-bezier(.2,1.6,.4,1)}
 @media (prefers-reduced-motion:reduce){.lb-sc.pop{animation:none}}
 @media (max-width:900px){.lb{margin:0 0 8px}.lb-row{height:38px}.lb-nm{font-size:1.15rem}.lb-sc{font-size:1.75rem}}
+.lb-gp{margin-top:-2px}.lb-gp .lb-sc{font-size:1.5rem}.lb-gp .lb-row.nogp .lb-sc{color:#6b7c93}
+.lb-pending{padding:14px 12px;text-align:center;background:#0b111b;color:#9fb0c6;font-size:1.05rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+@media (max-width:900px){.lb-gp .lb-sc{font-size:1.3rem}}
+.intl-tog{display:flex;align-items:center;gap:8px;margin:0 0 10px;padding:8px 10px;border:1px solid #2b3648;border-radius:6px;background:#0b111b;color:#e5edf7;font-size:.85rem;cursor:pointer}
+.intl-tog input{width:18px;height:18px;accent-color:#3b82f6;flex:0 0 auto}.intl-tog em{margin-left:auto;font-style:normal;color:#9fb0c6;font-size:.75rem;text-align:right}
 </style>
 </head>
 <body>
@@ -535,10 +540,16 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   <aside class="sidebar">
     <h2><span>Locations</span><span class="seg" id="viewMode" title="Locations layout"><button type="button" data-mode="cards">Cards</button><button type="button" data-mode="list">List</button></span></h2>
     <section class="lb" id="leaderboard" role="group" aria-label="Leaderboard: contacts called today per rep">
-      <div class="lb-head"><span class="lb-title">LEADERBOARD</span><span class="lb-sub">CALLS TODAY</span></div>
+      <div class="lb-head"><span class="lb-title">LEADERBOARD</span><span class="lb-sub" id="lbSub">CALLS · MTD</span></div>
       <ol class="lb-list" id="lbList"></ol>
       <div class="lb-strip"><span id="sbTime">--:-- CT</span><i></i><span id="sbSync">synced …</span></div>
     </section>
+    <section class="lb lb-gp" id="gpBoard" role="group" aria-label="Total gross profit month to date per rep">
+      <div class="lb-head"><span class="lb-title">TOTAL GROSS PROFIT</span><span class="lb-sub">MTD</span></div>
+      <ol class="lb-list" id="gpList"><li class="lb-pending">GP data pending</li></ol>
+      <div class="lb-strip"><span id="gpAsOf">awaiting gp_mtd.json</span></div>
+    </section>
+    <label class="intl-tog" id="intlTog" title="Default view is US, Canada and Mexico. Turn on to show locations and contacts in all other countries."><input type="checkbox" id="intlChk"/> <span>Include international</span> <em id="intlCount"></em></label>
     <div id="listCtl" hidden>
       <div class="lc-row"><span class="seg" id="lcRep" title="Rep (same as the top tabs)"><button type="button" data-am="all">All</button><button type="button" data-am="Kahekili Barrozo">Kahekili</button><button type="button" data-am="Simran Subramanian">Simran</button></span></div>
       <input type="search" id="lcSearch" placeholder="Search locations…" aria-label="Search location names" />
@@ -683,7 +694,18 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
 
   const el = (id) => document.getElementById(id);
 
+  // ---- North America focus (US, Canada, Mexico): pins outside lat 14.3..84 / lon -170..-52 (Europe, Asia, S. America, Australia ...) are hidden unless "Include international" is on.
+  // Unpinned locations (no coordinates, e.g. "All Arconic") are never hidden. A contact is hidden when its plant pin is international.
+  const INTL_LS = "dialerIntl:v1";
+  let intlOn = false; try { intlOn = localStorage.getItem(INTL_LS) === "1"; } catch (e) {}
+  const inNA = (l) => l.lat == null || l.lon == null || (l.lat >= 14.3 && l.lat <= 84 && l.lon >= -170 && l.lon <= -52);
+  let intlFor = null, intlIds = new Set();
+  function intlSet() {
+    if (intlFor !== DATA.locations) { intlFor = DATA.locations; intlIds = new Set(DATA.locations.filter((l) => l.pin && !inNA(l)).map((l) => l.id)); }
+    return intlIds;
+  }
   function contactMatchesAM(c) {
+    if (!intlOn && c.plant_id && intlSet().has(c.plant_id)) return false;
     if (amFilter === "all") return true;
     return c.am === amFilter;
   }
@@ -817,6 +839,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   }
 
   function locMatchesAM(loc) {
+    if (!intlOn && !inNA(loc)) return false;
     if (amFilter === "all" || !loc.am) return true;
     return loc.am === amFilter;
   }
@@ -1030,14 +1053,44 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     list.innerHTML = rows.map((x) => `<li class="lb-row${top > 0 && x.v === top ? " lead" : ""}${x.v ? "" : " zero"}" style="--rc:${x.r.color}" data-rep="${x.r.key}"><span class="lb-rk">${x.rank}</span><span class="lb-nm">${esc(x.r.key)}</span><b class="lb-sc" id="lbSc-${x.r.key}" data-rep="${x.r.key}">${x.v}</b></li>`).join("");
     list.querySelectorAll(".lb-sc").forEach((e) => { const o = old[e.dataset.rep]; if (o !== undefined && o !== e.textContent) e.classList.add("pop"); });
   }
+  // ---- Month-to-date calls: called_mtd.json ({month, entries:{Rep:{"YYYY-MM-DD":[contact ids]}}}) + today's live calledMap (called_today + Log Call queue).
+  // Score = contact-days called since the 1st (a contact called on two different days counts twice; same contact twice in a day counts once). No data -> 0.
+  let mtdFile = null, gpFile = null;
+  async function loadMtd() {
+    try { const r = await fetch(`called_mtd.json?ts=${Date.now()}`, { cache: "no-store" }); mtdFile = r.ok ? await r.json() : null; } catch (e) { mtdFile = null; }
+    try { const r = await fetch(`gp_mtd.json?ts=${Date.now()}`, { cache: "no-store" }); gpFile = r.ok ? await r.json() : null; } catch (e) { gpFile = null; }
+    try { renderScore(); renderGP(); } catch (e) { console.warn("mtd:", e); }
+  }
   function renderScore() {
     const byId = new Map(); DATA.contacts.forEach((c) => byId.set(contactId(c), c));
+    const today = todayCT(), month = today.slice(0, 7), seen = new Set();
     const n = Object.fromEntries(REPS.map((r) => [r.key, 0]));
-    calledMap.forEach((v, id) => {
-      const r = repOfText((v && v.am) || (byId.get(id) || {}).am || ""); if (r) n[r.key]++;
+    const add = (key, day, id) => { const k = key + "|" + day + "|" + id; if (!seen.has(k) && n[key] !== undefined && String(day).slice(0, 7) === month) { seen.add(k); n[key]++; } };
+    if (mtdFile && mtdFile.month === month) Object.entries(mtdFile.entries || {}).forEach(([rep, days]) => {
+      const r = repOfText(rep); if (r) Object.entries(days || {}).forEach(([day, ids]) => (ids || []).forEach((id) => add(r.key, day, String(id))));
     });
+    calledMap.forEach((v, id) => { const r = repOfText((v && v.am) || (byId.get(id) || {}).am || ""); if (r) add(r.key, today, id); });
     renderLeaderboard(n);
     sbClock();
+  }
+  const fmtMoney = (v) => (v < 0 ? "-$" : "$") + Math.abs(Math.round(v)).toLocaleString("en-US");
+  function renderGP() {
+    const list = el("gpList"), asof = el("gpAsOf"); if (!list) return;
+    const month = todayCT().slice(0, 7);
+    let rows = gpFile && (Array.isArray(gpFile) ? gpFile : Array.isArray(gpFile.reps) ? gpFile.reps : Object.entries(gpFile.reps || {}).map(([rep, gp]) => ({ rep, gp })));
+    const asOf = gpFile && !Array.isArray(gpFile) ? (gpFile.as_of || gpFile.asOf || "") : "";
+    if (!rows || !rows.length || (asOf && String(asOf).slice(0, 7) !== month)) {
+      list.innerHTML = '<li class="lb-pending">GP data pending</li>';
+      asof.textContent = rows && rows.length && asOf ? "gp_mtd.json is for " + String(asOf).slice(0, 7) + " — waiting for " + month : "awaiting gp_mtd.json";
+      return;
+    }
+    const gp = {}, unv = {}; let unas = null; rows.forEach((x) => { if (/^unassigned$/i.test(String(x.rep))) { const u = Number(x.gp); if (isFinite(u)) unas = u; return; } const r = repOfText(x.rep); const v = Number(x.gp); if (r && Number(x.gp_unverified)) unv[r.key] = Number(x.gp_unverified); if (r && x.gp !== null && x.gp !== "" && isFinite(v)) gp[r.key] = v; });
+    const ranked = REPS.map((r, i) => ({ r, i, v: gp[r.key] })).sort((a, b) => (b.v === undefined ? -Infinity : b.v) - (a.v === undefined ? -Infinity : a.v) || a.i - b.i);
+    const top = ranked[0].v; let rank = 0, prev;
+    ranked.forEach((x, idx) => { if (x.v !== prev) { rank = idx + 1; prev = x.v; } x.rank = rank; });
+    list.innerHTML = ranked.map((x) => `<li class="lb-row${x.v !== undefined && top > 0 && x.v === top ? " lead" : ""}${x.v === undefined ? " nogp" : ""}" style="--rc:${x.r.color}"><span class="lb-rk">${x.v === undefined ? "–" : x.rank}</span><span class="lb-nm">${esc(x.r.key)}</span><b class="lb-sc" id="gpSc-${x.r.key}">${x.v === undefined ? "—" : fmtMoney(x.v)}${unv[x.r.key] ? `<sup title="Includes ${fmtMoney(unv[x.r.key])} from 'possible match' customers (ownership unverified)" style="font-size:.5em;color:#fbbf24"> *</sup>` : ""}</b></li>`).join("") + (unas !== null ? `<li class="lb-row nogp" style="--rc:#475569" title="GP from customers with no/unclear HubSpot owner among these reps"><span class="lb-rk">–</span><span class="lb-nm" style="font-size:1rem;color:#9fb0c6">Unassigned</span><b class="lb-sc">${fmtMoney(unas)}</b></li>` : "");
+    const d = String(asOf).match(/^(\d{4})-(\d{2})-(\d{2})/);
+    asof.textContent = d ? `as of ${+d[2]}/${+d[3]}/${d[1]}` : "as of date not given";
   }
   function fmtLastContacted(v) {
     if (!v) return "";
@@ -1215,6 +1268,21 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     updateMarkerVisibility();
   });
 
+  function renderIntlToggle() {
+    const chk = el("intlChk"); if (!chk) return;
+    chk.checked = intlOn;
+    const locs = DATA.locations.filter((l) => l.pin && !inNA(l)), ids = new Set(locs.map((l) => l.id));
+    const nc = DATA.contacts.filter((c) => c.plant_id && ids.has(c.plant_id)).length;
+    el("intlCount").textContent = intlOn ? `showing ${locs.length} intl locations · ${nc} contacts` : `${locs.length} locations · ${nc} contacts hidden`;
+  }
+  el("intlChk").addEventListener("change", (e) => {
+    intlOn = e.target.checked; try { localStorage.setItem(INTL_LS, intlOn ? "1" : "0"); } catch (x) {}
+    const cur = DATA.locations.find((l) => l.id === selectedLocId);
+    if (!cur || !locMatchesAM(cur)) selectedLocId = "team:all";
+    renderStats(); renderLocList(); renderDetail(); updateMarkerVisibility(); renderIntlToggle(); fitPins();
+  });
+  renderIntlToggle();
+
   const ALL_RIBBON = `<svg viewBox="0 0 40 40" width="16" height="18" aria-hidden="true"><path fill="#800020" d="M20 4c-6 0-9.5 4-9.5 8.2 0 4.600 3.200 8.200 7 12.500L9 36l5.500 1.500L20 29l5.500 8.500L31 36l-9.500-11.300c3.800-4.300 7-7.900 7-12.500C28.500 8 26 4 20 4zm0 5c2.800 0 4.300 1.600 4.300 3.400 0 2-1.700 4.300-4.300 7.400-2.600-3.100-4.300-5.400-4.300-7.400C15.700 10.600 17.200 9 20 9z"/></svg>`;
   const AM_ART = { "Kahekili Barrozo": ["kili", `<img src="assets/cowboys-star.png" alt="" height="30" style="height:30px;width:auto;display:block;position:relative;filter:drop-shadow(0 0 5px rgba(226,232,240,.75)) drop-shadow(0 0 14px rgba(192,199,204,.45))"/>`], "Simran Subramanian": ["simran", `<svg viewBox="0 0 40 40" width="28" height="30" aria-hidden="true"><path fill="#800020" d="M20 4c-6 0-9.5 4-9.5 8.2 0 4.600 3.200 8.200 7 12.500L9 36l5.500 1.500L20 29l5.500 8.500L31 36l-9.500-11.300c3.800-4.300 7-7.900 7-12.500C28.500 8 26 4 20 4zm0 5c2.800 0 4.300 1.600 4.300 3.400 0 2-1.700 4.300-4.300 7.400-2.600-3.100-4.300-5.400-4.300-7.400C15.700 10.600 17.200 9 20 9z"/></svg>`] };
   const _art = (c, d) => `<svg viewBox="0 0 40 40" width="26" height="28" aria-hidden="true"><path fill="${c}" d="${d}"/></svg>`;
@@ -1303,7 +1371,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
       m.on("click", () => selectLoc(loc.id, false));
       m.__state = "pulse"; m.__co = loc.company;
       markers[loc.id] = m;
-      bounds.push([loc.lat, loc.lon]);
+      if (intlOn || inNA(loc)) bounds.push([loc.lat, loc.lon]);
     });
     if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
 
@@ -1676,6 +1744,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     if (!DATA.locations.some((l) => l.id === selectedLocId)) selectedLocId = "team:all";
     ensureManualMarkers();
     renderStats();
+    try { renderIntlToggle(); } catch (e) {}
   }
   function ensureManualMarkers() {
     if (!map) return;
@@ -2051,6 +2120,8 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   selectLoc("team:all", false);
 
   loadCalledToday();
+  loadMtd();
+  setInterval(loadMtd, CALLED_REFRESH_MS);
   setInterval(loadCalledToday, CALLED_REFRESH_MS);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) loadCalledToday(); });
   window.__callStatus = { reload: loadCalledToday, pinState, get loggedCalls() { return [...logged.values()]; }, get calledIds() { return [...calledMap.keys()]; } };
