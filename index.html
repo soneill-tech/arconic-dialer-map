@@ -486,6 +486,25 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
 #amFilter{flex-wrap:wrap}
 @media (max-width:700px){#amFilter button{padding:6px 9px;min-height:34px}}
 </style>
+<style>/* ---- leaderboard (left panel; replaces Kili-vs-Simran scorebug) ---- */
+.lb{margin:0 0 10px;font-family:"Barlow Condensed","Oswald","Roboto Condensed","Arial Narrow",Impact,sans-serif;filter:drop-shadow(0 3px 8px rgba(0,0,0,.45));user-select:none}
+.lb-head{display:flex;align-items:center;justify-content:space-between;padding:6px 12px;background:linear-gradient(180deg,#1b2433,#0b111b);border:1px solid #2b3648;border-bottom:3px solid #869397;border-radius:4px 4px 0 0;color:#fff;font-weight:800;letter-spacing:.12em}
+.lb-title{font-size:1.05rem}.lb-sub{font-size:.68rem;font-weight:700;letter-spacing:.16em;color:#9fb0c6}
+.lb-list{list-style:none;margin:0;padding:0;background:#0b111b;border:1px solid #2b3648;border-top:0}
+.lb-row{display:flex;align-items:center;gap:10px;height:42px;padding:0 12px;color:#e5edf7;border-left:5px solid var(--rc,#869397);border-top:1px solid #1b2433;background:linear-gradient(100deg,#111a29,#0b111b)}
+.lb-row:first-child{border-top:0}
+.lb-rk{width:1.4em;text-align:center;font-size:1.25rem;font-weight:800;color:#8da0b8;font-variant-numeric:tabular-nums}
+.lb-nm{flex:1;min-width:0;font-size:1.3rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb-sc{min-width:1.6ch;text-align:right;font-size:2rem;line-height:1;font-weight:800;font-variant-numeric:tabular-nums;text-shadow:0 1px 0 rgba(0,0,0,.5)}
+.lb-row.lead{background:linear-gradient(100deg,#5a4510,#8a6a14 55%,#b8901f);color:#fff;box-shadow:inset 0 0 0 1px rgba(253,230,138,.55)}
+.lb-row.lead .lb-rk{color:#fde68a}.lb-row.lead .lb-sc{color:#fff4c2;text-shadow:0 0 10px rgba(253,230,138,.7)}
+.lb-row.zero .lb-sc{color:#6b7c93}
+.lb-strip{display:flex;align-items:center;justify-content:center;gap:8px;padding:2px 10px;background:#05080e;border:1px solid #2b3648;border-top:0;border-radius:0 0 6px 6px;font-size:.72rem;font-weight:600;letter-spacing:.1em;color:#8da0b8;text-transform:uppercase}
+.lb-strip i{width:3px;height:3px;border-radius:50%;background:#8da0b8;display:inline-block}
+.lb-sc.pop{animation:sbPop .7s cubic-bezier(.2,1.6,.4,1)}
+@media (prefers-reduced-motion:reduce){.lb-sc.pop{animation:none}}
+@media (max-width:900px){.lb{margin:0 0 8px}.lb-row{height:38px}.lb-nm{font-size:1.15rem}.lb-sc{font-size:1.75rem}}
+</style>
 </head>
 <body>
 <header>
@@ -493,14 +512,6 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     <h1>Team Steve — AM Dialer Map <span class="am-accent" id="amAccent" aria-hidden="true"></span></h1>
     <div class="sub">Arconic + Howmet + Reliable Silver (Kahekili Barrozo) · Kaiser Aluminum + BRT Extrusions + Kawneer (Simran Subramanian) · Closed Won accounts for Nick, Mia &amp; Addie</div>
     <div class="sync-line" id="syncLine">Last synced: <strong>checking…</strong></div>
-  </div>
-  <div class="scorebug" id="scorebug" role="group" aria-label="Contacts called today per account manager">
-    <div class="sb-row">
-      <div class="sb-team sb-kili"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#cbd5e1" d="M12 2l2.9 6.6 7.100.6-5.400 4.700 1.600 7-6.200-3.700-6.200 3.700 1.600-7L2 9.200l7.100-.6z"/></svg><span class="nm">KILI</span><b class="sc" id="sbKili">0</b></div>
-      <div class="sb-mid">CALLS<br/>TODAY</div>
-      <div class="sb-team sb-sim"><b class="sc" id="sbSim">0</b><span class="nm">SIMRAN</span><svg viewBox="0 0 24 24" width="12" height="14" aria-hidden="true"><path fill="#f0a6b8" d="M12 2c-3.500 0-5.500 2.300-5.500 4.800 0 2.700 1.900 4.800 4 7.300L5.500 21l3.200.9L12 17l3.300 4.900 3.200-.9-5-6.900c2.100-2.500 4-4.600 4-7.300C17.500 4.300 15.500 2 12 2z"/></svg></div>
-    </div>
-    <div class="sb-strip"><span id="sbTime">--:-- CT</span><i></i><span id="sbSync">synced …</span></div>
   </div>
   <div class="h-right">
   <div class="h-mid">
@@ -523,6 +534,11 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
 <div class="layout">
   <aside class="sidebar">
     <h2><span>Locations</span><span class="seg" id="viewMode" title="Locations layout"><button type="button" data-mode="cards">Cards</button><button type="button" data-mode="list">List</button></span></h2>
+    <section class="lb" id="leaderboard" role="group" aria-label="Leaderboard: contacts called today per rep">
+      <div class="lb-head"><span class="lb-title">LEADERBOARD</span><span class="lb-sub">CALLS TODAY</span></div>
+      <ol class="lb-list" id="lbList"></ol>
+      <div class="lb-strip"><span id="sbTime">--:-- CT</span><i></i><span id="sbSync">synced …</span></div>
+    </section>
     <div id="listCtl" hidden>
       <div class="lc-row"><span class="seg" id="lcRep" title="Rep (same as the top tabs)"><button type="button" data-am="all">All</button><button type="button" data-am="Kahekili Barrozo">Kahekili</button><button type="button" data-am="Simran Subramanian">Simran</button></span></div>
       <input type="search" id="lcSearch" placeholder="Search locations…" aria-label="Search location names" />
@@ -997,19 +1013,30 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     return list.slice().sort(viewFilter.startsWith("uncalled") ? (sortMode === "ytd" ? SORTS.ytd : SORTS.touches) : (SORTS[sortMode] || SORTS.touches));
   }
   function sbClock() {
+    if (!el("sbTime")) return;
     el("sbTime").textContent = new Intl.DateTimeFormat("en-US", { timeZone: CT_TZ, hour: "numeric", minute: "2-digit", weekday: "short" }).format(new Date()) + " CT";
     const sy = document.querySelector("#syncLine strong"); el("sbSync").textContent = "synced " + ((sy && sy.textContent) || "…").replace(/ CT$/, "");
   }
   setInterval(() => { try { sbClock(); } catch (e) {} }, 20000);
+  // Leaderboard: score = contacts called today per rep (calledMap = called_today.json + Log Call queue), same as the old scorebug.
+  // Ranked by score desc (ties share a rank, keep REPS order); leader(s) highlighted once someone has a call. Reps without calls show 0.
+  function renderLeaderboard(n) {
+    const list = el("lbList"); if (!list) return;
+    const rows = REPS.map((r, i) => ({ r, i, v: n[r.key] || 0 })).sort((a, b) => b.v - a.v || a.i - b.i);
+    const top = rows[0] ? rows[0].v : 0;
+    let rank = 0, prev = null;
+    rows.forEach((x, idx) => { if (x.v !== prev) { rank = idx + 1; prev = x.v; } x.rank = rank; });
+    const old = {}; list.querySelectorAll(".lb-sc").forEach((e) => { old[e.dataset.rep] = e.textContent; });
+    list.innerHTML = rows.map((x) => `<li class="lb-row${top > 0 && x.v === top ? " lead" : ""}${x.v ? "" : " zero"}" style="--rc:${x.r.color}" data-rep="${x.r.key}"><span class="lb-rk">${x.rank}</span><span class="lb-nm">${esc(x.r.key)}</span><b class="lb-sc" id="lbSc-${x.r.key}" data-rep="${x.r.key}">${x.v}</b></li>`).join("");
+    list.querySelectorAll(".lb-sc").forEach((e) => { const o = old[e.dataset.rep]; if (o !== undefined && o !== e.textContent) e.classList.add("pop"); });
+  }
   function renderScore() {
     const byId = new Map(); DATA.contacts.forEach((c) => byId.set(contactId(c), c));
     const n = Object.fromEntries(REPS.map((r) => [r.key, 0]));
     calledMap.forEach((v, id) => {
       const r = repOfText((v && v.am) || (byId.get(id) || {}).am || ""); if (r) n[r.key]++;
     });
-    // Kili vs Simran scorebug stays as is; Nick / Mia / Addie are appended to the badge once they have calls today
-    el("scoreBadge").innerHTML = `📞 Called today: Kili <strong>${n.Kili}</strong> · Simran <strong>${n.Simran}</strong>` + REPS.slice(2).filter((r) => n[r.key]).map((r) => ` · ${r.key} <strong>${n[r.key]}</strong>`).join("");
-    [["sbKili", n.Kili], ["sbSim", n.Simran]].forEach(([id, v]) => { const e = el(id); if (e.textContent !== String(v)) { const first = e.dataset.init; e.textContent = v; e.dataset.init = "1"; if (first) { e.classList.remove("pop"); void e.offsetWidth; e.classList.add("pop"); } } });
+    renderLeaderboard(n);
     sbClock();
   }
   function fmtLastContacted(v) {
@@ -1485,8 +1512,8 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   // Fireworks over the AM's score number (canvas, pointer-events none, ~1.8s). Skipped under prefers-reduced-motion (the score still pops).
   function fireworks(am) {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const target = el(am === "Simran" ? "sbSim" : am === "Kili" ? "sbKili" : "scoreBadge"); if (!target || !target.offsetParent) return;
-    const r = target.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    const target = el("lbSc-" + am);   // the rep's score on the leaderboard; if the left panel is hidden (mobile map/detail tab) burst from top-centre
+    const vis = target && target.offsetParent, r = vis ? target.getBoundingClientRect() : { left: innerWidth / 2, top: 90, width: 0, height: 0 }, cx = r.left + r.width / 2, cy = r.top + r.height / 2;
     const pal = am === "Simran" ? ["#c0304f", "#e11d48", "#f5c542", "#ffd966", "#fff4d6"] : am === "Nick" ? ["#0891b2", "#22d3ee", "#a5f3fc", "#e0f2fe", "#ffffff"] : am === "Mia" ? ["#db2777", "#f472b6", "#fbcfe8", "#fde68a", "#ffffff"] : am === "Addie" ? ["#7c3aed", "#a78bfa", "#ddd6fe", "#fde68a", "#ffffff"] : ["#3b6fd1", "#60a5fa", "#cbd5e1", "#e2e8f0", "#ffffff"];
     document.querySelectorAll("#fxCanvas").forEach((n) => n.remove());
     const cv = document.createElement("canvas"); cv.id = "fxCanvas"; const dpr = window.devicePixelRatio || 1;

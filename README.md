@@ -207,3 +207,9 @@ REP_DATA_DIR=/path python3 apply_site_overrides.py
 - Bad HubSpot addresses are corrected in the `MANUAL` table of `rep_loader.py`; each correction is shown as a flag on the pin and listed in `rep_load_report.json`
   (with skipped contacts, companies without contacts, geocode failures).
 - The Kili vs Simran scorebug is unchanged; Nick/Mia/Addie call counts are appended to the "Called today" badge once they have calls. `update_called_today.py` accepts Nick/Mia/Addie as `am`.
+
+## Leaderboard (replaces the Kili-vs-Simran scorebug)
+- The header scorebug is gone; the **LEADERBOARD** sits at the top of the left (Locations) panel (mobile: top of the Locations sheet). Same NFL-scorebug dark styling; rank, rep, score; leader(s) highlighted gold once anyone has a call; reps with no calls show 0.
+- Score = contacts called today per rep: the unchanged `renderScore()` count over `calledMap` (`called_today.json` + Log Call queue), now for all five reps (Kili, Simran, Nick, Mia, Addie). Ties share a rank.
+- Saving a Log Call still fires the fireworks, now over that rep's score on the leaderboard (top-centre burst if the left panel is hidden on mobile).
+- Data feed: the hourly "AM dialer map call sync" only scrapes HubSpot Calls for Kahekili and Simran; Nick/Mia/Addie count only via the Log Call queue until the sync covers them. `update_called_today.py` already accepts all five reps.
