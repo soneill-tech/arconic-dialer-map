@@ -394,15 +394,15 @@
     },
     "Addie": {
      "rank": 1,
-     "score": 406
+     "score": 408
     },
     "Mia": {
      "rank": 3,
-     "score": 316
+     "score": 317
     },
     "Nathan": {
      "rank": 2,
-     "score": 326
+     "score": 328
     }
    },
    "gp": {
@@ -433,7 +433,7 @@
    },
    "gp_as_of": "2026-10-17",
    "derived": false,
-   "written_at": "2026-10-19T13:56:55-05:00"
+   "written_at": "2026-10-19T13:57:16-05:00"
   }
  }
 }
