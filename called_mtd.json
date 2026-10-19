@@ -272,7 +272,8 @@
     "n:whitney mitchell"
    ],
    "2026-10-19": [
-    "49080201"
+    "49080201",
+    "148200167195"
    ]
   },
   "Addie": {
@@ -1410,14 +1411,14 @@
    ]
   }
  },
- "updated_at": "2026-10-19T12:52:01-05:00",
+ "updated_at": "2026-10-19T13:56:55-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 406,
   "Kahekili": 49,
   "Mia": 316,
   "Nathan": 326,
-  "Nick": 57,
+  "Nick": 58,
   "Simran": 88
  },
  "backfill": {
