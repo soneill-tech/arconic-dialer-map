@@ -187,6 +187,7 @@
    ],
    "2026-10-19": [
     "17921301",
+    "n:ann askew",
     "n:lance hagan",
     "n:andrea akenberger"
    ]
@@ -1041,6 +1042,7 @@
     "n:cindy duet",
     "n:alan lezama",
     "n:tim hoffman",
+    "n:gavin meehan",
     "n:theresa hess",
     "n:ericia staton",
     "n:kevin stanger",
@@ -1407,15 +1409,15 @@
    ]
   }
  },
- "updated_at": "2026-10-19T11:52:02-05:00",
+ "updated_at": "2026-10-19T11:52:39-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 406,
   "Kahekili": 49,
-  "Mia": 314,
+  "Mia": 315,
   "Nathan": 326,
   "Nick": 57,
-  "Simran": 87
+  "Simran": 88
  },
  "backfill": {
   "file": "hs_calls_nathan_oct_2026.csv",
