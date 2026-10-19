@@ -1,32 +1,25 @@
 {
-  "date": "2026-10-16",
-  "updated_at": "2026-10-16T12:52:08-05:00",
+  "date": "2026-10-19",
+  "updated_at": "2026-10-19T09:16:51-05:00",
+  "synced_at": "2026-10-19T09:16:51-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "5552701",
-    "248845032775"
+    "20283614591"
   ],
   "calls": [
     {
-      "contact_id": "5552701",
-      "contact_name": "Maria Graves",
+      "contact_id": "20283614591",
+      "contact_name": "Sarah Schupp",
       "am": "Kahekili",
-      "time": "2026-10-16T11:55:00-05:00",
-      "outcome": "Outbound (8x8 auto-logged)"
+      "time": "2026-10-19 08:10 AM CT",
+      "outcome": "Outbound - no outcome logged"
     },
     {
-      "contact_id": "248845032775",
-      "contact_name": "Blake Wexler",
+      "contact_id": "20283614591",
+      "contact_name": "Sarah Schupp",
       "am": "Kahekili",
-      "time": "2026-10-16T12:08:00-05:00",
-      "outcome": "Inbound (8x8 auto-logged)"
-    },
-    {
-      "contact_id": "248845032775",
-      "contact_name": "Blake Wexler",
-      "am": "Kahekili",
-      "time": "2026-10-16T12:31:00-05:00",
-      "outcome": "Outbound (8x8 auto-logged)"
+      "time": "2026-10-19 08:44 AM CT",
+      "outcome": "Outbound - Connected"
     }
   ]
 }
