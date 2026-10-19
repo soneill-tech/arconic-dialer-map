@@ -185,7 +185,6 @@
     "n:austin wickliffe"
    ],
    "2026-10-19": [
-    "n:sarah schupp",
     "n:andrea akenberger"
    ]
   },
@@ -1387,7 +1386,7 @@
    ]
   }
  },
- "updated_at": "2026-10-19T09:17:13-05:00",
+ "updated_at": "2026-10-19T09:17:35-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue + live HubSpot scrape n:<name> keys (update_called_today.py)",
  "counts": {
   "Addie": 400,
@@ -1395,7 +1394,7 @@
   "Mia": 307,
   "Nathan": 324,
   "Nick": 56,
-  "Simran": 86
+  "Simran": 85
  },
  "backfill": {
   "file": "hs_calls_nathan_oct_2026.csv",
