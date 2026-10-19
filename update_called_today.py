@@ -218,11 +218,23 @@ def mtd_from_called(called, idx, mtd):
     """Fold a called_today-style dict into mtd (rep = contact's AM from data.json, else the call's own am)."""
     day = called.get("date") or ""
     added = 0
-    call_am = {str(c.get("contact_id")): c.get("am") for c in called.get("calls", [])}
+    # Credit the rep who dialed (call["caller"], written since 2026-10-19). Older files without "caller" fall back to
+    # the contact's AM (that fallback mis-credited e.g. Simran's calls to Kahekili's Arconic contacts).
+    callers = {}
+    for cl in called.get("calls", []):
+        who = cl.get("caller")
+        if who:
+            callers.setdefault(str(cl.get("contact_id")), set()).add(short_am(norm_am(who) or "") or who)
     for cid in called.get("called_contact_ids", []):
-        c = idx[0].get(str(cid))
-        rep = short_am(c.get("am")) if c else short_am(norm_am(call_am.get(str(cid))) or "")
-        added += mtd_add(mtd, rep, day, [cid])
+        cid = str(cid)
+        if cid in callers:
+            reps = callers[cid]
+        else:
+            c = idx[0].get(cid)
+            call_am = {str(x.get("contact_id")): x.get("am") for x in called.get("calls", [])}
+            reps = {short_am(c.get("am")) if c else short_am(norm_am(call_am.get(cid)) or "")}
+        for rep in reps:
+            added += mtd_add(mtd, rep, day, [cid])
     return added
 
 
@@ -293,11 +305,12 @@ def main():
         c = idx[0][cid]
         given_am = norm_am(pick(row, "am"))
         if given_am and given_am != c.get("am"):
-            print(f"  ! row {i}: AM '{pick(row, 'am')}' differs from contact's AM ({short_am(c.get('am'))}); using contact's", file=sys.stderr)
+            print(f"  ! row {i}: caller '{pick(row, 'am')}' differs from contact's AM ({short_am(c.get('am'))}); pin/badge uses contact's AM, leaderboard credits the caller", file=sys.stderr)
         calls.append({
             "contact_id": cid,
             "contact_name": c.get("name", ""),
             "am": short_am(c.get("am")),
+            "caller": short_am(given_am or c.get("am")),
             "time": norm_time(pick(row, "time"), today),
             "outcome": pick(row, "outcome"),
         })

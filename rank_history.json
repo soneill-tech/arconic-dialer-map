@@ -382,11 +382,11 @@
    "calls": {
     "Kili": {
      "rank": 6,
-     "score": 50
+     "score": 43
     },
     "Simran": {
      "rank": 4,
-     "score": 88
+     "score": 95
     },
     "Nick": {
      "rank": 5,
@@ -433,7 +433,7 @@
    },
    "gp_as_of": "2026-10-17",
    "derived": false,
-   "written_at": "2026-10-19T15:00:07-05:00"
+   "written_at": "2026-10-19T15:15:06-05:00"
   }
  }
 }

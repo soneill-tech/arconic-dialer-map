@@ -826,14 +826,17 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     return DATA.contacts.filter((c) => inLoc(c, loc));
   }
 
+  let todayCallers = new Map();  // contact_id -> Set(rep text) of who actually dialed today (call.caller; old files: call.am)
+  function addCaller(id, who) { if (!id || !who) return; if (!todayCallers.has(id)) todayCallers.set(id, new Set()); todayCallers.get(id).add(String(who)); }
   function applyCalledFile(file) {
-    calledMap = new Map();
+    calledMap = new Map(); todayCallers = new Map();
     const fresh = !!file && file.date === todayCT();
     if (fresh) {
       (file.called_contact_ids || []).forEach((id) => calledMap.set(String(id), {}));
       (file.calls || []).forEach((call) => {
         const id = String(call.contact_id || "");
         if (!id) return;
+        addCaller(id, call.caller || call.am);
         const prev = calledMap.get(id);
         // keep the latest call per contact when times are comparable; else keep the last one listed
         if (!prev || !prev.time || String(call.time || "") >= String(prev.time || "")) calledMap.set(id, call);
@@ -1175,7 +1178,11 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
     if (mtdFile && mtdFile.month === month) Object.entries(mtdFile.entries || {}).forEach(([rep, ds]) => {
       const r = lbRepOf(rep); if (r) Object.entries(ds || {}).forEach(([day, ids]) => (ids || []).forEach((id) => add(r.key, day, String(id))));
     });
-    calledMap.forEach((v, id) => { const r = lbRepOf((v && v.am) || (byId.get(id) || {}).am || ""); if (r) add(r.key, today, id); });
+    // credit the rep who DIALED (caller), not the contact's AM; a contact dialed by two reps today scores for both
+    calledMap.forEach((v, id) => {
+      const who = todayCallers.has(id) ? [...todayCallers.get(id)] : [(v && (v.caller || v.am)) || (byId.get(id) || {}).am || ""];
+      who.forEach((w) => { const r = lbRepOf(w); if (r) add(r.key, today, id); });
+    });
     const streaks = {}; LBREPS.forEach((r) => { streaks[r.key] = streakOf(r.key, days[r.key], !!todayHas[r.key]); });
     el("lbSub").textContent = (lbMode === "today" ? "CALLS · TODAY" : "CALLS · MTD") + (wOn ? " · WEIGHTED" : "");
     const w = el("lbW"); if (w) { w.disabled = !outcomesOk(); w.classList.toggle("on", wOn); }
@@ -1672,6 +1679,7 @@ body[data-am="addie"] header{background:linear-gradient(90deg,rgba(109,40,217,.3
   function mergeLoggedCalls() {
     logged.forEach((call) => {
       const id = String(call.contact_id);
+      addCaller(id, call.am);
       const prev = calledMap.get(id);
       const prevT = prev && /\d{4}-\d{2}-\d{2}/.test(String(prev.time || "")) ? new Date(prev.time) : null;
       if (!prev || !prev.time || (prevT && new Date(call.timestamp) >= prevT) || prev.src === "log" && call.timestamp >= prev.time) {

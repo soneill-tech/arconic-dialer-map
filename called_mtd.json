@@ -15,12 +15,14 @@
    "2026-10-14": [
     "5552701",
     "10644151",
+    "21373851",
     "13966405892",
     "20283614591",
     "n:paul laslou"
    ],
    "2026-10-13": [
     "7274501",
+    "21373851",
     "29694451",
     "13966405892",
     "20283614591",
@@ -30,25 +32,18 @@
     "n:freight@coreysteel.com"
    ],
    "2026-10-12": [
-    "93901",
-    "1788951",
     "13966405892",
-    "20283614591",
     "n:fernanda hernandez"
    ],
    "2026-10-09": [
     "93901",
-    "1788951",
     "10644151",
-    "21397101",
     "13966405892",
-    "20283614591",
     "61834404632",
     "n:samantha gilkey"
    ],
    "2026-10-08": [
     "13966405892",
-    "61834404632",
     "n:randy moeller"
    ],
    "2026-10-07": [
@@ -74,9 +69,7 @@
     "13966405892"
    ],
    "2026-10-19": [
-    "20283614591",
-    "n:jerry fox",
-    "118321421948"
+    "n:jerry fox"
    ]
   },
   "Simran": {
@@ -84,13 +77,11 @@
     "203866478699"
    ],
    "2026-10-14": [
-    "21373851",
     "n:trent bell",
     "n:jessica grueb"
    ],
    "2026-10-13": [
     "17921301",
-    "21373851",
     "51563551",
     "20260733003",
     "n:john reed",
@@ -108,6 +99,9 @@
     "n:jennifer solomon clark"
    ],
    "2026-10-12": [
+    "93901",
+    "1788951",
+    "20283614591",
     "203866478699",
     "228516628092",
     "n:scott hall",
@@ -119,8 +113,11 @@
     "n:jennifer solomon clark"
    ],
    "2026-10-09": [
+    "1788951",
     "17921301",
+    "21397101",
     "48230102",
+    "20283614591",
     "203866478699",
     "n:brad white",
     "n:dino cayanan",
@@ -181,6 +178,7 @@
     "n:theresa massey"
    ],
    "2026-10-08": [
+    "61834404632",
     "n:hakan ozer",
     "n:david smith",
     "n:david caturla",
@@ -188,7 +186,9 @@
    ],
    "2026-10-19": [
     "17921301",
+    "20283614591",
     "n:ann askew",
+    "118321421948",
     "n:lance hagan",
     "n:andrea akenberger"
    ]
@@ -1425,11 +1425,11 @@
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
   "Addie": 408,
-  "Kahekili": 50,
+  "Kahekili": 43,
   "Mia": 321,
   "Nathan": 328,
   "Nick": 58,
-  "Simran": 88
+  "Simran": 95
  },
  "backfill": {
   "file": "calls-2026-10-19-1454-mtd-fold.csv",
@@ -1469,5 +1469,77 @@
     "map_matched_contact_days": 0
    }
   }
+ },
+ "attribution_fix": {
+  "at": "2026-10-19",
+  "note": "11 contact-days moved to the rep who dialed (was credited to the contact AM): 9 Kahekili->Simran, 2 Simran->Kahekili",
+  "moves": [
+   {
+    "from": "Kahekili",
+    "to": "Simran",
+    "day": "2026-10-08",
+    "id": "61834404632"
+   },
+   {
+    "from": "Kahekili",
+    "to": "Simran",
+    "day": "2026-10-09",
+    "id": "1788951"
+   },
+   {
+    "from": "Kahekili",
+    "to": "Simran",
+    "day": "2026-10-09",
+    "id": "20283614591"
+   },
+   {
+    "from": "Kahekili",
+    "to": "Simran",
+    "day": "2026-10-09",
+    "id": "21397101"
+   },
+   {
+    "from": "Kahekili",
+    "to": "Simran",
+    "day": "2026-10-12",
+    "id": "1788951"
+   },
+   {
+    "from": "Kahekili",
+    "to": "Simran",
+    "day": "2026-10-12",
+    "id": "20283614591"
+   },
+   {
+    "from": "Kahekili",
+    "to": "Simran",
+    "day": "2026-10-12",
+    "id": "93901"
+   },
+   {
+    "from": "Kahekili",
+    "to": "Simran",
+    "day": "2026-10-19",
+    "id": "118321421948"
+   },
+   {
+    "from": "Kahekili",
+    "to": "Simran",
+    "day": "2026-10-19",
+    "id": "20283614591"
+   },
+   {
+    "from": "Simran",
+    "to": "Kahekili",
+    "day": "2026-10-13",
+    "id": "21373851"
+   },
+   {
+    "from": "Simran",
+    "to": "Kahekili",
+    "day": "2026-10-14",
+    "id": "21373851"
+   }
+  ]
  }
 }
