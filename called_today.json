@@ -1,9 +1,11 @@
 {
   "date": "2026-10-19",
-  "updated_at": "2026-10-19T09:17:48-05:00",
-  "synced_at": "2026-10-19T09:17:48-05:00",
+  "updated_at": "2026-10-19T10:03:31-05:00",
+  "synced_at": "2026-10-19T10:03:31-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "17921301",
+    "49080201",
     "20283614591"
   ],
   "calls": [
@@ -20,6 +22,27 @@
       "am": "Kahekili",
       "time": "2026-10-19T08:44:00-05:00",
       "outcome": "Outbound - Connected"
+    },
+    {
+      "contact_id": "49080201",
+      "contact_name": "Timothy Waite",
+      "am": "Nick",
+      "time": "2026-10-19T09:09:00-05:00",
+      "outcome": "Outbound - Connected"
+    },
+    {
+      "contact_id": "17921301",
+      "contact_name": "Shannon Hafeez",
+      "am": "Simran",
+      "time": "2026-10-19T09:46:00-05:00",
+      "outcome": "Outbound - No answer"
+    },
+    {
+      "contact_id": "17921301",
+      "contact_name": "Shannon Hafeez",
+      "am": "Simran",
+      "time": "2026-10-19T09:50:00-05:00",
+      "outcome": "Outbound - No answer"
     }
   ]
 }
