@@ -1,12 +1,13 @@
 {
   "date": "2026-10-19",
-  "updated_at": "2026-10-19T10:03:31-05:00",
-  "synced_at": "2026-10-19T10:03:31-05:00",
+  "updated_at": "2026-10-19T11:19:36-05:00",
+  "synced_at": "2026-10-19T11:19:36-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "17921301",
     "49080201",
-    "20283614591"
+    "20283614591",
+    "215557507181"
   ],
   "calls": [
     {
@@ -43,6 +44,20 @@
       "am": "Simran",
       "time": "2026-10-19T09:50:00-05:00",
       "outcome": "Outbound - No answer"
+    },
+    {
+      "contact_id": "49080201",
+      "contact_name": "Timothy Waite",
+      "am": "Nick",
+      "time": "2026-10-19T11:07:00-05:00",
+      "outcome": "Outbound - No answer"
+    },
+    {
+      "contact_id": "215557507181",
+      "contact_name": "Liz Ekkel",
+      "am": "Mia",
+      "time": "2026-10-19T11:09:00-05:00",
+      "outcome": "Outbound - no outcome logged"
     }
   ]
 }

@@ -1032,16 +1032,17 @@
     "n:david chadwick"
    ],
    "2026-10-19": [
+    "215557507181",
     "n:cindy duet",
+    "n:alan lezama",
     "n:tim hoffman",
     "n:theresa hess",
     "n:ericia staton",
     "n:kevin stanger",
+    "n:valerie spicer",
     "n:carole bahns- daum",
-    "n:alan lezama",
-    "n:vinicio gonzalez de la llave",
     "n:christopher hernandez",
-    "n:valerie spicer"
+    "n:vinicio gonzalez de la llave"
    ]
   },
   "Nathan": {
@@ -1399,12 +1400,12 @@
    ]
   }
  },
- "updated_at": "2026-10-19T10:03:42-05:00",
+ "updated_at": "2026-10-19T11:19:36-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 403,
   "Kahekili": 48,
-  "Mia": 311,
+  "Mia": 312,
   "Nathan": 326,
   "Nick": 57,
   "Simran": 86
