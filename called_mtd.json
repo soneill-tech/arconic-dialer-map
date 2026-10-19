@@ -699,7 +699,10 @@
    ],
    "2026-10-19": [
     "n:ray tobia",
-    "n:scott hettinger"
+    "n:scott hettinger",
+    "n:daniel lee",
+    "n:kevin mcfadden",
+    "n:nora corona"
    ]
   },
   "Mia": {
@@ -1034,7 +1037,11 @@
     "n:theresa hess",
     "n:ericia staton",
     "n:kevin stanger",
-    "n:carole bahns- daum"
+    "n:carole bahns- daum",
+    "n:alan lezama",
+    "n:vinicio gonzalez de la llave",
+    "n:christopher hernandez",
+    "n:valerie spicer"
    ]
   },
   "Nathan": {
@@ -1386,17 +1393,19 @@
    ],
    "2026-10-19": [
     "n:scott bailey",
-    "n:clint woodman"
+    "n:clint woodman",
+    "n:anna disser",
+    "n:craig smith"
    ]
   }
  },
- "updated_at": "2026-10-19T10:03:31-05:00",
+ "updated_at": "2026-10-19T10:03:42-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 400,
+  "Addie": 403,
   "Kahekili": 48,
-  "Mia": 307,
-  "Nathan": 324,
+  "Mia": 311,
+  "Nathan": 326,
   "Nick": 57,
   "Simran": 86
  },
