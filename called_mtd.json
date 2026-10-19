@@ -1048,6 +1048,7 @@
     "n:kevin stanger",
     "n:josue serralta",
     "n:valerie spicer",
+    "n:courtney jabben",
     "n:elizabeth monares",
     "n:carole bahns- daum",
     "n:christopher hernandez",
@@ -1409,12 +1410,12 @@
    ]
   }
  },
- "updated_at": "2026-10-19T11:52:39-05:00",
+ "updated_at": "2026-10-19T12:52:01-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 406,
   "Kahekili": 49,
-  "Mia": 315,
+  "Mia": 316,
   "Nathan": 326,
   "Nick": 57,
   "Simran": 88
