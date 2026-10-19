@@ -1,10 +1,14 @@
 {
   "date": "2026-10-19",
-  "updated_at": "2026-10-19T15:15:06-05:00",
-  "synced_at": "2026-10-19T15:15:06-05:00",
+  "updated_at": "2026-10-19T17:04:32-05:00",
+  "synced_at": "2026-10-19T17:04:32-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "5223751",
     "17921301",
+    "18141801",
+    "25969201",
+    "30103601",
     "48850503",
     "49080201",
     "20283614591",
@@ -20,7 +24,7 @@
       "am": "Kahekili",
       "caller": "Simran",
       "time": "2026-10-19T08:10:00-05:00",
-      "outcome": "Outbound - no outcome logged"
+      "outcome": "--"
     },
     {
       "contact_id": "20283614591",
@@ -28,15 +32,7 @@
       "am": "Kahekili",
       "caller": "Simran",
       "time": "2026-10-19T08:44:00-05:00",
-      "outcome": "Outbound - Connected"
-    },
-    {
-      "contact_id": "49080201",
-      "contact_name": "Timothy Waite",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-19T09:09:00-05:00",
-      "outcome": "Outbound - Connected"
+      "outcome": "Connected"
     },
     {
       "contact_id": "17921301",
@@ -44,7 +40,7 @@
       "am": "Simran",
       "caller": "Simran",
       "time": "2026-10-19T09:46:00-05:00",
-      "outcome": "Outbound - No answer"
+      "outcome": "No answer"
     },
     {
       "contact_id": "17921301",
@@ -52,7 +48,7 @@
       "am": "Simran",
       "caller": "Simran",
       "time": "2026-10-19T09:50:00-05:00",
-      "outcome": "Outbound - No answer"
+      "outcome": "No answer"
     },
     {
       "contact_id": "49080201",
@@ -60,7 +56,7 @@
       "am": "Nick",
       "caller": "Nick",
       "time": "2026-10-19T11:07:00-05:00",
-      "outcome": "Outbound - No answer"
+      "outcome": "No answer"
     },
     {
       "contact_id": "215557507181",
@@ -68,7 +64,7 @@
       "am": "Mia",
       "caller": "Mia",
       "time": "2026-10-19T11:09:00-05:00",
-      "outcome": "Outbound - no outcome logged"
+      "outcome": "--"
     },
     {
       "contact_id": "48850503",
@@ -76,7 +72,7 @@
       "am": "Addie",
       "caller": "Addie",
       "time": "2026-10-19T11:38:00-05:00",
-      "outcome": "Outbound - No answer"
+      "outcome": "No answer"
     },
     {
       "contact_id": "27504831813",
@@ -84,7 +80,7 @@
       "am": "Addie",
       "caller": "Addie",
       "time": "2026-10-19T11:40:00-05:00",
-      "outcome": "Outbound - No answer"
+      "outcome": "No answer"
     },
     {
       "contact_id": "148200167195",
@@ -92,7 +88,7 @@
       "am": "Nick",
       "caller": "Nick",
       "time": "2026-10-19T13:01:00-05:00",
-      "outcome": "Inbound - Connected"
+      "outcome": "Connected"
     },
     {
       "contact_id": "118321421948",
@@ -100,7 +96,39 @@
       "am": "Kahekili",
       "caller": "Simran",
       "time": "2026-10-19T13:59:00-05:00",
-      "outcome": "Outbound - No answer"
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "5223751",
+      "contact_name": "Kimberly Meyer",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-19T15:33:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "18141801",
+      "contact_name": "Timothy Stroud",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-19T15:38:00-05:00",
+      "outcome": "Connected"
+    },
+    {
+      "contact_id": "25969201",
+      "contact_name": "Avery Triesch",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-19T15:41:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "30103601",
+      "contact_name": "Melissa Houle",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-19T15:41:00-05:00",
+      "outcome": "No answer"
     }
   ]
 }

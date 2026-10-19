@@ -273,6 +273,10 @@
     "n:whitney mitchell"
    ],
    "2026-10-19": [
+    "5223751",
+    "18141801",
+    "25969201",
+    "30103601",
     "49080201",
     "148200167195"
    ]
@@ -1421,14 +1425,14 @@
    ]
   }
  },
- "updated_at": "2026-10-19T15:00:07-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-19T17:04:32-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 408,
   "Kahekili": 43,
   "Mia": 321,
   "Nathan": 328,
-  "Nick": 58,
+  "Nick": 62,
   "Simran": 95
  },
  "backfill": {
