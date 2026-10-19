@@ -1042,14 +1042,18 @@
     "n:david chadwick"
    ],
    "2026-10-19": [
+    "n:hao bui",
     "215557507181",
     "n:cindy duet",
     "n:alan lezama",
     "n:tim hoffman",
     "n:gavin meehan",
+    "n:mike schomer",
     "n:theresa hess",
     "n:ericia staton",
     "n:kevin stanger",
+    "n:kevin taunton",
+    "n:ashlee calkins",
     "n:josue serralta",
     "n:valerie spicer",
     "n:courtney jabben",
@@ -1417,42 +1421,42 @@
    ]
   }
  },
- "updated_at": "2026-10-19T14:59:43-05:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-10-19T15:00:07-05:00",
+ "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
   "Addie": 408,
   "Kahekili": 50,
-  "Mia": 317,
+  "Mia": 321,
   "Nathan": 328,
   "Nick": 58,
   "Simran": 88
  },
  "backfill": {
-  "file": "calls-2026-10-19-1352-mtd.csv",
-  "rows": 103,
+  "file": "calls-2026-10-19-1454-mtd-fold.csv",
+  "rows": 124,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-19T13:57:10-05:00",
+  "at": "2026-10-19T15:00:07-05:00",
   "per_rep": {
-   "Mia": {
-    "raw_calls": 27,
-    "distinct_contact_days": 16,
-    "map_matched_contact_days": 16
-   },
    "Nathan": {
-    "raw_calls": 35,
+    "raw_calls": 44,
     "distinct_contact_days": 6,
     "map_matched_contact_days": 6
    },
    "Addie": {
-    "raw_calls": 25,
+    "raw_calls": 32,
     "distinct_contact_days": 10,
     "map_matched_contact_days": 10
    },
+   "Mia": {
+    "raw_calls": 33,
+    "distinct_contact_days": 20,
+    "map_matched_contact_days": 20
+   },
    "Simran": {
-    "raw_calls": 11,
-    "distinct_contact_days": 5,
-    "map_matched_contact_days": 5
+    "raw_calls": 10,
+    "distinct_contact_days": 4,
+    "map_matched_contact_days": 4
    },
    "Nick": {
     "raw_calls": 3,
