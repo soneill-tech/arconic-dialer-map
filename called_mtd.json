@@ -74,7 +74,8 @@
     "13966405892"
    ],
    "2026-10-19": [
-    "20283614591"
+    "20283614591",
+    "n:jerry fox"
    ]
   },
   "Simran": {
@@ -186,6 +187,7 @@
    ],
    "2026-10-19": [
     "17921301",
+    "n:lance hagan",
     "n:andrea akenberger"
    ]
   },
@@ -699,10 +701,11 @@
    ],
    "2026-10-19": [
     "n:ray tobia",
-    "n:scott hettinger",
     "n:daniel lee",
+    "n:nora corona",
     "n:kevin mcfadden",
-    "n:nora corona"
+    "n:shammah flaman",
+    "n:scott hettinger"
    ]
   },
   "Mia": {
@@ -1039,7 +1042,9 @@
     "n:theresa hess",
     "n:ericia staton",
     "n:kevin stanger",
+    "n:josue serralta",
     "n:valerie spicer",
+    "n:elizabeth monares",
     "n:carole bahns- daum",
     "n:christopher hernandez",
     "n:vinicio gonzalez de la llave"
@@ -1393,22 +1398,22 @@
     "n:marcel broemlage"
    ],
    "2026-10-19": [
-    "n:scott bailey",
-    "n:clint woodman",
     "n:anna disser",
-    "n:craig smith"
+    "n:craig smith",
+    "n:scott bailey",
+    "n:clint woodman"
    ]
   }
  },
- "updated_at": "2026-10-19T11:19:36-05:00",
+ "updated_at": "2026-10-19T11:20:08-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 403,
-  "Kahekili": 48,
-  "Mia": 312,
+  "Addie": 404,
+  "Kahekili": 49,
+  "Mia": 314,
   "Nathan": 326,
   "Nick": 57,
-  "Simran": 86
+  "Simran": 87
  },
  "backfill": {
   "file": "hs_calls_nathan_oct_2026.csv",
