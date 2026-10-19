@@ -183,6 +183,10 @@
     "n:david smith",
     "n:david caturla",
     "n:austin wickliffe"
+   ],
+   "2026-10-19": [
+    "n:sarah schupp",
+    "n:andrea akenberger"
    ]
   },
   "Nick": {
@@ -689,6 +693,10 @@
     "n:joseph oliveri",
     "n:scottie spurlin",
     "n:kristin goehring"
+   ],
+   "2026-10-19": [
+    "n:ray tobia",
+    "n:scott hettinger"
    ]
   },
   "Mia": {
@@ -1016,6 +1024,14 @@
     "n:braden norris",
     "n:jack gardiner",
     "n:david chadwick"
+   ],
+   "2026-10-19": [
+    "n:cindy duet",
+    "n:tim hoffman",
+    "n:theresa hess",
+    "n:ericia staton",
+    "n:kevin stanger",
+    "n:carole bahns- daum"
    ]
   },
   "Nathan": {
@@ -1364,18 +1380,22 @@
     "n:courtney bowden",
     "n:kara northridge",
     "n:marcel broemlage"
+   ],
+   "2026-10-19": [
+    "n:scott bailey",
+    "n:clint woodman"
    ]
   }
  },
- "updated_at": "2026-10-19T09:16:51-05:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-10-19T09:17:13-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue + live HubSpot scrape n:<name> keys (update_called_today.py)",
  "counts": {
-  "Addie": 398,
+  "Addie": 400,
   "Kahekili": 48,
-  "Mia": 301,
-  "Nathan": 322,
+  "Mia": 307,
+  "Nathan": 324,
   "Nick": 56,
-  "Simran": 84
+  "Simran": 86
  },
  "backfill": {
   "file": "hs_calls_nathan_oct_2026.csv",
