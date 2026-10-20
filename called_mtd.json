@@ -1475,6 +1475,7 @@
     "n:ariyanna freeman"
    ],
    "2026-10-20": [
+    "n:doug",
     "n:jane muyingo",
     "n:jesse harris",
     "n:scott bailey",
@@ -1483,52 +1484,52 @@
    ]
   }
  },
- "updated_at": "2026-10-20T12:57:17-05:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-10-20T13:56:36-05:00",
+ "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
   "Addie": 424,
   "Kahekili": 45,
   "Mia": 336,
-  "Nathan": 334,
+  "Nathan": 335,
   "Nick": 66,
   "Simran": 98
  },
  "backfill": {
-  "file": "calls-2026-10-20-1150-mtd.csv",
-  "rows": 67,
+  "file": "calls-2026-10-20-1349-mtd.csv",
+  "rows": 90,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-20T11:57:12-05:00",
+  "at": "2026-10-20T13:56:36-05:00",
   "per_rep": {
-   "Nathan": {
-    "raw_calls": 12,
-    "distinct_contact_days": 5,
-    "map_matched_contact_days": 5
-   },
-   "Nick": {
-    "raw_calls": 6,
-    "distinct_contact_days": 2,
-    "map_matched_contact_days": 2
-   },
    "Addie": {
-    "raw_calls": 28,
+    "raw_calls": 32,
     "distinct_contact_days": 11,
     "map_matched_contact_days": 11
    },
-   "Simran": {
-    "raw_calls": 5,
-    "distinct_contact_days": 1,
-    "map_matched_contact_days": 1
+   "Nathan": {
+    "raw_calls": 25,
+    "distinct_contact_days": 6,
+    "map_matched_contact_days": 6
    },
    "Mia": {
-    "raw_calls": 14,
+    "raw_calls": 17,
     "distinct_contact_days": 8,
     "map_matched_contact_days": 8
    },
    "Kahekili": {
-    "raw_calls": 2,
+    "raw_calls": 3,
     "distinct_contact_days": 0,
     "map_matched_contact_days": 0
+   },
+   "Nick": {
+    "raw_calls": 7,
+    "distinct_contact_days": 2,
+    "map_matched_contact_days": 2
+   },
+   "Simran": {
+    "raw_calls": 6,
+    "distinct_contact_days": 1,
+    "map_matched_contact_days": 1
    }
   }
  },
