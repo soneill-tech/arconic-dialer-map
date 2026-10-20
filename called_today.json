@@ -1,134 +1,19 @@
 {
-  "date": "2026-10-19",
-  "updated_at": "2026-10-19T17:04:32-05:00",
-  "synced_at": "2026-10-19T17:04:32-05:00",
+  "date": "2026-10-20",
+  "updated_at": "2026-10-20T10:02:51-05:00",
+  "synced_at": "2026-10-20T10:02:51-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "5223751",
-    "17921301",
-    "18141801",
-    "25969201",
-    "30103601",
-    "48850503",
-    "49080201",
-    "20283614591",
-    "27504831813",
-    "118321421948",
-    "148200167195",
-    "215557507181"
+    "13966405892"
   ],
   "calls": [
     {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
       "am": "Kahekili",
-      "caller": "Simran",
-      "time": "2026-10-19T08:10:00-05:00",
+      "caller": "Kahekili",
+      "time": "2026-10-20T07:11:00-05:00",
       "outcome": "--"
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "caller": "Simran",
-      "time": "2026-10-19T08:44:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "17921301",
-      "contact_name": "Shannon Hafeez",
-      "am": "Simran",
-      "caller": "Simran",
-      "time": "2026-10-19T09:46:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "17921301",
-      "contact_name": "Shannon Hafeez",
-      "am": "Simran",
-      "caller": "Simran",
-      "time": "2026-10-19T09:50:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "49080201",
-      "contact_name": "Timothy Waite",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-19T11:07:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "215557507181",
-      "contact_name": "Liz Ekkel",
-      "am": "Mia",
-      "caller": "Mia",
-      "time": "2026-10-19T11:09:00-05:00",
-      "outcome": "--"
-    },
-    {
-      "contact_id": "48850503",
-      "contact_name": "Rosa Velasquez",
-      "am": "Addie",
-      "caller": "Addie",
-      "time": "2026-10-19T11:38:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "27504831813",
-      "contact_name": "Cecilia Romo",
-      "am": "Addie",
-      "caller": "Addie",
-      "time": "2026-10-19T11:40:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "148200167195",
-      "contact_name": "Shelly Hill",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-19T13:01:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "118321421948",
-      "contact_name": "Hayden Moore",
-      "am": "Kahekili",
-      "caller": "Simran",
-      "time": "2026-10-19T13:59:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "5223751",
-      "contact_name": "Kimberly Meyer",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-19T15:33:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "18141801",
-      "contact_name": "Timothy Stroud",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-19T15:38:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "25969201",
-      "contact_name": "Avery Triesch",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-19T15:41:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "30103601",
-      "contact_name": "Melissa Houle",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-19T15:41:00-05:00",
-      "outcome": "No answer"
     }
   ]
 }
