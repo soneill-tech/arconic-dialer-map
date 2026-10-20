@@ -288,6 +288,9 @@
     "49080201",
     "148200167195",
     "n:melissa.houle@novelis.adityabirla.com"
+   ],
+   "2026-10-20": [
+    "5223751"
    ]
   },
   "Addie": {
@@ -1470,14 +1473,14 @@
    ]
   }
  },
- "updated_at": "2026-10-20T10:53:53-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-20T11:56:43-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 422,
   "Kahekili": 44,
   "Mia": 335,
   "Nathan": 330,
-  "Nick": 63,
+  "Nick": 64,
   "Simran": 98
  },
  "backfill": {

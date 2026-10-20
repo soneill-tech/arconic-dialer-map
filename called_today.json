@@ -1,9 +1,10 @@
 {
   "date": "2026-10-20",
-  "updated_at": "2026-10-20T10:02:51-05:00",
-  "synced_at": "2026-10-20T10:02:51-05:00",
+  "updated_at": "2026-10-20T11:56:43-05:00",
+  "synced_at": "2026-10-20T11:56:43-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "5223751",
     "13966405892"
   ],
   "calls": [
@@ -14,6 +15,14 @@
       "caller": "Kahekili",
       "time": "2026-10-20T07:11:00-05:00",
       "outcome": "--"
+    },
+    {
+      "contact_id": "5223751",
+      "contact_name": "Kimberly Meyer",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-20T11:52:00-05:00",
+      "outcome": "No answer"
     }
   ]
 }
