@@ -1,12 +1,17 @@
 {
   "date": "2026-10-20",
-  "updated_at": "2026-10-20T12:57:17-05:00",
-  "synced_at": "2026-10-20T12:57:17-05:00",
+  "updated_at": "2026-10-20T14:54:34-05:00",
+  "synced_at": "2026-10-20T14:54:34-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "3650076",
     "5223751",
     "21373851",
-    "13966405892"
+    "49080201",
+    "13966405892",
+    "32117326350",
+    "240124464742",
+    "250984707146"
   ],
   "calls": [
     {
@@ -40,6 +45,46 @@
       "caller": "Kahekili",
       "time": "2026-10-20T12:32:00-05:00",
       "outcome": "--"
+    },
+    {
+      "contact_id": "3650076",
+      "contact_name": "Jerry Bowen",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-20T14:11:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "240124464742",
+      "contact_name": "Matt Ross",
+      "am": "Mia",
+      "caller": "Mia",
+      "time": "2026-10-20T14:15:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "250984707146",
+      "contact_name": "Kim Dudley",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-20T14:20:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "32117326350",
+      "contact_name": "Margo Fornes",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-20T14:21:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "49080201",
+      "contact_name": "Timothy Waite",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-20T14:47:00-05:00",
+      "outcome": "Connected"
     }
   ]
 }

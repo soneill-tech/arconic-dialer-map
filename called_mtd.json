@@ -72,6 +72,7 @@
     "n:jerry fox"
    ],
    "2026-10-20": [
+    "3650076",
     "21373851",
     "13966405892"
    ]
@@ -292,6 +293,9 @@
    ],
    "2026-10-20": [
     "5223751",
+    "49080201",
+    "32117326350",
+    "250984707146",
     "n:kevin kooi",
     "n:cisco banuelos"
    ]
@@ -1109,6 +1113,7 @@
    ],
    "2026-10-20": [
     "n:hao bui",
+    "240124464742",
     "n:diana smith",
     "n:yulee clerk",
     "n:anthony munoz",
@@ -1484,14 +1489,14 @@
    ]
   }
  },
- "updated_at": "2026-10-20T13:56:36-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-20T14:54:34-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 424,
-  "Kahekili": 45,
-  "Mia": 336,
+  "Kahekili": 46,
+  "Mia": 337,
   "Nathan": 335,
-  "Nick": 66,
+  "Nick": 69,
   "Simran": 98
  },
  "backfill": {
