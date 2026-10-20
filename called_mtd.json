@@ -72,6 +72,7 @@
     "n:jerry fox"
    ],
    "2026-10-20": [
+    "21373851",
     "13966405892"
    ]
   },
@@ -1482,11 +1483,11 @@
    ]
   }
  },
- "updated_at": "2026-10-20T11:57:12-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-20T12:57:17-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 424,
-  "Kahekili": 44,
+  "Kahekili": 45,
   "Mia": 336,
   "Nathan": 334,
   "Nick": 66,
