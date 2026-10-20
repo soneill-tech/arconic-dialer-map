@@ -1118,8 +1118,10 @@
     "n:vinicio gonzalez de la llave"
    ],
    "2026-10-20": [
+    "1949401",
     "n:hao bui",
     "240124464742",
+    "246050902365",
     "n:randy gans",
     "n:diana smith",
     "n:yulee clerk",
@@ -1500,12 +1502,12 @@
    ]
   }
  },
- "updated_at": "2026-10-20T14:54:46-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-20T15:57:22-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 430,
   "Kahekili": 46,
-  "Mia": 338,
+  "Mia": 340,
   "Nathan": 339,
   "Nick": 69,
   "Simran": 98

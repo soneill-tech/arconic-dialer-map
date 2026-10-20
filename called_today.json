@@ -1,9 +1,10 @@
 {
   "date": "2026-10-20",
-  "updated_at": "2026-10-20T14:54:34-05:00",
-  "synced_at": "2026-10-20T14:54:34-05:00",
+  "updated_at": "2026-10-20T15:57:22-05:00",
+  "synced_at": "2026-10-20T15:57:22-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "1949401",
     "3650076",
     "5223751",
     "21373851",
@@ -11,6 +12,7 @@
     "13966405892",
     "32117326350",
     "240124464742",
+    "246050902365",
     "250984707146"
   ],
   "calls": [
@@ -85,6 +87,30 @@
       "caller": "Nick",
       "time": "2026-10-20T14:47:00-05:00",
       "outcome": "Connected"
+    },
+    {
+      "contact_id": "240124464742",
+      "contact_name": "Matt Ross",
+      "am": "Mia",
+      "caller": "Mia",
+      "time": "2026-10-20T14:59:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "246050902365",
+      "contact_name": "Christopher Lantz",
+      "am": "Mia",
+      "caller": "Mia",
+      "time": "2026-10-20T15:16:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "1949401",
+      "contact_name": "Kyle Barnes",
+      "am": "Mia",
+      "caller": "Mia",
+      "time": "2026-10-20T15:18:00-05:00",
+      "outcome": "No answer"
     }
   ]
 }
