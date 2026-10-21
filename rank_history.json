@@ -439,7 +439,7 @@
    "calls": {
     "Kili": {
      "rank": 6,
-     "score": 46
+     "score": 47
     },
     "Simran": {
      "rank": 4,
@@ -447,19 +447,19 @@
     },
     "Nick": {
      "rank": 5,
-     "score": 69
+     "score": 70
     },
     "Addie": {
      "rank": 1,
-     "score": 430
+     "score": 434
     },
     "Mia": {
-     "rank": 2,
+     "rank": 3,
      "score": 340
     },
     "Nathan": {
-     "rank": 3,
-     "score": 339
+     "rank": 2,
+     "score": 342
     }
    },
    "gp": {
@@ -490,7 +490,64 @@
    },
    "gp_as_of": "2026-10-17",
    "derived": false,
-   "written_at": "2026-10-20T15:57:22-05:00"
+   "written_at": "2026-10-20T17:59:29-05:00"
+  },
+  "2026-10-21": {
+   "calls": {
+    "Kili": {
+     "rank": 6,
+     "score": 47
+    },
+    "Simran": {
+     "rank": 4,
+     "score": 98
+    },
+    "Nick": {
+     "rank": 5,
+     "score": 70
+    },
+    "Addie": {
+     "rank": 1,
+     "score": 434
+    },
+    "Mia": {
+     "rank": 3,
+     "score": 340
+    },
+    "Nathan": {
+     "rank": 2,
+     "score": 342
+    }
+   },
+   "gp": {
+    "Kili": {
+     "rank": 1,
+     "pct": 54.3
+    },
+    "Nick": {
+     "rank": 3,
+     "pct": 23.4
+    },
+    "Mia": {
+     "rank": 4,
+     "pct": 23.3
+    },
+    "Simran": {
+     "rank": 2,
+     "pct": 25.9
+    },
+    "Addie": {
+     "rank": 5,
+     "pct": 0.0
+    },
+    "Nathan": {
+     "rank": 5,
+     "pct": 0.0
+    }
+   },
+   "gp_as_of": "2026-10-17",
+   "derived": false,
+   "written_at": "2026-10-21T08:54:25-05:00"
   }
  }
 }
