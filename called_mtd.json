@@ -204,6 +204,7 @@
     "n:ann askew"
    ],
    "2026-10-21": [
+    "n:leslie glabb",
     "n:scott dupuis"
    ]
   },
@@ -773,6 +774,11 @@
     "n:richard kimball",
     "n:caroline durelle",
     "n:cassandra zavodny"
+   ],
+   "2026-10-21": [
+    "n:lisa hoggard",
+    "n:melissa dolman",
+    "n:joselyn cabrera"
    ]
   },
   "Mia": {
@@ -1146,6 +1152,7 @@
    ],
    "2026-10-21": [
     "n:tom rowan",
+    "n:randy gans",
     "n:fred llamas",
     "n:keith davis",
     "n:woods candi",
@@ -1533,20 +1540,23 @@
    ],
    "2026-10-21": [
     "n:asif khan",
+    "n:lori dyok",
+    "n:juan perez",
+    "n:stan tamme",
     "n:paloma carrillo",
     "n:drew hendrickson"
    ]
   }
  },
- "updated_at": "2026-10-21T11:52:17-05:00",
+ "updated_at": "2026-10-21T14:01:06-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 434,
+  "Addie": 437,
   "Kahekili": 47,
-  "Mia": 353,
-  "Nathan": 345,
+  "Mia": 354,
+  "Nathan": 348,
   "Nick": 72,
-  "Simran": 99
+  "Simran": 100
  },
  "backfill": {
   "file": "calls-2026-10-21-1151-mtd.csv",
