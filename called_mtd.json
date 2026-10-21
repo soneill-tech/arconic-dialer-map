@@ -76,6 +76,9 @@
     "21373851",
     "13966405892",
     "n:paul laslou"
+   ],
+   "2026-10-21": [
+    "118321421948"
    ]
   },
   "Simran": {
@@ -1563,11 +1566,11 @@
    ]
   }
  },
- "updated_at": "2026-10-21T14:58:27-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-21T15:54:29-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 441,
-  "Kahekili": 47,
+  "Kahekili": 48,
   "Mia": 361,
   "Nathan": 351,
   "Nick": 72,
