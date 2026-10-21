@@ -1141,7 +1141,18 @@
     "n:ctsyulee@worldwideterminals.com"
    ],
    "2026-10-21": [
+    "n:tom rowan",
+    "n:fred llamas",
+    "n:keith davis",
+    "n:woods candi",
+    "n:eric garlock",
+    "n:becky howarth",
+    "n:steve pittman",
+    "n:gerardo garcia",
     "n:josue serralta",
+    "n:justin boswell",
+    "n:patrick rhodes",
+    "n:alina chebarova",
     "n:vinicio gonzalez de la llave"
    ]
   },
@@ -1517,17 +1528,19 @@
     "n:mike scaparrotti"
    ],
    "2026-10-21": [
-    "n:asif khan"
+    "n:asif khan",
+    "n:paloma carrillo",
+    "n:drew hendrickson"
    ]
   }
  },
- "updated_at": "2026-10-21T09:57:27-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-21T10:52:47-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py) + live HubSpot n:name folds",
  "counts": {
   "Addie": 434,
   "Kahekili": 47,
-  "Mia": 342,
-  "Nathan": 343,
+  "Mia": 353,
+  "Nathan": 345,
   "Nick": 70,
   "Simran": 99
  },
