@@ -322,9 +322,11 @@
    ],
    "2026-10-22": [
     "115901",
+    "8922351",
     "25339701",
     "29022151",
     "31079551",
+    "32678951",
     "36773551",
     "n:james waterman"
    ]
@@ -1628,14 +1630,14 @@
    ]
   }
  },
- "updated_at": "2026-10-22T15:59:44-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-22T16:57:08-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 466,
   "Kahekili": 48,
   "Mia": 364,
   "Nathan": 364,
-  "Nick": 78,
+  "Nick": 80,
   "Simran": 106
  },
  "backfill": {
