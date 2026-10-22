@@ -557,23 +557,23 @@
     },
     "Simran": {
      "rank": 4,
-     "score": 105
+     "score": 106
     },
     "Nick": {
      "rank": 5,
-     "score": 74
+     "score": 76
     },
     "Addie": {
      "rank": 1,
-     "score": 452
+     "score": 455
     },
     "Mia": {
      "rank": 2,
      "score": 363
     },
     "Nathan": {
-     "rank": 3,
-     "score": 360
+     "rank": 2,
+     "score": 363
     }
    },
    "gp": {
@@ -604,7 +604,7 @@
    },
    "gp_as_of": "2026-10-21",
    "derived": false,
-   "written_at": "2026-10-22T13:01:05-05:00"
+   "written_at": "2026-10-22T14:58:05-05:00"
   }
  }
 }

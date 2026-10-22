@@ -321,6 +321,7 @@
     "n:sean geling"
    ],
    "2026-10-22": [
+    "29022151",
     "31079551",
     "36773551",
     "n:james waterman"
@@ -1612,14 +1613,14 @@
    ]
   }
  },
- "updated_at": "2026-10-22T13:53:04-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-22T14:58:05-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 455,
   "Kahekili": 48,
   "Mia": 363,
   "Nathan": 363,
-  "Nick": 75,
+  "Nick": 76,
   "Simran": 106
  },
  "backfill": {
