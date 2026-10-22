@@ -793,12 +793,14 @@
     "n:chris tritschler"
    ],
    "2026-10-22": [
-    "n:demetrius cole",
-    "n:antonio bohannon",
+    "n:dane byrd",
     "n:taylor lu",
+    "n:daniel lee",
     "n:melissa mirt",
-    "n:elizabeth bobkovich",
-    "n:allie bobkovich"
+    "n:demetrius cole",
+    "n:allie bobkovich",
+    "n:antonio bohannon",
+    "n:elizabeth bobkovich"
    ]
   },
   "Mia": {
@@ -1583,50 +1585,52 @@
     "n:jonathan davalos"
    ],
    "2026-10-22": [
+    "n:erin blake",
     "n:susan king",
+    "n:moe zerguit",
     "n:danny fasciano"
    ]
   }
  },
- "updated_at": "2026-10-22T09:55:33-05:00",
+ "updated_at": "2026-10-22T10:52:04-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 449,
+  "Addie": 451,
   "Kahekili": 48,
   "Mia": 362,
-  "Nathan": 358,
+  "Nathan": 360,
   "Nick": 72,
   "Simran": 103
  },
  "backfill": {
-  "file": "new-2026-10-22-0849.csv",
-  "rows": 9,
+  "file": "mtd-2026-10-22-1051.csv",
+  "rows": 54,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-22T08:54:54-05:00",
+  "at": "2026-10-22T10:52:04-05:00",
   "per_rep": {
-   "Nathan": {
-    "raw_calls": 5,
-    "distinct_contact_days": 2,
-    "map_matched_contact_days": 2
-   },
    "Addie": {
-    "raw_calls": 4,
+    "raw_calls": 23,
+    "distinct_contact_days": 8,
+    "map_matched_contact_days": 8
+   },
+   "Nathan": {
+    "raw_calls": 28,
+    "distinct_contact_days": 4,
+    "map_matched_contact_days": 4
+   },
+   "Simran": {
+    "raw_calls": 1,
     "distinct_contact_days": 0,
     "map_matched_contact_days": 0
    },
    "Mia": {
-    "raw_calls": 0,
-    "distinct_contact_days": 0,
-    "map_matched_contact_days": 0
-   },
-   "Simran": {
-    "raw_calls": 0,
+    "raw_calls": 1,
     "distinct_contact_days": 0,
     "map_matched_contact_days": 0
    },
    "Kahekili": {
-    "raw_calls": 0,
+    "raw_calls": 1,
     "distinct_contact_days": 0,
     "map_matched_contact_days": 0
    },
