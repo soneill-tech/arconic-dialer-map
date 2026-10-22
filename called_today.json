@@ -1,19 +1,8 @@
 {
-  "date": "2026-10-21",
-  "updated_at": "2026-10-21T15:54:29-05:00",
-  "synced_at": "2026-10-21T15:54:29-05:00",
+  "date": "2026-10-22",
+  "updated_at": "2026-10-22T08:54:35-05:00",
+  "synced_at": "2026-10-22T08:54:35-05:00",
   "source": "HubSpot calls (browser sync)",
-  "called_contact_ids": [
-    "118321421948"
-  ],
-  "calls": [
-    {
-      "contact_id": "118321421948",
-      "contact_name": "Hayden Moore",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-21T15:15:00-05:00",
-      "outcome": "--"
-    }
-  ]
+  "called_contact_ids": [],
+  "calls": []
 }
