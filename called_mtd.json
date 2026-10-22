@@ -791,6 +791,14 @@
     "n:barry navellier",
     "n:joselyn cabrera",
     "n:chris tritschler"
+   ],
+   "2026-10-22": [
+    "n:demetrius cole",
+    "n:antonio bohannon",
+    "n:taylor lu",
+    "n:melissa mirt",
+    "n:elizabeth bobkovich",
+    "n:allie bobkovich"
    ]
   },
   "Mia": {
@@ -1580,10 +1588,10 @@
    ]
   }
  },
- "updated_at": "2026-10-22T08:54:54-05:00",
+ "updated_at": "2026-10-22T09:55:33-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 443,
+  "Addie": 449,
   "Kahekili": 48,
   "Mia": 362,
   "Nathan": 358,
