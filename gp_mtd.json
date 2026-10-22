@@ -1,11 +1,11 @@
 {
  "month": "2026-10",
  "as_of": "2026-10-21",
- "source": "TPRO Terminal Activity Bill To Summary, terminal 129, pickup 10/1-10/31 (export-tar-20261021214406.csv, pulled 10/21 8:44 PM CT) x TPRO-vs-HubSpot ownership sheet",
+ "source": "TPRO Terminal Activity Bill To Summary, terminal 129, pickup 10/1-10/31 (export-tar-20261021214406.csv, pulled 10/21 8:44 PM CT) x TPRO-vs-HubSpot ownership sheet + gp_owner_overrides.csv",
  "loads": 1009,
  "total_gp": 325439.96,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
- "generated_at": "2026-10-21T21:28:30-05:00",
+ "generated_at": "2026-10-21T21:31:04-05:00",
  "reps": [
   {
    "rep": "Kili",
@@ -45,13 +45,18 @@
   },
   {
    "rep": "Nick",
-   "gp": 26059.27,
-   "gp_verified": 24159.79,
+   "gp": 88773.84,
+   "gp_verified": 86874.36,
    "gp_unverified": 1899.48,
    "customers": [
     {
      "customer": "3M c/o Data2Logistics - 3MCP01 - CHI",
      "gp": 63.96,
+     "match": "verified"
+    },
+    {
+     "customer": "Aleris International",
+     "gp": 16798.81,
      "match": "verified"
     },
     {
@@ -78,6 +83,11 @@
      "customer": "MJ Kellner",
      "gp": -40.52,
      "match": "possible match - unverified"
+    },
+    {
+     "customer": "MSC",
+     "gp": 45915.76,
+     "match": "verified"
     },
     {
      "customer": "Novelis Corporation",
@@ -164,15 +174,10 @@
   },
   {
    "rep": "Unassigned",
-   "gp": 69082.16,
-   "gp_verified": 69082.16,
+   "gp": 6367.59,
+   "gp_verified": 6367.59,
    "gp_unverified": 0.0,
    "customers": [
-    {
-     "customer": "Aleris International",
-     "gp": 16798.81,
-     "match": "unmatched"
-    },
     {
      "customer": "BRT Extrustions",
      "gp": -255.0,
@@ -186,11 +191,6 @@
     {
      "customer": "Manufacturing & Assembly International",
      "gp": 74.3,
-     "match": "unmatched"
-    },
-    {
-     "customer": "MSC",
-     "gp": 45915.76,
      "match": "unmatched"
     },
     {

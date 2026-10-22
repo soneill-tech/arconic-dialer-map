@@ -23,6 +23,11 @@ def main():
     ap.add_argument("--source", default="TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet")
     a = ap.parse_args()
     own = {r["TPRO Customer"].strip(): r for r in csv.DictReader(open(a.owners, encoding="utf-8"))}
+    # Repo-tracked overrides (exact TPRO customer name) win over the ownership sheet, so rebuilds keep confirmed owners.
+    ov = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gp_owner_overrides.csv")
+    if os.path.exists(ov):
+        for r in csv.DictReader(open(ov, encoding="utf-8")):
+            own[r["TPRO Customer"].strip()] = {**own.get(r["TPRO Customer"].strip(), {}), **r}
     gp = {k: {"gp": 0.0, "gp_verified": 0.0, "gp_unverified": 0.0, "customers": []} for k in list(REP.values()) + ["Unassigned"]}
     loads = 0; total = 0.0
     for r in csv.DictReader(open(a.export, encoding="utf-8-sig")):
