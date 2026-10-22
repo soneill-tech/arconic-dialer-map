@@ -1573,55 +1573,59 @@
     "n:ariyanna freeman",
     "n:drew hendrickson",
     "n:jonathan davalos"
+   ],
+   "2026-10-22": [
+    "n:susan king",
+    "n:danny fasciano"
    ]
   }
  },
- "updated_at": "2026-10-21T15:54:35-05:00",
+ "updated_at": "2026-10-22T08:54:54-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
   "Addie": 443,
   "Kahekili": 48,
   "Mia": 362,
-  "Nathan": 356,
+  "Nathan": 358,
   "Nick": 72,
   "Simran": 103
  },
  "backfill": {
-  "file": "calls-2026-10-21-1550-mtd.csv",
-  "rows": 137,
+  "file": "new-2026-10-22-0849.csv",
+  "rows": 9,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-21T15:54:35-05:00",
+  "at": "2026-10-22T08:54:54-05:00",
   "per_rep": {
    "Nathan": {
-    "raw_calls": 63,
-    "distinct_contact_days": 14,
-    "map_matched_contact_days": 14
-   },
-   "Addie": {
-    "raw_calls": 17,
-    "distinct_contact_days": 9,
-    "map_matched_contact_days": 9
-   },
-   "Simran": {
-    "raw_calls": 13,
-    "distinct_contact_days": 5,
-    "map_matched_contact_days": 5
-   },
-   "Mia": {
-    "raw_calls": 33,
-    "distinct_contact_days": 22,
-    "map_matched_contact_days": 22
-   },
-   "Kahekili": {
     "raw_calls": 5,
-    "distinct_contact_days": 1,
-    "map_matched_contact_days": 1
-   },
-   "Nick": {
-    "raw_calls": 6,
     "distinct_contact_days": 2,
     "map_matched_contact_days": 2
+   },
+   "Addie": {
+    "raw_calls": 4,
+    "distinct_contact_days": 0,
+    "map_matched_contact_days": 0
+   },
+   "Mia": {
+    "raw_calls": 0,
+    "distinct_contact_days": 0,
+    "map_matched_contact_days": 0
+   },
+   "Simran": {
+    "raw_calls": 0,
+    "distinct_contact_days": 0,
+    "map_matched_contact_days": 0
+   },
+   "Kahekili": {
+    "raw_calls": 0,
+    "distinct_contact_days": 0,
+    "map_matched_contact_days": 0
+   },
+   "Nick": {
+    "raw_calls": 0,
+    "distinct_contact_days": 0,
+    "map_matched_contact_days": 0
    }
   }
  },
