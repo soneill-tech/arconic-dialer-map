@@ -1,13 +1,14 @@
 {
   "date": "2026-10-23",
-  "updated_at": "2026-10-23T10:59:32-05:00",
-  "synced_at": "2026-10-23T10:59:32-05:00",
+  "updated_at": "2026-10-23T15:55:09-05:00",
+  "synced_at": "2026-10-23T15:55:09-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "31591501",
     "38188051",
     "48230102",
-    "118321421948"
+    "118321421948",
+    "250984707146"
   ],
   "calls": [
     {
@@ -49,6 +50,78 @@
       "caller": "Simran",
       "time": "2026-10-23T10:46:00-05:00",
       "outcome": "--"
+    },
+    {
+      "contact_id": "118321421948",
+      "contact_name": "Hayden Moore",
+      "am": "Kahekili",
+      "caller": "Simran",
+      "time": "2026-10-23T11:11:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "38188051",
+      "contact_name": "Anastasia Stevens",
+      "am": "Kahekili",
+      "caller": "Simran",
+      "time": "2026-10-23T11:12:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "118321421948",
+      "contact_name": "Hayden Moore",
+      "am": "Kahekili",
+      "caller": "Simran",
+      "time": "2026-10-23T11:18:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "118321421948",
+      "contact_name": "Hayden Moore",
+      "am": "Kahekili",
+      "caller": "Simran",
+      "time": "2026-10-23T11:26:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "38188051",
+      "contact_name": "Anastasia Stevens",
+      "am": "Kahekili",
+      "caller": "Simran",
+      "time": "2026-10-23T11:44:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "38188051",
+      "contact_name": "Anastasia Stevens",
+      "am": "Kahekili",
+      "caller": "Simran",
+      "time": "2026-10-23T11:51:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "38188051",
+      "contact_name": "Anastasia Stevens",
+      "am": "Kahekili",
+      "caller": "Simran",
+      "time": "2026-10-23T11:52:00-05:00",
+      "outcome": "Connected"
+    },
+    {
+      "contact_id": "38188051",
+      "contact_name": "Anastasia Stevens",
+      "am": "Kahekili",
+      "caller": "Simran",
+      "time": "2026-10-23T13:24:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "250984707146",
+      "contact_name": "Kim Dudley",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-23T15:25:00-05:00",
+      "outcome": "No answer"
     }
   ]
 }
