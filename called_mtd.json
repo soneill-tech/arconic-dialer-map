@@ -219,7 +219,8 @@
     "n:john jacobsen"
    ],
    "2026-10-23": [
-    "48230102"
+    "48230102",
+    "n:leah carlton"
    ]
   },
   "Nick": {
@@ -842,6 +843,13 @@
     "n:penny bartholomew",
     "n:elizabeth bobkovich",
     "n:william goldsworthy"
+   ],
+   "2026-10-23": [
+    "n:elhashimi hassan",
+    "n:austyn ables",
+    "n:william broyles",
+    "n:barbara galvan",
+    "n:joe raterman"
    ]
   },
   "Mia": {
@@ -1638,18 +1646,21 @@
     "n:ralph stone",
     "n:becky valdez",
     "n:danny fasciano"
+   ],
+   "2026-10-23": [
+    "n:belt power corporate"
    ]
   }
  },
- "updated_at": "2026-10-23T09:57:23-05:00",
+ "updated_at": "2026-10-23T09:57:38-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 470,
+  "Addie": 475,
   "Kahekili": 48,
   "Mia": 364,
-  "Nathan": 364,
+  "Nathan": 365,
   "Nick": 82,
-  "Simran": 107
+  "Simran": 108
  },
  "backfill": {
   "file": "mtd-2026-10-22-1656.csv",
