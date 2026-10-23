@@ -1,104 +1,28 @@
 {
-  "date": "2026-10-22",
-  "updated_at": "2026-10-22T18:00:44-05:00",
-  "synced_at": "2026-10-22T18:00:44-05:00",
+  "date": "2026-10-23",
+  "updated_at": "2026-10-23T09:57:23-05:00",
+  "synced_at": "2026-10-23T09:57:23-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "8922351",
-    "25969201",
-    "29022151",
-    "32678951",
-    "36773551",
-    "50992801"
+    "31591501",
+    "48230102"
   ],
   "calls": [
     {
-      "contact_id": "36773551",
-      "contact_name": "Sarah Dempsey",
+      "contact_id": "48230102",
+      "contact_name": "Christina Boggs",
+      "am": "Simran",
+      "caller": "Simran",
+      "time": "2026-10-23T08:42:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "31591501",
+      "contact_name": "Kristin Ding",
       "am": "Nick",
       "caller": "Nick",
-      "time": "2026-10-22T11:47:00-05:00",
+      "time": "2026-10-23T08:51:00-05:00",
       "outcome": "No answer"
-    },
-    {
-      "contact_id": "50992801",
-      "contact_name": "Michael Moronese",
-      "am": "Mia",
-      "caller": "Mia",
-      "time": "2026-10-22T11:58:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "36773551",
-      "contact_name": "Sarah Dempsey",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-22T13:00:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "29022151",
-      "contact_name": "John Keller",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-22T14:14:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "32678951",
-      "contact_name": "Shawyn Porter",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-22T16:33:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "32678951",
-      "contact_name": "Shawyn Porter",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-22T16:33:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "8922351",
-      "contact_name": "Ann Crossen",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-22T16:34:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "8922351",
-      "contact_name": "Ann Crossen",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-22T16:34:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "8922351",
-      "contact_name": "Ann Crossen",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-22T16:34:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "8922351",
-      "contact_name": "Ann Crossen",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-22T16:34:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "25969201",
-      "contact_name": "Avery Triesch",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-22T16:34:00-05:00",
-      "outcome": "Busy"
     }
   ]
 }
