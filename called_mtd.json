@@ -219,7 +219,9 @@
     "n:john jacobsen"
    ],
    "2026-10-23": [
+    "38188051",
     "48230102",
+    "118321421948",
     "n:leah carlton"
    ]
   },
@@ -1652,7 +1654,7 @@
    ]
   }
  },
- "updated_at": "2026-10-23T09:57:38-05:00",
+ "updated_at": "2026-10-23T10:59:32-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 475,
@@ -1660,7 +1662,7 @@
   "Mia": 364,
   "Nathan": 365,
   "Nick": 82,
-  "Simran": 108
+  "Simran": 110
  },
  "backfill": {
   "file": "mtd-2026-10-22-1656.csv",
