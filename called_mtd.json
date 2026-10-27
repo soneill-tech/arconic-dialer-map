@@ -881,12 +881,18 @@
     "n:paul d. castaneda"
    ],
    "2026-10-27": [
+    "n:ugo ogwo",
+    "n:daniel lee",
+    "n:cyrus kwong",
     "n:james haley",
+    "n:rangila pal",
     "n:rosy adames",
     "n:tony durham",
     "n:sofia duarte",
     "n:carlos medina",
     "n:mariam karaki",
+    "n:tim mrosewske",
+    "n:camille durana",
     "n:william sormrude"
    ]
   },
@@ -1295,12 +1301,16 @@
     "n:eduardo fernandez"
    ],
    "2026-10-27": [
+    "n:hao bui",
     "n:brent vise",
     "n:janet scott",
     "n:jayesh shah",
+    "n:lyle wilson",
+    "n:kelley craft",
     "n:jaydan walker",
     "n:margie harris",
     "n:martin zirkle",
+    "n:benjamin drake",
     "n:shirley boozer"
    ]
   },
@@ -1710,41 +1720,43 @@
    ],
    "2026-10-27": [
     "n:lori dyok",
-    "n:avery dasher"
+    "n:scott kim",
+    "n:avery dasher",
+    "n:zach o'hanlon"
    ]
   }
  },
- "updated_at": "2026-10-27T09:56:53-05:00",
+ "updated_at": "2026-10-27T11:01:16-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 496,
+  "Addie": 502,
   "Kahekili": 48,
-  "Mia": 376,
-  "Nathan": 371,
+  "Mia": 380,
+  "Nathan": 373,
   "Nick": 84,
   "Simran": 117
  },
  "backfill": {
-  "file": "mtd-2026-10-27-0951.csv",
-  "rows": 44,
+  "file": "mtd-2026-10-27-1055.csv",
+  "rows": 69,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-27T09:56:53-05:00",
+  "at": "2026-10-27T11:01:16-05:00",
   "per_rep": {
-   "Addie": {
-    "raw_calls": 20,
-    "distinct_contact_days": 7,
-    "map_matched_contact_days": 7
-   },
    "Nathan": {
-    "raw_calls": 9,
-    "distinct_contact_days": 2,
-    "map_matched_contact_days": 2
+    "raw_calls": 17,
+    "distinct_contact_days": 4,
+    "map_matched_contact_days": 4
+   },
+   "Addie": {
+    "raw_calls": 29,
+    "distinct_contact_days": 13,
+    "map_matched_contact_days": 13
    },
    "Mia": {
-    "raw_calls": 7,
-    "distinct_contact_days": 7,
-    "map_matched_contact_days": 7
+    "raw_calls": 15,
+    "distinct_contact_days": 11,
+    "map_matched_contact_days": 11
    },
    "Nick": {
     "raw_calls": 3,
