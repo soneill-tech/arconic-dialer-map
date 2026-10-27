@@ -1,9 +1,11 @@
 {
   "date": "2026-10-27",
-  "updated_at": "2026-10-27T09:56:43-05:00",
-  "synced_at": "2026-10-27T09:56:43-05:00",
+  "updated_at": "2026-10-27T13:56:59-05:00",
+  "synced_at": "2026-10-27T13:56:59-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "18593951",
+    "31591501",
     "20283614591"
   ],
   "calls": [
@@ -13,6 +15,22 @@
       "am": "Kahekili",
       "caller": "Simran",
       "time": "2026-10-27T09:27:00-05:00",
+      "outcome": "Connected"
+    },
+    {
+      "contact_id": "31591501",
+      "contact_name": "Kristin Ding",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-27T13:24:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "18593951",
+      "contact_name": "Markas Gines",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-27T13:47:00-05:00",
       "outcome": "Connected"
     }
   ]
