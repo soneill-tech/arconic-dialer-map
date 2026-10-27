@@ -79,6 +79,9 @@
    ],
    "2026-10-21": [
     "118321421948"
+   ],
+   "2026-10-27": [
+    "13966405892"
    ]
   },
   "Simran": {
@@ -1755,11 +1758,11 @@
    ]
   }
  },
- "updated_at": "2026-10-27T15:01:23-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-27T15:55:45-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 506,
-  "Kahekili": 48,
+  "Kahekili": 49,
   "Mia": 398,
   "Nathan": 378,
   "Nick": 86,
