@@ -356,7 +356,14 @@
    "2026-10-27": [
     "18593951",
     "31591501",
-    "n:tyrone ware"
+    "n:tyrone ware",
+    "n:gustavo nava",
+    "n:ashley simone",
+    "n:brian hufnagl",
+    "n:graham benway",
+    "n:manuel rascon",
+    "n:mike thompson",
+    "n:roberto verdugo"
    ]
   },
   "Addie": {
@@ -895,6 +902,7 @@
     "n:rosy adames",
     "n:tony durham",
     "n:donna melton",
+    "n:john cothran",
     "n:matt russell",
     "n:michael hoyt",
     "n:robert kraez",
@@ -902,12 +910,16 @@
     "n:carlos medina",
     "n:mariam karaki",
     "n:tim mrosewske",
+    "n:brandon mullin",
     "n:camille durana",
     "n:martin corbeil",
+    "n:johnathan whitt",
     "n:matthew warmuth",
     "n:william sormrude",
     "n:clifford chrisman",
-    "n:penny bartholomew"
+    "n:penny bartholomew",
+    "n:jessica chinikaylo",
+    "n:christopher shuford"
    ]
   },
   "Mia": {
@@ -933,7 +945,7 @@
     "n:shelly cloninger",
     "n:reese blankenship",
     "n:andrew vanbezooyen",
-    "n:marc- andré deroy- bouchard",
+    "n:marc- andr\u00e9 deroy- bouchard",
     "n:vinicio gonzalez de la llave"
    ],
    "2026-10-06": [
@@ -1086,7 +1098,7 @@
     "n:timothy hunker",
     "n:james nickerson",
     "n:salvador nieves",
-    "n:marie-lou carrière",
+    "n:marie-lou carri\u00e8re",
     "n:vinicio gonzalez de la llave"
    ],
    "2026-10-01": [
@@ -1190,7 +1202,7 @@
     "n:antony bennett",
     "n:chad hoelscher",
     "n:josue serralta",
-    "n:paulina brożek",
+    "n:paulina bro\u017cek",
     "n:laurian mihaila",
     "n:sheryl dwiggins",
     "n:michael robinson",
@@ -1331,6 +1343,7 @@
     "n:jim hartley",
     "n:jodi spacek",
     "n:lyle wilson",
+    "n:maria colon",
     "n:scott evert",
     "n:terry irvin",
     "n:corey butler",
@@ -1342,7 +1355,10 @@
     "n:shelby arias",
     "n:andrew graham",
     "n:anna connelly",
+    "n:fabrice guelf",
+    "n:jack gardiner",
     "n:jaydan walker",
+    "n:malik zerdazi",
     "n:margie harris",
     "n:martin zirkle",
     "n:miguel correa",
@@ -1350,7 +1366,10 @@
     "n:benjie herndon",
     "n:corby phillips",
     "n:kianoush aghai",
+    "n:mitchell shell",
     "n:shirley boozer",
+    "n:didier guesneau",
+    "n:germain lesseur",
     "n:jennifer vaughn",
     "n:yosuke nakajima",
     "n:henry holthouser",
@@ -1761,7 +1780,7 @@
     "n:ralph stone",
     "n:jody-ann bue",
     "n:uslbm corporate",
-    "n:ricardo martínez",
+    "n:ricardo mart\u00ednez",
     "n:belt power corporate"
    ],
    "2026-10-27": [
@@ -1781,14 +1800,14 @@
    ]
   }
  },
- "updated_at": "2026-10-27T15:55:54-05:00",
+ "updated_at": "2026-10-27T16:57:37-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 511,
+  "Addie": 516,
   "Kahekili": 49,
-  "Mia": 412,
+  "Mia": 419,
   "Nathan": 382,
-  "Nick": 86,
+  "Nick": 93,
   "Simran": 117
  },
  "backfill": {
