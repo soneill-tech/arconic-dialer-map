@@ -227,7 +227,11 @@
     "n:anastasia stevens"
    ],
    "2026-10-27": [
-    "20283614591"
+    "20283614591",
+    "n:sarah schupp",
+    "n:tracie gusler",
+    "n:turner gilliam (dm)",
+    "n:precision strip - anderson, in"
    ]
   },
   "Nick": {
@@ -345,6 +349,9 @@
    "2026-10-23": [
     "31591501",
     "250984707146"
+   ],
+   "2026-10-27": [
+    "n:tyrone ware"
    ]
   },
   "Addie": {
@@ -872,6 +879,15 @@
     "n:matthew gonzales",
     "n:michael mitchell",
     "n:paul d. castaneda"
+   ],
+   "2026-10-27": [
+    "n:james haley",
+    "n:rosy adames",
+    "n:tony durham",
+    "n:sofia duarte",
+    "n:carlos medina",
+    "n:mariam karaki",
+    "n:william sormrude"
    ]
   },
   "Mia": {
@@ -1277,6 +1293,15 @@
     "n:braden norris",
     "n:josue serralta",
     "n:eduardo fernandez"
+   ],
+   "2026-10-27": [
+    "n:brent vise",
+    "n:janet scott",
+    "n:jayesh shah",
+    "n:jaydan walker",
+    "n:margie harris",
+    "n:martin zirkle",
+    "n:shirley boozer"
    ]
   },
   "Nathan": {
@@ -1682,48 +1707,52 @@
     "n:uslbm corporate",
     "n:ricardo martínez",
     "n:belt power corporate"
+   ],
+   "2026-10-27": [
+    "n:lori dyok",
+    "n:avery dasher"
    ]
   }
  },
- "updated_at": "2026-10-27T09:56:43-05:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-10-27T09:56:53-05:00",
+ "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 489,
+  "Addie": 496,
   "Kahekili": 48,
-  "Mia": 369,
-  "Nathan": 369,
-  "Nick": 83,
-  "Simran": 113
+  "Mia": 376,
+  "Nathan": 371,
+  "Nick": 84,
+  "Simran": 117
  },
  "backfill": {
-  "file": "mtd-2026-10-23-1648.csv",
-  "rows": 120,
+  "file": "mtd-2026-10-27-0951.csv",
+  "rows": 44,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-23T16:54:40-05:00",
+  "at": "2026-10-27T09:56:53-05:00",
   "per_rep": {
    "Addie": {
-    "raw_calls": 54,
-    "distinct_contact_days": 19,
-    "map_matched_contact_days": 19
+    "raw_calls": 20,
+    "distinct_contact_days": 7,
+    "map_matched_contact_days": 7
    },
    "Nathan": {
-    "raw_calls": 44,
-    "distinct_contact_days": 5,
-    "map_matched_contact_days": 5
-   },
-   "Nick": {
-    "raw_calls": 2,
+    "raw_calls": 9,
     "distinct_contact_days": 2,
     "map_matched_contact_days": 2
    },
    "Mia": {
-    "raw_calls": 4,
-    "distinct_contact_days": 4,
-    "map_matched_contact_days": 4
+    "raw_calls": 7,
+    "distinct_contact_days": 7,
+    "map_matched_contact_days": 7
+   },
+   "Nick": {
+    "raw_calls": 3,
+    "distinct_contact_days": 1,
+    "map_matched_contact_days": 1
    },
    "Simran": {
-    "raw_calls": 16,
+    "raw_calls": 5,
     "distinct_contact_days": 4,
     "map_matched_contact_days": 4
    },
