@@ -889,6 +889,7 @@
     "n:rangila pal",
     "n:rosy adames",
     "n:tony durham",
+    "n:robert kraez",
     "n:sofia duarte",
     "n:carlos medina",
     "n:mariam karaki",
@@ -1729,10 +1730,10 @@
    ]
   }
  },
- "updated_at": "2026-10-27T11:54:00-05:00",
+ "updated_at": "2026-10-27T12:53:49-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 503,
+  "Addie": 504,
   "Kahekili": 48,
   "Mia": 380,
   "Nathan": 375,
@@ -1740,21 +1741,21 @@
   "Simran": 117
  },
  "backfill": {
-  "file": "mtd-2026-10-27-1150.csv",
-  "rows": 88,
+  "file": "mtd-2026-10-27-1250.csv",
+  "rows": 92,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-27T11:54:00-05:00",
+  "at": "2026-10-27T12:53:49-05:00",
   "per_rep": {
    "Nathan": {
-    "raw_calls": 32,
+    "raw_calls": 35,
     "distinct_contact_days": 6,
     "map_matched_contact_days": 6
    },
    "Addie": {
-    "raw_calls": 33,
-    "distinct_contact_days": 14,
-    "map_matched_contact_days": 14
+    "raw_calls": 34,
+    "distinct_contact_days": 15,
+    "map_matched_contact_days": 15
    },
    "Mia": {
     "raw_calls": 15,
