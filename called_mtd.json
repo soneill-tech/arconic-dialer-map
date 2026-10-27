@@ -894,15 +894,20 @@
     "n:rangila pal",
     "n:rosy adames",
     "n:tony durham",
+    "n:donna melton",
     "n:matt russell",
+    "n:michael hoyt",
     "n:robert kraez",
     "n:sofia duarte",
     "n:carlos medina",
     "n:mariam karaki",
     "n:tim mrosewske",
     "n:camille durana",
+    "n:martin corbeil",
+    "n:matthew warmuth",
     "n:william sormrude",
-    "n:clifford chrisman"
+    "n:clifford chrisman",
+    "n:penny bartholomew"
    ]
   },
   "Mia": {
@@ -1313,29 +1318,43 @@
     "n:hao bui",
     "n:aaron hall",
     "n:brent vise",
+    "n:elmond wan",
     "n:kent pratt",
     "n:nick adamy",
+    "n:carl monson",
     "n:chad browne",
+    "n:david burns",
     "n:jacob maxcy",
     "n:janet scott",
+    "n:janine yang",
     "n:jayesh shah",
     "n:jim hartley",
+    "n:jodi spacek",
     "n:lyle wilson",
+    "n:scott evert",
+    "n:terry irvin",
     "n:corey butler",
     "n:kelley craft",
     "n:reuss fisher",
     "n:sadman ahmed",
+    "n:sally hughes",
+    "n:sarah pruett",
     "n:shelby arias",
+    "n:andrew graham",
     "n:anna connelly",
     "n:jaydan walker",
     "n:margie harris",
     "n:martin zirkle",
     "n:miguel correa",
     "n:benjamin drake",
+    "n:benjie herndon",
     "n:corby phillips",
     "n:kianoush aghai",
     "n:shirley boozer",
     "n:jennifer vaughn",
+    "n:yosuke nakajima",
+    "n:henry holthouser",
+    "n:melinda zimmerman",
     "n:alishia rohrscheib",
     "n:jonathan castaneda",
     "n:vincent villanueva"
@@ -1751,47 +1770,56 @@
     "n:scott kim",
     "n:susan king",
     "n:avery dasher",
+    "n:becky valdez",
+    "n:il muedeking",
+    "n:tim hartnett",
     "n:adolfo flores",
     "n:jocelyn lewis",
+    "n:mark herrmann",
     "n:zach o'hanlon",
     "n:fatima martinez"
    ]
   }
  },
- "updated_at": "2026-10-27T15:55:45-05:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-10-27T15:55:54-05:00",
+ "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 506,
+  "Addie": 511,
   "Kahekili": 49,
-  "Mia": 398,
-  "Nathan": 378,
+  "Mia": 412,
+  "Nathan": 382,
   "Nick": 86,
   "Simran": 117
  },
  "backfill": {
-  "file": "mtd-2026-10-27-1455.csv",
-  "rows": 154,
+  "file": "mtd-2026-10-27-1550.csv",
+  "rows": 194,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-27T15:01:23-05:00",
+  "at": "2026-10-27T15:55:54-05:00",
   "per_rep": {
    "Nathan": {
-    "raw_calls": 62,
-    "distinct_contact_days": 9,
-    "map_matched_contact_days": 9
-   },
-   "Mia": {
-    "raw_calls": 34,
-    "distinct_contact_days": 29,
-    "map_matched_contact_days": 29
+    "raw_calls": 72,
+    "distinct_contact_days": 13,
+    "map_matched_contact_days": 13
    },
    "Addie": {
-    "raw_calls": 45,
-    "distinct_contact_days": 17,
-    "map_matched_contact_days": 17
+    "raw_calls": 52,
+    "distinct_contact_days": 22,
+    "map_matched_contact_days": 22
+   },
+   "Mia": {
+    "raw_calls": 52,
+    "distinct_contact_days": 43,
+    "map_matched_contact_days": 43
+   },
+   "Kahekili": {
+    "raw_calls": 3,
+    "distinct_contact_days": 1,
+    "map_matched_contact_days": 1
    },
    "Simran": {
-    "raw_calls": 6,
+    "raw_calls": 8,
     "distinct_contact_days": 4,
     "map_matched_contact_days": 4
    },
@@ -1799,11 +1827,6 @@
     "raw_calls": 7,
     "distinct_contact_days": 3,
     "map_matched_contact_days": 3
-   },
-   "Kahekili": {
-    "raw_calls": 0,
-    "distinct_contact_days": 0,
-    "map_matched_contact_days": 0
    }
   }
  },
