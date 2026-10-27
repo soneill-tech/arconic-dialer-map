@@ -81,7 +81,8 @@
     "118321421948"
    ],
    "2026-10-27": [
-    "13966405892"
+    "13966405892",
+    "n:randy moeller"
    ]
   },
   "Simran": {
@@ -919,7 +920,8 @@
     "n:clifford chrisman",
     "n:penny bartholomew",
     "n:jessica chinikaylo",
-    "n:christopher shuford"
+    "n:christopher shuford",
+    "n:joe paone"
    ]
   },
   "Mia": {
@@ -1800,11 +1802,11 @@
    ]
   }
  },
- "updated_at": "2026-10-27T16:57:37-05:00",
+ "updated_at": "2026-10-27T18:02:00-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 516,
-  "Kahekili": 49,
+  "Addie": 517,
+  "Kahekili": 50,
   "Mia": 419,
   "Nathan": 382,
   "Nick": 93,
