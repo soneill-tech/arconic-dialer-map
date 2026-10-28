@@ -934,11 +934,12 @@
     "n:chad baum",
     "n:david mcgee",
     "n:joshua clark",
+    "n:waleed ahmad",
     "n:jean ducharme",
     "n:chuck beighley",
     "n:robert johnson",
-    "n:barry navellier",
-    "n:tammy mailloux"
+    "n:tammy mailloux",
+    "n:barry navellier"
    ]
   },
   "Mia": {
@@ -964,7 +965,7 @@
     "n:shelly cloninger",
     "n:reese blankenship",
     "n:andrew vanbezooyen",
-    "n:marc- andr\u00e9 deroy- bouchard",
+    "n:marc- andré deroy- bouchard",
     "n:vinicio gonzalez de la llave"
    ],
    "2026-10-06": [
@@ -1117,7 +1118,7 @@
     "n:timothy hunker",
     "n:james nickerson",
     "n:salvador nieves",
-    "n:marie-lou carri\u00e8re",
+    "n:marie-lou carrière",
     "n:vinicio gonzalez de la llave"
    ],
    "2026-10-01": [
@@ -1221,7 +1222,7 @@
     "n:antony bennett",
     "n:chad hoelscher",
     "n:josue serralta",
-    "n:paulina bro\u017cek",
+    "n:paulina brożek",
     "n:laurian mihaila",
     "n:sheryl dwiggins",
     "n:michael robinson",
@@ -1824,7 +1825,7 @@
     "n:ralph stone",
     "n:jody-ann bue",
     "n:uslbm corporate",
-    "n:ricardo mart\u00ednez",
+    "n:ricardo martínez",
     "n:belt power corporate"
    ],
    "2026-10-27": [
@@ -1846,49 +1847,50 @@
     "n:oscar",
     "n:luis mota",
     "n:steve wilson",
+    "n:adolfo flores",
     "n:clint woodman",
     "n:steve o'keefe"
    ]
   }
  },
- "updated_at": "2026-10-28T11:52:54-05:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-10-28T13:55:54-05:00",
+ "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 525,
+  "Addie": 526,
   "Kahekili": 52,
   "Mia": 442,
-  "Nathan": 387,
+  "Nathan": 388,
   "Nick": 93,
   "Simran": 118
  },
  "backfill": {
-  "file": "mtd-2026-10-28-1055.csv",
-  "rows": 80,
+  "file": "mtd-2026-10-28-1355.csv",
+  "rows": 15,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-28T10:59:12-05:00",
+  "at": "2026-10-28T13:55:54-05:00",
   "per_rep": {
+   "Nathan": {
+    "raw_calls": 14,
+    "distinct_contact_days": 1,
+    "map_matched_contact_days": 1
+   },
    "Addie": {
-    "raw_calls": 19,
-    "distinct_contact_days": 7,
-    "map_matched_contact_days": 7
+    "raw_calls": 1,
+    "distinct_contact_days": 1,
+    "map_matched_contact_days": 1
    },
    "Mia": {
-    "raw_calls": 20,
-    "distinct_contact_days": 17,
-    "map_matched_contact_days": 17
-   },
-   "Nathan": {
-    "raw_calls": 40,
-    "distinct_contact_days": 4,
-    "map_matched_contact_days": 4
-   },
-   "Kahekili": {
-    "raw_calls": 1,
+    "raw_calls": 0,
     "distinct_contact_days": 0,
     "map_matched_contact_days": 0
    },
    "Simran": {
+    "raw_calls": 0,
+    "distinct_contact_days": 0,
+    "map_matched_contact_days": 0
+   },
+   "Kahekili": {
     "raw_calls": 0,
     "distinct_contact_days": 0,
     "map_matched_contact_days": 0
