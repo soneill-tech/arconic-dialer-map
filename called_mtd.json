@@ -937,7 +937,8 @@
     "n:jean ducharme",
     "n:chuck beighley",
     "n:robert johnson",
-    "n:barry navellier"
+    "n:barry navellier",
+    "n:tammy mailloux"
    ]
   },
   "Mia": {
@@ -963,7 +964,7 @@
     "n:shelly cloninger",
     "n:reese blankenship",
     "n:andrew vanbezooyen",
-    "n:marc- andré deroy- bouchard",
+    "n:marc- andr\u00e9 deroy- bouchard",
     "n:vinicio gonzalez de la llave"
    ],
    "2026-10-06": [
@@ -1116,7 +1117,7 @@
     "n:timothy hunker",
     "n:james nickerson",
     "n:salvador nieves",
-    "n:marie-lou carrière",
+    "n:marie-lou carri\u00e8re",
     "n:vinicio gonzalez de la llave"
    ],
    "2026-10-01": [
@@ -1220,7 +1221,7 @@
     "n:antony bennett",
     "n:chad hoelscher",
     "n:josue serralta",
-    "n:paulina brożek",
+    "n:paulina bro\u017cek",
     "n:laurian mihaila",
     "n:sheryl dwiggins",
     "n:michael robinson",
@@ -1413,7 +1414,13 @@
     "n:shantrell emory",
     "n:montgomery darnell",
     "n:jermaine darlington",
-    "n:david chaparro herrera"
+    "n:david chaparro herrera",
+    "n:dan godbout",
+    "n:ross dyck",
+    "n:matthew hilton",
+    "n:karen nafziger",
+    "n:brandon hinshaw",
+    "n:ian halliwell"
    ]
   },
   "Nathan": {
@@ -1817,7 +1824,7 @@
     "n:ralph stone",
     "n:jody-ann bue",
     "n:uslbm corporate",
-    "n:ricardo martínez",
+    "n:ricardo mart\u00ednez",
     "n:belt power corporate"
    ],
    "2026-10-27": [
@@ -1839,17 +1846,18 @@
     "n:oscar",
     "n:luis mota",
     "n:steve wilson",
-    "n:clint woodman"
+    "n:clint woodman",
+    "n:steve o'keefe"
    ]
   }
  },
- "updated_at": "2026-10-28T11:52:41-05:00",
+ "updated_at": "2026-10-28T11:52:54-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 524,
+  "Addie": 525,
   "Kahekili": 52,
-  "Mia": 436,
-  "Nathan": 386,
+  "Mia": 442,
+  "Nathan": 387,
   "Nick": 93,
   "Simran": 118
  },
