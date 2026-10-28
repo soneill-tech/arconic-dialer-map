@@ -238,7 +238,8 @@
     "n:precision strip - anderson, in"
    ],
    "2026-10-28": [
-    "460501"
+    "460501",
+    "n:robert s gilbert"
    ]
   },
   "Nick": {
@@ -925,6 +926,13 @@
     "n:jessica chinikaylo",
     "n:christopher shuford",
     "n:joe paone"
+   ],
+   "2026-10-28": [
+    "n:chad baum",
+    "n:joshua clark",
+    "n:chuck beighley",
+    "n:robert johnson",
+    "n:barry navellier"
    ]
   },
   "Mia": {
@@ -1382,6 +1390,16 @@
     "n:alishia rohrscheib",
     "n:jonathan castaneda",
     "n:vincent villanueva"
+   ],
+   "2026-10-28": [
+    "n:min lee",
+    "n:earl ellis",
+    "n:misung kil",
+    "n:jesus rodea",
+    "n:josue serralta",
+    "n:alisande tucker",
+    "n:shantrell emory",
+    "n:david chaparro herrera"
    ]
   },
   "Nathan": {
@@ -1802,18 +1820,21 @@
     "n:mark herrmann",
     "n:zach o'hanlon",
     "n:fatima martinez"
+   ],
+   "2026-10-28": [
+    "n:clint woodman"
    ]
   }
  },
- "updated_at": "2026-10-28T10:01:02-05:00",
+ "updated_at": "2026-10-28T10:01:17-05:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 517,
+  "Addie": 522,
   "Kahekili": 50,
-  "Mia": 419,
-  "Nathan": 382,
+  "Mia": 427,
+  "Nathan": 383,
   "Nick": 93,
-  "Simran": 118
+  "Simran": 119
  },
  "backfill": {
   "file": "mtd-2026-10-27-1550.csv",
