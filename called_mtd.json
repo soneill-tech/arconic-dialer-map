@@ -376,6 +376,9 @@
     "n:roberto verdugo"
    ],
    "2026-10-28": [
+    "7799401",
+    "30103601",
+    "250984707146",
     "n:rick norman",
     "n:travis suhr",
     "n:ashley simone",
@@ -1882,14 +1885,14 @@
    ]
   }
  },
- "updated_at": "2026-10-28T15:57:41-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-28T16:54:50-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 530,
   "Kahekili": 52,
   "Mia": 450,
   "Nathan": 395,
-  "Nick": 99,
+  "Nick": 102,
   "Simran": 120
  },
  "backfill": {

@@ -1,12 +1,15 @@
 {
   "date": "2026-10-28",
-  "updated_at": "2026-10-28T11:52:41-05:00",
-  "synced_at": "2026-10-28T11:52:41-05:00",
+  "updated_at": "2026-10-28T16:54:50-05:00",
+  "synced_at": "2026-10-28T16:54:50-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "93901",
     "460501",
-    "13966405892"
+    "7799401",
+    "30103601",
+    "13966405892",
+    "250984707146"
   ],
   "calls": [
     {
@@ -31,6 +34,46 @@
       "am": "Kahekili",
       "caller": "Kahekili",
       "time": "2026-10-28T11:33:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-28T14:27:00-05:00",
+      "outcome": "Connected"
+    },
+    {
+      "contact_id": "30103601",
+      "contact_name": "Melissa Houle",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-28T16:28:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "7799401",
+      "contact_name": "Justin Kay",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-28T16:30:00-05:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "250984707146",
+      "contact_name": "Kim Dudley",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-28T16:33:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "250984707146",
+      "contact_name": "Kim Dudley",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-28T16:33:00-05:00",
       "outcome": "--"
     }
   ]
