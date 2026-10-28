@@ -236,6 +236,9 @@
     "n:tracie gusler",
     "n:turner gilliam (dm)",
     "n:precision strip - anderson, in"
+   ],
+   "2026-10-28": [
+    "460501"
    ]
   },
   "Nick": {
@@ -947,7 +950,7 @@
     "n:shelly cloninger",
     "n:reese blankenship",
     "n:andrew vanbezooyen",
-    "n:marc- andr\u00e9 deroy- bouchard",
+    "n:marc- andré deroy- bouchard",
     "n:vinicio gonzalez de la llave"
    ],
    "2026-10-06": [
@@ -1100,7 +1103,7 @@
     "n:timothy hunker",
     "n:james nickerson",
     "n:salvador nieves",
-    "n:marie-lou carri\u00e8re",
+    "n:marie-lou carrière",
     "n:vinicio gonzalez de la llave"
    ],
    "2026-10-01": [
@@ -1204,7 +1207,7 @@
     "n:antony bennett",
     "n:chad hoelscher",
     "n:josue serralta",
-    "n:paulina bro\u017cek",
+    "n:paulina brożek",
     "n:laurian mihaila",
     "n:sheryl dwiggins",
     "n:michael robinson",
@@ -1782,7 +1785,7 @@
     "n:ralph stone",
     "n:jody-ann bue",
     "n:uslbm corporate",
-    "n:ricardo mart\u00ednez",
+    "n:ricardo martínez",
     "n:belt power corporate"
    ],
    "2026-10-27": [
@@ -1802,15 +1805,15 @@
    ]
   }
  },
- "updated_at": "2026-10-27T18:02:00-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-28T10:01:02-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 517,
   "Kahekili": 50,
   "Mia": 419,
   "Nathan": 382,
   "Nick": 93,
-  "Simran": 117
+  "Simran": 118
  },
  "backfill": {
   "file": "mtd-2026-10-27-1550.csv",

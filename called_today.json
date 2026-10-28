@@ -1,70 +1,19 @@
 {
-  "date": "2026-10-27",
-  "updated_at": "2026-10-27T15:55:45-05:00",
-  "synced_at": "2026-10-27T15:55:45-05:00",
+  "date": "2026-10-28",
+  "updated_at": "2026-10-28T10:01:02-05:00",
+  "synced_at": "2026-10-28T10:01:02-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "18593951",
-    "31591501",
-    "13966405892",
-    "20283614591"
+    "460501"
   ],
   "calls": [
     {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
+      "contact_id": "460501",
+      "contact_name": "Robert S Gilbert",
       "am": "Kahekili",
       "caller": "Simran",
-      "time": "2026-10-27T09:27:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "31591501",
-      "contact_name": "Kristin Ding",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-27T13:24:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "18593951",
-      "contact_name": "Markas Gines",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-27T13:45:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "18593951",
-      "contact_name": "Markas Gines",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-27T13:47:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "13966405892",
-      "contact_name": "Trent Bell",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-27T15:10:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "13966405892",
-      "contact_name": "Trent Bell",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-27T15:11:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "13966405892",
-      "contact_name": "Trent Bell",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-27T15:32:00-05:00",
-      "outcome": ""
+      "time": "2026-10-28T09:24:00-05:00",
+      "outcome": "--"
     }
   ]
 }
