@@ -243,7 +243,8 @@
    ],
    "2026-10-28": [
     "460501",
-    "n:trent bell"
+    "n:trent bell",
+    "n:sarah schupp"
    ]
   },
   "Nick": {
@@ -943,12 +944,16 @@
     "n:chad baum",
     "n:david mcgee",
     "n:joshua clark",
+    "n:melanie deak",
     "n:waleed ahmad",
     "n:jean ducharme",
     "n:chuck beighley",
     "n:robert johnson",
+    "n:snowwolf plows",
     "n:tammy mailloux",
-    "n:barry navellier"
+    "n:barry navellier",
+    "n:darrell barzini",
+    "n:avl manufacturing"
    ]
   },
   "Mia": {
@@ -1414,15 +1419,19 @@
     "n:earl ellis",
     "n:jay shover",
     "n:misung kil",
+    "n:cindy crush",
     "n:dan godbout",
     "n:eugene song",
     "n:jesus rodea",
     "n:tracy geter",
     "n:bongjin kwak",
     "n:john pursley",
+    "n:terry osborn",
     "n:tresa ballou",
+    "n:brian paulsen",
     "n:ian halliwell",
     "n:michael terry",
+    "n:billie branham",
     "n:brandon dunlap",
     "n:josue serralta",
     "n:karen nafziger",
@@ -1858,62 +1867,67 @@
    ],
    "2026-10-28": [
     "n:oscar",
+    "n:dewey cho",
     "n:luis mota",
     "n:diane cosser",
     "n:steve wilson",
     "n:adolfo flores",
     "n:clint woodman",
+    "n:scott shriver",
     "n:steve o'keefe",
-    "n:scott robinson"
+    "n:steve pavlick",
+    "n:jx leasing inc",
+    "n:scott robinson",
+    "n:grady excavating inc"
    ]
   }
  },
- "updated_at": "2026-10-28T14:54:09-05:00",
+ "updated_at": "2026-10-28T15:57:41-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 526,
+  "Addie": 530,
   "Kahekili": 52,
-  "Mia": 446,
-  "Nathan": 390,
+  "Mia": 450,
+  "Nathan": 395,
   "Nick": 99,
-  "Simran": 119
+  "Simran": 120
  },
  "backfill": {
-  "file": "mtd-2026-10-28-1455.csv",
-  "rows": 32,
+  "file": "mtd-2026-10-28-1555.csv",
+  "rows": 48,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-28T14:54:09-05:00",
+  "at": "2026-10-28T15:57:41-05:00",
   "per_rep": {
-   "Mia": {
-    "raw_calls": 6,
-    "distinct_contact_days": 4,
-    "map_matched_contact_days": 4
+   "Nathan": {
+    "raw_calls": 15,
+    "distinct_contact_days": 5,
+    "map_matched_contact_days": 5
    },
-   "Addie": {
-    "raw_calls": 3,
+   "Kahekili": {
+    "raw_calls": 2,
     "distinct_contact_days": 0,
     "map_matched_contact_days": 0
    },
-   "Kahekili": {
-    "raw_calls": 5,
-    "distinct_contact_days": 1,
-    "map_matched_contact_days": 1
-   },
-   "Nathan": {
-    "raw_calls": 7,
-    "distinct_contact_days": 2,
-    "map_matched_contact_days": 2
-   },
-   "Nick": {
-    "raw_calls": 10,
-    "distinct_contact_days": 6,
-    "map_matched_contact_days": 6
+   "Addie": {
+    "raw_calls": 12,
+    "distinct_contact_days": 4,
+    "map_matched_contact_days": 4
    },
    "Simran": {
-    "raw_calls": 1,
+    "raw_calls": 3,
     "distinct_contact_days": 1,
     "map_matched_contact_days": 1
+   },
+   "Mia": {
+    "raw_calls": 16,
+    "distinct_contact_days": 8,
+    "map_matched_contact_days": 8
+   },
+   "Nick": {
+    "raw_calls": 0,
+    "distinct_contact_days": 0,
+    "map_matched_contact_days": 0
    }
   }
  },
