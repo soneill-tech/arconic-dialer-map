@@ -83,6 +83,10 @@
    "2026-10-27": [
     "13966405892",
     "n:randy moeller"
+   ],
+   "2026-10-28": [
+    "93901",
+    "13966405892"
    ]
   },
   "Simran": {
@@ -1839,11 +1843,11 @@
    ]
   }
  },
- "updated_at": "2026-10-28T10:59:12-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-28T11:52:41-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 524,
-  "Kahekili": 50,
+  "Kahekili": 52,
   "Mia": 436,
   "Nathan": 386,
   "Nick": 93,

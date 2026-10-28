@@ -724,7 +724,7 @@
    "calls": {
     "Kili": {
      "rank": 6,
-     "score": 50
+     "score": 52
     },
     "Simran": {
      "rank": 4,
@@ -736,15 +736,15 @@
     },
     "Addie": {
      "rank": 1,
-     "score": 517
+     "score": 524
     },
     "Mia": {
      "rank": 2,
-     "score": 419
+     "score": 436
     },
     "Nathan": {
      "rank": 3,
-     "score": 382
+     "score": 386
     }
    },
    "gp": {
@@ -775,7 +775,7 @@
    },
    "gp_as_of": "2026-10-21",
    "derived": false,
-   "written_at": "2026-10-28T10:01:03-05:00"
+   "written_at": "2026-10-28T11:52:42-05:00"
   }
  }
 }
