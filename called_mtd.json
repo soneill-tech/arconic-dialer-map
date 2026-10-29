@@ -88,6 +88,9 @@
     "93901",
     "13966405892",
     "20283614591"
+   ],
+   "2026-10-29": [
+    "462051"
    ]
   },
   "Simran": {
@@ -247,6 +250,9 @@
     "n:trent bell",
     "n:sarah schupp",
     "n:robert s gilbert"
+   ],
+   "2026-10-29": [
+    "203866478699"
    ]
   },
   "Nick": {
@@ -1894,15 +1900,15 @@
    ]
   }
  },
- "updated_at": "2026-10-28T17:52:35-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-29T09:55:52-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 533,
-  "Kahekili": 53,
+  "Kahekili": 54,
   "Mia": 450,
   "Nathan": 396,
   "Nick": 105,
-  "Simran": 121
+  "Simran": 122
  },
  "backfill": {
   "file": "mtd-2026-10-28-1746.csv",

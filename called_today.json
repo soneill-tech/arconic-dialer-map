@@ -1,105 +1,28 @@
 {
-  "date": "2026-10-28",
-  "updated_at": "2026-10-28T17:52:31-05:00",
-  "synced_at": "2026-10-28T17:52:31-05:00",
+  "date": "2026-10-29",
+  "updated_at": "2026-10-29T09:55:52-05:00",
+  "synced_at": "2026-10-29T09:55:52-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "93901",
-    "460501",
-    "7799401",
-    "30103601",
-    "13966405892",
-    "20283614591",
-    "250984707146"
+    "462051",
+    "203866478699"
   ],
   "calls": [
     {
-      "contact_id": "460501",
-      "contact_name": "Robert S Gilbert",
+      "contact_id": "462051",
+      "contact_name": "Adam M. Bjorkman",
       "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-29T08:17:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "203866478699",
+      "contact_name": "Trent Roybal",
+      "am": "Simran",
       "caller": "Simran",
-      "time": "2026-10-28T09:24:00-05:00",
-      "outcome": "--"
-    },
-    {
-      "contact_id": "93901",
-      "contact_name": "Troy Tibbot",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-28T11:09:00-05:00",
-      "outcome": "--"
-    },
-    {
-      "contact_id": "13966405892",
-      "contact_name": "Trent Bell",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-28T11:33:00-05:00",
-      "outcome": "--"
-    },
-    {
-      "contact_id": "13966405892",
-      "contact_name": "Trent Bell",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-28T14:27:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "30103601",
-      "contact_name": "Melissa Houle",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-28T16:28:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "7799401",
-      "contact_name": "Justin Kay",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-28T16:30:00-05:00",
-      "outcome": "--"
-    },
-    {
-      "contact_id": "250984707146",
-      "contact_name": "Kim Dudley",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-28T16:33:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "250984707146",
-      "contact_name": "Kim Dudley",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-28T16:33:00-05:00",
-      "outcome": "--"
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-28T17:14:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-28T17:17:00-05:00",
-      "outcome": "--"
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-28T17:17:00-05:00",
-      "outcome": "No answer"
+      "time": "2026-10-29T09:31:00-05:00",
+      "outcome": ""
     }
   ]
 }
