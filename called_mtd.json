@@ -974,6 +974,7 @@
     "n:avl manufacturing"
    ],
    "2026-10-29": [
+    "n:amy chen",
     "n:ben caplan",
     "n:jason harris",
     "n:howard leopold"
@@ -1472,6 +1473,8 @@
     "n:brad shoff",
     "n:tara donnan",
     "n:eric fischer",
+    "n:robert miles",
+    "n:james gambler",
     "n:david williams",
     "n:josue serralta",
     "n:richard reicher"
@@ -1911,50 +1914,53 @@
     "n:scott robinson",
     "n:info@loargroup.com",
     "n:grady excavating inc"
+   ],
+   "2026-10-29": [
+    "n:bobby whitt"
    ]
   }
  },
- "updated_at": "2026-10-29T10:52:09-05:00",
+ "updated_at": "2026-10-29T12:00:20-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 536,
+  "Addie": 537,
   "Kahekili": 55,
-  "Mia": 456,
-  "Nathan": 396,
+  "Mia": 458,
+  "Nathan": 397,
   "Nick": 105,
   "Simran": 122
  },
  "backfill": {
-  "file": "mtd-2026-10-29-1046.csv",
-  "rows": 45,
+  "file": "named-2026-10-29-1153.csv",
+  "rows": 57,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-29T10:52:09-05:00",
+  "at": "2026-10-29T12:00:20-05:00",
   "per_rep": {
-   "Addie": {
-    "raw_calls": 8,
-    "distinct_contact_days": 3,
-    "map_matched_contact_days": 3
+   "Mia": {
+    "raw_calls": 17,
+    "distinct_contact_days": 8,
+    "map_matched_contact_days": 8
    },
    "Nathan": {
-    "raw_calls": 3,
-    "distinct_contact_days": 0,
-    "map_matched_contact_days": 0
-   },
-   "Simran": {
-    "raw_calls": 7,
+    "raw_calls": 6,
     "distinct_contact_days": 1,
     "map_matched_contact_days": 1
    },
-   "Mia": {
-    "raw_calls": 13,
-    "distinct_contact_days": 6,
-    "map_matched_contact_days": 6
-   },
    "Kahekili": {
-    "raw_calls": 14,
+    "raw_calls": 17,
     "distinct_contact_days": 2,
     "map_matched_contact_days": 2
+   },
+   "Addie": {
+    "raw_calls": 8,
+    "distinct_contact_days": 4,
+    "map_matched_contact_days": 4
+   },
+   "Simran": {
+    "raw_calls": 9,
+    "distinct_contact_days": 1,
+    "map_matched_contact_days": 1
    },
    "Nick": {
     "raw_calls": 0,
