@@ -1,0 +1,21 @@
+{
+ "month": "2026-10",
+ "entries": {
+  "Kahekili": {
+   "2026-10-29": [
+    "462051"
+   ]
+  },
+  "Simran": {
+   "2026-10-29": [
+    "203866478699"
+   ]
+  }
+ },
+ "updated_at": "2026-10-29T11:59:49-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "counts": {
+  "Kahekili": 1,
+  "Simran": 1
+ }
+}
