@@ -1477,6 +1477,7 @@
     "n:james gambler",
     "n:david williams",
     "n:josue serralta",
+    "n:terry dollaway",
     "n:richard reicher"
    ]
   },
@@ -1916,44 +1917,45 @@
     "n:grady excavating inc"
    ],
    "2026-10-29": [
-    "n:bobby whitt"
+    "n:bobby whitt",
+    "n:david constant"
    ]
   }
  },
- "updated_at": "2026-10-29T12:00:20-05:00",
+ "updated_at": "2026-10-29T12:56:10-05:00",
  "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
   "Addie": 537,
   "Kahekili": 55,
-  "Mia": 458,
-  "Nathan": 397,
+  "Mia": 459,
+  "Nathan": 398,
   "Nick": 105,
   "Simran": 122
  },
  "backfill": {
-  "file": "named-2026-10-29-1153.csv",
-  "rows": 57,
+  "file": "named-2026-10-29-1250.csv",
+  "rows": 66,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-29T12:00:20-05:00",
+  "at": "2026-10-29T12:56:10-05:00",
   "per_rep": {
-   "Mia": {
-    "raw_calls": 17,
-    "distinct_contact_days": 8,
-    "map_matched_contact_days": 8
-   },
    "Nathan": {
-    "raw_calls": 6,
-    "distinct_contact_days": 1,
-    "map_matched_contact_days": 1
+    "raw_calls": 7,
+    "distinct_contact_days": 2,
+    "map_matched_contact_days": 2
+   },
+   "Mia": {
+    "raw_calls": 21,
+    "distinct_contact_days": 9,
+    "map_matched_contact_days": 9
    },
    "Kahekili": {
-    "raw_calls": 17,
+    "raw_calls": 18,
     "distinct_contact_days": 2,
     "map_matched_contact_days": 2
    },
    "Addie": {
-    "raw_calls": 8,
+    "raw_calls": 11,
     "distinct_contact_days": 4,
     "map_matched_contact_days": 4
    },
