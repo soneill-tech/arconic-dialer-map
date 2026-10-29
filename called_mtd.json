@@ -1937,9 +1937,11 @@
    ],
    "2026-10-29": [
     "n:dewey cho",
+    "n:chris carr",
     "n:eric chung",
     "n:bobby whitt",
     "n:david swarb",
+    "n:luke turner",
     "n:adolfo flores",
     "n:blair whitney",
     "n:david constant",
@@ -1947,52 +1949,52 @@
    ]
   }
  },
- "updated_at": "2026-10-29T16:54:17-05:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-10-29T16:54:26-05:00",
+ "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
   "Addie": 539,
   "Kahekili": 58,
   "Mia": 468,
-  "Nathan": 404,
+  "Nathan": 406,
   "Nick": 106,
   "Simran": 124
  },
  "backfill": {
-  "file": "named-2026-10-29-1550.csv",
-  "rows": 123,
+  "file": "raw-2026-10-29-1650-merged.csv",
+  "rows": 137,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-29T15:53:17-05:00",
+  "at": "2026-10-29T16:54:26-05:00",
   "per_rep": {
-   "Kahekili": {
-    "raw_calls": 27,
-    "distinct_contact_days": 3,
-    "map_matched_contact_days": 3
-   },
-   "Addie": {
-    "raw_calls": 21,
-    "distinct_contact_days": 6,
-    "map_matched_contact_days": 6
-   },
    "Mia": {
-    "raw_calls": 34,
+    "raw_calls": 35,
     "distinct_contact_days": 18,
     "map_matched_contact_days": 18
    },
+   "Nathan": {
+    "raw_calls": 22,
+    "distinct_contact_days": 10,
+    "map_matched_contact_days": 10
+   },
    "Nick": {
-    "raw_calls": 7,
+    "raw_calls": 9,
     "distinct_contact_days": 1,
     "map_matched_contact_days": 1
    },
-   "Nathan": {
-    "raw_calls": 17,
-    "distinct_contact_days": 8,
-    "map_matched_contact_days": 8
-   },
    "Simran": {
-    "raw_calls": 17,
+    "raw_calls": 19,
     "distinct_contact_days": 3,
     "map_matched_contact_days": 3
+   },
+   "Kahekili": {
+    "raw_calls": 30,
+    "distinct_contact_days": 4,
+    "map_matched_contact_days": 4
+   },
+   "Addie": {
+    "raw_calls": 22,
+    "distinct_contact_days": 6,
+    "map_matched_contact_days": 6
    }
   }
  },
