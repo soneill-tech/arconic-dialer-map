@@ -1,13 +1,14 @@
 {
   "date": "2026-10-30",
-  "updated_at": "2026-10-30T15:55:00-05:00",
-  "synced_at": "2026-10-30T15:55:00-05:00",
+  "updated_at": "2026-10-30T16:55:44-05:00",
+  "synced_at": "2026-10-30T16:55:44-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "93901",
     "446701",
     "462051",
     "3554855",
+    "8928701",
     "18051551",
     "23216601",
     "27297651",
@@ -110,6 +111,30 @@
       "am": "Kahekili",
       "caller": "Kahekili",
       "time": "2026-10-30T15:20:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "8928701",
+      "contact_name": "Naomi Lovejoy",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-30T15:59:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "8928701",
+      "contact_name": "Naomi Lovejoy",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-30T16:19:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "8928701",
+      "contact_name": "Naomi Lovejoy",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-30T16:37:00-05:00",
       "outcome": ""
     }
   ]
