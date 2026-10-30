@@ -101,6 +101,7 @@
     "27297651",
     "13966405892",
     "n:chuck hahn",
+    "n:randy moeller",
     "n:roman andruseyko"
    ]
   },
@@ -266,6 +267,9 @@
     "203866478699",
     "n:coty bullington",
     "n:nicolene mccrary"
+   ],
+   "2026-10-30": [
+    "n:sarah schupp"
    ]
   },
   "Nick": {
@@ -1001,8 +1005,11 @@
     "n:sarah richmond"
    ],
    "2026-10-30": [
+    "n:cj moran",
+    "n:matt davis",
     "n:kenneth kim",
     "n:rick sibley",
+    "n:grant butler",
     "n:hunter leung",
     "n:tony arcovitch"
    ]
@@ -1973,58 +1980,60 @@
     "n:connor partington"
    ],
    "2026-10-30": [
+    "n:gc pricing",
     "n:jason ledford",
     "n:clayton bartos",
+    "n:zachary berton",
     "n:christopher bolognese"
    ]
   }
  },
- "updated_at": "2026-10-30T11:51:03-05:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-10-30T11:51:09-05:00",
+ "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Addie": 543,
-  "Kahekili": 63,
+  "Addie": 546,
+  "Kahekili": 64,
   "Mia": 474,
-  "Nathan": 409,
+  "Nathan": 411,
   "Nick": 108,
-  "Simran": 124
+  "Simran": 125
  },
  "backfill": {
-  "file": "merged-2026-10-30-1050.csv",
-  "rows": 38,
+  "file": "raw-2026-10-30-1150-merged.csv",
+  "rows": 69,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-30T10:57:09-05:00",
+  "at": "2026-10-30T11:51:09-05:00",
   "per_rep": {
-   "Simran": {
-    "raw_calls": 3,
-    "distinct_contact_days": 0,
-    "map_matched_contact_days": 0
-   },
    "Kahekili": {
-    "raw_calls": 9,
-    "distinct_contact_days": 3,
-    "map_matched_contact_days": 3
-   },
-   "Nathan": {
-    "raw_calls": 10,
-    "distinct_contact_days": 3,
-    "map_matched_contact_days": 3
-   },
-   "Mia": {
-    "raw_calls": 6,
+    "raw_calls": 21,
     "distinct_contact_days": 6,
     "map_matched_contact_days": 6
    },
+   "Nathan": {
+    "raw_calls": 15,
+    "distinct_contact_days": 5,
+    "map_matched_contact_days": 5
+   },
    "Addie": {
-    "raw_calls": 10,
-    "distinct_contact_days": 4,
-    "map_matched_contact_days": 4
+    "raw_calls": 15,
+    "distinct_contact_days": 7,
+    "map_matched_contact_days": 7
+   },
+   "Simran": {
+    "raw_calls": 6,
+    "distinct_contact_days": 1,
+    "map_matched_contact_days": 1
+   },
+   "Mia": {
+    "raw_calls": 7,
+    "distinct_contact_days": 6,
+    "map_matched_contact_days": 6
    },
    "Nick": {
-    "raw_calls": 0,
-    "distinct_contact_days": 0,
-    "map_matched_contact_days": 0
+    "raw_calls": 5,
+    "distinct_contact_days": 2,
+    "map_matched_contact_days": 2
    }
   }
  },
