@@ -832,7 +832,68 @@
    },
    "gp_as_of": "2026-10-29",
    "derived": false,
+<<<<<<< Updated upstream
    "written_at": "2026-10-29T22:05:41-05:00"
+=======
+   "written_at": "2026-10-29T17:58:28-05:00"
+  },
+  "2026-10-30": {
+   "calls": {
+    "Kili": {
+     "rank": 6,
+     "score": 58
+    },
+    "Simran": {
+     "rank": 4,
+     "score": 124
+    },
+    "Nick": {
+     "rank": 5,
+     "score": 106
+    },
+    "Addie": {
+     "rank": 1,
+     "score": 539
+    },
+    "Mia": {
+     "rank": 2,
+     "score": 468
+    },
+    "Nathan": {
+     "rank": 3,
+     "score": 406
+    }
+   },
+   "gp": {
+    "Kili": {
+     "rank": 2,
+     "pct": 72.0
+    },
+    "Nick": {
+     "rank": 1,
+     "pct": 111.0
+    },
+    "Mia": {
+     "rank": 3,
+     "pct": 33.3
+    },
+    "Simran": {
+     "rank": 4,
+     "pct": 29.7
+    },
+    "Addie": {
+     "rank": 6,
+     "pct": -2.9
+    },
+    "Nathan": {
+     "rank": 5,
+     "pct": 0.0
+    }
+   },
+   "gp_as_of": "2026-10-21",
+   "derived": false,
+   "written_at": "2026-10-30T08:50:39-05:00"
+>>>>>>> Stashed changes
   }
  }
 }
