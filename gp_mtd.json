@@ -1,82 +1,72 @@
 {
  "month": "2026-10",
  "as_of": "2026-10-30",
- "source": "TPRO Bill To export terminal 129, 10/30 9:02 AM CT x ownership sheet + overrides",
- "loads": 1406,
- "total_gp": 486205.28,
+ "source": "TPRO Bill To export terminal 129, 10/30 4:07 PM CT x ownership sheet + overrides",
+ "loads": 1435,
+ "total_gp": 497204.96,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
- "generated_at": "2026-10-30T09:03:02-05:00",
+ "generated_at": "2026-10-30T16:07:28-05:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 340838.13,
-   "gp_verified": 340838.13,
+   "gp": 348113.44,
+   "gp_verified": 348113.44,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 260237.65,
-     "match": "verified"
-    },
-    {
-     "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 63383.98,
+     "gp": 265747.96,
      "match": "verified"
     },
     {
      "customer": "Arconic US, LLC c/o CT Logistics Team 8",
-     "gp": 17216.5,
+     "gp": 17231.5,
+     "match": "verified"
+    },
+    {
+     "customer": "Howmet Aerospace c/o CT Logistics Team 3",
+     "gp": 65133.98,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Simran",
-   "gp": 6907.88,
-   "gp_verified": 5657.88,
-   "gp_unverified": 1250.0,
+   "gp": 7068.42,
+   "gp_verified": 5668.42,
+   "gp_unverified": 1400.0,
    "customers": [
     {
-     "customer": "Kaiser Aluminum c/o US Bank",
-     "gp": 5657.88,
-     "match": "verified"
+     "customer": "CitiTrends Inc c/o Technical Traffic Solutions",
+     "gp": 1400.0,
+     "match": "possible match - unverified"
     },
     {
-     "customer": "CitiTrends Inc c/o Technical Traffic Solutions",
-     "gp": 1250.0,
-     "match": "possible match - unverified"
+     "customer": "Kaiser Aluminum c/o US Bank",
+     "gp": 5668.42,
+     "match": "verified"
     }
    ]
   },
   {
    "rep": "Nick",
-   "gp": 111999.08,
-   "gp_verified": 110099.6,
+   "gp": 114677.91,
+   "gp_verified": 112778.43,
    "gp_unverified": 1899.48,
    "customers": [
     {
-     "customer": "MSC",
-     "gp": 48306.89,
+     "customer": "3M c/o Data2Logistics - 3MCP01 - CHI",
+     "gp": 133.44,
      "match": "verified"
     },
     {
      "customer": "Aleris International",
-     "gp": 31940.58,
-     "match": "verified"
-    },
-    {
-     "customer": "Novelis Corporation",
-     "gp": 21274.08,
+     "gp": 34305.06,
      "match": "verified"
     },
     {
      "customer": "Boart Longyear c/o Software Solution",
      "gp": 5624.0,
-     "match": "verified"
-    },
-    {
-     "customer": "Leaf Home c/o Uber Freight",
-     "gp": 2395.61,
      "match": "verified"
     },
     {
@@ -90,19 +80,29 @@
      "match": "verified"
     },
     {
-     "customer": "3M c/o Data2Logistics - 3MCP01 - CHI",
-     "gp": 133.44,
-     "match": "verified"
-    },
-    {
-     "customer": "Verista",
-     "gp": 75.0,
+     "customer": "Leaf Home c/o Uber Freight",
+     "gp": 2395.61,
      "match": "verified"
     },
     {
      "customer": "MJ Kellner",
      "gp": -40.52,
      "match": "possible match - unverified"
+    },
+    {
+     "customer": "MSC",
+     "gp": 48306.89,
+     "match": "verified"
+    },
+    {
+     "customer": "Novelis Corporation",
+     "gp": 21588.43,
+     "match": "verified"
+    },
+    {
+     "customer": "Verista",
+     "gp": 75.0,
+     "match": "verified"
     }
    ]
   },
@@ -113,33 +113,8 @@
    "gp_unverified": 8335.12,
    "customers": [
     {
-     "customer": "Spectrum Foods, Inc.",
-     "gp": 8132.12,
-     "match": "possible match - unverified"
-    },
-    {
-     "customer": "Nibco c/o US Bank",
-     "gp": 2086.16,
-     "match": "verified"
-    },
-    {
-     "customer": "Rainbow Fertilizer LLC",
-     "gp": 800.0,
-     "match": "verified"
-    },
-    {
-     "customer": "Frulact USA LLC",
-     "gp": 750.0,
-     "match": "verified"
-    },
-    {
-     "customer": "TIMAC AGRO USA Inc",
-     "gp": 650.0,
-     "match": "verified"
-    },
-    {
-     "customer": "Redford Building Supply",
-     "gp": 590.0,
+     "customer": "Alta Recycling LLC",
+     "gp": 175.0,
      "match": "verified"
     },
     {
@@ -153,9 +128,9 @@
      "match": "verified"
     },
     {
-     "customer": "Universal White Cement",
-     "gp": 203.0,
-     "match": "possible match - unverified"
+     "customer": "Frulact USA LLC",
+     "gp": 750.0,
+     "match": "verified"
     },
     {
      "customer": "Killick Aerospace Limited",
@@ -163,9 +138,34 @@
      "match": "verified"
     },
     {
-     "customer": "Alta Recycling LLC",
-     "gp": 175.0,
+     "customer": "Nibco c/o US Bank",
+     "gp": 2086.16,
      "match": "verified"
+    },
+    {
+     "customer": "Rainbow Fertilizer LLC",
+     "gp": 800.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Redford Building Supply",
+     "gp": 590.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Spectrum Foods, Inc.",
+     "gp": 8132.12,
+     "match": "possible match - unverified"
+    },
+    {
+     "customer": "TIMAC AGRO USA Inc",
+     "gp": 650.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Universal White Cement",
+     "gp": 203.0,
+     "match": "possible match - unverified"
     },
     {
      "customer": "VariChem International Inc",
@@ -189,33 +189,23 @@
   },
   {
    "rep": "Unassigned",
-   "gp": 12389.91,
-   "gp_verified": 12389.91,
+   "gp": 13274.91,
+   "gp_verified": 13274.91,
    "gp_unverified": 0.0,
    "customers": [
-    {
-     "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
-     "gp": 5637.02,
-     "match": "unmatched"
-    },
-    {
-     "customer": "Cass Information Systems, Inc.",
-     "gp": 3028.48,
-     "match": "unmatched"
-    },
-    {
-     "customer": "Ulbrich Shaped Wire",
-     "gp": 1950.0,
-     "match": "unmatched"
-    },
     {
      "customer": "Bronco Industrial Services LLC",
      "gp": 1200.0,
      "match": "verified / owner not a rep: Steve O'Neill"
     },
     {
-     "customer": "Reliable Silver Corporation",
-     "gp": 450.0,
+     "customer": "BRT Extrustions",
+     "gp": -255.0,
+     "match": "unmatched"
+    },
+    {
+     "customer": "Cass Information Systems, Inc.",
+     "gp": 3028.48,
      "match": "unmatched"
     },
     {
@@ -225,7 +215,7 @@
     },
     {
      "customer": "Indevco Plastics - Longview",
-     "gp": 190.0,
+     "gp": 240.0,
      "match": "unmatched"
     },
     {
@@ -234,13 +224,23 @@
      "match": "unmatched"
     },
     {
+     "customer": "Reliable Silver Corporation",
+     "gp": 450.0,
+     "match": "unmatched"
+    },
+    {
      "customer": "Sigma Commercial Bag dba Republic Manufacturing Group Inc",
      "gp": -125.0,
      "match": "unmatched"
     },
     {
-     "customer": "BRT Extrustions",
-     "gp": -255.0,
+     "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
+     "gp": 5637.02,
+     "match": "unmatched"
+    },
+    {
+     "customer": "Ulbrich Shaped Wire",
+     "gp": 2785.0,
      "match": "unmatched"
     }
    ]
