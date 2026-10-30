@@ -1530,7 +1530,8 @@
     "n:anthony munoz",
     "n:santosh mitra",
     "n:josue serralta",
-    "n:shannon crepeau"
+    "n:shannon crepeau",
+    "n:sondra bohnenkamp"
    ]
   },
   "Nathan": {
@@ -1989,27 +1990,32 @@
    ]
   }
  },
- "updated_at": "2026-10-30T12:53:56-05:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-10-30T12:53:59-05:00",
+ "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
   "Addie": 546,
   "Kahekili": 65,
-  "Mia": 474,
+  "Mia": 475,
   "Nathan": 411,
   "Nick": 108,
   "Simran": 125
  },
  "backfill": {
-  "file": "raw-2026-10-30-1150-merged.csv",
-  "rows": 69,
+  "file": "raw-2026-10-30-1250-merged.csv",
+  "rows": 73,
   "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
   "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-10-30T11:51:09-05:00",
+  "at": "2026-10-30T12:53:59-05:00",
   "per_rep": {
    "Kahekili": {
-    "raw_calls": 21,
-    "distinct_contact_days": 6,
-    "map_matched_contact_days": 6
+    "raw_calls": 24,
+    "distinct_contact_days": 7,
+    "map_matched_contact_days": 7
+   },
+   "Mia": {
+    "raw_calls": 8,
+    "distinct_contact_days": 7,
+    "map_matched_contact_days": 7
    },
    "Nathan": {
     "raw_calls": 15,
@@ -2025,11 +2031,6 @@
     "raw_calls": 6,
     "distinct_contact_days": 1,
     "map_matched_contact_days": 1
-   },
-   "Mia": {
-    "raw_calls": 7,
-    "distinct_contact_days": 6,
-    "map_matched_contact_days": 6
    },
    "Nick": {
     "raw_calls": 5,
