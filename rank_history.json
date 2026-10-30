@@ -4,7 +4,11 @@
    "calls": {
     "Kili": {
      "rank": 6,
+<<<<<<< Updated upstream
      "score": 58
+=======
+     "score": 59
+>>>>>>> Stashed changes
     },
     "Simran": {
      "rank": 4,
@@ -30,6 +34,7 @@
    "gp": {
     "Kili": {
      "rank": 2,
+<<<<<<< Updated upstream
      "pct": 113.6
     },
     "Nick": {
@@ -43,6 +48,21 @@
     "Simran": {
      "rank": 4,
      "pct": 46.1
+=======
+     "pct": 107.0
+    },
+    "Nick": {
+     "rank": 1,
+     "pct": 131.5
+    },
+    "Mia": {
+     "rank": 3,
+     "pct": 45.1
+    },
+    "Simran": {
+     "rank": 4,
+     "pct": 43.5
+>>>>>>> Stashed changes
     },
     "Addie": {
      "rank": 6,
@@ -53,9 +73,15 @@
      "pct": 0.0
     }
    },
+<<<<<<< Updated upstream
    "gp_as_of": "2026-10-30",
    "derived": false,
    "written_at": "2026-10-30T09:03:02-05:00"
+=======
+   "gp_as_of": "2026-10-29",
+   "derived": false,
+   "written_at": "2026-10-30T09:54:53-05:00"
+>>>>>>> Stashed changes
   }
  }
 }

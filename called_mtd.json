@@ -95,6 +95,9 @@
     "13966405892",
     "n:chuck hahn",
     "n:james schwartz"
+   ],
+   "2026-10-30": [
+    "462051"
    ]
   },
   "Simran": {
@@ -1949,11 +1952,11 @@
    ]
   }
  },
- "updated_at": "2026-10-29T16:54:26-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-30T09:54:53-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 539,
-  "Kahekili": 58,
+  "Kahekili": 59,
   "Mia": 468,
   "Nathan": 406,
   "Nick": 106,

@@ -1,8 +1,27 @@
 {
   "date": "2026-10-30",
-  "updated_at": "2026-10-30T08:50:38-05:00",
-  "synced_at": "2026-10-30T08:50:38-05:00",
+  "updated_at": "2026-10-30T09:54:53-05:00",
+  "synced_at": "2026-10-30T09:54:53-05:00",
   "source": "HubSpot calls (browser sync)",
-  "called_contact_ids": [],
-  "calls": []
+  "called_contact_ids": [
+    "462051"
+  ],
+  "calls": [
+    {
+      "contact_id": "462051",
+      "contact_name": "Adam M. Bjorkman",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "462051",
+      "contact_name": "Adam M. Bjorkman",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "",
+      "outcome": ""
+    }
+  ]
 }
