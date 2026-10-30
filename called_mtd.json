@@ -98,6 +98,8 @@
    ],
    "2026-10-30": [
     "462051",
+    "27297651",
+    "13966405892",
     "n:chuck hahn",
     "n:roman andruseyko"
    ]
@@ -410,6 +412,10 @@
    ],
    "2026-10-29": [
     "n:jeff carpenter"
+   ],
+   "2026-10-30": [
+    "18051551",
+    "23216601"
    ]
   },
   "Addie": {
@@ -1973,14 +1979,14 @@
    ]
   }
  },
- "updated_at": "2026-10-30T10:57:09-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-30T11:51:03-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 543,
-  "Kahekili": 61,
+  "Kahekili": 63,
   "Mia": 474,
   "Nathan": 409,
-  "Nick": 106,
+  "Nick": 108,
   "Simran": 124
  },
  "backfill": {

@@ -1,10 +1,14 @@
 {
   "date": "2026-10-30",
-  "updated_at": "2026-10-30T09:54:53-05:00",
-  "synced_at": "2026-10-30T09:54:53-05:00",
+  "updated_at": "2026-10-30T11:51:03-05:00",
+  "synced_at": "2026-10-30T11:51:03-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "462051"
+    "462051",
+    "18051551",
+    "23216601",
+    "27297651",
+    "13966405892"
   ],
   "calls": [
     {
@@ -12,15 +16,47 @@
       "contact_name": "Adam M. Bjorkman",
       "am": "Kahekili",
       "caller": "Kahekili",
-      "time": "",
-      "outcome": "No answer"
+      "time": "2026-10-30T09:19:00-05:00",
+      "outcome": ""
     },
     {
       "contact_id": "462051",
       "contact_name": "Adam M. Bjorkman",
       "am": "Kahekili",
       "caller": "Kahekili",
-      "time": "",
+      "time": "2026-10-30T09:36:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "27297651",
+      "contact_name": "Delandric Smith",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-30T10:54:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "23216601",
+      "contact_name": "Moniqua Oliver",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-30T10:59:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "18051551",
+      "contact_name": "Ronald Heard",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-10-30T10:59:00-05:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-30T11:38:00-05:00",
       "outcome": ""
     }
   ]
