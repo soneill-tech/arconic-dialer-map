@@ -1,16 +1,19 @@
 {
   "date": "2026-10-30",
-  "updated_at": "2026-10-30T14:52:58-05:00",
-  "synced_at": "2026-10-30T14:52:58-05:00",
+  "updated_at": "2026-10-30T15:55:00-05:00",
+  "synced_at": "2026-10-30T15:55:00-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "93901",
     "446701",
     "462051",
     "3554855",
     "18051551",
     "23216601",
     "27297651",
-    "13966405892"
+    "13966405892",
+    "203866478699",
+    "250322524784"
   ],
   "calls": [
     {
@@ -78,11 +81,35 @@
       "outcome": ""
     },
     {
+      "contact_id": "250322524784",
+      "contact_name": "Chris Kidd",
+      "am": "Mia",
+      "caller": "Mia",
+      "time": "2026-10-30T14:47:00-05:00",
+      "outcome": "Connected"
+    },
+    {
       "contact_id": "446701",
       "contact_name": "Michelle King",
       "am": "Simran",
       "caller": "Simran",
       "time": "2026-10-30T14:50:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "203866478699",
+      "contact_name": "Trent Roybal",
+      "am": "Simran",
+      "caller": "Simran",
+      "time": "2026-10-30T14:57:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "93901",
+      "contact_name": "Troy Tibbot",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-30T15:20:00-05:00",
       "outcome": ""
     }
   ]

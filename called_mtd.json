@@ -97,6 +97,7 @@
     "n:james schwartz"
    ],
    "2026-10-30": [
+    "93901",
     "462051",
     "3554855",
     "27297651",
@@ -271,6 +272,7 @@
    ],
    "2026-10-30": [
     "446701",
+    "203866478699",
     "n:sarah schupp"
    ]
   },
@@ -1529,6 +1531,7 @@
     "n:mathew mosteller"
    ],
    "2026-10-30": [
+    "250322524784",
     "n:kevin fain",
     "n:dorie rauch",
     "n:nathan altig",
@@ -1997,15 +2000,15 @@
    ]
   }
  },
- "updated_at": "2026-10-30T14:53:00-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-30T15:55:00-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 548,
-  "Kahekili": 65,
-  "Mia": 478,
+  "Kahekili": 66,
+  "Mia": 479,
   "Nathan": 411,
   "Nick": 109,
-  "Simran": 126
+  "Simran": 127
  },
  "backfill": {
   "file": "raw-2026-10-30-1450-merged.csv",
