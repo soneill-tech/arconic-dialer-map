@@ -1,9 +1,10 @@
 {
   "date": "2026-10-30",
-  "updated_at": "2026-10-30T12:53:56-05:00",
-  "synced_at": "2026-10-30T12:53:56-05:00",
+  "updated_at": "2026-10-30T14:52:58-05:00",
+  "synced_at": "2026-10-30T14:52:58-05:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "446701",
     "462051",
     "3554855",
     "18051551",
@@ -66,6 +67,22 @@
       "am": "Kahekili",
       "caller": "Kahekili",
       "time": "2026-10-30T11:49:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-10-30T14:28:00-05:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "446701",
+      "contact_name": "Michelle King",
+      "am": "Simran",
+      "caller": "Simran",
+      "time": "2026-10-30T14:50:00-05:00",
       "outcome": ""
     }
   ]

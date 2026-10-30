@@ -270,6 +270,7 @@
     "n:nicolene mccrary"
    ],
    "2026-10-30": [
+    "446701",
     "n:sarah schupp"
    ]
   },
@@ -1990,15 +1991,15 @@
    ]
   }
  },
- "updated_at": "2026-10-30T12:53:59-05:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-10-30T14:52:58-05:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 546,
   "Kahekili": 65,
   "Mia": 475,
   "Nathan": 411,
   "Nick": 108,
-  "Simran": 125
+  "Simran": 126
  },
  "backfill": {
   "file": "raw-2026-10-30-1250-merged.csv",
