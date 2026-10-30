@@ -1,21 +1,21 @@
 {
  "month": "2026-10",
  "as_of": "2026-10-29",
- "source": "TPRO Bill To export terminal 129, 10/29 4:05 PM CT x ownership sheet + overrides",
- "loads": 1358,
- "total_gp": 459173.88,
+ "source": "TPRO Bill To export terminal 129, 10/29 10:05 PM CT x ownership sheet + overrides",
+ "loads": 1357,
+ "total_gp": 457173.88,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
- "generated_at": "2026-10-29T20:41:19-05:00",
+ "generated_at": "2026-10-29T22:05:41-05:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 322814.14,
-   "gp_verified": 322814.14,
+   "gp": 320914.14,
+   "gp_verified": 320914.14,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 248134.68,
+     "gp": 246234.68,
      "match": "verified"
     },
     {
@@ -108,9 +108,9 @@
   },
   {
    "rep": "Mia",
-   "gp": 13634.06,
+   "gp": 13534.06,
    "gp_verified": 5198.94,
-   "gp_unverified": 8435.12,
+   "gp_unverified": 8335.12,
    "customers": [
     {
      "customer": "Alta Recycling LLC",
@@ -154,7 +154,7 @@
     },
     {
      "customer": "Spectrum Foods, Inc.",
-     "gp": 8232.12,
+     "gp": 8132.12,
      "match": "possible match - unverified"
     },
     {
