@@ -1,21 +1,21 @@
 {
  "month": "2026-10",
  "as_of": "2026-10-30",
- "source": "TPRO Bill To export terminal 129, 10/30 4:07 PM CT x ownership sheet + overrides",
- "loads": 1435,
- "total_gp": 497204.96,
+ "source": "TPRO Terminal Activity Bill To, terminal 129, pickup 10/1-10/31, pulled 10/30 11:15 PM CT x ownership sheet + overrides",
+ "loads": 1436,
+ "total_gp": 498284.14,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
- "generated_at": "2026-10-30T16:07:28-05:00",
+ "generated_at": "2026-10-30T23:16:00-05:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 348113.44,
-   "gp_verified": 348113.44,
+   "gp": 348971.24,
+   "gp_verified": 348971.24,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 265747.96,
+     "gp": 266045.08,
      "match": "verified"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 65133.98,
+     "gp": 65694.66,
      "match": "verified"
     }
    ]
@@ -50,8 +50,8 @@
   },
   {
    "rep": "Nick",
-   "gp": 114677.91,
-   "gp_verified": 112778.43,
+   "gp": 114899.29,
+   "gp_verified": 112999.81,
    "gp_unverified": 1899.48,
    "customers": [
     {
@@ -96,7 +96,7 @@
     },
     {
      "customer": "Novelis Corporation",
-     "gp": 21588.43,
+     "gp": 21809.81,
      "match": "verified"
     },
     {
