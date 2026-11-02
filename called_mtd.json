@@ -5,11 +5,24 @@
    "2026-11-02": [
     "140256664498"
    ]
+  },
+  "Addie": {
+   "2026-11-02": [
+    "n:tim andres",
+    "n:connie whitson"
+   ]
+  },
+  "Nathan": {
+   "2026-11-02": [
+    "n:zach renfro"
+   ]
   }
  },
- "updated_at": "2026-11-02T09:09:59-06:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-11-02T09:10:29-06:00",
+ "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
  "counts": {
-  "Mia": 1
+  "Addie": 2,
+  "Mia": 1,
+  "Nathan": 1
  }
 }
