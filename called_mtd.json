@@ -3,9 +3,9 @@
  "entries": {
   "Mia": {
    "2026-11-02": [
+    "n:lea johns",
     "140256664498",
-    "n:josue serralta",
-    "n:lea johns"
+    "n:josue serralta"
    ]
   },
   "Addie": {
@@ -39,13 +39,13 @@
    ]
   }
  },
- "updated_at": "2026-11-02T11:53:15-06:00",
+ "updated_at": "2026-11-02T13:00:03-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Mia": 3,
   "Addie": 7,
+  "Mia": 3,
   "Nathan": 2,
-  "Simran": 2,
-  "Nick": 3
+  "Nick": 3,
+  "Simran": 2
  }
 }
