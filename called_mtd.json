@@ -10,13 +10,15 @@
   },
   "Addie": {
    "2026-11-02": [
+    "n:eric lyle",
     "n:lily wong",
-    "n:tim andres",
-    "n:jason stouch",
-    "n:connie whitson",
-    "n:laura bertram",
     "n:beau meeks",
-    "n:dwayne beers"
+    "n:tim andres",
+    "n:dwayne beers",
+    "n:jason stouch",
+    "n:laura bertram",
+    "n:connie whitson",
+    "n:jennifer melberg"
    ]
   },
   "Nathan": {
@@ -33,6 +35,8 @@
   },
   "Nick": {
    "2026-11-02": [
+    "44159",
+    "2279551",
     "7401851",
     "n:amir zaid",
     "n:carrie diehm"
@@ -44,14 +48,14 @@
    ]
   }
  },
- "updated_at": "2026-11-02T13:54:16-06:00",
+ "updated_at": "2026-11-02T13:54:23-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 7,
+  "Addie": 9,
   "Kahekili": 1,
   "Mia": 3,
   "Nathan": 2,
-  "Nick": 3,
+  "Nick": 5,
   "Simran": 2
  }
 }
