@@ -5,7 +5,11 @@
    "2026-11-02": [
     "n:lea johns",
     "140256664498",
-    "n:josue serralta"
+    "n:josue serralta",
+    "n:nora lazar",
+    "n:barbara golando",
+    "n:kyle barnes",
+    "n:valarie amezquita"
    ]
   },
   "Addie": {
@@ -18,7 +22,8 @@
     "n:jason stouch",
     "n:laura bertram",
     "n:connie whitson",
-    "n:jennifer melberg"
+    "n:jennifer melberg",
+    "n:wayne niksich"
    ]
   },
   "Nathan": {
@@ -44,18 +49,19 @@
   },
   "Kahekili": {
    "2026-11-02": [
-    "13966405892"
+    "13966405892",
+    "n:angie wilson"
    ]
   }
  },
- "updated_at": "2026-11-02T13:54:23-06:00",
+ "updated_at": "2026-11-02T14:56:24-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 9,
-  "Kahekili": 1,
-  "Mia": 3,
+  "Mia": 7,
+  "Addie": 10,
   "Nathan": 2,
+  "Simran": 2,
   "Nick": 5,
-  "Simran": 2
+  "Kahekili": 2
  }
 }
