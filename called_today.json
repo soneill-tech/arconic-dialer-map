@@ -1,10 +1,12 @@
 {
   "date": "2026-11-02",
-  "updated_at": "2026-11-02T09:09:59-06:00",
-  "synced_at": "2026-11-02T09:09:59-06:00",
+  "updated_at": "2026-11-02T11:53:02-06:00",
+  "synced_at": "2026-11-02T11:53:02-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "140256664498"
+    "7401851",
+    "140256664498",
+    "203866478699"
   ],
   "calls": [
     {
@@ -14,6 +16,22 @@
       "caller": "Mia",
       "time": "2026-11-02T08:20:00-06:00",
       "outcome": "No answer"
+    },
+    {
+      "contact_id": "7401851",
+      "contact_name": "Mike Clendenen",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-11-02T11:16:00-06:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "203866478699",
+      "contact_name": "Trent Roybal",
+      "am": "Simran",
+      "caller": "Simran",
+      "time": "2026-11-02T11:33:00-06:00",
+      "outcome": "Connected"
     }
   ]
 }

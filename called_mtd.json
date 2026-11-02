@@ -24,15 +24,23 @@
   },
   "Simran": {
    "2026-11-02": [
+    "203866478699",
     "n:sarah schupp"
+   ]
+  },
+  "Nick": {
+   "2026-11-02": [
+    "7401851"
    ]
   }
  },
- "updated_at": "2026-11-02T09:55:21-06:00",
+ "updated_at": "2026-11-02T11:53:02-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 4,
-  "Mia": 1,
-  "Nathan": 2
+  "Addie": 5,
+  "Mia": 2,
+  "Nathan": 2,
+  "Nick": 1,
+  "Simran": 2
  }
 }
