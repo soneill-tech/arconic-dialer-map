@@ -8,21 +8,24 @@
   },
   "Addie": {
    "2026-11-02": [
+    "n:lily wong",
     "n:tim andres",
+    "n:jason stouch",
     "n:connie whitson"
    ]
   },
   "Nathan": {
    "2026-11-02": [
-    "n:zach renfro"
+    "n:zach renfro",
+    "n:christopher bolognese"
    ]
   }
  },
- "updated_at": "2026-11-02T09:10:29-06:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
+ "updated_at": "2026-11-02T09:55:21-06:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 2,
+  "Addie": 4,
   "Mia": 1,
-  "Nathan": 1
+  "Nathan": 2
  }
 }
