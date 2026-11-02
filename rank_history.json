@@ -55,7 +55,21 @@
    },
    "gp_as_of": "2026-10-30",
    "derived": false,
+<<<<<<< Updated upstream
    "written_at": "2026-10-30T23:16:00-05:00"
+=======
+   "written_at": "2026-10-30T17:52:30-05:00"
+  },
+  "2026-11-02": {
+   "calls": {
+    "Mia": {
+     "rank": 1,
+     "score": 1
+    }
+   },
+   "derived": false,
+   "written_at": "2026-11-02T09:10:00-06:00"
+>>>>>>> Stashed changes
   }
  }
 }

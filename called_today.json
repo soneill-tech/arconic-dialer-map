@@ -1,141 +1,19 @@
 {
-  "date": "2026-10-30",
-  "updated_at": "2026-10-30T16:55:44-05:00",
-  "synced_at": "2026-10-30T16:55:44-05:00",
+  "date": "2026-11-02",
+  "updated_at": "2026-11-02T09:09:59-06:00",
+  "synced_at": "2026-11-02T09:09:59-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "93901",
-    "446701",
-    "462051",
-    "3554855",
-    "8928701",
-    "18051551",
-    "23216601",
-    "27297651",
-    "13966405892",
-    "203866478699",
-    "250322524784"
+    "140256664498"
   ],
   "calls": [
     {
-      "contact_id": "462051",
-      "contact_name": "Adam M. Bjorkman",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T09:19:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "462051",
-      "contact_name": "Adam M. Bjorkman",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T09:36:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "27297651",
-      "contact_name": "Delandric Smith",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T10:54:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "23216601",
-      "contact_name": "Moniqua Oliver",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-30T10:59:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "18051551",
-      "contact_name": "Ronald Heard",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-10-30T10:59:00-05:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "13966405892",
-      "contact_name": "Trent Bell",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T11:38:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "3554855",
-      "contact_name": "Rachel Beaird",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T11:49:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "13966405892",
-      "contact_name": "Trent Bell",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T14:28:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "250322524784",
-      "contact_name": "Chris Kidd",
+      "contact_id": "140256664498",
+      "contact_name": "Marco Ledda",
       "am": "Mia",
       "caller": "Mia",
-      "time": "2026-10-30T14:47:00-05:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "446701",
-      "contact_name": "Michelle King",
-      "am": "Simran",
-      "caller": "Simran",
-      "time": "2026-10-30T14:50:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "203866478699",
-      "contact_name": "Trent Roybal",
-      "am": "Simran",
-      "caller": "Simran",
-      "time": "2026-10-30T14:57:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "93901",
-      "contact_name": "Troy Tibbot",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T15:20:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "8928701",
-      "contact_name": "Naomi Lovejoy",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T15:59:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "8928701",
-      "contact_name": "Naomi Lovejoy",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T16:19:00-05:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "8928701",
-      "contact_name": "Naomi Lovejoy",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-10-30T16:37:00-05:00",
-      "outcome": ""
+      "time": "2026-11-02T08:20:00-06:00",
+      "outcome": "No answer"
     }
   ]
 }
