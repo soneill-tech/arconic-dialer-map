@@ -1,10 +1,11 @@
 {
   "date": "2026-11-02",
-  "updated_at": "2026-11-02T13:00:03-06:00",
-  "synced_at": "2026-11-02T13:00:03-06:00",
+  "updated_at": "2026-11-02T13:54:16-06:00",
+  "synced_at": "2026-11-02T13:54:16-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "7401851",
+    "13966405892",
     "140256664498",
     "203866478699"
   ],
@@ -32,6 +33,14 @@
       "caller": "Simran",
       "time": "2026-11-02T11:33:00-06:00",
       "outcome": "Connected"
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-02T13:35:00-06:00",
+      "outcome": ""
     }
   ]
 }

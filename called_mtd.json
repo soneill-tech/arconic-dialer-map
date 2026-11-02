@@ -37,12 +37,18 @@
     "n:amir zaid",
     "n:carrie diehm"
    ]
+  },
+  "Kahekili": {
+   "2026-11-02": [
+    "13966405892"
+   ]
   }
  },
- "updated_at": "2026-11-02T13:00:03-06:00",
+ "updated_at": "2026-11-02T13:54:16-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 7,
+  "Kahekili": 1,
   "Mia": 3,
   "Nathan": 2,
   "Nick": 3,
