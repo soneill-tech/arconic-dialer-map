@@ -4,7 +4,8 @@
   "Mia": {
    "2026-11-02": [
     "140256664498",
-    "n:josue serralta"
+    "n:josue serralta",
+    "n:lea johns"
    ]
   },
   "Addie": {
@@ -13,7 +14,9 @@
     "n:tim andres",
     "n:jason stouch",
     "n:connie whitson",
-    "n:laura bertram"
+    "n:laura bertram",
+    "n:beau meeks",
+    "n:dwayne beers"
    ]
   },
   "Nathan": {
@@ -30,17 +33,19 @@
   },
   "Nick": {
    "2026-11-02": [
-    "7401851"
+    "7401851",
+    "n:amir zaid",
+    "n:carrie diehm"
    ]
   }
  },
- "updated_at": "2026-11-02T11:53:02-06:00",
+ "updated_at": "2026-11-02T11:53:15-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 5,
-  "Mia": 2,
+  "Mia": 3,
+  "Addie": 7,
   "Nathan": 2,
-  "Nick": 1,
-  "Simran": 2
+  "Simran": 2,
+  "Nick": 3
  }
 }
