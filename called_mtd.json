@@ -5,10 +5,10 @@
    "2026-11-02": [
     "n:lea johns",
     "140256664498",
-    "n:josue serralta",
     "n:nora lazar",
-    "n:barbara golando",
     "n:kyle barnes",
+    "n:josue serralta",
+    "n:barbara golando",
     "n:valarie amezquita"
    ]
   },
@@ -49,19 +49,20 @@
   },
   "Kahekili": {
    "2026-11-02": [
+    "3650076",
     "13966405892",
     "n:angie wilson"
    ]
   }
  },
- "updated_at": "2026-11-02T14:56:24-06:00",
+ "updated_at": "2026-11-02T15:57:28-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Mia": 7,
   "Addie": 10,
+  "Kahekili": 3,
+  "Mia": 7,
   "Nathan": 2,
-  "Simran": 2,
   "Nick": 5,
-  "Kahekili": 2
+  "Simran": 2
  }
 }

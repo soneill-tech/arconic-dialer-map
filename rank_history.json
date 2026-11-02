@@ -4,31 +4,31 @@
    "calls": {
     "Mia": {
      "rank": 2,
-     "score": 3
+     "score": 7
     },
     "Addie": {
      "rank": 1,
-     "score": 7
+     "score": 10
     },
     "Nathan": {
-     "rank": 4,
+     "rank": 5,
      "score": 2
     },
     "Simran": {
-     "rank": 4,
+     "rank": 5,
      "score": 2
     },
     "Nick": {
-     "rank": 2,
-     "score": 3
+     "rank": 3,
+     "score": 5
     },
     "Kili": {
-     "rank": 6,
-     "score": 1
+     "rank": 4,
+     "score": 3
     }
    },
    "derived": false,
-   "written_at": "2026-11-02T13:54:16-06:00"
+   "written_at": "2026-11-02T15:57:28-06:00"
   }
  }
 }
