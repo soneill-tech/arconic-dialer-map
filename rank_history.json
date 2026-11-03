@@ -38,11 +38,11 @@
     },
     "Addie": {
      "rank": 1,
-     "score": 18
+     "score": 27
     },
     "Nathan": {
-     "rank": 5,
-     "score": 4
+     "rank": 4,
+     "score": 6
     },
     "Simran": {
      "rank": 6,
@@ -50,7 +50,7 @@
     },
     "Nick": {
      "rank": 2,
-     "score": 11
+     "score": 13
     },
     "Kili": {
      "rank": 4,
@@ -58,7 +58,7 @@
     }
    },
    "derived": false,
-   "written_at": "2026-11-03T15:55:00-06:00"
+   "written_at": "2026-11-03T15:55:49-06:00"
   }
  }
 }
