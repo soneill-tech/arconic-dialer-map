@@ -1,9 +1,11 @@
 {
   "date": "2026-11-03",
-  "updated_at": "2026-11-03T14:50:02-06:00",
-  "synced_at": "2026-11-03T14:50:02-06:00",
+  "updated_at": "2026-11-03T15:54:59-06:00",
+  "synced_at": "2026-11-03T15:54:59-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "17108601",
+    "29859701",
     "13966405892",
     "167239824275"
   ],
@@ -23,6 +25,30 @@
       "caller": "Nick",
       "time": "2026-11-03T14:10:00-06:00",
       "outcome": "No answer"
+    },
+    {
+      "contact_id": "29859701",
+      "contact_name": "Kenneth Darling",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-11-03T15:19:00-06:00",
+      "outcome": "Left voicemail"
+    },
+    {
+      "contact_id": "17108601",
+      "contact_name": "Angela Johnson",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-11-03T15:21:00-06:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "17108601",
+      "contact_name": "Angela Johnson",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-11-03T15:27:00-06:00",
+      "outcome": "Connected"
     }
   ]
 }

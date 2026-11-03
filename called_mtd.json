@@ -61,6 +61,8 @@
     "n:carrie diehm"
    ],
    "2026-11-03": [
+    "17108601",
+    "29859701",
     "167239824275",
     "n:brian thomas",
     "n:jose herrera",
@@ -80,14 +82,14 @@
    ]
   }
  },
- "updated_at": "2026-11-03T14:50:02-06:00",
+ "updated_at": "2026-11-03T15:54:59-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 18,
   "Kahekili": 6,
   "Mia": 7,
   "Nathan": 4,
-  "Nick": 9,
+  "Nick": 11,
   "Simran": 2
  }
 }
