@@ -76,10 +76,10 @@
     "29859701",
     "167239824275",
     "n:brian thomas",
+    "n:dawn daniels",
     "n:jose herrera",
     "n:logan lipinski",
-    "n:laurent d'amours",
-    "n:dawn daniels"
+    "n:laurent d'amours"
    ]
   },
   "Kahekili": {
@@ -95,14 +95,14 @@
    ]
   }
  },
- "updated_at": "2026-11-03T15:56:00-06:00",
+ "updated_at": "2026-11-03T16:49:42-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Mia": 7,
   "Addie": 27,
+  "Kahekili": 6,
+  "Mia": 7,
   "Nathan": 6,
-  "Simran": 2,
   "Nick": 13,
-  "Kahekili": 6
+  "Simran": 2
  }
 }
