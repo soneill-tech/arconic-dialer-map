@@ -33,32 +33,32 @@
   "2026-11-03": {
    "calls": {
     "Mia": {
-     "rank": 2,
+     "rank": 3,
      "score": 7
     },
     "Addie": {
      "rank": 1,
-     "score": 10
+     "score": 18
     },
     "Nathan": {
      "rank": 5,
-     "score": 2
+     "score": 4
     },
     "Simran": {
-     "rank": 5,
+     "rank": 6,
      "score": 2
     },
     "Nick": {
-     "rank": 3,
-     "score": 5
+     "rank": 2,
+     "score": 9
     },
     "Kili": {
      "rank": 4,
-     "score": 4
+     "score": 6
     }
    },
    "derived": false,
-   "written_at": "2026-11-03T13:04:32-06:00"
+   "written_at": "2026-11-03T14:50:09-06:00"
   }
  }
 }

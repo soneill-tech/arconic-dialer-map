@@ -61,9 +61,10 @@
     "n:carrie diehm"
    ],
    "2026-11-03": [
+    "167239824275",
     "n:brian thomas",
-    "n:logan lipinski",
-    "n:jose herrera"
+    "n:jose herrera",
+    "n:logan lipinski"
    ]
   },
   "Kahekili": {
@@ -79,14 +80,14 @@
    ]
   }
  },
- "updated_at": "2026-11-03T13:56:00-06:00",
+ "updated_at": "2026-11-03T14:50:02-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 10,
-  "Kahekili": 4,
+  "Addie": 18,
+  "Kahekili": 6,
   "Mia": 7,
-  "Nathan": 2,
-  "Nick": 5,
+  "Nathan": 4,
+  "Nick": 9,
   "Simran": 2
  }
 }
