@@ -40,6 +40,10 @@
    "2026-11-02": [
     "n:zach renfro",
     "n:christopher bolognese"
+   ],
+   "2026-11-03": [
+    "n:adolfo flores",
+    "n:rusty faulkner"
    ]
   },
   "Simran": {
@@ -75,7 +79,7 @@
    ]
   }
  },
- "updated_at": "2026-11-03T13:04:30-06:00",
+ "updated_at": "2026-11-03T13:56:00-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 10,
