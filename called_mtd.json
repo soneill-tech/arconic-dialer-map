@@ -24,6 +24,16 @@
     "n:connie whitson",
     "n:jennifer melberg",
     "n:wayne niksich"
+   ],
+   "2026-11-03": [
+    "n:chris han",
+    "n:syed kashif",
+    "n:edward aguilar",
+    "n:tim murphy",
+    "n:jorge chavez",
+    "n:floyd walker",
+    "n:vinnie eschenlauer",
+    "n:steve callan"
    ]
   },
   "Nathan": {
@@ -45,6 +55,11 @@
     "7401851",
     "n:amir zaid",
     "n:carrie diehm"
+   ],
+   "2026-11-03": [
+    "n:brian thomas",
+    "n:logan lipinski",
+    "n:jose herrera"
    ]
   },
   "Kahekili": {
@@ -54,7 +69,9 @@
     "n:angie wilson"
    ],
    "2026-11-03": [
-    "13966405892"
+    "13966405892",
+    "n:chuck hahn",
+    "n:david simon"
    ]
   }
  },
