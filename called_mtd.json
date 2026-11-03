@@ -52,14 +52,17 @@
     "3650076",
     "13966405892",
     "n:angie wilson"
+   ],
+   "2026-11-03": [
+    "13966405892"
    ]
   }
  },
- "updated_at": "2026-11-02T15:57:28-06:00",
+ "updated_at": "2026-11-03T13:04:30-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
   "Addie": 10,
-  "Kahekili": 3,
+  "Kahekili": 4,
   "Mia": 7,
   "Nathan": 2,
   "Nick": 5,

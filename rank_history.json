@@ -28,7 +28,37 @@
     }
    },
    "derived": false,
-   "written_at": "2026-11-02T15:57:28-06:00"
+   "written_at": "2026-11-02T17:53:49-06:00"
+  },
+  "2026-11-03": {
+   "calls": {
+    "Mia": {
+     "rank": 2,
+     "score": 7
+    },
+    "Addie": {
+     "rank": 1,
+     "score": 10
+    },
+    "Nathan": {
+     "rank": 5,
+     "score": 2
+    },
+    "Simran": {
+     "rank": 5,
+     "score": 2
+    },
+    "Nick": {
+     "rank": 3,
+     "score": 5
+    },
+    "Kili": {
+     "rank": 4,
+     "score": 4
+    }
+   },
+   "derived": false,
+   "written_at": "2026-11-03T13:04:32-06:00"
   }
  }
 }

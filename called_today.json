@@ -1,63 +1,19 @@
 {
-  "date": "2026-11-02",
-  "updated_at": "2026-11-02T15:57:28-06:00",
-  "synced_at": "2026-11-02T15:57:28-06:00",
+  "date": "2026-11-03",
+  "updated_at": "2026-11-03T13:04:30-06:00",
+  "synced_at": "2026-11-03T13:04:30-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "3650076",
-    "7401851",
-    "13966405892",
-    "140256664498",
-    "203866478699"
+    "13966405892"
   ],
   "calls": [
-    {
-      "contact_id": "140256664498",
-      "contact_name": "Marco Ledda",
-      "am": "Mia",
-      "caller": "Mia",
-      "time": "2026-11-02T08:20:00-06:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "7401851",
-      "contact_name": "Mike Clendenen",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-11-02T11:16:00-06:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "203866478699",
-      "contact_name": "Trent Roybal",
-      "am": "Simran",
-      "caller": "Simran",
-      "time": "2026-11-02T11:33:00-06:00",
-      "outcome": "Connected"
-    },
     {
       "contact_id": "13966405892",
       "contact_name": "Trent Bell",
       "am": "Kahekili",
       "caller": "Kahekili",
-      "time": "2026-11-02T13:35:00-06:00",
+      "time": "2026-11-03T10:49:00-06:00",
       "outcome": ""
-    },
-    {
-      "contact_id": "203866478699",
-      "contact_name": "Trent Roybal",
-      "am": "Simran",
-      "caller": "Simran",
-      "time": "2026-11-02T13:56:00-06:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "3650076",
-      "contact_name": "Jerry Bowen",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-11-02T15:45:00-06:00",
-      "outcome": "--"
     }
   ]
 }
