@@ -1,46 +1,109 @@
 {
- "month": "2026-10",
- "entries": {},
- "backfill": {
-  "file": "raw-2026-11-03-1746-merged.csv",
-  "rows": 147,
-  "range": "2026-10-01..2026-10-16 (CSV ends 10/16 9:49 AM CT per time-sorted rows; sync-run data covers later)",
-  "rule": "distinct (rep, day, named contact); map contacts by id, others by n:<name>; no placeholders/bare IDs",
-  "at": "2026-11-03T17:50:37-06:00",
-  "per_rep": {
-   "Kahekili": {
-    "raw_calls": 15,
-    "distinct_contact_days": 4,
-    "map_matched_contact_days": 4
-   },
-   "Addie": {
-    "raw_calls": 58,
-    "distinct_contact_days": 21,
-    "map_matched_contact_days": 21
-   },
-   "Nathan": {
-    "raw_calls": 59,
-    "distinct_contact_days": 4,
-    "map_matched_contact_days": 4
-   },
-   "Nick": {
-    "raw_calls": 10,
-    "distinct_contact_days": 8,
-    "map_matched_contact_days": 8
-   },
-   "Simran": {
-    "raw_calls": 5,
-    "distinct_contact_days": 0,
-    "map_matched_contact_days": 0
-   },
-   "Mia": {
-    "raw_calls": 0,
-    "distinct_contact_days": 0,
-    "map_matched_contact_days": 0
-   }
+ "month": "2026-11",
+ "entries": {
+  "Mia": {
+   "2026-11-02": [
+    "n:lea johns",
+    "140256664498",
+    "n:nora lazar",
+    "n:kyle barnes",
+    "n:josue serralta",
+    "n:barbara golando",
+    "n:valarie amezquita"
+   ]
+  },
+  "Addie": {
+   "2026-11-02": [
+    "n:eric lyle",
+    "n:lily wong",
+    "n:beau meeks",
+    "n:tim andres",
+    "n:dwayne beers",
+    "n:jason stouch",
+    "n:laura bertram",
+    "n:connie whitson",
+    "n:jennifer melberg",
+    "n:wayne niksich"
+   ],
+   "2026-11-03": [
+    "n:chris han",
+    "n:syed kashif",
+    "n:edward aguilar",
+    "n:tim murphy",
+    "n:jorge chavez",
+    "n:floyd walker",
+    "n:vinnie eschenlauer",
+    "n:steve callan",
+    "n:zach nace",
+    "n:jessica hopkins",
+    "n:allen neel",
+    "n:abby esposito",
+    "n:anthony hansel",
+    "n:craig clauser",
+    "n:daniel santhouse",
+    "n:jake mello",
+    "n:duane reeves"
+   ]
+  },
+  "Nathan": {
+   "2026-11-02": [
+    "n:zach renfro",
+    "n:christopher bolognese"
+   ],
+   "2026-11-03": [
+    "n:adolfo flores",
+    "n:rusty faulkner",
+    "n:patrick samuels",
+    "n:becky valdez"
+   ]
+  },
+  "Simran": {
+   "2026-11-02": [
+    "203866478699",
+    "n:sarah schupp"
+   ]
+  },
+  "Nick": {
+   "2026-11-02": [
+    "44159",
+    "2279551",
+    "7401851",
+    "n:amir zaid",
+    "n:carrie diehm"
+   ],
+   "2026-11-03": [
+    "17108601",
+    "29859701",
+    "167239824275",
+    "n:brian thomas",
+    "n:dawn daniels",
+    "n:jose herrera",
+    "n:logan lipinski",
+    "n:laurent d'amours"
+   ]
+  },
+  "Kahekili": {
+   "2026-11-02": [
+    "3650076",
+    "13966405892",
+    "n:angie wilson"
+   ],
+   "2026-11-03": [
+    "13966405892",
+    "20283614591",
+    "n:chuck hahn",
+    "n:david simon"
+   ]
   }
  },
- "updated_at": "2026-11-03T17:50:37-06:00",
- "source": "backfill from HubSpot calls CSV (backfill_mtd_csv.py) + called_today.json syncs + Log Call queue",
- "counts": {}
+ "updated_at": "2026-11-03T17:50:26-06:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "counts": {
+  "Addie": 27,
+  "Kahekili": 7,
+  "Mia": 7,
+  "Nathan": 6,
+  "Nick": 13,
+  "Simran": 2
+ }
 }
