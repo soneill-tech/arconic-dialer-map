@@ -1,14 +1,10 @@
 {
-  "date": "2026-11-03",
-  "updated_at": "2026-11-03T17:50:26-06:00",
-  "synced_at": "2026-11-03T17:50:26-06:00",
+  "date": "2026-11-04",
+  "updated_at": "2026-11-04T09:55:52-06:00",
+  "synced_at": "2026-11-04T09:55:52-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "17108601",
-    "29859701",
-    "13966405892",
-    "20283614591",
-    "167239824275"
+    "13966405892"
   ],
   "calls": [
     {
@@ -16,64 +12,8 @@
       "contact_name": "Trent Bell",
       "am": "Kahekili",
       "caller": "Kahekili",
-      "time": "2026-11-03T10:49:00-06:00",
+      "time": "2026-11-04T09:15:00-06:00",
       "outcome": ""
-    },
-    {
-      "contact_id": "167239824275",
-      "contact_name": "Justin Dorey",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-11-03T14:10:00-06:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "29859701",
-      "contact_name": "Kenneth Darling",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-11-03T15:19:00-06:00",
-      "outcome": "Left voicemail"
-    },
-    {
-      "contact_id": "17108601",
-      "contact_name": "Angela Johnson",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-11-03T15:21:00-06:00",
-      "outcome": "No answer"
-    },
-    {
-      "contact_id": "17108601",
-      "contact_name": "Angela Johnson",
-      "am": "Nick",
-      "caller": "Nick",
-      "time": "2026-11-03T15:27:00-06:00",
-      "outcome": "Connected"
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-11-03T17:10:00-06:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-11-03T17:23:00-06:00",
-      "outcome": ""
-    },
-    {
-      "contact_id": "20283614591",
-      "contact_name": "Sarah Schupp",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-11-03T17:23:00-06:00",
-      "outcome": "No answer"
     }
   ]
 }

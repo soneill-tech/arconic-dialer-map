@@ -63,7 +63,11 @@
   "2026-11-04": {
    "calls": {
     "Mia": {
+<<<<<<< Updated upstream
      "rank": 3,
+=======
+     "rank": 4,
+>>>>>>> Stashed changes
      "score": 7
     },
     "Addie": {
@@ -84,6 +88,7 @@
     },
     "Kili": {
      "rank": 3,
+<<<<<<< Updated upstream
      "score": 7
     }
    },
@@ -116,6 +121,13 @@
    "gp_as_of": "2026-11-04",
    "derived": false,
    "written_at": "2026-11-04T09:46:02-06:00"
+=======
+     "score": 8
+    }
+   },
+   "derived": false,
+   "written_at": "2026-11-04T09:55:53-06:00"
+>>>>>>> Stashed changes
   }
  }
 }
