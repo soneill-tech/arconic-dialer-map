@@ -89,19 +89,19 @@
    },
    "gp": {
     "Kili": {
-     "rank": 3,
+     "rank": 4,
      "pct": 12.2
     },
     "Nick": {
-     "rank": 1,
-     "pct": 17.3
+     "rank": 2,
+     "pct": 18.7
     },
     "Mia": {
-     "rank": 4,
-     "pct": 8.7
+     "rank": 1,
+     "pct": 18.9
     },
     "Simran": {
-     "rank": 2,
+     "rank": 3,
      "pct": 15.2
     },
     "Addie": {
@@ -109,13 +109,13 @@
      "pct": 0.0
     },
     "Nathan": {
-     "rank": 5,
-     "pct": 0.0
+     "rank": 6,
+     "pct": -17.0
     }
    },
    "gp_as_of": "2026-11-04",
    "derived": false,
-   "written_at": "2026-11-04T09:41:25-06:00"
+   "written_at": "2026-11-04T09:46:02-06:00"
   }
  }
 }

@@ -13,7 +13,7 @@ everything else (no match, owner not a rep e.g. Steve, customer missing from she
 import argparse, csv, json, os, re
 from datetime import datetime
 from zoneinfo import ZoneInfo
-REP = {"Kahekili Barrozo": "Kili", "Simran Subramanian": "Simran", "Nicholas McNamara": "Nick", "Mia Medjedovic": "Mia", "Addison Parker": "Addie"}
+REP = {"Kahekili Barrozo": "Kili", "Simran Subramanian": "Simran", "Nicholas McNamara": "Nick", "Mia Medjedovic": "Mia", "Addison Parker": "Addie", "Nathan Beaver": "Nathan"}
 num = lambda s: float(re.sub(r"[,$\s]", "", s or "0") or 0)
 
 def main():

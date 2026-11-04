@@ -5,7 +5,7 @@
  "loads": 194,
  "total_gp": 60035.88,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-04T09:41:25-06:00",
+ "generated_at": "2026-11-04T09:46:02-06:00",
  "reps": [
   {
    "rep": "Kili",
@@ -50,8 +50,8 @@
   },
   {
    "rep": "Nick",
-   "gp": 13806.67,
-   "gp_verified": 13806.67,
+   "gp": 14975.07,
+   "gp_verified": 14975.07,
    "gp_unverified": 0.0,
    "customers": [
     {
@@ -62,6 +62,11 @@
     {
      "customer": "Aleris International",
      "gp": 4200.44,
+     "match": "verified"
+    },
+    {
+     "customer": "Cass Information Systems, Inc.",
+     "gp": 1168.4,
      "match": "verified"
     },
     {
@@ -83,8 +88,8 @@
   },
   {
    "rep": "Mia",
-   "gp": 2616.04,
-   "gp_verified": 1623.0,
+   "gp": 5676.04,
+   "gp_verified": 4683.0,
    "gp_unverified": 993.04,
    "customers": [
     {
@@ -98,6 +103,11 @@
      "match": "verified"
     },
     {
+     "customer": "Manufacturing & Assembly International",
+     "gp": 200.0,
+     "match": "verified"
+    },
+    {
      "customer": "Redford Building Supply",
      "gp": 245.0,
      "match": "verified"
@@ -106,6 +116,21 @@
      "customer": "Spectrum Foods, Inc.",
      "gp": 993.04,
      "match": "possible match - unverified"
+    },
+    {
+     "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
+     "gp": 1260.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Ulbrich Shaped Wire",
+     "gp": 1350.0,
+     "match": "verified"
+    },
+    {
+     "customer": "United Alloys & Metals",
+     "gp": 250.0,
+     "match": "verified"
     }
    ]
   },
@@ -117,45 +142,28 @@
    "customers": []
   },
   {
+   "rep": "Nathan",
+   "gp": -850.0,
+   "gp_verified": -850.0,
+   "gp_unverified": 0.0,
+   "customers": [
+    {
+     "customer": "Silpro, LLC",
+     "gp": -850.0,
+     "match": "verified"
+    }
+   ]
+  },
+  {
    "rep": "Unassigned",
-   "gp": 4828.4,
-   "gp_verified": 4828.4,
+   "gp": 1450.0,
+   "gp_verified": 1450.0,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Bronco Industrial Services LLC",
      "gp": 1450.0,
      "match": "verified / owner not a rep: Steve O'Neill"
-    },
-    {
-     "customer": "Cass Information Systems, Inc.",
-     "gp": 1168.4,
-     "match": "unmatched"
-    },
-    {
-     "customer": "Manufacturing & Assembly International",
-     "gp": 200.0,
-     "match": "unmatched"
-    },
-    {
-     "customer": "Silpro, LLC",
-     "gp": -850.0,
-     "match": "unmatched"
-    },
-    {
-     "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
-     "gp": 1260.0,
-     "match": "unmatched"
-    },
-    {
-     "customer": "Ulbrich Shaped Wire",
-     "gp": 1350.0,
-     "match": "unmatched"
-    },
-    {
-     "customer": "United Alloys & Metals",
-     "gp": 250.0,
-     "match": "unmatched"
     }
    ]
   }
