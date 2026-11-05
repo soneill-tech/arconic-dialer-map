@@ -15,21 +15,25 @@
     "n:josue serralta"
    ],
    "2026-11-05": [
-    "n:daniel haynes",
-    "n:eddie chantaniyom",
-    "n:victor richard",
-    "n:michael hicks",
-    "n:nick gregson",
-    "n:adam doppenberg",
-    "n:paul milnes",
-    "n:isaac cannady",
-    "n:christopher challender",
-    "n:krishnamohan malay",
-    "n:dominic balderaz",
-    "n:oklahoma location",
-    "n:brian branch",
     "1949401",
-    "n:josue serralta"
+    "n:andrew zeik",
+    "n:paul milnes",
+    "n:brian branch",
+    "n:nick gregson",
+    "n:daniel haynes",
+    "n:isaac cannady",
+    "n:jesse grisham",
+    "n:michael hicks",
+    "n:josue serralta",
+    "n:nancy jennings",
+    "n:victor richard",
+    "n:aaron ouellette",
+    "n:adam doppenberg",
+    "n:dominic balderaz",
+    "n:eddie chantaniyom",
+    "n:oklahoma location",
+    "n:krishnamohan malay",
+    "n:christopher challender"
    ]
   },
   "Addie": {
@@ -74,12 +78,13 @@
     "n:alex compton"
    ],
    "2026-11-05": [
+    "n:jake hardy",
     "n:mayra alia",
-    "n:jamila little",
-    "n:creig casteigne",
-    "n:les thompson",
     "n:linda lapre",
-    "n:jake hardy"
+    "n:alec clayton",
+    "n:les thompson",
+    "n:jamila little",
+    "n:creig casteigne"
    ]
   },
   "Nathan": {
@@ -101,14 +106,17 @@
     "n:danny fasciano"
    ],
    "2026-11-05": [
-    "n:steven smith",
-    "n:natascia winning",
-    "n:ricardo martínez",
-    "n:fatima martinez",
-    "n:adolfo flores",
-    "n:yvonne long",
     "n:adam liu",
-    "n:mike scaparrotti"
+    "n:cody cox",
+    "n:yvonne long",
+    "n:steven smith",
+    "n:adam liu (dm)",
+    "n:adolfo flores",
+    "n:jamie calcutt",
+    "n:fatima martinez",
+    "n:mike scaparrotti",
+    "n:natascia winning",
+    "n:ricardo martínez"
    ]
   },
   "Simran": {
@@ -168,13 +176,13 @@
    ]
   }
  },
- "updated_at": "2026-11-05T12:06:32-06:00",
- "source": "HubSpot calls (browser sync) + named MTD fold",
+ "updated_at": "2026-11-05T13:59:30-06:00",
+ "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 40,
+  "Addie": 41,
   "Kahekili": 10,
-  "Mia": 23,
-  "Nathan": 19,
+  "Mia": 27,
+  "Nathan": 22,
   "Nick": 15,
   "Simran": 5
  }
