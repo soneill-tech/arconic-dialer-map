@@ -27,7 +27,9 @@
     "n:krishnamohan malay",
     "n:dominic balderaz",
     "n:oklahoma location",
-    "n:brian branch"
+    "n:brian branch",
+    "1949401",
+    "n:josue serralta"
    ]
   },
   "Addie": {
@@ -73,7 +75,11 @@
    ],
    "2026-11-05": [
     "n:mayra alia",
-    "n:jamila little"
+    "n:jamila little",
+    "n:creig casteigne",
+    "n:les thompson",
+    "n:linda lapre",
+    "n:jake hardy"
    ]
   },
   "Nathan": {
@@ -162,12 +168,12 @@
    ]
   }
  },
- "updated_at": "2026-11-05T12:03:48-06:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+ "updated_at": "2026-11-05T12:06:32-06:00",
+ "source": "HubSpot calls (browser sync) + named MTD fold",
  "counts": {
-  "Addie": 36,
+  "Addie": 40,
   "Kahekili": 10,
-  "Mia": 21,
+  "Mia": 23,
   "Nathan": 19,
   "Nick": 15,
   "Simran": 5
