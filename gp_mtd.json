@@ -5,7 +5,7 @@
  "loads": 258,
  "total_gp": 84844.97,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-05T09:11:21-06:00",
+ "generated_at": "2026-11-05T09:16:42-06:00",
  "reps": [
   {
    "rep": "Kili",
@@ -146,10 +146,16 @@
   },
   {
    "rep": "Addie",
-   "gp": 0.0,
-   "gp_verified": 0.0,
+   "gp": 2225.0,
+   "gp_verified": 2225.0,
    "gp_unverified": 0.0,
-   "customers": []
+   "customers": [
+    {
+     "customer": "Bronco Industrial Services LLC",
+     "gp": 2225.0,
+     "match": "verified"
+    }
+   ]
   },
   {
    "rep": "Nathan",
@@ -166,16 +172,10 @@
   },
   {
    "rep": "Unassigned",
-   "gp": 2225.0,
-   "gp_verified": 2225.0,
+   "gp": 0.0,
+   "gp_verified": 0.0,
    "gp_unverified": 0.0,
-   "customers": [
-    {
-     "customer": "Bronco Industrial Services LLC",
-     "gp": 2225.0,
-     "match": "verified / owner not a rep: Steve O'Neill"
-    }
-   ]
+   "customers": []
   }
  ]
 }
