@@ -1,95 +1,30 @@
 {
  "snapshots": {
-  "2026-11-02": {
-   "calls": {
-    "Mia": {
-     "rank": 2,
-     "score": 7
-    },
-    "Addie": {
-     "rank": 1,
-     "score": 10
-    },
-    "Nathan": {
-     "rank": 5,
-     "score": 2
-    },
-    "Simran": {
-     "rank": 5,
-     "score": 2
-    },
-    "Nick": {
-     "rank": 3,
-     "score": 5
-    },
-    "Kili": {
-     "rank": 4,
-     "score": 3
-    }
-   },
-   "derived": false,
-   "written_at": "2026-11-02T17:53:49-06:00"
-  },
-  "2026-11-03": {
-   "calls": {
-    "Mia": {
-     "rank": 3,
-     "score": 7
-    },
-    "Addie": {
-     "rank": 1,
-     "score": 27
-    },
-    "Nathan": {
-     "rank": 5,
-     "score": 6
-    },
-    "Simran": {
-     "rank": 6,
-     "score": 2
-    },
-    "Nick": {
-     "rank": 2,
-     "score": 13
-    },
-    "Kili": {
-     "rank": 3,
-     "score": 7
-    }
-   },
-   "derived": false,
-   "written_at": "2026-11-03T17:50:26-06:00"
-  },
   "2026-11-04": {
    "calls": {
     "Mia": {
-<<<<<<< Updated upstream
-     "rank": 3,
-=======
-     "rank": 4,
->>>>>>> Stashed changes
+     "rank": 5,
      "score": 7
     },
     "Addie": {
      "rank": 1,
-     "score": 27
+     "score": 32
     },
     "Nathan": {
-     "rank": 5,
-     "score": 6
+     "rank": 3,
+     "score": 9
     },
     "Simran": {
      "rank": 6,
-     "score": 2
+     "score": 3
     },
     "Nick": {
      "rank": 2,
-     "score": 13
+     "score": 15
     },
     "Kili": {
-     "rank": 3,
-<<<<<<< Updated upstream
-     "score": 7
+     "rank": 4,
+     "score": 8
     }
    },
    "gp": {
@@ -120,14 +55,64 @@
    },
    "gp_as_of": "2026-11-04",
    "derived": false,
-   "written_at": "2026-11-04T09:46:02-06:00"
-=======
+   "written_at": "2026-11-04T10:52:25-06:00"
+  },
+  "2026-11-05": {
+   "calls": {
+    "Mia": {
+     "rank": 4,
+     "score": 8
+    },
+    "Addie": {
+     "rank": 1,
+     "score": 34
+    },
+    "Nathan": {
+     "rank": 3,
+     "score": 11
+    },
+    "Simran": {
+     "rank": 6,
+     "score": 3
+    },
+    "Nick": {
+     "rank": 2,
+     "score": 15
+    },
+    "Kili": {
+     "rank": 4,
      "score": 8
     }
    },
+   "gp": {
+    "Kili": {
+     "rank": 4,
+     "pct": 12.2
+    },
+    "Nick": {
+     "rank": 2,
+     "pct": 18.7
+    },
+    "Mia": {
+     "rank": 1,
+     "pct": 18.9
+    },
+    "Simran": {
+     "rank": 3,
+     "pct": 15.2
+    },
+    "Addie": {
+     "rank": 5,
+     "pct": 0.0
+    },
+    "Nathan": {
+     "rank": 6,
+     "pct": -17.0
+    }
+   },
+   "gp_as_of": "2026-11-04",
    "derived": false,
-   "written_at": "2026-11-04T09:55:53-06:00"
->>>>>>> Stashed changes
+   "written_at": "2026-11-05T08:54:16-06:00"
   }
  }
 }
