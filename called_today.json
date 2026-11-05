@@ -1,10 +1,11 @@
 {
   "date": "2026-11-05",
-  "updated_at": "2026-11-05T12:03:48-06:00",
-  "synced_at": "2026-11-05T12:03:48-06:00",
+  "updated_at": "2026-11-05T16:56:16-06:00",
+  "synced_at": "2026-11-05T16:56:16-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "460501",
+    "462051",
     "13966405892"
   ],
   "calls": [
@@ -14,7 +15,7 @@
       "am": "Kahekili",
       "caller": "Kahekili",
       "time": "2026-11-05T11:01:00-06:00",
-      "outcome": "--"
+      "outcome": ""
     },
     {
       "contact_id": "460501",
@@ -22,7 +23,31 @@
       "am": "Kahekili",
       "caller": "Kahekili",
       "time": "2026-11-05T11:30:00-06:00",
-      "outcome": "--"
+      "outcome": ""
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-05T12:19:00-06:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "462051",
+      "contact_name": "Adam M. Bjorkman",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-05T14:19:00-06:00",
+      "outcome": ""
+    },
+    {
+      "contact_id": "462051",
+      "contact_name": "Adam M. Bjorkman",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-05T14:27:00-06:00",
+      "outcome": ""
     }
   ]
 }
