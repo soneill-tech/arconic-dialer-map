@@ -122,11 +122,11 @@
     },
     "Addie": {
      "rank": 1,
-     "score": 55
+     "score": 57
     },
     "Nathan": {
      "rank": 3,
-     "score": 26
+     "score": 27
     },
     "Simran": {
      "rank": 6,
@@ -169,7 +169,7 @@
    },
    "gp_as_of": "2026-11-06",
    "derived": false,
-   "written_at": "2026-11-06T14:04:37-06:00"
+   "written_at": "2026-11-06T15:04:04-06:00"
   }
  }
 }

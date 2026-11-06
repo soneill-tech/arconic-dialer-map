@@ -124,7 +124,9 @@
     "n:christopher mecier",
     "n:kristen himes",
     "n:zach nace",
-    "n:william goldsworthy"
+    "n:william goldsworthy",
+    "n:robert johnson",
+    "n:joshua clark"
    ]
   },
   "Nathan": {
@@ -162,7 +164,8 @@
     "n:src",
     "n:rusty faulkner",
     "n:steven smith",
-    "n:christopher bolognese"
+    "n:christopher bolognese",
+    "n:chance caffee"
    ]
   },
   "Simran": {
@@ -233,13 +236,13 @@
    ]
   }
  },
- "updated_at": "2026-11-06T14:04:37-06:00",
+ "updated_at": "2026-11-06T15:04:04-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 55,
+  "Addie": 57,
   "Kahekili": 16,
   "Mia": 49,
-  "Nathan": 26,
+  "Nathan": 27,
   "Nick": 15,
   "Simran": 6
  }
