@@ -1,82 +1,72 @@
 {
  "month": "2026-11",
- "as_of": "2026-11-05",
- "source": "TPRO Bill To export, terminal 129, Nov 2026 MTD as of 11/5 x ownership sheet + overrides",
- "loads": 258,
- "total_gp": 84844.97,
+ "as_of": "2026-11-06",
+ "source": "TPRO Bill To export, terminal 129, Nov 2026 MTD as of 11/6 x ownership sheet + overrides",
+ "loads": 315,
+ "total_gp": 107272.28,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-05T09:16:42-06:00",
+ "generated_at": "2026-11-06T11:38:34-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 53056.72,
-   "gp_verified": 53056.72,
+   "gp": 69517.98,
+   "gp_verified": 69517.98,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 44408.89,
-     "match": "verified"
-    },
-    {
-     "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 8197.83,
+     "gp": 59146.84,
      "match": "verified"
     },
     {
      "customer": "Arconic US, LLC c/o CT Logistics Team 8",
-     "gp": 450.0,
+     "gp": 575.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Howmet Aerospace c/o CT Logistics Team 3",
+     "gp": 9796.14,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Simran",
-   "gp": 3450.33,
-   "gp_verified": 2900.33,
+   "gp": 3342.65,
+   "gp_verified": 2792.65,
    "gp_unverified": 550.0,
    "customers": [
-    {
-     "customer": "Kaiser Aluminum c/o US Bank",
-     "gp": 2900.33,
-     "match": "verified"
-    },
     {
      "customer": "CitiTrends Inc c/o Technical Traffic Solutions",
      "gp": 550.0,
      "match": "possible match - unverified"
+    },
+    {
+     "customer": "Kaiser Aluminum c/o US Bank",
+     "gp": 2792.65,
+     "match": "verified"
     }
    ]
   },
   {
    "rep": "Nick",
-   "gp": 21174.49,
-   "gp_verified": 21412.19,
-   "gp_unverified": -237.7,
+   "gp": 26061.04,
+   "gp_verified": 25770.92,
+   "gp_unverified": 290.12,
    "customers": [
     {
-     "customer": "MSC",
-     "gp": 6870.6,
+     "customer": "3M c/o Data2Logistics - 3MCP01 - CHI",
+     "gp": 19.48,
      "match": "verified"
     },
     {
      "customer": "Aleris International",
-     "gp": 6805.61,
-     "match": "verified"
-    },
-    {
-     "customer": "Novelis Corporation",
-     "gp": 4535.1,
+     "gp": 6921.04,
      "match": "verified"
     },
     {
      "customer": "Cass Information Systems, Inc.",
-     "gp": 1668.4,
-     "match": "verified"
-    },
-    {
-     "customer": "Verista",
-     "gp": 1216.0,
+     "gp": 1696.4,
      "match": "verified"
     },
     {
@@ -85,31 +75,36 @@
      "match": "verified"
     },
     {
-     "customer": "3M c/o Data2Logistics - 3MCP01 - CHI",
-     "gp": 19.48,
+     "customer": "MJ Kellner",
+     "gp": 290.12,
+     "match": "possible match - unverified"
+    },
+    {
+     "customer": "MSC",
+     "gp": 9286.2,
      "match": "verified"
     },
     {
-     "customer": "MJ Kellner",
-     "gp": -237.7,
-     "match": "possible match - unverified"
+     "customer": "Novelis Corporation",
+     "gp": 6734.8,
+     "match": "verified"
+    },
+    {
+     "customer": "Verista",
+     "gp": 816.0,
+     "match": "verified"
     }
    ]
   },
   {
    "rep": "Mia",
-   "gp": 5788.43,
-   "gp_verified": 4708.0,
-   "gp_unverified": 1080.43,
+   "gp": 7055.61,
+   "gp_verified": 5805.18,
+   "gp_unverified": 1250.43,
    "customers": [
     {
-     "customer": "Ulbrich Shaped Wire",
-     "gp": 1350.0,
-     "match": "verified"
-    },
-    {
-     "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
-     "gp": 1260.0,
+     "customer": "Dix Block and Supply Company Inc",
+     "gp": 295.0,
      "match": "verified"
     },
     {
@@ -118,18 +113,13 @@
      "match": "verified"
     },
     {
-     "customer": "Spectrum Foods, Inc.",
-     "gp": 1080.43,
-     "match": "possible match - unverified"
-    },
-    {
-     "customer": "Dix Block and Supply Company Inc",
-     "gp": 295.0,
+     "customer": "Manufacturing & Assembly International",
+     "gp": 200.0,
      "match": "verified"
     },
     {
-     "customer": "United Alloys & Metals",
-     "gp": 275.0,
+     "customer": "Nibco c/o US Bank",
+     "gp": 537.22,
      "match": "verified"
     },
     {
@@ -138,21 +128,36 @@
      "match": "verified"
     },
     {
-     "customer": "Manufacturing & Assembly International",
-     "gp": 200.0,
+     "customer": "Spectrum Foods, Inc.",
+     "gp": 1250.43,
+     "match": "possible match - unverified"
+    },
+    {
+     "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
+     "gp": 1819.96,
+     "match": "verified"
+    },
+    {
+     "customer": "Ulbrich Shaped Wire",
+     "gp": 1350.0,
+     "match": "verified"
+    },
+    {
+     "customer": "United Alloys & Metals",
+     "gp": 275.0,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Addie",
-   "gp": 2225.0,
-   "gp_verified": 2225.0,
+   "gp": 2145.0,
+   "gp_verified": 2145.0,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Bronco Industrial Services LLC",
-     "gp": 2225.0,
+     "gp": 2145.0,
      "match": "verified"
     }
    ]
