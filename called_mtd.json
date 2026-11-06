@@ -36,22 +36,23 @@
     "n:christopher challender"
    ],
    "2026-11-06": [
-    "n:leina alvarado",
-    "n:michael allones",
-    "n:marcos sampaio",
-    "n:shameem manadath",
-    "n:tim sigrist",
+    "52555851",
+    "n:eric waga",
     "n:roy ekart",
-    "n:tamara tunders",
-    "n:wim de wilde",
-    "n:camille facchini",
-    "n:ragna van de burgt",
-    "n:jasen lomnick",
-    "n:barry cordero",
-    "n:lourdes caro",
+    "n:tim sigrist",
     "n:george dolph",
+    "n:lourdes caro",
+    "n:wim de wilde",
+    "n:barry cordero",
+    "n:jasen lomnick",
     "n:josue serralta",
-    "n:eric waga"
+    "n:leina alvarado",
+    "n:marcos sampaio",
+    "n:tamara tunders",
+    "n:michael allones",
+    "n:camille facchini",
+    "n:shameem manadath",
+    "n:ragna van de burgt"
    ]
   },
   "Addie": {
@@ -210,14 +211,14 @@
    ]
   }
  },
- "updated_at": "2026-11-05T18:01:04-06:00",
+ "updated_at": "2026-11-06T10:59:14-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 41,
+  "Addie": 44,
   "Kahekili": 12,
-  "Mia": 27,
-  "Nathan": 22,
+  "Mia": 44,
+  "Nathan": 26,
   "Nick": 15,
-  "Simran": 5
+  "Simran": 6
  }
 }

@@ -117,20 +117,20 @@
   "2026-11-06": {
    "calls": {
     "Mia": {
-     "rank": 2,
-     "score": 27
+     "rank": 1,
+     "score": 44
     },
     "Addie": {
      "rank": 1,
-     "score": 41
+     "score": 44
     },
     "Nathan": {
      "rank": 3,
-     "score": 22
+     "score": 26
     },
     "Simran": {
      "rank": 6,
-     "score": 5
+     "score": 6
     },
     "Nick": {
      "rank": 4,
@@ -169,7 +169,7 @@
    },
    "gp_as_of": "2026-11-05",
    "derived": false,
-   "written_at": "2026-11-06T09:18:29-06:00"
+   "written_at": "2026-11-06T10:59:14-06:00"
   }
  }
 }

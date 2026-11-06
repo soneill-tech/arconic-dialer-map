@@ -1,8 +1,19 @@
 {
   "date": "2026-11-06",
-  "updated_at": "2026-11-06T09:18:28-06:00",
-  "synced_at": "2026-11-06T09:18:28-06:00",
+  "updated_at": "2026-11-06T10:59:14-06:00",
+  "synced_at": "2026-11-06T10:59:14-06:00",
   "source": "HubSpot calls (browser sync)",
-  "called_contact_ids": [],
-  "calls": []
+  "called_contact_ids": [
+    "52555851"
+  ],
+  "calls": [
+    {
+      "contact_id": "52555851",
+      "contact_name": "Rui Santos",
+      "am": "Mia",
+      "caller": "Mia",
+      "time": "2026-11-06T10:55:00-06:00",
+      "outcome": ""
+    }
+  ]
 }
