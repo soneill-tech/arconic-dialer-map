@@ -123,7 +123,8 @@
     "n:edward aguilar",
     "n:christopher mecier",
     "n:kristen himes",
-    "n:zach nace"
+    "n:zach nace",
+    "n:william goldsworthy"
    ]
   },
   "Nathan": {
@@ -232,10 +233,10 @@
    ]
   }
  },
- "updated_at": "2026-11-06T14:02:51-06:00",
+ "updated_at": "2026-11-06T14:04:37-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 54,
+  "Addie": 55,
   "Kahekili": 16,
   "Mia": 49,
   "Nathan": 26,

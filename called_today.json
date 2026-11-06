@@ -1,7 +1,7 @@
 {
   "date": "2026-11-06",
-  "updated_at": "2026-11-06T14:02:51-06:00",
-  "synced_at": "2026-11-06T14:02:51-06:00",
+  "updated_at": "2026-11-06T14:04:37-06:00",
+  "synced_at": "2026-11-06T14:04:37-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "42836451",
@@ -16,7 +16,7 @@
       "contact_name": "Rui Santos",
       "am": "Mia",
       "caller": "Mia",
-      "time": "Today at 10:55 AM CST",
+      "time": "2026-11-06T10:55:00-06:00",
       "outcome": "Connected"
     },
     {
@@ -24,7 +24,7 @@
       "contact_name": "Matt Deterior",
       "am": "Mia",
       "caller": "Mia",
-      "time": "Today at 11:45 AM CST",
+      "time": "2026-11-06T11:45:00-06:00",
       "outcome": "No answer"
     },
     {
@@ -32,7 +32,7 @@
       "contact_name": "Trent Bell",
       "am": "Kahekili",
       "caller": "Kahekili",
-      "time": "Today at 11:47 AM CST",
+      "time": "2026-11-06T11:47:00-06:00",
       "outcome": ""
     },
     {
@@ -40,7 +40,7 @@
       "contact_name": "Lance Karr",
       "am": "Kahekili",
       "caller": "Kahekili",
-      "time": "Today at 12:10 PM CST",
+      "time": "2026-11-06T12:10:00-06:00",
       "outcome": ""
     },
     {
@@ -48,7 +48,7 @@
       "contact_name": "Gilbert Hernandez",
       "am": "Mia",
       "caller": "Mia",
-      "time": "Today at 1:17 PM CST",
+      "time": "2026-11-06T13:17:00-06:00",
       "outcome": "No answer"
     }
   ]
