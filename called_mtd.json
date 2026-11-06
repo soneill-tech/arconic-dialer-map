@@ -40,7 +40,9 @@
     "n:eric waga",
     "n:roy ekart",
     "132593450588",
+    "223904826430",
     "n:jason read",
+    "n:yoshi sato",
     "n:tim sigrist",
     "n:george dolph",
     "n:lourdes caro",
@@ -55,8 +57,7 @@
     "n:michael allones",
     "n:camille facchini",
     "n:shameem manadath",
-    "n:ragna van de burgt",
-    "n:yoshi sato"
+    "n:ragna van de burgt"
    ]
   },
   "Addie": {
@@ -224,18 +225,19 @@
     "20283614591"
    ],
    "2026-11-06": [
+    "42836451",
     "13966405892",
-    "n:michael elkins",
-    "n:david simon"
+    "n:david simon",
+    "n:michael elkins"
    ]
   }
  },
- "updated_at": "2026-11-06T12:15:25-06:00",
+ "updated_at": "2026-11-06T14:02:51-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 47,
-  "Kahekili": 14,
-  "Mia": 47,
+  "Addie": 54,
+  "Kahekili": 16,
+  "Mia": 49,
   "Nathan": 26,
   "Nick": 15,
   "Simran": 6
