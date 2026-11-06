@@ -52,7 +52,9 @@
     "n:michael allones",
     "n:camille facchini",
     "n:shameem manadath",
-    "n:ragna van de burgt"
+    "n:ragna van de burgt",
+    "n:jason read",
+    "n:jesse grisham"
    ]
   },
   "Addie": {
@@ -108,7 +110,10 @@
    "2026-11-06": [
     "n:david parkin",
     "n:mayra alia",
-    "n:matt russell"
+    "n:matt russell",
+    "n:shane de wit",
+    "n:caroline durelle",
+    "n:daniel lee"
    ]
   },
   "Nathan": {
@@ -208,6 +213,9 @@
     "462051",
     "13966405892",
     "20283614591"
+   ],
+   "2026-11-06": [
+    "n:michael elkins"
    ]
   }
  },
