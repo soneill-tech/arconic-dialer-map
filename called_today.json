@@ -1,10 +1,12 @@
 {
   "date": "2026-11-06",
-  "updated_at": "2026-11-06T10:59:14-06:00",
-  "synced_at": "2026-11-06T10:59:14-06:00",
+  "updated_at": "2026-11-06T12:15:25-06:00",
+  "synced_at": "2026-11-06T12:15:25-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "52555851"
+    "52555851",
+    "13966405892",
+    "132593450588"
   ],
   "calls": [
     {
@@ -13,6 +15,22 @@
       "am": "Mia",
       "caller": "Mia",
       "time": "2026-11-06T10:55:00-06:00",
+      "outcome": "Connected"
+    },
+    {
+      "contact_id": "132593450588",
+      "contact_name": "Matt Deterior",
+      "am": "Mia",
+      "caller": "Mia",
+      "time": "2026-11-06T11:45:00-06:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-06T11:47:00-06:00",
       "outcome": ""
     }
   ]

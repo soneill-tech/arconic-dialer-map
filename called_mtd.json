@@ -39,12 +39,15 @@
     "52555851",
     "n:eric waga",
     "n:roy ekart",
+    "132593450588",
+    "n:jason read",
     "n:tim sigrist",
     "n:george dolph",
     "n:lourdes caro",
     "n:wim de wilde",
     "n:barry cordero",
     "n:jasen lomnick",
+    "n:jesse grisham",
     "n:josue serralta",
     "n:leina alvarado",
     "n:marcos sampaio",
@@ -52,9 +55,7 @@
     "n:michael allones",
     "n:camille facchini",
     "n:shameem manadath",
-    "n:ragna van de burgt",
-    "n:jason read",
-    "n:jesse grisham"
+    "n:ragna van de burgt"
    ]
   },
   "Addie": {
@@ -215,16 +216,17 @@
     "20283614591"
    ],
    "2026-11-06": [
+    "13966405892",
     "n:michael elkins"
    ]
   }
  },
- "updated_at": "2026-11-06T10:59:14-06:00",
+ "updated_at": "2026-11-06T12:15:25-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 44,
-  "Kahekili": 12,
-  "Mia": 44,
+  "Addie": 47,
+  "Kahekili": 14,
+  "Mia": 47,
   "Nathan": 26,
   "Nick": 15,
   "Simran": 6
