@@ -1,256 +1,257 @@
 {
- "month": "2026-11",
- "entries": {
-  "Mia": {
-   "2026-11-02": [
-    "n:lea johns",
-    "140256664498",
-    "n:nora lazar",
-    "n:kyle barnes",
-    "n:josue serralta",
-    "n:barbara golando",
-    "n:valarie amezquita"
-   ],
-   "2026-11-04": [
-    "n:josue serralta"
-   ],
-   "2026-11-05": [
-    "1949401",
-    "n:andrew zeik",
-    "n:paul milnes",
-    "n:brian branch",
-    "n:nick gregson",
-    "n:daniel haynes",
-    "n:isaac cannady",
-    "n:jesse grisham",
-    "n:michael hicks",
-    "n:josue serralta",
-    "n:nancy jennings",
-    "n:victor richard",
-    "n:aaron ouellette",
-    "n:adam doppenberg",
-    "n:dominic balderaz",
-    "n:eddie chantaniyom",
-    "n:oklahoma location",
-    "n:krishnamohan malay",
-    "n:christopher challender"
-   ],
-   "2026-11-06": [
-    "52555851",
-    "n:eric waga",
-    "n:roy ekart",
-    "132593450588",
-    "223904826430",
-    "n:jason read",
-    "n:yoshi sato",
-    "n:tim sigrist",
-    "n:george dolph",
-    "n:lourdes caro",
-    "n:wim de wilde",
-    "n:barry cordero",
-    "n:braden norris",
-    "n:jasen lomnick",
-    "n:jesse grisham",
-    "n:josue serralta",
-    "n:leina alvarado",
-    "n:marcos sampaio",
-    "n:tamara tunders",
-    "n:michael allones",
-    "n:camille facchini",
-    "n:shameem manadath",
-    "n:ragna van de burgt"
-   ]
+  "month": "2026-11",
+  "entries": {
+    "Mia": {
+      "2026-11-02": [
+        "n:lea johns",
+        "140256664498",
+        "n:nora lazar",
+        "n:kyle barnes",
+        "n:josue serralta",
+        "n:barbara golando",
+        "n:valarie amezquita"
+      ],
+      "2026-11-04": [
+        "n:josue serralta"
+      ],
+      "2026-11-05": [
+        "1949401",
+        "n:andrew zeik",
+        "n:paul milnes",
+        "n:brian branch",
+        "n:nick gregson",
+        "n:daniel haynes",
+        "n:isaac cannady",
+        "n:jesse grisham",
+        "n:michael hicks",
+        "n:josue serralta",
+        "n:nancy jennings",
+        "n:victor richard",
+        "n:aaron ouellette",
+        "n:adam doppenberg",
+        "n:dominic balderaz",
+        "n:eddie chantaniyom",
+        "n:oklahoma location",
+        "n:krishnamohan malay",
+        "n:christopher challender"
+      ],
+      "2026-11-06": [
+        "52555851",
+        "n:eric waga",
+        "n:roy ekart",
+        "132593450588",
+        "223904826430",
+        "n:jason read",
+        "n:yoshi sato",
+        "n:tim sigrist",
+        "n:george dolph",
+        "n:lourdes caro",
+        "n:wim de wilde",
+        "n:barry cordero",
+        "n:braden norris",
+        "n:jasen lomnick",
+        "n:jesse grisham",
+        "n:josue serralta",
+        "n:leina alvarado",
+        "n:marcos sampaio",
+        "n:tamara tunders",
+        "n:michael allones",
+        "n:camille facchini",
+        "n:shameem manadath",
+        "n:ragna van de burgt"
+      ]
+    },
+    "Addie": {
+      "2026-11-02": [
+        "n:eric lyle",
+        "n:lily wong",
+        "n:beau meeks",
+        "n:tim andres",
+        "n:dwayne beers",
+        "n:jason stouch",
+        "n:laura bertram",
+        "n:connie whitson",
+        "n:jennifer melberg",
+        "n:wayne niksich"
+      ],
+      "2026-11-03": [
+        "n:chris han",
+        "n:syed kashif",
+        "n:edward aguilar",
+        "n:tim murphy",
+        "n:jorge chavez",
+        "n:floyd walker",
+        "n:vinnie eschenlauer",
+        "n:steve callan",
+        "n:zach nace",
+        "n:jessica hopkins",
+        "n:allen neel",
+        "n:abby esposito",
+        "n:anthony hansel",
+        "n:craig clauser",
+        "n:daniel santhouse",
+        "n:jake mello",
+        "n:duane reeves"
+      ],
+      "2026-11-04": [
+        "n:misty dicks",
+        "n:dennis vennard",
+        "n:kendall kroll",
+        "n:cindy baca",
+        "n:paul westlake",
+        "n:lisa fenton",
+        "n:alex compton"
+      ],
+      "2026-11-05": [
+        "n:jake hardy",
+        "n:mayra alia",
+        "n:linda lapre",
+        "n:alec clayton",
+        "n:les thompson",
+        "n:jamila little",
+        "n:creig casteigne"
+      ],
+      "2026-11-06": [
+        "n:david parkin",
+        "n:mayra alia",
+        "n:matt russell",
+        "n:shane de wit",
+        "n:caroline durelle",
+        "n:daniel lee",
+        "n:kim dubil",
+        "n:ken cicinelli",
+        "n:phillip stramel",
+        "n:edward aguilar",
+        "n:christopher mecier",
+        "n:kristen himes",
+        "n:zach nace",
+        "n:william goldsworthy",
+        "n:robert johnson",
+        "n:joshua clark",
+        "n:duane reeves",
+        "n:matt smith",
+        "n:sandeep cheema",
+        "n:thomas pina",
+        "n:regina pauly"
+      ]
+    },
+    "Nathan": {
+      "2026-11-02": [
+        "n:zach renfro",
+        "n:christopher bolognese"
+      ],
+      "2026-11-03": [
+        "n:adolfo flores",
+        "n:rusty faulkner",
+        "n:patrick samuels",
+        "n:becky valdez"
+      ],
+      "2026-11-04": [
+        "n:yvonne long",
+        "n:luis mota",
+        "n:steven smith",
+        "n:duane grove",
+        "n:danny fasciano"
+      ],
+      "2026-11-05": [
+        "n:adam liu",
+        "n:cody cox",
+        "n:yvonne long",
+        "n:steven smith",
+        "n:adam liu (dm)",
+        "n:adolfo flores",
+        "n:jamie calcutt",
+        "n:fatima martinez",
+        "n:mike scaparrotti",
+        "n:natascia winning",
+        "n:ricardo martínez"
+      ],
+      "2026-11-06": [
+        "n:src",
+        "n:rusty faulkner",
+        "n:steven smith",
+        "n:christopher bolognese",
+        "n:chance caffee",
+        "n:primarypackaging.com"
+      ]
+    },
+    "Simran": {
+      "2026-11-02": [
+        "203866478699",
+        "n:sarah schupp"
+      ],
+      "2026-11-04": [
+        "n:turner gilliam"
+      ],
+      "2026-11-05": [
+        "n:trent bell",
+        "n:jerry bowen"
+      ],
+      "2026-11-06": [
+        "n:troy tibbot"
+      ]
+    },
+    "Nick": {
+      "2026-11-02": [
+        "44159",
+        "2279551",
+        "7401851",
+        "n:amir zaid",
+        "n:carrie diehm"
+      ],
+      "2026-11-03": [
+        "17108601",
+        "29859701",
+        "167239824275",
+        "n:brian thomas",
+        "n:dawn daniels",
+        "n:jose herrera",
+        "n:logan lipinski",
+        "n:laurent d'amours"
+      ],
+      "2026-11-04": [
+        "2279551",
+        "44159"
+      ],
+      "2026-11-06": []
+    },
+    "Kahekili": {
+      "2026-11-02": [
+        "3650076",
+        "13966405892",
+        "n:angie wilson"
+      ],
+      "2026-11-03": [
+        "13966405892",
+        "20283614591",
+        "n:chuck hahn",
+        "n:david simon"
+      ],
+      "2026-11-04": [
+        "13966405892"
+      ],
+      "2026-11-05": [
+        "460501",
+        "462051",
+        "13966405892",
+        "20283614591"
+      ],
+      "2026-11-06": [
+        "42836451",
+        "13966405892",
+        "n:david simon",
+        "n:michael elkins"
+      ]
+    }
   },
-  "Addie": {
-   "2026-11-02": [
-    "n:eric lyle",
-    "n:lily wong",
-    "n:beau meeks",
-    "n:tim andres",
-    "n:dwayne beers",
-    "n:jason stouch",
-    "n:laura bertram",
-    "n:connie whitson",
-    "n:jennifer melberg",
-    "n:wayne niksich"
-   ],
-   "2026-11-03": [
-    "n:chris han",
-    "n:syed kashif",
-    "n:edward aguilar",
-    "n:tim murphy",
-    "n:jorge chavez",
-    "n:floyd walker",
-    "n:vinnie eschenlauer",
-    "n:steve callan",
-    "n:zach nace",
-    "n:jessica hopkins",
-    "n:allen neel",
-    "n:abby esposito",
-    "n:anthony hansel",
-    "n:craig clauser",
-    "n:daniel santhouse",
-    "n:jake mello",
-    "n:duane reeves"
-   ],
-   "2026-11-04": [
-    "n:misty dicks",
-    "n:dennis vennard",
-    "n:kendall kroll",
-    "n:cindy baca",
-    "n:paul westlake",
-    "n:lisa fenton",
-    "n:alex compton"
-   ],
-   "2026-11-05": [
-    "n:jake hardy",
-    "n:mayra alia",
-    "n:linda lapre",
-    "n:alec clayton",
-    "n:les thompson",
-    "n:jamila little",
-    "n:creig casteigne"
-   ],
-   "2026-11-06": [
-    "n:david parkin",
-    "n:mayra alia",
-    "n:matt russell",
-    "n:shane de wit",
-    "n:caroline durelle",
-    "n:daniel lee",
-    "n:kim dubil",
-    "n:ken cicinelli",
-    "n:phillip stramel",
-    "n:edward aguilar",
-    "n:christopher mecier",
-    "n:kristen himes",
-    "n:zach nace",
-    "n:william goldsworthy",
-    "n:robert johnson",
-    "n:joshua clark",
-    "n:duane reeves",
-    "n:matt smith",
-    "n:sandeep cheema",
-    "n:thomas pina",
-    "n:regina pauly"
-   ]
-  },
-  "Nathan": {
-   "2026-11-02": [
-    "n:zach renfro",
-    "n:christopher bolognese"
-   ],
-   "2026-11-03": [
-    "n:adolfo flores",
-    "n:rusty faulkner",
-    "n:patrick samuels",
-    "n:becky valdez"
-   ],
-   "2026-11-04": [
-    "n:yvonne long",
-    "n:luis mota",
-    "n:steven smith",
-    "n:duane grove",
-    "n:danny fasciano"
-   ],
-   "2026-11-05": [
-    "n:adam liu",
-    "n:cody cox",
-    "n:yvonne long",
-    "n:steven smith",
-    "n:adam liu (dm)",
-    "n:adolfo flores",
-    "n:jamie calcutt",
-    "n:fatima martinez",
-    "n:mike scaparrotti",
-    "n:natascia winning",
-    "n:ricardo martínez"
-   ],
-   "2026-11-06": [
-    "n:src",
-    "n:rusty faulkner",
-    "n:steven smith",
-    "n:christopher bolognese",
-    "n:chance caffee"
-   ]
-  },
-  "Simran": {
-   "2026-11-02": [
-    "203866478699",
-    "n:sarah schupp"
-   ],
-   "2026-11-04": [
-    "n:turner gilliam"
-   ],
-   "2026-11-05": [
-    "n:trent bell",
-    "n:jerry bowen"
-   ],
-   "2026-11-06": [
-    "n:troy tibbot"
-   ]
-  },
-  "Nick": {
-   "2026-11-02": [
-    "44159",
-    "2279551",
-    "7401851",
-    "n:amir zaid",
-    "n:carrie diehm"
-   ],
-   "2026-11-03": [
-    "17108601",
-    "29859701",
-    "167239824275",
-    "n:brian thomas",
-    "n:dawn daniels",
-    "n:jose herrera",
-    "n:logan lipinski",
-    "n:laurent d'amours"
-   ],
-   "2026-11-04": [
-    "2279551",
-    "44159"
-   ],
-   "2026-11-06": []
-  },
-  "Kahekili": {
-   "2026-11-02": [
-    "3650076",
-    "13966405892",
-    "n:angie wilson"
-   ],
-   "2026-11-03": [
-    "13966405892",
-    "20283614591",
-    "n:chuck hahn",
-    "n:david simon"
-   ],
-   "2026-11-04": [
-    "13966405892"
-   ],
-   "2026-11-05": [
-    "460501",
-    "462051",
-    "13966405892",
-    "20283614591"
-   ],
-   "2026-11-06": [
-    "42836451",
-    "13966405892",
-    "n:david simon",
-    "n:michael elkins"
-   ]
+  "updated_at": "2026-11-06T18:15:09-06:00",
+  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
+  "counts": {
+    "Addie": 62,
+    "Kahekili": 16,
+    "Mia": 50,
+    "Nathan": 28,
+    "Nick": 15,
+    "Simran": 6
   }
- },
- "updated_at": "2026-11-06T17:09:23-06:00",
- "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
- "counts": {
-  "Addie": 62,
-  "Kahekili": 16,
-  "Mia": 50,
-  "Nathan": 27,
-  "Nick": 15,
-  "Simran": 6
- }
 }
