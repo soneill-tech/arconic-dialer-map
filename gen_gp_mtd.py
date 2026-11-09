@@ -8,12 +8,13 @@
            (TPRO Customer, Team Steve owns in HubSpot?, HubSpot owner, ...).
 Join = exact TPRO customer name. GP goes to the HubSpot owner when that owner is one of the five reps AND the sheet says
 'Yes'; 'Possible match - verify' rows are counted for that owner but flagged unverified (reported separately as gp_unverified);
-everything else (no match, owner not a rep e.g. Steve, customer missing from sheet) is 'Unassigned'. Nothing is estimated.
+Steve O'Neill–owned accounts go to a 'Steve' bucket (out of rep GP); everything else (no match, other non-rep owner, customer missing from sheet) is 'Unassigned'. Nothing is estimated.
 """
 import argparse, csv, json, os, re
 from datetime import datetime
 from zoneinfo import ZoneInfo
 REP = {"Kahekili Barrozo": "Kili", "Simran Subramanian": "Simran", "Nicholas McNamara": "Nick", "Mia Medjedovic": "Mia", "Addison Parker": "Addie", "Nathan Beaver": "Nathan"}
+STEVE = "Steve O'Neill"
 num = lambda s: float(re.sub(r"[,$\s]", "", s or "0") or 0)
 
 def main():
@@ -28,19 +29,31 @@ def main():
     if os.path.exists(ov):
         for r in csv.DictReader(open(ov, encoding="utf-8")):
             own[r["TPRO Customer"].strip()] = {**own.get(r["TPRO Customer"].strip(), {}), **r}
-    gp = {k: {"gp": 0.0, "gp_verified": 0.0, "gp_unverified": 0.0, "customers": []} for k in list(REP.values()) + ["Unassigned"]}
+    # Steve-owned accounts get their own bucket (out of rep GP / Unassigned), matching Funnel treatment.
+    gp = {k: {"gp": 0.0, "gp_verified": 0.0, "gp_unverified": 0.0, "customers": []} for k in list(REP.values()) + ["Steve", "Unassigned"]}
     loads = 0; total = 0.0
     for r in csv.DictReader(open(a.export, encoding="utf-8-sig")):
         name = r["Customer"].strip(); v = num(r["Gross Profit"]); loads += int(num(r["# Loads"])); total += v
-        o = own.get(name); rep = REP.get(((o or {}).get("HubSpot owner") or "").strip()); flag = (o or {}).get("Team Steve owns in HubSpot?") or ""
+        o = own.get(name); owner = ((o or {}).get("HubSpot owner") or "").strip(); rep = REP.get(owner); flag = (o or {}).get("Team Steve owns in HubSpot?") or ""
         status = "verified" if flag == "Yes" else "possible match - unverified" if flag.startswith("Possible") else "unmatched"
-        key = rep if rep and status != "unmatched" else "Unassigned"
+        if rep and status != "unmatched":
+            key = rep
+        elif owner == STEVE or owner.startswith("Steve "):
+            key = "Steve"
+        else:
+            key = "Unassigned"
         g = gp[key]; g["gp"] += v
-        g["gp_unverified" if status.startswith("possible") and key != "Unassigned" else "gp_verified"] += v
-        g["customers"].append({"customer": name, "gp": round(v, 2), "match": status if key != "Unassigned" else (status + (" / owner not a rep: " + (o or {}).get("HubSpot owner", "") if o and o.get("HubSpot owner") else ""))})
+        g["gp_unverified" if status.startswith("possible") and key not in ("Unassigned", "Steve") else "gp_verified"] += v
+        if key == "Unassigned":
+            match = status + (" / owner not a rep: " + owner if owner else "")
+        elif key == "Steve":
+            match = "Steve-owned (out of rep GP)"
+        else:
+            match = status
+        g["customers"].append({"customer": name, "gp": round(v, 2), "match": match})
     reps = [{"rep": k, **{x: (round(y, 2) if x != "customers" else y) for x, y in g.items()}} for k, g in gp.items()]
     out = {"month": a.as_of[:7], "as_of": a.as_of, "source": a.source, "loads": loads, "total_gp": round(total, 2),
-           "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
+           "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
            "generated_at": datetime.now(ZoneInfo("America/Chicago")).isoformat(timespec="seconds"), "reps": reps}
     json.dump(out, open(a.out, "w"), indent=1, ensure_ascii=False); open(a.out, "a").write("\n")
     try:

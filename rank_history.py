@@ -60,7 +60,7 @@ def gp_snapshot(gp, quotas):
         return None
     by = {}
     for x in gp.get("reps", []):
-        if str(x.get("rep", "")).lower() == "unassigned":
+        if str(x.get("rep", "")).lower() in ("unassigned", "steve"):
             continue
         by[x["rep"]] = float(x.get("gp") or 0)
     pct = {}

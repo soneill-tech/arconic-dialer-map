@@ -4,8 +4,8 @@
  "source": "TPRO Bill To export, terminal 129, Nov 2026 MTD as of 11/9 x ownership sheet + overrides",
  "loads": 386,
  "total_gp": 134603.99,
- "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-09T09:25:58-06:00",
+ "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
+ "generated_at": "2026-11-09T09:46:24-06:00",
  "reps": [
   {
    "rep": "Kili",
@@ -181,7 +181,7 @@
    ]
   },
   {
-   "rep": "Unassigned",
+   "rep": "Steve",
    "gp": 800.0,
    "gp_verified": 800.0,
    "gp_unverified": 0.0,
@@ -189,9 +189,16 @@
     {
      "customer": "R2 Companies",
      "gp": 800.0,
-     "match": "unmatched"
+     "match": "Steve-owned (out of rep GP)"
     }
    ]
+  },
+  {
+   "rep": "Unassigned",
+   "gp": 0.0,
+   "gp_verified": 0.0,
+   "gp_unverified": 0.0,
+   "customers": []
   }
  ]
 }
