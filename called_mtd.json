@@ -86,7 +86,8 @@
         "n:debbie messier",
         "n:zuleika mooney",
         "n:david archambault",
-        "n:jose ramirez"
+        "n:jose ramirez",
+        "n:julie copeland"
       ]
     },
     "Addie": {
@@ -245,7 +246,8 @@
         "n:scott hall",
         "n:john reed",
         "n:jonah duckworth",
-        "n:michael elkins"
+        "n:michael elkins",
+        "n:sarah schupp"
       ]
     },
     "Nick": {
@@ -307,14 +309,14 @@
       ]
     }
   },
-  "updated_at": "2026-11-09T14:19:12-06:00",
+  "updated_at": "2026-11-09T14:59:54-06:00",
   "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
   "counts": {
     "Addie": 75,
     "Kahekili": 17,
-    "Mia": 76,
+    "Mia": 77,
     "Nathan": 34,
     "Nick": 16,
-    "Simran": 10
+    "Simran": 11
   }
 }
