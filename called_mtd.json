@@ -89,7 +89,17 @@
         "n:jose ramirez",
         "n:julie copeland",
         "n:carl ross",
-        "n:james wolfe"
+        "n:james wolfe",
+        "n:thomas arnold",
+        "n:todd sanford",
+        "n:matthew hackney",
+        "n:aaron ward",
+        "n:rob ryder",
+        "n:james kyre",
+        "n:jeremy cain",
+        "n:susan johnson",
+        "n:bryan spencer",
+        "n:jason scafe"
       ]
     },
     "Addie": {
@@ -180,7 +190,8 @@
         "n:vicky hellan",
         "n:austin morick",
         "n:nigel ball",
-        "n:dawn"
+        "n:dawn",
+        "n:chad n/a"
       ]
     },
     "Nathan": {
@@ -280,7 +291,8 @@
       "2026-11-06": [],
       "2026-11-09": [
         "n:dawn ethridge",
-        "n:randy baczek"
+        "n:randy baczek",
+        "n:derek simmons"
       ]
     },
     "Kahekili": {
@@ -316,14 +328,14 @@
       ]
     }
   },
-  "updated_at": "2026-11-09T15:59:02-06:00",
+  "updated_at": "2026-11-09T17:04:31-06:00",
   "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
   "counts": {
-    "Addie": 77,
+    "Addie": 78,
     "Kahekili": 18,
-    "Mia": 79,
+    "Mia": 89,
     "Nathan": 35,
-    "Nick": 17,
+    "Nick": 18,
     "Simran": 11
   }
 }
