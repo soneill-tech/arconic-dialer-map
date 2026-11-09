@@ -73,7 +73,15 @@
         "n:danielle jacobs",
         "n:ryan white",
         "n:david bowen",
-        "n:bryan berry"
+        "n:bryan berry",
+        "n:carl graham",
+        "n:tim conroy",
+        "n:dino tessicini",
+        "n:beatriz borges",
+        "n:thomas scheffey",
+        "n:pamela hopper",
+        "n:kyle gaskill",
+        "n:iain searle"
       ]
     },
     "Addie": {
@@ -156,7 +164,12 @@
         "n:chris han",
         "n:jake hardy",
         "n:eric lyle",
-        "n:beau meeks"
+        "n:beau meeks",
+        "n:mayra alia",
+        "n:waleed ahmad",
+        "n:caleb white",
+        "n:amanda shoemaker",
+        "n:vicky hellan"
       ]
     },
     "Nathan": {
@@ -200,7 +213,8 @@
       ],
       "2026-11-09": [
         "n:susan king",
-        "n:erin blake"
+        "n:erin blake",
+        "n:mike scaparrotti"
       ]
     },
     "Simran": {
@@ -217,6 +231,11 @@
       ],
       "2026-11-06": [
         "n:troy tibbot"
+      ],
+      "2026-11-09": [
+        "n:scott hall",
+        "n:john reed",
+        "n:jonah duckworth"
       ]
     },
     "Nick": {
@@ -269,17 +288,20 @@
         "13966405892",
         "n:david simon",
         "n:michael elkins"
+      ],
+      "2026-11-09": [
+        "n:paul laslou"
       ]
     }
   },
-  "updated_at": "2026-11-09T11:02:01-06:00",
+  "updated_at": "2026-11-09T12:55:28-06:00",
   "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
   "counts": {
-    "Addie": 69,
-    "Kahekili": 16,
-    "Mia": 63,
-    "Nathan": 30,
+    "Addie": 74,
+    "Kahekili": 17,
+    "Mia": 71,
+    "Nathan": 31,
     "Nick": 15,
-    "Simran": 6
+    "Simran": 9
   }
 }
