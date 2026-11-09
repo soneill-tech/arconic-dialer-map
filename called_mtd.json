@@ -59,6 +59,21 @@
         "n:camille facchini",
         "n:shameem manadath",
         "n:ragna van de burgt"
+      ],
+      "2026-11-09": [
+        "n:loura grayson",
+        "n:jessika yerves",
+        "n:takanori okano",
+        "n:yu parker",
+        "n:akira kashida",
+        "n:hide kajiyama",
+        "n:ikue oshio",
+        "n:alan conner",
+        "n:shane saterfiel",
+        "n:danielle jacobs",
+        "n:ryan white",
+        "n:david bowen",
+        "n:bryan berry"
       ]
     },
     "Addie": {
@@ -133,6 +148,15 @@
         "n:sandeep cheema",
         "n:thomas pina",
         "n:regina pauly"
+      ],
+      "2026-11-09": [
+        "n:roger mahar",
+        "n:grant butler",
+        "n:daniel lee",
+        "n:chris han",
+        "n:jake hardy",
+        "n:eric lyle",
+        "n:beau meeks"
       ]
     },
     "Nathan": {
@@ -173,6 +197,10 @@
         "n:christopher bolognese",
         "n:chance caffee",
         "n:primarypackaging.com"
+      ],
+      "2026-11-09": [
+        "n:susan king",
+        "n:erin blake"
       ]
     },
     "Simran": {
@@ -244,13 +272,13 @@
       ]
     }
   },
-  "updated_at": "2026-11-06T18:15:09-06:00",
+  "updated_at": "2026-11-09T11:02:01-06:00",
   "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
   "counts": {
-    "Addie": 62,
+    "Addie": 69,
     "Kahekili": 16,
-    "Mia": 50,
-    "Nathan": 28,
+    "Mia": 63,
+    "Nathan": 30,
     "Nick": 15,
     "Simran": 6
   }
