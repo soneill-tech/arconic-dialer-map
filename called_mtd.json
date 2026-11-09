@@ -87,7 +87,9 @@
         "n:zuleika mooney",
         "n:david archambault",
         "n:jose ramirez",
-        "n:julie copeland"
+        "n:julie copeland",
+        "n:carl ross",
+        "n:james wolfe"
       ]
     },
     "Addie": {
@@ -176,7 +178,9 @@
         "n:caleb white",
         "n:amanda shoemaker",
         "n:vicky hellan",
-        "n:austin morick"
+        "n:austin morick",
+        "n:nigel ball",
+        "n:dawn"
       ]
     },
     "Nathan": {
@@ -224,7 +228,8 @@
         "n:mike scaparrotti",
         "n:kushagra jauhari",
         "n:yvonne long",
-        "n:christopher bolognese"
+        "n:christopher bolognese",
+        "n:cody cox"
       ]
     },
     "Simran": {
@@ -274,7 +279,8 @@
       ],
       "2026-11-06": [],
       "2026-11-09": [
-        "n:dawn ethridge"
+        "n:dawn ethridge",
+        "n:randy baczek"
       ]
     },
     "Kahekili": {
@@ -305,18 +311,19 @@
         "n:michael elkins"
       ],
       "2026-11-09": [
+        "730851",
         "n:paul laslou"
       ]
     }
   },
-  "updated_at": "2026-11-09T14:59:54-06:00",
+  "updated_at": "2026-11-09T15:59:02-06:00",
   "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
   "counts": {
-    "Addie": 75,
-    "Kahekili": 17,
-    "Mia": 77,
-    "Nathan": 34,
-    "Nick": 16,
+    "Addie": 77,
+    "Kahekili": 18,
+    "Mia": 79,
+    "Nathan": 35,
+    "Nick": 17,
     "Simran": 11
   }
 }
