@@ -1,58 +1,58 @@
 {
  "month": "2026-11",
- "as_of": "2026-11-06",
- "source": "TPRO Bill To export, terminal 129, Nov 2026 MTD as of 11/6 x ownership sheet + overrides",
- "loads": 315,
- "total_gp": 107272.28,
+ "as_of": "2026-11-09",
+ "source": "TPRO Bill To export, terminal 129, Nov 2026 MTD as of 11/9 x ownership sheet + overrides",
+ "loads": 386,
+ "total_gp": 134603.99,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-06T11:38:34-06:00",
+ "generated_at": "2026-11-09T09:25:58-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 69517.98,
-   "gp_verified": 69517.98,
+   "gp": 90546.31,
+   "gp_verified": 90546.31,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 59146.84,
+     "gp": 75068.79,
      "match": "verified"
     },
     {
      "customer": "Arconic US, LLC c/o CT Logistics Team 8",
-     "gp": 575.0,
+     "gp": 2955.0,
      "match": "verified"
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 9796.14,
+     "gp": 12522.52,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Simran",
-   "gp": 3342.65,
-   "gp_verified": 2792.65,
-   "gp_unverified": 550.0,
+   "gp": 4363.2,
+   "gp_verified": 3113.2,
+   "gp_unverified": 1250.0,
    "customers": [
     {
      "customer": "CitiTrends Inc c/o Technical Traffic Solutions",
-     "gp": 550.0,
+     "gp": 1250.0,
      "match": "possible match - unverified"
     },
     {
      "customer": "Kaiser Aluminum c/o US Bank",
-     "gp": 2792.65,
+     "gp": 3113.2,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Nick",
-   "gp": 26061.04,
-   "gp_verified": 25770.92,
-   "gp_unverified": 290.12,
+   "gp": 29110.87,
+   "gp_verified": 28906.66,
+   "gp_unverified": 204.21,
    "customers": [
     {
      "customer": "3M c/o Data2Logistics - 3MCP01 - CHI",
@@ -61,12 +61,12 @@
     },
     {
      "customer": "Aleris International",
-     "gp": 6921.04,
+     "gp": 7079.48,
      "match": "verified"
     },
     {
      "customer": "Cass Information Systems, Inc.",
-     "gp": 1696.4,
+     "gp": 1668.4,
      "match": "verified"
     },
     {
@@ -76,17 +76,17 @@
     },
     {
      "customer": "MJ Kellner",
-     "gp": 290.12,
+     "gp": 204.21,
      "match": "possible match - unverified"
     },
     {
      "customer": "MSC",
-     "gp": 9286.2,
+     "gp": 11810.44,
      "match": "verified"
     },
     {
      "customer": "Novelis Corporation",
-     "gp": 6734.8,
+     "gp": 7215.86,
      "match": "verified"
     },
     {
@@ -98,9 +98,9 @@
   },
   {
    "rep": "Mia",
-   "gp": 7055.61,
-   "gp_verified": 5805.18,
-   "gp_unverified": 1250.43,
+   "gp": 8488.61,
+   "gp_verified": 6888.18,
+   "gp_unverified": 1600.43,
    "customers": [
     {
      "customer": "Dix Block and Supply Company Inc",
@@ -109,8 +109,13 @@
     },
     {
      "customer": "Frulact USA LLC",
-     "gp": 1083.0,
+     "gp": 2166.0,
      "match": "verified"
+    },
+    {
+     "customer": "Integrity Beverage, Inc.",
+     "gp": 50.0,
+     "match": "possible match - unverified"
     },
     {
      "customer": "Manufacturing & Assembly International",
@@ -129,7 +134,7 @@
     },
     {
      "customer": "Spectrum Foods, Inc.",
-     "gp": 1250.43,
+     "gp": 1550.43,
      "match": "possible match - unverified"
     },
     {
@@ -177,10 +182,16 @@
   },
   {
    "rep": "Unassigned",
-   "gp": 0.0,
-   "gp_verified": 0.0,
+   "gp": 800.0,
+   "gp_verified": 800.0,
    "gp_unverified": 0.0,
-   "customers": []
+   "customers": [
+    {
+     "customer": "R2 Companies",
+     "gp": 800.0,
+     "match": "unmatched"
+    }
+   ]
   }
  ]
 }
