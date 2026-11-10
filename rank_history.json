@@ -232,15 +232,15 @@
    "calls": {
     "Mia": {
      "rank": 1,
-     "score": 103
+     "score": 105
     },
     "Addie": {
      "rank": 2,
-     "score": 97
+     "score": 100
     },
     "Nathan": {
      "rank": 3,
-     "score": 44
+     "score": 45
     },
     "Simran": {
      "rank": 6,
@@ -283,7 +283,7 @@
    },
    "gp_as_of": "2026-11-10",
    "derived": false,
-   "written_at": "2026-11-10T15:54:50-06:00"
+   "written_at": "2026-11-10T16:55:05-06:00"
   }
  }
 }

@@ -107,6 +107,8 @@
     "n:liza mario",
     "n:james means",
     "n:thomas kane",
+    "n:garrett duty",
+    "n:kim marshall",
     "n:george wegner",
     "n:jesse grisham",
     "n:thomas arnold",
@@ -228,7 +230,10 @@
     "n:scott robertson",
     "n:eddey portalatin",
     "n:dorothy brown",
-    "n:dorothy ryan-brown"
+    "n:dorothy ryan-brown",
+    "n:sabreana johnson",
+    "n:stephen kowalski",
+    "n:reyes sanchez"
    ]
   },
   "Nathan": {
@@ -288,7 +293,8 @@
     "n:carlos benitez",
     "n:matthew buckner",
     "n:christopher bolognese",
-    "n:kevin shinall"
+    "n:kevin shinall",
+    "n:dustin hollinger"
    ]
   },
   "Simran": {
@@ -388,13 +394,13 @@
    ]
   }
  },
- "updated_at": "2026-11-10T15:54:50-06:00",
+ "updated_at": "2026-11-10T16:55:05-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 97,
+  "Addie": 100,
   "Kahekili": 19,
-  "Mia": 103,
-  "Nathan": 44,
+  "Mia": 105,
+  "Nathan": 45,
   "Nick": 22,
   "Simran": 12
  }

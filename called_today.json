@@ -1,7 +1,7 @@
 {
   "date": "2026-11-10",
-  "updated_at": "2026-11-10T15:54:50-06:00",
-  "synced_at": "2026-11-10T15:54:50-06:00",
+  "updated_at": "2026-11-10T16:55:05-06:00",
+  "synced_at": "2026-11-10T16:55:05-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "757551"
@@ -13,6 +13,14 @@
       "am": "Mia",
       "caller": "Mia",
       "time": "2026-11-10T15:51:00-06:00",
+      "outcome": "No answer"
+    },
+    {
+      "contact_id": "757551",
+      "contact_name": "Kevin Koppernagel",
+      "am": "Mia",
+      "caller": "Mia",
+      "time": "2026-11-10T15:52:00-06:00",
       "outcome": "No answer"
     }
   ]
