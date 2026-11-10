@@ -100,6 +100,9 @@
         "n:susan johnson",
         "n:bryan spencer",
         "n:jason scafe"
+      ],
+      "2026-11-10": [
+        "n:thomas kane"
       ]
     },
     "Addie": {
@@ -192,6 +195,14 @@
         "n:nigel ball",
         "n:dawn",
         "n:chad n/a"
+      ],
+      "2026-11-10": [
+        "n:abby esposito",
+        "n:allen neel",
+        "n:joel spatz",
+        "n:regina pauly",
+        "n:thomas pina",
+        "n:matt smith"
       ]
     },
     "Nathan": {
@@ -241,6 +252,10 @@
         "n:yvonne long",
         "n:christopher bolognese",
         "n:cody cox"
+      ],
+      "2026-11-10": [
+        "n:matthew buckner",
+        "n:christopher bolognese"
       ]
     },
     "Simran": {
@@ -264,6 +279,9 @@
         "n:jonah duckworth",
         "n:michael elkins",
         "n:sarah schupp"
+      ],
+      "2026-11-10": [
+        "n:steve peck"
       ]
     },
     "Nick": {
@@ -325,17 +343,20 @@
       "2026-11-09": [
         "730851",
         "n:paul laslou"
+      ],
+      "2026-11-10": [
+        "n:randy moeller"
       ]
     }
   },
-  "updated_at": "2026-11-09T17:04:31-06:00",
+  "updated_at": "2026-11-10T09:53:42-06:00",
   "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
   "counts": {
-    "Addie": 78,
-    "Kahekili": 18,
-    "Mia": 89,
-    "Nathan": 35,
+    "Addie": 84,
+    "Kahekili": 19,
+    "Mia": 90,
+    "Nathan": 37,
     "Nick": 18,
-    "Simran": 11
+    "Simran": 12
   }
 }
