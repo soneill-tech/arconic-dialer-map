@@ -211,6 +211,7 @@
     "n:jorge chavez",
     "n:regina pauly",
     "n:abby esposito",
+    "n:jamila little",
     "n:caleb williams"
    ]
   },
@@ -363,10 +364,10 @@
    ]
   }
  },
- "updated_at": "2026-11-10T11:58:50-06:00",
+ "updated_at": "2026-11-10T13:53:56-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 90,
+  "Addie": 91,
   "Kahekili": 19,
   "Mia": 93,
   "Nathan": 42,
