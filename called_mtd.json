@@ -102,9 +102,15 @@
     "n:jason scafe"
    ],
    "2026-11-10": [
+    "n:liza mario",
+    "n:james means",
     "n:thomas kane",
+    "n:george wegner",
     "n:jesse grisham",
     "n:thomas arnold",
+    "n:michael levitt",
+    "n:sydnie lindsey",
+    "n:hillary ferguson",
     "n:jessica campbell"
    ]
   },
@@ -200,6 +206,7 @@
     "n:chad n/a"
    ],
    "2026-11-10": [
+    "n:ben rafus",
     "n:allen neel",
     "n:daniel lee",
     "n:jake mello",
@@ -210,9 +217,12 @@
     "n:carey stoner",
     "n:jorge chavez",
     "n:regina pauly",
+    "n:robert fooks",
     "n:abby esposito",
     "n:jamila little",
-    "n:caleb williams"
+    "n:caleb williams",
+    "n:scott robertson",
+    "n:eddey portalatin"
    ]
   },
   "Nathan": {
@@ -268,6 +278,7 @@
     "n:henry han",
     "n:connor hall",
     "n:elijah smith",
+    "n:sandy schell",
     "n:carlos benitez",
     "n:matthew buckner",
     "n:christopher bolognese"
@@ -326,6 +337,12 @@
     "n:dawn ethridge",
     "n:randy baczek",
     "n:derek simmons"
+   ],
+   "2026-11-10": [
+    "n:jeff mcfalda",
+    "n:randa nassif",
+    "n:edward vangorder",
+    "n:zachary woolcott"
    ]
   },
   "Kahekili": {
@@ -364,14 +381,14 @@
    ]
   }
  },
- "updated_at": "2026-11-10T13:53:56-06:00",
+ "updated_at": "2026-11-10T14:57:45-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 91,
+  "Addie": 95,
   "Kahekili": 19,
-  "Mia": 93,
-  "Nathan": 42,
-  "Nick": 18,
+  "Mia": 99,
+  "Nathan": 43,
+  "Nick": 22,
   "Simran": 12
  }
 }
