@@ -1,31 +1,31 @@
 {
  "month": "2026-11",
  "as_of": "2026-11-09",
- "source": "TPRO Bill To export, terminal 129, Nov 2026 MTD as of 11/9 x ownership sheet + overrides",
- "loads": 386,
- "total_gp": 134603.99,
+ "source": "TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet",
+ "loads": 422,
+ "total_gp": 142048.21,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-09T09:46:24-06:00",
+ "generated_at": "2026-11-09T21:01:53-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 90546.31,
-   "gp_verified": 90546.31,
+   "gp": 98804.23,
+   "gp_verified": 98804.23,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 75068.79,
+     "gp": 81993.21,
      "match": "verified"
     },
     {
      "customer": "Arconic US, LLC c/o CT Logistics Team 8",
-     "gp": 2955.0,
+     "gp": 3165.0,
      "match": "verified"
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 12522.52,
+     "gp": 13646.02,
      "match": "verified"
     }
    ]
@@ -50,8 +50,8 @@
   },
   {
    "rep": "Nick",
-   "gp": 29110.87,
-   "gp_verified": 28906.66,
+   "gp": 28222.17,
+   "gp_verified": 28017.96,
    "gp_unverified": 204.21,
    "customers": [
     {
@@ -61,12 +61,12 @@
     },
     {
      "customer": "Aleris International",
-     "gp": 7079.48,
+     "gp": 7028.59,
      "match": "verified"
     },
     {
      "customer": "Cass Information Systems, Inc.",
-     "gp": 1668.4,
+     "gp": 1571.4,
      "match": "verified"
     },
     {
@@ -86,7 +86,7 @@
     },
     {
      "customer": "Novelis Corporation",
-     "gp": 7215.86,
+     "gp": 6475.05,
      "match": "verified"
     },
     {
@@ -98,9 +98,9 @@
   },
   {
    "rep": "Mia",
-   "gp": 8488.61,
+   "gp": 8563.61,
    "gp_verified": 6888.18,
-   "gp_unverified": 1600.43,
+   "gp_unverified": 1675.43,
    "customers": [
     {
      "customer": "Dix Block and Supply Company Inc",
@@ -134,7 +134,7 @@
     },
     {
      "customer": "Spectrum Foods, Inc.",
-     "gp": 1550.43,
+     "gp": 1625.43,
      "match": "possible match - unverified"
     },
     {
