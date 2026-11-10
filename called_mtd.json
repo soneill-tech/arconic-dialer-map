@@ -102,6 +102,8 @@
     "n:jason scafe"
    ],
    "2026-11-10": [
+    "757551",
+    "n:jody north",
     "n:liza mario",
     "n:james means",
     "n:thomas kane",
@@ -109,9 +111,11 @@
     "n:jesse grisham",
     "n:thomas arnold",
     "n:michael levitt",
+    "n:steve thompson",
     "n:sydnie lindsey",
     "n:hillary ferguson",
-    "n:jessica campbell"
+    "n:jessica campbell",
+    "n:elisabeth diluzio"
    ]
   },
   "Addie": {
@@ -222,7 +226,9 @@
     "n:jamila little",
     "n:caleb williams",
     "n:scott robertson",
-    "n:eddey portalatin"
+    "n:eddey portalatin",
+    "n:dorothy brown",
+    "n:dorothy ryan-brown"
    ]
   },
   "Nathan": {
@@ -281,7 +287,8 @@
     "n:sandy schell",
     "n:carlos benitez",
     "n:matthew buckner",
-    "n:christopher bolognese"
+    "n:christopher bolognese",
+    "n:kevin shinall"
    ]
   },
   "Simran": {
@@ -381,13 +388,13 @@
    ]
   }
  },
- "updated_at": "2026-11-10T14:57:45-06:00",
+ "updated_at": "2026-11-10T15:54:50-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 95,
+  "Addie": 97,
   "Kahekili": 19,
-  "Mia": 99,
-  "Nathan": 43,
+  "Mia": 103,
+  "Nathan": 44,
   "Nick": 22,
   "Simran": 12
  }
