@@ -129,11 +129,13 @@
     "n:brian lazaro",
     "n:gavin meehan",
     "n:eric moreland",
+    "n:zoe magnussen",
     "n:jessica mathis",
     "n:joselly santos",
     "n:sandra pacheco",
     "n:tracy pinkerton",
     "n:michael kazarian",
+    "n:sherry elghanian",
     "n:demetrius johnson",
     "n:benkelman – grain elevator"
    ]
@@ -261,7 +263,8 @@
     "n:nigel ball",
     "n:roger mahar",
     "n:dennis vennard",
-    "n:patrick potter"
+    "n:patrick potter",
+    "n:david sennett"
    ]
   },
   "Nathan": {
@@ -327,7 +330,8 @@
    "2026-11-11": [
     "n:doug",
     "n:connor floyd",
-    "n:bill haselkamp"
+    "n:bill haselkamp",
+    "n:rachel perry"
    ]
   },
   "Simran": {
@@ -440,13 +444,13 @@
    ]
   }
  },
- "updated_at": "2026-11-11T13:00:47-06:00",
+ "updated_at": "2026-11-11T13:58:34-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 108,
+  "Addie": 109,
   "Kahekili": 23,
-  "Mia": 121,
-  "Nathan": 48,
+  "Mia": 123,
+  "Nathan": 49,
   "Nick": 23,
   "Simran": 14
  }
