@@ -1,10 +1,12 @@
 {
   "date": "2026-11-11",
-  "updated_at": "2026-11-11T11:52:58-06:00",
-  "synced_at": "2026-11-11T11:52:58-06:00",
+  "updated_at": "2026-11-11T13:01:09-06:00",
+  "synced_at": "2026-11-11T13:01:09-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "8928701",
+    "13966405892",
+    "20283614591",
     "64317222691",
     "132593450588",
     "203866478699",
@@ -73,6 +75,38 @@
       "am": "Kahekili",
       "caller": "Kahekili",
       "time": "2026-11-11T10:58:00-06:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "20283614591",
+      "contact_name": "Sarah Schupp",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-11T11:58:00-06:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-11T12:13:00-06:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "13966405892",
+      "contact_name": "Trent Bell",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-11T12:14:00-06:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "20283614591",
+      "contact_name": "Sarah Schupp",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-11T12:27:00-06:00",
       "outcome": "--"
     }
   ]
