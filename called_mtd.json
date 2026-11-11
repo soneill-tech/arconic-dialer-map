@@ -118,6 +118,15 @@
     "n:hillary ferguson",
     "n:jessica campbell",
     "n:elisabeth diluzio"
+   ],
+   "2026-11-11": [
+    "n:jon lantz",
+    "132593450588",
+    "n:kyle george",
+    "n:gavin meehan",
+    "n:tracy pinkerton",
+    "n:demetrius johnson",
+    "n:benkelman – grain elevator"
    ]
   },
   "Addie": {
@@ -234,6 +243,14 @@
     "n:sabreana johnson",
     "n:stephen kowalski",
     "n:reyes sanchez"
+   ],
+   "2026-11-11": [
+    "n:patrick potter",
+    "n:cindy baca",
+    "n:dennis vennard",
+    "n:daniel lee",
+    "n:ed mcdaid",
+    "n:nigel ball"
    ]
   },
   "Nathan": {
@@ -295,6 +312,10 @@
     "n:christopher bolognese",
     "n:kevin shinall",
     "n:dustin hollinger"
+   ],
+   "2026-11-11": [
+    "n:bill haselkamp",
+    "n:connor floyd"
    ]
   },
   "Simran": {
@@ -321,6 +342,10 @@
    ],
    "2026-11-10": [
     "n:steve peck"
+   ],
+   "2026-11-11": [
+    "203866478699",
+    "228516628092"
    ]
   },
   "Nick": {
@@ -356,6 +381,9 @@
     "n:randa nassif",
     "n:edward vangorder",
     "n:zachary woolcott"
+   ],
+   "2026-11-11": [
+    "64317222691"
    ]
   },
   "Kahekili": {
@@ -395,14 +423,14 @@
    ]
   }
  },
- "updated_at": "2026-11-10T17:56:43-06:00",
+ "updated_at": "2026-11-11T10:56:07-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 100,
+  "Addie": 106,
   "Kahekili": 20,
-  "Mia": 105,
-  "Nathan": 45,
-  "Nick": 22,
-  "Simran": 12
+  "Mia": 112,
+  "Nathan": 47,
+  "Nick": 23,
+  "Simran": 14
  }
 }

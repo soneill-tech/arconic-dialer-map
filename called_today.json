@@ -1,36 +1,70 @@
 {
-  "date": "2026-11-10",
-  "updated_at": "2026-11-10T17:56:54-06:00",
-  "synced_at": "2026-11-10T17:56:54-06:00",
+  "date": "2026-11-11",
+  "updated_at": "2026-11-11T10:56:07-06:00",
+  "synced_at": "2026-11-11T10:56:07-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
-    "757551",
-    "34483001"
+    "64317222691",
+    "132593450588",
+    "203866478699",
+    "228516628092"
   ],
   "calls": [
     {
-      "contact_id": "757551",
-      "contact_name": "Kevin Koppernagel",
+      "contact_id": "132593450588",
+      "contact_name": "Matt Deterior",
       "am": "Mia",
       "caller": "Mia",
-      "time": "2026-11-10T15:51:00-06:00",
+      "time": "2026-11-11T08:28:00-06:00",
       "outcome": "No answer"
     },
     {
-      "contact_id": "757551",
-      "contact_name": "Kevin Koppernagel",
+      "contact_id": "132593450588",
+      "contact_name": "Matt Deterior",
       "am": "Mia",
       "caller": "Mia",
-      "time": "2026-11-10T15:52:00-06:00",
+      "time": "2026-11-11T08:40:00-06:00",
       "outcome": "No answer"
     },
     {
-      "contact_id": "34483001",
-      "contact_name": "Caraline Coleman",
-      "am": "Kahekili",
-      "caller": "Kahekili",
-      "time": "2026-11-10T16:56:00-06:00",
+      "contact_id": "64317222691",
+      "contact_name": "Jessica Peller",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-11-11T09:33:00-06:00",
+      "outcome": "Connected"
+    },
+    {
+      "contact_id": "203866478699",
+      "contact_name": "Trent Roybal",
+      "am": "Simran",
+      "caller": "Simran",
+      "time": "2026-11-11T09:51:00-06:00",
       "outcome": "--"
+    },
+    {
+      "contact_id": "203866478699",
+      "contact_name": "Trent Roybal",
+      "am": "Simran",
+      "caller": "Simran",
+      "time": "2026-11-11T09:52:00-06:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "203866478699",
+      "contact_name": "Trent Roybal",
+      "am": "Simran",
+      "caller": "Simran",
+      "time": "2026-11-11T09:53:00-06:00",
+      "outcome": "--"
+    },
+    {
+      "contact_id": "228516628092",
+      "contact_name": "Amanda Zepernick",
+      "am": "Simran",
+      "caller": "Simran",
+      "time": "2026-11-11T10:48:00-06:00",
+      "outcome": "No answer"
     }
   ]
 }
