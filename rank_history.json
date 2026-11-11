@@ -289,11 +289,11 @@
    "calls": {
     "Mia": {
      "rank": 1,
-     "score": 128
+     "score": 136
     },
     "Addie": {
      "rank": 2,
-     "score": 110
+     "score": 113
     },
     "Nathan": {
      "rank": 3,
@@ -301,7 +301,7 @@
     },
     "Simran": {
      "rank": 6,
-     "score": 14
+     "score": 16
     },
     "Nick": {
      "rank": 4,
@@ -340,7 +340,7 @@
    },
    "gp_as_of": "2026-11-11",
    "derived": false,
-   "written_at": "2026-11-11T14:58:46-06:00"
+   "written_at": "2026-11-11T16:04:51-06:00"
   }
  }
 }

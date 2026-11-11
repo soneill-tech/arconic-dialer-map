@@ -123,20 +123,28 @@
     "n:jon lantz",
     "132593450588",
     "n:carol vang",
+    "n:david nunn",
+    "n:luis soria",
     "n:wes madill",
+    "n:jill larsen",
     "n:jorge perez",
     "n:kyle george",
     "n:steve brown",
     "n:brian lazaro",
     "n:gavin meehan",
+    "n:ken phillips",
+    "n:maria flores",
     "n:peter fulton",
+    "n:brett meloche",
     "n:eric moreland",
+    "n:haley cameron",
     "n:zoe magnussen",
     "n:brian hennessy",
     "n:jessica mathis",
     "n:jordan oconnor",
     "n:joselly santos",
     "n:michelle green",
+    "n:patricia brown",
     "n:sandra pacheco",
     "n:tracy pinkerton",
     "n:michael kazarian",
@@ -270,7 +278,10 @@
     "n:dennis vennard",
     "n:patrick potter",
     "n:david sennett",
-    "n:angelo orr"
+    "n:angelo orr",
+    "n:misty dicks",
+    "n:chris han",
+    "n:mayra alia"
    ]
   },
   "Nathan": {
@@ -367,7 +378,9 @@
    ],
    "2026-11-11": [
     "203866478699",
-    "228516628092"
+    "228516628092",
+    "n:ryan everett",
+    "n:sarah schupp"
    ]
   },
   "Nick": {
@@ -451,14 +464,14 @@
    ]
   }
  },
- "updated_at": "2026-11-11T14:58:46-06:00",
+ "updated_at": "2026-11-11T16:04:51-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 110,
+  "Addie": 113,
   "Kahekili": 23,
-  "Mia": 128,
+  "Mia": 136,
   "Nathan": 49,
   "Nick": 24,
-  "Simran": 14
+  "Simran": 16
  }
 }
