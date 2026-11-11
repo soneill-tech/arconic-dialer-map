@@ -1,10 +1,11 @@
 {
   "date": "2026-11-11",
-  "updated_at": "2026-11-11T13:58:34-06:00",
-  "synced_at": "2026-11-11T13:58:34-06:00",
+  "updated_at": "2026-11-11T14:58:46-06:00",
+  "synced_at": "2026-11-11T14:58:46-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
     "8928701",
+    "12604651",
     "13966405892",
     "20283614591",
     "64317222691",
@@ -108,6 +109,14 @@
       "caller": "Kahekili",
       "time": "2026-11-11T12:27:00-06:00",
       "outcome": "--"
+    },
+    {
+      "contact_id": "12604651",
+      "contact_name": "Jay Finkelstein",
+      "am": "Nick",
+      "caller": "Nick",
+      "time": "2026-11-11T14:24:00-06:00",
+      "outcome": "Connected"
     }
   ]
 }

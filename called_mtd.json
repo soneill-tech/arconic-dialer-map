@@ -123,15 +123,20 @@
     "n:jon lantz",
     "132593450588",
     "n:carol vang",
+    "n:wes madill",
     "n:jorge perez",
     "n:kyle george",
     "n:steve brown",
     "n:brian lazaro",
     "n:gavin meehan",
+    "n:peter fulton",
     "n:eric moreland",
     "n:zoe magnussen",
+    "n:brian hennessy",
     "n:jessica mathis",
+    "n:jordan oconnor",
     "n:joselly santos",
+    "n:michelle green",
     "n:sandra pacheco",
     "n:tracy pinkerton",
     "n:michael kazarian",
@@ -264,7 +269,8 @@
     "n:roger mahar",
     "n:dennis vennard",
     "n:patrick potter",
-    "n:david sennett"
+    "n:david sennett",
+    "n:angelo orr"
    ]
   },
   "Nathan": {
@@ -399,6 +405,7 @@
     "n:zachary woolcott"
    ],
    "2026-11-11": [
+    "12604651",
     "64317222691"
    ]
   },
@@ -444,14 +451,14 @@
    ]
   }
  },
- "updated_at": "2026-11-11T13:58:34-06:00",
+ "updated_at": "2026-11-11T14:58:46-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 109,
+  "Addie": 110,
   "Kahekili": 23,
-  "Mia": 123,
+  "Mia": 128,
   "Nathan": 49,
-  "Nick": 23,
+  "Nick": 24,
   "Simran": 14
  }
 }
