@@ -122,9 +122,18 @@
    "2026-11-11": [
     "n:jon lantz",
     "132593450588",
+    "n:carol vang",
+    "n:jorge perez",
     "n:kyle george",
+    "n:steve brown",
+    "n:brian lazaro",
     "n:gavin meehan",
+    "n:eric moreland",
+    "n:jessica mathis",
+    "n:joselly santos",
+    "n:sandra pacheco",
     "n:tracy pinkerton",
+    "n:michael kazarian",
     "n:demetrius johnson",
     "n:benkelman – grain elevator"
    ]
@@ -245,12 +254,14 @@
     "n:reyes sanchez"
    ],
    "2026-11-11": [
-    "n:patrick potter",
-    "n:cindy baca",
-    "n:dennis vennard",
-    "n:daniel lee",
     "n:ed mcdaid",
-    "n:nigel ball"
+    "n:cindy baca",
+    "n:daniel lee",
+    "n:don lowery",
+    "n:nigel ball",
+    "n:roger mahar",
+    "n:dennis vennard",
+    "n:patrick potter"
    ]
   },
   "Nathan": {
@@ -314,8 +325,9 @@
     "n:dustin hollinger"
    ],
    "2026-11-11": [
-    "n:bill haselkamp",
-    "n:connor floyd"
+    "n:doug",
+    "n:connor floyd",
+    "n:bill haselkamp"
    ]
   },
   "Simran": {
@@ -420,16 +432,19 @@
    "2026-11-10": [
     "34483001",
     "n:randy moeller"
+   ],
+   "2026-11-11": [
+    "8928701"
    ]
   }
  },
- "updated_at": "2026-11-11T10:56:07-06:00",
+ "updated_at": "2026-11-11T11:52:45-06:00",
  "source": "accumulated from called_today.json syncs + Log Call queue (update_called_today.py)",
  "counts": {
-  "Addie": 106,
-  "Kahekili": 20,
-  "Mia": 112,
-  "Nathan": 47,
+  "Addie": 108,
+  "Kahekili": 21,
+  "Mia": 121,
+  "Nathan": 48,
   "Nick": 23,
   "Simran": 14
  }

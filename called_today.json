@@ -1,9 +1,10 @@
 {
   "date": "2026-11-11",
-  "updated_at": "2026-11-11T10:56:07-06:00",
-  "synced_at": "2026-11-11T10:56:07-06:00",
+  "updated_at": "2026-11-11T11:52:58-06:00",
+  "synced_at": "2026-11-11T11:52:58-06:00",
   "source": "HubSpot calls (browser sync)",
   "called_contact_ids": [
+    "8928701",
     "64317222691",
     "132593450588",
     "203866478699",
@@ -65,6 +66,14 @@
       "caller": "Simran",
       "time": "2026-11-11T10:48:00-06:00",
       "outcome": "No answer"
+    },
+    {
+      "contact_id": "8928701",
+      "contact_name": "Naomi Lovejoy",
+      "am": "Kahekili",
+      "caller": "Kahekili",
+      "time": "2026-11-11T10:58:00-06:00",
+      "outcome": "--"
     }
   ]
 }
