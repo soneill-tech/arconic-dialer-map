@@ -315,32 +315,32 @@
    "gp": {
     "Kili": {
      "rank": 4,
-     "pct": 35.0
+     "pct": 39.8
     },
     "Nick": {
-     "rank": 2,
-     "pct": 39.8
+     "rank": 3,
+     "pct": 41.4
     },
     "Mia": {
      "rank": 5,
-     "pct": 30.2
+     "pct": 33.8
     },
     "Simran": {
-     "rank": 3,
-     "pct": 36.1
+     "rank": 2,
+     "pct": 43.2
     },
     "Addie": {
      "rank": 1,
-     "pct": 42.9
+     "pct": 58.4
     },
     "Nathan": {
      "rank": 6,
      "pct": -17.0
     }
    },
-   "gp_as_of": "2026-11-10",
+   "gp_as_of": "2026-11-11",
    "derived": false,
-   "written_at": "2026-11-11T10:56:07-06:00"
+   "written_at": "2026-11-11T10:58:50-06:00"
   }
  }
 }
