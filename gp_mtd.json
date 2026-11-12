@@ -2,20 +2,20 @@
  "month": "2026-11",
  "as_of": "2026-11-11",
  "source": "TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet",
- "loads": 546,
- "total_gp": 175973.7,
+ "loads": 547,
+ "total_gp": 176588.88,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-11T13:42:49-06:00",
+ "generated_at": "2026-11-11T20:09:17-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 123229.04,
-   "gp_verified": 123229.04,
+   "gp": 123844.22,
+   "gp_verified": 123844.22,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 101303.94,
+     "gp": 102116.12,
      "match": "verified"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 17574.39,
+     "gp": 17377.39,
      "match": "verified"
     }
    ]
