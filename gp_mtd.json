@@ -1,39 +1,39 @@
 {
  "month": "2026-11",
- "as_of": "2026-11-11",
+ "as_of": "2026-11-12",
  "source": "TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet",
- "loads": 547,
- "total_gp": 176588.88,
+ "loads": 595,
+ "total_gp": 191769.63,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-11T20:09:17-06:00",
+ "generated_at": "2026-11-12T08:35:56-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 123844.22,
-   "gp_verified": 123844.22,
+   "gp": 132726.64,
+   "gp_verified": 132726.64,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 102116.12,
+     "gp": 109170.09,
      "match": "verified"
     },
     {
      "customer": "Arconic US, LLC c/o CT Logistics Team 8",
-     "gp": 4350.71,
+     "gp": 4703.71,
      "match": "verified"
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 17377.39,
+     "gp": 18852.84,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Simran",
-   "gp": 6479.15,
-   "gp_verified": 4179.15,
+   "gp": 7910.67,
+   "gp_verified": 5610.67,
    "gp_unverified": 2300.0,
    "customers": [
     {
@@ -43,15 +43,15 @@
     },
     {
      "customer": "Kaiser Aluminum c/o US Bank",
-     "gp": 4179.15,
+     "gp": 5610.67,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Nick",
-   "gp": 33115.92,
-   "gp_verified": 33419.94,
+   "gp": 37221.71,
+   "gp_verified": 37525.73,
    "gp_unverified": -304.02,
    "customers": [
     {
@@ -61,7 +61,7 @@
     },
     {
      "customer": "Aleris International",
-     "gp": 8242.82,
+     "gp": 8959.56,
      "match": "verified"
     },
     {
@@ -71,7 +71,7 @@
     },
     {
      "customer": "Leaf Home c/o Uber Freight",
-     "gp": 297.0,
+     "gp": 786.0,
      "match": "verified"
     },
     {
@@ -81,12 +81,12 @@
     },
     {
      "customer": "MSC",
-     "gp": 14347.83,
+     "gp": 16238.06,
      "match": "verified"
     },
     {
      "customer": "Novelis Corporation",
-     "gp": 7775.93,
+     "gp": 8785.75,
      "match": "verified"
     },
     {
@@ -98,9 +98,9 @@
   },
   {
    "rep": "Mia",
-   "gp": 10154.59,
-   "gp_verified": 7578.18,
-   "gp_unverified": 2576.41,
+   "gp": 10606.39,
+   "gp_verified": 7878.18,
+   "gp_unverified": 2728.21,
    "customers": [
     {
      "customer": "Dix Block and Supply Company Inc",
@@ -139,12 +139,17 @@
     },
     {
      "customer": "Spectrum Foods, Inc.",
-     "gp": 2526.41,
+     "gp": 2678.21,
      "match": "possible match - unverified"
     },
     {
      "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
      "gp": 1819.96,
+     "match": "verified"
+    },
+    {
+     "customer": "TIMAC AGRO USA Inc",
+     "gp": 300.0,
      "match": "verified"
     },
     {
@@ -200,10 +205,15 @@
   },
   {
    "rep": "Unassigned",
-   "gp": 125.0,
-   "gp_verified": 125.0,
+   "gp": 434.22,
+   "gp_verified": 434.22,
    "gp_unverified": 0.0,
    "customers": [
+    {
+     "customer": "Hanwha Materials Savannah LLC",
+     "gp": 309.22,
+     "match": "unmatched"
+    },
     {
      "customer": "Reliable Silver Corporation",
      "gp": 400.0,
