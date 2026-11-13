@@ -2,38 +2,38 @@
  "month": "2026-11",
  "as_of": "2026-11-12",
  "source": "TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet",
- "loads": 595,
- "total_gp": 191769.63,
+ "loads": 619,
+ "total_gp": 198619.56,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-12T08:35:56-06:00",
+ "generated_at": "2026-11-12T21:27:56-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 132726.64,
-   "gp_verified": 132726.64,
+   "gp": 140674.25,
+   "gp_verified": 140674.25,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 109170.09,
+     "gp": 115682.87,
      "match": "verified"
     },
     {
      "customer": "Arconic US, LLC c/o CT Logistics Team 8",
-     "gp": 4703.71,
+     "gp": 5803.71,
      "match": "verified"
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 18852.84,
+     "gp": 19187.67,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Simran",
-   "gp": 7910.67,
-   "gp_verified": 5610.67,
+   "gp": 7335.22,
+   "gp_verified": 5035.22,
    "gp_unverified": 2300.0,
    "customers": [
     {
@@ -43,16 +43,16 @@
     },
     {
      "customer": "Kaiser Aluminum c/o US Bank",
-     "gp": 5610.67,
+     "gp": 5035.22,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Nick",
-   "gp": 37221.71,
-   "gp_verified": 37525.73,
-   "gp_unverified": -304.02,
+   "gp": 36699.48,
+   "gp_verified": 37253.5,
+   "gp_unverified": -554.02,
    "customers": [
     {
      "customer": "3M c/o Data2Logistics - 3MCP01 - CHI",
@@ -71,22 +71,22 @@
     },
     {
      "customer": "Leaf Home c/o Uber Freight",
-     "gp": 786.0,
+     "gp": 297.0,
      "match": "verified"
     },
     {
      "customer": "MJ Kellner",
-     "gp": -304.02,
+     "gp": -554.02,
      "match": "possible match - unverified"
     },
     {
      "customer": "MSC",
-     "gp": 16238.06,
+     "gp": 15693.06,
      "match": "verified"
     },
     {
      "customer": "Novelis Corporation",
-     "gp": 8785.75,
+     "gp": 9547.52,
      "match": "verified"
     },
     {
