@@ -1,21 +1,21 @@
 {
  "month": "2026-11",
- "as_of": "2026-11-12",
+ "as_of": "2026-11-13",
  "source": "TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet",
- "loads": 619,
- "total_gp": 198619.56,
+ "loads": 659,
+ "total_gp": 216161.26,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-12T21:27:56-06:00",
+ "generated_at": "2026-11-13T09:19:15-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 140674.25,
-   "gp_verified": 140674.25,
+   "gp": 153312.84,
+   "gp_verified": 153312.84,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 115682.87,
+     "gp": 126586.74,
      "match": "verified"
     },
     {
@@ -25,15 +25,15 @@
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 19187.67,
+     "gp": 20922.39,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Simran",
-   "gp": 7335.22,
-   "gp_verified": 5035.22,
+   "gp": 8288.4,
+   "gp_verified": 5988.4,
    "gp_unverified": 2300.0,
    "customers": [
     {
@@ -43,16 +43,16 @@
     },
     {
      "customer": "Kaiser Aluminum c/o US Bank",
-     "gp": 5035.22,
+     "gp": 5988.4,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Nick",
-   "gp": 36699.48,
-   "gp_verified": 37253.5,
-   "gp_unverified": -554.02,
+   "gp": 39574.9,
+   "gp_verified": 40666.62,
+   "gp_unverified": -1091.72,
    "customers": [
     {
      "customer": "3M c/o Data2Logistics - 3MCP01 - CHI",
@@ -71,22 +71,22 @@
     },
     {
      "customer": "Leaf Home c/o Uber Freight",
-     "gp": 297.0,
+     "gp": 786.0,
      "match": "verified"
     },
     {
      "customer": "MJ Kellner",
-     "gp": -554.02,
+     "gp": -1091.72,
      "match": "possible match - unverified"
     },
     {
      "customer": "MSC",
-     "gp": 15693.06,
+     "gp": 18008.73,
      "match": "verified"
     },
     {
      "customer": "Novelis Corporation",
-     "gp": 9547.52,
+     "gp": 10155.97,
      "match": "verified"
     },
     {
@@ -98,8 +98,8 @@
   },
   {
    "rep": "Mia",
-   "gp": 10606.39,
-   "gp_verified": 7878.18,
+   "gp": 11496.9,
+   "gp_verified": 8768.69,
    "gp_unverified": 2728.21,
    "customers": [
     {
@@ -129,7 +129,7 @@
     },
     {
      "customer": "Nibco c/o US Bank",
-     "gp": 537.22,
+     "gp": 994.94,
      "match": "verified"
     },
     {
@@ -144,7 +144,7 @@
     },
     {
      "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
-     "gp": 1819.96,
+     "gp": 2252.75,
      "match": "verified"
     },
     {
@@ -166,14 +166,19 @@
   },
   {
    "rep": "Addie",
-   "gp": 2920.0,
+   "gp": 3104.0,
    "gp_verified": 2920.0,
-   "gp_unverified": 0.0,
+   "gp_unverified": 184.0,
    "customers": [
     {
      "customer": "Bronco Industrial Services LLC",
      "gp": 2920.0,
      "match": "verified"
+    },
+    {
+     "customer": "H.J. Martin & Son, Inc",
+     "gp": 184.0,
+     "match": "possible match - unverified"
     }
    ]
   },
