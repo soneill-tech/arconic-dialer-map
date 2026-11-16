@@ -455,6 +455,63 @@
    "gp_as_of": "2026-11-13",
    "derived": false,
    "written_at": "2026-11-13T09:19:15-06:00"
+  },
+  "2026-11-16": {
+   "calls": {
+    "Mia": {
+     "rank": 1,
+     "score": 143
+    },
+    "Addie": {
+     "rank": 2,
+     "score": 116
+    },
+    "Nathan": {
+     "rank": 3,
+     "score": 49
+    },
+    "Simran": {
+     "rank": 6,
+     "score": 16
+    },
+    "Nick": {
+     "rank": 4,
+     "score": 24
+    },
+    "Kili": {
+     "rank": 4,
+     "score": 24
+    }
+   },
+   "gp": {
+    "Kili": {
+     "rank": 3,
+     "pct": 61.7
+    },
+    "Nick": {
+     "rank": 4,
+     "pct": 56.0
+    },
+    "Mia": {
+     "rank": 5,
+     "pct": 43.4
+    },
+    "Simran": {
+     "rank": 1,
+     "pct": 78.8
+    },
+    "Addie": {
+     "rank": 2,
+     "pct": 62.1
+    },
+    "Nathan": {
+     "rank": 6,
+     "pct": -17.0
+    }
+   },
+   "gp_as_of": "2026-11-16",
+   "derived": false,
+   "written_at": "2026-11-16T10:52:10-06:00"
   }
  }
 }
