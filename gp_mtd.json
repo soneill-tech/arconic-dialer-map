@@ -5,12 +5,12 @@
  "loads": 944,
  "total_gp": 321907.6,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-19T10:24:42-06:00",
+ "generated_at": "2026-11-19T10:30:38-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 230925.24,
-   "gp_verified": 230925.24,
+   "gp": 231800.24,
+   "gp_verified": 231800.24,
    "gp_unverified": 0.0,
    "customers": [
     {
@@ -27,19 +27,29 @@
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
      "gp": 34041.04,
      "match": "verified"
+    },
+    {
+     "customer": "Reliable Silver Corporation",
+     "gp": 875.0,
+     "match": "verified"
     }
    ]
   },
   {
    "rep": "Simran",
-   "gp": 22025.24,
-   "gp_verified": 19725.24,
+   "gp": 22714.46,
+   "gp_verified": 20414.46,
    "gp_unverified": 2300.0,
    "customers": [
     {
      "customer": "CitiTrends Inc c/o Technical Traffic Solutions",
      "gp": 2300.0,
      "match": "possible match - unverified"
+    },
+    {
+     "customer": "Hanwha Materials Savannah LLC",
+     "gp": 689.22,
+     "match": "verified"
     },
     {
      "customer": "Kaiser Aluminum c/o US Bank",
@@ -50,8 +60,8 @@
   },
   {
    "rep": "Nick",
-   "gp": 50206.37,
-   "gp_verified": 51852.1,
+   "gp": 49937.37,
+   "gp_verified": 51583.1,
    "gp_unverified": -1645.73,
    "customers": [
     {
@@ -72,6 +82,11 @@
     {
      "customer": "Flow Pro Products, Inc.",
      "gp": 20.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Indevco Plastics - Longview",
+     "gp": -269.0,
      "match": "verified"
     },
     {
@@ -171,8 +186,8 @@
   },
   {
    "rep": "Addie",
-   "gp": 3104.0,
-   "gp_verified": 2920.0,
+   "gp": 2829.0,
+   "gp_verified": 2645.0,
    "gp_unverified": 184.0,
    "customers": [
     {
@@ -184,6 +199,11 @@
      "customer": "H.J. Martin & Son, Inc",
      "gp": 184.0,
      "match": "possible match - unverified"
+    },
+    {
+     "customer": "Texas Liquidation, LLC",
+     "gp": -275.0,
+     "match": "verified"
     }
    ]
   },
@@ -196,6 +216,11 @@
     {
      "customer": "Silpro, LLC",
      "gp": -850.0,
+     "match": "verified"
+    },
+    {
+     "customer": "Sunnyside Egg Co.",
+     "gp": 0.0,
      "match": "verified"
     }
    ]
@@ -215,36 +240,10 @@
   },
   {
    "rep": "Unassigned",
-   "gp": 1020.22,
-   "gp_verified": 1020.22,
+   "gp": 0.0,
+   "gp_verified": 0.0,
    "gp_unverified": 0.0,
-   "customers": [
-    {
-     "customer": "Hanwha Materials Savannah LLC",
-     "gp": 689.22,
-     "match": "unmatched"
-    },
-    {
-     "customer": "Indevco Plastics - Longview",
-     "gp": -269.0,
-     "match": "unmatched"
-    },
-    {
-     "customer": "Reliable Silver Corporation",
-     "gp": 875.0,
-     "match": "unmatched"
-    },
-    {
-     "customer": "Sunnyside Egg Co.",
-     "gp": 0.0,
-     "match": "unmatched"
-    },
-    {
-     "customer": "Texas Liquidation, LLC",
-     "gp": -275.0,
-     "match": "unmatched"
-    }
-   ]
+   "customers": []
   }
  ]
 }
