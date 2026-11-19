@@ -2,20 +2,20 @@
  "month": "2026-11",
  "as_of": "2026-11-19",
  "source": "TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet",
- "loads": 944,
- "total_gp": 321907.6,
+ "loads": 955,
+ "total_gp": 324519.23,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-19T10:30:38-06:00",
+ "generated_at": "2026-11-19T12:22:24-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 231800.24,
-   "gp_verified": 231800.24,
+   "gp": 233174.25,
+   "gp_verified": 233174.25,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 189988.11,
+     "gp": 190781.42,
      "match": "verified"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 34041.04,
+     "gp": 34621.74,
      "match": "verified"
     },
     {
@@ -37,8 +37,8 @@
   },
   {
    "rep": "Simran",
-   "gp": 22714.46,
-   "gp_verified": 20414.46,
+   "gp": 23501.49,
+   "gp_verified": 21201.49,
    "gp_unverified": 2300.0,
    "customers": [
     {
@@ -53,15 +53,15 @@
     },
     {
      "customer": "Kaiser Aluminum c/o US Bank",
-     "gp": 19725.24,
+     "gp": 20512.27,
      "match": "verified"
     }
    ]
   },
   {
    "rep": "Nick",
-   "gp": 49937.37,
-   "gp_verified": 51583.1,
+   "gp": 49823.04,
+   "gp_verified": 51468.77,
    "gp_unverified": -1645.73,
    "customers": [
     {
@@ -106,7 +106,7 @@
     },
     {
      "customer": "Novelis Corporation",
-     "gp": 12834.47,
+     "gp": 12720.14,
      "match": "verified"
     },
     {
@@ -118,9 +118,9 @@
   },
   {
    "rep": "Mia",
-   "gp": 14676.53,
-   "gp_verified": 10797.72,
-   "gp_unverified": 3878.81,
+   "gp": 15241.45,
+   "gp_verified": 11271.54,
+   "gp_unverified": 3969.91,
    "customers": [
     {
      "customer": "Dix Block and Supply Company Inc",
@@ -159,12 +159,12 @@
     },
     {
      "customer": "Spectrum Foods, Inc.",
-     "gp": 3828.81,
+     "gp": 3919.91,
      "match": "possible match - unverified"
     },
     {
      "customer": "STI Holdings, Inc. dba Stoughton Parts Sales, LLC",
-     "gp": 3581.78,
+     "gp": 4055.6,
      "match": "verified"
     },
     {
