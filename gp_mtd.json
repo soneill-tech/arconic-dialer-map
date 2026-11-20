@@ -2,20 +2,20 @@
  "month": "2026-11",
  "as_of": "2026-11-20",
  "source": "TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet",
- "loads": 1005,
- "total_gp": 343547.52,
+ "loads": 1015,
+ "total_gp": 348404.9,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-20T10:45:27-06:00",
+ "generated_at": "2026-11-20T14:22:45-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 243738.27,
-   "gp_verified": 243738.27,
+   "gp": 248728.51,
+   "gp_verified": 248728.51,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 199202.5,
+     "gp": 202507.74,
      "match": "verified"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 36489.44,
+     "gp": 38174.44,
      "match": "verified"
     },
     {
@@ -60,8 +60,8 @@
   },
   {
    "rep": "Nick",
-   "gp": 55376.55,
-   "gp_verified": 57022.28,
+   "gp": 55398.69,
+   "gp_verified": 57044.42,
    "gp_unverified": -1645.73,
    "customers": [
     {
@@ -111,7 +111,7 @@
     },
     {
      "customer": "Novelis Corporation",
-     "gp": 13123.3,
+     "gp": 13145.44,
      "match": "verified"
     },
     {
@@ -128,9 +128,9 @@
   },
   {
    "rep": "Mia",
-   "gp": 16955.01,
+   "gp": 16800.01,
    "gp_verified": 12855.1,
-   "gp_unverified": 4099.91,
+   "gp_unverified": 3944.91,
    "customers": [
     {
      "customer": "Dix Block and Supply Company Inc",
@@ -169,7 +169,7 @@
     },
     {
      "customer": "Spectrum Foods, Inc.",
-     "gp": 4049.91,
+     "gp": 3894.91,
      "match": "possible match - unverified"
     },
     {
