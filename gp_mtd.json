@@ -2,20 +2,20 @@
  "month": "2026-11",
  "as_of": "2026-11-23",
  "source": "TPRO Summary Bot Bill To export (terminal 129) x TPRO-vs-HubSpot ownership sheet",
- "loads": 1082,
- "total_gp": 368911.05,
+ "loads": 1089,
+ "total_gp": 370285.94,
  "note": "Account-level GP assigned to reps via HubSpot ownership; 'possible match' rows are unverified (gp_unverified). Steve = Steve-owned (out of rep GP). Unassigned = no/unclear owner.",
- "generated_at": "2026-11-23T12:02:43-06:00",
+ "generated_at": "2026-11-23T19:45:45-06:00",
  "reps": [
   {
    "rep": "Kili",
-   "gp": 263209.2,
-   "gp_verified": 263209.2,
+   "gp": 264634.09,
+   "gp_verified": 264634.09,
    "gp_unverified": 0.0,
    "customers": [
     {
      "customer": "Arconic US, LLC c/o BLUJAY",
-     "gp": 215719.78,
+     "gp": 217099.67,
      "match": "verified"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
      "customer": "Howmet Aerospace c/o CT Logistics Team 3",
-     "gp": 39443.09,
+     "gp": 39488.09,
      "match": "verified"
     },
     {
@@ -133,9 +133,9 @@
   },
   {
    "rep": "Mia",
-   "gp": 17570.01,
+   "gp": 17520.01,
    "gp_verified": 13410.1,
-   "gp_unverified": 4159.91,
+   "gp_unverified": 4109.91,
    "customers": [
     {
      "customer": "Dix Block and Supply Company Inc",
@@ -174,7 +174,7 @@
     },
     {
      "customer": "Spectrum Foods, Inc.",
-     "gp": 4109.91,
+     "gp": 4059.91,
      "match": "possible match - unverified"
     },
     {
